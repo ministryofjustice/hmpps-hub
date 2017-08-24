@@ -2,9 +2,14 @@
 import './govuk/details.polyfill';
 import './vendor/polyfills/bind';
 
+// import styles
+import '../../scss/hmpps.scss';
+import '../../scss/hmpps-ie8.scss';
+import '../../scss/hmpps-ie7.scss';
+import '../../scss/hmpps-ie6.scss';
+
 // modules
 import govUKCookie from './govuk/cookie';
-
 
 // set up namespace
 const HMPPS = window.HMPPS || {};

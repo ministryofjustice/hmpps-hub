@@ -4,6 +4,11 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+// set up extraction of individual css files
+const cssHmppsMain = new ExtractTextPlugin('css/hmpps.css');
+const cssHmppsIE8 = new ExtractTextPlugin('css/hmpps-ie8.css');
+const cssHmppsIE7 = new ExtractTextPlugin('css/hmpps-ie7.css');
+const cssHmppsIE6 = new ExtractTextPlugin('css/hmpps-ie6.css');
 
 var proxy = '';
 var folderArr = path.resolve(__dirname).split(path.sep);
@@ -41,6 +46,50 @@ module.exports = {
         use: ['babel-loader'],
         include: path.resolve(__dirname, 'hmppsAssets')
       },
+      {
+        test: /\hmpps.scss$/,
+        use: cssHmppsMain.extract({
+            fallback: "style-loader",
+            use: [
+                "css-loader",
+                "sass-loader"
+            ],
+            publicPath: "/hmppsAssets"
+        })
+      },
+      {
+        test: /\hmpps-ie8.scss$/,
+        use: cssHmppsIE8.extract({
+            fallback: "style-loader",
+            use: [
+                "css-loader",
+                "sass-loader"
+            ],
+            publicPath: "/hmppsAssets"
+        })
+      },
+      {
+        test: /\hmpps-ie7.scss$/,
+        use: cssHmppsIE7.extract({
+            fallback: "style-loader",
+            use: [
+                "css-loader",
+                "sass-loader"
+            ],
+            publicPath: "/hmppsAssets"
+        })
+      },
+      {
+        test: /\hmpps-ie6.scss$/,
+        use: cssHmppsIE6.extract({
+            fallback: "style-loader",
+            use: [
+                "css-loader",
+                "sass-loader"
+            ],
+            publicPath: "/hmppsAssets"
+        })
+      },
     ],
   },
   devServer: {
@@ -56,13 +105,16 @@ module.exports = {
     }
   },
   plugins: [
-    // new BundleAnalyzerPlugin(),
-    new ExtractTextPlugin({
-      filename: "css/rc.css"
-    }),
+    cssHmppsMain,
+    cssHmppsIE8,
+    cssHmppsIE7,
+    cssHmppsIE6
   ]
 }
 
 if (isDevServer) {
+  // do dev only stuff here
   module.exports.plugins.push(new BundleAnalyzerPlugin());
+} else {
+  // do produciton only stuff here
 }
