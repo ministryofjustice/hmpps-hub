@@ -9,7 +9,8 @@
     "sass": "node-sass ./hmppsAssets/scss/ --output ./hmppsAssets/css",
     "sass:watch": "node-sass --watch ./hmppsAssets/scss/ --output ./hmppsAssets/css",
     "scripts": "webpack -p",
-    "scripts:watch": "webpack-dev-server"
+    "scripts:watch": "webpack-dev-server",
+    "build": "npm run sass; npm run scripts"
   },
   "author": "e3 media",
   "license": "ISC",
