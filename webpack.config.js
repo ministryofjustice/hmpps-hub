@@ -33,7 +33,6 @@ if (isDevServer) {
 
 module.exports = {
   entry: './hmppsAssets/js/src/main.js',
-  devtool: 'source-map',
   output: {
     filename: 'js/application.js',
     path: __dirname+ '/hmppsAssets',
@@ -114,7 +113,9 @@ module.exports = {
 
 if (isDevServer) {
   // do dev only stuff here
+  module.exports.devtool = 'source-map';
   module.exports.plugins.push(new BundleAnalyzerPlugin());
 } else {
-  // do produciton only stuff here
+  // do production only stuff here
+  module.exports.plugins.push(new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': JSON.stringify('production') } }));
 }
