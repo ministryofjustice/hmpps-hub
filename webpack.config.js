@@ -50,8 +50,8 @@ module.exports = {
         use: cssHmppsMain.extract({
             fallback: "style-loader",
             use: [
-                "css-loader",
-                "sass-loader"
+                {loader: "css-loader", options: { sourceMap: isDevServer }},
+                {loader: "sass-loader", options: { sourceMap: isDevServer }}
             ],
             publicPath: "/hmppsAssets"
         })
@@ -61,8 +61,8 @@ module.exports = {
         use: cssHmppsIE8.extract({
             fallback: "style-loader",
             use: [
-                "css-loader",
-                "sass-loader"
+                {loader: "css-loader", options: { sourceMap: isDevServer }},
+                {loader: "sass-loader", options: { sourceMap: isDevServer }}
             ],
             publicPath: "/hmppsAssets"
         })
@@ -72,8 +72,8 @@ module.exports = {
         use: cssHmppsIE7.extract({
             fallback: "style-loader",
             use: [
-                "css-loader",
-                "sass-loader"
+                {loader: "css-loader", options: { sourceMap: isDevServer }},
+                {loader: "sass-loader", options: { sourceMap: isDevServer }}
             ],
             publicPath: "/hmppsAssets"
         })
@@ -83,8 +83,8 @@ module.exports = {
         use: cssHmppsIE6.extract({
             fallback: "style-loader",
             use: [
-                "css-loader",
-                "sass-loader"
+                {loader: "css-loader", options: { sourceMap: isDevServer }},
+                {loader: "sass-loader", options: { sourceMap: isDevServer }}
             ],
             publicPath: "/hmppsAssets"
         })
