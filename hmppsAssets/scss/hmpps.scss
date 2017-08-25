@@ -1,0 +1,150 @@
+// GOV.UK front end toolkit
+// Sass variables, mixins and functions
+// https://github.com/alphagov/govuk_frontend_toolkit/tree/master/stylesheets
+
+// Settings (variables)
+@import "colours";                                // Colour variables
+@import "measurements";                           // Widths and gutter variables
+
+// Mixins
+@import "conditionals";                           // Media query mixin
+@import "grid_layout";                            // Basic grid layout mixin
+@import "typography";                             // Core bold and heading mixins, also external links
+
+// GOV.UK elements
+$path: "/hmppsAssets/img/";
+
+// Import all the govuk-elements partials listed in _govuk-elements.scss
+@import "govuk-elements";
+
+// ==========================================================================
+// Elements page styles
+// These are example styles, used only for the elements pages
+// ==========================================================================
+
+// Add a class to wrap the <main> element
+// This is so the breadcrumb can sit outside <main>
+.site-wrapper {
+  @extend %site-width-container;
+
+  // Override margins set on #content
+  // This is a kludge to prevent a breaking change to govuk_elements_sass
+  // where @extend %site-width-container; is set for #content, so we need to override its margins
+  #content {
+    margin: 0;
+  }
+}
+
+// Increase spacing above GOV.UK elements page headings
+main > .heading-xlarge {
+  @include media(tablet) {
+    margin-top: em(60, 48);
+    margin-bottom: em(30, 48);
+  }
+}
+
+
+// 1. Layout
+// ==========================================================================
+
+$grid-stripe-light: #7DADD3;
+$grid-stripe-dark: #B7CFE1;
+
+.example-grid p {
+  width: 100%;
+  background-color: $grid-stripe-light;
+  background-image: repeating-linear-gradient(180deg, $grid-stripe-light, $grid-stripe-light $gutter-half, $grid-stripe-dark $gutter-half, $grid-stripe-dark $gutter);
+  margin-bottom: 0;
+  height: 30px;
+  @include media(tablet) {
+    height: 60px;
+  }
+  overflow: hidden;
+  text-indent: -999em;
+}
+
+
+// 2. Typography
+// ==========================================================================
+
+
+// 3. Colour
+// ==========================================================================
+
+
+// 4. Images and icons
+// ==========================================================================
+
+.example-images img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+
+// 5. Data
+// ==========================================================================
+
+.example .data {
+  margin-bottom: 0;
+}
+
+
+// 6. Forms
+// ==========================================================================
+
+
+// 7. Buttons
+// ==========================================================================
+
+// Remove top margin from headings in the "Creating buttons" example
+.example-button .heading-small {
+  margin-top: 0;
+}
+
+// Make swatch wrapper full width for "Creating buttons" example
+.example-button .swatch-wrapper {
+  width: 100%;
+}
+
+// 9. Alpha beta banners
+// ==========================================================================
+
+#global-header {
+  .hub-logo {
+    margin-top: 0;
+    #logo {
+      background-image: none;
+      margin-left: 15px;
+    }
+  }
+}
+
+.prisoner-details {
+  margin-bottom: 2em;
+
+  .heading-large {
+    margin-bottom: 0;
+  }
+}
+
+.at-a-glance {
+  padding-bottom: 15px;
+  border-bottom: 5px solid #0b0c0c;
+  margin-bottom: 60px;
+}
+
+.image-grid {
+  .heading-medium {
+    margin-top: 0;
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.image-grid-item {
+  margin-bottom: 30px;
+}

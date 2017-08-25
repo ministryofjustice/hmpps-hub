@@ -1,0 +1,4 @@
+{
+  "local": "path/to/local/server",
+  "port": 3001
+}
