@@ -44,6 +44,8 @@ main > .heading-xlarge {
 }
 
 
+
+
 // 1. Layout
 // ==========================================================================
 
@@ -112,6 +114,7 @@ $grid-stripe-dark: #B7CFE1;
 #global-header {
   .hub-logo {
     margin-top: 0;
+    margin-bottom: 0.18em;
     #logo {
       background-image: none;
       margin-left: 15px;
@@ -119,16 +122,10 @@ $grid-stripe-dark: #B7CFE1;
   }
 }
 
-.prisoner-details {
-  margin-bottom: 2em;
-
-  .heading-large {
-    margin-bottom: 0;
-  }
-}
 
 .at-a-glance {
   padding-bottom: 15px;
+  padding-top: 40px;
   border-bottom: 5px solid #0b0c0c;
   margin-bottom: 60px;
 }
@@ -147,4 +144,18 @@ $grid-stripe-dark: #B7CFE1;
 
 .image-grid-item {
   margin-bottom: 30px;
+}
+
+.homepage-top {
+    text-align: center;
+    background: #005ea5;
+    color: #fff
+}
+
+.homepage-top .homepage-top-inner {
+    position: relative;
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left
 }
