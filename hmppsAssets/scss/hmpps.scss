@@ -44,6 +44,8 @@ main > .heading-xlarge {
 }
 
 
+
+
 // 1. Layout
 // ==========================================================================
 
@@ -110,25 +112,24 @@ $grid-stripe-dark: #B7CFE1;
 // ==========================================================================
 
 #global-header {
-  .hub-logo {
-    margin-top: 0;
-    #logo {
-      background-image: none;
-      margin-left: 15px;
-    }
+  #logo {
+    //margin-bottom: 0.18em;
+    background: none;
+    margin-left: 15px;
+    margin-top: 6px;
   }
+  // .hub-logo {
+  //   margin-top: 0;
+  //   &:focus{
+  //     outline: 3px solid $focus-colour;
+  //   }
+  // }
 }
 
-.prisoner-details {
-  margin-bottom: 2em;
-
-  .heading-large {
-    margin-bottom: 0;
-  }
-}
 
 .at-a-glance {
   padding-bottom: 15px;
+  padding-top: 40px;
   border-bottom: 5px solid #0b0c0c;
   margin-bottom: 60px;
 }
@@ -147,4 +148,18 @@ $grid-stripe-dark: #B7CFE1;
 
 .image-grid-item {
   margin-bottom: 30px;
+}
+
+.homepage-top {
+    text-align: center;
+    background: #005ea5;
+    color: #fff
+}
+
+.homepage-top .homepage-top-inner {
+    position: relative;
+    overflow: hidden;
+    max-width: 1020px;
+    margin: 0 auto;
+    text-align: left
 }

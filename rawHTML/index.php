@@ -4,25 +4,44 @@
 <header role="banner" id="global-header">
   <div class="header-wrapper">
     <div class="header-global">
-      <h1 class="heading-large hub-logo">
-        <a href="index.php" title="Go to the hub homepage" id="logo" class="content">
-          The Hub
-        </a>
-      </h1>
+
+      <a href="index.php" title="Go to the hub homepage" id="logo" class="content">
+        The Hub
+      </a>
+
     </div>
   </div>
 </header>
 
-<div id="global-header-bar"></div>
-
-<div class="site-wrapper">
-  <main class="elements-index root-index" id="content" role="main" tabindex="-1">
-
-    <div class="at-a-glance">
-      <div class="prisoner-details">
-        <h2 class="heading-large">Logged in as</h2>
-        <span class="font-medium"><span class="prisoner-name">Andrew Banfield</span>: <span class="prisoner-id">Id goes here</span></span>
+<main class="elements-index root-index"  role="main" tabindex="-1">
+  <header class="homepage-top">
+    <div class="homepage-top-inner">
+      <div class="welcome-block">
+        <div class="inner-block floated-children">
+          <div class="welcome-text">
+            <div class="floated-inner-block">
+              <h1>Welcome</h1>
+              <h2 class="font-large">Andrew Banfield</h2>
+            </div>
+          </div>
+          <div class="content-links">
+            <div class="floated-inner-block content-links-inner">
+              <h2>Self service quick links</h2>
+              <ul>
+                <li><a href="">Order food</a></li>
+                <li><a href="">Buy items</a></li>
+                <li><a href="">Self service link</a></li>
+                <li><a href="">Self service link</a></li>
+                <li><a href="">Self service link</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </header>
+  <div class="site-wrapper">
+    <div class="at-a-glance">
 
       <div class="grid-row">
         <div class="column-one-third">
@@ -42,7 +61,6 @@
         </div>
       </div>
     </div>
-
     <div class="image-grid">
       <div class="grid-row">
         <div class="column-one-third">
@@ -79,8 +97,7 @@
         </div>
       </div>
     </div>
-  </main><!-- / #content -->
-
-</div>
+  </div>
+</main><!-- / #content -->
 
 <?php include('_includes/footer.php'); ?>
