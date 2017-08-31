@@ -4,11 +4,11 @@
 <header role="banner" id="global-header">
   <div class="header-wrapper">
     <div class="header-global">
-      <h1 class="heading-large hub-logo">
-        <a href="index.php" title="Go to the hub homepage" id="logo" class="content">
-          The Hub
-        </a>
-      </h1>
+
+      <a href="index.php" title="Go to the hub homepage" id="logo" class="content">
+        The Hub
+      </a>
+
     </div>
   </div>
 </header>

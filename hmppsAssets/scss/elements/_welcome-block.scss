@@ -21,11 +21,15 @@
 
 .welcome-block p.simpler {
     font-weight: bold;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+}
+
+.welcome-block .content-links {
+    padding-top: 20px;
 }
 
 .welcome-block .content-links-inner {
-    padding-bottom: 20px
+    padding-bottom: 20px;
 }
 
 
@@ -36,12 +40,12 @@
     font-weight: 400;
     text-transform: none;
     font-size-adjust: 0.5;
-    margin: 0
+    margin: 0;
 }
 
 .welcome-block .content-links-inner ul {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 .welcome-block .content-links-inner li {
@@ -52,21 +56,31 @@
     text-transform: none;
     font-size-adjust: 0.525;
     list-style: none;
-    margin: 5px 0
+    margin: 5px 0;
 }
 
 
 .welcome-block .content-links-inner a:link,.welcome-block .content-links-inner a:visited {
-    color: #fff
+    color: $white;
 }
 
 .welcome-block .content-links-inner a:active,.welcome-block .content-links-inner a:hover {
-    color: #cccccc
+    color: #cccccc;
 }
 
 .welcome-block .content-links-inner a:focus {
-    color: #0b0c0c
+    color: $black;
 }
+
+.welcome-block .inner-block.floated-children {
+    margin: 0 10px;
+}
+
+.welcome-block .floated-inner-block {
+    margin: 0 5px;
+}
+
+
 
 @include media (tablet) {
   .welcome-block .welcome-text {
@@ -89,12 +103,20 @@
 
   .welcome-block .content-links-inner {
     background:$black;
-    padding: 15px 20px 15px;
+    padding: 15px 20px 5px;
     margin-top: 30px;
   }
 
   .welcome-block .content-links-inner h2 {
     @include core-14;
+  }
+
+  .welcome-block .inner-block.floated-children {
+      margin: 0 15px;
+  }
+
+  .welcome-block .floated-inner-block {
+      margin: 0 15px;
   }
 
 }
@@ -106,4 +128,5 @@
   .welcome-block .content-links-inner h2 {
     margin:5px 0 0
   }
+
 }

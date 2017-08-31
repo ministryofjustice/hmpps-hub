@@ -112,14 +112,18 @@ $grid-stripe-dark: #B7CFE1;
 // ==========================================================================
 
 #global-header {
-  .hub-logo {
-    margin-top: 0;
-    margin-bottom: 0.18em;
-    #logo {
-      background-image: none;
-      margin-left: 15px;
-    }
+  #logo {
+    //margin-bottom: 0.18em;
+    background: none;
+    margin-left: 15px;
+    margin-top: 6px;
   }
+  // .hub-logo {
+  //   margin-top: 0;
+  //   &:focus{
+  //     outline: 3px solid $focus-colour;
+  //   }
+  // }
 }
 
 
@@ -155,7 +159,7 @@ $grid-stripe-dark: #B7CFE1;
 .homepage-top .homepage-top-inner {
     position: relative;
     overflow: hidden;
-    max-width: 960px;
+    max-width: 1020px;
     margin: 0 auto;
     text-align: left
 }
