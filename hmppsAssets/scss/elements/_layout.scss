@@ -64,3 +64,7 @@
 .column-full {
   @include grid-column(1);
 }
+
+.add-title-margin{
+  margin-top: 45px;
+}

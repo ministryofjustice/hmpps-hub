@@ -22,30 +22,57 @@ include('_includes/head.php'); ?>
         <h1 class="pub-c-title__text ">
           Page title
         </h1>
+
+        <div class="audio-player">
+          <audio controls id="player">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/test.mp3" type="audio/mpeg">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/audio.ogg" type="audio/ogg">
+            <track src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/transcription.vtt" label="English Captions" kind="subtitles" srclang="en-gb" default />
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+        <div class="content">
+          <h2>title</h2>
+          <h3>title</h3>
+          <h4>title</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <ul>
+            <li><a href="">test</a></li>
+            <li><a href="">test</a></li>
+            <li><a href="">test</a></li>
+            <li><a href="">test</a></li>
+          </ul>
+          <ol>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ol>
+        </div>
       </div>
     </div>
     <div class="column-third add-title-margin">
-      <!-- <aside class="govuk-related-items" data-module="track-click" role="complementary">
+      <aside class="related-content" data-module="track-click" role="complementary">
         <h2 >
-          Certificates, register offices, changes of name or gender
+          More Past, Present and Future
         </h2>
         <nav role="navigation">
-          <ul>
+          <ul class="list">
               <li>
-                <a data-track-category="relatedLinkClicked" data-track-action="1.1" data-track-label="/order-copy-birth-death-marriage-certificate" data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;Order a copy of a birth, death or marriage certificate&quot;}" href="/order-copy-birth-death-marriage-certificate">Order a copy of a birth, death or marriage certificate</a>
+              <a href="#test">more episodes</a>
               </li>
-              <li class="related-items-more">
-                <a data-track-category="relatedLinkClicked" data-track-action="1.2" data-track-label="/browse/births-deaths-marriages/register-offices" data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;More&quot;}" href="/browse/births-deaths-marriages/register-offices">
-                  More
-                  <span class="visuallyhidden">
-                    in
-                    Certificates, register offices, changes of name or gender
-                  </span>
-                </a>
+              <li>
+              <a href="#test">more episodes</a>
+              </li>
+              <li>
+              <a href="#test">more episodes</a>
+              </li>
+              <li>
+              <a href="#test">more episodes</a>
               </li>
           </ul>
         </nav>
-      </aside> -->
+      </aside>
     </div>
   </div>
 
