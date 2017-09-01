@@ -1,7 +1,0 @@
-﻿@model Sitecore.Speak.Components.Models.Resources.Pipelines.PipelineRenderingModel
-@{
-  string type = string.IsNullOrEmpty(Model.Script) ? "text/x-sitecore-pipeline" : "text/javascript";
-}
-<script @Model.HtmlAttributes type="@type">
-  @Html.Raw(Model.Script)
-</script>

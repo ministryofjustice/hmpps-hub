@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<control xmlns:def="Definition">
-  <Installer.SourceOutputEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.SourceOutputEditor,Sitecore.Client">
-    <Literal class="scFieldLabel" Text="How should the installer behave if the package contains items that already exist:" Style="font-weight:600;"/>
-
-    <Installer.BehaviourOptionEditor def:ID="Options" User="Developer" MergeOption='${StringUtil.GetString($MergeOption,"true")}'/>
-
-  </Installer.SourceOutputEditor>
-</control>

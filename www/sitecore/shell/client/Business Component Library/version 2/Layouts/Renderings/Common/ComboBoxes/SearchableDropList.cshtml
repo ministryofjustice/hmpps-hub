@@ -1,8 +1,0 @@
-﻿@model Sitecore.Speak.Components.Models.Common.ComboBoxes.SearchDropListRenderingModel
-@{
-  Model.Class.Append("sc-searchabledroplist");
-  Model.DataBind.IsVisible();
-}
-<div @Model.HtmlAttributes>
-    <select class="form-control hide" data-bind="enable: IsEnabled"></select>
-</div>

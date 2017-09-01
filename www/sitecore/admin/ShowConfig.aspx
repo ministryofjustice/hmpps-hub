@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ShowConfig.aspx.cs" Inherits="Sitecore.sitecore.admin.ShowConfig" %>

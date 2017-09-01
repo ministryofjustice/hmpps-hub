@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?> 
-<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
-  <PreviewToolbarPortlet def:inherits="Sitecore.Shell.Applications.Today.Portlets.PreviewToolbarPortletXmlControl,Sitecore.ExperienceEditor">
-    <Border def:ID="Portlet">
-      <Border def:ID="Body"></Border>
-      <SidebarDivider/>
-    </Border>
-  </PreviewToolbarPortlet>
-</control>

@@ -1,7 +1,0 @@
-﻿@using Sitecore.Mvc
-@using Sitecore.Web.UI.Controls.Common.ItemRenderers  
-@model Sitecore.Speak.Components.Models.Containers.SubAppRenderers.SubAppRendererRenderingModel
-
-<div id="@Model.Id" data-sc-app="@Model.Id">
-  @Html.Sitecore().Controls().ItemRenderer(Model.Rendering)
-</div>

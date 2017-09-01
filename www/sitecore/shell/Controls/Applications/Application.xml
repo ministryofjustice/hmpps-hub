@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?> 
-<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
-  <Application>
-    <FormPage ID="FormPage">
-      <CodeBeside Type="Sitecore.Shell.Controls.Applications.ApplicationForm,Sitecore.Client"/>
-      <Border ID="Body" Height="100%" />
-    </FormPage>
-  </Application>
-</control>

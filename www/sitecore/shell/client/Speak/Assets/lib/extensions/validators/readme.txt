@@ -1,1 +1,0 @@
-﻿Add script files into this folder to support custom validators emitted by entity services.

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<control xmlns:def="Definition">
-  <Installer.NameEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.NameEditor,Sitecore.Client">
-    <GridPanel columns="2" class="scFormTable">
-      <Label def:ID="NameLabel" Header="Source name:"/>
-      <Edit def:ID="NameEdit" />
-    </GridPanel>
-  </Installer.NameEditor>
-</control>

@@ -1,6 +1,0 @@
-﻿@model Sitecore.Speak.Components.Models.Common.TextAreas.TextAreaRenderingModel
-@{
-  Model.Class.Append("sc-textarea form-control");
-  Model.DataBind.IsEnabled().IsVisible().Value("Value").Bind("attr", "{title: Tooltip()}"); 
-}
-<textarea @Model.DimensionAttributes @Model.WrapAttribute @Model.MaxLengthAttribute placeholder="@Model.Watermark" @Model.HtmlAttributes>@Model.Value</textarea>

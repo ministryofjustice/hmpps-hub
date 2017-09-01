@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Sitecore.Web.UI.Controls.Common.SheerUI.SheerUI" %>
