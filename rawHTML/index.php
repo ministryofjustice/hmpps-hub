@@ -34,7 +34,7 @@
       <div class="grid-row">
         <div class="column-one-third">
           <div class="data">
-            <span class="data-item heading-xxlarge">&pound;37.60</span>
+            <span class="data-item data-heading heading-xxlarge">&pound;37.60</span>
             <span class="data-item bold-large">Account balance</span>
             <span class="data-item body-text">Last updated: today @ 13:00</span>
           </div>
@@ -42,7 +42,7 @@
 
         <div class="column-one-third">
           <div class="data">
-            <span class="data-item heading-xxlarge">&pound;25.34</span>
+            <span class="data-item data-heading heading-xxlarge">&pound;25.34</span>
             <span class="data-item bold-large">Phone credit</span>
             <span class="data-item body-text">Last updated: today @ 13:00</span>
           </div>

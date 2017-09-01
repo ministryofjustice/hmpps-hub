@@ -134,3 +134,43 @@ $site-width: 960px;
     #{$margin-or-padding}-right: $gutter;
   }
 }
+
+.pad-in{
+  padding: 15px;
+}
+
+.no-pad-in-left{
+  padding-left: 0;
+}
+
+.no-pad-in-right{
+  padding-right: 0;
+}
+
+.no-pad-in-top{
+  padding-top: 0;
+}
+
+.no-pad-in-bottom{
+  padding-bottom: 0;
+}
+
+.pad-out{
+  margin: 15px;
+}
+
+.no-pad-out-left{
+  margin-left: 0;
+}
+
+.no-pad-out-right{
+  margin-right: 0;
+}
+
+.no-pad-out-top{
+  margin-top: 0;
+}
+
+.no-padout-bottom{
+  margin-bottom: 0;
+}

@@ -316,9 +316,16 @@ hr {
     margin-top: em(5, 19);
     margin-bottom: em(20, 19);
   }
+
 }
 
 .data-item {
   display: block;
   line-height: 1;
+}
+
+.data-heading {
+    @media (max-width: 840px){
+      @include bold-46;
+    }
 }
