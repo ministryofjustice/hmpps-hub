@@ -19,20 +19,23 @@ include('_includes/head.php'); ?>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="games.php"><img src="_dummy/img/chess.jpg" alt=""></a>
-            <h2 class="heading-medium"><a href="games.php">Chess</a></h2>
+            <a href="games.php"><img src="_dummy/img/chess.jpg" alt="">
+            <h2 class="heading-medium">Chess</h2>
+            </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="games.php"><img src="_dummy/img/sudoku.png" alt=""></a>
-            <h2 class="heading-medium"><a href="games.php">Sudoku</a></h2>
+            <a href="games.php"><img src="_dummy/img/sudoku.png" alt="">
+            <h2 class="heading-medium">Sudoku</h2>
+            </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="games.php"><img src="_dummy/img/neontroids.png" alt=""></a>
-            <h2 class="heading-medium"><a href="games.php">Neontroids</a></h2>
+            <a href="games.php"><img src="_dummy/img/neontroids.png" alt="">
+            <h2 class="heading-medium">Neontroids</h2>
+            </a>
           </div>
         </div>
       </div>

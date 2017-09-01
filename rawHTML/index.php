@@ -53,34 +53,40 @@
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="books-one.php"><img src="_dummy/img/books.png" alt=""></a>
-            <h2 class="heading-medium"><a href="books-one.php">Read books</a></h2>
+            <a href="books-one.php">
+              <img src="_dummy/img/books.png" alt="">
+              <h2 class="heading-medium">Read books</h2>
+            </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="games.php"><img src="_dummy/img/games.jpg" alt=""></a>
-            <h2 class="heading-medium"><a href="games.php">Play games</a></h2>
+            <a href="games.php"><img src="_dummy/img/games.jpg" alt="">
+            <h2 class="heading-medium">Play games</h2>
+            </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="videos-one.php"><img src="_dummy/img/videos.png" alt=""></a>
-            <h2 class="heading-medium"><a href="videos-one.php">Watch videos</a></h2>
+            <a href="videos-one.php"><img src="_dummy/img/videos.png" alt="">
+            <h2 class="heading-medium">Watch videos</h2>
+            </a>
           </div>
         </div>
       </div>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="radio-one.php"><img src="_dummy/img/radio.png" alt=""></a>
-            <h2 class="heading-medium"><a href="radio-one.php">Listen to the radio</a></h2>
+            <a href="radio-one.php"><img src="_dummy/img/radio.png" alt="">
+            <h2 class="heading-medium">Listen to the radio</h2>
+            </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="index.php"><img src="_dummy/img/unilink.png" alt=""></a>
-            <h2 class="heading-medium"><a href="index.php">Unilink portal / self-service</a></h2>
+            <a href="index.php"><img src="_dummy/img/unilink.png" alt="">
+            <h2 class="heading-medium">Unilink portal / self-service</h2>
+            </a>
           </div>
         </div>
       </div>
