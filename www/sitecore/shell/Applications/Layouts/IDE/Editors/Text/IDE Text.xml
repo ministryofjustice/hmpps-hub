@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <IDEText>
+    <FormPage>
+      <Stylesheet Src="IDE.css" DeviceDependant="true"/>
+      <Script Src="/sitecore/shell/Controls/SitecoreKeyboard.js"/>
+      <Script Src="/sitecore/shell/Applications/Layouts/IDE/IDE.js"/>
+
+      <script type="text/javascript">
+        if (scForm) {
+          scForm.enableModifiedHandling();
+        }
+      </script>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Editors.Text.IDETextForm,Sitecore.Client"/>
+      
+      <GridPanel Width="100%" Height="100%">
+      
+        <DataToolbar DataSource="/sitecore/content/Applications/Layouts/IDE/File types/__Default/Toolbar" IconSize="id16x16"/>
+
+        <Memo ID="Editor" Width="100%" Height="100%" Border="none" Wrap="off" GridPanel.Height="100%" GridPanel.Style="padding:0px 0px 3px 0px"/>
+      
+      </GridPanel>
+
+    </FormPage>
+  </IDEText>
+</control>
+

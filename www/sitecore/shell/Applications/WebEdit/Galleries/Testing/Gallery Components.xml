@@ -1,0 +1,37 @@
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Gallery.Components>
+    <Stylesheet Src="/sitecore/shell/Applications/WebEdit/Galleries/Testing/Gallery Components.css"/>
+    <Stylesheet Src="/sitecore/shell/Controls/Testing/ComponentsRenderer/ComponentsRenderer.css"/>
+    <Stylesheet Src="/sitecore/shell/Controls/Testing/CombinationsGrid/CombinationsGrid.css"/>
+    <Stylesheet>
+      .test-not-run tr.component-row
+      {
+        height: 124px;        
+      }
+    </Stylesheet>
+    <Script Src="/sitecore/shell/Controls/Testing/ComponentsRenderer/ComponentsRenderer.js"/>
+    <Script Src="/sitecore/shell/Applications/WebEdit/Galleries/Testing/Gallery Components.js"/>
+    <Script Src="/sitecore/shell/Controls/Testing/CombinationsGrid/CombinationsGrid.js" />
+    <Script Src="/sitecore/shell/Applications/Page Modes/PageEditorProxy.js"/>
+    <Script Src="/sitecore/shell/Controls/Lib/jQuery/jQuery.noconflict.js"/>
+    <Script Src="/sitecore/shell/Controls/Lib/jQuery/tablesorter.js"/>
+    <Gallery>      
+      <CodeBeside Type="Sitecore.Shell.Applications.WebEdit.Galleries.Testing.GalleryComponents,Sitecore.ExperienceEditor"/>      
+      <GridPanel Width="100%" Height="100%">        
+        <Tabstrip ID="Tabs" Height="100%" Width="100%" GridPanel.Class="scFillParent" GridPanel.Height="100%">
+          <Tab ID="ComponentsTab" Header="By Component" Height="100%">
+            <Scrollbox Width="100%" Height="100%" Padding="0" GridPanel.Height="100%" Class="scFixSize scKeepFixSize" ID="Components">
+            </Scrollbox>
+          </Tab>
+          <Tab ID="CombinationsTab" Header="By Combination" Height="100%">
+            <Scrollbox Width="100%" Height="100%" Padding="0" GridPanel.Height="100%" Class="scWait scFixSize scKeepFixSize" ID="Combinations">             
+            </Scrollbox>
+          </Tab>
+         </Tabstrip>
+        <Border ID="Footer" GridPanel.Height="24px" Visible="false">
+          <Menu ID="Options" Border="None"/>
+        </Border>                
+      </GridPanel>      
+    </Gallery>
+  </Gallery.Components>
+</control>

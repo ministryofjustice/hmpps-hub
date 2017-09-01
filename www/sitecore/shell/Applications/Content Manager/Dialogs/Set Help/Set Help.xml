@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SetHelp>
+    <FormDialog Icon="Applications/32x32/form_blue.png" Header="Help Texts" 
+      Text="Write the help texts for the current item.">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Dialogs.SetHelp.SetHelpForm,Sitecore.Client"/>
+
+      <GridPanel Width="100%" Fixed="true">
+
+        <Border Padding="0px 0px 2px 0px">
+          <Literal Text="Short Description (ToolTip):"/>
+        </Border>
+
+        <Edit ID="ShortDescription" Width="100%" />
+
+        <Border Padding="8px 0px 2px 0px">
+          <Literal Text="Long Description:"/>
+        </Border>
+
+        <Memo ID="LongDescription" Width="100%" Height="100px" />
+
+        <Border Padding="8px 0px 2px 0px">
+          <Literal Text="Help Link:"/>
+        </Border>
+
+        <Edit ID="Link" Width="100%" />
+
+        <Border Padding="2px 0px 2px 0px">
+          <Literal Text="For example: http://www.sitecore.net/Platform.aspx"/>
+        </Border>
+
+      </GridPanel>
+      
+    </FormDialog>
+  </SetHelp>
+</control>

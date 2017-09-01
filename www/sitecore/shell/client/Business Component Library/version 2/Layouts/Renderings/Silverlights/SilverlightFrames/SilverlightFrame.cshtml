@@ -1,0 +1,49 @@
+﻿@model Sitecore.Speak.Components.Models.Silverlights.SilverlightFrames.SilverlightFrameRenderingModel
+@{
+  Model.NoScript();
+  Model.Class.Append("sc-silverlightframe");
+}
+<div @Model.HtmlAttributes style="height: 100%;">
+  <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" id="@Model.SilverlightObjectId" width="@Model.Width" height="@Model.Height">
+    <param name="source" value="@Model.Source">
+    @if (!string.IsNullOrEmpty(Model.OnError))
+    {
+      <param name="onError" value="@Model.OnError">
+    }
+    <param name="initParams" value="@Model.InitParams">
+    <param name="minRuntimeVersion" value="@Model.MinRuntimeVersion">
+    <param name="autoUpgrade" value="@Model.AutoUpgrade.ToString().ToLowerInvariant()">
+    <param name="windowless" value="@Model.WindowLess.ToString().ToLowerInvariant()">
+
+    @if (!string.IsNullOrEmpty(@Model.OnLoad))
+    {
+      <param name="onLoad" value="@Model.OnLoad">
+    }
+    <div style="width: @Model.Width; height: @Model.Height;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <tbody>
+          <tr>
+            <td>
+              <h2>@Model.AppName</h2>
+            </td>
+          </tr>
+          <tr>
+            <td align="left">
+              <p>
+                @Model.AppName requires Microsoft Silverlight @Model.MinRuntimeVersion to run.<br>
+                Silverlight is a small, safe, cross-platform browser plugin created and supported by Microsoft.
+              </p>
+              <br>
+              <div align="center">
+                <a href="http://go.microsoft.com/fwlink/?LinkID=149156&amp;v=@Model.MinRuntimeVersion" style="text-decoration: none">
+                  <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style: none">
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </object>
+</div>
+<iframe id="_sl_historyFrame" style="visibility: hidden; height: 0; width: 0; border: 0"></iframe>

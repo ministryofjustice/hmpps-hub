@@ -1,0 +1,8 @@
+﻿@model Sitecore.Speak.Components.Models.Containers.Frames.FrameRenderingModel
+@{
+  Model.DataBind.IsVisible();
+  Model.Class.Append("sc-frame");
+  Model.DataBind.Bind("attr", "{ height: Height }");
+}
+
+<iframe @Model.HtmlAttributes height="@Model.Height" src="@(Model.IsDeferred ? String.Empty : @Model.SourceUrl)"></iframe>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RenderingManager>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.RenderingManager.RenderingManagerForm,Sitecore.Client"/>
+      
+      <DataContext ID="ContentEditorDataContext" DataViewName="Master" Root="{EB2E4FFD-2761-4653-B052-26A64D385227}" Filter="Contains('{239F9CF4-E5A0-44E0-B342-0F32CD4C6D8B},{F1F1D639-4F54-40C2-8BE0-81266B392CEB},{1DDE3F02-0BD7-4779-867A-DC578ADF91EA},{83E993C5-C0FC-4472-86A9-2F6CFED694E4},{0A98E368-CDB9-4E1E-927C-8E0C24A003FB},{39587D7D-F06D-4CB4-A25E-AA7D847EDDD0}', @@templateid)"/>
+      
+      <GridPanel Width="100%" Height="100%">
+        
+        <Border ID="ContentEditorToolbar" GridPanel.Row.ID="ContentEditorToolbarRow">
+          <CommandPortal ID="ContentEditorToolbarPortal" PortalID="ContentEditorCommandPortal" PortalDataSource="/sitecore/content/Applications/Content editor/Commands portal" DataContext="ContentEditorDataContext" HideControlButtons="true"/>
+        </Border>
+
+        <Scrollbox Height="100%" Background="white" Border="1px inset" Padding="0" ContextMenu="Renderings.GetContextMenu" GridPanel.Height="100%">
+          <TreeviewEx ID="Renderings" DataContext="ContentEditorDataContext" />
+        </Scrollbox>
+        
+      </GridPanel>
+        
+    </FormPage>
+  </RenderingManager>
+</control>
+

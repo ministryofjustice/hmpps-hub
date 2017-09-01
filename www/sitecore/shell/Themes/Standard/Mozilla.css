@@ -1,0 +1,181 @@
+.scCombobutton {
+	border: none;
+	display: inline;
+	padding: 4px;
+	vertical-align: middle;
+	white-space:nowrap;
+}
+
+.scCombobuttonEditor {
+	background: #F8D5A6;
+	border: none;
+	display: inline;
+	padding: 4px;
+	vertical-align: middle;
+	white-space:nowrap;
+}
+
+.scCombobutton_Hover, .scCombobuttonEditor_Hover {
+	cursor: default;
+	display: inline;
+	background: #7A8284;
+	padding: 4px;
+	vertical-align: middle;
+	white-space:nowrap;
+}
+
+.scCombobuttonMain {
+	border: none;
+	background: transparent;
+	color: white;
+	display: inline;
+	padding: 0px;
+	white-space: nowrap;
+}
+
+.scCombobuttonEditorMain {
+	border: none;
+	background: #F8D5A6;
+	color: black;
+	display: inline;
+	padding: 0px;
+	white-space: nowrap;
+}
+
+.scCombobuttonMain_Hover, .scCombobuttonEditorMain_Hover {
+	border: none;
+	color: white;
+	display: inline;
+	padding: 0px;
+	white-space: nowrap;
+}
+
+.scCombobuttonDrop {
+	border: none;
+	display: inline;
+	vertical-align:middle;
+	padding: 0px;
+}
+
+.scCombobuttonEditorDrop {
+  background:#F8D5A6;
+	border: none;
+	display: inline;
+	vertical-align:middle;
+	padding: 0px;
+}
+
+.scCombobuttonDrop_Hover, .scCombobuttonEditorDrop_Hover {
+	border: none;
+	color: buttontext;
+	display: inline;
+	padding: 0px;
+	vertical-align:middle;
+}
+
+
+
+.scToolbutton {
+	background: transparent;
+	border: none;
+	cursor: default;
+	height: 26px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 3px 3px 4px 2px;
+	
+}
+.scToolbutton_Disabled {
+	background: transparent;
+	color: buttontext;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+	border: none;
+	cursor: default;
+	height: 26px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 3px 3px 4px 2px;
+}
+.scToolbutton_Down {
+	background: #8E9AAA;
+	border-top: 1px solid #4C5158;
+	border-left: 1px solid #5E656D;
+	border-right: 1px solid #5E656D;
+	border-bottom: 1px solid #5E6368;
+	color: white;
+	cursor: default;
+	height: 26px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 2px 2px 3px 1px;
+}
+.scToolbutton_Hover {
+	background: #8E9AAA;
+	border-top: 1px solid #E2E5E9;
+	border-left: 1px solid #C5CAD0;
+	border-right: 1px solid #C5CAD0;
+	border-bottom: 1px solid #909CAA;
+	color: white;
+	cursor: default;
+	height: 26px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 2px 2px 3px 1px;
+}
+.scToolbutton_Hot {
+	background: #8E9AAA;
+	border-top: 1px solid #4C5158;
+	border-left: 1px solid #5E656D;
+	border-right: 1px solid #5E656D;
+	border-bottom: 1px solid #5E6368;
+	color: white;
+	cursor: default;
+	height: 26px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 2px 2px 3px 1px;
+}
+
+.scListviewItemIcons {
+	display: block;
+	float:left;
+}
+.scListviewItemIcons_Selected {
+	display: block;
+	float:left;
+}
+.scListviewItemList {
+	display: block;
+	float:left;
+}
+.scListviewItemList_Selected {
+	display: block;
+	float:left;
+}
+
+
+.scDesktopItemIcons {
+	display: block;
+	float:left;
+}
+.scDesktopItemIcons_Selected {
+	display: block;
+	float:left;
+}
+
+.scSidebar
+{
+  background: #3b444a url(/sitecore/shell/themes/standard/images/shelldetails2.png) repeat-y left !important; 
+  border:none;
+  color: white;
+  height: 100%;
+  padding: 4px;
+  min-height:100%;
+}
+
+.scScrollerLeft {
+	display: none;
+}
+.scScrollerRight {
+	display: none;
+}

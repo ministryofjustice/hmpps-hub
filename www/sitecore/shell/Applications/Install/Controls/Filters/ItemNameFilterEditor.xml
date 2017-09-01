@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ItemNameFilterEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ItemNameFilterEditor,Sitecore.Client">
+    <div class="filterEditorChildContainer">
+      <GridPanel class="scFormTable" Columns="2">
+        <Literal Text="All or part of the item name:" />
+        <GridPanel Columns="2">
+          <Edit ID="MaskItem" GridPanel.width="100%" />
+          <Button def:ID="ClearButton" Header="Clear Filter" Margin="0 0 0 10px"/>
+        </GridPanel>
+        <Literal Text="Use:"/>
+        <Listbox def:ID="SearchOption">
+          <ListItem def:ID="SimpleSerachOption" Header="Simple Search" Value="0"/>
+          <ListItem def:ID="RegexSerachOption" Header="Regular Expression" Value="1"/>
+          <ListItem def:ID="WildCardSerachOption" Header="Wildcards" Value="2"/>
+        </Listbox>
+      </GridPanel>
+    </div>
+  </Installer.ItemNameFilterEditor>
+</control>

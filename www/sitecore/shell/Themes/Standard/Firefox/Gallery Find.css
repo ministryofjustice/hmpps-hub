@@ -1,0 +1,18 @@
+.scFindInput {
+  width:100%;
+}
+
+.scLink, 
+.scLink:link, 
+.scLink:active, 
+.scLink:hover, 
+.scLink:visited {
+  display:block;
+  text-decoration:none;
+  padding:2px;
+  white-space:nowrap
+}
+
+.scLink:hover {
+  text-decoration:underline;
+}

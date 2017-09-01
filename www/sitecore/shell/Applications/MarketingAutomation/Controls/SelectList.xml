@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <SelectList def:inherits="Sitecore.Shell.Applications.MarketingAutomation.Controls.SelectList,Sitecore.Shell.MarketingAutomation">
+    <div Height="40px" class="header">
+      <Literal ID="SearchText" class="spanLabel" runat="server" Text="Search:"  />
+      <div>
+        <input id="search" type="text" class="jq_watermark" title="${Translate.Text(Texts.ENTER_SEARCH_CRITERIA)}"/>
+      </div>
+       <Literal ID="DomainSelectorText" class="spanLabel" runat="server" Text="Domain:"  />
+      <div>
+        <select  id="domains">
+          <option>All</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="rolesContainer">
+    	<div class="allRoles">
+        <Literal ID="AllRolesText" class="spanLabel" Text="Available Roles:" runat="server" />
+        <select size="4"  id="allOptions">
+          <option>empty</option>
+        </select>
+      </div>
+    	<div class="addRemoveRoles">
+        <div class="addRoles">
+          <Literal ID="AddRolesText" class="spanLabel" Text="Add to Roles:" runat="server" />
+          <select size="4"  id="addList">
+            <option>empty</option>
+          </select>
+        </div>
+        <div class="removeRoles">
+          <Literal ID="RemoveRolesText" class="spanLabel" Text="Remove from Roles:" runat="server" />
+          <select size="4" id="removeList">
+            <option>empty</option>
+          </select>
+        </div>
+      </div>
+      <div class="moveButtons">
+        <div class="halfHeight">
+          <div>
+            <ThemedImage runat="server" ID="AddRoleToAdded" Src="Core/16x16/arrow_green_right.png" alt="" />
+            <ThemedImage runat="server" ID="RemoveRoleFromAdded" Src="Core/16x16/arrow_green_left.png" alt="" />
+          </div>
+        </div>
+        <div class="halfHeight">
+          <div>
+            <ThemedImage runat="server" ID="AddRoleToRemove" Src="Core/16x16/arrow_green_right.png" alt="" />
+            <ThemedImage runat="server" ID="RemoveRoleFromRemove" Src="Core/16x16/arrow_green_left.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <Edit ID="Added" runat="server" Hidden="true" />
+    <Edit ID="Removed" runat="server" Hidden="true"/>
+  </SelectList>
+</control>

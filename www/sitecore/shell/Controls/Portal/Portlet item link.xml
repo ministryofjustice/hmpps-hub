@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortletItemLink>
+    <Border Class="scCommand" ID="$ID" Click="$Click" RollOver="true" ToolTip="$ToolTip">
+      <ThemedImage Src="$Icon" Width="16" Height="16" Margin="0px 6px 0px 6px" Align="absmiddle"/>
+      <Literal Text="$Header"/>
+    </Border>
+  </PortletItemLink>
+</control>

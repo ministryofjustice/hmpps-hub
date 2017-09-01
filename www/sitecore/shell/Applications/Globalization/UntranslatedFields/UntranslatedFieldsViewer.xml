@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <UntranslatedFieldsViewer>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Globalization.UntranslatedFields.UntranslatedFieldsViewerForm,Sitecore.Client"/>
+      <Stylesheet>
+        .scReportContainer {
+            padding: 15px;
+            overflow: auto;
+            line-height: 1.42857143;
+        }
+
+        .scFullyTranslated {
+            padding-top: 32px;
+            text-align: center;
+        }
+
+        .scViewerItem {
+            padding: 0 0 15px;
+        }
+
+        .scViewerItem img {
+            float: left;
+            margin: 1px 10px 0;
+        }
+        
+        .scViewerItem .scViewerItemInfo {
+            overflow: hidden;
+        }
+        
+        .scGridReport tr{
+            cursor: pointer;
+        }
+        
+        .scItemIconName img {
+            vertical-align: middle;
+            margin: 0 10px 0 0;
+        }
+        
+        .scItemName {
+            vertical-align: middle;
+        }
+      </Stylesheet>
+      <Border class="scStretch scReportContainer">
+        <Border ID="FullyTranslated" class="scFullyTranslated" Visible="false">
+          <Literal class="sc-text-largevalue" Text="The database does not contain any untranslated fields in the selected language."/>
+        </Border>
+        <GridPanel class="scListControl scGridReport" ID="Report" Columns="4">
+          <Literal Text="Item name" />
+          <Literal Text="Field name" />
+          <Literal Text="Path" />
+          <Literal Text="Updated" />
+        </GridPanel>
+      </Border>
+    </FormPage>
+  </UntranslatedFieldsViewer>
+</control>

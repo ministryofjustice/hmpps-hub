@@ -1,0 +1,36 @@
+﻿body {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+[data-sc-gallerycontainer="true"] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.sc-gallery-content {
+  width: 100%;
+  overflow: auto !important;
+}
+
+.sc-gallery-options {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}

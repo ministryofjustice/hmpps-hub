@@ -1,0 +1,60 @@
+/*external components outside RadSpell wrapper*/
+
+/*common*/
+.RadSpell_Custom_Ext
+{
+    margin:1em 0 0;
+    padding:0;
+    font:normal 11px/16px arial,sans-serif;
+}
+.RadSpell_Custom_Ext.spLinkImg,
+.RadSpell_Custom_Ext.spButton
+{
+    display:block;
+    /*the same as background images' dimensions*/
+    width:78px;
+    height:23px;
+    line-height:23px;
+}
+
+/*text link*/
+.RadSpell_Custom_Ext.spLink
+{
+    color:#333;
+}
+.RadSpell_Custom_Ext.spLinkImg
+{
+    color:#fff;
+}
+
+/*image link*/
+.RadSpell_Custom_Ext.spLinkImg
+{
+    text-align:center;
+    text-decoration:none;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+}
+
+/*button*/
+.RadSpell_Custom_Ext.spButton
+{
+    border:0;
+    text-align:center;
+    color:#fff;
+    cursor:pointer;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+}
+
+.RadSpell_Custom_Ext.spLinkImg:hover,
+.RadSpell_Custom_Ext.spButton.spHovered
+{
+    background-position:0 -23px; /*the same as background images' height*/
+}
+
+/*select*/
+.RadSpell_Custom_Ext.spSelect
+{
+    width:78px; /*the same as background images' width*/
+    border:1px solid #ccc;
+    font-size:0.8em;
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ButtonCancel>
+    <Button Width="80" Height="25" Click="$Click"><Literal Text="Cancel"/></Button>
+  </ButtonCancel>
+</control>

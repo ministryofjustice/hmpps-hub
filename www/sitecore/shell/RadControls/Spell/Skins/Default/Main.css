@@ -1,0 +1,180 @@
+/* RadSpell wrapper window styles */
+
+.RadETableWrapperResizeSpan
+{
+	cursor : default;
+	border : 3px solid #cccccc;
+}
+
+/* dialog styles */
+.RadETableWrapper
+{
+	font-size: 0px;
+	vertical-align: top;
+}
+
+.RadETableWrapper td
+{
+	vertical-align: top;
+}
+
+.RadETableWrapperHeaderLeft
+{
+	background: transparent url('CssImg/dialogueHeaderLeft.gif') no-repeat;
+	width: 10px;
+	height: 40px;
+	vertical-align: top;
+}
+
+.RadETableWrapperHeaderCenter
+{
+	text-align: left;
+	height: 40px;
+	font: 11px Arial, Verdana, Sans-serif;
+	color: white;
+	background: transparent url(CssImg/dialogueHeaderCenter.gif) repeat-x;
+	vertical-align: bottom;
+	padding-left: 10px;
+}
+
+.RadETableWrapperHeaderRight
+{
+	background: transparent url('CssImg/dialogueHeaderRight.gif') no-repeat;
+	width: 10px;
+	height: 40px;
+	vertical-align: top;
+}
+
+/* Mozilla corners fix */
+.RadETableWrapperHeaderRight:before,
+.RadETableWrapperHeaderLeft:before
+{
+	width: 10px;
+	height: 40px;
+	content: " ";
+	display: block;
+}
+
+/* Mozilla corners fix */
+.RadETableWrapperBodyLeft,
+.RadETableWrapperBodyRight
+{
+	width: 6px;
+	background: transparent url('CssImg/RadETableWrapperBodyLeft.gif') repeat-y !important;
+}
+
+.RadETableWrapperBodyRight
+{
+	background: transparent url('CssImg/RadETableWrapperBodyRight.gif') repeat-y !important;
+}
+
+/* Mozilla corners fix */
+.RadETableWrapperBodyLeft:before,
+.RadETableWrapperBodyRight:before
+{
+	width: 6px;
+	display: block;
+	content: " ";
+}
+
+/* dialog content loader */
+.RadETableWrapperBodyCenter
+{
+	width: 100%;
+	height: 100%;
+}
+
+.RadETableWrapperFooterLeft
+{
+	background: transparent url('CssImg/RadETableWrapperFooterLeft.gif') !important;
+	width: 9px;
+	height: 9px;
+	font-size: 0px;
+}
+
+/* Mozilla corners fix */
+.RadETableWrapperFooterLeft:before
+{
+	display: block;
+	content: " ";
+	width: 9px;
+	height: 9px;	
+}
+
+.RadETableWrapperFooterCenter
+{
+	background: transparent url('CssImg/dialogueFooterCenter.gif') repeat-x;
+	width: 100%;
+	height: 9px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+.RadETableWrapperFooterRight
+{
+	font-size: 0px;
+	width: 9px;
+	height: 9px;
+	line-height:0px;
+	cursor: nw-resize;
+	background: transparent url(CssImg/footerResize.gif) no-repeat !important;
+}
+
+.RadETableWrapperFooterRight:before
+{
+	display: block;
+	content: " ";
+	width: 9px;
+	height: 9px;	
+}
+
+.RadETableWrapperFooterRightOver
+{
+	width:0px;
+	height:0px;
+	font-size: 0px;
+	line-height:0px;
+	cursor:nw-resize;
+}
+
+.RadERadWindowHeader
+{
+	cursor: default;
+	position: relative;
+	top: 13px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.RadERadWindowButtonClose
+{
+	cursor: hand;
+	cursor: pointer;
+	background: transparent url(CssImg/dialogueHeaderClose.gif) no-repeat;
+	width: 20px;
+	height: 18px;
+	display: block;
+	margin-top: 18px;
+}
+
+.RadERadWindowButtonPinOff
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderPinOff.gif);
+	background-repeat: no-repeat;
+	width:16px;
+	height:24px;
+	display:block;
+}
+
+.RadERadWindowButtonPinOn
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderPinOn.gif);
+	background-repeat: no-repeat;
+	width:16px;
+	height:24px;
+	display:block;
+}

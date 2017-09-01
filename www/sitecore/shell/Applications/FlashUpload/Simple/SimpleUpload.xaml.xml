@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.FlashUpload.Simple x:inherits="Sitecore.Shell.Applications.FlashUpload.Simple.SimpleUploadPage,Sitecore.Client">
+
+    <Sitecore.Controls.DialogPage Header="Upload File" Text="Choose the file that you want to upload." OKButton="Upload" runat="server">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Script runat="server" Src="/sitecore/shell/controls/lib/YUIupload/uploader/yui-uploader-min.js" />
+
+      <Script runat="server" Src="/sitecore/shell/applications/flashupload/Upload.js" />
+
+      <Script>
+        Event.observe(window, "load", function () {
+          window.scUpload = new SitecoreMultiUpload();
+          scUpload.destination = "/sitecore/shell/applications/flashupload/advanced/uploadtarget.aspx" + window.location.search + "&amp;uploadID=" + $$(".uploadID")[0].value;
+          scUpload.init();
+
+          scUpload.close = function () {
+            this.yUploader.destroy();
+            setTimeout(function () { scForm.postRequest("", "", "", "Close(\"" + this.uploadedFiles + "\")"); }.bind(this), 25);
+          };
+        });
+      </Script>
+      
+      <Style runat="server">
+        .filename {
+        height: 34px;
+        width: 100%;
+        border: solid 1px #e3e3e3;
+        margin: 0px 10px 5px 0;
+        position: relative;
+        }
+
+        #FilenameText {
+        padding: 2px;
+        padding-left: 4px;
+        line-height: 34px;
+        display: block;
+        }
+
+        .ff #FilenameText {
+        line-height: 34px;
+        position: relative;
+        z-index: 2;
+        }
+
+        .progress {
+        width: 0%;
+        height: 34px;
+        line-height:36px;
+        position: absolute;
+        background-color: #289BC8;
+        z-index: -1;
+        }
+
+        .ff .progress {
+        z-index: 1;
+        height: 34px;
+        line-height:34px;
+        background-color: #289BC8;
+        }
+
+        .ff .progressImage {
+        position: relative;
+        z-index: 3;
+        }
+
+        #Browse {
+        margin-left: 10px;
+        }
+
+        td {vertical-align: top}
+
+        .yui3-uploader-content
+        {
+        width: 100%;
+        height: 100%;
+        overflow:hidden;
+        }
+
+        .yui3-uploader-content button
+        {
+        opacity: 0;
+        cursor:pointer;
+        }
+      </Style>
+
+      <html:HtmlInputHidden class="uploadID" id="InputUploadID" runat="server" />
+      <html:HtmlInputHidden class="uploadSessionID" id="UploadSessionID" runat="server" />
+      <html:HtmlInputHidden class="uploadSessionID1" id="UploadSessionID1" runat="server" />
+
+      <div class="scStretchAbsolute" style="padding:15px;">
+        <GridPanel columns="2" class="scFormTable" runat="server" >
+          <Literal runat="server" Text="File name:" />
+
+          <GridPanel runat="server" Columns="2" Width="100%">
+            <Border runat="server" class="filename" GridPanel.Width="100%" GridPanel.Height="36px">
+              <Border runat="server" class="progress" />
+              <ThemedImage runat="server" Src="Images/blank.png" class="progressImage" style="position: absolute; right: 2px; top: 2px; display: none" />
+              <ThemedImage runat="server" Src="Office/16x16/check.png" class="doneImage" style="position: absolute; right: 2px; top: 2px; display: none" />
+
+              <span id="FilenameText"></span>
+            </Border>
+
+            <Border runat="server" id="BrowseContainer" GridPanel.Width="72px" GridPanel.Height="36px" style="position:relative">
+              <Button runat="server" Header="Browse" ID="Browse" style="z-index:1"/>
+              <div id="BrowseOverlay" style="width:100%;height:100%;position:absolute;top:0;z-index:2;" />
+            </Border>
+          </GridPanel>
+        </GridPanel>
+        <Literal runat="server" ID="Message" />
+      </div>
+    </Sitecore.Controls.DialogPage>
+  </Sitecore.Shell.Applications.FlashUpload.Simple>
+
+</xamlControls>

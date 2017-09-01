@@ -1,0 +1,1 @@
+﻿<%@ Page Inherits="Sitecore.Apps.Loader.LoaderPage" %>

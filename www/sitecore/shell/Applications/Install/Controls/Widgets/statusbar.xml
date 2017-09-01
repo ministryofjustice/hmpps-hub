@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <StatusBar>
+    <GridPanel Width="100%" Background="white" Columns="9999" CellPadding="1">
+      <def:Placeholder GridPanel.Container="true"/>
+    </GridPanel>
+  </StatusBar>
+</control>

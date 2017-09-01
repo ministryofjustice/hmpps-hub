@@ -1,0 +1,109 @@
+button[data-sc-id="PrevButton"] {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  float: left;
+}
+button[data-sc-id="NextButton"] {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-left: -1px;
+}
+.sc div div[data-sc-id="EntryPanel"] {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+span[data-sc-id="CurrentNoDataLabel"],
+span[data-sc-id="PreviousNoDataLabel"] {
+  position: relative;
+  top: 15px;
+}
+.sc div[data-sc-id="PreviousMonthTitleBorder"],
+.sc div[data-sc-id="CurrentMonthTitleBorder"],
+.sc div[data-sc-id="PreviousBestGuessingTitleBorder"],
+.sc div[data-sc-id="CurrentBestGuessingTitleBorder"],
+.sc div[data-sc-id="PreviousEffectTitleBorder"],
+.sc div[data-sc-id="CurrentEffectTitleBorder"],
+.sc div[data-sc-id="PreviousActiveUsersTitleBorder"],
+.sc div[data-sc-id="CurrentActiveUsersTitleBorder"],
+.sc span[data-sc-id="CurrentPeriodTitle"],
+.sc span[data-sc-id="PreviousPeriodTitle"] {
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  display: block;
+}
+div[data-sc-id="PrevActiveUsersBorder"] .row,
+div[data-sc-id="PrevEffectBorder"] .row,
+div[data-sc-id="PrevBestGuessingBorder"] .row,
+div[data-sc-id="PrevMonthBorder"] .row,
+div[data-sc-id="PreviousPeriodBorder"] .row {
+  margin-left: 15px;
+  margin-right: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+div[data-sc-id="CurrentActiveUsersBorder"] .row,
+div[data-sc-id="CurrentEffectBorder"] .row,
+div[data-sc-id="CurrentBestGuessingBorder"] .row,
+div[data-sc-id="CurrentMonthBorder"] .row,
+div[data-sc-id="CurrentPeriodBorder"] .row {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.leaderboard-border {
+  background-color: white;
+}
+.sc-text.change-value {
+  margin: 0 1em 0 2em;
+  padding: 0 1em 0 2em;
+}
+.sc-applicationHeader-actions div[data-sc-id="PeriodSwitcher"] {
+  position: relative;
+}
+.value-drop {
+  background: url("/sitecore/shell/client/Applications/ContentTesting/Assets/decrease-small.png") no-repeat 0.25em center;
+}
+.value-rise {
+  background: url("/sitecore/shell/client/Applications/ContentTesting/Assets/increase-small.png") no-repeat 0.25em center;
+}
+.rank-1 div[data-sc-id="RankColumn"] {
+  background: url("/sitecore/shell/client/Applications/ContentTesting/Assets/medal-gold.png") no-repeat top center;
+  height: 32px;
+}
+.rank-1 div[data-sc-id="RankColumn"] span {
+  display: none;
+}
+.rank-2 div[data-sc-id="RankColumn"] {
+  background: url("/sitecore/shell/client/Applications/ContentTesting/Assets/medal-silver.png") no-repeat top center;
+  height: 32px;
+}
+.rank-2 div[data-sc-id="RankColumn"] span {
+  display: none;
+}
+.rank-3 div[data-sc-id="RankColumn"] {
+  background: url("/sitecore/shell/client/Applications/ContentTesting/Assets/medal-bronze.png") no-repeat top center;
+  height: 32px;
+}
+.rank-3 div[data-sc-id="RankColumn"] span {
+  display: none;
+}
+.rank div[data-sc-id="RankColumn"] {
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-top: 11px;
+}
+.average div[data-sc-id="RankColumn"] span {
+  display: none;
+}
+div[data-sc-id="PreviousTestOutcomesAverage"],
+div[data-sc-id="PreviousTestOutcomes"],
+div[data-sc-id="CurrentTestOutcomesAverage"],
+div[data-sc-id="CurrentTestOutcomes"] {
+  background-color: white;
+  min-height: 2em;
+}

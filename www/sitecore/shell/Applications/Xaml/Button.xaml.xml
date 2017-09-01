@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <Sitecore.Web.Controls.Button>
+    
+    <html:Button runat="server">
+      <x:include runat="server" href="Sitecore.Web.Controls.Properties" />
+      <x:attribute runat="server" name="type" value="{Type}"/>
+
+      <Placeholder runat="server"/>
+    </html:Button>
+    
+  </Sitecore.Web.Controls.Button>
+
+  <Sitecore.Web.Controls.Border>
+
+    <div runat="server">
+      <x:include runat="server" href="Sitecore.Web.Controls.Properties" />
+      <x:styleattribute runat="server" name="text-align" value="{Align}"/>
+
+      <Placeholder runat="server"/>
+    </div>
+
+  </Sitecore.Web.Controls.Border>
+
+  <Sitecore.Web.Controls.Properties>
+    <x:styleattribute runat="server" name="background" value="{Background}" />
+    <x:styleattribute runat="server" name="border" value="{Border}" />
+    <x:styleattribute runat="server" name="color" value="{Foreground}" />
+    <x:styleattribute runat="server" name="display" value="{IsVisible}" converter="Sitecore.Web.UI.XamlSharp.Xaml.Converters.IsVisibleConverter,Sitecore.Kernel"/>
+    <x:styleattribute runat="server" name="font-family" value="{FontFamily}" />
+    <x:styleattribute runat="server" name="font-size" value="{FontSize}"/>
+    <x:styleattribute runat="server" name="font-weight" value="{FontWeight}"/>
+    <x:styleattribute runat="server" name="height" value="{Height}"/>
+    <x:styleattribute runat="server" name="margin" value="{Margin}" />
+    <x:styleattribute runat="server" name="padding" value="{Padding}" />
+    <x:styleattribute runat="server" name="width" value="{Width}"/>
+
+    <x:attribute runat="server" name="disabled" value="{IsEnabled}" converter="Sitecore.Web.UI.XamlSharp.Xaml.Converters.IsEnabledConverter,Sitecore.Kernel"/>
+    <x:attribute runat="server" name="title" value="{ToolTip}"/>
+  </Sitecore.Web.Controls.Properties>
+
+</xamlControls>

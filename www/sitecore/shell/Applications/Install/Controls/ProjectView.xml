@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ProjectView def:inherits="Sitecore.Shell.Applications.Install.Controls.ProjectView,Sitecore.Client">
+    <Script type="text/JavaScript" language="javascript" src="/sitecore/shell/applications/install/Controls/Widgets/TreeView.js" />
+    <Stylesheet Src="/sitecore/shell/applications/install/installer.css"/>
+    
+    <GridPanel Columns="3" Height="100%" Style="margin:0px;" Fixed="true" Width="100%">
+
+      <Scrollbox def:ID="SideFrame" GridPanel.valign="top" GridPanel.Width="120px" Padding="12px" GridPanel.Height="100%">
+        <Border def:ID="SideFrameContent"/>
+      </Scrollbox>
+
+      <VSplitter def:ID="Splitter" GridPanel.Width="5px" Target="left" GridPanel.Style="background:#f8f8f8"/>
+      
+      <GridPanel def:ID="MainPane" Width="100%" Height="100%" Style="margin:0px;" GridPanel.Height="100%">
+        <Scrollbox Height="100%" Border="none" GridPanel.Height="100%">
+          <Installer.EditorHost def:ID="EditorFrame"/>
+        </Scrollbox>
+      </GridPanel>
+
+    </GridPanel>
+  </Installer.ProjectView>
+</control>

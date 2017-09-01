@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortalConfiguratorDetail>
+
+    <GridPanel Class="PortletWindow" Columns="3" Width="100%">
+       <Image Src="/sitecore/portal/tech/cap_l.gif" Width="5" Height="22" GridPanel.Width="5"/>
+    
+       <Border GridPanel.Class="PortletCaption">
+         <Checkbox ID="$CheckboxID" Value="$Selected"/>
+         <Literal Text="$Header"/>
+       </Border>
+    
+       <Image Src="/sitecore/portal/tech/cap_r.gif" Width="25" Height="22" GridPanel.Width="25"/>
+       
+       <Border GridPanel.ColSpan="3" GridPanel.Class="PortletBody">
+         <GridPanel Columns="2" Width="100%" CellPadding="4">
+
+           <ThemedImage Src="$Icon" Width="48" Height="48" GridPanel.VAlign="top"/>
+           
+           <Literal Text="$Description" GridPanel.Width="100%" GridPanel.VAlign="top"/>
+
+         </GridPanel>
+       </Border>
+    </GridPanel>
+  
+  </PortalConfiguratorDetail>
+</control>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MasterLister>
+    <FormDialog ID="Dialog" Icon="Software/32x32/component.png" Header="Select a master" 
+      Text="Please select the master, that you wish. Then click the Open button." OKButton="Open"
+      ClientPadding="0">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Masters.MasterLister.MasterListerForm,Sitecore.Client"/>
+
+      <Border Background="white" Border="1px inset">
+      
+        <Treeview ID="MasterLister" DblClick="OnMasterListerDblClick">
+          <TreeHeader>
+            <TreeHeaderItem Name="name" Header="Name"/>
+            <TreeHeaderItem Name="__Short description" Header="Description"/>
+          </TreeHeader>
+        </Treeview>
+        
+      </Border>
+      
+    </FormDialog>
+  </MasterLister>
+</control>
+

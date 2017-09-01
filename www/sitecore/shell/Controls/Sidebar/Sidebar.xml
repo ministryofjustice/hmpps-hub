@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Sidebar>           
+    <GridPanel Height="100%" Width="100%" Style="table-layout:fixed">
+    
+      <Scrollbox Class="scSidebar" Border="none" Height="100%" GridPanel.VAlign="top" GridPanel.Height="100%">
+        <def:Placeholder/>
+      </Scrollbox>
+      
+      <Border Class="scSidebar" GridPanel.VAlign="bottom"><def:Placeholder Name="Panes"/></Border>
+      
+    </GridPanel>
+  </Sidebar>
+</control>

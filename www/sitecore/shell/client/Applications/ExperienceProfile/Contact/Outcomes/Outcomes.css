@@ -1,0 +1,20 @@
+﻿div.sc-advancedExpander[data-sc-id=OutcomesEdvancedExpander] .sc-advancedExpander-body
+{
+  border: none;
+}
+
+.sc-smartpanel[data-sc-id=OutcomesSmartPanel] .sc-text-largetitle {
+  font-size: 160%;
+  margin-top: 10px;
+}
+
+div[data-sc-id=PanelHeadersDataRepeater] > div, 
+div[data-sc-id=OutcomeBorder] {
+  width: 100%;
+  float: left;
+}
+
+span.sc-text[data-sc-id=OutcomeDescriptionText] {
+  margin-top: 15px;
+  display: inline-block;
+}

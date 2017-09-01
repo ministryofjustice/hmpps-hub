@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.AddRemoveVisitorFromRoles
+      x:inherits="Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.AddRemoveVisitorFromRoles, Sitecore.Shell.MarketingAutomation">
+
+    <Sitecore.Controls.DialogPage Icon="Software/32x32/graph_edge_directed.png" runat="server"
+                                  Header="Add or remove visitor from roles"
+                                  Text="Select one or more roles to add the visitor to or remove the visitor from." >
+
+      <AjaxScriptManager runat="server" />
+      <ContinuationManager runat="server" />
+      <style type="text/css">
+        .header div, .header input, .header select,.jq_watermark,.watermark_container
+        {
+        width:100% !important;
+        }
+        .header input
+        {
+        background-color: white !important;
+        color:black !important;
+        }
+        select
+        {
+        width:100%;
+        height:100%;
+        min-height:100%;
+        }
+
+        .spanLabel {
+        display: block;
+        padding: 3px 0 2px;
+        }
+
+        .rolesContainer {
+        position: absolute;
+        top: 90px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        }
+
+        .allRoles {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        position: relative;
+        height: 100%;
+        padding: 0 12px 18px 0;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+        .addRemoveRoles{
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        height: 100%;
+        padding: 0 0 13px 12px;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+        .moveButtons{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 24px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        }
+
+        .moveButtons img {
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+        }
+
+        .addRoles, .removeRoles {
+        height: 50%;
+        padding-bottom: 18px;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+        .removeRoles {
+        margin-top: 13px;
+        }
+
+        .halfHeight{
+        height: 50%;
+        position: relative;
+        }
+        
+        .halfHeight > div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        height: 34px;
+        }
+      </style>
+      <xmlcontrol:SelectList runat="server" ID="Main"/>
+    </Sitecore.Controls.DialogPage>
+    
+  </Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.AddRemoveVisitorFromRoles>
+
+</xamlControls>

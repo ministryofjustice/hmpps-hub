@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SystemMenu.Reminder def:inherits="Sitecore.Shell.Applications.ContentManager.Galleries.SystemMenu.SystemMenuReminderXmlControl,Sitecore.Client">
+    
+    <Section ID="ReminderSection" Header="Reminder" Icon="Applications/32x32/Document_Time.png" Class="scSection">
+
+      <Border>
+        <GridPanel Columns="2" Class="scListControl">
+
+          <Literal GridPanel.Class="scKey" Text="Reminder date:"/>
+          <Literal GridPanel.Class="scValue" def:ID="Reminder" />
+
+        </GridPanel>
+      </Border>
+      
+    </Section>
+    
+  </SystemMenu.Reminder>
+</control>

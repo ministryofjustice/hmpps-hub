@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CopyDeviceTo>
+    <FormDialog Icon="Core3/24x24/Copy_To_Folder.png" Header="Copy Device"
+      Text="Select the location that you want to copy the device to." OKButton="Copy">
+      <Stylesheet>
+        .title{
+        display: block;
+        padding: 0 5px 0 0;
+        }
+
+        .devicesContainer, .treeviewContainer {
+        overflow: auto;
+        border: 1px solid #ccc;
+
+        position: absolute;
+        top: 25px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+
+        }
+
+        #Devices{
+          padding: 10px 10px;
+        }
+        
+        #Treeview {
+          padding: 10px 0;
+        }
+
+      </Stylesheet>
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.DeviceEditor.CopyDeviceToForm,Sitecore.Client"/>
+
+      <DataContext ID="DataContext" Root="/"/>
+      <Tabstrip ID="Tabs" Width="100%" Height="100%">
+        <Tab ID="MediaLibraryTab" Header="Browse" Height="100%">
+          <div class="scStretch" Style="padding:5px;">
+            
+            <div class="col2">
+              <Literal class="title" Text="Target Devices:" />
+              <Border ID="Devices" class="devicesContainer"/>
+            </div>
+            
+            <div class="col2">
+              <Literal class="title" Text="Target Item:" />
+              <div class="treeviewContainer">
+                <TreeviewEx ID="Treeview" DataContext="DataContext" />
+              </div>
+            </div>
+            
+          </div>
+
+        </Tab>
+        <SearchTab Mode="FieldResults" Header="Search" Height="100%"/>
+      </Tabstrip>
+
+    </FormDialog>
+  </CopyDeviceTo>
+</control>

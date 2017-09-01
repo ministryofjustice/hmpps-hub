@@ -1,0 +1,25 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Common.Buttons.DropDownButtonRenderingModel
+@{
+  Model.Class.Append("sc-dropdownbutton");
+  Model.Class.AppendIf(string.IsNullOrEmpty(Model.Text), "noText");
+  Model.DataBind.IsVisible().Click("toggle").Bind("css", "{ 'up': IsOpen() }");
+}
+
+<div @Model.HtmlAttributes>
+  <button data-bind="enable: IsEnabled, css: { 'up': IsOpen(), 'icon': Icon()!='' }" class="btn btn-@Model.ButtonType.ToLowerInvariant()">
+
+  <div style="background-image:url('@Model.Icon');background-position: @Model.SpritePosition;" data-bind="style: {'backgroundImage': 'url(' + Icon() + ')', 'backgroundPosition': SpritePosition()}" class="sc-icon"></div>
+  <span class="sc-dropdownbutton-text" data-bind="text: Text">
+    @ClientHost.Globalization.Translate(Model.Text)
+  </span>
+  <div class="sc-dropdownbutton-toggler">
+    <div class="sc-dropdownbutton-chevron" data-bind="css: { 'up': IsOpen() }"></div>
+  </div>
+</button>
+<div data-bind="style: { display: IsOpen() ? 'block' : 'none'}, css: { right: DropPanelAlignment() === 'Right' }" class="sc-dropdownbutton-contentpanel default">
+  <div class="sc-dropdownbutton-content">
+    @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Content").ToHtmlString())
+  </div>
+</div>
+</div>

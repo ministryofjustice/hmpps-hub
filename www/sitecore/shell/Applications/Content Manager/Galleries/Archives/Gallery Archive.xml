@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.Archives>
+    <Stylesheet Key="Gallery.Menu">
+      body {
+      height:auto;
+      }
+    </Stylesheet>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Galleries.Archives.GalleryArchivesForm,Sitecore.Client"/>
+
+      <input type="hidden" id="reloadOnShow" value="1" />
+      
+      <Menu ID="Menu" Border="none">
+        <MenuHeader Header="Archive"/>
+        <MenuLine/>
+        <MenuPanel ID="Panel" Class="scMenuItem" />
+        <MenuLine/>
+      </Menu>
+
+    </Gallery>
+  </Gallery.Archives>
+</control>

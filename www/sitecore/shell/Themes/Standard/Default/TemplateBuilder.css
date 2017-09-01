@@ -1,0 +1,107 @@
+.scTable {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  table-layout: fixed; /* ff: none */
+}
+
+.scTableHeader {
+	background-color:#ccc;
+	border-left: 1px solid #E0E0E0;
+	border-right: 1px solid #FFF;
+	color: #373738;
+	height: 17px;
+	padding: 1px 3px 1px 3px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+/* Section */
+
+.scTableSection {
+}
+
+.scTableSectionRow {
+}
+
+.scTableSectionName {
+  width: 100%;
+}
+
+/* Field */
+
+.scTableFieldRow td {
+
+}
+
+
+.scTableFieldRow .scTableFieldName {
+  padding-left: 32px;
+  width: 33%;
+}
+
+.ff .scTableFieldRow .scTableFieldName {
+}
+
+.scTableFieldType {
+    min-width: 140px;
+}
+
+.scTableFieldSource {
+}
+
+.scTableFieldUnversioned {
+  text-align: center;
+}
+
+.scTableFieldShared {
+  width: 50px;
+  text-align: center;
+}
+
+.scTableFieldNameInput {
+  width: 100%;
+}
+
+.scTableFieldTypeInput {
+  width: 100%;
+}
+
+.scTableFieldSourceInput {
+  width: 100%;
+}
+
+.scTableFieldUnversionedInput {
+  width: 32px;
+}
+
+.scTableFieldSharedInput {
+  width: 32px;
+}
+
+.scTableFieldNameHeader {
+  width: 33%;
+}
+
+.scTableFieldTypeHeader {
+}
+
+.scTableFieldSourceHeader {
+  width: 33%;
+}
+
+.scTableFieldUnversionedHeader {
+  width: 70px;
+  text-align:center;
+}
+
+.scTableFieldSharedHeader {
+  width: 50px;
+  text-align:center;
+}
+
+/* Japanese language support */
+.lang_ja_jp .scTableFieldUnversionedHeader {
+  width:11em;
+}
+

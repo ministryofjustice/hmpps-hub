@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortletWindow def:inherits="Sitecore.Shell.Controls.Portal.PortletWindowXmlControl,Sitecore.Client">
+  
+    <GridPanel Class="PortletWindow" Columns="3" Width="100%">
+       <Image Src="/sitecore/portal/tech/cap_l.gif" Width="5" Height="22" GridPanel.Width="5"/>
+    
+       <Border GridPanel.Class="PortletCaption">
+         <ThemedImage Src="$Icon" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/>
+         <Literal Text="$Header"/>
+         <ImageButton def:ID="Menu" Src="/sitecore/portal/tech/menu.gif" Width="16" Height="16" Align="absmiddle" Margin="0px 0px 0px 8px"/>
+       </Border>
+    
+       <Image Src="/sitecore/portal/tech/cap_r.gif" Width="25" Height="22" GridPanel.Width="25"/>
+       
+       <Border GridPanel.ColSpan="3" GridPanel.Class="PortletBody">
+         <def:Placeholder/>
+       </Border>
+    </GridPanel>
+  
+  </PortletWindow>
+</control>

@@ -1,0 +1,23 @@
+.scListviewItemThumbnails {
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 1px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	width: 80px;
+}
+.scListviewItemThumbnails_Selected {
+	background: #F6D2AB;
+	border: 1px solid #F0CCA5;
+	color: #46448D;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 0px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}

@@ -1,0 +1,32 @@
+﻿@using Sitecore.Configuration
+@using Sitecore.Data
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Containers.Frames
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+  var database = Factory.GetDatabase("core");
+  if (database == null)
+  {
+    return;
+  }
+
+  ID launchpadButtonId;
+  if (!ID.TryParse(Request.QueryString["id"], out launchpadButtonId))
+  {
+    return;
+  }
+
+  var item = database.GetItem(launchpadButtonId);
+  if (item == null || string.IsNullOrEmpty(item["Link"]))
+  {
+    return;
+  }
+}
+
+@Html.Sitecore().Controls().Frame(string.Empty, new { SourceUrl = item["Link"] });
+
+@if (!string.IsNullOrEmpty(item["text"]))
+{
+  <script>document.title = "@item["text"]"</script>
+}

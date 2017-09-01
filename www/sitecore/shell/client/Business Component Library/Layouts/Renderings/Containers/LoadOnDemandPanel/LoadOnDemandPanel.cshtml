@@ -1,0 +1,7 @@
+﻿@using Sitecore.Data
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@using Sitecore.Web.UI.Controls.Containers.LoadOnDemandPanel
+@model RenderingModel
+@Html.Sitecore().Controls().LoadOnDemandPanel(Model.Rendering)

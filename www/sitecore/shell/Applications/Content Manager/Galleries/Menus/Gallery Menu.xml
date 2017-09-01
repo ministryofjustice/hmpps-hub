@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.Menu>
+    <Stylesheet Key="Gallery.Menu">
+      body { height:auto; }
+    </Stylesheet>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Galleries.Menues.GalleryMenuForm,Sitecore.Client"/>
+
+      <Menu ID="Options" Border="none"/>
+
+    </Gallery>
+  </Gallery.Menu>
+</control>

@@ -1,0 +1,18 @@
+﻿@model Sitecore.Speak.Components.Models.Indicators.ArrowIndicators.ArrowIndicatorRenderingModel
+@{
+  Model.Class.Append("sc-ArrowIndicator");
+  
+  Model.DataBind.IsVisible();
+  Model.DataBind.Bind("attr", "{ title: Tooltip()}");
+}
+<div @Model.HtmlAttributes>
+  <div class="sc-ArrowIndicator-Row">
+    <div class="sc-ArrowIndicator-Cell">
+      <div class="sc-ArrowIndicator-Arrow sc-ArrowIndicator-@Model.ImageSize">
+      </div>
+    </div>
+    <div class="sc-ArrowIndicator-Cell">
+      <div class="sc-ArrowIndicator-Value sc-ArrowIndicator-@Model.ValueSize" data-bind="html: IndicatorValue"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MDITab>
+    <Inline ID="$ID" Class='${StringUtil.GetString($Class, "scMDITab")}' RollOver="true" Click="$Click"><Space Width="1" Height="24" Align="absmiddle"/><Literal Text="$Header"/></Inline>
+  </MDITab>
+</control>
+

@@ -1,0 +1,152 @@
+﻿@using System.Text.RegularExpressions
+@using Sitecore
+@using Sitecore.Data.Items
+@using Sitecore.Extensions.StringExtensions
+@using Sitecore.Extensions.TemplateFieldItemExtensions
+@using Sitecore.Mvc
+@using Sitecore.Resources.Pipelines.ResolveScript
+@using Sitecore.Speak.Extensions
+@using Sitecore.Text
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model Sitecore.Mvc.Presentation.RenderingModel
+@functions {
+
+  /// <summary>The render parameters.</summary>
+  /// <param name="userControl">The user control.</param>
+  /// <param name="renderingItem">The rendering item.</param>
+  private void RenderParameters(Sitecore.Web.UI.Controls.Common.UserControls.UserControl userControl, Item renderingItem)
+  {
+    var parametersId = renderingItem["Parameters Template"];
+    if (string.IsNullOrEmpty(parametersId))
+    {
+      return;
+    }
+
+    var parametersItem = renderingItem.Database.GetItem(parametersId);
+    if (parametersItem == null)
+    {
+      return;
+    }
+
+    var templateItem = new TemplateItem(parametersItem);
+
+    foreach (var field in templateItem.Fields)
+    {
+      if (field.IsSystemField())
+      {
+        continue;
+      }
+
+      var parameters = new UrlString(field.Source).Parameters;
+      if (parameters["bindmode"] == "server")
+      {
+        continue;
+      }
+
+      if (string.Compare(field.Name, "Id", StringComparison.InvariantCultureIgnoreCase) == 0 || string.Compare(field.Name, "IsVisible", StringComparison.InvariantCultureIgnoreCase) == 0)
+      {
+        continue;
+      }
+
+      userControl.SetAttribute("data-sc-" + field.Name.GetSafeIdentifier(), userControl.GetString(field.Name));
+    }
+  }
+
+  /// <summary>The render view.</summary>
+  /// <param name="userControl">The user control.</param>
+  /// <param name="renderingDataItem">The child.</param>
+  /// <returns>The <see cref="string"/>.</returns>
+  [NotNull]
+  private string RenderView([NotNull] Sitecore.Web.UI.Controls.Common.UserControls.UserControl userControl, [NotNull] Item renderingDataItem)
+  {
+    var output = renderingDataItem["View"];
+
+    MatchEvaluator mustacheEvaluator = delegate(Match match)
+    {
+      var text = match.Groups[1].Value;
+
+      if (string.Compare(text, "Attributes", StringComparison.InvariantCultureIgnoreCase) == 0)
+      {
+        return userControl.HtmlAttributes.ToString();
+      }
+
+      if (string.Compare(text, "ControlId", StringComparison.InvariantCultureIgnoreCase) == 0)
+      {
+        return userControl.ControlId;
+      }
+
+      if (text.StartsWith("placeholder $id.", StringComparison.InvariantCultureIgnoreCase))
+      {
+        var placeHolderName = text.Mid(16).Trim();
+        return this.Html.Sitecore().Placeholder(userControl.ControlId + "." + placeHolderName).ToString();
+      }
+
+      if (text.StartsWith("placeholder ", StringComparison.InvariantCultureIgnoreCase))
+      {
+        var placeHolderName = text.Mid(12).Trim();
+        return this.Html.Sitecore().Placeholder(placeHolderName).ToString();
+      }
+
+      return userControl.GetString(text);
+    };
+
+    return Regex.Replace(output, "\\{\\{([^\\}]*)\\}\\}", mustacheEvaluator);
+  }
+
+  /// <summary>The get component item.</summary>
+  /// <param name="renderingItem">The rendering item.</param>
+  /// <returns>The <see cref="Item"/>.</returns>
+  [CanBeNull]
+  private Item GetComponentItem([NotNull] Item renderingItem)
+  {
+    foreach (Item child in renderingItem.Children)
+    {
+      if (child.TemplateID == ResolveBaseComponent.ComponentItemId)
+      {
+        return child;
+      }
+    }
+
+    return null;
+  }
+
+}         
+@{
+  /*
+   * Cache generated JavaScript
+   * Find the correct database
+   */
+  var output = string.Empty;
+
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  var renderingItem = this.Model.Rendering.RenderingItem.InnerItem;
+  var componentItem = this.GetComponentItem(renderingItem);
+
+  if (componentItem != null)
+  {
+    var safeItemName = renderingItem.Name.GetSafeIdentifier();
+    userControl.Class = "sc-" + safeItemName.ToLowerInvariant();
+
+    var generateScript = componentItem["GenerateScript"] == "1";
+    if (!generateScript)
+    {
+      generateScript = userControl.GetBool("GenerateScript");
+    }
+
+    if (generateScript)
+    {
+      userControl.Requires.Script("basecomponent", renderingItem.ID.ToShortID() + ".js");
+      this.RenderParameters(userControl, renderingItem);
+    }
+
+    var stylesheet = componentItem["Stylesheet"];
+    if (!string.IsNullOrEmpty(stylesheet))
+    {
+      userControl.Requires.Css("basecomponent", renderingItem.ID.ToShortID() + ".css");
+    }
+
+    output = this.RenderView(userControl, componentItem);
+  }
+
+}
+@this.Html.Raw(output)

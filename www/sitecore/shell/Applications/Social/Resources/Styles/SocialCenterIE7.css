@@ -1,0 +1,41 @@
+﻿/* -----------------------------------------------------------------------*/
+/* <copyright file="SocialCenterIE7.css" company="Sitecore A/S">              */
+/*   Copyright (C) 2012 by Sitecore                                       */
+/* </copyright>                                                           */
+/* -----------------------------------------------------------------------*/
+.scsocModal 
+{
+  position: fixed;
+  
+}
+
+.scsocMessageStatistics 
+{
+  height: 30px;
+}
+
+.scsocStatsSeparator
+{
+  height: 29px;
+  overflow: hidden;
+}
+
+.scsocStatsCounterTitle 
+{
+  white-space: nowrap;
+}
+
+.scsocCampaignReportsSwitcher 
+{
+  padding-top: 10px;
+  background-color: transparent;
+  text-align: right;
+  position: absolute;
+  width: 965px;
+}
+
+.scsocLoading .scsocCampaignReportsSwitcher,
+.scsocLoading .scsocShowMoreMessages 
+{
+  display: none;
+}

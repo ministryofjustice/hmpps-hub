@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+   <Installer.OpenProject>
+      <FormDialog Header='Open package project' Text='Pick a project you wish to load.' Icon=''>
+        <CodeBeside Type="Sitecore.Shell.Applications.Install.Dialogs.OpenProject,Sitecore.Client"/>
+        <Memo ID="Text" Width="100%" Height="100%"/>
+      </FormDialog>
+   </Installer.OpenProject>
+</control>

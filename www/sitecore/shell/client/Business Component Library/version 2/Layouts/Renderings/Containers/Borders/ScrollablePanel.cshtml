@@ -1,0 +1,26 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Containers.Borders.ScrollablePanelRenderingModel
+@{
+  Model.Class.Append("sc-scrollablepanel sc-border");
+
+  Model.Class.AppendIf(!string.IsNullOrEmpty(Model.ContentHorizontalAlignment), "sc-align-" + Model.ContentHorizontalAlignment.ToLower());
+  Model.Class.AppendIf(Model.ShowBorder, "sc-show-border");
+  Model.DataBind.Css("sc-show-border", "ShowBorder");
+
+  if (Model.UsePadding)
+  {
+    var paddingDirection = (Model.PaddingType != "All") ? Model.PaddingType : string.Empty;
+    Model.Class.Append("sc-show-padding" + paddingDirection);
+  }
+  
+  Model.DataBind.IsVisible();
+  Model.DataBind.Bind("attr", "{title: Tooltip()}");
+  Model.DataBind.Style("height", "Height() > 0 ? Height() + 'px' : ''");
+  var heightStyle = Model.Height > 0 ? "height: " + @Model.Height + "px" : "";
+}
+<div @Model.HtmlAttributes style="@heightStyle">
+  @if (Model.IsContentAllowed)
+  {
+    @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Content").ToHtmlString())
+  }
+</div>

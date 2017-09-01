@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CommandPortal def:inherits="Sitecore.Shell.Applications.Portlets.CommandPortal.CommandPortalXmlControl,Sitecore.Client">           
+    <Border def:ID="Toolbar">
+
+      <Border def:ID="LargeToolbar" Height="120" Style="overflow:hidden">
+        
+        <GridPanel Columns="2" Width="100%" Height="120" Style="position:absolute">
+          
+          <Portal def:ID="Portal" Class="Portal" GridPanel.Width="100%" GridPanel.Height="100%" Background="transparent">
+
+            <GridPanel Height="100%" Width="100%" Fixed="true">
+              <GridPanel Foreground="white" Columns="2" Height="100%" Width="100%">
+          
+                <Scrollbox Width="100%" Height="100%" Background="transparent" Border="none" Padding="0">
+                  <PortalZone ID="Preview" GridPanel.VAlign="top"/>
+                </Scrollbox>
+
+                <Scrollbox Width="100%" Height="100%" Background="transparent" Border="none" Padding="0">
+                  <PortalZone ID="DefaultZone" GridPanel.VAlign="top"><def:Placeholder/></PortalZone>
+                </Scrollbox>
+                
+              </GridPanel>
+            </GridPanel>
+             
+          </Portal>
+          
+          <Border GridPanel.VAlign="top" Padding="2px 2px 0px 4px" GridPanel.NoWrap="true">
+            <ImageButton def:ID="MinimizeButton" Src="Images/ToolMinimize.png" Width="21" Height="15"/>
+            <ImageButton def:ID="CloseButton" Src="Images/ToolClose.png" Width="21" Height="15" Click="ToggleToolbar"/>
+          </Border>
+          
+        </GridPanel>
+
+        <Border Width="196" Height="196" style="overflow:hidden; filter:progid:DXImageTransform.Microsoft.BasicImage(opacity=0.20,grayscale=1)" RenderAs="Literal">
+          <ThemedImage def:ID="ToolbarIcon" Width="196" Height="196" Style="position:absolute;z-index:-1;-moz-opacity:0.2; clip: rect(0px 196px 120px 0px)"/>
+        </Border>
+        
+      </Border>
+      
+      <Border def:ID="SmallToolbar" Visible="false" Align="right" Padding="2" RenderAs="Literal">
+        <GridPanel Columns="2">
+          <Border def:ID="SmallToolbarButtons"/>
+          <Border Align="right" GridPanel.Valign="top" GridPanel.NoWrap="true">
+            <ImageButton def:ID="MaximizeButton" Src="Images/ToolMaximize.png" Width="21" Height="15"/>
+            <ImageButton Src="Images/ToolClose.png" Width="21" Height="15" Click="ToggleToolbar"/>
+          </Border>
+        </GridPanel>
+      </Border>
+
+      <Border Background="#212424" Style="border-left:2px solid #4E4E4E; border-right:2px solid #4E4E4E" RenderAs="Literal"><Space/></Border>
+
+    </Border>
+    
+  </CommandPortal>
+</control>

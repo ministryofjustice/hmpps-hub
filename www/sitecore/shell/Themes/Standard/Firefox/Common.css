@@ -1,0 +1,45 @@
+﻿body {
+  margin:0px;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+}
+form {
+  margin-bottom: 1px;
+}
+table, button, th {
+	font-size: 8pt;
+}
+a, a:active, a:visited {
+  color:windowtext;
+  text-decoration: none;
+}
+a:hover {
+  color:windowtext;
+  text-decoration: underline;
+}
+.scBackground {
+	background: threedface;
+}
+.scFont {
+	font-size:  8pt;
+}
+.scLargeFont {
+  font-size: 14pt;
+}
+.scLargeFont_Hover {
+  font-size: 14pt;
+}
+.scLargeFont2 {
+  font-size: 11pt;
+}
+.scLargeFont2_Hover {
+  font-size: 11pt;
+}
+.scClickFont {
+  font-size:  9pt;
+}
+.scClickFont_Hover {
+  font-size:  9pt;
+}

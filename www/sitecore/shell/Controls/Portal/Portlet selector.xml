@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortletSelector>
+    <DataContext ID="PortletDataContext" DataViewName="Master" DefaultItem="/" Root="$Folder" Folder="$Folder"/>
+                    
+    <PopupChrome Width="350" Height="350">
+      <Scrollbox Width="100%" Height="100%" DataViewPadding="0" Padding="0">
+      
+        <DataTreeview ID="PortletTreeview" Width="100%" DataContext="PortletDataContext" Root="false" Click="$PortalID.AddPortlet">
+          <TreeHeader>
+            <TreeHeaderItem Name="name" Header="Name"/>
+          </TreeHeader>
+        </DataTreeview>
+        
+      </Scrollbox>
+    </PopupChrome>
+  
+  </PortletSelector>
+</control>

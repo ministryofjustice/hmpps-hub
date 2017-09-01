@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <AddFacebookAccountWizard>
+    <WizardForm CodeBeside="Sitecore.Social.Facebook.Client.Wizards.AddNetworkAccount.AddFacebookAccountWizard,Sitecore.Social.Facebook.Client">
+      <WizardFormFirstPage ID="WelcomePage" Icon="People/48x48/user1.png">
+        <WelcomePageControl ID="WelcomePageContent" />
+      </WizardFormFirstPage>
+      <WizardFormPage ID="DefineApplicationPage" Header="Network Application" Text="Select the social network application that you want to create an account on." Icon="Applications/48x48/gears.png">
+        <WizardFormIndent>
+          <DefineApplicationPageControl ID="DefineApplicationPageContent" />
+        </WizardFormIndent>
+      </WizardFormPage>
+      <WizardFormPage ID="WaitForAuthPage" Header="Authentication" Text="Please wait while the authorization process is completed." Icon="Network/48x48/environment.png">
+        <WizardFormIndent>
+          <FacebookWaitForAuthPageControl ID="WaitForAuthPageContent" />
+        </WizardFormIndent>
+      </WizardFormPage>
+      <WizardFormPage ID="FacebookPageSelectionPage" Header="Select a Profile or Page" Text="Select the profile or the page that you want to use on the social network.You can select the wall of a social network profile or an assigned page." Icon="People/48x48/user1.png">
+        <WizardFormIndent>
+          <FacebookPageSelectionPageControl ID="FacebookPageSelectionPageContent" />
+        </WizardFormIndent>
+      </WizardFormPage>
+      <WizardFormPage ID="AccountNamePage" Header="Social Network Account" Text="Specify the details for the social network account." Icon="People/48x48/user1.png">
+        <WizardFormIndent>
+          <AccountNamePageControl ID="AccountNamePageContent" />
+        </WizardFormIndent>
+      </WizardFormPage>
+      <WizardFormPage ID="DefineWorkflowAndRolesPage" Header="Review" Text="Select the workflow that the messages for this account are placed in, and select the roles that the reviewers must be members of." Icon="Applications/48x48/gears.png">
+        <WizardFormIndent>
+          <DefineWorkflowAndRolesPageControl ID="DefineWorkflowAndRolesPageContent" />
+        </WizardFormIndent>
+      </WizardFormPage>
+      <WizardFormLastPage ID="GoodByePage" Icon="People/48x48/user1.png">
+        <GoodByePageControl ID="GoodByePageContent" />
+      </WizardFormLastPage>
+    </WizardForm>
+  </AddFacebookAccountWizard>
+</control>

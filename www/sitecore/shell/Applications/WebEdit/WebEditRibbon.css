@@ -1,0 +1,604 @@
+.scRibbonPanel 
+{
+}
+
+.scRibbon {
+  padding:0px 1px;
+  vertical-align: top;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsNormal {
+  color:Black;
+}
+
+.scRibbonToolbar {
+  border-left:1px solid #999999;
+  border-right:1px solid #999999;
+  border-bottom:none; 
+  background: #ccd2e8 url(/sitecore/shell/themes/standard/images/ribbon/V2/ribbon_area.png) repeat-x;
+  clear:left;
+}
+
+.lang_ja_jp .scRibbonToolbar {
+  background: #ccd2e8 url(/sitecore/shell/themes/standard/images/ribbon/V2/ribbon_area_jp.png) repeat-x
+}
+
+div.scTreecrumb { 
+  padding: 2px 0px;
+  background: #efefef url('/sitecore/shell/themes/standard/images/ribbon/V2/treecrumb_area2.png') repeat-x;
+  border-right: 1px solid #999999;
+  border-left: 1px solid #999999;    
+  border-top: none;
+  border-bottom: 1px solid #cccccc;
+  margin: 0px 1px;  
+}
+
+
+
+.scTreecrumbNode, .scTreecrumbChevron, .scTreecrumbDivider, .scTreecrumbGo
+{
+  float: left;
+}
+
+span.scTreecrumbNodeCurrentItem
+{
+  font-weight:600;
+}
+
+div.scTreecrumbBar { 
+  border: none;
+  background-color: transparent;
+  background-image: none;  
+  height:20px;
+  padding: 0px 2px;
+  margin: 0px;
+}
+
+.scTreecrumbChevron,
+.scTreecrumbChevron:link,
+.scTreecrumbChevron:visited,
+.scTreecrumbChevron:hover,
+.scTreecrumbChevron:active {
+  text-decoration:none;
+  padding:2px;
+}
+
+.scTreecrumbChevron:hover,
+.scTreecrumbChevron:active {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+  padding:1px;
+} 
+
+.scTreecrumbChevronGlyph {
+  width:16px;
+  height:16px;
+  border:none;
+  vertical-align:middle;
+}
+
+.scTreecrumbNode,
+.scTreecrumbNode:link,
+.scTreecrumbNode:visited,
+.scTreecrumbNode:hover,
+.scTreecrumbNode:active {
+  text-decoration:none;
+  padding:3px 4px 4px 4px;
+  color: #303030;
+  white-space:nowrap;  
+}
+
+.scTreecrumbNode:hover,
+.scTreecrumbNode:active {
+  color:black;
+  border: 1px solid;  
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+  padding:2px 3px 3px 3px;
+} 
+
+.scTreecrumbNodeIcon {
+  width:16px;
+  height:16px;
+  border:none;
+  vertical-align:middle;
+}
+
+.scTreecrumbDivider { 
+  background: #999999 url(/sitecore/shell/themes/standard/images/ribbon/V2/ribbon_groupsplitter.png) no-repeat bottom right;
+  height:20px;
+  width: 2px;
+  margin:0px 8px 0px 8px;
+  display:inline;
+  vertical-align:middle;
+}
+
+.scTreecrumbGo,
+.scTreecrumbGo:link,
+.scTreecrumbGo:visited,
+.scTreecrumbGo:hover,
+.scTreecrumbGo:active {
+  text-decoration:none;
+  padding:2px 4px;
+  color: #303030;
+  white-space:nowrap;
+  margin-right:5px;
+}
+
+a.scTreecrumbGo:hover,
+a.scTreecrumbGo:active {
+  color:black;
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonHover.png) repeat-x;
+  padding:1px 3px;
+}
+
+span.scTreecrumbGo, span.scTreecrumbGo:hover
+{
+  color: #8D8D8D;
+} 
+
+.scTreecrumbGoIcon {
+  width:16px;
+  height:16px;
+  border:none;
+  vertical-align:middle;
+}
+
+/* Preview Date */
+
+.scRibbonToolbarDatePanel {
+  color:#303030;
+}
+
+.scRibbonToolbarDatePrevious,
+.scRibbonToolbarDatePrevious:link,
+.scRibbonToolbarDatePrevious:visited,
+.scRibbonToolbarDatePrevious:hover,
+.scRibbonToolbarDatePrevious:active {
+  color:black;
+  cursor:default;
+  text-decoration:none;
+  padding:2px;
+  float:left;
+}
+
+.scRibbonToolbarDatePrevious:hover,
+.scRibbonToolbarDatePrevious:active {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+  padding:1px;
+}
+
+.scRibbonToolbarDatePreviousIcon {
+  width:32px;
+  height:32px;
+  border:none;
+  vertical-align:middle;
+}
+
+a.scRibbonToolbarDateMonthSelector,
+a.scRibbonToolbarDateMonthSelector:link,
+a.scRibbonToolbarDateMonthSelector:visited,
+a.scRibbonToolbarDateMonthSelector:hover,
+a.scRibbonToolbarDateMonthSelector:active {
+  color:black;
+  cursor:default;
+  text-decoration:none;
+  padding:2px;
+  display:block;
+}
+
+a.scRibbonToolbarDateMonthSelector:hover,
+a.scRibbonToolbarDateMonthSelector:active {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+  padding:1px;
+} 
+
+.scRibbonToolbarDateDayOfWeek {
+  font:32px arial;
+  padding:0px 0px 0px 4px;
+  display:none;
+}
+
+.scRibbonToolbarDateDay {
+  font:bold 34px arial;
+  padding:0px 4px 0px 4px;
+}
+
+.scRibbonToolbarDateMonth {
+  font:bold 12px arial;
+  padding:0px 4px 0px 0px;
+}
+
+.scRibbonToolbarDateMonthCell {
+  vertical-align:bottom;
+  text-align:center;
+}
+
+.scRibbonToolbarDateYear {
+  font:bold 12px arial;
+  padding:0px 4px 0px 0px;
+}
+
+.scRibbonToolbarDateYearCell {
+  vertical-align:top;
+  text-align:center;
+}
+
+.scRibbonToolbarDateTime {
+  font:bold 20px arial;
+  padding:0px 4px 0px 8px;
+}
+
+.scRibbonToolbarDateTimeDesignator {
+  font:10px arial;
+  vertical-align:text-top;
+  padding:0px 0px 0px 2px;
+}
+
+.scRibbonToolbarDateNext,
+.scRibbonToolbarDateNext:link,
+.scRibbonToolbarDateNext:visited,
+.scRibbonToolbarDateNext:hover,
+.scRibbonToolbarDateNext:active {
+  color:black;
+  cursor:default;
+  text-decoration:none;
+  padding:2px;
+  float:left;
+}
+
+.scRibbonToolbarDateNext:hover,
+.scRibbonToolbarDateNext:active {
+  border:1px solid;
+  border-color: #ddcf9b #c1a877 #dfd8bd #c1a877;
+  background: #ffb70b url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+  padding:1px;
+}
+
+.scRibbonToolbarDateNextIcon {
+  width:32px;
+  height:32px;
+  border:none;
+  vertical-align:middle;
+}
+
+/*WebEdit Ribbon Version 2*/
+div.scRibbonToolbarStrip
+{
+  background: transparent url(/sitecore/shell/themes/standard/images/ribbon/V2/sitecore_ribbon_watermarkbackground.png) no-repeat bottom right !important;
+}
+
+div.scRibbon .chunk
+{
+  background: url(/sitecore/shell/themes/standard/images/ribbon/V2/ribbon_groupsplitter.png) no-repeat top right !important;
+  border: none !important;  
+  height: 64px !important;
+  margin: 8px 0px 4px 0px !important;
+  padding: 0px 14px 0px 12px !important;
+  text-align: center;
+}
+
+div.scRibbon .chunk:hover
+{
+  background: url(/sitecore/shell/themes/standard/images/ribbon/V2/ribbon_groupsplitter.png) no-repeat top right !important;
+}
+
+div.scRibbon .chunk .caption
+{
+  color: #5d5d5d;
+  text-align: center;    
+}
+
+div.scRibbon .chunk .panel
+{  
+  margin-bottom: 0px !important;
+  height: 50px !important;
+  text-align: left;
+}
+
+.scRibbon a.scRibbonNavigatorButtonsNormal, .scRibbon a.scRibbonNavigatorButtonsActive
+{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  position: relative !important;
+  top: 1px !important;  
+}
+
+div.scRibbon a.scRibbonNavigatorButtonsNormal:hover 
+{  
+  background: #fdfdfe url('/sitecore/shell/themes/standard/images/Content Editor Section Background.gif') repeat-x !important;
+  border: 1px solid #cccccc !important;  
+  border-bottom: none !important;
+  margin-top: 2px !important;  
+  padding: 2px 11px 5px 11px !important;
+  text-decoration: underline;  
+}
+
+html div.scRibbon a.scRibbonNavigatorButtonsNormal:active
+{
+   border: none !important;
+   background: transparent !important;
+   text-decoration: none;   
+   padding: 3px 12px 5px 12px !important;
+   margin-top: 2px !important;   
+}
+
+div.scRibbon a.scRibbonNavigatorButtonsActive
+{
+  background: transparent url(/sitecore/shell/themes/standard/images/ribbon/V2/tab_all_withshadow_left.png) repeat-y top right !important;
+  border: none;
+  color: Black;
+  padding-right: 12px !important;
+  padding-left: 12px !important;  
+}
+
+div.scRibbonToolbar, div.scRibbonToolbarStrip
+{
+  height:76px !important;
+}
+
+.lang_ja_jp div.scRibbonToolbar,
+.lang_ja_jp div.scRibbonToolbarStrip {
+  height:82px !important;
+}
+
+
+div.scRibbonToolbar
+{
+  overflow: hidden;
+}
+ 
+div.scRibbonNavigatorButtonsGroupHeader
+{
+  display: none;
+}
+
+div.scRibbon .chunk .caption a
+{
+  color: #afafaf;
+}
+
+div.scRibbon .chunk .caption a:hover, div.scRibbon .chunk .caption a:active
+{
+  color: #303030;
+  text-decoration: underline;
+}
+
+div.scRibbonGallery
+{
+  border: 1px solid #dfdfdf;
+}
+
+div.scRibbonGalleryList
+{
+  background-color: #ffffff;
+  border-left: 1px solid #afafaf;
+  border-top: 1px solid #afafaf;
+}
+
+.scRibbon .chunk .scRibbonToolbarLargeComboButtonDown
+{
+  border: 1px solid;
+  border-color: #8e8165 #9f937c #868686 #9f937c;
+}
+
+.scRibbon .scRibbonToolbarLargeComboButtonDown a.scRibbonToolbarLargeComboButtonTop, 
+.scRibbon .scRibbonToolbarLargeComboButtonDown a.scRibbonToolbarLargeComboButtonBottom
+{  
+  padding-bottom: 1px !important;
+}
+
+.scRibbon .scRibbonToolbarLargeComboButtonDown a.scRibbonToolbarLargeComboButtonTop:active, 
+.scRibbon .scRibbonToolbarLargeComboButtonDown a.scRibbonToolbarLargeComboButtonTop:hover, 
+.scRibbon .scRibbonToolbarLargeComboButtonDown a.scRibbonToolbarLargeComboButtonBottom:active,
+.scRibbon .scRibbonToolbarLargeComboButtonDown a.scRibbonToolbarLargeComboButtonBottom:hover
+{  
+  padding-bottom: 0px !important;
+}
+
+.scRibbon a.scRibbonToolbarLargeGalleryButton.scRibbonToolbarLargeGalleryButtonDown,
+.scRibbon a.scRibbonToolbarLargeGalleryButton.scRibbonToolbarLargeGalleryButtonDown:hover,
+.scRibbon a.scRibbonToolbarLargeGalleryButton.scRibbonToolbarLargeGalleryButtonDown:active
+{
+  border:1px solid;
+  border-color: #8e8165 #9f937c #868686 #9f937c;
+  background: #FEE59A url(/sitecore/shell/Themes/Standard/Images/RibbonlargeButtonDown.png) repeat-x;
+  padding: 4px 5px 1px 5px;
+}
+
+.scRibbonToolbarText
+{
+  margin-top: 0;
+  margin-left: 0;
+  height: 40px;
+  color: #333;
+}
+
+.scStatusPanel .scRibbonToolbarText
+{
+  margin:0px;  
+  overflow-y: hidden;   
+}
+
+.scRibbonToolbarText .scCrossPiece
+{
+  width: 152px;
+  height:0px;
+  display: block;
+}
+
+
+/* IE in Quirks mode */
+* html .scStatusPanel .scRibbonToolbarText
+{
+  height: 44px;
+}
+.scStatusPanel
+{
+  float: left;
+}
+
+.scStatusPanel .scTestRuns, .scStatusPanel .scTestDate
+{  
+  font-weight: bold;
+}
+
+.lang_ja_jp .scRibbon .chunk .scRibbonToolbarLargeButtonDown
+{
+  background-color:#FEE291;
+}
+
+.lang_ja_jp .scStatusPanel .scRibbonToolbarText
+{
+  line-height: 13px;
+}
+
+.ie.lang_ja_jp div.scTreecrumb
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.lang_ja_jp .scRibbonToolbarDateDay, .lang_ja_jp .scRibbonToolbarDateDayOfWeek
+{
+  line-height: 38px;
+}
+
+html body 
+{
+  overflow:hidden;
+}
+
+.scStripHeaderBage
+{
+  position: relative;
+  background-color:#e33327;
+  color: White !important;  
+  top: -4px; 
+  height: 10px;
+  line-height:10px;
+  font-size: 9px;
+  padding: 0px 2px;  
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;    
+}
+
+#ProfileCardsList
+{
+  width: auto;
+  max-width: 365px;
+  min-width: 200px;
+}
+
+* html .ie #ProfileCardsList
+{
+  max-width: 350px;
+}
+
+#ProfileCardsList .scRibbonLargeImageButton, #ProfileCardsList .scRibbonLargeImageButtonDown, #ProfileCardsList .scRibbonLargeImageButtonDisabled
+{
+  margin-right:2px;
+  margin-left:2px;
+}
+
+#ProfileCardsList .scFirstCardContainer
+{
+  float: left;  
+  background: url('/sitecore/shell/themes/standard/images/ribbon/V2/splitter.png') no-repeat left 2px; 
+  margin-left: -1px;  
+}
+
+.ie #ProfileCardsList .scFirstCardContainer
+{
+  background-position: left 1px;
+}
+
+/*
+ * The notifications.
+ */
+
+#NotificationPane
+{
+  margin: 0 1px;
+}
+
+.no-ribbon #NotificationPane
+{
+  margin: 0;
+}
+
+.scPageEditorNotification
+{
+  display: block;
+  font: normal 12px Arial;
+  padding: 6px 8px;
+}
+
+.scPageEditorNotification.Last
+{
+  border-bottom: solid 1px #CCCCCC;
+}
+
+.no-ribbon .scPageEditorNotification.Last
+{
+  border-bottom: none;
+}
+
+.no-ribbon .scPageEditorNotification.First
+{
+  border-top: solid 1px #CCCCCC;
+}
+
+.scPageEditorNotification.Error,
+.scPageEditorNotification.Error a
+{
+  background: #D93C1C;
+  color: white;
+}
+
+.scPageEditorNotification.Information,
+.scPageEditorNotification.Information a
+{
+  background: #E5EFF7;
+  color: #5089A9;
+}
+
+.scPageEditorNotification.Warning,
+.scPageEditorNotification.Warning a
+{
+  background: #FFF5D2;
+  color: #B99100;
+}
+
+.scPageEditorNotification .Icon,
+.scPageEditorNotification .Description,
+.scPageEditorNotification a.OptionTitle
+{
+  display: block;
+  float: left;
+}
+
+.scPageEditorNotification .Icon
+{
+  margin-right: 8px;
+}
+
+.scPageEditorNotification .Description
+{
+  margin-right: 16px;
+}
+
+.scPageEditorNotification a.OptionTitle
+{
+  font-weight: bold;
+  margin-left: 8px;
+  text-decoration: underline;
+}

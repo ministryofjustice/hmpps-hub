@@ -1,0 +1,32 @@
+﻿.sc-gallery-versionoption {
+  width: 100%;
+  color: #000000;
+}
+
+.sc-gallery-versionoption-content-active .sc-gallery-versionoption-number {
+  background-color: #D0EBF6; 
+}
+
+.sc-gallery-versionoption-content, .sc-gallery-versionoption-content-active {
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+}
+
+.sc-gallery-versionoption-content:hover, .sc-gallery-versionoption-content-active:hover {
+  background-color: #E3E3E3;
+  color: #000000;
+}
+
+.sc-gallery-versionoption-number {
+  float: left;
+  width: 30px;
+  text-align: center;
+}
+
+.sc-gallery-versionoption-title span{
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+
+

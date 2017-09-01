@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Sitecore.Shell.Applications.WebDAV.WebDAVBrowser>
+    <FormDialog Icon="Applications/32x32/photo_scenery.png" Header="Drag and Drop" Submittable="false"
+      Text="To add files, drag and drop them into this window. To copy files to your computer, drag them from this window. For additional options, right-click a file." ID="Dialog">
+
+      <Stylesheet Src="MediaBrowser.css" DeviceDependant="true" />
+      <CodeBeside Type="Sitecore.Shell.Applications.WebDAV.WebDAVBrowserForm,Sitecore.Client"/>
+
+      <WebFolderView runat="server" ID="DAVFrame" class="scStretch" Visible="false"/>
+      
+    </FormDialog>
+  </Sitecore.Shell.Applications.WebDAV.WebDAVBrowser>
+</control>

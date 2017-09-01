@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Debugger def:inherits="Sitecore.Shell.Applications.Debugger.DebuggerXmlControl,Sitecore.Client">
+    <Frame ID="__Debugger" Width="6" Style="position:absolute; height:expression(document.body.clientHeight.toString() + 'px'); left:expression((document.body.clientWidth-6).toString() + 'px'); top:0px;" DisableDebug="true"/>
+  </Debugger>
+</control>

@@ -1,0 +1,171 @@
+/*RadSpell Office2007 skin*/
+
+.RadSpell_Office2007
+{
+    width:460px;
+    height:310px;
+    border:1px solid #8db2e3;
+    background:#fff;
+}
+.RadSpell_Office2007 .RichTextView,
+.RadSpell_Office2007 textarea,
+.RadSpell_Office2007 select,
+.RadSpell_Office2007 .MainOptions
+{
+    margin-left:7px;
+}
+.RadSpell_Office2007,
+.RadSpell_Office2007 textarea,
+.RadSpell_Office2007 select
+{
+    font:normal 10px/16px arial,sans-serif;
+}
+/*RadSpell headings start*/
+.RadSpell_Office2007 h3
+{
+    padding:10px 15px 0;
+    background:#d5e4f2;
+    font-size:1.1em;
+    font-weight:normal;
+    color:#039;
+    line-height:22px;
+    height:23px;/*just for hasLayout and float clearing*/
+}
+.RadSpell_Office2007 h3 em
+{
+    float:left;
+    font-style:normal;
+}
+.RadSpell_Office2007 h3 span
+{
+    float:left;
+    border:1px solid #69c;
+    border-bottom:0;
+    padding:0 5px;
+    background:#fff;
+}
+.RadSpell_Office2007 h4
+{
+    margin-top:1em;
+    padding-left:7px;
+    font-size:1.1em;
+    font-weight:normal;
+}
+/*RadSpell headings end*/
+
+/*RadSpell text boxes start*/
+.RadSpell_Office2007 .RichTextView,
+.RadSpell_Office2007 textarea
+{
+    height:80px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#000 #ccc #ccc #000;
+    background:#fff;
+    font-size:1.1em;
+}
+.RadSpell_Office2007 textarea
+{
+    width:318px;/*this width + side padding = .RichTextView width + side padding*/
+    padding:3px 5px 3px 3px;
+}
+.RadSpell_Office2007 .RichTextView
+{
+    width:320px;/*this width + side padding = textarea width + side padding*/
+    padding:3px;
+    font-family:tahoma,sans-serif;
+    cursor:text;
+}
+.RadSpell_Office2007 .RichTextView strong
+{
+    color:#f00;
+    text-decoration:underline
+}
+.RadSpell_Office2007 .RichTextView em
+{
+    font-style:normal;
+    color:#000;
+}
+/*RadSpell text boxes end*/
+
+/*RadSpell combobox start*/
+.RadSpell_Office2007 select,
+.RadSpell_Office2007 .MainOptions
+{
+    width:328px;/*2px more than .RichTextView width + side padding*/
+}
+.RadSpell_Office2007 select
+{
+    height:80px;
+    font-size:1.1em;
+}
+/*the next two must be separate*/
+/*IE 7 only*/
+*:first-child+html .RadSpell_Office2007 select
+{
+    height:85px;/*5px more than select*/
+}
+/*IE 5-6 only*/
+* html .RadSpell_Office2007 select
+{
+    height:85px;/*5px more than select*/
+}
+.RadSpell_Office2007 select option
+{
+    padding:1px 3px 0;
+}
+/*RadSpell combobox end*/
+
+/*RadSpell buttons start*/
+.RadSpell_Office2007 .SpellOptions li,
+.RadSpell_Office2007 .SpellOptions a
+{
+    /*the same as background images' height*/
+    height:20px;
+    line-height:20px;
+}
+.RadSpell_Office2007 .SpellOptions li
+{
+    width:74px;
+    text-align:center;
+    font-size:1.1em;
+}
+.RadSpell_Office2007 .SpellOptions a
+{
+    color:#000;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+    text-decoration:none;
+}
+.RadSpell_Office2007 .SpellOptions a:hover
+{
+    background-position:0 -20px; /*the same as background images' height*/
+}
+.RadSpell_Office2007 .MainOptions
+{
+    margin-top:10px;
+}
+.RadSpell_Office2007 .MainOptions li
+{
+    float:right;
+    margin-left:10px;
+}
+.RadSpell_Office2007 .AuxOptions
+{
+    float:right;
+    width:95px;
+    margin-top:20px;
+}
+.RadSpell_Office2007 .AuxOptions li
+{
+    margin-top:8px;
+}
+.RadSpell_Office2007 a.disabled
+{
+    color:#666;
+}
+.RadSpell_Office2007 .SpellOptions a.disabled:hover
+{
+    background-position:0 0;
+}
+/*RadSpell buttons end*/
+

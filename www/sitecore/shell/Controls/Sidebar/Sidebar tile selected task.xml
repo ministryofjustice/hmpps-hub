@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarTileSelectedTask>           
+    <Border ID="$ID" Padding="4px 0px 4px 0px" NoWrap="true" Foreground="#EDB078" Cursor="default">
+      <ThemedImage Src="$Icon" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/><Literal Text="$Header"/>
+    </Border>
+  </SidebarTileSelectedTask>
+</control>

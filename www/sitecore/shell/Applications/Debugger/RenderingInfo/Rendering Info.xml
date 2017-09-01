@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RenderingInfo>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Debugger.RenderingInfo.RenderingInfoForm,Sitecore.Client"/>            
+      <Script Key="RenderingInfo" Type="text/javascript" Language="javascript">
+        function scOnLoad() {
+          var frame = scForm.browser.getFrameElement(window);
+          var text = frame.parentNode.nextSibling.innerHTML;
+          var output = document.getElementById("Output");
+          if (output.innerText == 'Undefined' || output.innerText == null) {
+          output.textContent = text;
+          }
+          else {
+          output.innerText = text;
+          }
+        }
+
+        Event.observe(window, 'load', scOnLoad);
+      </Script>         
+      <GridPanel Width="100%" Height="100%" Background="#f4f1e8" Border="1px solid #aca899" Fixed="true">
+        <Border Background="#c1d2ee" GridPanel.Height="24px" Style="border-bottom:1px solid #aca899" Padding="4px">
+          <b>
+            <Literal ID="Header"/>
+          </b>
+        </Border>
+
+        <Border ID="Error" Background="#ffffe0" GridPanel.Height="24px" Style="border-bottom:1px solid #aca899" Padding="4px" />
+
+        <GridPanel Width="100%" Height="100%" Fixed="true" GridPanel.Class="scFillParent" GridPanel.Height="100%">
+          <Border GridPanel.Height="100%" Class="scQuirksBoxModel" Height="100%" Style="padding:4px;">
+          <Tabstrip ID="Tabs" Height="100%">
+
+            <Tab ID="DetailsTab" Header="Details">
+              <Scrollbox ID="Details" Class="scQuirksBoxModel" Height="100%" Border="none"/>
+            </Tab>
+
+            <Tab ID="ProfileTab" Header="Profile">
+              <Scrollbox Class="scQuirksBoxModel" Height="100%" Border="none">
+                
+                <GridPanel Columns="2" CellPadding="2">
+
+                  <b>
+                    <Literal Text="Render Time:"/>
+                  </b>
+                  <Literal ID="RenderTime"/>
+                  
+                  <hr GridPanel.ColSpan="2"/>
+
+                  <b>
+                    <Literal Text="Items Read:"/>
+                  </b>
+                  <Literal ID="ItemsRead"/>
+
+                  <b>
+                    <Literal Text="Data Cache Misses:"/>
+                  </b>
+                  <Literal ID="DataCacheMisses"/>
+
+                  <b>
+                    <Literal Text="Data Cache Hits:"/>
+                  </b>
+                  <Literal ID="DataCacheHits"/>
+
+                  <hr GridPanel.ColSpan="2"/>
+
+                  <b>
+                    <Literal Text="Cache:"/>
+                  </b>
+                  <Literal ID="Cache"/>
+
+                </GridPanel>             
+
+              </Scrollbox>
+            </Tab>
+
+            <Tab ID="CachingTab" Header="Cache Settings">
+              <Border Padding="4px">
+                
+                <Checkbox ID="CacheableCheckbox" Disabled="true" Header="Cacheable"/>
+                
+                <Border Padding="0px 0px 0px 16px">
+                  <Checkbox ID="ClearOnIndexUpdateCheckbox" Disabled="true" Header="Clear on Index Update"/>
+                  <br/>
+
+                  <Checkbox ID="VaryByDataCheckbox" Disabled="true" Header="Vary by Data"/>
+                  <br/>
+
+                  <Checkbox ID="VaryByDeviceCheckbox" Disabled="true" Header="Vary by Device"/>
+                  <br/>
+
+                  <Checkbox ID="VaryByLoginCheckbox" Disabled="true" Header="Vary by Login"/>
+                  <br/>
+
+                  <Checkbox ID="VaryByParametersCheckbox" Disabled="true" Header="Vary by Parameters"/>
+                  <br/>
+
+                  <Checkbox ID="VaryByQueryStringCheckbox" Disabled="true" Header="Vary by Query String"/>
+                  <br/>
+
+                  <Checkbox ID="VaryByUserCheckbox" Disabled="true" Header="Vary by User"/>
+                </Border>
+              </Border>
+            </Tab>
+
+            <Tab ID="OutputTab" Header="Output">
+              <GridPanel Fixed="true" Width="100%" Height="100%">
+                <Memo ID="Output"  Class="scQuirksBoxModel" GridPanel.Height="100%" ReadOnly="true" Width="100%" Height="100%" Style="font:9pt courier new" Border="none" Wrap="off"/>
+              </GridPanel>
+            </Tab>
+
+            <Tab ID="SourceTab" Header="Source">
+              <GridPanel Fixed="true" Width="100%" Height="100%">
+                <Memo ID="Source" Class="scQuirksBoxModel" GridPanel.Height="100%"  ReadOnly="true" Width="100%" Height="100%" Style="font:9pt courier new" Border="none" Wrap="off"/>
+              </GridPanel>
+            </Tab>
+
+          </Tabstrip>
+          </Border>
+        </GridPanel>
+      
+      </GridPanel>
+
+    </FormPage>
+  </RenderingInfo>
+</control>

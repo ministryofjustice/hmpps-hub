@@ -1,0 +1,109 @@
+﻿  .sc-FusionChartsJourneyChart
+  {
+    position: relative;
+    padding-top: 32px;
+  }
+
+  .sc-FusionChartsJourneyChart .btn.sc-togglebutton
+  {
+    margin-left: 10px;
+  }
+
+  .sc-currentTimeRangeTitle
+  {
+    position: absolute;
+    z-index: 2000;
+    left:0;
+    top: 0;
+    width: auto;
+    height: 32px;
+  }
+
+  .sc-navigation-buttons
+  {
+    position: absolute;
+    z-index: 2000;
+    right: 0;
+    top: 0;
+    width: auto;
+    height: 32px;
+  }
+
+  .sc-navigation-arrow
+  {
+    position: absolute;
+    z-index: 2000;
+    top: 50%;
+    margin-top: -16px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer; 
+    opacity: 1;
+  }
+
+ .sc-navigation-arrow:hover
+  {
+    opacity: 0.8;
+    transition: opacity .1s;
+    -moz-transition: opacity .1s;
+    -webkit-transition: opacity .1s;
+    -o-transition: opacity .1s;
+  }
+
+   .sc-navigation-arrow.disabled,  .sc-navigation-arrow.disabled:hover{
+    opacity: 0.2;
+    cursor: default;
+    
+    transition: 0;
+    -moz-transition: 0;
+    -webkit-transition: 0;
+    -o-transition: 0;
+  }
+
+  .sc-navigation-arrow.single.left
+  {
+    left: 32px;
+    background: url("/sitecore/shell/client/Speak/Assets/img/Charting/arrow-left.png") no-repeat;
+  }
+
+  .sc-navigation-arrow.single.right
+  {
+    right: 32px;
+    background: url("/sitecore/shell/client/Speak/Assets/img/Charting/arrow-right.png") no-repeat;
+  }
+  .sc-navigation-arrow.double.left
+  {
+    left: 0;
+    background: url("/sitecore/shell/client/Speak/Assets/img/Charting/double-arrow-left.png") no-repeat;
+  }
+
+  .sc-navigation-arrow.double.right
+  {
+    right: 0;
+    background: url("/sitecore/shell/client/Speak/Assets/img/Charting/double-arrow-right.png") no-repeat;
+  }
+
+  .sc-journey-details [data-sc-id*="DrilldownButton"] {
+    margin-bottom: 15px;
+  }
+
+  .sc-zoom-buttons {
+    z-index: 2000;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+  }
+
+  .sc-zoom-buttons .sc-disabled,
+  .sc-zoom-buttons .sc-disabled:hover
+  {
+    opacity: 0.2;
+    cursor: default;
+  }
+
+  .sc-selected-segment {
+    z-index: 2000;
+    position: absolute;
+    left: 5px;
+    top: 50px;
+  }

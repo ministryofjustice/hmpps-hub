@@ -1,0 +1,53 @@
+﻿@using Sitecore
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.ActionControls
+@model RenderingModel
+@{
+  var actionControl = new ActionControl(new DatasourceBasedParametersResolver(Model.Rendering));
+
+  var userProfileKey = actionControl.GetUserProfileKey();
+  var isStateDiscarded = actionControl.GetBool("isStateDiscarded");
+  var userProfileValue = isStateDiscarded ? string.Empty : ClientHost.Context.User.Profile.GetCustomProperty(userProfileKey);
+  
+  actionControl.Attributes["data-sc-userprofilekey"] = userProfileKey;
+  actionControl.Attributes["data-sc-actionsstatus"] = string.IsNullOrEmpty(userProfileValue) ? "[]" : userProfileValue;
+  actionControl.Attributes["data-sc-data"] = actionControl.Data;
+
+  actionControl.AppendClass("sc-actionpanel");
+
+  var htmlAttributes = actionControl.HtmlAttributes;
+  var text = actionControl.Text;
+  var menu = actionControl.RenderMenu();
+
+  var noText = string.IsNullOrEmpty(text) ? "noText" : string.Empty;
+}
+<div @htmlAttributes>  
+  <ul role="menu" class="nav">
+    <li>
+      <div class="icon-group" data-bind="foreach: iconFavorites">
+        <a class="btn btn-default mainButton noText" href="javascript:;" data-bind="click: $parent.invokeFavorite, attr: { title: tooltip().length > 0 ? tooltip : text }, css: { disabled: !isEnabled() || !$parent.isEnabled() }">
+          <div class="sc-icon" data-bind="enable: isEnabled, style: { backgroundImage: iconSrc, backgroundPosition: iconBackgroundPosition }">
+          </div>
+        </a>
+      </div><div class="btn-group" data-bind="foreach: buttonFavorites">
+      @*!!! Please leave NO SPACE BETWEEN THE 2 DIVs, see here: http://css-tricks.com/fighting-the-space-between-inline-block-elements/ !!!*@
+      <button class="btn btn-default" href="javascript:;" data-toggle="tooltip" data-bind="click: $parent.invokeFavorite, attr: { title: tooltip().length > 0 ? tooltip : text }, enable: isEnabled() && $parent.isEnabled()">
+        <span data-bind="text: text"></span>
+      </button>
+    </div>
+  </li>
+  <li role="menuitem">
+    <div class="dropdown" data-bind="click:invokeAction">
+      <a class="btn btn-default mainButton @noText" data-bind="click: toggleDropdown, clickBubble: false, css: { disabled: !isEnabled() }">
+        <span class="dropdown-text" data-bind="text:text">@text</span>
+        <div class="sc-dropdownbutton-toggler">
+          <div class="sc-dropdownbutton-chevron" data-bind="css: { 'up': isOpen() }">
+          </div>
+        </div>
+      </a>
+
+      @Html.Raw(menu)
+    </div>
+  </li>
+</ul>
+</div>

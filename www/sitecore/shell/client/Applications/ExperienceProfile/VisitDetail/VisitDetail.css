@@ -1,0 +1,106 @@
+﻿body.sc {
+  min-width: 700px;
+  overflow-x: auto;
+}
+
+.sc-globalHeader-content,
+.sc-applicationHeader-content {
+  max-width: 100%;
+}
+
+.sc-text-label, .sc-text-smalltitle, .sc-text-largetitle {
+    display: block;
+}
+
+div[data-sc-id=VisitDetailBorder], div[data-sc-id=VisitDialogStatsBorder] {
+    margin-top: 16px;
+}
+
+img[data-sc-id=VisitDialogPhoto] {
+  float: left;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+div[data-sc-id=VisitDialogStatsInnerRow] > div > span {
+    color: #696969;
+    font-size: 1.3em;
+}
+
+div[data-sc-id=VisitDialogStatsInnerRow] > div > *:nth-child(1) {
+  width: 100%;
+}
+
+div[data-sc-id=VisitDialogStatsInnerRow] > div > *:nth-child(2),
+div[data-sc-id=VisitDialogStatsInnerRow] > div > span[data-sc-id=VisitDialogPageviews] {
+    font-size: 2em;
+}
+
+div[data-sc-id=VisitDialogStatsInnerRow] > div > label[data-sc-id=VisitDialogTouchpointViewsTitle] {
+    font-size: 1em !important;
+}
+
+div[data-sc-id=VisitDialogStatsBorder] > img {
+    float: left;
+}
+
+div[data-sc-id=VisitDialogStatsBorder] > div, div[data-sc-id=VisitDialogStatsBorder] > div[data-sc-id=CampaignBorder] {
+    margin-left: 26px;
+    margin-bottom: 6px !important;
+}
+
+div[data-sc-id=VisitDialogMessageBar] {
+    margin-bottom: 20px;
+}
+
+.sc-accordion {
+  margin-top: 20px;
+}
+
+.sc-accordion .sc-accordion-header table .sc-accordion-header-chevron a {
+  display: none;
+}
+
+.sc-accordion .sc-table {
+  border: none;
+}
+
+div[data-sc-id=PagesInVisitAccordion],
+div[data-sc-id=InternalSearchAccordion],
+div[data-sc-id=DialogGoalsAccordion] {
+  margin-top: 30px;
+}
+
+div.sc-advancedExpander[data-sc-id=PagesInVisitAccordion] .sc-advancedExpander-body,
+div.sc-advancedExpander[data-sc-id=InternalSearchAccordion] .sc-advancedExpander-body,
+div.sc-advancedExpander[data-sc-id=DialogGoalsAccordion] .sc-advancedExpander-body
+{
+  border: none;
+}
+
+.sc-applicationHeader {
+  padding-top: 0;
+}
+
+.sc-applicationHeader-row1:after {
+  top: 0;
+}
+
+@media (min-width: 0px) and (max-width: 992px) {
+  .col-md-5[data-sc-id=VisitDialogContactColumn] {
+    width: 41%;
+  }
+
+  .col-md-2[data-sc-id=VisitDialogValueColumn] {
+    width: 16.67%;
+  }
+}
+
+div[data-sc-id=VisitDialogContactBorder] span,
+div[data-sc-id=VisitDialogContactBorder] a
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}

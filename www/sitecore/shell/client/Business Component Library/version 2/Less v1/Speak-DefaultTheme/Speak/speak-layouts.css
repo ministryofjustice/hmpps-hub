@@ -1,0 +1,385 @@
+﻿*[data-sc-cloak] {
+  visibility: hidden !important;
+}
+.sc-page .sc-start {
+  background: #f0f0f0;
+}
+.sc-page .sc-dashboard {
+  background: #f0f0f0;
+}
+.sc-page .sc-list {
+  background: #f0f0f0;
+}
+.sc-page .sc-task {
+  background: #f0f0f0;
+}
+.sc body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+.sc-globalHeader {
+  color: #ffffff;
+  border-color: #2b2b2b;
+  background-color: #2b2b2b;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+.sc-globalHeader-content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sc-globalHeader-navigationToggler {
+  float: left;
+}
+.sc-globalHeader-startButton {
+  float: left;
+}
+.sc-globalHeader-loginInfo {
+  position: absolute;
+  right: -3px;
+}
+.sc-globalFooter {
+  clear: both;
+  line-height: 18px;
+  color: #121212;
+  border-color: #969696;
+  background-color: #f7f7f7;
+  height: 50px;
+  padding: 10px 15px;
+  width: 100%;
+  z-index: 9999;
+}
+.sc-applicationHeader {
+  position: relative;
+  color: #121212;
+  width: 100%;
+  background-color: #ca241c;
+  padding-top: 50px;
+}
+.sc-applicationHeader-content {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 15px;
+  max-width: 1200px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 9;
+  clear: both;
+}
+.sc-applicationHeader-row1 {
+  height: 90px;
+  background-color: #ca241c;
+  background: url("/sitecore/shell/client/Speak/Assets/img/Speak/Layouts/breadcrumb_red_bg.png");
+  background-repeat: no-repeat;
+}
+.sc-applicationHeader-row1:after {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  display: block;
+  background: url("/sitecore/shell/client/Speak/Assets/img/Speak/Layouts/logo_spiral.png") center right;
+  background-repeat: no-repeat;
+  width: 113px;
+  height: 90px;
+  content: " ";
+}
+.sc-applicationHeader-row2 {
+  height: 60px;
+  background-color: #e3e3e3;
+  padding: 10px 15px;
+  z-index: 9;
+  padding-top: 12px;
+}
+.sc-applicationHeader .sc-applicationHeader-breadCrumb {
+  position: relative;
+}
+.sc-applicationHeader .sc-applicationHeader-title {
+  font-size: 2em;
+  color: #ffffff;
+  float: left;
+}
+.sc-applicationHeader .sc-applicationHeader-back {
+  float: left;
+}
+.sc-applicationHeader .sc-applicationHeader-back > .btn {
+  margin-right: 10px;
+}
+.sc-applicationHeader .sc-applicationHeader-contextSwitcher {
+  float: left;
+}
+.sc-applicationHeader .sc-applicationHeader-actions {
+  float: right;
+}
+.sc-applicationHeader .sc-applicationHeader-buttons > *,
+.sc-applicationHeader .sc-applicationHeader-actions > * {
+  display: inline-block;
+}
+.sc-applicationHeader .sc-applicationHeader-buttons .sc-actionpanel,
+.sc-applicationHeader .sc-applicationHeader-actions .sc-actionpanel {
+  /*--position*/
+  height: 21px;
+}
+.sc-applicationHeader .sc-applicationHeader-buttons .sc-actionpanel ul.nav > li,
+.sc-applicationHeader .sc-applicationHeader-actions .sc-actionpanel ul.nav > li {
+  padding-right: 0;
+}
+.sc-applicationContent {
+  color: #121212;
+  border-color: #cccccc;
+  background-color: #f0f0f0;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sc-applicationContent-navigation {
+  color: #121212;
+  border-color: #474747;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-color: #474747;
+}
+.sc-applicationContent-main {
+  color: #121212;
+  border-color: #cccccc;
+  background-color: #f0f0f0;
+  padding: 15px;
+}
+.sc-applicationContent-info {
+  color: #121212;
+  border-color: #cccccc;
+  background-color: #f0f0f0;
+  padding: 15px;
+}
+html.sc-dialogpage {
+  height: 100%;
+  background: #ffffff;
+}
+html.sc-dialogpage body {
+  background-color: inherit;
+}
+.sc-dialogHeader {
+  color: #ffffff;
+  border: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #2b2b2b;
+  height: 60px;
+  padding: 10px 0;
+}
+/*OT issue #430149 fix (IE11)*/
+_:-ms-fullscreen,
+:root header.sc-dialogHeader .sc-dialogHeader {
+  position: absolute;
+}
+.sc-dialogHeader-content {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+  line-height: 40px;
+}
+.sc-dialogFooter {
+  background-color: #e3e3e3;
+  height: 60px;
+  padding: 12px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border: 1px solid #cccccc;
+  border-left: 0;
+  border-right: 0;
+}
+.sc-dialogFooter-content {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+}
+.sc-dialogHeader-content {
+  position: relative;
+}
+.sc-dialogHeader-navigation {
+  float: left;
+}
+.sc-dialogContent {
+  color: #121212;
+  border-color: #cccccc;
+  background-color: inherit;
+  padding: 0 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.sc-dialogContent .sc-navigation-menu {
+  top: 60px;
+}
+.sc-dialogContent .sc-navigation-content {
+  padding-top: 0;
+}
+.sc-dialogContent.noFooter {
+  margin-bottom: 0;
+}
+.sc-dialogContent-title {
+  color: #ffffff;
+  background-color: #dc271e;
+  padding: 0 15px;
+  height: 60px;
+  line-height: 50px;
+}
+.sc-dialogContent-toolbar {
+  background-color: #ffffff;
+  padding: 12px 15px;
+  height: 60px;
+  line-height: 36px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 1px;
+}
+.sc-dialogContent-toolbar .sc-dialogContent-toolbar-back {
+  float: left;
+}
+.sc-dialogContent-toolbar .sc-dialogContent-toolbar-back > .btn {
+  margin-right: 10px;
+}
+.sc-dialogContent-toolbar .sc-dialogContent-toolbar-contextSwitcher {
+  float: left;
+}
+.sc-dialogContent-toolbar .sc-dialogContent-toolbar-actions {
+  float: right;
+}
+.sc-dialogContent-main {
+  color: #121212;
+  border-color: #cccccc;
+  background-color: inherit;
+  padding: 15px;
+}
+.row.sc-contentRowFix {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sc-dialogContent-navigation {
+  color: #121212;
+  border-color: #474747;
+  padding: 0;
+  background-color: #474747;
+}
+.sc-dialogHeader-title {
+  font-size: 1.5em;
+  width: 65%;
+  display: inline-block;
+}
+.sc-dialogHeader-actions {
+  position: absolute;
+  right: 15px;
+  width: 15%;
+}
+.sc-dialogHeader-close {
+  position: absolute;
+  right: 15px;
+}
+.sc-dialogFooter-content-buttons {
+  float: right;
+  width: 100%;
+  text-align: right;
+}
+.sc-frameworkApplicationHeader {
+  color: #ffffff;
+  border-color: #969696;
+  background-color: #2b2b2b;
+  height: 50px;
+  padding: 10px 15px;
+  line-height: 30px;
+}
+.sc-navigation-menu {
+  position: fixed;
+  width: 250px;
+  top: 50px;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #ffffff;
+  z-index: 1;
+}
+.sc-navigation-wrapper {
+  position: relative;
+}
+.sc-navigation-content {
+  width: 100%;
+  padding: 0;
+  padding-left: 250px;
+}
+@media (max-width: 768px) {
+  .sc-navigation-content {
+    padding-left: 0;
+  }
+  .sc-navigation-menu {
+    visibility: hidden;
+    width: 0;
+  }
+  .sc-navigation-wrapper.active {
+    position: relative;
+  }
+  .sc-navigation-wrapper.active .sc-navigation-menu {
+    visibility: visible;
+    width: 250px;
+  }
+  .sc-navigation-wrapper.active .sc-navigation-content {
+    padding-left: 250px;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background: #969696;
+  -webkit-box-shadow: none;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #969696;
+}
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+}
+body {
+  -ms-overflow-style: scrollbar;
+}
+.sc-advancedExpander-header-actionbar .sc-actionpanelpadding-right ul.nav {
+  left: auto;
+  float: right;
+}
+.sc-advancedExpander-header-actionbar .sc-actionpanelpadding-right ul.nav > li {
+  height: 40px;
+}
+.sc-fullWidth .sc-globalHeader-content,
+.sc-fullWidth .sc-applicationHeader-content,
+.sc-fullWidth .sc-applicationContent,
+.sc-fullWidth .sc-dialogHeader-content,
+.sc-fullWidth .sc-dialogFooter-content,
+.sc-fullWidth .sc-dialogContent {
+  max-width: 100%;
+}

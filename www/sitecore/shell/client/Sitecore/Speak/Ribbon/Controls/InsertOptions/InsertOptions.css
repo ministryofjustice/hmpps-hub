@@ -1,0 +1,13 @@
+﻿.sc-insert-items {
+  padding: 1em;
+  background-color: #ffffff;
+}
+.sc-insert-items:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+

@@ -1,0 +1,38 @@
+﻿.wf-highlight
+{
+  font-weight: 600;
+}
+
+.wf-statebox .user-link
+{
+  font-weight: 600;
+}
+
+.item-name
+{
+}
+
+#Additional
+{
+  margin: 2em 0 0 0;
+}
+
+#Additional h3
+{
+  font-size: 100%;
+  color: #808080;
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+
+#Additional ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#Additional ul li
+{
+  margin-bottom: 0.5em;
+}

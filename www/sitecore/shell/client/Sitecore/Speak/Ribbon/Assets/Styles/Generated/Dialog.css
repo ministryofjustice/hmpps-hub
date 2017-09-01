@@ -1,0 +1,88 @@
+.sc-dialog-top {
+  padding: .5em 1em;
+  background: #e6e6e6;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f7f7f7), color-stop(1, #ebebeb));
+  background: -ms-linear-gradient(bottom, #f7f7f7, #ebebeb);
+  background: -moz-linear-gradient(center bottom, #f7f7f7 0%, #ebebeb 100%);
+  background: -o-linear-gradient(#ebebeb, #f7f7f7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#f7f7f7', GradientType=0);
+  border-bottom: 1px solid #cccccc;
+}
+.sc-dialog-top:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-dialog-top .sc-dialog-icon {
+  float: left;
+  padding: .5em;
+  width: 3.2em;
+}
+.sc-dialog-top .sc-dialog-title {
+  float: left;
+  width: 80%;
+}
+.sc-dialog-controls {
+  padding: .5em 1em;
+  background: #f2f4f8;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fcfcfc), color-stop(1, #eef1f6));
+  background: -ms-linear-gradient(bottom, #fcfcfc, #eef1f6);
+  background: -moz-linear-gradient(center bottom, #fcfcfc 0%, #eef1f6 100%);
+  background: -o-linear-gradient(#eef1f6, #fcfcfc);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eef1f6', endColorstr='#fcfcfc', GradientType=0);
+  border-top: 1px solid #cccccc;
+}
+.sc-dialog-controls:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-dialog-controls .sc-label {
+  width: 10%;
+}
+.sc-dialog-controls .sc-input-text {
+  width: 90%;
+  float: right;
+}
+.sc-dialog-controls .sc-dialog-buttons {
+  padding: .5em;
+}
+.sc-dialog-controls .sc-dialog-buttons:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-dialog-controls .sc-dialog-buttons .sc-ok-button,
+.sc-dialog-controls .sc-dialog-buttons .sc-cancel-button {
+  float: right;
+  border: none;
+  color: #f2f5fa;
+  border-radius: 2px;
+  padding: .5em 2em;
+  margin: 0 0 0 1em;
+}
+.sc-dialog-controls .sc-dialog-buttons .sc-ok-button {
+  background: #d93c1c;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #9c1902), color-stop(1, #d93c1c));
+  background: -ms-linear-gradient(bottom, #9c1902, #d93c1c);
+  background: -moz-linear-gradient(center bottom, #9c1902 0%, #d93c1c 100%);
+  background: -o-linear-gradient(#d93c1c, #9c1902);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93c1c', endColorstr='#9c1902', GradientType=0);
+}
+.sc-dialog-controls .sc-dialog-buttons .sc-cancel-button {
+  background: #a4a4a4;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #727272), color-stop(1, #a4a4a4));
+  background: -ms-linear-gradient(bottom, #727272, #a4a4a4);
+  background: -moz-linear-gradient(center bottom, #727272 0%, #a4a4a4 100%);
+  background: -o-linear-gradient(#a4a4a4, #727272);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a4a4a4', endColorstr='#727272', GradientType=0);
+}

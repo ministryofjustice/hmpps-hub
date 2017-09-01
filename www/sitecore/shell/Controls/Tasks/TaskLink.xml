@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <TaskLink>
+    <Border ID="$ID" Class="scTaskOption" RollOver="true" Width="180px" Style="display:inline" Click="$OnClick">
+      <ThemedImage Src="$Icon" Width="32" Height="32" Margin="0px 4px 0px 4px" Align="absmiddle"/>
+      <Literal Text="$Header"/>
+      <def:Placeholder/>
+    </Border>
+  </TaskLink>
+</control>

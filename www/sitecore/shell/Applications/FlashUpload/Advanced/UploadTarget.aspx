@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadTarget.aspx.cs" Inherits="Sitecore.Shell.Applications.FlashUpload.Advanced.UploadTarget" %>

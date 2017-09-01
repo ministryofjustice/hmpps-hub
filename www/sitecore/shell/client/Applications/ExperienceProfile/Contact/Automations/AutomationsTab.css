@@ -1,0 +1,8 @@
+﻿div[data-sc-id=MoreAutomationsBorder] {
+  border-top: 1px solid #ccc !important;
+}
+
+div.sc-advancedExpander[data-sc-id=Accordion] .sc-advancedExpander-body
+{
+  border: none;
+}

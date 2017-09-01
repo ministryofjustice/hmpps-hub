@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <SecurityEditorLegend>
+    <Border Class="SecurityLegend">
+      <Border>
+        <Literal Text="Key:" />
+      </Border>
+
+      <Border>
+        <ThemedImage Src="Images/Security/large_allow_disabled.gif" Width="16" Height="16" Align="middle"/>
+        <ThemedImage Src="Images/Security/large_deny_disabled.gif" Width="16" Height="16" Align="middle" Margin="0px 5px 0px 0px" />
+        <Literal Text="Inherited" />
+      </Border>
+
+      <Border>
+        <ThemedImage Src="Images/Security/large_allow_enabled.gif" Width="16" Height="16" Align="middle"/>
+        <ThemedImage Src="Images/Security/large_deny_disabled.gif" Width="16" Height="16" Align="middle" Margin="0px 5px 0px 0px" />
+        <Literal Text="Allowed" />
+      </Border>
+
+      <Border>
+        <ThemedImage Src="Images/Security/large_allow_disabled.gif" Width="16" Height="16" Align="middle"/>
+        <ThemedImage Src="Images/Security/large_deny_enabled.gif" Width="16" Height="16" Align="middle" Margin="0px 5px 0px 0px" />
+        <Literal Text="Denied" />
+      </Border>
+
+      <Border>
+        <div style="display:inline-block; margin:0 5px 0 0; vertical-align: middle">
+          <ThemedImage Src="Images/Security/large_allow_disabled.gif" Width="16" Height="16" Align="middle"/>
+          <ThemedImage Src="Images/Security/large_deny_disabled.gif" Width="16" Height="16" Align="middle" />
+          <br/>
+          <ThemedImage Src="Images/Security/large_allow_enabled.gif" Width="16" Height="16" Align="middle"/>
+          <ThemedImage Src="Images/Security/large_deny_disabled.gif" Width="16" Height="16" Align="middle" />
+        </div>
+        <Literal Text="Item vs. Descendant Right" />
+      </Border>
+
+      <Border>
+        <ThemedImage Src="Images/Security/large_allow_enabled_d.gif" Width="16" Height="16" Align="middle"/>
+        <ThemedImage Src="Images/Security/large_deny_disabled.gif" Width="16" Height="16" Align="middle" Margin="0px 5px 0px 0px" />
+        <Literal Text="Protected" />
+      </Border>
+
+      <Border>
+        <ThemedImage Src="Images/Security/NA.gif" Width="32" Height="16" Align="middle" Margin="0px 5px 0px 0px" />
+        <Literal Text="Not Applicable" />
+      </Border>      
+    </Border>
+  </SecurityEditorLegend>
+</control>

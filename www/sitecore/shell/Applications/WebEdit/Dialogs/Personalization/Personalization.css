@@ -1,0 +1,377 @@
+﻿/*Common*/
+table.scDialogContentContainer
+{
+  padding-top:0px;
+}
+
+.wk table.scDialogContentContainer
+{
+  padding-bottom: 2px;
+}
+
+.scDialogContentContainer {
+  padding: 12px;
+  padding-right: 6px;
+}
+
+.top-row {
+  background-color: #e3e3e3; 
+  height: 60px;
+}
+
+div.scEditorSectionCaptionExpanded,
+div.scEditorSectionCaptionCollapsed {
+  line-height: 45px;
+}
+
+div.scEditorSectionPanel {
+  margin: 0;
+}
+
+#ComponentPersonalization {
+  margin-top: 6px;
+  display:none;
+}
+ 
+#ComponentPersonalization + label
+{
+  background: url(/sitecore/shell/~/icon/office/48x48/switch3_off.png.ashx) no-repeat left center;
+  height: 48px;
+  display:inline-block;
+  padding: 0;
+  padding-left: 58px;
+  line-height: 48px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+#ComponentPersonalization + label + label {
+  display: none;
+}
+    
+#ComponentPersonalization:checked + label {
+  display: none;
+}
+    
+#ComponentPersonalization:checked + label + label
+{
+  background: url(/sitecore/shell/~/icon/office/48x48/switch3_on.png.ashx) no-repeat left center;
+  height: 48px;
+  display:inline-block;
+  padding: 0;
+  padding-left: 58px;
+  line-height: 48px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+#RulesContainer
+{
+  padding-top: 0px !important;
+  padding-right: 6px !important;
+}
+
+.rule-body
+{
+  border: 1px solid #e5e5e5;
+}
+
+.rule-body
+{
+  width: 100%;
+}
+
+.rule-body td
+{
+  padding: 8px;
+  vertical-align: top;
+}
+
+.rule-body td.left-column
+{
+  padding-left: 14px;  
+}
+
+.left-column .scConditionsActions
+{
+  padding-left: 0px !important;
+  border-bottom: none;
+}
+
+.scLine {
+  padding-left: 0px;
+  padding-top: 0px;
+  position: static !important;
+}
+
+.right-column
+{
+  width: 420px;
+  background-color: #F7F7F7;
+  padding: 10px;
+}
+
+.rule-body td.right-column
+{
+  padding: 10px;
+  padding-top: 16px;
+}
+
+#non-default-container .panel-header
+{
+  padding-left: 1px;
+}
+
+/* Conditions */
+.condition-header
+{
+  font-weight: 600;
+}
+
+.edit-button
+{
+  float: right;
+  margin-right: 0;
+}
+
+.add-rule-button{
+  background-image: url(/sitecore/shell/~/icon/office/24x24/plus.png.ashx);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #cccccc;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  margin-top: 14px;
+  margin-right: 10px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.add-rule-button:hover {
+  background-image: url(/sitecore/shell/~/icon/office/24x24/plus.png.ashx);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.add-rule-button:focus {
+  outline: 0;
+}
+
+.rule-container {
+  margin-bottom: 15px;
+}
+
+.condition-container
+{
+  margin-top: 8px;
+}
+
+.condition-container.default
+{
+  margin-top: 20px;
+}
+
+.condition-container .scRule, .condition-container hr
+{
+  display: none;
+}
+
+.condition-container .Draggable
+{
+  white-space: normal !important;
+}
+
+/* Menu */
+#actionsMenu
+{
+  position: absolute;
+}
+
+/* Actions */
+.hide-rendering
+{ 
+  margin-bottom: 12px;
+  margin-right: 16px;
+  margin-left: 12px;
+}
+
+.ie .hide-rendering input, .ie #ComponentPersonalization
+{
+  vertical-align:middle;
+}
+
+.hide-rendering .section-header
+{
+  font-weight: normal;
+}
+
+.section-header
+{
+  font-weight: normal;
+}
+
+.display-off .section-header
+{
+  color: #666666;
+}
+
+.item-picker
+{
+  border: 1px solid;
+  background-color: White;
+  height: 34px;
+  line-height: 34px;
+  background-position: 2px 3px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.set-rendering .item-picker, .item-picker.not-set
+{
+  background-image: none !important;
+  padding-left: 4px;  
+}
+
+.default-values .item-picker
+{
+  font-style: italic;
+  color: #666666;
+}
+
+.display-off .item-picker
+{
+  background-color: #f1f1f1;
+  color: #999999;
+}
+
+.display-off .item-picker
+{
+  border-color: #cdcdcd;
+}
+
+.ff .item-picker
+{
+  height: 34px;
+  line-height: 34px;
+}
+
+.pick-button, .display-off .pick-button:hover
+{ 
+  width: 35px;
+  text-align: center;
+  height: 36px;
+  float: right;
+  border: none;
+  border-color: #999999;
+  background-color: #e3e3e3; 
+  outline: none;
+  margin-left: 2px;
+}
+ 
+.default-values .reset-button
+{
+  display: none;
+}
+
+.reset-button,  .display-off .reset-button:hover
+{
+  width: 16px;
+  height: 36px;  
+  background: transparent url('/sitecore/shell/Themes/Standard/Images/Progress/globalsearch_close.png') no-repeat center center;
+  outline: none;
+  text-decoration: none;
+  margin-left: 2px;
+  cursor: default;
+  float: right;
+}
+
+.reset-button:hover
+{
+  background-image: url('/sitecore/shell/Themes/Standard/Images/Progress/globalsearch_close_H_blue.png');
+  cursor: pointer;  
+}
+
+.pick-button:hover
+{  
+  background-color: #D5EFFC;
+  border-left: 1px solid #99DEFD;
+  text-decoration: none;
+}
+
+.display-off .pick-button, .display-off .pick-button:hover
+{
+  cursor: default;
+  border-color: #cdcdcd;
+}
+
+.thumbnail-container
+{
+  border: 1px solid;
+  border-bottom: none;
+  height: 136px;
+  margin-top: 5px;
+  background-color: White;
+  background-position: center center;
+  background-repeat: no-repeat;   
+}
+
+.display-off .thumbnail-container
+{
+  opacity: 0.35;
+  filter: alpha(opacity=35);   
+}
+
+.thumbnail-container, .item-picker
+{
+  border-color: #c7c7c7;
+}
+
+.set-rendering, .set-datasource
+{
+  margin-top: 14px;
+  margin-right: 16px;
+  margin-left: 10px;
+  clear: both;
+}
+
+.set-datasource .item-picker {
+  margin-top: 5px;
+}
+
+.drag-over
+{
+  filter: alpha(opacity=100);
+  opacity: 1.0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background: #969696;
+  -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #969696;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+}

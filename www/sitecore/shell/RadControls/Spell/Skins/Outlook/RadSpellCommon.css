@@ -1,0 +1,53 @@
+.RadSpell *
+{
+    margin:0;
+    padding:0;
+}
+.RadSpell ul
+{
+    list-style-type:none;
+}
+.RadSpell .RichTextView
+{
+    overflow:auto;/*creates scrollbars if some words are too long*/
+}
+.RadSpell textarea
+{
+    display:none;
+    overflow:auto;/*hides unnecessary scrollbars in IE*/
+}
+/*the next two must be separate*/
+/*they fix the hidden textarea position when it becomes visible*/
+/*IE 7 only*/
+*:first-child+html .RadSpell textarea
+{
+    margin-top:-1px;
+    margin-bottom:-1px
+}
+/*IE 5-6 only*/
+* html .RadSpell textarea
+{
+    margin-top:-1px;
+    margin-bottom:-1px
+}
+.RadSpell .SpellOptions a
+{
+    display:block;
+}
+.RadSpell .SpellOptions a.disabled
+{
+    cursor:no-drop;
+}
+
+/*float clearing start*/
+.RadSpell h3:after,
+.RadSpell:after,
+.RadSpell .SpellOptions:after
+{
+    content:".";
+    display:block;
+    clear:both;
+    height:0;
+    visibility:hidden;
+}
+/*float clearing end*/

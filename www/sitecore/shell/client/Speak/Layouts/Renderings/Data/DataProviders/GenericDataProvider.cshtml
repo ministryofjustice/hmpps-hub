@@ -1,0 +1,26 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Charts.Legacy
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@using Sitecore.Web.UI.Controls.Data
+@model RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  userControl.Requires.Script("/sitecore/shell/client/Speak/Layouts/Renderings/Data/DataProviders/GenericDataProvider.js");
+  
+  var cssClass = "sc-GenericDataProvider";
+  
+  DataProviderHelper.SetAttributes(userControl);
+
+  var serverSorting = userControl.GetString("ServerSorting");
+  var pageSize = userControl.GetString("PageSize");
+  var pageNumber = userControl.GetString("PageNumber");
+  userControl.Attributes["data-sc-serverreturn"] = ChartHelper.GetTranslation("{884B9AA5-E7A8-457C-B251-8AEA1802D082}", "Server returned");  
+  userControl.Attributes["data-sc-serversorting"] = serverSorting;  
+  userControl.Attributes["data-sc-pagesize"] = pageSize;
+  userControl.Attributes["data-sc-pagenumber"] = pageNumber;
+  
+  var htmlAttributes = userControl.HtmlAttributes;
+  userControl.AppendClass(cssClass);
+}
+<script type='text/x-sitecore-genericdataprovider' @htmlAttributes> </script>

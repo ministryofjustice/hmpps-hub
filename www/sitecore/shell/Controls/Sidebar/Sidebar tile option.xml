@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarTileOption>           
+    <Border Class="scRollOver" ID="$ID" Padding="4px 0px 4px 0px" Click="$Click" RollOver="true" TabStop="true" RenderAs="Literal">
+      <li style="margin:0px 0px 0px 8px"><Literal Text="$Header"/></li>
+    </Border>
+  </SidebarTileOption>
+</control>

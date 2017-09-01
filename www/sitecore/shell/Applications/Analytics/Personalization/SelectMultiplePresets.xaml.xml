@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Analytics.Personalization.SelectMultiplePresets x:inherits="Sitecore.Shell.Applications.Analytics.Personalization.SelectMultiplePresets,Sitecore.Marketing.Client">
+    <Sitecore.Controls.DialogPage runat="server" Header="Select Profile Cards" Icon="BusinessV2/32x32/chart_radar.png" Text="Select the profile cards whose values you want to assign to the current page.">
+      <x:register assembly="Sitecore.Marketing.Client" namespace="Sitecore.Shell.Applications.Analytics.Personalization" />
+      <x:register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" />
+
+      <Stylesheet Src="Grid.css" DeviceDependant="true" runat="server" />
+      <Stylesheet Src="Content Manager.css" DeviceDependant="true" runat="server" />
+      <Stylesheet Src="/sitecore/shell/Applications/Analytics/Personalization/PresetList.css" runat="server"/>
+      <Script Src="/sitecore/shell/Applications/Analytics/Personalization/PresetList.js" runat="server"/>
+      <Script Src="/sitecore/shell/Applications/Analytics/Personalization/Tooltip.js" runat="server"/>
+
+      <style>
+        .actionButton {
+        width:90px;
+        margin:0px 5px 10px 5px;
+        }
+
+        #PresetButtons {
+        border-top: 1px solid #A0A0A0;
+        }
+
+        .presetCardContainer {
+        border-bottom: 1px solid #e3e3e3;
+        }
+
+        .hoveredPresetCardContainer {
+        background-color: #e3e3e3;
+        }
+
+        .selectedPresetCardContainer {
+        background-color: #D0EBF6;
+        }
+
+        #leftBlockContainer {
+          height:250px;
+        }
+
+        #leftBlockContainer > div {
+        width:100%;
+        height:100%;
+        border:1px solid #d4d4d4;
+        background-color:white;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+        .SelectedPresetsOuterContainer {
+        border:1px solid #e3e3e3;
+        height: calc(100% - 33px);
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+        .SelectedPresetsContainer {
+        width:100%;
+        height: 100%;
+        overflow-y:auto;
+        vertical-align:top;
+        background-color:White;
+        }
+
+      </style>
+
+      <RadScriptManager runat="server"/>
+      <script type="text/javascript">
+        var presetList = new Sitecore.PresetList('PresetsContainer');
+      </script>
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+      <RadToolTipManager runat="server" ID="ToolTipManager"/>
+      <div class="selectPresetContainer">
+        <div class="presets col2">
+          <Literal Text="Profile Cards" class="title" runat="server" />
+          <div id="PresetsContainer" class="presetList" >
+            <RadListBox ID="Presets" runat="server">
+              <Items>
+              </Items>
+            </RadListBox>
+          </div>
+        </div>
+
+        <div class="presetMoveButtons">
+          <div>
+            <Button class="actionButton scButton" id="AddButton" runat="server">
+              <Literal runat="server" Text="Add"/>
+            </Button>
+            <Button class="actionButton scButton" id="RemoveButton" runat="server">
+              <Literal runat="server" Text="Remove"/>
+            </Button>
+          </div>
+        </div>
+        <div class="selectedPresets col2">
+          <Literal Text="Profile Card Details" class="title" runat="server" />
+          <div class="SelectedPresetsOuterContainer">
+            <div id="SelectedPresetsContainer" runat="server" class="SelectedPresetsContainer"></div>          	
+          </div>
+        </div>
+        <div class="presetValues">
+          <div>
+            <Literal Text="Profile Card Values" runat="server" class="title" />
+            <Button runat="server" id="CustomizeButton" click="CustomizeProfile" style="float:right;">
+              <Literal runat="server" Text="Customize"/>
+            </Button>
+          </div>
+          <div style="margin:0;padding:0;height:100%;width:100%;overflow-y:auto;overflow-x:hidden;" class="" id="rightContainer">
+            <table border="0" cellspacing="0" cellpadding="0" style="padding:0; marging:0;" width="100%">
+              <tr>
+                <td valign="top" id="CardContainer" runat="server" style="padding-top:5px; margin:0;width:100%;display:none;">
+                  <div id="CustomizationCardContainer" runat="server" style="height:100%;">
+                    <CustomizationProfileCard runat="server" id="CustomizationPresetCard" CssClass="PresetCustomizationCard" Height="150px" Width="100%"/>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top" align="center" style="width:100%;">
+                  <div id="leftBlockContainer">
+                    <div id="ChartContainer" runat="server">
+                      <RadarChart runat="server" id="PersonalizationRadarChart" CssClass="RadarChart"></RadarChart>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </Sitecore.Controls.DialogPage>
+  </Sitecore.Shell.Applications.Analytics.Personalization.SelectMultiplePresets>
+
+</xamlControls>

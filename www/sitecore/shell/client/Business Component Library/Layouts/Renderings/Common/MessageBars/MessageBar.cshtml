@@ -1,0 +1,202 @@
+﻿@using System.Web.Mvc.Html
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Serialization
+@using Sitecore
+@using Sitecore.Data
+@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@functions{
+
+  internal static List<MessageAction> GetActions(Item item)
+  {
+    var actionsField = (MultilistField)item.Fields["Actions"];
+    var actionItems = actionsField.GetItems().Select(x => new MessageAction(x));
+    return actionItems.ToList();
+  }
+
+  internal class MessageAction
+  {
+    public string Text { get; set; }
+    public string Action { get; set; }
+
+    public MessageAction()
+    {
+      this.Text = string.Empty;
+      this.Action = string.Empty;
+    }
+
+    public MessageAction(string text, string action)
+    {
+      this.Text = text;
+      this.Action = action;
+    }
+
+    public MessageAction(Item item)
+    {
+      this.Text = item["Text"];
+      this.Action = item["Action"];
+    }
+
+  }
+
+  internal class Message
+  {
+    public string Text { get; set; }
+    public bool Closable { get; set; }
+    public List<MessageAction> Actions { get; set; }
+
+    public Message()
+    {
+      this.Text = string.Empty;
+      this.Actions = new List<MessageAction>();
+      this.Closable = false;
+    }
+
+    public Message(string text, List<MessageAction> actions, bool closable)
+    {
+      this.Text = text;
+      this.Actions = actions;
+      this.Closable = closable;
+    }
+
+    public Message(Item item)
+    {
+      this.Text = item["Text"];
+      this.Closable = item["IsClosable"] == "1";
+      this.Actions = GetActions(item);
+    }
+  }
+
+  internal class NotificationMessage : Message
+  {
+    public bool Temporary { get; set; }
+
+    public NotificationMessage()
+    {
+      this.Temporary = true;
+    }
+
+    public NotificationMessage(string text, List<MessageAction> actions, bool closable, bool isTemporary)
+      : base(text, actions, closable)
+    {
+      this.Temporary = isTemporary;
+    }
+
+    public NotificationMessage(Item item)
+      : base(item)
+    {
+      this.Temporary = item["isTemporary"] == "1";
+    }
+  }
+
+}
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  userControl.Class = "sc-messageBar";
+  userControl.Requires.Script("business", "messagebar.js");
+
+  var resolver = Html.Sitecore().Controls().GetParametersResolver(Model.Rendering);
+  var controlId = userControl.ControlId;
+  var modelName = "model";
+
+  var htmlAttributes = userControl.HtmlAttributes;
+
+  var messages = resolver.GetIds("Messages");
+  var mList = new List<ID>(messages);
+  var messagesItems = mList.Select(id => ClientHost.Items.GetItem(id)).Where(item => item != null).ToList();
+
+  var errors = messagesItems.Where(item => item.TemplateID.ToString() == "{27F53C6B-04A8-4413-8130-9415223597DC}").Select(error => new Message(error)).ToList();
+  var warnings = messagesItems.Where(item => item.TemplateID.ToString() == "{622D0279-3D83-4FA7-8C8F-45875615C7D8}").Select(warning => new Message(warning)).ToList();
+  var notifications = messagesItems.Where(item => item.TemplateID.ToString() == "{76C2629E-3B7D-4EEE-82D0-F5DF443B56A5}").Select(notification => new NotificationMessage(notification)).ToList();
+
+  var serializerSettings = new JsonSerializerSettings
+  {
+    ContractResolver = new CamelCasePropertyNamesContractResolver()
+  };
+
+  var initialData = String.Format("{{\"errors\":{0},\"warnings\":{1},\"notifications\":{2}}}",
+      JsonConvert.SerializeObject(errors, Formatting.Indented, serializerSettings),
+      JsonConvert.SerializeObject(warnings, Formatting.Indented, serializerSettings),
+      JsonConvert.SerializeObject(notifications, Formatting.Indented, serializerSettings)
+      );
+
+  userControl.Class = "sc-messageBar";
+
+  var translations = new
+  {
+    errors = Sitecore.ClientHost.Items.GetItem("{81438631-719F-49E3-A2E6-3F9134368814}")["Text"],
+    lessDetails = Sitecore.ClientHost.Items.GetItem("{C56670FA-51E3-48A0-A37B-73F09833446A}")["Text"],
+    moreDetails = Sitecore.ClientHost.Items.GetItem("{6777DEF3-F41A-42FE-A847-9A54B548270C}")["Text"],
+    notifications = Sitecore.ClientHost.Items.GetItem("{1D8F075E-99C1-4D15-AE37-71635DD9DFAB}")["Text"],
+    provideFunction = Sitecore.ClientHost.Items.GetItem("{10EBF5B7-EDA6-4BB0-BC8D-12EBC6B22421}")["Text"],
+    provideTypeAndMessage = Sitecore.ClientHost.Items.GetItem("{DE22C646-9770-42C2-88A3-4C95AC79B3EA}")["Text"],
+    youHaveFew = Sitecore.ClientHost.Items.GetItem("{D07786E3-B7B9-40B4-B733-F4F59F64BA39}")["Text"],
+    warnings = Sitecore.ClientHost.Items.GetItem("{684D1AD7-5E58-4484-B2EB-19D7CBEBB9B7}")["Text"],
+  };
+}
+
+<div @htmlAttributes data-bind="fadeVisible:fadeVisible, visible:isVisible" data-translations="@JsonConvert.SerializeObject(translations)">
+  <div class="sc-messageBar-head" data-bind="attr:{'class': topMessageClass}, visible:totalMessageCount() > 1" style="display: none">
+    <div class="alert-ico-background"><span class="alert-ico"></span></div>
+    <div class="sc-messageBar-messageText-container">      
+        <span class="sc-messageBar-messageText" data-bind="text: headText, attr: { title: headText }"></span>
+        <span class="sc-messageBar-chevron-layout">
+          <a href="javascript:;" data-bind="text: expanded() ? '@translations.lessDetails' : '@translations.moreDetails'">@translations.moreDetails</a>
+          <i class="icon-chevron" data-bind="css:{'direction-up': expanded()}"></i>
+        </span>      
+    </div>
+  </div>
+    <div class="sc-messageBar-messages-wrap" style="display: none"
+         data-bind="css:{'sc-messageBar-messages-nested-children':totalMessageCount() > 1 }, visible:expanded()|| (totalMessageCount() <= 1)">
+      <div data-bind="foreach: errors">
+        <div class="alert alert-error">
+          <div class="alert-ico-background"><span class="alert-ico"></span></div>
+          <div class="sc-messageBar-messageText-container">
+            <span class="sc-messageBar-messageText" data-bind="text: text, attr: { title: text }"></span>
+            <span class="sc-messageBar-actionLink-layout" data-bind="foreach: actions">
+              <a href="#" class="sc-messageBar-actionLink" data-bind="text: text,attr:{'data-sc-click': action}"></a>
+            </span>
+          </div>
+          <div class="sc-messagebar-closebutton-container">
+            <button data-dismiss="alert" class="close" type="button" data-bind="visible: closable">×</button>
+          </div>
+        </div>
+      </div>
+
+      <div data-bind="foreach: warnings">
+        <div class="alert">
+          <div class="alert-ico-background"><span class="alert-ico"></span></div>
+          <div class="sc-messageBar-messageText-container">
+            <span class="sc-messageBar-messageText" data-bind="text: text, attr: { title: text }"></span>
+            <span class="sc-messageBar-actionLink-layout" data-bind="foreach:actions">
+              <a href="#" class="sc-messageBar-actionLink" data-bind="text: text,attr: {'data-sc-click': action}"></a>
+            </span>
+          </div>
+          <div class="sc-messagebar-closebutton-container">
+            <button data-dismiss="alert" class="close" type="button" data-bind="visible: closable">×</button>
+          </div>
+        </div>
+      </div>
+
+      <div data-bind="foreach: notifications">
+        <div class="alert alert-info">
+          <div class="alert-ico-background"><span class="alert-ico"></span></div>
+          <div class="sc-messageBar-messageText-container">
+            <span class="sc-messageBar-messageText" data-bind="text: text, attr: { title: text }"></span>
+            <span class="sc-messageBar-actionLink-layout" data-bind="foreach: actions">
+              <a href="#" class="sc-messageBar-actionLink" data-bind="text: text,attr: {'data-sc-click':action}"></a>
+            </span>
+          </div>
+          <div class="sc-messagebar-closebutton-container">
+            <button data-dismiss="alert" class="close" type="button" data-bind="visible: closable">×</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @Html.Hidden("initialDataSource__" + controlId, initialData)
+  </div>

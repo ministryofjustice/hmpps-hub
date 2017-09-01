@@ -1,0 +1,466 @@
+﻿/* should be delete after fixing itemWebApi problem about page editor */
+code, iframe, .scLoadingIndication {  
+  display: none !important;
+}
+
+body.sc {
+  min-width: 700px;
+  overflow-x: auto;
+}
+/*should be delete after fixing header issue in speak project*/
+header.sc-globalHeader {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sc-applicationHeader {
+  z-index: 1;
+  padding-top: 0 !important;
+}
+
+span.sc-text[data-sc-id=LatestVisitHeader], 
+span.sc-text[data-sc-id=StatsHeader], 
+span.sc-text[data-sc-id=DetailsHeader] {
+    display: block;
+    margin-bottom: 10px !important;
+    margin-top: 20px;
+    font-size: 15px !important;
+    color: #333;
+    height: 21px;
+}
+
+span.sc-text[data-sc-id=DetailsHeader] {
+  margin-top: 30px;
+}
+
+div[data-sc-id=LatestVisitContentBorder] > img {
+    float: left;
+    margin-top: 4px;
+}
+div[data-sc-id=LatestVisitContentBorder] > img[data-sc-id=VisitRecencyImage] {
+  margin-top: 2px;
+}
+
+div[data-sc-id=LatestVisitContentBorder] > div {
+  margin-top: 10px;
+}
+
+img[data-sc-id=LatestVisitErrorImage], img[data-sc-id=StatsErrorImage] {
+    float: left;
+}
+
+span[data-sc-id=LatestVisitErrorHeader], span[data-sc-id=StatsErrorHeader] {
+    color: red;
+    display: block;
+    font-weight: bold;
+    margin-left: 26px !important;
+}
+
+div[data-sc-id=OverviewBorderPadding] .row {
+  margin: 0;
+  padding: 8px 0;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+div[data-sc-id=OverviewBorderPadding] .row > div {
+  color: #5e5e5e;
+  line-height: 16px;
+}
+
+div[data-sc-id=OverviewBorderPadding] .row >div:nth-child(even) {
+  text-align: right;
+  color: #131313;
+  font-size: 15px;
+}
+
+div[data-sc-id=DetailsRow].row-fluid {
+    display: table;
+}
+
+div[data-sc-id=DetailsRow].row-fluid > div[class*="span"] {
+    display: table-cell;
+    float: none;
+}
+
+div[data-sc-id=EventsAccordion],
+div[data-sc-id=VisitsAccordion],
+div[data-sc-id=InternalKeywords],
+div[data-sc-id=PaidKeywords] {
+  margin-top: 30px;
+}
+
+.sc-advancedExpander .sc-table {
+    border: none !important;
+}
+
+.sc-smartpanel .sc-text-label {
+    font-size: 75%;
+}
+
+.sc-smartpanel .sc-text-largetitle {
+    font-size: 220%;
+}
+
+.sc-text-label, .sc-text-smalltitle, .sc-text-largetitle {
+    display: block;
+}
+
+.sc-sc-advancedExpander-footer-more, .sc-sc-advancedExpander-footer-less {
+    text-align: right;
+    padding: 0 10px 5px 0 !important;
+}
+
+div.sc-messageBar {
+    margin: 30px 0;
+}
+
+div[data-sc-id=DetailsTabMessageBar].sc-messageBar {
+    margin: 0px;
+}
+
+div[data-sc-id=ContactDetailsAccordion] {
+    margin-top: 20px;
+}
+
+span[data-sc-id=GenderText] {
+    text-transform: capitalize;
+}
+
+/*.sc-sc-advancedExpander .sc-sc-advancedExpander-header table .sc-sc-advancedExpander-header-chevron a {
+    display: none !important;
+}*/
+
+.sc div.sc-tabcontrol[data-sc-id=TabControl] a {
+    outline: 0 none;
+}
+
+span[data-sc-id=DetailsHeader],
+span[data-sc-id=StatsHeader] {
+    text-transform: uppercase;
+}
+
+div[data-sc-id=MainBorder] {
+  position: relative;
+}
+
+div[data-sc-id=TabControl].sc-tabcontrol > .nav-tabs {
+  padding-right: 50px !important;
+}
+
+span[data-sc-id=OnlineIndicator] {
+  border-radius: 5px;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(0, 224, 0);
+  float: right;
+  margin-top: 3px !important;
+  display: none;
+}
+
+/**/
+/*.sc-list {
+  display: none;
+}*/
+
+.btn-primary.sc-button.skinnymode-refresh[data-sc-id=RefreshButton] {
+  top: 27px !important;
+}
+
+.sc .sc-tabcontrol > .nav-tabs > li > a, .sc .sc-tabcontrol > .nav-pills > li > a {
+  padding-left: 9px !important;
+  padding-right: 9px !important;
+}
+
+/*.sc .sc-table tbody tr td, 
+.sc .sc-table thead td, 
+.sc .sc-table tbody tr th, 
+.sc .sc-table thead th {
+  text-indent: 0 !important; 
+  white-space: normal !important; 
+  vertical-align: middle !important;
+  word-wrap: break-word !important;
+}
+
+.sc .sc-table tbody tr td.ventilate:after, 
+.sc .sc-table thead td.ventilate:after {
+  top: 50% !important;
+  margin-top: -7px !important;
+}*/
+
+button.sc-button[data-sc-id=BackButton] {
+  display: block !important;
+}
+
+button.sc-button[data-sc-id=OverviewBackButton] {
+  display: none !important;
+  margin-bottom: 15px;
+}
+
+/* resolution */
+.sc-border[data-sc-id=MainBorder] {
+   width: 75%;
+   float: left;
+}
+
+.sc-border[data-sc-id=OverviewBorder] {
+   width: 25%;
+   float: right;
+}
+
+@media (min-width: 1000px) {
+  div[data-sc-id=OverviewBorderPadding] {
+    display: block !important;
+  }
+}
+
+div.sc-border[data-sc-id=InfoPhotoImageBorder] img {
+  border: 15px solid #fff;
+  border-radius: 50%;
+}
+
+div.sc-border[data-sc-id=StatsBorder] {
+  padding-bottom: 15px;
+}
+
+div.sc-border[data-sc-id=MoreInfoLinkBorder],
+div.sc-border[data-sc-id=LatestVisitLinkBorder] {
+  margin-top: 10px;
+}
+
+
+@media (min-width: 0) and (max-width: 999px)
+{
+  div[data-sc-id=OverviewBorderPadding] div[data-sc-id=InfoBorder] {
+    height: auto;
+    position: relative;
+  }
+  div.sc-border[data-sc-id=MoreInfoLinkBorder] {
+    margin-top: 72px;
+  }
+  div.sc-border[data-sc-id=LatestVisitLinkBorder] {
+    margin-top: 8px;
+  }
+  div.sc-border[data-sc-id=StatsBorder] {
+    padding-bottom: 0;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+  }
+  .row-fluid section.span12 {
+    width: 100%;
+  }
+  span.sc-text[data-sc-id=LatestVisitHeader], 
+  span.sc-text[data-sc-id=StatsHeader], 
+  span.sc-text[data-sc-id=DetailsHeader] {
+    margin-top: 0 !important;
+  }
+  div.sc-border[data-sc-id=InfoPhotoImageBorder] img {
+    width: 135px;
+  }
+  div.sc-border[data-sc-id=InfoPhotoImageBorder] {
+    width: 135px;
+    float: left;
+  }
+  .sc-border[data-sc-id=MainBorder] {
+    width: 100%;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] {
+    width: 100%;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border > a {
+    margin-right: 15px;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-text-title {
+    margin-left: 15px;
+    margin-top: -25px !important;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border[data-sc-id=InfoBorder] {
+    padding-left: 135px;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border[data-sc-id=InfoBorderAvatar] img[data-sc-id=InfoPhotoImage] {
+    margin: 0;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border[data-sc-id=LatestVisitBorder] {
+    border-right: 1px solid #f0f0f0;
+  }
+  .sc .sc-border.sc-show-padding[data-sc-id=OverviewBorderPadding] {
+    margin: 30px 0 20px 0;
+    padding: 0;
+    background: #fff;
+    float: left;
+    width: 100%;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border[data-sc-id=InfoBorder] > div.sc-border {
+    width: 33%;
+    float: right;
+    margin-bottom: -1px;
+    height: 198px;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border[data-sc-id=InfoBorder] > div.sc-border[data-sc-id=InfoBorderAvatar] {
+    padding-left: 0;
+    width: 34%;
+  }
+  .sc-applicationContent-main .sc-border[data-sc-id=OverviewBorder] .sc-border[data-sc-id=InfoBorder] > div[data-sc-id=StatsBorder] {
+    padding-right: 0;
+  }
+  button.sc-button[data-sc-id=OverviewBackButton] {
+    display: block !important;
+  }
+  button.sc-button[data-sc-id=BackButton] {
+    display: none !important;
+  }
+  div[data-sc-id=OverviewBorderPadding] .row .col-md-8 {
+    width: 67%;
+    float: left;
+  }
+  div[data-sc-id=OverviewBorderPadding] .row .col-md-4 {
+    width: 33%;
+    float: left;
+  }
+}
+
+div[data-sc-id=BottomRowPanel] 
+{
+  margin-top: 30px;
+}
+
+div[data-sc-id=VisitDialogBorder] {
+  margin-bottom: 40px;
+}
+
+.modal-body {
+  height: auto !important;
+}
+
+.modal-body .sc-border[data-sc-id=MainBorder] {
+  width: 100%;
+}
+
+.modal-body .sc-applicationHeader {
+  display: none;
+  padding-top: 0 !important;
+}
+
+.modal-body .sc-applicationContent-main {
+  background: none;
+  padding-top: 0;
+}
+
+.modal-body div.sc-border[data-sc-id=VisitDialogBorder] {
+  padding-top: 0 !important;
+}
+
+.modal-overflow.modal.fade.in {
+  margin-top: 0 !important;
+}
+
+.modal.fade.in {
+  top: 1% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.4%;
+}
+
+img[data-sc-id=VisitDialogPhoto] {
+  cursor: default !important;
+}
+
+div[data-sc-id=VisitDialogIndicator] {
+  z-index: 3100 !important;
+}
+
+.cintel-sc-journey {
+  padding-top: 50px !important;
+  margin-bottom: -50px;
+  position: relative;
+  z-index: 100;
+}
+
+/*TODO: remove */
+.sc-globalHeader {
+    top: 0;    
+}
+
+div.sc-advancedExpander[data-sc-id=PagesInVisitAccordion] .sc-advancedExpander-body,
+div.sc-advancedExpander[data-sc-id=InternalSearchAccordion] .sc-advancedExpander-body,
+div.sc-advancedExpander[data-sc-id=DialogGoalsAccordion] .sc-advancedExpander-body
+{
+  border: none;
+}
+
+div[data-sc-id=VisitDialogBorder] .sc-advancedExpander-body {
+  background: #fff !important;
+}
+
+div.sc-border[data-sc-id=CloseKeywordDialogBorder] {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 700px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+
+  .col-md-4 {
+    width: 33%;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+div.sc-charts-pull-left > span, 
+div.sc-charts-pull-left svg {
+  background: none !important;
+}
+
+.sc-applicationContent {
+  margin-left: 0 !important;
+}
+
+.sc-globalHeader-content,
+.sc-applicationHeader-content {
+  max-width: 100% !important;
+}
+
+.sc-breadcrumb > ul > li {
+  color: #f9d8d7;
+}
+
+.sc-tabcontrol[data-sc-id=TabControl] {
+  margin-top: 15px;
+}
+
+.btn-primary.sc-button[data-sc-id=RefreshButton] {
+  margin-right: 10px;
+}
+
+span.sc-text[data-sc-id=ContactHeaderText],
+.sc-applicationHeader-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+div[data-sc-id=OverviewBorderPadding] .row > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div[data-sc-id=InfoBorder] a.sc-hyperlinkbutton[data-sc-id=InfoEmailLink] {
+  font-weight: 100;
+}
+
+span.sc-text[data-sc-id=ContactHeaderText] {
+  padding-right: 1px;
+}
+
+.sc-listcontrol .sc-table tbody tr td img {
+  height: 16px;
+}
+
+div[data-sc-id=DialogProgressIndicator] {
+  z-index: 9999;
+}

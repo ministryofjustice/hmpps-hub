@@ -1,0 +1,42 @@
+﻿@using Sitecore.ExperienceAnalytics.Client
+@using Sitecore.ExperienceAnalytics.Client.Mvc
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Common.Renderings
+@model Sitecore.ExperienceAnalytics.Client.Mvc.Presentation.ExperienceAnalyticsListControlViewModel
+
+@{
+    var helper = new RenderingHelper(Html.HtmlHelper(), Model.Control.ControlId);
+
+    var wrapperId = Model.Control.ControlId + "Wrapper";
+    helper.MakeDataProvider("DataProvider", wrapperId, Model.DataUrl ?? string.Empty);
+
+    if (Model.IsValid == false)
+    {
+        helper.MakeAdvancedExpander("AdvancedExpander", wrapperId, "no title", false, entry =>
+            {
+                helper.DisplayConfigurationError("ListControlError", entry, ".Body", true, PaddingType.All);
+                Model.Control.Attributes["data-sc-configurationerror"] = "true";
+            });
+    }
+    else
+    {
+        var bindingTitle = "{Binding " + Model.Control.ControlId + ".title}";
+        helper.MakeAdvancedExpander("AdvancedExpander", wrapperId, bindingTitle, false, entry =>
+            {
+                helper.MakeBorder("AdvancedBorder", entry, wrapper =>
+                    {
+                        helper.CreateRenderingAt(Globals.Bcl.Renderings.ListAndGrids.ListControl, "ListControl", wrapper, null, Globals.System.ListControl);
+                        helper.MakeBorder("Border", wrapper, border =>
+                            {
+                                helper.MakeButton("Button", border, Globals.System.Texts.ShowMore.Guid.ToString());
+                            }, "true", true, "Center");
+                        helper.MakeProgressIndicator("ProgressIndicator", wrapper, Model.Control.ControlId, string.Empty);
+
+                    }, "true", false, "Center", ".Body");
+            });
+    }
+}
+
+<div @Model.Control.HtmlAttributes>
+    @Html.Sitecore().Controls().Rendering(Html.HtmlHelper(), Globals.Bcl.Renderings.Containers.Border, wrapperId, "")
+</div>

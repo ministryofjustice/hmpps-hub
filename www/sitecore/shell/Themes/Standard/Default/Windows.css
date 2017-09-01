@@ -1,0 +1,96 @@
+﻿BODY {
+  height:100%;
+  background-color:#fff !important;
+}
+
+.scWindowOuterFrame
+{
+  /*border:1px solid #D6D6D6;*/
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height:auto;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+
+}  
+
+.scWindowFrame {
+  border: 1px solid #5e5e5e;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height:auto;
+}
+
+.scWindowFrameTop {
+  height:0px;
+}
+
+.scWindowHandle {
+    background-color: #2b2b2b;
+}
+
+.standardWindowCaption {
+  height: 60px;
+  background-color:#2b2b2b;
+}
+
+.standartWindowButtons {
+  position:absolute;
+  top:15px;
+  right:15px;
+}
+
+.standartWindowButtons img {
+    border: none;
+    padding: 5px 3px;
+    margin: 0 0 0 8px;
+    cursor: pointer;
+}
+
+.windowCaptionIcon {
+  width:16px;
+  height:16px;
+  margin: 5px;
+  display:none;
+}
+
+.scWindowCaption {
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+    line-height: 60px;
+    font-size:18px;
+    padding-left:15px;
+}
+
+.windowPlaceholderContainer {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+
+.headerlessWindowCaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.headerlessWindowCaption + .windowPlaceholderContainer {
+    top: 15px;
+}

@@ -1,0 +1,130 @@
+/* RadSpell wrapper window styles */
+
+.RadETableWrapperResizeSpan
+{
+	cursor: default;	
+	border: solid 3px #cccc;
+}
+
+.RadETableWrapper
+{
+	border: solid 1px #979797;
+	border-top: solid 1px #696969;
+	background-color: #e6e0c9;
+	border-bottom: 0;
+	font-size: 0px;
+}
+
+.RadETableWrapperHeaderLeft 
+{
+	background: url(CssImg/DialogueHeaderLeft.gif); 
+	width: 9px;
+} 
+.RadETableWrapperHeaderCenter 
+{		
+	text-align: left;
+	height: 27px;
+	font-family: Tahoma;	
+	color: #fff;
+	background: url(CssImg/dialogueHeaderCenter.gif); 
+	background-repeat: repeat-x;
+} 
+.RadETableWrapperHeaderRight 
+{
+	background-color: #ACC2E7;
+	width: 1px;
+} 
+
+.RadETableWrapperBodyLeft 
+{
+	width: 0px;
+} 
+.RadETableWrapperBodyCenter 
+{	
+	width: 100%;
+	height: 100%;
+} 
+.RadETableWrapperBodyRight 
+{
+	width: 0px;
+} 
+
+.RadETableWrapperFooterLeft 
+{
+	background-repeat: no-repeat; 
+	height: 13px;
+	font-size: 0px;
+	width: 0px;
+} 
+
+.RadETableWrapperFooterCenter 
+{
+	width: 100%;
+	height: 13px;
+	font-size: 0px;
+	line-height: 0px;
+} 
+.RadETableWrapperFooterRight 
+{
+	font-size: 0px;
+	width: 14px;
+	height: 13px;
+	line-height: 0px;
+	cursor: nw-resize;
+	background-image: url(CssImg/footerResize.gif);
+	background-repeat: no-repeat;
+} 
+
+.RadETableWrapperFooterRightOver 
+{
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	cursor: nw-resize;
+}
+
+.RadERadWindowHeader
+{
+	font-family: Microsoft Sans Serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: #fff;
+	height: 27px;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-left: 10px;	
+	cursor: default;	
+	width: 100%;
+	display: inline;
+}
+
+.RadERadWindowButtonClose
+{
+	cursor: hand;
+	cursor: pointer;
+	background-image: url(CssImg/dialogueHeaderClose.gif);
+	width: 19px;	
+	height: 27px;
+	display: block;
+}
+
+.RadERadWindowButtonPinOff
+{
+	cursor: hand;
+	cursor: pointer; /* if Mozilla */
+	background-image: url(CssImg/dialogueHeaderPinOff.gif);
+	width: 16px;	
+	height: 27px;
+	display: block;
+}
+.RadERadWindowButtonPinOn
+{
+	cursor: hand;
+	cursor: pointer; /* if Mozilla */
+	background-image: url(CssImg/dialogueHeaderPinOn.gif);
+	width: 16px;	
+	height: 27px;
+	display: block;
+}

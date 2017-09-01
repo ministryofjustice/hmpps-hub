@@ -1,0 +1,87 @@
+﻿.scKey {
+  white-space:nowrap;
+  width:150px;
+}
+
+.scValue {
+  cursor:default;
+}
+
+.scItemID {
+  background: transparent;
+  border:none;
+  width:100%;
+}
+
+.scGalleryOuterFrame {
+  border:1px solid #434241;
+}
+
+.scGalleryInnerFrame {
+  border:1px solid #6b6a6a;
+}
+
+.scToolbutton {
+	background: #ffdb75 url(/sitecore/shell/themes/standard/Images/Galleries/SystemMenuToolbuttonBackground.png) repeat-x;
+	border:1px solid #898785;
+	color:#333333;
+	padding: 2px 4px 0px 4px;
+	margin:0px 8px 0px 0px;
+}
+
+.scToolbutton_Hover {
+	padding: 2px 4px 0px 4px;
+	margin:0px 8px 0px 0px;
+}
+
+
+  .scListControl > tbody:first-child > tr:first-child,
+  .scListControl > thead,
+  .scListControlHead {
+    background-color: #f7f7f7;
+    color: #131313;
+  }
+
+  .scListControl > tbody > tr:nth-child(odd) {
+    background-color: #f7f7f7;
+  }
+
+  .scListControl > tbody:first-child > tr:first-child:hover,
+  .scListControl > thead:hover,
+  .scListControlHead:hover,
+  .scListControl > tbody > tr:hover {
+    background-color: #e3e3e3;
+  }
+
+  .scListControl > thead th,
+  .scListControl > tbody > tr > td {
+    border: 1px solid #ccc;
+    padding: 14px 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .scListControl > thead th,
+  .scListControl > tbody:first-child > tr:first-child > td {
+    border: 1px solid #ccc;
+    position: relative;
+  }
+
+    .scListControl > thead th:after,
+    .scListControl > tbody:first-child > tr:first-child > td:after {
+      background-color: transparent;
+      position: absolute;
+      width: 0px;
+      display: block;
+      height: 20px;
+      top: 13px;
+      right: 0;
+      content: "";
+    }
+
+    .scListControl > thead th:last-child:after,
+    .scListControl > tbody:first-child > tr:first-child > td:last-child:after {
+      background: none;
+    }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <BreakingLinks>
+    <FormDialog Icon="Network/32x32/link_delete.png" Header="Breaking Links"
+      Text="Other items contain links to this item or its subitems. These links should be updated to prevent broken links." OKButton="Continue">
+      <Stylesheet Src="/sitecore/shell/Applications/Links/BreakingLinks/BreakingLinks.css" />
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.BreakingLinks.BreakingLinksForm,Sitecore.Client"/>
+
+      <Border ID="SelectActionPage">
+        <Groupbox Header="Items to delete" Padding="2px">
+          <Border ID="DeletingItems">
+          </Border>
+        </Groupbox>
+
+        <Border Margin="8px 0px 0px 0px">
+          <Groupbox Header="Action" Padding="2px">
+            <Border>
+              <Radiobutton ID="RemoveButton" Name="Action" Value="Remove" Header="Remove links"/>
+            </Border>
+            <Border>
+              <Radiobutton ID="RelinkButton" Name="Action" Value="Relink" Header="Link to another item" />
+            </Border>
+            <Border>
+              <Radiobutton ID="BreakButton" Name="Action" Value="Break" Header="Leave links – the links will appear in the Broken Links report" Checked="true" />
+            </Border>
+          </Groupbox>
+        </Border>
+
+        <Border Margin="8px 0px 0px 0px">
+          <Button Header="Edit Links" Click="EditLinks"/>
+        </Border>
+      </Border>
+
+      <Border ID="SelectItemPage" Height="100%" Visible="false" >
+        <DataContext ID="DataContext" Root="/" Folder="/sitecore/content" DataViewName="Master"/>
+
+        <GridPanel Width="100%" Height="100%">
+
+          <Literal Text="Select another item."/>
+
+          <Scrollbox Width="100%" Height="100%" GridPanel.Height="100%" Padding="0px">
+            <TreeviewEx ID="Link" DataContext="DataContext" />
+          </Scrollbox>
+
+        </GridPanel>
+      </Border>
+
+      <Border ID="ExecutingPage" Visible="false">
+        <Border class="scWizardProgressPage">
+          <ThemedImage class="scSpinner" Src="Images/ProgressIndicator/sc-spinner32.gif" />
+          <Literal class="scFieldLabel scActionText" Text="Updating Links..."/>
+          <Border ID="Status" Align="center" GridPanel.Align="center">&#160;</Border>
+        </Border>
+      </Border>
+
+      <Border ID="FailedPage" class="scStretch" Visible="false">
+        <Memo ID="ErrorText" ReadOnly="true" class="scStretch"/>
+      </Border>
+
+      <Border ID="LinksBrokenOrRemovedPage" Margin="0px" Visible="false">
+        <GridPanel Width="100%" Height="100%">
+          <Border class="scWarning">
+            <ThemedImage Src="/sitecore/shell/themes/standard/Images/warning_yellow.png" />
+            <Literal ID="LinksBrokenOrRemovedCount" Text=""/>
+          </Border>
+        </GridPanel>
+      </Border>
+
+      <Button ID="BackButton" def:placeholder="Buttons" style="float:right; margin-right: 10px;" Class="scButton" Visible="false" Click="#" Header="Back"/>
+
+    </FormDialog>
+  </BreakingLinks>
+</control>

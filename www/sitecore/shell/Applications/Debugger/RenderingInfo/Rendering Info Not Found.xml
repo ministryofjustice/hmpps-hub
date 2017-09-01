@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RenderingInfoNotFound>
+    <Border Align="center" Foreground="#999999">
+      <Literal Text="The rendering information was not found."/>
+      <br/>
+      <br/>
+      <Literal Text="Possible reasons include that the page was not rendered in Trace mode."/>
+    </Border>
+  </RenderingInfoNotFound>
+</control>

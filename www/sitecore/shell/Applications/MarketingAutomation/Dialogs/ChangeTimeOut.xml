@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Supervisor.ChangeTimeOut>
+    <FormDialog Header="Timeout Date" Text="Select the date and time to trigger a timeout event for all the contacts in this state." Icon="People/32x32/clock.png">
+      <CodeBeside Type="Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ChangeTimeOut,Sitecore.Shell.MarketingAutomation" />
+
+      <Border ID="StateInfo" Padding="0px 0px 16px 0px" />
+
+      <Radiobutton ID="SetTimeOut" Name="Action" Value="SetTime" Header="Timeout"/>
+
+      <Border Padding="4px 0px 0px 24px">
+        <DateTimePicker ID="Date" ShowLabels="true"/>
+      </Border>
+
+      <Border Padding="16px 0px 0px 0px">
+        <Radiobutton ID="NeverTimeOut" Name="Action" Value="NeverTime" Header="Never Timeout"/>
+      </Border>
+      
+    </FormDialog>
+  </Supervisor.ChangeTimeOut>
+</control>

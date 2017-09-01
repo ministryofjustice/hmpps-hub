@@ -1,0 +1,176 @@
+/*RadSpell WebBlue skin*/
+
+.RadSpell_WebBlue
+{
+    width:460px;
+    height:310px;
+    border:1px solid #b4b7b8;
+    background:url(Img/spellWinBack.gif) 0 -2px repeat-x #e1e6eb;
+}
+.RadSpell_WebBlue .RichTextView,
+.RadSpell_WebBlue textarea,
+.RadSpell_WebBlue select,
+.RadSpell_WebBlue .MainOptions
+{
+    margin-left:7px;
+}
+.RadSpell_WebBlue,
+.RadSpell_WebBlue textarea,
+.RadSpell_WebBlue select
+{
+    font:normal 10px/16px arial,sans-serif;
+}
+/*RadSpell headings start*/
+.RadSpell_WebBlue h3,
+.RadSpell_WebBlue h3 em
+.RadSpell_WebBlue h3 span
+{
+    height:23px; /*the same as background images' height*/
+    line-height:23px; /*may be different to vertically align the text inside the tab*/
+}
+.RadSpell_WebBlue h3
+{
+    margin:9px 10px 0 ;
+    padding-left:15px; /*the same as spellHeadLeft.gif's width*/
+    background:url(Img/spellHeadLeft.gif) 0 0 no-repeat;
+    font-size:1.1em;
+    overflow:hidden;
+}
+.RadSpell_WebBlue h3 em
+{
+    float:left;
+    padding-right:15px; /*the same as spellHeadRight.gif's width*/
+    background:url(Img/spellHeadRight.gif) 100% 0 no-repeat;
+    font-style:normal;
+}
+.RadSpell_WebBlue h3 span
+{
+    float:left;
+    padding:0 5px;
+    background:url(Img/spellHeadMiddle.gif) 0 0 repeat-x;
+}
+.RadSpell_WebBlue h4
+{
+    margin-top:1em;
+    padding-left:7px;
+    font-size:1.1em;
+    font-weight:normal;
+}
+/*RadSpell headings end*/
+
+/*RadSpell text boxes start*/
+.RadSpell_WebBlue .RichTextView,
+.RadSpell_WebBlue textarea
+{
+    height:80px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#000 #ccc #ccc #000;
+    background:#fff;
+    font-size:1.1em;
+}
+.RadSpell_WebBlue textarea
+{
+    width:318px;/*this width + side padding = .RichTextView width + side padding*/
+    padding:3px 5px 3px 3px;
+}
+.RadSpell_WebBlue .RichTextView
+{
+    width:320px;/*this width + side padding = textarea width + side padding*/
+    padding:3px;
+    font-family:tahoma,sans-serif;
+    cursor:text;
+}
+.RadSpell_WebBlue .RichTextView strong
+{
+    color:#f00;
+    text-decoration:underline
+}
+.RadSpell_WebBlue .RichTextView em
+{
+    font-style:normal;
+    color:#000;
+}
+/*RadSpell text boxes end*/
+
+/*RadSpell combobox start*/
+.RadSpell_WebBlue select,
+.RadSpell_WebBlue .MainOptions
+{
+    width:328px;/*2px more than .RichTextView width + side padding*/
+}
+.RadSpell_WebBlue select
+{
+    height:80px;
+    font-size:1.1em;
+}
+/*the next two must be separate*/
+/*IE 7 only*/
+*:first-child+html .RadSpell_WebBlue select
+{
+    height:85px;/*5px more than select*/
+}
+/*IE 5-6 only*/
+* html .RadSpell_WebBlue select
+{
+    height:85px;/*5px more than select*/
+}
+.RadSpell_WebBlue select option
+{
+    padding:1px 3px 0;
+}
+/*RadSpell combobox end*/
+
+/*RadSpell buttons start*/
+.RadSpell_WebBlue .SpellOptions li,
+.RadSpell_WebBlue .SpellOptions a
+{
+    /*the same as background images' height*/
+    height:22px;
+    line-height:22px;
+}
+.RadSpell_WebBlue .SpellOptions li
+{
+    width:74px;
+    text-align:center;
+    font-size:1.1em;
+}
+.RadSpell_WebBlue .SpellOptions a
+{
+    color:#fff;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+    text-decoration:none;
+}
+.RadSpell_WebBlue .SpellOptions a:hover
+{
+    background-position:0 -22px;
+}
+.RadSpell_WebBlue .MainOptions
+{
+    margin-top:10px;
+}
+.RadSpell_WebBlue .MainOptions li
+{
+    float:right;
+    margin-left:10px;
+}
+.RadSpell_WebBlue .AuxOptions
+{
+    float:right;
+    width:90px;
+    margin-top:20px;
+}
+.RadSpell_WebBlue .AuxOptions li
+{
+    margin-top:8px;
+}
+.RadSpell_WebBlue a.disabled
+{
+    color:#ccc;
+}
+.RadSpell_WebBlue .SpellOptions a.disabled:hover
+{
+    background-position:0 0;
+}
+/*RadSpell buttons end*/
+

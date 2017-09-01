@@ -1,0 +1,91 @@
+.scSidebar
+{
+  background: #323B3F; 
+  border:none;
+  color: white;
+  height: 100%;
+  padding: 4px;
+}
+
+.scSidebarPanes
+{
+  background: red;
+  color: white;
+}
+
+.scSidebarDivider
+{
+  border-top:1px solid #2F3739;
+  background: #51595B;
+  margin: 2px 0px 0px 2px;
+}
+
+.scSidebarTile
+{
+  padding: 4px 4px 0px 8px;
+}
+
+
+.scSidebarCalendar {
+	border-collapse: collapse;
+	color: white;
+	padding: 3px;
+}
+.scSidebarCalendarDay {
+	border-bottom: 1px solid black;
+	color: white;
+	font-weight: 600;
+	cursor: default;
+	padding: 3px 6px;
+	text-align: center;
+}
+.scSidebarCalendarToday {
+	cursor: default;
+	background: inactivecaption;
+	color: inactivecaptiontext;
+	font-size: 9pt;
+}
+.scSidebarCalendarSelected {
+	cursor: default;
+	text-align: center;
+	background: #F6D2AB;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	color: #46448D;
+	font-size: 9pt;
+}
+.scSidebarCalendarCell {
+	cursor: default;
+	padding: 3px;
+	text-align: center;
+	border: none;
+	font-size: 9pt;
+}
+.scSidebarCalendarCellOtherMonth {
+	cursor: default;
+	padding: 3px;
+	text-align: center;
+	color: #666666;
+	font-size: 9pt;
+}
+.scSidebarCalendarTodayCell {
+	cursor: default;
+	padding: 2px;
+	text-align: center;
+	border-top: 1px solid black;
+}
+.scSidebarCalendarYearRow {
+	color: captiontext;
+	font-weight: 600;
+}
+.scSidebarCalendarYearLeftCell {
+	cursor: default;
+	padding: 4px;
+}
+.scSidebarCalendarYearMiddleCell {
+	cursor: default;
+	padding: 4px;
+}
+.scSidebarCalendarYearRightCell {
+	cursor: default;
+	padding: 4px;
+}

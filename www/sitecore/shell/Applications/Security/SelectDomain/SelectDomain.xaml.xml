@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Security.SelectDomain x:inherits="Sitecore.Shell.Applications.Security.SelectDomain.SelectDomainPage,Sitecore.Client">
+    <Sitecore.Controls.DialogPage Header="Domain" Text="Select a domain." Icon="People/16x16/users4.png" runat="server">
+      <x:register assembly="ComponentArt.Web.UI" namespace="ComponentArt.Web.UI"/>
+
+      <Stylesheet Src="Grid.css" DeviceDependant="true" runat="server" />
+
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <script type="text/javascript" language="javascript" runat="server" x:placeholder="Scripts">
+        <![CDATA[
+        function Domains_onDoubleClick(sender, eventArgs)
+        {
+          scForm.postRequest('','','','OK_Click');
+        }
+
+        function CorrectGridSize()
+        {
+          var gridRows = $$("[id$='Domains_dom']");
+          if (gridRows != null)
+            gridRows.style.height = '100%';
+        }
+
+        window.onresize = CorrectGridSize;
+        setInterval(function () {
+          var searchBox = document.querySelector("[id$=searchBox]");
+          if (searchBox && searchBox.value.indexOf('\"') != -1) {
+            searchBox.value = searchBox.value.replace(/"/g, "");
+          };
+        }, 50);
+        
+        var timer = setInterval(adjustHeight, 10);
+
+        function adjustHeight() {
+          if (window.Domains && Domains.Loaded) {
+              clearInterval(timer);
+              scForm.autoIncreaseModalDialogHeight();
+          }
+        }
+        
+        ]]>
+      </script>
+
+      <GridPanel ID="MainPanel" Height="100%" Width="100%" runat="server">
+        <Border ID="GridContainer" Height="100%" Width="100%" runat="server">
+          <Grid id="Domains"
+              AutoFocusSearchBox="false"
+              RunningMode="Callback"
+              CssClass="Grid"
+                
+              AllowMultipleSelect="false"
+
+              ShowHeader="true"
+              HeaderCssClass="GridHeader"
+            
+              FooterCssClass="GridFooter"
+                
+              ManualPaging="true"
+
+              GroupByText = ""
+              GroupingNotificationText = ""
+              GroupByCssClass="GroupByCell"
+              GroupByTextCssClass="GroupByText"
+              GroupBySortAscendingImageUrl="group_asc.gif"
+              GroupBySortDescendingImageUrl="group_desc.gif"
+              GroupBySortImageWidth="10"
+              GroupBySortImageHeight="10"
+
+              GroupingNotificationTextCssClass="GridHeaderText"
+              GroupingPageSize="5"
+            
+              PageSize="15"
+              PagerStyle="Slider"
+              PagerTextCssClass="GridFooterText"
+              PagerButtonHoverEnabled="True"
+              PagerImagesFolderUrl="/sitecore/shell/themes/standard/componentart/grid/pager/"
+            
+              ShowSearchBox="true"
+              SearchTextCssClass="GridHeaderText scTextAlignRight "
+              SearchBoxCssClass="SearchBox"
+      	    
+              SliderHeight="20"
+              SliderWidth="150"
+              SliderGripWidth="24"
+              SliderPopupOffsetX="20"
+              SliderPopupClientTemplateId="SliderTemplate"
+            
+              TreeLineImagesFolderUrl="/sitecore/shell/themes/standard/componentart/grid/lines/"
+              TreeLineImageWidth="22"
+              TreeLineImageHeight="19"
+            
+              PreExpandOnGroup="false"
+              ImagesBaseUrl="/sitecore/shell/themes/standard/componentart/grid/"
+              IndentCellWidth="22"
+
+              LoadingPanelClientTemplateId="LoadingFeedbackTemplate"
+              LoadingPanelPosition="MiddleCenter"
+            
+              Width="100%" Height="100%" runat="server">
+
+            <Levels>
+              <GridLevel
+                DataKeyField="scGridID"
+                ShowTableHeading="false"
+                ShowSelectorCells="false"
+                RowCssClass="Row"
+                ColumnReorderIndicatorImageUrl="reorder.gif"
+                DataCellCssClass="DataCell"
+                HeadingCellCssClass="HeadingCell"
+                HeadingCellHoverCssClass="HeadingCellHover"
+                HeadingCellActiveCssClass="HeadingCellActive"
+                HeadingRowCssClass="HeadingRow"
+                HeadingTextCssClass="HeadingCellText"
+                SelectedRowCssClass="SelectedRow"
+                GroupHeadingCssClass="GroupHeading"
+                SortAscendingImageUrl="asc.gif"
+                SortDescendingImageUrl="desc.gif"
+                SortImageWidth="13"
+                SortImageHeight="13" runat="server">
+                <Columns>
+                  <GridColumn DataField="scGridID" Visible="false" runat="server" />
+                  <GridColumn DataField="Name" HeadingText="Name" AllowGrouping="false" IsSearchable="true" SortedDataCellCssClass="SortedDataCell" runat="server" />
+                </Columns>
+              </GridLevel>
+            </Levels>
+
+            <ClientTemplates>
+              <ClientTemplate Id="LoadingFeedbackTemplate" runat="server">
+                <table cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td style="font-size:10px;">
+                      <Literal Text="Loading..." runat="server" />;
+                    </td>
+                    <td>
+                      <img src="/sitecore/shell/themes/standard/componentart/grid/spinner.gif" width="16" height="16" border="0" />
+                    </td>
+                  </tr>
+                </table>
+              </ClientTemplate>
+
+              <ClientTemplate Id="SliderTemplate" runat="server">
+                <div class="SliderPopup">
+                  ## DataItem.PageIndex + 1 ## / ## Domains.PageCount ##
+                </div>
+              </ClientTemplate>
+            </ClientTemplates>
+          </Grid>
+        </Border>
+
+      </GridPanel>
+
+    </Sitecore.Controls.DialogPage>
+  </Sitecore.Shell.Applications.Security.SelectDomain>
+
+</xamlControls>

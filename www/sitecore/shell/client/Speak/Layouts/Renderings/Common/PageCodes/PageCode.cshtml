@@ -1,0 +1,274 @@
+﻿@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@using Sitecore
+@using Sitecore.Configuration
+@using Sitecore.Diagnostics
+@using Sitecore.Extensions.StringExtensions
+@using Sitecore.IO
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Reflection
+@using Sitecore.Shell
+@using Sitecore.Web.PageCodes
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@functions
+{
+  const string RootGlobalizeFolder =  "~/sitecore/shell/client/Speak/Assets/lib/globalize/main/";
+  const string RootGlobalizeSupplemental = "~/sitecore/shell/client/Speak/Assets/lib/globalize/supplemental/";
+  
+  [NotNull]
+  string GetJsonFileContent([NotNull] string path)
+  {
+    Assert.ArgumentNotNull(path, "path");
+
+    if (File.Exists(path))
+    {
+      return File.ReadAllText(path);
+    }
+    
+    Log.Error(string.Format("Culture globalization file {0} not found", path), this);
+    return string.Empty;
+  }
+
+  [NotNull]
+  private string ResolveCultureFolder([NotNull] params string[] cultureNames)
+  {
+    Assert.ArgumentNotNull(cultureNames, "cultureNames");
+    foreach (var cultureName in cultureNames)
+    {
+      var culturePath = Server.MapPath(RootGlobalizeFolder + cultureName);
+      if (Directory.Exists(culturePath))
+      {
+        return culturePath;
+      }
+    }
+
+    throw new Exception("Globalization folders cannot be found");
+  }
+
+}
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  var waitSeconds = SpeakSettings.Html.RequireJsWaitSeconds;
+  
+  var mainFile = SpeakSettings.Html.RequireJsMainFile;
+  var mainConfigFile = SpeakSettings.Html.RequireJsConfigFile;
+  var bindingFile = SpeakSettings.Html.BindingPluginFile;
+  var speakCoreVersion = userControl.GetString("SpeakCoreVersion");
+  var assetsLoadingMode = userControl.GetString("AssetsLoadingType");
+  var isSpeak1_1 = string.IsNullOrEmpty(speakCoreVersion) || speakCoreVersion == "{C1B05B3A-689F-474A-918B-5FD50F12849C}";
+  var useDevMode = "{6C0818B0-587E-4027-9DDB-96C5D66F9C1A}";
+  var useMinifiedMode = "{3A0CC262-E84F-4F0F-98E9-BCA5F6BEE829}";
+  var useCDNMode = "{84F1BE3E-02A3-42F8-AEB2-E73768790E45}";
+  var useBundled = "{5A598A7A-CBE9-470F-AD2B-4FD7E0561307}";
+  var contextLanguage = ClientHost.Context.Language.Name;
+  
+  var cultureName = ClientHost.Context.Culture.Name;
+  var threeLetterIsocode = ClientHost.Context.Culture.ThreeLetterISOLanguageName;
+  var twoLetterIsocode = ClientHost.Context.Culture.TwoLetterISOLanguageName;
+  
+  var contentDatabaseName = Sitecore.Context.ContentDatabase.Name;
+  var dataBaseName = Sitecore.Context.Database.Name;
+
+  if (!userControl.GetBool("IsLicenceCheckDisabled"))
+  {
+    new Security().CheckUser();
+  }
+  
+  if (isSpeak1_1)
+  {
+    mainFile = SpeakSettings.Html.RequireJSMainFile71;
+    
+    if (useMinifiedMode == assetsLoadingMode || SpeakSettings.Html.MinifyScripts)
+    {
+      mainFile = "/-/speak/v1/assets/main.min.js";
+    }
+    else if (useCDNMode == assetsLoadingMode)
+    {
+      mainFile = "/-/speak/v1/assets/main.cdn.min.js";
+    }
+    else if (useBundled == assetsLoadingMode)
+    {
+      mainFile = "/-/speak/v1/assets/main.bundled.min.js";
+    }
+  }
+  else
+  {
+    if (useMinifiedMode == assetsLoadingMode || SpeakSettings.Html.MinifyScripts)
+    {
+      mainFile = SpeakSettings.Html.RequireJsMainFileMinified;
+      bindingFile = SpeakSettings.Html.BindingPluginFileMinified;
+    }
+    else if (useCDNMode == assetsLoadingMode)
+    {
+      mainFile = "/-/speak/v1/assets/main-2.0.cdn.min.js";
+      bindingFile = SpeakSettings.Html.BindingPluginFileMinified;
+    }
+    else if (useBundled == assetsLoadingMode)
+    {
+      mainFile = "/-/speak/v1/assets/main-2.0.bundled.min.js";
+      bindingFile = SpeakSettings.Html.BindingPluginFileMinified;
+    }
+  }
+
+  var debug = Sitecore.Context.Diagnostics.Debugging;
+
+  var title = this.Html.Sitecore().Placeholder("Page.Title");
+  if (string.IsNullOrEmpty(title.ToString()))
+  {
+    title = new HtmlString(this.Model.PageItem["BrowserTitle"]);
+  }
+
+  // run the server side page code
+  var pageCodeTypeName = userControl.GetString("PageCodeTypeName");
+
+  var behaviors = userControl.GetString("Behaviors") ?? string.Empty;
+  if (!string.IsNullOrEmpty(behaviors))
+  {
+    behaviors = "data-sc-behaviors=\"" + behaviors + "\"";
+  }
+
+  if (!string.IsNullOrEmpty(pageCodeTypeName))
+  {
+    var pageCode = ReflectionUtil.CreateObject(pageCodeTypeName) as IPageCode;
+    if (pageCode == null)
+    {
+      throw new InvalidOperationException("Page Code object not found: " + pageCodeTypeName);
+    }
+
+    pageCode.Initialize(RenderingContext.Current);
+  }
+
+  // find the client side page code javascript file
+  var scriptFileName = userControl.GetString("PageCodeScriptFileName");
+
+  //if the js pagecode is not specified we suppose to have it the same path as the current PageItem
+  if (string.IsNullOrEmpty(scriptFileName))
+  {
+    scriptFileName = "/sitecore/shell/client/" + this.Model.PageItem.Paths.Path.Mid(17) + "/" + this.Model.PageItem.Name + ".js";
+
+    //checking if it exists on the server
+    if (!FileUtil.FileExists(scriptFileName))
+    {
+      scriptFileName = null;
+    }
+  }
+}
+<meta data-sc-name="sitecoreLanguage" data-sc-content="@contextLanguage"/>
+<meta data-sc-name="sitecoreContentDatabase" data-sc-content="@contentDatabaseName"/>
+<meta data-sc-name="sitecoreDatabase" data-sc-content="@dataBaseName" />
+<meta data-sc-name="sitecoreCultureName" data-sc-content="@cultureName" />
+<meta data-sc-name="sitecoreCultureTwoLetterIsoCode" data-sc-content="@twoLetterIsocode" />
+<meta data-sc-name="sitecoreCultureThreeLetterIsoCode" data-sc-content="@threeLetterIsocode" />
+
+<title>@title</title>
+<link rel="shortcut icon" href="/sitecore/images/favicon.ico" />
+@Html.Sitecore().PageStylesheets(isSpeak1_1 ? "1" : "2")
+
+@if (debug)
+{
+  <script type="text/javascript"> window.__SITECOREDEBUG = true; </script>
+}
+<script>
+    var __speak_config_culture = __speak_config_culture || [];
+</script>
+@{
+  var selectedCulturePath = ResolveCultureFolder(cultureName, twoLetterIsocode, "en/");
+
+  var gregorianTextCode = GetJsonFileContent(selectedCulturePath + "/ca-gregorian.json");
+  var numberTextCode = GetJsonFileContent(selectedCulturePath + "/numbers.json");
+  var timezoneTextCode = GetJsonFileContent(selectedCulturePath + "/timeZoneNames.json");
+  var currencyTextCode = GetJsonFileContent(selectedCulturePath + "/currencies.json");
+
+  var likelySubTabTextCode = GetJsonFileContent(Server.MapPath(RootGlobalizeSupplemental + "likelySubtags.json"));
+  var timeDataTextCode = GetJsonFileContent(Server.MapPath(RootGlobalizeSupplemental + "timeData.json"));
+  var weekDataTextCode = GetJsonFileContent(Server.MapPath(RootGlobalizeSupplemental + "weekData.json"));
+  var numberingSystemTextCode = GetJsonFileContent(Server.MapPath(RootGlobalizeSupplemental + "numberingSystems.json"));
+  var currencySymbolTextCode = GetJsonFileContent(Server.MapPath(RootGlobalizeSupplemental + "currencyData.json"));
+  var pluralTextCode = GetJsonFileContent(Server.MapPath(RootGlobalizeSupplemental + "plurals.json"));
+  
+  var hasAllGlobalizeInfo = !(string.IsNullOrEmpty(gregorianTextCode) 
+    || string.IsNullOrEmpty(numberTextCode) 
+    || string.IsNullOrEmpty(timezoneTextCode)
+    || string.IsNullOrEmpty(currencyTextCode)
+    || string.IsNullOrEmpty(likelySubTabTextCode)
+    || string.IsNullOrEmpty(timeDataTextCode)
+    || string.IsNullOrEmpty(weekDataTextCode)
+    || string.IsNullOrEmpty(numberingSystemTextCode)
+    || string.IsNullOrEmpty(currencySymbolTextCode)
+    || string.IsNullOrEmpty(pluralTextCode)
+    );
+}
+
+@if (hasAllGlobalizeInfo)
+{
+  var gregorianCode = JObject.Parse(gregorianTextCode);
+  var numberCode = JObject.Parse(numberTextCode);
+  var timezoneCode = JObject.Parse(timezoneTextCode);
+  var currencyCode = JObject.Parse(currencyTextCode);
+  
+  var likelySubTabCode = JObject.Parse(likelySubTabTextCode);
+  var timeDataCode = JObject.Parse(timeDataTextCode);
+  var weekDataCode = JObject.Parse(weekDataTextCode);
+  var numberingSystemCode = JObject.Parse(numberingSystemTextCode);
+  var currencySymbolCode = JObject.Parse(currencySymbolTextCode);
+  var pluralCode = JObject.Parse(pluralTextCode);
+  
+  <script>
+  __speak_config_culture.push(@Html.Raw(gregorianCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(numberCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(timezoneCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(currencyCode.ToString(Formatting.None)));
+
+  __speak_config_culture.push(@Html.Raw(likelySubTabCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(timeDataCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(weekDataCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(numberingSystemCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(currencySymbolCode.ToString(Formatting.None)));
+  __speak_config_culture.push(@Html.Raw(pluralCode.ToString(Formatting.None)));
+  </script>
+}
+
+@if(useBundled == assetsLoadingMode)
+{
+    <script>
+        var __speak_config = __speak_config || {};
+        __speak_config.useBundle = true;
+        __speak_config.deferred = true;
+    </script>
+
+    if (isSpeak1_1)
+    {
+        <script src="~/sitecore/shell/client/Speak/Assets/lib/core/1.1/sitecore-1.0.2.packed.min.js"></script>
+    }
+    else
+    {
+      <script src="~/sitecore/shell/client/Speak/Assets/lib/core/2.0/sitecore.packed.js"></script>
+      mainConfigFile += "?amdBundle=1";
+  }
+}
+
+@if (isSpeak1_1 && !string.IsNullOrEmpty(scriptFileName))
+{
+  <script data-sc-require="@scriptFileName" type="text/x-sitecore-pagecode" @behaviors>
+  </script>
+}
+
+@if (!isSpeak1_1 && !string.IsNullOrEmpty(scriptFileName))
+{
+  <script src="@scriptFileName" type="text/x-sitecore-pagecode">
+  </script>
+}
+
+@if (!isSpeak1_1)
+{
+  <script type='text/x-sitecore-pluginscript' data-sc-pluginid="bindingjsPlugin" data-sc-require="@bindingFile"></script>
+  <script type="text/javascript" src="@mainConfigFile"></script>
+}
+
+<script src="/sitecore/shell/client/Speak/Assets/lib/core/2.0/deps/require.js" data-main="@mainFile" type="text/javascript"></script>
+
+<script type="text/javascript">require.config({ waitSeconds: @waitSeconds });</script>
+@this.Html.Sitecore().PageScripts()
+@this.Html.Sitecore().Overlays()

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <ChangeWallpaper>
+    <FormDialog Icon="People/32x32/monitor_rgb.png" Header="Desktop Background"
+      Text="Select a desktop background." OKButton="Apply">
+
+      <Stylesheet>
+        .changeColorContainer{
+            padding-top: 16px;
+        }
+
+        .ie9 .changeColorContainer .scButton {
+            min-width:50px !important;
+        }
+
+        .scMonitorContainer {
+            height:159px;
+            margin-bottom:10px;
+            text-align:center;
+            background: url(/sitecore/shell/themes/standard/Images/Wallpaper.png) no-repeat center;
+        }
+        
+        .scWallpaperListContainer {
+            position: absolute;
+            bottom: 0;
+            top: 200px;
+            left: 0;
+            right: 0;
+            min-height: 90px;
+        }
+        
+        .scWallpaperPreview {
+          width: 153px;
+          height: 112px;
+          margin-top: 15px;
+          border-radius: 3px;
+        }
+        
+        .scBackgroundsListContainer {
+          height:100%;
+          padding-right: 110px;
+        }
+        
+        .lang_ja_jp .scBackgroundsListContainer {
+          padding-right: 180px;
+        }
+      </Stylesheet>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.ControlPanel.Preferences.Wallpaper.WallpaperForm,Sitecore.Client"/>
+
+      <div class="scStretch">
+        <div class="scMonitorContainer">
+          <Image Src="/sitecore/images/blank.gif" ID="Preview" class="scWallpaperPreview" RenderAs="WebControl"/>
+        </div>
+
+        <Literal class="scFieldLabel" Text="Background:"/>
+
+        <div class="scWallpaperListContainer">
+          <div class="scBackgroundsListContainer">
+            <Listbox ID="Backgrounds" style="height:100%;width:100%;" Size="6" Change="Change">
+              <ListItem Header="(None)" Value="" isTranslable="false"/>
+            </Listbox>
+          </div>
+
+          <div style="position:absolute;top:0;right:0;">
+            <div>
+              <Literal class="scFieldLabel" Text="Position:"/>
+
+              <Combobox ID="Position">
+                <ListItem Header="Center" Value="Center"/>
+                <ListItem Header="Tile" Value="Tile"/>
+                <ListItem Header="Stretch" Value="Stretch"/>
+                <ListItem Header="Cover" Value="Cover"/>
+              </Combobox>
+            </div>
+
+            <div class="changeColorContainer">
+              <Literal class="scFieldLabel" Text="Color:"/>
+
+              <Button style="width: 100%;" Click="GetWallpaperBackground">
+                <Border ID="WallpaperBackground" Background="blue" Width="100%" Height="12px" Border="1px solid black">
+                  <Space/>
+                </Border>
+              </Button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </FormDialog>
+    <object id="dlgHelper" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></object>
+  </ChangeWallpaper>
+</control>

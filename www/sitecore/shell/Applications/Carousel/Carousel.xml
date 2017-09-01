@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Carousel>
+    <FormPage Application="Carousel" Scroll="yes" Background="#404040 url(/sitecore/shell/themes/standard/images/carousel_background.gif) 0 bottom repeat-x fixed;">
+      <CodeBeside Type="Sitecore.Shell.Applications.Carousel.CarouselForm,Sitecore.Client"/> 
+      
+      <Stylesheet Src="Carousel.css"/>
+      <Stylesheet Src="Content Manager.css" DeviceDependant="true"/>
+      <Stylesheet Src="Ribbon.css" DeviceDependant="true"/>
+
+      <input type="hidden" id="scActiveRibbonStrip" name="scActiveRibbonStrip" />
+      
+      <Border Height="100%">
+        <GridPanel Width="100%" Height="100%" Fixed="true">
+
+          <Border ID="RibbonPanel"/>
+
+          <Scrollbox background="transparent" padding="0px" border="none" Width="100%" Height="100%" GridPanel.Height="100%">
+            <GridPanel Columns="3">
+          
+            <Space GridPanel.Width="50%"/>
+            
+            <GridPanel Width="100%" Height="100%" Columns="3" GridPanel.Height="100%">
+            
+              <Space GridPanel.Width="50%" GridPanel.Height="50%" GridPanel.Style="background:transparent"/>
+              <Space GridPanel.Style="background:transparent"/>
+              <Space GridPanel.Width="50%" GridPanel.Style="background:transparent"/>
+
+              <Space/>
+              <Border ID="Parent" Align="center"/>
+              <ThemedImage ID="Parent1" Src="Images/Carousel_Dot.gif" Height="1" Width="100%"/>
+        
+              <Space GridPanel.Height="50%"/>
+              <ThemedImage ID="Parent2" Src="Images/Carousel_Dot.gif" Height="100%" Width="1" GridPanel.Align="center"/>
+              <Space GridPanel.Height="50%"/>
+            
+            </GridPanel>
+            
+              
+            <Border Style="border-left:1px solid white" GridPanel.Width="50%">
+              <Border ID="Siblings"/>
+            </Border>
+                           
+            <Space Height="64" GridPanel.Width="50%"/>
+            
+            <ThemedImage ID="Parent3" Src="Images/Carousel_Dot.gif" Height="64" Width="1" GridPanel.Align="center"/>
+            
+            <Space Height="64" GridPanel.Width="50%"/>
+          
+            
+            <Border Style="border-right:1px solid white" Align="right" GridPanel.Width="50%">
+              <Border ID="Referers"/>
+            </Border>
+
+            <GridPanel Width="100%" Height="100%" Columns="3" GridPanel.Height="100%">
+            
+              <Space GridPanel.Width="50%" GridPanel.Height="50%"/>
+              <ThemedImage ID="Parent4" Src="Images/Carousel_Dot.gif" Height="100%" Width="1" GridPanel.Align="center"/>
+              <Space GridPanel.Width="50%"/>
+
+              <ThemedImage ID="Referer1" Src="Images/Carousel_Dot.gif" Height="1" Width="128" GridPanel.Width="128"/>
+              <Border>
+                <Border ID="Home" Align="center"/>
+              </Border>
+              <ThemedImage ID="Reference1" Src="Images/Carousel_Dot.gif" Height="1" Width="128" GridPanel.Width="128"/>
+        
+              <Space GridPanel.Height="50%"/>
+              <ThemedImage ID="Children1" Src="Images/Carousel_Dot.gif" Height="100%" Width="1" GridPanel.Align="center"/>
+              <Space/>
+            
+            </GridPanel>
+              
+            <Border Style="border-left:1px solid white" GridPanel.Width="50%">
+              <Border ID="References"/>
+            </Border>
+          
+          
+            <Space Height="64" GridPanel.Width="50%"/>
+            
+            <ThemedImage ID="Children2" Src="Images/Carousel_Dot.gif" Height="64" Width="1" GridPanel.Align="center"/>
+            
+            <Space Height="64" GridPanel.Width="50%"/>
+          
+            
+            <GridPanel ID="Children3" Columns="3" Style="border-top:1px solid white" GridPanel.ColSpan="3" GridPanel.Align="center">
+              <Border Class="scChildren" ID="Children"/>
+            </GridPanel>
+            
+          </GridPanel>
+          </Scrollbox>
+        </GridPanel>      
+      </Border>
+    </FormPage>
+  </Carousel>
+</control>

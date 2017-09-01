@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.ContentEditor.Dialogs.EditHtml.ValidateXHtml x:inherits="Sitecore.Shell.Applications.ContentEditor.Dialogs.EditHtml.ValidateXHtmlPage,Sitecore.Client">
+    <Sitecore.Controls.ModalDialogPage Header="Validate XHtml" Icon="Software/32x32/bug_yellow.png" Text="The list shows the result of the XHtml validation." runat="server">
+
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Scrollbox ID="Validation" Width="100%" Height="100%" Padding="2px" runat="server" />
+
+    </Sitecore.Controls.ModalDialogPage>
+  </Sitecore.Shell.Applications.ContentEditor.Dialogs.EditHtml.ValidateXHtml>
+
+
+</xamlControls>
+                           

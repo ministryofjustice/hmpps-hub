@@ -1,0 +1,33 @@
+﻿@using Sitecore.Data
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Common.Buttons
+@using Sitecore.Web.UI.Controls.Common.Renderings
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  userControl.Requires.Script("business", "NavigationPanelToggleButton.js");
+  var cssClass = "sc-navigationPanelToggleButton";
+  userControl.Class = cssClass;
+  userControl.HasNestedComponents = true;
+  var htmlAttributes = userControl.HtmlAttributes;
+
+  var renderingId = userControl.ControlId;
+  
+
+  var toggleButtonId = new ID("{26B2B002-BCA0-4968-99E4-01573338B6A9}").ToString();
+}
+
+
+<div @htmlAttributes data-bind="click:togglePanel">
+  
+@this.Html.Sitecore().Controls().Rendering(this.Html, toggleButtonId, renderingId + "ToggleButton", "", new
+{
+  ImageUrl = "/sitecore/shell/client/Speak/Assets/img/Speak/NavigationPanelToggleButton/navigationPanelToggleIcon.png",
+  ShowArrow = false
+})
+
+  @*<button type="button" class="btn sc-togglebutton" style="background: none;">
+    <img class="sc-icon" src="/sitecore/shell/client/Speak/Assets/img/Speak/NavigationPanleToggleButton/navigationPanelToggleIcon.png" alt="" />
+  </button>*@
+</div>

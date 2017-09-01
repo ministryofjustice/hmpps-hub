@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ItemsFilterEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ItemsFilterEditor,Sitecore.Client">
+    <Border Padding="$Padding" Style="$Style" Class="$Class scStretch itemsFilterEditorContainer">
+      <Groupbox header="Item name filter">
+        <Installer.ItemNameFilterEditor def:ID="nameFilter"/>
+      </Groupbox>
+
+      <Groupbox header="Creation date filter">
+        <Installer.ItemDateFilterEditor def:ID="cdateFilter" DateFilterType="CreatedFilter"/>
+      </Groupbox>
+
+      <Groupbox header="Modification date filter">
+        <Installer.ItemDateFilterEditor def:ID="mdateFilter" DateFilterType="ModifiedFilter"/>
+      </Groupbox>
+      <Groupbox header="Publish date filter">
+        <Installer.ItemPublishFilterEditor def:ID="pubFilter"/>
+      </Groupbox>
+
+      <Groupbox header="Template filter">
+        <Installer.ItemTemplateFilterEditor def:ID="templFilter"/>
+      </Groupbox>
+
+      <Groupbox header="Created by filter">
+        <Installer.ItemUserFilterEditor def:ID="cuserFilter" FilterType="Created"/>
+      </Groupbox>
+
+      <Groupbox header="Updated by filter">
+        <Installer.ItemUserFilterEditor def:ID="muserFilter" FilterType="Modified"/>
+      </Groupbox>
+
+      <Groupbox header="Language filter">
+        <Installer.ItemLanguageFilterEditor def:ID="laFilter"/>
+      </Groupbox>
+    </Border>
+  </Installer.ItemsFilterEditor>
+</control>

@@ -1,0 +1,5 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Configuration.SinglePageAppConfigurations
+@model Sitecore.Mvc.Presentation.RenderingModel
+<!--Configuring the Single Page App - Convention over configuration -->
+@Html.Sitecore().Controls().SinglePageAppConfiguration(Model.Rendering)

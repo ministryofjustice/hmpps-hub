@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <StaticCommandsPortlet def:inherits="Sitecore.Shell.Controls.CommandPortal.Portlets.StaticCommands.StaticCommandsPortletXmlControl,Sitecore.Client">
+
+    <Border def:ID="Portlet">
+      <DefaultPortletWindow def:ID="Window" Header="Commands" Icon="Office/16x16/arrow_right.png">
+      
+        <Border def:ID="Body"/>
+
+      </DefaultPortletWindow>
+    </Border>
+    
+  </StaticCommandsPortlet>
+</control>

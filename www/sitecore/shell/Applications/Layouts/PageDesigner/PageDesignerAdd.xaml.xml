@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Layouts.PageDesignerAdd x:inherits="Sitecore.Shell.Applications.Layouts.PageDesigner.PageDesignerAddPage,Sitecore.Client">
+    <Sitecore.Controls.DialogPage runat="server" Icon="Applications/32x32/window_earth.png" Header="Web Page Content" Text="Add content to the web page here.">
+      <AjaxScriptManager runat="server" />
+      <ContinuationManager runat="server" />
+      <Stylesheet runat="server" Src="/sitecore/shell/Applications/Layouts/PageDesigner/PageDesignerAdd.css" />
+
+      <GridPanel runat="server" Width="100%" Height="100%" Fixed="true">
+
+        <GridPanel runat="server" Columns="3" Width="100%" Height="100%" GridPanel.Height="100%">
+
+          <Scrollbox runat="server" ID="Renderings" Width="100%" Height="100%" Padding="4px" GridPanel.Width="100%" GridPanel.Height="100%" GridPanel.VAlign="top"/>
+
+          <Space runat="server" Width="4" GridPanel.Width="4px"/>
+
+          <Border runat="server" GridPanel.VAlign="top">
+            <div style="padding:0px 0px 4px 0px">
+              <Button runat="server" Header="Move Up" Click="pagedesigner:moveup"/>
+            </div>
+            <div style="padding:0px 0px 4px 0px">
+              <Button runat="server" Header="Move Down" Click="pagedesigner:movedown"/>
+            </div>
+
+            <div style="padding:8px 0px 4px 0px">
+              <Button runat="server" Header="Add" Click="pagedesigner:add"/>
+            </div>
+            <div style="padding:0px 0px 4px 0px">
+              <Button runat="server" Header="Remove" Click="pagedesigner:delete"/>
+            </div>
+
+            <div style="padding:8px 0px 4px 0px">
+              <Button runat="server" Header="Properties" Click="pagedesigner:edit"/>
+            </div>
+          </Border>
+          
+        </GridPanel>
+
+      </GridPanel>
+      
+    </Sitecore.Controls.DialogPage>
+    
+  </Sitecore.Shell.Applications.Layouts.PageDesignerAdd>
+</xamlControls>

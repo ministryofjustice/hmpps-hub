@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.SendEmailMessage
+      x:inherits="Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.SendEmailMessage, Sitecore.Shell.MarketingAutomation">
+
+    <Sitecore.Controls.DialogPage runat="server"
+        Header="Send E-Mail Message"
+        Text="Create the e-mail message that you want to send"
+        Icon="Software/32x32/graph_edge_directed.png">
+
+      <x:register assembly="Sitecore.Shell.MarketingAutomation" namespace="Sitecore.Shell.Applications.MarketingAutomation.Controls"/>
+  
+      <AjaxScriptManager runat="server" />
+      <ContinuationManager runat="server" />
+
+      <Style runat="server" x:placeholder="Stylesheets">
+        .scDialogContentContainer {
+        overflow:auto;
+        }
+      </Style>
+      
+      <script type="text/javascript">
+        function ConfigureView() {
+        var ControlName = document.getElementById("ctl00_ctl00_ctl00_ctl00_ctl05_SendToDropDownList");
+
+        //it depends on which value Selection do u want to hide or show your textbox
+        if(ControlName.value == "CurrentVisitorsEmailAddress") {
+        document.getElementById('ctl00_ctl00_ctl00_ctl00_ctl05_FixedEmailAddressTextBox').style.display = 'none';
+        document.getElementById('FixedEmailAddressLabel').style.display = 'none';
+        document.getElementById('FixedEmailAddressHelpLabel').style.display = 'none';
+        }
+        else {
+        document.getElementById('ctl00_ctl00_ctl00_ctl00_ctl05_FixedEmailAddressTextBox').style.display = '';
+        document.getElementById('FixedEmailAddressLabel').style.display = '';
+        document.getElementById('FixedEmailAddressHelpLabel').style.display = '';
+        }
+        }
+
+        document.observe("dom:loaded", function () {
+
+        scForm.setDialogDimension(1120, 640);
+
+        ConfigureView();
+
+        var onclick = $telerik.$("#OK").attr('onclick');
+        $telerik.$("#OK").attr('onclick', '').attr('onkeydown', '').click(function () {
+        $telerik.$($telerik.radControls).each(function () {
+        if (typeof this.saveContent === 'undefined') return;
+        this.saveContent();
+        });
+        scForm.postEvent(this, event, 'OK_Click');
+        })
+        });
+
+      </script>
+
+
+      <Border Padding="0" Width="100%" Height="100%">
+
+        <GridPanel Width="100%" Height="100%" runat="server">
+
+          <GridPanel runat="server" Columns="2" Width="100%" vAlign="top" Padding="0 0 0 0">
+
+            <Literal ID="FromNameLabel" runat="server" Text="From Name:" Margin="0 5 0 0" GridPanel.Align = "left" GridPanel.Width="90px"/>
+            <asp:TextBox ID="FromNameTextBox" runat="server" Width="100%" Margin="0 0 5 0"/>
+
+            <Literal ID="FromEmailLabel" runat="server" Text="From Address:" Margin="0 5 0 0" GridPanel.Align = "left" GridPanel.Width="90px"/>
+            <asp:TextBox ID="FromEmailTextBox" runat="server" Width="100%" Margin="0 0 5 0"/>
+
+            <Literal ID="SendToLabel" runat="server" Text="To Address Type:" Margin = "0 5 0 0" GridPanel.Align="left" GridPanel.Width="90px"/>
+            <asp:DropDownList ID="SendToDropDownList" runat="server" AutoPostBack="false" OnChange="ConfigureView()" Width="250px"/>
+
+            <Literal ID="FixedEmailAddressLabel" runat="server" Text="To:" 
+                       Margin="0 5 0 0" GridPanel.Align ="left" GridPanel.Width="90px"/>
+            <Border runat="server">
+              <asp:TextBox ID="FixedEmailAddressTextBox" runat="server" Width="100%" />
+              <Literal ID="FixedEmailAddressHelpLabel" runat="server" Width="100%" Text="Separate multiple email addresses with a semi-colon (;)" />
+            </Border>
+            
+            <Literal ID="SubjectLabel" runat="server" Text="Subject:" Margin="0 5 0 0" GridPanel.Align="left" GridPanel.Width="90px"/>
+            <asp:TextBox ID="SubjectEdit" runat="server" Width="100%" Margin ="0 0 5 0"/>
+
+            <Literal ID="BaseSiteUrlLabel" runat="server" Text ="Base Site URL:" Margin="0 5 0 0" GridPanel.Align="left" GridPanel.Width="90px"/>
+            <Border runat="server">
+              <asp:TextBox ID="BaseSiteUrlEdit" runat="server" Width="100%" Margin="0 5 0 0"/>
+              <Literal ID="BaseSiteUrlHelpLabel" runat="server" Width="100%" Text="The base URL for any images and links embedded in the message" />
+            </Border>
+
+          </GridPanel>
+
+          <RadEditor ID="Editor" runat="server" Width ="100%" Height="100%"/>
+
+        </GridPanel>
+      
+      </Border>
+      
+    </Sitecore.Controls.DialogPage>
+
+  </Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.SendEmailMessage>
+
+</xamlControls>

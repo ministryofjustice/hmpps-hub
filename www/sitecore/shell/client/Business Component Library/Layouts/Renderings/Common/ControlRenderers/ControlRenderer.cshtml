@@ -1,0 +1,10 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Web
+@using Sitecore.Web.UI.Controls.Common.ItemRenderers
+@model Sitecore.Mvc.Presentation.RenderingModel                  
+@{
+  var layoutDefinition = WebUtil.GetFormValue("l");
+  var contextItemId = WebUtil.GetFormValue("id");
+  var output = Html.Sitecore().Controls().ItemRenderer(layoutDefinition, contextItemId);
+}
+@output

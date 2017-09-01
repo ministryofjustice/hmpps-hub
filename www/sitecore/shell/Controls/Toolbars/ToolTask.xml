@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <ToolTask ControlID="" Header="" Click="#">
+    <Border ID="$ControlID" Class="scTaskOption" Style="scClick:$Click" ClientClass="scClick" Background="transparent" Padding="4px 16px 4px 0px" Click="$Click" RollOver="true">
+      <ThemedImage Src='${StringUtil.GetString($Icon, "Images/go16x16.png")}' Width="16" Height="16" Margin="0px 6px 0px 6px" Align="absmiddle"/>
+      <Literal Class="scClickFont" Text="$Header"/>
+      <def:Placeholder/>  
+    </Border>
+  </ToolTask>
+</control>

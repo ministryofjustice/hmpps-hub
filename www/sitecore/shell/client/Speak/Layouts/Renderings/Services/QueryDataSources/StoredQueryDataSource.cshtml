@@ -1,0 +1,23 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+    var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+
+    userControl.Requires.Script("controls", "storedquerydatasource.js");
+
+    userControl.Attributes["data-sc-queryID"] = userControl.GetString("QueryID", "queryID");
+    userControl.Attributes["data-sc-pageSize"] = userControl.GetString("PageSize", "pageSize");
+    userControl.Attributes["data-sc-pageIndex"] = userControl.GetString("PageIndex", "pageIndex");
+    userControl.Attributes["data-sc-database"] = userControl.GetString("Database", "database");
+
+    userControl.Attributes["data-sc-includeStandardTemplateFields"] = userControl.GetBool("IncludeStandardTemplateFields", "includeStandardTemplateFields").ToString();
+    userControl.Attributes["data-sc-fields"] = userControl.GetString("Fields", "fields");
+//    userControl.Attributes["data-sc-language"] = userControl.GetString("Language", "language");
+
+    var controlId = userControl.ControlId;
+    var htmlAttributes = userControl.HtmlAttributes;
+}
+<script @htmlAttributes type="text/x-sitecore-storedquerydatasource">
+</script>

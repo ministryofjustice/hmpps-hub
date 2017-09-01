@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <WindowButton>           
+    <ImageButton Src="$Src" Width="$Width" Height="$Height" Alt="$ToolTip" Margin="$Margin" Align="$Align" Style="cursor:default" Click="$Click"/>
+  </WindowButton>
+</control>

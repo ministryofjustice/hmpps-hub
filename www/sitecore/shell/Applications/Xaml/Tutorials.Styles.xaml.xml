@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Styles.Index>
+    <x:using runat="serer" namespace="Sitecore.Xaml.Tutorials" />
+
+    <link href="/sitecore/shell/Applications/Xaml/Tutorials.xaml.css" rel="stylesheet" type="text/css" />
+
+    <html:Form runat="server" x:Style="Form">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Pane runat="server" Header="Styles">
+        <![CDATA[
+  Xaml# styles are mix of Microsoft Xaml styles and CSS styles.
+  <p />
+  A Xaml# style are defined using the &lt;style&gt; extension. The defined style binds to the first control in the control heirachy that
+  implements the <code>IHasStyles</code> interface.
+  <pre>
+    &lt;x:style runat="server" key=".Form"&gt;
+      &lt;Background style="true"&gt;#192b5a&lt;/Background&gt;
+    &lt;/x:style&gt;
+  </pre>
+  
+  The key identifies this style rule and is formatted like CSS. CSS2 or advanced matching is not supported.
+  <pre>
+    "Form"
+    ".MyStyle"
+    "#MyControlID"
+    "Form, .MyStyle"
+  </pre>
+
+  The properties are defined using elements. The element name corresponds to the property to be set, while the element value becomes the value of the property.
+  If the property is a Html CSS style, use the style="true" to specify this.
+  <p />
+  The following example set the <code>Background</code> property to the value "lime".
+  <pre>
+    &lt;Background style="true"&gt;lime&lt;/Background&gt;
+  </pre>
+  
+  To apply a style, use the style attribute:
+  <pre>
+    &lt;Border runat="server" x:style="MyStyle" /&gt;
+  </pre>
+  
+  Styles are applied in a XAML way. The control tree is traversed from the top to the control and each visited control is checked to see if it implements
+  the <code>IHasStyles</code> interface. If so, the matching styles are applied to the control.
+  This allows styles to be overridden by child controls.
+        ]]>
+      </Pane>
+
+      <Styles.Test1 runat="server" />
+      <Styles.Test2 runat="server" />
+
+    </html:Form>
+
+  </Sitecore.Xaml.Tutorials.Styles.Index>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Styles.Test1>
+    <x:using runat="serer" namespace="Sitecore.Xaml.Tutorials" />
+
+    <x:style runat="server" key="Test1a">
+      <Color style="true">lime</Color>
+    </x:style>
+    <x:style runat="server" key=".MyStyle">
+      <Color style="true">lime</Color>
+    </x:style>
+    <x:style runat="server" key="#MyStyleControl">
+      <Color style="true">lime</Color>
+    </x:style>
+    <x:style runat="server" key="Inline#Test1">
+      <Color style="true">lime</Color>
+    </x:style>
+    <x:style runat="server" key="Inline.Test1">
+      <Color style="true">lime</Color>
+    </x:style>
+
+    <Pane runat="server" Header="Test 1: Simple Styles">
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Applies a style by Element name.
+        </Description>
+
+        <Test runat="server">
+          Result: <Test1a runat="server" />
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Applies a style by ID.
+        </Description>
+
+        <Test runat="server">
+          Result: <TestPassed ID="MyStyleControl" runat="server" />
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Applies a style by Class.
+        </Description>
+
+        <Test runat="server">
+          Result: <span runat="server" x:style="MyStyle">Test passed.</span>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Applies a style by Element and ID.
+        </Description>
+
+        <Test runat="server">
+          Result: <Inline ID="Test1" runat="server">Test passed.</Inline>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Applies a style by Element and Class.
+        </Description>
+
+        <Test runat="server">
+          Result: <Inline runat="server" x:style="Test1">Test passed.</Inline>
+        </Test>
+        <Test runat="server">
+          Result: <span runat="server" x:style="Test1">Test passed, if white.</span>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Styles.Test1>
+
+  <Sitecore.Xaml.Tutorials.Styles.Test1a>
+    Test Passed
+  </Sitecore.Xaml.Tutorials.Styles.Test1a>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Styles.Test2>
+    <x:using runat="serer" namespace="Sitecore.Xaml.Tutorials" />
+    
+    <x:style runat="server" key=".Test2a">
+      <Color style="true">lime</Color>
+    </x:style>
+    <x:style runat="server" key=".Test2b">
+      <Color style="true">red</Color>
+    </x:style>
+    <x:style runat="server" key=".Test2c">
+      <Color style="true">red</Color>
+    </x:style>
+
+    <Pane runat="server" Header="Test 2: Nested Styles">
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Nested control inherits styles from the owner control.
+        </Description>
+
+        <Test runat="server">
+          <Test2a runat="server"/>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <x:style runat="server" key=".Test2b">
+          <Color style="true">red</Color>
+        </x:style>
+        
+        <Description runat="server">
+          Overridding a style in a nested control.
+        </Description>
+
+        <Test runat="server">
+          <Test2b runat="server"/>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <x:style runat="server" key=".Test2c">
+          <Color style="true">lime</Color>
+        </x:style>
+
+        <Description runat="server">
+          Overridding a style inside a placeholder.
+        </Description>
+
+        <Test runat="server">
+          <Test2c runat="server"/>
+        </Test>
+      </TestCase>
+
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Styles.Test2>
+
+  <Sitecore.Xaml.Tutorials.Styles.Test2a>
+    Result: <span runat="server" x:style="Test2a">Test passed.</span>
+  </Sitecore.Xaml.Tutorials.Styles.Test2a>
+
+  <Sitecore.Xaml.Tutorials.Styles.Test2b>
+    <x:style runat="server" key=".Test2b">
+      <Color style="true">lime</Color>
+    </x:style>
+    
+    Result: <span runat="server" x:style="Test2b">Test passed.</span>
+  </Sitecore.Xaml.Tutorials.Styles.Test2b>
+
+  <Sitecore.Xaml.Tutorials.Styles.Test2c>
+    Result: <span runat="server" x:style="Test2c">Test passed.</span>
+  </Sitecore.Xaml.Tutorials.Styles.Test2c>
+
+
+</xamlControls>

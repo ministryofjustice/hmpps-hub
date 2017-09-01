@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ForceTrigger>
+    <WizardForm CodeBeside="Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ForceTriggerForm,Sitecore.Shell.MarketingAutomation">
+
+      <style type="text/css">
+        div
+        {
+         font-weight: normal;
+        }
+        
+        .state
+        {
+         font-weight: bold; 
+         margin-top: 8px;
+        }
+        
+        .command
+        {
+         margin: 3px 0px 0px 19px;
+        }
+        
+        .rule
+        {
+         margin-left: 38px;
+        }
+        
+        .action
+        {
+         margin-left: 38px;
+        }
+
+        .scConditionsActions
+        {
+         margin-left: 12px;
+        }
+      </style>
+
+      <WizardFormFirstPage ID="FirstPage" Icon="Applications/32x32/flash.png">
+        <Border Class="scWizardWelcomeTitle">
+          <Literal Text="Welcome to the Execute Trigger Wizard" />
+        </Border>
+        <Literal Text="This wizard helps you:" />
+        <ul>
+          <li class="scWizardBullet">
+            <Literal Text="Select the visitor that you want to execute the trigger for." />
+          </li>
+          <li class="scWizardBullet">
+            <Literal Text="Select the trigger that you want to execute." />
+          </li>
+          <li class="scWizardBullet">
+            <Literal Text="Simulate the trigger for the visitor." />
+          </li>
+          <li class="scWizardBullet">
+            <Literal Text="Execute the trigger for the visitor." />
+          </li>
+        </ul>
+      </WizardFormFirstPage>
+
+      <WizardFormPage ID="ContactAndTrigger" Header="Contact &amp; Trigger" Text="Select the visitor that you want to use and the trigger that you want to execute." Icon="Applications/32x32/flash.png">
+        <WizardFormPadding>
+          <GridPanel Width="100%" VAlign="top" >
+
+            <Label Header="Contact:" />
+            <Space Height="4"/>
+
+            <GridPanel GridPanel.VAlign="top"  Columns="3" Width="100%">
+              <Edit ID="Contact" GridPanel.Width="100%" Width="100%" ReadOnly="true" />
+              <Space Width="6px" />
+              <Button Header="Select" Click="SelectContact_Click" />
+            </GridPanel>
+
+          <Label Header="Trigger:" style="display:inline-block; margin-top:5px;" />
+            <GridPanel GridPanel.VAlign="top" Columns="3" Width="100%">
+              <Edit ID="Trigger" GridPanel.Width="100%" Width="100%" ReadOnly="true" />
+              <Space Width="6px" />
+              <Button Header="Select" Click="SelectTrigger_Click" />
+            </GridPanel>
+
+          </GridPanel>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Simulation" Header="Simulation" Text="See the trigger simulation." Icon="Applications/32x32/flash.png">
+        <WizardFormPadding>
+          <Scrollbox ID="ReportBox" class="scStretch" Background="transparent" Border="0px solid #A5ACB2" Padding="4px" />
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormLastPage ID="Finish" Icon="Applications/32x32/flash.png">
+        <GridPanel Width="100%" Cellspacing="4px">
+          <Literal ID="Result" />
+          <Literal Text="Click Finish to close the Wizard." />
+        </GridPanel>
+      </WizardFormLastPage>
+
+    </WizardForm>
+  </ForceTrigger>
+</control>

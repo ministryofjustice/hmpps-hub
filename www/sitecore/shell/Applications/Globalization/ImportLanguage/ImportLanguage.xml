@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ImportLanguage>
+    <WizardForm CodeBeside="Sitecore.Shell.Applications.GLobalization.ImportLanguage.ImportLanguageForm,Sitecore.Client" Submittable="false">
+
+      <Stylesheet>
+        table.scFormTable > tbody > tr > td {
+            padding-top: 5px !important;
+        }
+      </Stylesheet>
+
+      <WizardFormPage ID="File" Header="Import Languages" Text="Enter the language file name of the language that you want to import.">
+        <WizardFormIndent>
+          <Literal class="scFieldLabel" Text="Language file name:"/>
+          <GridPanel Columns="2">
+            <Edit ID="LanguageFile" GridPanel.Style="width: 100%; padding: 0 10px 0 0;"/>
+            <Button ID="Browse" Header="Browse" Click="import:browse"/>
+          </GridPanel>
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Languages" Header="Import Languages" Text="Please the languages in the language file that you want to import. When ready, click Next to continue.">
+        <WizardFormIndent>
+          <Literal class="scFieldLabel" Text="Choose the languages to import:"/>
+
+          <Scrollbox ID="LanguageList" class="scScrollbox scPaddingless" Width="100%" Height="400px" />
+
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Ready" Header="Import Languages" Text="Select the default database that must be used for the translation keys that do not have a database specified.">
+        <WizardFormIndent>
+          <GridPanel class="scFormTable" Columns="2" CellPadding="4">
+            <Literal class="sc-text-bold" style="line-height: 35px;" Text="Database:"/>
+            <Listbox Style="width: 50%;" ID="Databases"/>
+            
+            <Literal class="sc-text-bold" Text="File:"/>
+            <Literal ID="LanguageFileInfo" />
+
+            <Literal class="sc-text-bold" Text="Languages:" GridPanel.Valign="top"/>
+            <Border ID="SelectedLanguages" />
+          </GridPanel>
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormProgressPage ID="Importing" Header="Import Languages" Text="Please wait while the languages are being imported." ActionText="Importing...">
+        <Border ID="Status" class="scWizardStatusText">&#160;</Border>
+      </WizardFormProgressPage>
+
+      <WizardFormPage ID="Retry" Header="Import Languages" Text="An error occurred while importing the language file. You can review the error text below.">
+        <WizardFormPadding>
+          <Memo ID="ErrorText" ReadOnly="true" class="scStretch"/>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="LastPage" Header="Import Languages">
+        <WizardFormPadding>
+          <div class="scStretch scFlexColumnContainerWithoutFlexie">
+            <Literal class="sc-text-largevalue" Text="The languages have been imported."/>
+            <Literal class="scFieldLabel" Text="Result:"/>
+            <div class="scFlexContentWithoutFlexie scWizardLastPageResultText">
+              <div class="scStretchAbsolute">
+                <Memo ID="ResultText" class="scStretch" ReadOnly="true"/>
+              </div>
+            </div>
+          </div>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+    </WizardForm>
+  </ImportLanguage>
+</control>

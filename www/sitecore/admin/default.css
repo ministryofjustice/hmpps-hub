@@ -1,0 +1,48 @@
+﻿.login-form {
+    margin-top: 2em;
+}
+
+.wf-content input {
+    margin-bottom: 4px;
+}
+
+p.error {
+    margin-top: 2em;
+}
+
+    p.error span {
+        background: #C10100;
+        color: white;
+        padding: 2px 4px;
+    }
+
+div.root {
+    padding-left: 8px;
+}
+
+div.chunk {
+    width: 300px;
+    background: #F5F5F5;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: solid 1px #9A9A9A;
+}
+
+table td.top {
+    vertical-align: top;
+}
+
+.result .error {
+    font-style: italic;
+    color: red;
+}
+
+.result .success {
+    font-style: italic;
+    color: blue;
+}
+
+.refresh-link.refresh-selected {
+    color: red;
+}

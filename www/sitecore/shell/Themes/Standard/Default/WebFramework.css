@@ -1,0 +1,405 @@
+﻿html, body, form, h1, h2, h3, h4, p, img { margin: 0; padding: 0; border: none; }
+
+html, body { height: 100%; }
+
+/* layout */
+body 
+{
+  background-color: Black;
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/background-1.png);
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', Arial, sans-serif;
+  text-align: center;
+  font-size: 12px;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+}
+
+.wf-container
+{
+  width: 860px;
+  min-height: 100%;
+  
+  margin: 0 auto;
+  
+  text-align: left;
+  background: white;
+  overflow: auto;
+}
+
+.wf-content
+{
+  padding: 2em 100px 0 100px;
+}
+
+.wf-footer
+{
+  position: relative;
+  
+  margin-top: 1em;
+  border-top: solid 1px #ccc;
+  padding: 8px 100px 8px 100px;
+  text-align: right;
+}
+
+.wf-footer input
+{
+  min-width: 74px;
+  margin-left: 8px;
+}
+
+.wf-footer .wf-backbutton
+{
+  float: left;
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* non-default layout types */
+.wf-layout-wide .wf-container
+{
+  width: 960px;
+}
+
+.wf-layout-wide .wf-content, .wf-layout-wide .wf-footer
+{
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.wf-layout-long .wf-container
+{
+  height: 100%; /* min-height instead for non-IE */
+  margin-top: -41px; /* footer height */
+}
+
+.wf-layout-long h1
+{
+  padding-top: 41px;
+}
+
+.wf-layout-long .wf-footer
+{
+  position: absolute;
+  bottom: 0;
+  width: 660px;
+  
+  background: white;
+}
+
+.wf-layout-long.wf-layout-wide .wf-footer
+{
+  width: 760px;
+}
+
+#wf-dropshadow-left
+{
+  height: 100%; 
+  width: 8px; 
+  background-color: transparent; 
+  background-image:url(/sitecore/shell/themes/standard/images/webframework/background-dropshadow-left.png); 
+  background-repeat: no-repeat; 
+  position: absolute; 
+  margin-left: -8px;
+}
+
+#wf-dropshadow-right
+{
+  height: 100%; 
+  width: 8px; 
+  background-color: transparent; 
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/background-dropshadow-right.png); 
+  background-repeat: no-repeat;  
+  position: absolute; 
+  margin-left: 860px;
+}
+
+.wf-layout-wide #wf-dropshadow-right
+{
+  margin-left: 960px;
+}
+
+/* content elements */
+a 
+{ 
+  color: #3A66DD; 
+  text-decoration: none; 
+}
+
+a:hover 
+{ 
+  color: #5A99FF; 
+  text-decoration: underline; 
+}
+
+em
+{
+  font-weight: 600;
+  font-style: normal;
+}
+
+h1 
+{
+  color: #0033BC;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+p
+{
+  margin: 1em 0;
+}
+
+/* config section */
+
+.wf-configsection
+{
+  margin: 1em 0;
+  padding-left: 24px;  
+}
+
+.wf-configsection h2
+{
+  margin: 0 0 0 -24px;
+  
+  font-size: 100%;
+  font-weight: normal;  
+  
+  background: url(/sitecore/shell/themes/standard/images/webframework/sectionline.png) repeat-x 0 0.7em;
+}
+
+.wf-configsection h2 span
+{
+  background: white; 
+  padding-right: 4px;
+}
+
+.wf-configsection p
+{
+  margin: 0.5em 0;
+}
+
+
+/* collapsible section */
+
+.wf-collapsiblesection .wf-sectioncontent
+{
+  padding-left: 12px;
+}
+
+.wf-collapsiblesection .wf-sectioncontent p
+{
+  margin: 0.5em 0;
+}
+
+.wf-collapsiblesection h2
+{
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: -6px;
+}
+
+.wf-collapsiblesection h2 a
+{
+  display: block;
+  padding: 1px 1px 4px 1px;
+  outline: none;
+}
+
+.wf-collapsiblesection h2 a:hover
+{
+  border: solid 1px #AECCF1;
+  
+  padding: 0 0 3px 0;
+  background: transparent url(/sitecore/shell/themes/standard/images/webframework/highlights/blue_hover_47.png) repeat-x 0 100%;
+  text-decoration: none;
+}
+
+.wf-collapsiblesection h2 a span
+{
+  background: transparent url(/sitecore/shell/themes/standard/images/webframework/expanders/triangle_expanded.png) 2px 4px no-repeat;
+  padding-right: 4px;
+  padding-left: 18px;
+  white-space: nowrap;
+}
+
+.wf-collapsiblesection h2 a span.wf-line
+{
+  height: 6px;
+  display: block;
+  margin-right: 12px;
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/sectionline.png);
+  background-repeat: repeat-x;
+  background-position: 100% 100%;
+}
+
+.wf-collapsiblesection-collapsed h2 a span 
+{
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/expanders/triangle_collapsed.png)
+}
+
+.wf-collapsiblesection h2 a:hover span
+{
+  background-color: transparent;
+}
+
+/* special elements */
+.wf-subtitle 
+{
+  margin-top: 0;
+}
+
+input[type='submit'], input[type='button'], input.wf-csscompat-button
+{
+  font-size: 12px;
+}
+
+/* stateboxes */
+
+.wf-statebox
+{
+  margin-top: 1em;
+  padding: 1em 12px 1em 32px;
+  border: solid 1px #ccc;  
+  background-repeat: no-repeat;
+}
+
+.wf-statebox-success
+{
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/stripe-success.png);
+}
+
+.wf-statebox-warning
+{
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/stripe-warning.png);
+}
+
+.wf-statebox-error
+{
+  background-image: url(/sitecore/shell/themes/standard/images/webframework/stripe-error.png);
+}
+
+/* Action buttons */
+
+.wf-actionbuttons
+{
+  overflow: auto;
+}
+
+.wf-actionbutton
+{
+  width: 50%;
+  display: block;
+  color: Black;
+  
+  padding: 8px 4px;
+  border: solid 1px transparent;
+  overflow: auto;
+  
+  margin-bottom: 1em;  
+  cursor: pointer;
+  outline: none;
+}
+
+.wf-actionbutton:hover 
+{
+  color: Black;
+  text-decoration: none;
+  background-color: #F5F8FD;
+  border: solid 1px #B8D6FB;
+}
+
+.wf-actionbutton:active, .wf-actionbutton.wf-csscompat-active
+{
+  padding: 9px 3px 7px 5px; /* 1px offset to bottom-right from normal state to emulate keypress */
+  background-color: #D3E5FC;
+  border: solid 1px #7DA2CE;
+}
+
+.wf-actionbutton:hover .wf-title
+{
+  text-decoration: underline;
+}
+
+.wf-actionbutton img
+{
+  padding: 2px 8px 2px 4px;
+  float: left;
+}
+
+.wf-actionbutton .wf-title
+{
+  display: block;
+  
+  font-weight: 600;
+}
+
+.wf-actionbutton .wf-subtitle
+{
+}
+
+/* progress */
+
+.wf-progress-bar {
+  position: relative; 
+}
+
+.wf-progress-bar .wf-progress-background
+{
+  position: relative;
+  height: 15px;
+  width: 355px;
+  background: url(/sitecore/shell/themes/standard/images/progress/background.png);  
+}
+
+.wf-progress-bar .wf-progress-filler {
+  position: absolute; 
+  top: 1px; 
+  left: 1px; 
+  width: 0px; 
+  height: 13px;
+  overflow: hidden;  
+  background: url(/sitecore/shell/themes/standard/images/progress/filler.png) no-repeat;
+}
+
+.wf-progress-box-playing .wf-progress-filler
+{
+  background-position: -50px 0;
+}
+
+.wf-state-error .wf-progress-filler 
+{
+  background: url(/sitecore/shell/themes/standard/images/progress/filler_error.png);
+}
+
+/* ?
+
+.wf-progress .wf-more
+{
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.wf-progress-details
+{
+  border: solid 1px #ccc;
+  padding: 4px 8px;
+  max-height: 350px;
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+*/
+
+.wf-watermark 
+{
+  color: #666;
+  margin: 4px 0 0 4px;
+}
+
+/* ui state mixins */
+
+/* outline */
+

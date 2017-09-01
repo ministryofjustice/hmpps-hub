@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:rad="http://www.sitecore.net/rad">
+  <IDE.SolutionExplorer>
+    <FormPage Submittable="false">
+      <Stylesheet Src="IDE.css" DeviceDependant="true"/>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Windows.SolutionExplorer.SolutionExplorerForm,Sitecore.Client"/>
+
+      <DockWindowChrome Header="Solution Explorer">
+      
+        <DataContext ID="ContentEditorDataContext" DataViewName="Master" Root="/sitecore/layout"/>
+        
+        <GridPanel Width="100%" Height="100%" Fixed="true">
+        
+          <Border>
+            <Toolbar>
+              <Toolbutton Icon="Core3/16x16/open_document.png" IconSize="id16x16" Click="Open" ToolTip="Open the selected item"/>
+              <Toolbutton Icon="Office/16x16/refresh.png" IconSize="id16x16" Click="Refresh" ToolTip="Refresh"/>
+            </Toolbar>
+            <Border Background="#aca899"><Space/></Border>
+          </Border>
+
+          <Scrollbox Class="scScrollbox" Height="100%" Padding="0px" Border="none" ContextMenu="Treeview.GetContextMenu" GridPanel.Height="100%">
+            <TreeviewEx ID="Treeview" DataContext="ContentEditorDataContext" ShowRoot="false" DblClick="open" />
+          </Scrollbox>
+          
+        </GridPanel>
+      
+      </DockWindowChrome>
+
+    </FormPage>
+  </IDE.SolutionExplorer>
+</control>
+

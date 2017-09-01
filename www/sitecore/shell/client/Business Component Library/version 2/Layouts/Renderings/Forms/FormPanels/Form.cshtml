@@ -1,0 +1,74 @@
+﻿@using System.Text
+@using Sitecore.Data
+@using Sitecore.Mvc
+@using Sitecore.Speak.Components.Models.ListsAndGrids.Grids
+@model Sitecore.Speak.Components.Models.Forms.FormPanels.FormRenderingModel
+@{
+  Model.Class.Append("sc-form sc-grid");
+  Model.PaddingClass = "sc-bottom-padding";
+  Model.Class.AppendIf(Model.HasRequiredFields, "sc-hasrequiredfields");
+  Model.DataBind.IsVisible();
+
+  const string RootSectionLabel = "FormRoot";
+  const string RootContainerId = "{08994B8F-7BF1-4963-815D-0FA8D75B3D86}"; //Border rendering
+  const string RootContentPlaceholderName = "Content";
+}
+
+<form @Model.HtmlAttributes>
+
+  @foreach (var formSection in Model.FormSections)
+  {
+    string containerId;
+    string contentPlaceholderName;
+
+    if (formSection.SectionLabel == null)
+    {
+      containerId = RootContainerId;
+      contentPlaceholderName = RootContentPlaceholderName;
+      formSection.SectionLabel = RootSectionLabel;
+      formSection.ControlId = RootSectionLabel;
+    }
+    else
+    {
+      containerId = Model.NestedContainerId;
+      contentPlaceholderName = Model.NestedContentPlaceholderName;
+    }
+
+    var containerPlaceholderId = formSection.ControlId;
+    var formDressingItemIndex = 0;
+
+    foreach (var formDressingItem in formSection.FormFields)
+    {
+      Model.InitializeColumns(formSection.FormFields.Count);
+
+      string[] visibilities = formDressingItem.IsLabelOnTop ? new[] { string.Empty, "hidden" } : new[] { "visible-xs", "hidden-xs" };
+
+      var cellContents = new StringBuilder();
+
+      cellContents.AppendFormat("<div class=\"{0}\">", @Html.GetColumnsClass(Model.GridAttributes, Model.GridCellSizes, Model.PaddingClass, formDressingItemIndex));
+      cellContents.AppendFormat("<div title=\"{0}\">", @formDressingItem.FormLabel);
+      cellContents.AppendFormat("<div class=\"sc-formlabeltop {0}\">", @visibilities[0]);
+      cellContents.Append("<div class=\"sc-global-isrequired\"> </div>");
+      cellContents.AppendFormat("<span>{0}</span>", @formDressingItem.FormLabel);
+      cellContents.Append("</div>");
+      cellContents.AppendFormat("<div class=\"sc-formlabelleft {0}\">", @visibilities[1]);
+      cellContents.AppendFormat("<span>{0}</span>", @formDressingItem.FormLabel);
+      cellContents.Append("</div></div>");
+      cellContents.Append("<div class=\"sc-formcomponent\">");
+      cellContents.AppendFormat("<div class=\"sc-global-isrequired\">{0}</div>", @formDressingItem.IsRequired ? "*" : String.Empty);
+      cellContents.Append("<div class=\"sc-formcomponent-wrapper\">");
+      cellContents.Append(@Html.RenderView(@formDressingItem.RenderingItemId, new { Id = formDressingItem.ItemName, ConfigurationItem = ID.IsNullOrEmpty(formDressingItem.Id) ? string.Empty : formDressingItem.Id.ToString() }).ToHtmlString());
+      cellContents.AppendFormat("<div class=\"sc-formhelptext\" title=\"{0}\">", @formDressingItem.HelpText);
+      cellContents.AppendFormat("<span>{0}</span>", @formDressingItem.HelpText);
+      cellContents.Append("</div></div></div></div>");
+      cellContents.Append(@Html.RenderClearFix(Model.GridAttributes, formDressingItemIndex));
+
+      Html.Sitecore().AddContentToPlaceholder(containerPlaceholderId + "." + contentPlaceholderName, cellContents.ToString());
+
+      formDressingItemIndex++;
+    }
+
+    @Html.RenderView(containerId, new { Id = containerPlaceholderId, HeaderText = formSection.SectionLabel, ConfigurationItem = ID.IsNullOrEmpty(formSection.Id) ? string.Empty : formSection.Id.ToString() })
+  }
+
+</form>

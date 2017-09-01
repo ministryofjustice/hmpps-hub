@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <TaskText>
+    <div id="$ID" class="sc_task_text"><def:Placeholder/></div>
+  </TaskText>
+</control>

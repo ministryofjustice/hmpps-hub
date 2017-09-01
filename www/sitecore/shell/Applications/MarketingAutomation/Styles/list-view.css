@@ -1,0 +1,114 @@
+﻿ul 
+{
+    
+    margin:0 10px;
+    padding:0;
+}
+
+li
+{
+    margin:0;
+    list-style-type:none;  
+    padding: 2px 3px 2px 5px;       
+ 
+}
+
+li.group
+{
+    border-bottom:1px solid #B4B4B4;
+    margin-bottom:3px;   
+    margin-top:5px;   
+    font-weight:bold;       
+}
+
+li.state
+{
+    padding-left:20px;   
+}
+
+li.state.ui-state-focus
+{
+    margin:0;
+    background: url("/sitecore/shell/themes/standard/Images/Tree/TreeNodeNormalBackground.png") repeat-x scroll 0 0 #E8F5FD;
+    border: 1px solid #D8F0FA;
+    padding: 1px 2px 1px 19px;           
+}
+
+li.state.ui-state-active
+{
+    margin:0;
+    background: url("/sitecore/shell/themes/standard/Images/Tree/TreeNodeActiveBackground.png") repeat-x scroll 0 0 #D5EFFC;
+    border: 1px solid #99DEFD;
+    padding: 1px 2px 1px 19px;        
+}
+
+.ui-search-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: transparent url("/sitecore/shell/themes/standard/Images/close.png") no-repeat 0 0;
+    position: absolute;
+    top: 9px;
+    right: 0;
+    left: auto !important;
+}
+
+.ui-list-load
+{
+    width:100%; 
+    text-align:center;
+    margin-top:20px;
+}
+
+.ui-list-load img
+{
+    margin:-5px;
+}
+.ui-list-load span
+{
+    padding:10px;
+}
+
+.ui-list-nodata
+{
+    width:100%;
+    
+    text-align:center;
+    padding-top:100px;
+}
+
+.group .ui-icon, 
+.group.ui-state-hover .ui-icon, 
+.group.ui-state-focus .ui-icon
+{
+    float:right;
+}
+
+li.ui-state-focus-group
+{
+    border:0;
+    border-bottom:1px solid #B4B4B4;
+    padding: 2px 3px 2px 5px;      
+    margin-bottom:3px;   
+    margin-top:5px;       
+    background: url("/sitecore/shell/themes/standard/Images/Tree/TreeNodeNormalBackground.png") repeat-x scroll 0 0 #E8F5FD;
+}
+
+.header div, .header input, .header select, .jq_watermark, .watermark_container, .watermark_container input, #Container {
+  width: 100% !important;
+}
+
+#Container {
+  margin-top: 5px;
+}
+
+.ui-title {
+  display: block;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.ui-value {
+  display: block;
+  padding: 5px;
+}

@@ -1,0 +1,73 @@
+﻿@using Sitecore.Configuration
+@using Sitecore.Extensions.StringExtensions
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Text
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var control = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  control.Class = "sc-rule";
+  control.Requires.Script("controls", "Rule.js");
+
+  var ruleItemId = control.GetString("RuleItemId") ?? string.Empty;
+  var field = control.GetString("Field") ?? string.Empty;
+  var loadMode = control.GetString("LoadMode") ?? string.Empty;
+  var useBundle = control.GetBool("UseBundle", true);
+
+  var customHandler = SpeakSettings.Html.RequireJsCustomHandler;
+
+  var virtualFolder = Sitecore.Context.Site.VirtualFolder;
+  if (virtualFolder.EndsWith("/"))
+  {
+    virtualFolder = virtualFolder.Left(virtualFolder.Length - 1);
+  }
+
+  if (!string.IsNullOrEmpty(virtualFolder))
+  {
+    if (customHandler.StartsWith("/"))
+    {
+      customHandler = customHandler.Mid(1);
+    }
+
+    customHandler = virtualFolder + "/" + customHandler;
+  }
+
+  var url = new UrlString(customHandler + "rules/rule.js");
+  url.Parameters["i"] = ruleItemId;
+  url.Parameters["f"] = field;
+  
+  var item = Model.Rendering.Item.Database.GetItem(ruleItemId);
+  if (item != null) {
+    url.Parameters["t"] = item.Statistics.Revision;
+  }
+
+  if (useBundle)
+  {
+    url.Parameters["b"] = "1";
+  }
+
+  control.SetAttribute("data-sc-component", "Rule");
+  control.SetAttribute("data-sc-rulescript", url.ToString());
+  control.SetAttribute("data-sc-trigger", control.GetString("Trigger"));
+  control.SetAttribute("data-sc-control", control.GetString("TargetControl"));
+  control.SetAttribute("data-sc-loadmode", loadMode.ToLowerInvariant());
+
+  var output = string.Empty;
+  if (string.Compare(loadMode, "Inline", StringComparison.InvariantCultureIgnoreCase) == 0)
+  {
+    var rule = new Sitecore.Resources.Pipelines.ResolveScript.Rule();
+    var script = rule.WriteScript(url.ToString(), ruleItemId, field, true, true);
+    output = script.Output.ToString();
+    control.SetAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
+  }
+  else
+  {
+    control.SetAttribute(HtmlTextWriterAttribute.Type, "text/x-sitecore-rule");
+  }
+
+  var htmlAttributes = control.HtmlAttributes;
+}      
+<script @htmlAttributes>
+  @Html.Raw(output)
+</script>

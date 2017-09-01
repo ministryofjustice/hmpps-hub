@@ -1,0 +1,42 @@
+a.scLinkNormal, a.scLinkNormal:link, a.scLinkNormal:visited, a.scLinkNormal:hover, a.scLinkNormal:active {
+  cursor:default;
+  display:block;
+  height:36px;
+  margin:3px 0px 3px 0px;
+  padding:2px 1px 2px 3px;
+  text-decoration:none;
+}
+
+a.scLinkNormal:hover {
+  border-top: 1px solid #ddcf9b;
+  border-bottom: 1px solid #dfd8bd;
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonHover.png) repeat-x;
+  padding:1px 1px 1px 3px;
+}
+
+a.scLinkActive, a.scLinkActive:link, a.scLinkActive:visited, a.scLinkActive:hover, a.scLinkActive:active {
+  cursor:default;
+  display:block;
+  height:36px;
+  margin:3px 0px 3px 0px;
+  border-top: 1px solid #ddcf9b;
+  border-bottom: 1px solid #dfd8bd;
+  background: #ffe695 url(/sitecore/shell/Themes/Standard/Images/RibbonLargeButtonDown.png) repeat-x;
+  padding:1px 1px 1px 3px;
+  text-decoration:none;
+}
+
+.scLinkIcon {
+  width:32px;
+  height:32px;
+  margin:0px 4px 0px 0px;
+  float:left;
+  vertical-align:absmiddle;
+}
+
+.scLinkName {
+}
+
+.scLinkPath {
+  color:#666666;
+}

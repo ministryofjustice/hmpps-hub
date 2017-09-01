@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html
+        {
+            height: 100%;
+        }
+        body
+        {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        #map_canvas
+        {
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true">
+    </script>
+    <script type="text/javascript">
+        function GetPointsList(elementName) {
+            var result = new Array();
+            var i = 0;
+            var element = parent.document.getElementsByName(elementName)[0];
+            if (element != null) {
+                var points = element.getAttribute('value').split(';');
+                if (points.length > 0) {
+                    for (i = 0; i < points.length; i++) {
+                        var values = points[i].split(':');
+                        result[i] = new Array(3);
+                        result[i][0] = values[0];
+                        result[i][1] = parseFloat(values[1]);
+                        result[i][2] = parseFloat(values[2]);
+                    }
+                }
+            }
+            return result;
+        }
+
+        function initialize() {
+
+            var points = GetPointsList("dataVariable");
+            if (points != null) {
+                var url = CeateGoogleMapsUrl(points);
+                createSmallMap(points);
+            }
+        }
+
+        function createSmallMap(points) {
+            if (points == null) {
+                return;
+            }
+            var latlng = new google.maps.LatLng(points[0][2], points[0][2]);
+
+            var zoomValue = points.length > 3 ? 3 : 6;
+            var myOptions = {
+                zoom: zoomValue,
+                center: latlng,
+                disableDefaultUI: true,
+                draggableCursor: "www.maps.google.com",
+                draggable: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+            var markers = new Array();
+
+
+            if (points != null) {
+                if (points.length >= 1) {
+                    map.setCenter(new google.maps.LatLng(points[0][1], points[0][2]));
+                }
+
+
+                for (i = 0; i < points.length; i++) {
+                    var markerOpt = {
+                        position: new google.maps.LatLng(points[i][1], points[i][2]),
+                        map: map,
+                        title: points[i][0]
+                    };
+                    markers[i] = new google.maps.Marker(markerOpt);
+                    google.maps.event.addListener(markers[i], 'click', function () {
+                        window.open('http:\//maps.google.com/maps?q=' + this.position.lat() + ',' + this.position.lng() + '&t=m&z=5');                        
+                    });
+                }
+            }
+            google.maps.event.addListener(map, 'click', function () { window.open(CreateGoogleMapsUrl(points)); });
+        }       
+
+        function CeateGoogleMapsUrl(points) {
+            if (points == null) {
+                return;
+            }
+            var url = 'http://maps.google.com/maps/api/staticmap?&sensor=false&size=420x220';         
+
+            for (i = 0; i < points.length; i++) {
+                var marker = '&markers=color:blue|label:A|' + points[i][1] + ',' + points[i][2]
+                url += marker;
+            }            
+        }
+
+      
+    </script>
+</head>
+<body onload="javascript:initialize();">
+    <div id="map_canvas" style="width: 100%; height: 100%">
+    </div>
+</body>
+</html>

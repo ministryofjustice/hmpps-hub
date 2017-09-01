@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <TemplateLister>
+    <FormDialog ID="Dialog" Icon="Software/32x32/component_yellow.png" Header="Select a template" 
+      Text="Please select a template. Then click the Open button." OKButton="Open">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Templates.TemplateLister.TemplateListerForm,Sitecore.Client"/>
+
+      <TemplateDataContext ID="TemplatesDataContext"/>
+
+      <Scrollbox Width="100%" Height="100%" Background="white" Border="1px inset" Padding="0">
+        <TreeviewEx ID="TemplateLister" DblClick="OnTemplateListerDblClick" DataContext="TemplatesDataContext" />
+      </Scrollbox>
+      
+    </FormDialog>
+  </TemplateLister>
+</control>
+

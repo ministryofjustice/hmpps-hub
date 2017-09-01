@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <IDEContentEditor>
+    <FormPage scroll="yes">
+      <Stylesheet Src="/sitecore/shell/Applications/Content editor/Content editor.css"/>
+      <Stylesheet Src="Sidebar.css"/>
+      <Stylesheet Src="ToolCombobutton.css"/>
+      <Stylesheet Src="/sitecore/shell/Applications/Dialogs/Diff/Diff.css"/>
+
+      <Script type="text/JavaScript" language="javascript" src="/sitecore/shell/controls/SitecoreObjects.js"/>
+      <Script type="text/JavaScript" language="javascript" src="/sitecore/shell/controls/SitecoreVSplitter.js"/>
+      <Script type="text/JavaScript" language="javascript" src="/sitecore/shell/controls/SitecoreKeyboard.js"/>
+
+      <script type="text/javascript">
+        if (scForm) {
+          scForm.enableModifiedHandling();
+        }
+      </script>
+      
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentEditor.ContentEditorForm,Sitecore.Client"/>
+   
+      <shell:ContentDataContext ID="ContentEditorDataContext"/>
+      <UpAction ID="UpAction" DataContext="ContentEditorDataContext"/>
+      <Action ID="SidebarAction" Checked="true"/>
+      <Action ID="ToolbarAction" Checked="true"/>
+      
+      <GridPanel ID="Grid" Width="100%" Height="100%" Style="table-layout:fixed">
+        
+        <AutoToolbar DataSource="/sitecore/content/Applications/Preview/Editor/Toolbar 1"/>
+
+        <Border ID="ContentEditorToolbar" GridPanel.Row.ID="ContentEditorToolbarRow">
+          <CommandPortal ID="ContentEditorToolbarPortal" PortalID="ContentEditorCommandPortal" PortalDataSource="/sitecore/content/Applications/Content editor/Commands portal" DataContext="ContentEditorDataContext"/>
+        </Border>
+
+        <GridPanel Columns="3" Width="100%" Height="100%" Class="scLightBlueGradient" GridPanel.Height="100%" Style="table-layout:fixed">
+
+          <Scrollbox ID="ContentEditor" Background="transparent" Border="none" Padding="0" Width="100%" Height="100%" GridPanel.Width="100%" GridPanel.Height="100%" GridPanel.VAlign="top">
+            <ContentEditorEditor ID="ContentEditorEditor"/>
+          </Scrollbox>
+          
+          <VSplitter ID="ContentEditorRight" GridPanel.Width="4" Target="right" GridPanel.Style="background:#8595a4"/>
+          
+          <Sidebar GridPanel.Width="120">
+            
+            <Border ID="Sections">
+              <SidebarContentEditorSections DataContext="ContentEditorDataContext"/>
+            </Border>
+
+          </Sidebar>
+          
+        </GridPanel>
+
+      </GridPanel>
+    </FormPage>
+  </IDEContentEditor>
+</control>

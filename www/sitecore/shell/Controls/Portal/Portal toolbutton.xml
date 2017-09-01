@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortalToolbutton>
+
+    <Border Class="PortalToolbutton" Click="$Click" RollOver="true" ToolTip="$ToolTip">
+      <Image Src="/sitecore/portal/tech/go_s.gif" Width="14" Height="9" Align="absmiddle"/>
+      <Literal Text="$Header"/>
+    </Border>
+  
+  </PortalToolbutton>
+</control>

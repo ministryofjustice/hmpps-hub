@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.WebEdit.Dialogs.DateSelector x:inherits="Sitecore.Shell.Applications.WebEdit.Dialogs.DateSelector.DateSelectorPage,Sitecore.ExperienceEditor">
+    <x:register assembly="ComponentArt.Web.UI" namespace="ComponentArt.Web.UI" />
+    
+    <Sitecore.Controls.DialogPage runat="server" Icon="Business/32x32/Calendar.png" Header="Select Preview Date" Text="Select the date that you want to preview.">
+      <AjaxScriptManager runat="server" />
+      <ContinuationManager runat="server" />
+      <Script runat="server" Src="/sitecore/shell/Controls/Sitecore.Runtime.js"/>
+      <Script runat="server">
+        function HideIfMilitary() {
+          if (typeof(sc_amDesignator) == "undefined") {
+            $$(".amPmControl").each(function(control) { control.hide(); });
+            $(document.body).addClassName("military");
+          }
+        };
+        
+        function UpdateDesignator() {
+          var ampmInput = $("AMPMInput");
+          
+          $$("#AMArrow, #PMArrow").each(function(arrow) {
+            arrow.observe("click", function(e) {
+              ampmInput.value = ampmInput.value == sc_amDesignator ? sc_pmDesignator : sc_amDesignator;
+            });
+          });
+        };
+        
+        Event.observe(window, 'load', function() { 
+          Calendar1.add_selectionChanged(UpdateDesignator);
+          HideIfMilitary(); 
+          UpdateDesignator(); 
+        });
+      </Script>
+      <Stylesheet runat="server" Src="Calendar.css"  DeviceDependant="true"/>
+      <x:register assembly="ComponentArt.Web.UI" namespace="ComponentArt.Web.UI"/>
+
+      <GridPanel runat="server" Width="100%" Height="100%" Fixed="true">
+
+        <Border GridPanel.Align="center" GridPanel.VAlign="top"  runat="server">
+          <Calendar id="Calendar1"
+            AllowMultipleSelection="false"
+            AllowMonthSelection="false"
+            AllowWeekSelection="false"
+            SwapSlide="Linear"
+            SwapDuration="250"
+            VisibleDate="2006-2-15"
+            SelectedDate="2006-2-15"
+            ShowCalendarTitle="false"
+            DayNameFormat="FirstTwoLetters"
+            CalendarCssClass="calendar"
+            DayCssClass="day"
+            DayHoverCssClass="dayhover"
+            SelectedDayCssClass="selectedday"
+            SelectedDayHoverCssClass="selecteddayhover"
+            OtherMonthDayCssClass="othermonthday"
+            OtherMonthDayHoverCssClass="othermonthdayhover"
+            DayHeaderCssClass="dayheader"
+            SelectMonthCssClass="monthselector"
+            SelectWeekCssClass="weekselector"
+            MonthPadding="4"
+            CellPadding="4" 
+            runat="server">
+            <HeaderClientTemplate runat="server">
+              <ClientTemplate runat="server">
+                <table cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="background-image:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerBg.gif);padding:5px;padding-right:4px;">
+                      <table cellpadding="0" cellspacing="0" style="width:272px;height:48px;">
+                        <tr>
+                          <td style="width:57px;height:48px;background-image:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerDayBg.gif);" align="center">
+                            <table cellpadding="0" cellspacing="0" style="width:57px;height:40px;">
+                              <tr>
+                                <td class="topheadertext">##Calendar1.formatDate(Calendar1.getSelectedDate(),"ddd").toUpperCase()##</td>
+                              </tr>
+                              <tr>
+                                <td class="topheadertext" style="font-size:22px;">##Calendar1.formatDate(Calendar1.getSelectedDate(),"d")##</td>
+                              </tr>
+                            </table>
+                          </td>
+                          <td  style="width:2px;height:48px;">
+                            <img src="/sitecore/shell/themes/standard/ComponentArt/Calendar/spacer.gif" width="2" height="48" alt="" style="display:block;" />
+                          </td>
+                          <td style="width:140px;height:48px;background-image:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerMonthBg.gif);" align="center" valign="top">
+                            <table cellpadding="0" cellspacing="0" style="width:140px;height:48px;">
+                              <tr>
+                                <td style="width:14px;">
+                                  <img onclick="Calendar1.goPrevMonth();" src="/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevMonth.gif" onmouseover="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevMonthHover.gif';" onmouseout="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevMonth.gif';" onmousedown="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevMonthDown.gif';" onmouseup="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevMonthHover.gif';" width="14" height="48" alt="" style="display:block;" />
+                                </td>
+                                <td class="topheadertext">##Calendar1.formatDate(Calendar1.get_visibleDate(),"MMMM").toUpperCase()##</td>
+                                <td style="width:15px;">
+                                  <img onclick="Calendar1.goNextMonth();" src="/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextMonth.gif" onmouseover="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextMonthHover.gif';" onmouseout="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextMonth.gif';" onmousedown="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextMonthDown.gif';" onmouseup="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextMonthHover.gif';" width="15" height="48" alt="" style="display:block;" />
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <td style="width:2px;height:48px;">
+                            <img src="/sitecore/shell/themes/standard/ComponentArt/Calendar/spacer.gif" width="2" height="48" alt="" style="display:block;" />
+                          </td>
+                          <td style="width:71px;height:48px;background-image:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerYearBg.gif);" align="center">
+                            <table cellpadding="0" cellspacing="0" style="width:71px;">
+                              <tr>
+                                <td rowspan="2" class="topheadertext" align="center">##Calendar1.formatDate(Calendar1.get_visibleDate(),"yyyy")##</td>
+                                <td style="width:16px;">
+                                  <img onclick="Calendar1.goNextYear();" src="/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYear.gif" onmouseover="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYearHover.gif';" onmouseout="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYear.gif';" onmousedown="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYearDown.gif';" onmouseup="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYearHover.gif';" width="16" height="24" alt="" style="display:block;" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="width:16px;">
+                                  <img onclick="Calendar1.goPrevYear();" src="/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYear.gif" onmouseover="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYearHover.gif';" onmouseout="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYear.gif';" onmousedown="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYearDown.gif';" onmouseup="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYearHover.gif';" width="16" height="24" alt="" style="display:block;" />
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </ClientTemplate>
+            </HeaderClientTemplate>                       
+            <FooterClientTemplate runat="server">
+              <ClientTemplate runat="server">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td style="background-image:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerBg.gif);padding:5px;padding-right:4px;" align="center">
+                      <table cellpadding="0" cellspacing="0" style="width:140px;height:48px;">
+                        <tr>
+                          <td style="width:140px;height:48px;background:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerMonthBg.gif);" align="center">
+                            <table cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td align="right">
+                                  <input id="Hour" value="12" maxlength="2" style="color:#4A495E;border:none;background:transparent;font:22px arial black;text-align:right" />
+                                </td>
+                                <td align="center" style="color:#4A495E;font:22px arial black">:</td>
+                                <td>
+                                  <input id="Minute" value="00" maxlength="2" style="color:#4A495E;border:none;background:transparent;font:22px arial black;" />
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <td class="amPmControl" style="width:56px; padding: 0px 4px; height:48px; background:url(/sitecore/shell/themes/standard/ComponentArt/Calendar/top_headerMonthBg.gif)">
+                            <input id="AMPMInput" value="##typeof(sc_amDesignator) == 'undefined'?'':sc_amDesignator##" style="color:#4A495E;border:none;background:transparent;font:22px arial black;"/>
+                          </td>
+                          <td class="amPmControl" style="height: 48px; width: 16px">
+                            <img id="AMArrow" style="width: 16px; height: 24px; vertical-align:top;" src="/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYear.gif" onmouseup="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYearHover.gif';" onmouseover="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYearHover.gif';" onmousedown="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_nextYearDown.gif';" />
+                            <img id="PMArrow" style="width: 16px; height: 24px; vertical-align:top;" src="/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYear.gif" onmouseup="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYearHover.gif';" onmouseover="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYearHover.gif';" onmousedown="this.src='/sitecore/shell/themes/standard/ComponentArt/Calendar/btn_prevYearDown.gif';" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </ClientTemplate>
+            </FooterClientTemplate>
+          </Calendar>
+        </Border>
+
+        <Border runat="server">
+
+        </Border>
+
+      </GridPanel>
+      
+    </Sitecore.Controls.DialogPage>
+    
+  </Sitecore.Shell.Applications.WebEdit.Dialogs.DateSelector>
+</xamlControls>
+
+
+
+
+

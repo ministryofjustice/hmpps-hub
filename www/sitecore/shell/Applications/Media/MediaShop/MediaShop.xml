@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <MediaShop>
+    <FormPage>
+      <Stylesheet Src="MediaListview.css"/>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Media.MediaShop.MediaShopForm,Sitecore.Client"/>
+
+      <DataContext ID="MediaShopFolderDataContext" DataContext="MediaShopDataContext" Folder="/sitecore/media library" DefaultItem="/sitecore/media library" Filter="Contains('{FE5DD826-48C6-436D-B87A-7C4210C7413B}', @@templateid)" DataViewName="Master"/>
+      <DataContext ID="MediaShopDataContext" DataContext="MediaShopFolderDataContext" Folder="/sitecore/media library" Filter="not(Contains('{FE5DD826-48C6-436D-B87A-7C4210C7413B}', @@templateid))" DataViewName="Master"/>
+        
+      <Action ID="FoldersAction"/>
+      <Action ID="PreviewAction"/>
+      <Action ID="ToolbarAction"/>
+      <UpAction ID="UpAction" DataContext="MediaShopFolderDataContext"/>
+      
+      <ContextMenu ID="TreeContextMenu">
+        <MenuItem Icon="Applications/16x16/refresh.png" Header="Refresh" Click="MediaTreeview.Refresh" />
+      </ContextMenu>
+
+      <ContextMenu ID="ContextMenu">
+        <MenuItem Icon="Applications/16x16/folder_up.png" Header="Up" Action="UpAction" Click="MediaShopFolderDataContext.Up" />
+        <MenuDivider/>
+        <MenuItem Icon="Applications/16x16/view.png" Header="Open File in New Window" Click="OpenFile" />
+        <MenuItem Icon="Applications/16x16/delete2.png" Header="Delete" Click="OnDelete" />
+        <MenuItem Icon="Core/16x16/compress16.png" Header="Add to Zip Archive" Click="OnZip" />
+        <MenuDivider/>
+        <MenuItem Header="View" Type="Submenu" Click="GetViewsMenu()"/>
+      </ContextMenu>
+      
+      <GridPanel ID="Grid" Width="100%" Height="100%" Fixed="true">
+        
+        <AutoToolbar DataSource="/sitecore/content/Applications/Media/MediaShop/Toolbar 1"/>
+        
+        <Border ID="MediaShopToolbar" GridPanel.Row.ID="MediaShopToolbarRow">
+          <CommandPortal ID="MediaShopToolbarPortal" PortalID="MediaShopCommandPortal" PortalDataSource="/sitecore/content/Applications/Media/MediaShop/Commands portal" DataContext="MediaShopDataContext"/>
+        </Border>
+
+        <Border Height="100%" Width="100%" GridPanel.Height="100%" Background="white">
+        
+          <GridPanel ID="Body" Columns="3" Width="100%" Height="100%" Style="table-layout:fixed">
+        
+            <Scrollbox ID="Folders" Width="100%" Height="100%" Background="window" Border="none" Padding="0" Style="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#ffffff', EndColorStr='#DFE6EC')" GridPanel.ID="FoldersPane" GridPanel.Width="200">
+              <DataTreeview ID="MediaTreeview" DataContext="MediaShopFolderDataContext" MultiSelect="False" Root="true" AllowDragging="false" ContextMenu="show:TreeContextMenu"/>
+            </Scrollbox>
+            
+            <VSplitter ID="MediaShopLeft" GridPanel.Width="4" Target="left" GridPanel.Style="background:#8595a4; display:expression(previousSibling.style.display)"/>
+
+            <Border>
+              <GridPanel ID="Content" Width="100%" Height="100%" Fixed="true">
+
+                <Scrollbox Width="100%" Height="100%" Background="window" Border="none" Padding="0" ContextMenu="show:ContextMenu" GridPanel.Height="100%">
+                  <shell:MediaListview ID="MediaShopListview" DataContext="MediaShopDataContext" DblClick="Open" AllowDragging="false" MultiSelect="true" View="Thumbnails">
+                    <ListviewHeader>
+                      <ListviewHeaderItem Name="name" Header="Name"/>
+                      <ListviewHeaderItem Name="size" Header="Size"/>
+                      <ListviewHeaderItem Name="modified" Header="Date Modified"/>
+                    </ListviewHeader>
+                  </shell:MediaListview>
+                </Scrollbox>
+                
+                <HSplitter ID="MediaShopBottom" GridPanel.Height="2" Target="bottom" GridPanel.Row.ID="Preview1"/>
+                
+                <Border Class="scOrange2Gradient" GridPanel.Height="250" GridPanel.ID="PreviewPane" Height="100%" Width="100%">
+
+                  <Scrollbox ID="MediaPreview" Width="100%" Height="100%" Border="none" Padding="0" Background="transparent">
+                    
+                    <GridPanel Columns="2" Height="100%" Width="100%" GridPanel.Width="50%">
+                      <Border Background="#666666" GridPanel.Height="1" Height="1" GridPanel.ColSpan="2"><Space/></Border>
+                      <Border Background="#999999" GridPanel.Height="1" Height="1" GridPanel.ColSpan="2"><Space/></Border>
+
+                      <Border Padding="4" Height="100%" GridPanel.VAlign="top" GridPanel.NoWrap="true">
+                        <Scrollbox Background="white" Border="1px solid black" Height="100%"> 
+                          <Border ID="PreviewImage" Height="100%" Align="center"/>
+                        </Scrollbox>      
+                      </Border>
+                      
+                      <Border Padding="4" GridPanel.Valign="top" GridPanel.Width="50%">
+                        <Border Class="scLargeFont" Foreground="white" Style="filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='#682401', Positive='true')">
+                          <Literal ID="PreviewName" Text="There are no items selected."/>
+                        </Border>
+                        <Border ID="Details"/>
+                      </Border>
+                    </GridPanel>
+                  </Scrollbox>
+                  
+                </Border>
+              </GridPanel>
+            </Border>
+          
+          </GridPanel>
+          
+        </Border>
+        
+      </GridPanel>
+    </FormPage>
+  </MediaShop>
+</control>

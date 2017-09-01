@@ -1,0 +1,18 @@
+﻿@using Sitecore.Shell
+@model Sitecore.Speak.Components.Models.Common.Authentications.AccountInformations.AccountInformationRenderingModel
+@{
+  Model.Class.Append("sc-accountInformation");
+  Model.DataBind.IsVisible();
+}
+<ul @Model.HtmlAttributes>
+  <li>
+    <a class="logout" data-bind="click:logout" href="#">@Model.LogoutText</a>
+  </li>
+  <li>
+    @Model.UserName
+    @if (!string.IsNullOrEmpty(Model.PortraitUrl))
+    {
+      <img src="@Model.PortraitUrl" />
+    }
+  </li>
+</ul>

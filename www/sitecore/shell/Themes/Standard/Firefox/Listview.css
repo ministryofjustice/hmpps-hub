@@ -1,0 +1,206 @@
+.scListview {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.scListviewItemReport {
+	color: windowtext;
+	cursor: default;
+	overflow: hidden;
+	padding: 3px;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+.scListviewItemReport_Selected {
+	background: #F6D2AB;
+	border: 1px solid #F0CCA5;
+	color: #46448D;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	overflow: hidden;
+	padding: 2px;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+.scListviewViewReportIcon {
+	cursor: default;
+	padding-bottom: 4px;
+}
+.scListviewItemIcons {
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 5px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	width: 80px;
+}
+.scListviewItemIcons_Selected {
+	background: #F6D2AB;
+	border: 1px solid #F0CCA5;
+	color: #46448D;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 4px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	width: 80px;
+}
+.scListviewViewIconsIcon {
+	cursor: default;
+	padding-bottom: 4px;
+}
+.scListviewItemList {
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 2px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 150px;
+}
+.scListviewItemList_Selected {
+	background: #F8D5A6;
+	border: 1px solid #F6D2AB;
+	color: #46448D;
+	cursor: default;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	display: inline;
+	overflow: hidden;
+	padding: 1px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 150px;
+}
+.scListviewItemDetails {
+	cursor: default;
+	overflow: hidden;
+	padding: 3px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.scListviewItemDetails_Selected {
+	cursor: default;
+	overflow: hidden;
+	padding: 3px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.scListviewItemDetailsCell {
+	cursor: default;
+	padding: 2px 8px 2px 4px;
+	white-space: nowrap;
+}
+.scListviewItemDetailsCell_Selected {
+	background: #F8D5A6;
+	border-bottom: 1px solid #F6D2AB;
+	border-top: 1px solid #F6D2AB;
+	color: #46448D;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	padding: 1px 8px 1px 4px;
+	white-space: nowrap;
+}
+.scListviewItemThumbnails {
+	color: windowtext;
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 5px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	width: 100px;
+}
+.scListviewItemThumbnails_Selected {
+	background: #F8D5A6;
+	border: 1px solid #F6D2AB;
+	color: #46448D;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	display: inline;
+	overflow: hidden;
+	padding: 4px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	width: 100px;
+}
+.scListviewItemThumbnailsIcon {
+	border: 1px solid threedface;
+	cursor: default;
+	height: 72px;
+	vertical-align: baseline;
+	width: 72px;
+}
+.scListviewItemDocument {
+	border-bottom: 1px solid threedface;
+	color: highlight;
+	cursor: default;
+	overflow: hidden;
+	padding: 5px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+.scListviewItemDocument_Selected {
+	border-bottom: 1px solid threedface;
+	background: highlight;
+	color: highlighttext;
+	cursor: default;
+	overflow: hidden;
+	padding: 5px;
+	text-align: center;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+.scListviewItemDocumentTitle {
+	color: windowtext;
+}
+.scListviewItemDocumentText {
+	color: windowtext;
+}
+.scListviewDetailline 
+{
+  padding: 2px 0px 2px 0px;
+}
+.scListviewNavigator {
+	background: threedface;
+	border-left: 1px solid threedhighlight;
+	border-top: 1px solid threedhighlight;
+	border-right: 1px solid threedshadow;
+	border-bottom: 1px solid threedshadow;
+	padding: 2px 4px 2px 4px;
+	white-space: nowrap;
+}
+.scListviewNavigatorItem {
+	font-weight: bold;
+}
+.scListviewNavigatorItemActive {
+	color: activecaption;
+	font-weight: bold;
+}
+.scListviewViewDetailsHeader {
+	background: threedface url(/sitecore/shell/themes/standard/images/listviewheader16x17.png) repeat-x;
+	border-left: 1px solid #E0E0E0;
+	border-right: 1px solid #FFF;
+	color: #373738;
+	height: 17px;
+	padding: 1px 3px 1px 3px;
+	text-align: left;
+	white-space: nowrap;
+}
+.scListviewViewDetailsHeaderHover {
+	background: threedface url(/sitecore/shell/themes/standard/images/listviewheaderhover16x17.png) repeat-x;
+	border-left: 1px solid #E0E0E0;
+	border-right: 1px solid #FFF;
+	color: #373738;
+	height: 17px;
+	padding: 1px 3px 1px 3px;
+	text-align: left;
+	white-space: nowrap;
+}

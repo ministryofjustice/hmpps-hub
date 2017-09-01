@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sitecore</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="/sitecore/shell/Themes/Standard/Default/Default.css" type="text/css" rel="stylesheet" />
+    <link href="/sitecore/shell/Themes/Standard/Default/Dialogs.css" type="text/css" rel="stylesheet" />
+    <link href="/sitecore/shell/Controls/Lib/Flexie/flex.css" type="text/css" rel="stylesheet" />
+
+    <!--[if IE 9]>
+        <script src="/sitecore/shell/Controls/Lib/Flexie/flexie.min.js"></script>
+    <![endif]-->
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        #Simple {
+            border: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #header {
+            overflow: hidden;
+        }
+
+        #headerIcon {
+            padding: 0 8px 0 8px;
+            vertical-align: top;
+            float: left;
+            display: inline-block;
+        }
+
+            #headerIcon img {
+                display: block;
+            }
+
+        #Details {
+            height: calc(100% - 65px);
+        }
+    </style>
+    <script type="text/javascript">
+
+        function onLoad() {
+            var text = top._scDialogs[0].dialogArguments[0].___Message ? top._scDialogs[0].dialogArguments[0].___Message : top._scDialogs[0].dialogArguments[0];
+
+            if (text == null) {
+                var n = location.href.search.indexOf("error=");
+                text = location.location.href.search.substr(n + 6);
+            }
+
+            var simpleText = "";
+
+            var n = text.indexOf("<h2> <i>");
+            if (n >= 0) {
+                simpleText = text.substr(n + 8);
+                n = simpleText.indexOf("</i>");
+                simpleText = simpleText.substr(0, n);
+            }
+            else {
+                simpleText = text;
+            }
+
+            if (top._scDialogs[0].dialogArguments == null) {
+                simpleText = simpleText.replace(/\</gi, "&lt;").replace(/\>/gi, "&gt;");
+            }
+
+            document.getElementById("error").contentWindow.document.write(text);
+            document.getElementById("SimpleText").innerHTML = simpleText;
+            document.getElementById("Close1").focus();
+
+            top.scForm.autoIncreaseModalDialogHeight(null, window);
+        }
+
+        function scShowDetails() {
+            document.getElementById("Details").style.display = "";
+            document.getElementById("Simple").style.height = "100%";
+            document.getElementById("Details1").disabled = true;
+            top.scForm.setDialogDimension(null, 568);
+        }
+
+    </script>
+</head>
+<body onload='javascript:onLoad();' scroll="no" style="margin: 0">
+    <div id="Simple" class="scStretch" style="height: 100%">
+        <div class="scFormDialogContent" style="height: calc(100% - 56px); position: relative;">
+            <div class="scStretchAbsolute scDialogContentContainer">
+                <div id="header">
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="headerIcon">
+                                    <img src="/sitecore/shell/themes/standard/images/error.png" class="scConfirmationIcon" />
+                                </div>
+                            </td>
+                            <td>
+                                <div id="SimpleText" class="scDialogMessage">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="Details" style="display: none">
+                    <iframe id="error" src="about:blank" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="scFormDialogFooter">
+            <div class="footerOkCancel">
+                <button id="Details1" class="scButton" onclick="javascript:scShowDetails();">Details</button>
+                <button id="Close1" class="scButton" onclick="javascript:window.top.dialogClose();">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

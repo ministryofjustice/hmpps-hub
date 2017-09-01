@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+   <Installer.TextEditor>
+     <FormDialog Header='${WebUtil.SafeEncode(WebUtil.GetQueryString("he"))}' Text='${WebUtil.SafeEncode(WebUtil.GetQueryString("te"))}' Icon='${WebUtil.GetQueryString("ic")}'>
+       <CodeBeside Type="Sitecore.Shell.Applications.Install.Dialogs.TextEditor,Sitecore.Client"/>
+        <Memo ID="Text" Width="100%" Height="100%"/>
+      </FormDialog>
+   </Installer.TextEditor>
+</control>

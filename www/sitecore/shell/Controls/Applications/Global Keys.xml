@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <GlobalKeys>
+    <RegisterKey KeyCode="120" Click="system:publish"/>
+    <KeyMap/>
+  </GlobalKeys>
+</control>

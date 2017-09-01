@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+   <Installer.ItemDateFilterEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ItemDateFilterEditor,Sitecore.Client">
+     <GridPanel class="scFormTable" Columns="2">
+       <Radiobutton def:ID="PastDays" Header="Within the past " Width="100%" Checked="true"  Value="PastDays"/>
+       <div>
+         <Edit def:ID="PastDaysEdit" Margin="0 5px 0 0" Width="80" style="display: inline-block;" />
+         <Literal Text="days"/>
+         <Button def:ID="ClearButton" Header="Clear Filter" style="float: right;"/>
+       </div>
+       <Radiobutton def:ID="SpecifyRange" Width="100%"  Header="Specify dates" Value="SpecifyRange"/>
+       <Border def:ID="Dates">
+         <GridPanel class="scFormTable" Height="100%" Columns="2"   >
+           <Literal Text="Start date:" />
+           <DatePicker def:ID="FromDate" />
+           <Literal Text="End date:"  />
+           <DatePicker def:ID="ToDate" />
+         </GridPanel>
+       </Border>
+     </GridPanel>
+         
+   </Installer.ItemDateFilterEditor>
+</control>

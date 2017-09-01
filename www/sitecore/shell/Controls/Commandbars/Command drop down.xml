@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CommandDropDown>           
+    <Border Class="scRollOver" ID="$ID" Padding="4px 32px 4px 0px" Click="$Click" RollOver="true" ToolTip="$ToolTip" Foreground="white" RenderAs="Literal">
+      <ThemedImage Src="Images/menudropdown9x8.png" Width="9" Height="8" Margin="0px 6px 0px 6px" Align="absmiddle"/>
+      <Literal Class="scClickFont" Text="$Header"/>
+    </Border>
+  </CommandDropDown>
+</control>

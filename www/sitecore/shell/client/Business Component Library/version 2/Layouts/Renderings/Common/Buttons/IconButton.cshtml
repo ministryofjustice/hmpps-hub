@@ -1,0 +1,10 @@
+﻿@model Sitecore.Speak.Components.Models.Common.Buttons.IconButtonRenderingModel
+@{
+  Model.Class.Append("sc-icon-button")
+    .Append(Model.SizeCssClass);
+
+  Model.DataBind.IsVisible().IsEnabled().Click("handler");
+}
+<div @Model.HtmlAttributes>
+  <div style="background-image:url('@Model.Icon');background-position: @Model.SpritePosition ;" data-bind="style: {'backgroundImage': 'url(' + ImageUrl() + ')', 'backgroundPosition': SpritePosition()}" class="sc-icon-button-image"></div>
+</div>

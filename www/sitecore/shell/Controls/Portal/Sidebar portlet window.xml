@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarPortletWindow def:inherits="Sitecore.Shell.Controls.Portal.PortletWindowXmlControl,Sitecore.Client">
+
+    <SidebarTile>
+       <ImageButton def:ID="Menu" Src="/sitecore/portal/tech/menu.gif" Width="16" Height="16" Align="absmiddle" Margin="0px 0px 0px 8px" Visible="false"/>
+       <Border Foreground="white">
+         <SidebarTileHeader Header="$Header" Icon="$Icon"/>
+         <def:Placeholder/>
+       </Border>
+    </SidebarTile>
+ 
+  </SidebarPortletWindow>
+</control>

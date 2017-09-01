@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.FieldSet>
+    <fieldset class="scGroup">
+      <legend>
+        <Literal Text="$Header"/>
+      </legend>
+      <GridPanel Width="100%" Fixed="true" Style="margin-top:5px">
+        <def:Placeholder GridPanel.Container="true"/>
+      </GridPanel>
+    </fieldset>
+  </Installer.FieldSet>
+</control>

@@ -1,0 +1,46 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Containers.TabControl.TabControlRenderingModel
+@{
+  Model.DataBind.IsVisible();
+
+  Model.Class.Append("sc-tab-control");
+
+  Model.Class.Append("sc-tab-control-" + Model.TabVisualStyle.ToLower());
+  const string TabItemBinding = "{" +
+                                "'selected':$parent.SelectedValue() == viewModel[$parent.ValueFieldName()](), " +
+                                "'disabled': viewModel.IsDisabled()," +
+                                "'sc-tab-icon-padding-left': viewModel.IconPadding() == 'Left'," +
+                                "'sc-tab-icon-padding-right': viewModel.IconPadding() == 'Right'," +
+                                "'sc-tab-icon-padding-left-right': viewModel.IconPadding() == 'Left and Right'" +
+                                "}, " +
+                                "style: {minWidth: $parent.TabMinWidth()}";
+  //Model.HasNestedControls = true;
+}
+<div @Model.HtmlAttributes>
+  <div class="sc-tab-control-nav-wrap">
+    <div class="sc-tab-control-button-left">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </div>
+
+    <ul class="sc-tab-control-nav" data-bind="foreach: {data:Items}, style: {minWidth: TabControlMinWidth()}">
+      <li class="sc-tab-control-tab-item"
+          data-bind="css: @TabItemBinding, visible: viewModel.IsHidden() !== '1'">
+        <a href="javascript:;" data-bind="attr: {title: viewModel.Tooltip()}"><span class="sc-tab-control-header-content" data-bind="html: $parent.getDisplayName(viewModel)"></span></a>
+      </li>
+    </ul>
+
+    <div class="sc-tab-control-button-right">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </div>
+  </div>
+
+  <div class="sc-tab-control-content-wrap" data-bind="foreach: Items">
+    <div data-bind="attr:{'data-sc-content-for': viewModel.$itemId()}, css:{'selected': viewModel.IsDisabled()!=='1' && $parent.SelectedValue() == viewModel[$parent.ValueFieldName()]()}, visible: !viewModel.IsHidden() !== '1'"
+         class="sc-tab-control-content">
+    </div>
+  </div>
+  <div class="sc-tab-control-content-disabled" >
+    @ClientHost.Globalization.Translate(Sitecore.Speak.Components.Texts.SelectedTabIsDisabled)
+  </div>
+</div>
+

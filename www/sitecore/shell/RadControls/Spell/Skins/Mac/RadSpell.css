@@ -1,0 +1,61 @@
+/*external components outside RadSpell wrapper*/
+
+/*common*/
+.RadSpell_Mac_Ext
+{
+    margin:1em 0 0;
+    padding:0;
+    font:normal 11px/16px arial,sans-serif;
+}
+.RadSpell_Mac_Ext.spLinkImg,
+.RadSpell_Mac_Ext.spButton
+{
+    display:block;
+    /*the same as background images' dimensions*/
+    width:69px;
+    height:22px;
+    line-height:22px;
+}
+
+/*text link*/
+.RadSpell_Mac_Ext.spLink
+{
+    color:#000;
+}
+.RadSpell_Mac_Ext.spLinkImg
+{
+    color:#000;
+}
+
+/*image link*/
+.RadSpell_Mac_Ext.spLinkImg
+{
+    text-align:center;
+    text-decoration:none;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+}
+
+/*button*/
+.RadSpell_Mac_Ext.spButton
+{
+    border:0;
+    text-align:center;
+    color:#000;
+    cursor:pointer;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+}
+
+
+.RadSpell_Mac_Ext.spLinkImg:hover,
+.RadSpell_Mac_Ext.spButton.spHovered
+{
+    background-position:0 -23px; /*the same as background images' height*/
+}
+
+/*select*/
+.RadSpell_Mac_Ext.spSelect
+{
+    width:69px; /*the same as background images' width*/
+    border:1px solid #ccc;
+    font-size:0.8em;
+}

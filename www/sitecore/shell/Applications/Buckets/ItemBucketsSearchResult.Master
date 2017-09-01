@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ItemBucketsSearchResult.master.cs" Inherits="Sitecore.Buckets.Client.sitecore_modules.Shell.Sitecore.Buckets.ItemBucketsSearchResult" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.HtmlControls.Controls" Assembly="Sitecore.Kernel" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to Sitecore</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,300,600,700,800" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" type="text/css" href="./libs/jquery-ui/css/smoothness/jquery-ui-1.10.3.custom.min.css" media="all"  />
+    <link rel="stylesheet" type="text/css" href="./Styles/jquery-ui.css"  />
+    <link rel="stylesheet" type="text/css" href="./Styles/ItemBucket.css" />
+    <link rel="stylesheet" type="text/css" href="./Styles/SiteNew.css" />
+    <link rel="stylesheet" type="text/css" href="./Styles/ListNew.css" />
+    <link rel="stylesheet" type="text/css" href="./Styles/core.css" />
+    <link rel="stylesheet" type="text/css" href="./Styles/searchBox.css" />
+    
+    <asp:PlaceHolder ID="dynamicHeadPlaceholder" runat="server"></asp:PlaceHolder>     
+    
+   <!--[if IE 8]><script type="text/javascript" src="libs/es5-shim/es5-shim.min.js"></script><![endif]-->
+
+    <% #if DEBUG %>
+    <script data-main="scripts/main" src="libs/requirejs/require-2.1.9.js"></script>
+    <% #else %>
+    <script type="text/javascript" src="Scripts/main.min.js"></script>
+    <% #endif %>
+  
+    <script type="text/javascript" src="/sitecore/shell/controls/lib/prototype/prototype.js"></script>
+
+    <script type="text/javascript" src="/sitecore/shell/controls/Browser.js"></script>
+    <script type="text/javascript" src="/sitecore/shell/controls/Sitecore.js"></script>
+  
+    <script type="text/javascript" src="scripts/ItemBucket.utils.js"></script>
+    <script type="text/javascript" src="scripts/ItemBucket.js"></script>
+
+    <script type="text/javascript">
+      scForm.registerKey("13", "", "");
+    </script>
+
+    <sc:JavaScriptSettings runat="server"/>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" class="mainForm" method="post" runat="server">
+        <!--form submit fix-->
+        <input class="hidden" type="text" />
+
+        <asp:ContentPlaceHolder ID="body" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

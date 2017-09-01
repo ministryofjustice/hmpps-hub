@@ -1,0 +1,87 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+
+@{
+  const string BindingString = "data-bind=attr:{" +
+                                "'data-modal-overflow':modalOverflow," +
+                                "'data-keyboard':keyboard," +
+                                "'data-replace':replace," +
+                                "'data-consume-tab':consumeTab," +
+                                "'data-focus-on':focusOn," +
+                                "'data-backdrop':backdrop" +
+                               "}," +
+                               "css:{fade:isAnimated}";
+
+  const string CssClass = "sc-dialogWindow modal";
+
+
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+
+  userControl.Requires.Script("business", "dialogWindow.js");
+  userControl.HasNestedComponents = true;
+
+
+  var headerText = userControl.GetString("HeaderText");
+  var closeWithKeyboard = userControl.GetBool("EnableKeyboard");
+  var backdrop = userControl.GetString("Backdrop", "backdrop", "true");
+
+  var isAnimated = userControl.GetBool("IsAnimated", true);
+
+  var initialValues = String.Format("data-sc-initial-values={{\"backdrop\":\"{0}\",\"keyboard\":{1},\"isAnimated\":{2}}}",
+    backdrop.ToLower(),
+    closeWithKeyboard.ToString().ToLower(),
+    isAnimated.ToString().ToLower());
+
+  //the headerLess property is used to hide the header of the Dialog
+  var headerLess = userControl.GetBool("HeaderLess");
+  var headerLessClass = headerLess ? "hide" : "";
+
+  var size = userControl.GetString("Size");
+  var width = "950";
+  var height = "600";
+
+  if (!string.IsNullOrEmpty(size))
+  {
+    var item = Sitecore.ClientHost.Items.GetItem(size);
+    if (item != null)
+    {
+      width = item["Width"];
+      height = item["Height"];
+    }
+  }
+  userControl.Class = CssClass;
+  var controlId = userControl.ControlId;
+  var htmlAttributes = userControl.HtmlAttributes;
+}
+<div @BindingString @initialValues data-width="@width" data-height="@height" @htmlAttributes>
+  <div class="sc-dialogWindow-header @headerLessClass">
+    <div class="sc-dialogWindow-header-row1">
+      <a class="sc-dialogWindow-close" data-dismiss="modal" aria-hidden="true"></a>
+      <div class="sc-dialogWindow-actions">
+        @Html.Sitecore().Placeholder(controlId + ".Actions")
+      </div>
+      <span class="sc-dialogWindow-header-title">
+        @headerText
+      </span>
+    </div>
+    <div class="sc-dialogWindow-header-row2">
+
+      <div class="sc-dialogWindow-navigation">
+        @Html.Sitecore().Placeholder(controlId + ".Navigation")
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="modal-body sc-dialogWindow-body">
+    @this.Html.Sitecore().Placeholder(controlId + ".DialogMessage")
+
+    <div class="sc-dialogWindow-body-container">
+      @this.Html.Sitecore().Placeholder(controlId + ".Content")
+    </div>
+  </div>
+  <div class="sc-dialogWindow-buttons">
+    @Html.Sitecore().Placeholder(controlId + ".Buttons")
+  </div>
+</div>

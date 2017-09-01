@@ -1,0 +1,7 @@
+﻿@model Sitecore.Speak.Components.Models.Resources.Rules.RuleRenderingModel
+@{
+  string type = string.IsNullOrEmpty(Model.Script) ? "text/x-sitecore-rule" : "text/javascript";
+}
+<script @Model.HtmlAttributes type="@type">
+  @Html.Raw(@Model.Script)
+</script>

@@ -1,0 +1,16 @@
+﻿.scMediaValidation {
+  margin-left: 0;
+}
+
+.scMediaBorder {
+  margin-right: 2px;
+}
+
+#FileList a.scOption {
+  width: 80px;
+}
+
+.lang_ja_jp #FileList a.scOption,
+.lang_ja_jp .scTitle  {
+  font-family: メイリオ, Meiryo, Microsoft YaHei, tahoma, sans-serif;
+}

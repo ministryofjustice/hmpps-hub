@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <If NonEmpty="-">
+    <def:Code><![CDATA[
+    protected override void DoRender(HtmlTextWriter output) {
+      if (NonEmpty != "-") {
+        if (NonEmpty.Length > 0) {
+          base.DoRender(output);
+        }
+      }
+    }
+    ]]></def:Code>
+  </If>
+</control>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <LayoutManager>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.LayoutManager.LayoutManagerForm,Sitecore.Client"/>
+      
+      <DataContext ID="ContentEditorDataContext" DataViewName="Master" Root="{75CC5CE4-8979-4008-9D3C-806477D57619}" Filter="Contains('{A87A00B1-E6DB-45AB-8B54-636FEC3B5523},{3A45A723-64EE-4919-9D41-02FD40FD1466},{1163DA83-B2EF-4381-BF09-B2FF714B1B3F}', @@templateid)"/>
+      
+      <GridPanel Width="100%" Height="100%">
+        
+        <Border ID="ContentEditorToolbar" GridPanel.Row.ID="ContentEditorToolbarRow">
+          <CommandPortal ID="ContentEditorToolbarPortal" PortalID="ContentEditorCommandPortal" PortalDataSource="/sitecore/content/Applications/Content editor/Commands portal" DataContext="ContentEditorDataContext" HideControlButtons="true"/>
+        </Border>
+
+        <Scrollbox Height="100%" Background="white" Border="1px inset" Padding="0" ContextMenu="Layouts.GetContextMenu" GridPanel.Height="100%">
+          <TreeviewEx ID="Layouts" DataContext="ContentEditorDataContext" />
+        </Scrollbox>
+        
+      </GridPanel>
+        
+    </FormPage>
+  </LayoutManager>
+</control>
+

@@ -1,0 +1,263 @@
+/* Context menu / Dropdown related styles */
+body.RadEContextMenu div.ContentElement
+{
+	overflow: hidden;
+	width: 99%;
+}
+
+.RadEMozillaDropdownIframe
+{
+	border: solid 1px #808080;
+	background: white;
+	overflow-y: scroll;
+}
+
+body.RadEDropdownMenu div.ContentElement
+{		
+	height:100%;
+	background: white;
+	scrollbar-face-color: #E9E9E9;
+	scrollbar-highlight-color: white;
+	scrollbar-shadow-color: #E9E9E9;
+	scrollbar-3dlight-color: #DBDBDB;
+	scrollbar-arrow-color: #787878;
+	scrollbar-track-color: #F5F5F5;
+	scrollbar-darkshadow-color: #AEAEAE;
+}
+
+body.RadEDropdownMenuNonScrollable div.ContentElement
+{
+	background: #f9f9f9;
+}
+
+/* AJAX Spellchecker */
+
+.RadESpellChecker
+{
+	background-color:#f9f9f9;
+	
+}
+
+.RadESpellChecker .SuggestionTable td
+{	
+	color:#000000;
+	font:normal 11px Tahoma;
+	border:1px solid #f9f9f9;
+	font-weight:bold;
+}
+
+.RadESpellChecker .SuggestionTable td.Over
+{
+	border:1px solid #666666;
+	background-color: #e3e3e3;
+	font-weight:bold;
+}
+
+.RadESpellChecker .ButtonTable 
+{
+	border-top:1px solid #999999;
+}
+
+.RadESpellChecker .ButtonTable td
+{	
+	color:#000000;
+	font:normal 11px Tahoma;
+	border:1px solid #f9f9f9;	
+}
+
+.RadESpellChecker .ButtonTable td.Over
+{
+	border:1px solid #666666;
+	background-color: #e3e3e3;	
+}
+
+/* ------------------------ Editor ContextMenu Styles -----------------------------*/
+.RadEContextMenu
+{
+	background: #FDFAFF url(Dialogs/tableBorderControlV.gif) repeat-y;
+}
+
+/* --------------------------------- Symbol Picker -------------------------------- */
+.RadESymbolPicker
+{
+	background:#f9f9f9;
+}
+
+.RadESymbolPicker td
+{
+	text-align:center;
+	width:20px;
+	height:20px;
+	color:#000000;
+	font:normal 11px Tahoma;
+}
+
+.RadESymbolPicker td.Over
+{
+	border:1px solid #666666;
+	background-color: #e3e3e3;
+}
+
+/*-------------------- Table Dropdown Related Styles --------------------------*/
+.RadETablePicker
+{
+	background-color:#f9f9f9;
+	cursor:default;
+	font-family:Tahoma;
+}
+.RadETablePicker td
+{
+	border:1px solid #000000;
+	background-color:#FFFFFF;
+	font-size:11px;
+}
+
+.RadETablePicker td.Over
+{
+	background-color:#666666;
+	color:#ffffff;
+}
+
+.RadETablePicker .Wizard
+{
+	border:1px solid #AAAAAA;
+	background-color: #f9f9f9;
+	cursor:default;
+	font:normal 11px Tahoma;
+	text-align:center;
+}
+
+.RadETablePicker .WizardOver
+{
+	border:1px solid #666666;
+	background-color: #e3e3e3;
+	cursor:default;
+	font:normal 11px Tahoma;
+	text-align:center;
+}
+
+.RadETablePicker td.Counter
+{
+	text-align:center;
+	font:normal 11px Tahoma;
+	background-color:#f9f9f9;
+	border:none;
+}
+
+.RadETablePickerToolTable
+{
+	vertical-align:top;
+	text-align: left;
+	padding-left:2px;
+	padding-bottom:2px;
+}
+
+/*-------------------- ColorPicker Related Styles --------------------------*/
+.RadEColorPicker
+{
+	background-color:#f9f9f9;
+	cursor:default;
+	margin:2px;
+}
+.RadEColorPicker td
+{
+	border:1px solid #f9f9f9;
+	width:14px;
+	height: 14px;
+	text-align:center;
+	font:normal 11px Tahoma;
+}
+
+.RadEColorPicker td.Over
+{
+	border:1px solid #808080;
+}
+
+.RadEColorPicker td div, .RadEColorPicker td span
+{
+	border: 1px solid #808080;
+	width: 12px;
+	height: 12px;
+	font-size:6px;
+}
+
+/*-------------------- Font Dropdown Related Styles --------------------------*/
+.RadEDropDownFont
+{
+	background-color:#FFFFFF;
+}
+
+.RadEDropDownFont td
+{
+	font:normal 11px Tahoma;
+	border: 1px solid #FFFFFF;
+	padding: 0px 1px 0px 1px;
+}
+
+.RadEDropDownFont td.Over
+{
+	border:1px solid #666666;
+	cursor:pointer;
+	cursor:default;
+}
+
+/*-------------------- Common Dropdown (Snippet, Paragraph, Sweeper, CssClass) Related Styles --------------------------*/
+.RadEDropDownTable
+{
+	background-color:#ffffff;
+}
+.RadEDropDownTable td
+{
+	border:1px solid #AAAAAA;
+	font:normal 11px Tahoma;
+	color:#000000;
+}
+
+.RadEDropDownTable td.Over
+{
+	border:1px solid #666666;
+}
+
+/*------------------------------ Links Dropdown Styles ----------------------------*/
+.RadELinks
+{
+	background-color:#FFFFFF;
+}
+
+.RadELinks td, .RadELinks span
+{
+	color:black;
+	text-decoration:none;
+	padding:1px;
+	padding-left:2px;
+	font:normal 11px Tahoma;
+}
+
+.RadELinks td.Over, .RadELinks span.Over
+{
+	color:#666666;
+	text-decoration:underline;
+	font:normal 11px Tahoma;
+}
+
+
+/* Alignment selector */
+.RadAlignmentSelectorTable
+{
+	background-color:#fefefe;
+	border: 1px solid #7F9DB9;
+	cursor:default;
+}
+
+.RadAlignmentSelectorTable TD
+{	
+	border:1px solid #fefefe;
+	text-align:center;
+}
+
+.RadAlignmentSelectorTable TD.Over
+{
+	text-align:center;
+	background-color:#e3e3e3;
+	border:1px solid #4D6185;	
+} 

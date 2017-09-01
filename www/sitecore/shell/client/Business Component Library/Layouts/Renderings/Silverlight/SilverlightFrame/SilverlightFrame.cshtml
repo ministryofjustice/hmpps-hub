@@ -1,0 +1,88 @@
+﻿@using System.Web.UI.WebControls
+@using Sitecore.Diagnostics
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@using Sitecore.Web.UI.Controls.Silverlight.SilverlightFrame
+@using Sitecore.Web.UI.Controls.Silverlight.SilverlightFrame.Model
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+
+    
+    ParseParameterServiceFactory parseParameterServiceFactory = new ParseParameterServiceFactory();
+    string type = userControl.GetString("ParseParameterType");
+    ParseParameterService parseParameterService = parseParameterServiceFactory.Create(type);
+    Assert.IsNotNull(parseParameterService, "Could not create ParseParametService from type:{0}", type);
+    
+    userControl.Requires.Script("business", "SilverlightFrame.js");
+
+    //setup script file
+    string scriptFile = parseParameterService.ParseParameter(Constants.ParameterName.ScriptFile, userControl.GetString(Constants.ParameterName.ScriptFile, Constants.ModelAttributeName.ScriptFile, string.Empty));
+    
+    if (!string.IsNullOrEmpty(scriptFile))
+    {
+        userControl.Requires.Script(scriptFile);
+    }
+
+    string source = parseParameterService.ParseParameter(Constants.ParameterName.Source, userControl.GetString(Constants.ParameterName.Source, Constants.ModelAttributeName.Source));
+    Assert.IsNotNullOrEmpty("source", "Silverlight frame is missing required source parameter");
+
+    string silverlightObjectId = parseParameterService.ParseParameter(Constants.ParameterName.SilverlightObjectId, userControl.GetString(Constants.ParameterName.SilverlightObjectId, Constants.ModelAttributeName.SilverlightObjectId, Constants.DefaultValues.SilverlightObjectId));
+    string initParams = parseParameterService.ParseParameter(Constants.ParameterName.InitParams, userControl.GetString(Constants.ParameterName.InitParams, Constants.ModelAttributeName.InitParams, string.Empty));
+    string appName = parseParameterService.ParseParameter(Constants.ParameterName.AppName, userControl.GetString(Constants.ParameterName.AppName, Constants.ModelAttributeName.AppName, Constants.DefaultValues.AppName));
+    string onError = parseParameterService.ParseParameter(Constants.ParameterName.OnError, userControl.GetString(Constants.ParameterName.OnError, Constants.ModelAttributeName.OnError, string.Empty));
+    var minRuntimeVersion = parseParameterService.ParseParameter(Constants.ParameterName.MinRuntimeVersion, userControl.GetString(Constants.ParameterName.MinRuntimeVersion, Constants.ModelAttributeName.MinRuntimeVersion, Constants.DefaultValues.MinRuntimeVersion));
+    var onLoad = parseParameterService.ParseParameter(Constants.ParameterName.OnLoad, userControl.GetString(Constants.ParameterName.OnLoad, Constants.ModelAttributeName.OnLoad, string.Empty));
+    var autoUpgrade = userControl.GetBool(Constants.ParameterName.AutoUpgrade, Constants.ModelAttributeName.AutoUpgrade, true);
+    var windowLess = userControl.GetBool(Constants.ParameterName.WindowLess, Constants.ModelAttributeName.WindowLess, true);
+    var width = parseParameterService.ParseParameter(Constants.ParameterName.Width, userControl.GetUnit(Constants.ParameterName.Width, Constants.ModelAttributeName.Width, new Unit(Constants.DefaultValues.Width)).ToString());
+    var height = parseParameterService.ParseParameter(Constants.ParameterName.Height, userControl.GetUnit(Constants.ParameterName.Height, Constants.ModelAttributeName.Height, new Unit(Constants.DefaultValues.Height)).ToString());
+
+    userControl.Class = "sc-silverlightframe";
+    var htmlAttributes = userControl.HtmlAttributes;
+}
+
+<div @htmlAttributes style="height: 100%;">
+    <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" id="@silverlightObjectId" width="@width" height="@height">
+        <param name="source" value="@source">
+        @if (!string.IsNullOrEmpty(onError))
+        {
+            <param name="onError" value="@onError">
+        }
+        <param name="initParams" value="@initParams">
+        <param name="minRuntimeVersion" value="@minRuntimeVersion">
+        <param name="autoUpgrade" value="@autoUpgrade.ToString().ToLowerInvariant()">
+        <param name="windowless" value="@windowLess.ToString().ToLowerInvariant()">
+
+        @if (!string.IsNullOrEmpty(onLoad))
+        {
+            <param name="onLoad" value="@onLoad">  
+        }
+        <div style="width: @width; height: @height;">
+            <table cellpadding="0" cellspacing="0" border="0" align="center">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h2>@appName</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <p>
+                                @appName requires Microsoft Silverlight @minRuntimeVersion to run.<br>
+                                Silverlight is a small, safe, cross-platform browser plugin created and supported by Microsoft.
+                            </p>
+                            <br>
+                            <div align="center">
+                                <a href="http://go.microsoft.com/fwlink/?LinkID=149156&amp;v=@minRuntimeVersion" style="text-decoration: none">
+                                    <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style: none"></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </object>
+</div>
+<iframe id="_sl_historyFrame" style="visibility: hidden; height: 0px; width: 0px; border: 0px"></iframe>

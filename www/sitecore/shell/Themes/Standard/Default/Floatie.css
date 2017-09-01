@@ -1,0 +1,38 @@
+html {
+  overflow:hidden;
+}
+
+body {
+  overflow:hidden;
+  border:1px solid black;
+  background:#323B3F;
+}
+
+form {
+  overflow:hidden;
+}
+
+/* Caption */
+
+.scFloatieCaption {
+  background: #4E4E4E url(/sitecore/shell/themes/standard/gradients/gray1.gif) 50% 0 repeat-y;
+  border-bottom:1px solid black;
+  color:White;
+  height:18px;
+	padding:1px 4px 2px 4px;
+  cursor:move;
+}
+
+/* Window border */
+
+#FloatieRibbon {
+  height:100%;
+}
+
+.scFloatieWindowButtions {
+  float:right;
+}
+
+.scToolbutton {
+  color:white;
+}

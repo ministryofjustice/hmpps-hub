@@ -1,0 +1,31 @@
+﻿.scNone,
+.scLink, 
+.scLink:link, 
+.scLink:active, 
+.scLink:hover, 
+.scLink:visited {
+  display: block;
+  text-decoration: none;
+  padding: 8px 15px;
+  white-space: nowrap;
+}
+
+.scLink:hover {
+  background-color: #E3E3E3;
+}
+
+.scLink img {
+  margin-right:15px;
+}
+
+.scTitle {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 0 5px 15px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.scGalleryUsage .scRef {
+  background-color:#ffffff;
+  margin: 5px 0 0 5px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Debugger.Tracing.Portlet def:inherits="Sitecore.Shell.Applications.Portlets.DebuggerTracing.DebuggerTracingPortletXmlControl,Sitecore.Client">
+    <Border def:ID="Portlet">
+      <DefaultPortletWindow def:ID="Window" Header="Tracing" Icon="Software/16x16/debug_view.png">
+
+        <SidebarTileButton def:ID="Trace" Icon="Software/24x24/debug_view.png" Header="Enable Tracing"/>
+        <SidebarTileButton def:ID="Save" Icon="Applications/24x24/disk_blue.png" Header="Save Trace"/>
+        <SidebarTileButton def:ID="Download" Icon="Network/24x24/inbox_into.png" Header="Download Trace"/>
+        
+      </DefaultPortletWindow>
+    </Border>
+  </Debugger.Tracing.Portlet>
+</control>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition"
+         xmlns:x="http://www.sitecore.net/xaml">
+  <Installer.Designer>
+    <FormPage Application="Tools/Installer/Designer">
+      <Script Src="/sitecore/shell/Applications/Content Manager/Content Editor.js"/>
+      <Script Src="/sitecore/shell/Controls/SitecoreKeyboard.js"/>
+      <Script Src="/sitecore/shell/Controls/Sitecore.Runtime.js"/>
+      <Script Src="/sitecore/shell/Controls/TreeviewEx/TreeviewEx.js"/>
+      <Script Src="/sitecore/shell/Applications/Install/Designer.js"/>
+
+      <Stylesheet Src="Content Manager.css" DeviceDependant="true" runat="server" x:placeholder="stylesheets" />
+      <Stylesheet  Src="Ribbon.css" DeviceDependant="true" runat="server" x:placeholder="Stylesheets" />
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Install.Designer, Sitecore.Client"/>
+
+      <input type="hidden" id="__ActiveRibbonStrip" name="__ActiveRibbonStrip" />
+      <Literal ID="FrameName" />
+      <Border ID="Internals" />
+
+      <div class="scStretch scFlexColumnContainer">
+        <Border ID="RibbonFrame" />
+
+        <Border ID="ViewFrame" class="scFlexContent">
+          <div class="scStretchAbsolute" style="overflow: auto;">
+            <Installer.ProjectView ID="View" />
+          </div>
+        </Border>
+
+        <div>
+          <Border Border="1px solid #ccc" Background="White" Margin="3px" Padding="2px" >
+            <Literal ID="StatusText" Text="&#160;"/>
+          </Border>
+        </div>
+      </div>
+
+    </FormPage>
+  </Installer.Designer>
+</control>

@@ -1,0 +1,13 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+ 
+  var path = userControl.GetString("Path");
+  if (!string.IsNullOrEmpty(path))
+  {
+    Html.RenderPartial(path);
+  }
+}

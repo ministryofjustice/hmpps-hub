@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="experience-explorer-iframe.js">
+    <!--The order of the <file> elements determines the order of them when bundled.-->
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-presets.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-maps.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-geo-ip.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-rules.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-app.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-loading.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-client-model.js</file>
+    <file>/sitecore modules/web/experienceexplorer/assets/js/experience-explorer-search.js</file>
+</bundle>

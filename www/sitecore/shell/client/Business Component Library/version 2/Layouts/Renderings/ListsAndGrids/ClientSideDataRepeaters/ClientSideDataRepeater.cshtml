@@ -1,0 +1,9 @@
+﻿@using Sitecore
+@using Sitecore.Mvc
+@model  Sitecore.Speak.Components.Models.ListsAndGrids.ClientSideDataRepeaters.ClientSideDataRepeaterRenderingModel
+@{
+  Model.Class.Append("sc-ClientSideDataRepeater");
+  Model.DataBind.IsVisible();
+}
+<div @Model.HtmlAttributes>
+</div>

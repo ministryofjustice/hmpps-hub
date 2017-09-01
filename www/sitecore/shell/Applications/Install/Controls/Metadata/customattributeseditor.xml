@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.AttributesEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.AttributesEditor,Sitecore.Client">
+    <Border def:ID="Container"/>
+  </Installer.AttributesEditor>
+</control>

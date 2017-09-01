@@ -1,0 +1,63 @@
+﻿@model Sitecore.Speak.Components.Models.Common.ActionControls.ActionControlRenderingModel
+@{
+  Model.Class.Append("sc-actionpanel");
+  Model.DataBind.IsVisible();
+}
+<div data-bind="visible: IsVisible, attr: { title: Tooltip().length > 0 ? Tooltip() : Text() }, css: {autoPromoted: NumOfActions() <= 3, hasBtnFavorites: ButtonFavorites().length > 0 }" @Model.HtmlAttributes>
+  <div style="display:none" class="sc-actionpanel-popup" data-bind="visible:IsOpen(), click: toggle"></div>
+  <ul role="menu" class="nav">
+    <li>
+      <div class="icon-group" data-bind="foreach: IconFavorites">
+        <a class="btn btn-default mainButton noText" href="javascript:;" data-bind="click:$root.itemClick, attr: { title: viewModel.Tooltip().length > 0 ? viewModel.Tooltip() : viewModel.Text() }, css: { disabled: viewModel.IsDisabled() || !$parent.IsEnabled() }">
+          <div class="sc-icon" data-bind="enable: !viewModel.IsDisabled(), style: { backgroundImage: 'url(\'' + viewModel.Icon() + '\')', backgroundPosition: viewModel.BackgroundPosition() }">
+          </div>
+        </a>
+      </div><div class="btn-group" data-bind="foreach: ButtonFavorites">
+        @*!!! Please leave NO SPACE BETWEEN THE 2 DIVs, see here: http://css-tricks.com/fighting-the-space-between-inline-block-elements/ !!!*@
+        <button class="btn btn-default" href="javascript:;" data-toggle="tooltip" data-bind="click: $root.itemClick, attr: { title: viewModel.Tooltip().length > 0 ? viewModel.Tooltip() : viewModel.Text() }, enable: !viewModel.IsDisabled() && $parent.IsEnabled()">
+          <span data-bind="text: viewModel.Text()"></span>
+        </button>
+      </div>
+    </li>
+    <li role="menuitem">
+      <div class="dropdown">
+        <a class="btn btn-default mainButton sc-dropdownbutton @(string.IsNullOrEmpty(Model.Text) ? "noText" : string.Empty)" data-bind="click: toggle, clickBubble: false, css: { disabled: !IsEnabled(), noText: Text() === '' }">
+          <span class="dropdown-text" data-bind="text:Text">@Model.Text</span>
+          <div class="sc-dropdownbutton-toggler">
+            <div class="sc-dropdownbutton-chevron" data-bind="css: { 'up': IsOpen() }">
+
+            </div>
+          </div>
+        </a>
+        <div role="menu" class="sc-foldout dropdown-menu open data-sc-registered" data-bind="visible: IsEnabled() && IsOpen()">
+          <div class="sc-foldout-content">
+            <table class="sc-actionControl-foldout-grid">
+              <tbody>
+                <tr data-bind="foreach: Items">
+                  <td>
+                    <ul data-bind="foreach: viewModel.Items">
+                      <li class="nav-header" data-bind="text: viewModel.Text(), visible: viewModel.Text().length > 0"></li>
+                      <li>
+                        <ul class="sc-actionlink-container" data-bind="foreach: viewModel.Items">
+                          <li class="iconify sc-actionMenu-item" data-bind="attr: { title: viewModel.Tooltip().length > 0 ? viewModel.Tooltip() : viewModel.Text() },css: { disabled: viewModel.IsDisabled() }">
+                            <a data-bind="click:$root.itemClick" tabindex="$index" href="#">
+                              <div class="sc-icon" data-bind="style: { backgroundImage: 'url(\'' + viewModel.Icon() + '\')', backgroundPosition: viewModel.BackgroundPosition() }"></div>
+                              <div data-bind="text:viewModel.Text()" class="sc-action-text"></div>
+                            </a>
+                            <span class="sc-action-favorite-area" data-bind="click: $root.toggleFavorite, clickBubble: false">
+                              <a data-bind="css: {selected: viewModel.IsFavorite(), disabled: (viewModel.IsFavoriteIconDisabled() || (!viewModel.IsFavorite() && $parents[2].IconFavorites().length + $parents[2].ButtonFavorites().length >= 6)) }" class="favorite-icon" href="#"></a>
+                            </span>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

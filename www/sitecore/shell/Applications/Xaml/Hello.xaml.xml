@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test>
+    <html:Form runat="server">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Test1 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test2 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test3 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test4 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test5 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test6 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test7 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test8 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test9 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test10 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test11 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test12 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test13 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test14 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test16 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test17 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test18 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test19 runat="server"/>
+      <hr/>
+      <Sitecore.Xaml.Test20 runat="server"/>
+    </html:Form>
+  </Sitecore.Xaml.Test>   
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test1>
+    <h1>Test 1</h1>
+    <p>
+      XamlSharp controls are build from other XamlSharp controls and
+      standard ASP.NET web controls. A XamlSharp control is defined in
+      XML.
+    </p>
+    
+    <p>
+      <div>
+        Inline Web Control with green background.
+      </div>
+      <Inline Foreground="green" runat="server">Test passed.</Inline>
+    </p>
+    
+    <p>
+      <div>
+        Inline Web Control without runat="server"
+      </div>
+      <Inline Foreground="green">
+        Test passed, if black.
+      </Inline>
+    </p>
+    
+    <p>
+      <div>
+        Generic control on server
+      </div>
+      <span runat="server" style="color:green">
+        Test passed.
+      </span>
+    </p>
+  </Sitecore.Xaml.Test1>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test2>
+    <h1>Test 2</h1>
+    <p>
+      <div>
+        XamlSharp control can be build from other XamlSharp controls.
+      </div>
+      <Test2a runat="server"/>
+    </p>
+                                              
+    <p>
+      <div>
+        XamlSharp controls are referenced in case sensitive.
+      </div>
+      <test2a runat="server"/>
+    </p>
+  </Sitecore.Xaml.Test2>
+
+  <Sitecore.Xaml.Test2a>
+    <Border runat="server" Foreground="green">Test passed.</Border>
+  </Sitecore.Xaml.Test2a>
+
+  <Sitecore.Xaml.test2a>
+    <Border runat="server" Foreground="green">Case sensitive: test passed.</Border>
+  </Sitecore.Xaml.test2a>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test3>
+    <h1>Test 3</h1>
+    <p>
+      XamlSharp controls can declare parameters. Parameter names are case-sensitive.
+    </p>
+
+    <p>
+      <div>
+        Passing parameter the Color parameter:
+      </div>
+      <Sitecore.Xaml.Test3a runat="server" Color="green"/>
+    </p>
+
+    <p>
+      <div>
+        Not passing parameters:
+      </div>
+      <Sitecore.Xaml.Test3b runat="server"/>
+    </p>
+  </Sitecore.Xaml.Test3>
+
+  <Sitecore.Xaml.Test3a>
+    <x:param name="Color" value="red" />
+
+    <Inline runat="server" Foreground="{Color}">Test passed.</Inline>
+  </Sitecore.Xaml.Test3a>
+
+  <Sitecore.Xaml.Test3b>
+    <x:param name="Color" value="green" />
+
+    <Inline runat="server" Foreground="{Color}">Test passed.</Inline>
+  </Sitecore.Xaml.Test3b>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test4>
+    <h1>Test 4</h1>
+    <p>
+      XamlSharp can be declared using namespaces. Namespaces are simple 
+      text prefixes (case-insensitive).
+    </p>
+
+    <p>
+      <div>
+        Fully qualified control:
+      </div>
+      <Sitecore.Xaml2.Test4a runat="server" />
+    </p>
+
+    <p>
+      <div>
+        Parially qualified control:
+      </div>
+      <Test4b runat="server" />
+    </p>
+  </Sitecore.Xaml.Test4>
+
+  <Sitecore.Xaml.Test4a>
+    <Border runat="server" Foreground="green">Test passed.</Border>
+  </Sitecore.Xaml.Test4a>                                                   
+
+  <Sitecore.Xaml.Test4b>
+    <Border runat="server" Foreground="green">Test passed.</Border>      
+  </Sitecore.Xaml.Test4b>
+
+  <Sitecore.Xaml.Test4b>
+    <Border runat="server" Background="red">Failed (duplicate definition)</Border>
+  </Sitecore.Xaml.Test4b>
+
+  <Sitecore.Xaml2.Test4b>
+    <Border runat="server" Background="red">Failed (in other namespace)</Border>
+  </Sitecore.Xaml2.Test4b>
+
+  <Test4b>
+    <Border runat="server" Background="red">Failed (global namespace)</Border>
+  </Test4b>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test5>
+    <h1>Test 5</h1>
+    <p>
+      XamlSharp can pass parameter from one control to another.
+    </p>
+    
+    <p>
+      <div>
+        Deep Passing parameters:
+      </div>
+      <Sitecore.Xaml.Test5a runat="server" Color="green"/>
+    </p>
+  </Sitecore.Xaml.Test5>
+
+  <Sitecore.Xaml.Test5a>
+    <x:param name="Color" value="blue"/>
+
+    <Sitecore.Xaml.Test5b Color="{Color}" runat="server"/>
+  </Sitecore.Xaml.Test5a>
+
+  <Sitecore.Xaml.Test5b>
+    <x:param name="Color" value="red"/>
+    
+    <Inline runat="server" Foreground="{Color}">
+      Test passed. 
+    </Inline>
+  </Sitecore.Xaml.Test5b>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test6>
+    <x:param name="FontWeight" value="bold"/>
+    <x:param name="Color" value="green"/>
+
+    <h1>Test 6</h1>
+    <p>
+      XamlSharp can evaluate simple expressions.
+    </p>
+
+    <p>
+      <div>
+        Complex expression:
+      </div>
+      <span runat="server" style="color:{Color};font-weight:{FontWeight};">
+        Test passed, if green and bold.
+      </span>
+    </p>
+  </Sitecore.Xaml.Test6>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test7 x:inherits="Sitecore.Shell.Applications.Xaml.Test7,Sitecore.Client">
+    <h1>Test 7</h1>
+    <p>
+      XamlSharp can inherit from classes.
+    </p>
+
+    <p>
+      <div>
+        Output from inherited class:
+      </div>
+      <span id="DivTag" runat="server" style="color:green"></span>
+    </p>
+
+    <p>
+      <div>
+        Standard ASP.NET server clicks works:
+      </div>
+      Changes to "I was clicked" when clicked:
+      <asp:Button runat="server" id="MyButton" Text="Click Me"></asp:Button>
+    </p>
+
+  </Sitecore.Xaml.Test7>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test8>
+    <h1>Test 8</h1>
+    <p>
+      XamlSharp supports extensions.
+    </p>
+
+    <p>
+      <div>
+        Items from /sitecore/system/*
+      </div>
+      <x:for-each select="/sitecore/system/*">
+        <div>
+          <x:value-of select="@@name"/>
+        </div>
+      </x:for-each>
+    </p>
+  </Sitecore.Xaml.Test8>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test9>
+    <h1>Test 9</h1>
+    <p>
+      XamlSharp can use Sitecore renderings directly.
+    </p>
+
+    <p>
+      <div>
+        Rendering the Document rendering on /sitecore/content/Home:
+      </div>
+      <r:Document runat="server" DataSource="/sitecore/content/Home"/>
+    </p>
+  </Sitecore.Xaml.Test9>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test10>
+    <h1>Test 10</h1>
+    <p>
+      XamlSharp supports extensible properties.
+    </p>
+
+    <p>
+      <div>
+        Border web control:
+      </div>
+      <Border runat="server">
+        <span runat="server" Border.Foreground="green">
+          Test passed
+        </span>
+      </Border>
+    </p>
+
+  </Sitecore.Xaml.Test10>
+
+<!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test11>
+    <x:param name="Color" value="blue"/>
+
+    <h1>Test 11</h1>
+    <p>
+      XamlSharp use if statements.
+    </p>
+
+    <p>
+      <div>
+        Testing if a variable has a certain value:
+      </div>
+      <x:if test="$Color = 'blue'">
+        <div style="color:green">Test passed</div>
+      </x:if>
+    </p>
+    
+  </Sitecore.Xaml.Test11>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test12 x:inherits="Sitecore.Shell.Applications.Xaml.Test12,Sitecore.Client">
+    <x:param name="Text" value="I was clicked"/>
+
+    <h1>Test 12</h1>
+    <p>
+      XamlSharp supports Ajax calls.
+    </p>
+
+    <p>
+      <div>
+        Hello World alert box.
+      </div>
+      <button id="HelloWorld" runat="server" ajax:Click="HelloWorld_Click()">Show Hello World</button>
+    </p>
+
+    <p>
+      <div>
+        Change button text.
+      </div>
+      <button id="ChangeButton" runat="server" ajax:Click='ChangeButton_Click("{Text}")'>Click Me</button>
+    </p>
+
+  </Sitecore.Xaml.Test12>
+  
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test13 x:inherits="Sitecore.Shell.Applications.Xaml.Test13,Sitecore.Client">
+    <h1>Test 13</h1>                 
+    <p>
+      XamlSharp supports Continuations.
+    </p>
+
+    <p>
+      <div>
+        Confirm box
+      </div>
+      <button id="HelloWorld" runat="server" ajax:Click="Confirm_Click()">Please Confirm</button>
+    </p>
+
+  </Sitecore.Xaml.Test13>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test14 x:inherits="Sitecore.Shell.Applications.Xaml.Test14,Sitecore.Client">
+    <h1>Test 14</h1>
+    <p>
+      The DynamicControlPanel creates dynamic controls from post to post.
+    </p>
+
+    <p>
+      <div>
+        Dynamic Panel:
+      </div>
+      <div id="Count" runat="server">
+         Click to add a new control.
+      </div>
+      <button id="AddControl" runat="server" ajax:Click="AddControl_Click()">Add</button>
+      <DynamicControlPanel runat="server">
+        <div id="ControlList" runat="server">
+        </div>
+      </DynamicControlPanel>
+    </p>
+
+  </Sitecore.Xaml.Test14>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test15>
+    <h1>Test 15</h1>
+    <p>
+      Xaml Styles
+    </p>
+
+    <x:Style x:Key="MyStyle">
+      <Setter Property="Foreground" Value="green" />
+    </x:Style>
+
+    <p>
+      <div>
+        Style reference:
+      </div>
+      <div runat="server" x:Style="{MyStyle}">
+        Test passed.
+      </div>
+    </p>
+
+  </Sitecore.Xaml.Test15>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test18 x:inherits="Sitecore.Shell.Applications.Xaml.Test18,Sitecore.Client">
+    <h1>Test 18</h1>
+    <p>
+      Rest calls are really fast server calls. Rest call specify a target method in an object that is invoked without 
+      restoring viewstate or the control hierachy - there is not even a Page object. This makes Rest very fast and flexible.
+      
+      The State statebag property on the AjaxScriptManager is preserved between calls which allows some state information to
+      be stored in the server.
+    </p>
+
+    <p>
+      <div>
+        Show Hello World using explicit target.
+      </div>
+      <div>
+        <button id="RestHelloWorld" runat="server" rest:Click="Sitecore.Shell.Applications.Xaml.Test18.Hello()">Show Hello World</button>
+      </div>
+    </p>
+
+    <p>
+      <div>
+        Show Hello World using default target.
+      </div>
+      <div>
+        <button id="RestHelloWorld" runat="server" rest:Click="Hello()">Show Hello World</button>
+      </div>
+    </p>
+
+  </Sitecore.Xaml.Test18>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test19>
+    <h1>Test 19</h1>
+    <p>
+      Controls
+    </p>
+
+    <p>
+      <div>
+        Button control
+      </div>
+      <div>
+        <Sitecore.Web.Controls.Border runat="server" Border="1px solid black" Padding="4px" Align="Center">
+          <Sitecore.Web.Controls.Button runat="server" Foreground="green">Button</Sitecore.Web.Controls.Button>
+        </Sitecore.Web.Controls.Border>
+      </div>
+    </p>
+
+  </Sitecore.Xaml.Test19>
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Test20>
+    <h1>Test 20</h1>
+    <p>
+      Styles
+    </p>
+
+    <x:style runat="server" key=".MyStyle">
+      <Foreground>green</Foreground>
+    </x:style>
+
+    <p>
+      <div>
+      </div>
+      <div>
+        <Border runat="server" x:style="MyStyle">
+          Test Passed.
+        </Border>
+      </div>
+    </p>
+
+  </Sitecore.Xaml.Test20>
+
+</xamlControls>

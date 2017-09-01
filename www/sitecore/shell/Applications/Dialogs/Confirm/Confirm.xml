@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Confirm>
+    <FormDialog Header="Message">
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.Confirm.Confirm, Sitecore.Client"/>
+
+      <Stylesheet>
+        .scConfirmationContainer td:first-child{
+            width: 1px;
+        }
+
+        .scConfirmationContainer td:last-child{
+            padding-left: 15px;
+        }
+      </Stylesheet>
+
+      <GridPanel class="scConfirmationContainer" Columns="2" Width="100%" >
+        <ThemedImage class="scConfirmationIcon" Src="Images/warning.png" />
+        <Literal id="ConfirmMessage" class="scDialogMessage"></Literal>
+      </GridPanel>
+ 
+      <script type="text/javascript">
+        document.getElementById('ConfirmMessage').innerHTML = scForm.getDialogArgumentsForCurrentFrame().message;
+      </script>
+    </FormDialog>
+  </Confirm>
+</control>

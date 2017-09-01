@@ -1,0 +1,30 @@
+﻿  body {
+    overflow-y: hidden !important;
+    background-color: #fff;
+  }
+
+  .dialog-popup {
+    width: 100%;
+    height: 100%;
+  }
+
+  .dialog-title {
+    height: 20px !important;
+  }
+
+  .dialog-content {
+    overflow-y: auto;
+    padding: 1em;
+  }
+
+  div.dialog-content .thead {
+    display: none;
+  }
+
+  .invert {
+    -ms-filter: invert(100%);
+    filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }

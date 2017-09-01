@@ -1,0 +1,88 @@
+/* TextBox related styles */
+INPUT.RadETextBox
+{
+	padding-left:2px;
+	border: 1px solid #4D6185; 
+	font: menu;
+	font-size: 12px; 
+	margin:1px;	 
+}
+INPUT.TextBoxDisabled
+{
+	background-color: transparent;
+	color: #080808;
+	font:normal 11px Tahoma;
+	border:0px solid red;
+}
+
+/* DropDown related styles */
+SELECT.RadEDropDown
+{
+	FONT-FAMILY: Tahoma;
+	padding-left:2px;
+	font-size:11px;
+	margin:2px;
+}
+
+
+/* Alignment selector */
+.RadAlignmentSelectorTable
+{
+	background-color:#fefefe;
+	border: 1px solid #7F9DB9;
+	cursor:default;
+}
+
+.RadAlignmentSelectorTable TD
+{	
+	border:1px solid #fefefe;
+	text-align:center;
+}
+
+.RadAlignmentSelectorTable TD.Over
+{
+	text-align:center;
+	background-color:#FFD69A;
+	border:1px solid #4D6185;	
+} 
+
+/* AJAX Spellchecker */
+
+.RadESpellChecker
+{
+	background-color:#f9f9f9;
+	
+}
+
+.RadESpellChecker .SuggestionTable td
+{	
+	color:#000000;
+	font:normal 11px Tahoma;
+	border:1px solid #f9f9f9;
+	font-weight:bold;
+}
+
+.RadESpellChecker .SuggestionTable td.Over
+{
+	border:1px solid #666666;
+	background-color: #e3e3e3;
+	font-weight:bold;
+}
+
+.RadESpellChecker .ButtonTable 
+{
+	border-top:1px solid #999999;
+}
+
+.RadESpellChecker .ButtonTable td
+{	
+	color:#000000;
+	font:normal 11px Tahoma;
+	border:1px solid #f9f9f9;	
+}
+
+.RadESpellChecker .ButtonTable td.Over
+{
+	border:1px solid #666666;
+	background-color: #e3e3e3;	
+}

@@ -1,0 +1,119 @@
+﻿#InstantResults {
+    position: absolute;
+    background: #fafafa;
+    z-index: 999;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+    right: 45px;
+    bottom: 42px;
+    border-radius: 2px;
+}
+
+#InstantResults .sidebar {
+  width: 37%;
+    border-right: 1px solid #d6d6d6;
+}
+
+#InstantResults .results {
+}
+
+#InstantResults ul { 
+  padding: 0 0 0 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+  width: 255px;
+}
+
+#InstantResults .category {
+    color: #969696;
+    line-height: 30px;
+    text-align: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#InstantResults li {
+  clear: left;
+  padding: 0px 30px 0px 15px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#InstantResults .noresults li {
+  cursor: auto !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+#InstantResults .scSearchResultsTable {
+    background: white;
+}
+
+#InstantResults .scSearchResultsTable td {
+    vertical-align: top;
+}
+
+    #InstantResults .scSearchResultsTable td:nth-last-child(1) {
+        border-left: 1px solid #d6d6d6;
+        width: 255px;
+        display: block;
+        box-sizing: border-box;
+    }
+
+
+    #InstantResults .scSearchResultsTable td:nth-last-child(2) {
+        min-width: 140px;
+        max-width: 140px;
+        padding: 0 15px 0 10px;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+#InstantResults .scSearchResultsTable a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 10px 0 15px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+#InstantResults .scSearchResultsTable a:hover{
+    background: #E3E3E3;
+}
+
+    #InstantResults .scSearchResultsTable a img {
+        display: inline-block;
+        line-height: 30px;
+        margin: 7px 7px 7px 0;
+        vertical-align: top;
+    }
+
+    #InstantResults .scSearchResultsTable a h2 {
+        line-height: 30px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(100% - 23px);
+        display: inline-block;
+        vertical-align: top;
+    }
+
+#InstantResults li:hover, #InstantResults li.active {
+    background: #E3E3E3;
+}
+
+#InstantResults li img {
+  float: left;
+  margin-right:  4px;
+  display: none;
+}
+
+#InstantResults li h2 {
+    color: #131313;
+}
+
+#InstantResults a:hover {
+  text-decoration: none;
+}

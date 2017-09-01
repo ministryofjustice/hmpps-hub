@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ItemBrowser>
+    <FormDialog ID="Dialog" Icon="Applications/32x32/folder_out.png" Header="Item browser"
+      Text="Select the item that you want to open." OKButton="Open">
+      <Stylesheet>
+        #vTabstrip {
+        position:absolute;
+        bottom:35px;
+        top:0;
+        left:0;
+        right:0;
+        height: auto !important;      
+        }
+        
+        .scBrowserFileName {
+        position:absolute;
+        bottom:0;
+        left:4px;
+        right:0px;
+        height:25px;
+        }
+        
+        .scItemBrowserName {
+        margin-top: 6px;
+        display: inline-block;
+        }
+        
+        .scBrowserFileName > div {
+        position: absolute;
+        left: 45px;
+        right: 0px;
+        top:0;
+        }
+        
+        .scBrowserFileName > div > input {
+        width:100%;
+        }
+      </Stylesheet>
+      <CodeBeside Type="Sitecore.Shell.Applications.ItemBrowser.ItemBrowserForm,Sitecore.Client"/>
+
+      <DataContext ID="DataContext"/>
+
+      <Border class="scStretch">
+        <VerticalTabstrip ID="vTabstrip">
+          <TabSection Header="Options" />
+          <SearchTab Mode="FieldResults" Header="Search" Height="100%" Parameters="StartSearchLocation={3C1715FE-6A13-4FCF-845F-DE308BA9741D}"/>
+          <Tab ID="Items" Header="Items">
+            <Scrollbox class="scScrollbox scStretch" Padding="0">
+              <TreeviewEx ID="Treeview" Click="SelectTreeNode" DblClick="Treeview_DblClick" DataContext="DataContext" ShowRoot="true" ContextMenu='Treeview.GetContextMenu("contextmenu")' />
+            </Scrollbox>
+          </Tab>
+
+        </VerticalTabstrip>
+        <Border class="scBrowserFileName">
+          <Literal class="scItemBrowserName" Text="Name:"/>
+          <Border><Edit ID="Filename"/></Border>
+        </Border>
+      </Border>
+
+    </FormDialog>
+  </ItemBrowser>
+</control>

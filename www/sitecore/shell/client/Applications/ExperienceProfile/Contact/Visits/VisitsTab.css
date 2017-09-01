@@ -1,0 +1,17 @@
+﻿div[data-sc-id=VisitTabMessageBar] {
+    margin-top: 20px;
+}
+
+div[data-sc-id=VisitsList] td.ventilate {
+    cursor: pointer;
+}
+
+div.sc-advancedExpander[data-sc-id=VisitsAccordion] .sc-advancedExpander-body,
+div.sc-advancedExpander[data-sc-id=EventsAccordion] .sc-advancedExpander-body
+{
+  border: none;
+}
+
+.sc-border[data-sc-id=MoreVisitsBorder] {
+  padding-bottom: 0 !important;
+}

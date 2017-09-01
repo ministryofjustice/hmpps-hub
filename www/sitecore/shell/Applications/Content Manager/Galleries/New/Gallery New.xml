@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.New>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Galleries.New.GalleryNewForm,Sitecore.Client"/>
+      
+      <style>
+        #Masters{
+          height: auto !important;
+        }
+      </style>
+      
+      <div class="scStretch">
+        <div class="scGalleryContent10">
+          <GalleryMenu ID="Options" >
+            <MenuPanel class="scStretch">
+              <Scrollbox ID="Masters" Class="scScrollbox" Padding="0px" Border="none" Background="transparent"/>
+            </MenuPanel>
+          </GalleryMenu>
+        </div>
+        <div class="scGalleryBottom10">
+          <Gallery.Grip />
+        </div>
+      </div>
+      
+    </Gallery>
+  </Gallery.New>
+</control>

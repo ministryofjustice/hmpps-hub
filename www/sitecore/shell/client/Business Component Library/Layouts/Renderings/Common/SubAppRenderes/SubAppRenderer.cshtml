@@ -1,0 +1,13 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.ItemRenderers                 
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var rendering = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  var clientId = rendering.GetControlClientId();
+  var htmlAttributes = rendering.HtmlAttributes;
+}
+<div @htmlAttributes id="@clientId" data-sc-app="@clientId">
+  @Html.Sitecore().Controls().ItemRenderer(Model.Rendering)
+</div>

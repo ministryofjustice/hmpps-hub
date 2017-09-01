@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.EditorHost def:inherits="Sitecore.Shell.Applications.Install.Controls.EditorHost,Sitecore.Client">
+    <div class="scStretch" style="padding: 15px;">
+      <Border def:ID="Container" Height="100%">
+        <Space/>
+      </Border>
+    </div>
+  </Installer.EditorHost>
+</control>

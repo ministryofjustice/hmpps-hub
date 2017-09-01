@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <SpotBox Header="" Body="">
+    <If NonEmpty="$Header">
+      <table border="1">
+        <tr>
+          <td align="center">
+            <h2>
+              <Literal Text="$Header"/>
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Literal Text="$Body"/>
+          </td>
+        </tr>
+      </table>
+    </If>
+  </SpotBox>
+</control>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WebEditMenuPortlet def:inherits="Sitecore.Shell.Applications.WebEdit.Portlets.WebEditMenuPortletXmlControl,Sitecore.ExperienceEditor">
+    <Border def:ID="Portlet">
+
+      <Toolbutton ID="StartMenu" Icon="Applications/24x24/media_play_green.png" Header="Sitecore" Width="100%"/>
+      
+      <SidebarDivider/>
+    </Border>
+  </WebEditMenuPortlet>
+</control>

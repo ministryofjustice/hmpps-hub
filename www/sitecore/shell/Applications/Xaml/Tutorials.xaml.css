@@ -1,0 +1,14 @@
+body 
+{
+  background:#192b5a;
+}
+
+a, a:link, a:visited, a:hover, a:active 
+{
+  color:White;
+}
+
+pre, code
+{
+  color:White;
+}

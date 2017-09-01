@@ -1,0 +1,43 @@
+﻿.combinations-grid th
+{
+  cursor: pointer;
+  white-space:normal;
+  vertical-align:middle;
+  text-align:center;
+}
+
+.combinations-grid td
+{
+  white-space: nowrap;
+  text-align: left;
+}
+
+.combinations-grid .even
+{
+  background-color: #f5f5f5;
+}
+
+.combinations-grid tr.hover, .combinations-grid tbody tr:hover 
+{    
+  background: #fffbd3 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x left center;
+}
+
+.combinations-grid tbody tr.selected, .combinations-grid tbody tr.selected:hover
+{    
+  background: #feeb92 url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonDown.png) repeat-x left -1px;
+}
+
+.counter-cell
+{
+  width: 30px;
+}
+
+.value-cell
+{
+  width: 50px;
+}
+
+.lang_ja_jp .value-cell
+{
+  width:65px;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WizardFormFirstPage def:inherits="Sitecore.Web.UI.Pages.WizardDialogFirstPageXmlControl,Sitecore.Kernel">
+    <Border class="scStretch">
+      
+      <Border class="scWizardFirstPageLeftPanel">
+        <Border class="scWizardSmallIcon">
+          <ThemedImage Src="$Icon" Height="48" Width="48"/>
+        </Border>       
+        <Border class="scWizardLargeIcon">
+          <ThemedImage Src="$Icon" Width="196" Height="196"/>
+        </Border>
+      </Border>
+      
+      <Border class="scWizardFirstPageContent">
+        <def:Placeholder class="scWizardWelcomePanel" />
+        <Border class="scWizardSkip">
+          <Checkbox ID="Skip" Header="Always skip the first page of wizards"/>
+        </Border>
+      </Border>
+      
+    </Border>
+  </WizardFormFirstPage>
+</control>

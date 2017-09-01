@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns:installer="Sitecore.Shell.Applications.Install.Controls">
+  <Installer.ItemTemplateFilterEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ItemTemplateFilterEditor,Sitecore.Client">
+    <style>
+      .scContentControlTreelist {
+      height: 100%;
+      }
+    </style>
+    <Border class="filterEditorChildContainer" Height="300px">
+      <Border def:ID="TreeListPanel" height="100%"></Border>
+      <Button def:ID="ClearButton" Header="Clear Filter"/>
+    </Border>
+  </Installer.ItemTemplateFilterEditor>
+</control>
+
+    

@@ -1,0 +1,129 @@
+.calendar
+{
+	border:1px solid #57566F;
+	cursor:default;
+}
+
+.topheadertext
+{
+	font-family:Arial Black;
+	font-size:15px;
+	color:#4A495E;
+	line-height:20px;
+	text-align: center;
+}
+
+.dayheader
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:bold;
+	color:#333333;
+	background-color:#E0DFE3;
+	background-image:url(images/dayheader_bg.gif);
+	background-position: left bottom;	
+	height:20px;
+	text-align:center;
+	cursor:default;
+}
+
+.monthselector
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#333333;
+	width:25px;
+	background-color:#E0DFE3;
+	background-image:url(images/dayheader_bg.gif);
+	background-position: left bottom;
+	cursor:pointer;
+}
+
+.weekselector
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#333333;
+	background-color:#F6F6F6;
+	border-top:1px solid white;
+	border-left:1px solid white;
+	border-bottom:1px solid #EEEEEE;
+	border-right:1px solid #EEEEEE;
+	height:21px;
+	width:29px;
+	cursor:pointer;
+}
+
+.day
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#57566F;
+	background-color:white;
+	border-top:1px solid white;
+	border-left:1px solid white;
+	border-bottom:1px solid #F6F6F6;
+	border-right:1px solid #F6F6F6;
+	height:21px;
+	width:29px;
+	cursor:pointer;
+}
+
+.othermonthday
+{
+	color:#B2B1CA;
+}
+
+.selectedday
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:bold;
+	text-align:center;
+	color:black;
+	background-color:#FFEEC2;
+	border:1px solid #BB5503;
+	cursor:default;
+}
+
+.dayhover
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#57566F;
+	background-color:white;
+	border-top:1px solid white;
+	border-left:1px solid white;
+	border-bottom:1px solid #F6F6F6;
+	border-right:1px solid #F6F6F6;
+	height:21px;
+	width:29px;
+	cursor:pointer;
+
+	text-decoration:underline;
+}
+
+.othermonthdayhover
+{
+	color:#B2B1CA;
+	text-decoration:underline;
+}
+
+.selecteddayhover
+{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:bold;
+	text-align:center;
+	color:black;
+	background-color:#FFEEC2;
+	border:1px solid #57566F;
+}

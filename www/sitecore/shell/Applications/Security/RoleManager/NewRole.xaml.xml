@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Security.RoleManager.NewRole x:inherits="Sitecore.Shell.Applications.Security.RoleManager.NewRolePage,Sitecore.Client">
+    <Sitecore.Controls.DialogPage Header="New Role" runat="server">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Literal class="scFieldLabel" Text="The role name can only contain the following characters: A-Z, a-z, 0-9 and space." runat="server"/>
+      <GridPanel class="scFormTable" Columns="2" Rows="2" Width="100%" runat="server">
+
+        <Literal class="scFieldLabel" Text="Role name:" runat="server"/>
+        <asp:TextBox ID="Name" runat="server"/>
+
+        <Literal class="scFieldLabel" Text="Domain:" runat="server"/>
+        <asp:DropDownList ID="Domain" runat="server"/>
+      </GridPanel>
+    </Sitecore.Controls.DialogPage>
+  </Sitecore.Shell.Applications.Security.RoleManager.NewRole>
+</xamlControls>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <BucketDatasourceLink>
+     <FormDialog Header="Build Search Query" Text="In the search field, enter the search keywords and the search filters that you want to use in your search query." OKButton="OK">
+      <Stylesheet Key="Style">
+
+        .scDataSourceResultContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 35px;
+        background: white;
+        border: 1px solid #CFCFCF;
+        margin-bottom: 15px;
+        }
+
+        .scItemLink {
+        position:absolute;
+        bottom:0;
+        width:100%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+
+      </Stylesheet>
+      <CodeBeside Type="Sitecore.Buckets.FieldTypes.BucketDatasourceForm,Sitecore.Buckets"/>
+
+      <DataContext ID="InternalLinkDataContext"/>
+      <div class="scStretch">
+        <div class="scDataSourceResultContainer">
+          <Frame SourceUri="/sitecore/shell/Applications/Buckets/DataSourceResult.aspx"></Frame>
+        </div>
+        <GridPanel columns="2" class="scFormTable scItemLink">
+          <Literal Text="Search query:"/>
+          <Edit ID="ItemLink" class="BindMeToItem" />
+        </GridPanel>
+      </div>
+    </FormDialog>
+  </BucketDatasourceLink>
+</control>

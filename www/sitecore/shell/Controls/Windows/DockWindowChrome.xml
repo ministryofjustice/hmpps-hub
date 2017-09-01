@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <DockWindowChrome>           
+    <Script type="text/JavaScript" language="javascript" src="/sitecore/shell/controls/SitecoreObjects.js"/>
+    <Script type="text/JavaScript" language="javascript" src="/sitecore/shell/controls/SitecoreWindow.js"/>
+
+    <GridPanel def:ID="WindowHandle" Width="100%" Height="100%" Class="scWindowHandle" Fixed="true" Background="threedface"
+      onmousedown="javascript:scWin.mouseDown(this, event)"
+      onmousemove="javascript:scWin.mouseMove(this, event)"
+      onmouseup="javascript:scWin.mouseUp(this, event)"
+      onactivate="javascript:scWin.activate(this, event)">
+                      
+      <GridPanel ID="WindowFrameTop" Foreground="captiontext" Height="22" Width="100%" Columns="2" Style="table-layout:fixed" Background="activecaption url(/sitecore/shell/themes/standard/images/toolwindow.gif) repeat-x">
+        <Border GridPanel.Height="16" Style="font:caption" Cursor="default" Padding="2px 0px 1px 4px" GridPanel.Width="100%">
+          <Literal ID="Caption" Text="$Header"/>
+        </Border>
+        <Border Align="right" Padding="3px 2px 0px 0px" GridPanel.Width="20">
+          <WindowButton def:ID="CloseButton" Src="Images/close_red.png" Click="javascript:scWin.hideWindow()" Width="16" Height="16" Margin="1 1" ToolTip="Close"/>
+        </Border>
+      </GridPanel>
+      
+      <GridPanel Height="100%" Width="100%" Columns="3" Style="table-layout:fixed" GridPanel.Width="100%" GridPanel.Height="100%">
+        <Space GridPanel.ID="WindowFrameLeft" Width="3" GridPanel.Style="background:activecaption" GridPanel.Width="3"/>
+
+        <Border Height="100%" GridPanel.Height="100%"
+          onmousedown="javascript:scForm.browser.clearEvent(event, true, false)"
+          onmousemove="javascript:scForm.browser.clearEvent(event, true, false)"
+          onmouseup="javascript:scForm.browser.clearEvent(event, true, false)"
+          onactivate="javascript:scForm.browser.clearEvent(event, true, false)">
+          <def:Placeholder />
+        </Border>
+
+        <Space GridPanel.ID="WindowFrameRight" Width="3" GridPanel.Style="background:activecaption" GridPanel.Width="3"/>
+
+        <Space GridPanel.ID="WindowFrameBottom" Height="3" GridPanel.ColSpan="3" GridPanel.Style="background:activecaption" GridPanel.Height="3"/>
+      </GridPanel>
+      
+    </GridPanel>
+  </DockWindowChrome>
+</control>

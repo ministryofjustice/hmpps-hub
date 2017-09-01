@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns:installer="Sitecore.Shell.Applications.Install.Controls">
+  <Installer.SelectAccount def:inherits="Sitecore.Shell.Applications.Install.Controls.SelectAccount,Sitecore.Client">
+    <Border def:ID="brdSelect">
+    </Border>
+    <div style="margin-top: 10px;">
+      <Button def:ID="btnAdd" Caption="Add" Header="Add" Click="OnAddAccount"/>
+      <Button def:ID="btnRemove" Caption="Remove" Header="Remove" Click="OnRemoveAccount"/>
+      <Border></Border>
+    </div>
+
+  </Installer.SelectAccount>
+</control>
+

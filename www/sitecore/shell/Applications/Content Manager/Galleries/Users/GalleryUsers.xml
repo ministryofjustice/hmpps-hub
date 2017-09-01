@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.Users>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Galleries.Users.GalleryUsersForm,Sitecore.Client"/>
+
+      <div class="scStretch">
+        <div class="scGalleryContent10">
+          <MenuHeader Header="Recent"/>
+          <Border ID="Options"></Border>
+        </div>
+
+        <div class="scGalleryBottom10">
+          <Gallery.Grip />
+        </div>
+      </div>
+    </Gallery>
+  </Gallery.Users>
+</control>

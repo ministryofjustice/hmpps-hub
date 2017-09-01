@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.Preview>
+    <FormPage>
+      <Stylesheet Src="Ribbon.css" DeviceDependant="true"/>
+      <Stylesheet Src="Content Manager.css" DeviceDependant="true"/>
+      <Stylesheet>
+        .scPreviewSplashFrame{
+          text-align: center;
+        }
+
+        .scPreviewSplashFrame > * {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+
+        .scPreviewSplashFrame .scSpinner {
+          margin-top: 150px;
+          width: 32px;
+          height: 32px;
+        }
+
+        .scPreviewSplashFrame .scActionText {
+          margin-top: 15px;
+        }
+      </Stylesheet>
+      
+      <Script Src="/sitecore/shell/Applications/Content Manager/Content Editor.js"/>
+      <script language="javascript">
+        scForm.browser.attachEvent(window, 'onload', function() { scForm.invoke('preview:prepare'); });
+      </script>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Install.Preview, Sitecore.Client"/>
+
+      <input type="hidden" id="__ActiveRibbonStrip" name="__ActiveRibbonStrip" />
+
+      <div class="scStretch scFlexColumnContainer">
+
+        <Border ID="RibbonFrame"/>
+
+        <div class="scFlexContent">
+          <div class="scStretchAbsolute" style="padding:15px;">
+            <Border ID="SplashFrame">
+              <Border class="scPreviewSplashFrame">
+                <ThemedImage class="scSpinner" Src="Images/ProgressIndicator/sc-spinner32.gif" />
+                <Literal class="scFieldLabel scActionText" Text="Generating preview information..."/>
+              </Border>
+            </Border>
+
+            <Border ID="ViewerFrame" Style="display:none" Width="100%" Height="100%">
+              <Installer.PackageViewer ID="Viewer"/>
+            </Border>
+          </div>
+        </div>
+
+        <div>
+          <Border Border="1px solid #ccc" Background="White" Margin="3px" Padding="2px" >
+            <Literal ID="StatusText" Text="&#160;"/>
+          </Border>
+        </div>
+      
+    </div>
+
+    </FormPage>
+  </Installer.Preview>
+</control>

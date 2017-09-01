@@ -1,0 +1,214 @@
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar {
+  width: 6px;
+  margin-left: 15px;
+  background-color: whitesmoke;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #8f8e99;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar-thumb:hover {
+  background-color: #606066;
+  border: 1px solid #333333;
+}
+.scrollCustom::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+.scrollCustom::-webkit-scrollbar {
+  width: 6px;
+  margin-left: 15px;
+  background-color: whitesmoke;
+}
+.scrollCustom::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #8f8e99;
+}
+.scrollCustom::-webkit-scrollbar-thumb:hover {
+  background-color: #606066;
+  border: 1px solid #333333;
+}
+.sc-filteredcombobox.disabled {
+  color: #cacaca;
+}
+.sc-filteredcombobox.disabled .btn:hover,
+.sc-filteredcombobox.disabled .btn:focus {
+  color: #cacaca;
+}
+.scFiltList-btnList {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  padding: 0;
+  padding-left: 10px;
+  border-radius: 2px;
+  border: 1px solid #bfbfbf;
+  border-style: double;
+}
+.scFiltList-spButton {
+  top: 5px;
+  position: relative;
+  float: left;
+}
+.scFiltList-dvTriangle {
+  display: inline-block;
+  height: 100%;
+  width: 15px;
+  float: right;
+  background-image: url('/sitecore/shell/client/Applications/ContentTesting/Assets/triangle.png');
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  margin-left: 7px;
+}
+.scFiltList-dvList {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  left: 0;
+  height: auto;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1000;
+}
+.scFiltList-dvList .scFiltList-dvSelectTitle {
+  background-color: #eeeeee;
+  font-size: 12px;
+  font-weight: bold;
+  height: 40px;
+  min-height: 40px;
+  display: table;
+  width: 100%;
+}
+.scFiltList-dvList .scFiltList-dvSelectTitle .scFiltList-dvSelectContent {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10px;
+  padding-top: 4px;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+}
+.scFiltList-dvList .scFiltList-dvContent {
+  overflow-y: auto;
+  border: 1px solid #dddddd;
+  height: auto;
+  background-color: #eeeeee;
+}
+.scFiltList-dvList .scFiltList-dvContent ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: block;
+  width: 100%;
+}
+.scFiltList-dvList .scFiltList-dvContent ul li {
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+  display: block;
+  vertical-align: middle;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+  position: relative;
+}
+.scFiltList-dvList .scFiltList-dvContent ul li span {
+  position: relative;
+  top: 10px;
+}
+.scFiltList-dvSearch {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 8px;
+  right: 20px;
+  cursor: pointer;
+  background-image: url("/sitecore/shell/client/Speak/Assets/img/sc-sprite.png");
+  background-position: -221px -153px;
+}
+.scFiltList-dvResultCount {
+  height: 20px;
+}
+.scFiltList-dvPageCount {
+  float: left;
+  margin-left: 10px;
+}
+.scFilList-dvPrevPage {
+  height: 17px;
+  width: 17px;
+  background-image: url("/sitecore/shell/client/Speak/Assets/img/sc-sprite-arrows.png");
+  background-position: -179px -125px;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.scFilList-dvNextPage {
+  height: 17px;
+  width: 17px;
+  background-image: url("/sitecore/shell/client/Speak/Assets/img/sc-sprite-arrows.png");
+  background-position: -179px -143px;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.scFiltList-dvInput {
+  border: 1px solid #dddddd;
+}
+.scFiltList-dvInput .scFiltList-inputSearch {
+  width: 100%;
+  padding: 0;
+  height: 34px;
+  padding-left: 10px;
+  border: none;
+  margin: 0;
+  color: #555555;
+}
+.scFiltList-dvInput .scFiltList-inputSearch.hintText {
+  color: #cccccc;
+}
+.scFiltList-liUsual {
+  background-color: white;
+  color: #555555;
+}
+.scFiltList-liSelected {
+  background-color: #aadbee;
+  color: #454545;
+}
+.scFiltList-buttonSort {
+  display: inline-block;
+  width: 25px;
+  height: 18px;
+  border: 1px solid #c7c7c7;
+  margin-top: 3px;
+  border-radius: 15px;
+  outline: none;
+  font: 11px bold sans-serif;
+  float: right;
+  margin-right: 10px;
+  margin-top: 0;
+}
+.scFiltList-buttonSort:hover {
+  background-color: #c4c0c0;
+}
+.scFiltList-sortAsc:after {
+  content: "˅";
+}
+.scFiltList-sortDesc:after {
+  content: "˄";
+}
+.scFiltList-sortNo:after {
+  content: "\2212";
+}
+.scFiltList-btnSizeSmall {
+  width: 60px;
+}
+.scFiltList-btnSizeMiddle {
+  width: 120px;
+}
+.scFiltList-btnSizeBig {
+  width: 220px;
+}

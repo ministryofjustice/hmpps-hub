@@ -1,0 +1,127 @@
+﻿@using Sitecore
+@using Sitecore.Data.Items
+@using Sitecore.Text
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+
+  var items = new List<Item>();
+  //var roots = ClientHost.Databases.Database.SelectItems("fast://*[@@id='{9BBC8B0C-E600-4C27-835C-043835B75778}' or @@id='{53F1488C-421B-4240-95AD-C8A591547C74}']");  
+  var roots = ClientHost.Databases.Database.SelectItems("fast://*[@@id='{9BBC8B0C-E600-4C27-835C-043835B75778}']");
+  
+  foreach (var root in roots)
+  {
+    items.AddRange(root.Children);
+  }
+}
+<section>
+  <table id="tblExport" class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>
+          Category
+        </th>
+        <th>
+          Component Name
+        </th>
+        <th>
+          Section
+        </th>
+        <th>
+          Property
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Binding Mode
+        </th>
+        <th>
+          Default Value
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      @{
+
+        foreach (Item folder in items.OrderBy(i => i.DisplayName))
+        {
+          foreach (Item item in folder.Children)
+          {
+            TemplateItem template = null;
+            var defaultParameters = new UrlString(item["Default Parameters"]);
+
+            var t = item["Parameters Template"];
+            if (!string.IsNullOrEmpty(t))
+            {
+              var i = ClientHost.Databases.Database.GetItem(t);
+              if (i != null)
+              {
+                template = new TemplateItem(i);
+              }
+            }
+
+            if (template != null)
+            {
+              foreach (var templateSection in template.Fields.GroupBy(f => f.Section.Name).Select(g => new
+              {
+                Name = g.Key,
+                Fields = g.OrderBy(f => f.DisplayName)
+              }).OrderBy(g => g.Name))
+              {
+
+                foreach (var field in templateSection.Fields.OrderBy(f => f.Name))
+                {
+                  var templateItem = new TemplateItem(field.InnerItem.Parent.Parent);
+                  var source = new UrlString(field.Source);
+                  var bindMode = source["bindMode"];
+
+                  if (string.IsNullOrEmpty(bindMode))
+                  {
+                    bindMode = "readwrite";
+                  }
+
+                  if (!templateItem.BaseTemplates.Any())
+                  {
+                    continue;
+                  }
+
+                  var defaultValue = defaultParameters.Parameters[@field.Name] ?? string.Empty;
+                  <tr>
+                    <td>
+                      @folder.DisplayName
+                    </td>
+                    <td>
+                      @item.Name
+                    </td>
+                    <td>
+                      @templateSection.Name
+                    </td>
+                    <td>
+                      @field.Name
+                    </td>
+                    <td>
+                      @field.ToolTip
+                    </td>
+                    <td>
+                      @field.Type
+                    </td>
+                    <td>
+                      @bindMode
+                    </td>
+                    <td>
+                      @defaultValue
+                    </td>
+                  </tr>
+                }
+              }
+            }
+          }
+        }
+      }
+    </tbody>
+  </table>
+</section>

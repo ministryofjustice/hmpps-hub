@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <TaskPage>
+    <def:Code><![CDATA[
+    
+    void OnCreated(EventArgs e) {
+      Body["PageID"] = State.CurrentItem.ID;
+    }
+    
+    ]]></def:Code>
+    
+    <WebPage ClientClass="scTaskPage" def:type="xml">
+      <TaskPageBody def:id="Body"/>
+    </WebPage>
+  </TaskPage>
+</control>

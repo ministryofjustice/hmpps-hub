@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Applications.Layouts.RenderingLister>
+    <Stylesheet Src="ItemLister.css" DeviceDependant="true" />
+    
+    <FormDialog ID="Dialog" Icon="Core/32x32/open_document.png" Header="Open Item" 
+      Text="Select the item that you wish to open. Then click the Open button." OKButton="Open">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.RenderingLister.RenderingListerForm,Sitecore.Client"/>
+
+      <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+        <Scrollbox ID="Items" Width="100%" Height="100%" Background="white" Border="1px inset" Padding="0" GridPanel.Height="100%" />
+
+        <Border ID="Help" Height="48px" style="border:1px inset" Background="white" Margin="4px 0px 0px 0px" Padding="2px">
+          <Border style="color:#999999" align="center">
+            <i>
+              <Literal Text="Please select a rendering." />
+            </i>
+          </Border>
+        </Border>
+
+        <Border ID="OpenPropertiesBorder" Visible="false" style="padding:8px 0px 0px 0px">
+          <Checkbox ID="OpenProperties" Header="Open the Properties dialog box immediately." />
+        </Border>
+      </GridPanel>
+
+    </FormDialog>
+  </Applications.Layouts.RenderingLister>
+</control>

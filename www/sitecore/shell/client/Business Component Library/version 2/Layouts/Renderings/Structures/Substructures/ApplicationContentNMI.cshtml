@@ -1,0 +1,22 @@
+﻿@using Sitecore.Mvc
+<div class="sc-navigation-wrapper">
+  <nav class="sc-applicationContent-navigation sc-navigation-menu">
+    @Html.Sitecore().Placeholder("ApplicationContent.Navigation")
+  </nav>
+  
+  <div class="sc-navigation-content">
+    <header class="sc-applicationHeader">
+      @Html.Sitecore().Placeholder("ApplicationHeader")
+    </header>
+    
+    <div class="row sc-contentRowFix sc-applicationContent-main-wrapper">
+      <section class="col-md-8 sc-applicationContent-main">
+        @Html.Sitecore().Placeholder("ApplicationContent.Main")
+      </section>
+
+      <section class="col-md-4 sc-applicationContent-info">
+        @Html.Sitecore().Placeholder("ApplicationContent.Info")
+      </section>
+    </div>
+  </div>
+ </div>

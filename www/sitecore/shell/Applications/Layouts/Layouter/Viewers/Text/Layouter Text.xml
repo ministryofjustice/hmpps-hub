@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <LayouterText>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.Layouter.Viewers.Text.LayouterTextForm,Sitecore.Client"/>
+
+      <Script Src="/sitecore/shell/Controls/SitecoreKeyboard.js"/>
+      <script type="text/javascript">
+        if (scForm) {
+          scForm.enableModifiedHandling();
+        }
+      </script>
+
+      <GridPanel Width="100%" Height="100%">
+      
+        <AutoToolbar DataSource="/sitecore/content/Applications/Layouts/Layouter/File types/__Default/Toolbar"/>
+
+        <Memo ID="Editor" Width="100%" Height="100%" Border="none" Wrap="off" GridPanel.Height="100%"/>
+      
+      </GridPanel>
+
+    </FormPage>
+  </LayouterText>
+</control>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Command>           
+    <div class="scCommandContainer">
+      <Inline Class="scCommand" ID="$ID" Click="$Click" RollOver="true" ToolTip="$ToolTip">
+        <ThemedImage Src="$Icon" Width="24" Height="24" Margin="3px 10px 5px 0px" Align="absmiddle"/>
+        <Literal Class="scClickFont" Text="$Header" style="vertical-align:middle;"/>
+      </Inline>
+    </div>
+  </Command>
+</control>

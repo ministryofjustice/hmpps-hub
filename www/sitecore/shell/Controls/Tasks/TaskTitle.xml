@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <TaskTitle>
+    <ThemedImage Src="$Icon" Width="32" Height="32" Style="position:absolute;left:8px;top:4px" />
+    
+    <Border Class="scTaskGradient">
+      <GridPanel Columns="3" Width="100%" class="scTaskTitle">
+        <Space Width="48" Height="28" />
+    
+        <def:Placeholder GridPanel.Width="100%"/>
+        
+        <Border Class="scRollOver" RollOver="true" ID="Home" Padding="0px 8px 0px 0px" GridPanel.NoWrap="true" GridPanel.Align="right" Click="#">
+          <ThemedImage Src="Network/24x24/home.png" Width="24" Height="24" Align="absmiddle" Margin="0px 4px 0px 0px"/>
+          <Literal Text="Home"/>
+        </Border>
+      
+      </GridPanel>
+    </Border>
+  </TaskTitle>
+</control>

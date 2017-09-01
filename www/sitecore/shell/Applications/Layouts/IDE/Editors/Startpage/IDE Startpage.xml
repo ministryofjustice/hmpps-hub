@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <IDE.Startpage>
+    <FormPage Scroll="yes">
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Editors.Startpage.IDEStartpageForm,Sitecore.Client"/>
+       
+      <Stylesheet Src="/sitecore/portal/ide/ide.css"/>
+      
+      <Portal ID="IDEStartpagePortal" DataSource="/sitecore/content/Applications/Layouts/IDE/Portal" RefreshPageOnRedraw="true" Style="height:100%" Class="scFixSize">
+                                            
+        <Border Class="Portal" Background="#ebf1fe" Height="100%">
+        
+          <GridPanel Width="100%" Height="100%">
+        
+            <Border Background="#7c94c8" Padding="8" style="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#9bacd5', EndColorStr='#7189bd');" Width="100%" Height="56">
+              <GridPanel Columns="2">
+                <ThemedImage Src="People/48x48/cubes.png" Width="48" Height="48" Margin="0px 8px 0px 0px"/>
+                
+                <Border FontName="Franklin Gothic Medium" FontSize="20" Foreground="white" Padding="0px" Width="100%">
+                  <Literal Text="Developer Center"/>
+                </Border>
+              </GridPanel>
+            
+            </Border>
+            
+            <Border><Space/></Border>
+          
+            <GridPanel Columns="2" Width="100%" Height="100%" CellSpacing="4" CellPadding="4" GridPanel.Height="100%">
+            
+              <PortalZone ID="Left" GridPanel.Width="33%" GridPanel.Class="PortalColumn" GridPanel.VAlign="top" GridPanel.Height="100%"/>
+            
+              <PortalZone ID="Mid" GridPanel.Width="66%" GridPanel.Class="PortalColumn" GridPanel.VAlign="top"/>
+
+            </GridPanel>
+            
+          </GridPanel>
+          
+        </Border>
+        
+      </Portal>
+      
+      <Frame ID="Sidebar" Width="6" Height="100%" Style="position:absolute; right:0; top:0"/>
+        
+    </FormPage>
+  </IDE.Startpage>
+</control>

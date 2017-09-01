@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Sitecore.Shell.Applications.WebEdit.Dialogs.StartTest>        
+    <FormDialog ID="Dialog" Icon="SoftwareV2/24x24/media_play_green.png" OKButton="Start the Test" Header="Start the Test" TextCssClass="scDialogTextWithPadding" Text="Do you want to start the test for this page? When the test is running, you cannot edit the components that are used in the test." >
+      <CodeBeside Type="Sitecore.Shell.Applications.WebEdit.Dialogs.StartTest.StartTestForm,Sitecore.Xdb.Client"/>
+      <Stylesheet>
+      button.scButton
+      {
+        white-space: nowrap;
+        min-width: 86px;
+        width: auto;
+      }
+
+      .ie button.scButton
+      {
+        width:86px;               
+      }
+      </Stylesheet>
+      <Script>
+      window.onload = function() {
+        $('TestTitle').select();
+      }
+      </Script>
+        <Literal Text="Test title:"/>
+      <Edit Width="100%" ID="TestTitle"></Edit>     
+    </FormDialog>
+  </Sitecore.Shell.Applications.WebEdit.Dialogs.StartTest>
+</control>

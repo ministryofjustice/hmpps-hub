@@ -1,0 +1,7 @@
+div[data-sc-id="FirstButtonBorder"] {
+  margin-top: 2em;
+}
+div[data-sc-id="BottomButtonBorder"] {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}

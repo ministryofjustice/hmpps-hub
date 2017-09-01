@@ -1,0 +1,139 @@
+/* RadSpell wrapper window styles */
+
+.RadETableWrapperResizeSpan
+{
+	cursor : default;
+	border : 3px solid #cccccc;
+}
+
+.RadETableWrapper
+{
+	border:1px solid #979797;
+	border-top: 1px solid #696969;
+	background-color:#CFE2FB;
+	font-size:0px;
+}
+
+.RadETableWrapperHeaderLeft
+{
+	background: url(CssImg/DialogueHeaderLeft.gif);
+	width:9px;
+}
+.RadETableWrapperHeaderCenter
+{
+	text-align: left;
+	height:27px;
+	font-family:Tahoma;
+	color: white;
+	background: url(CssImg/dialogueHeaderCenter.gif);
+	background-repeat: repeat-x;
+}
+.RadETableWrapperHeaderRight
+{
+	background-color: #ACC2E7;
+	width:1px;
+}
+
+.RadETableWrapperBodyLeft
+{
+	width:0px;
+}
+
+.RadETableWrapperBodyCenter
+{
+	width:100%;
+	height:100%;
+}
+
+.RadETableWrapperBodyRight
+{
+	width:0px;
+}
+
+.RadETableWrapperFooterLeft
+{
+	background-repeat: no-repeat;
+	height: 13px;
+	font-size: 0px;
+	width: 0px;
+	border-bottom: 1px solid #B4B4B4;
+}
+
+.RadETableWrapperFooterCenter
+{
+	width:100%;
+	height: 13px;
+	font-size: 0px;
+	line-height:0px;
+	border-bottom: 1px solid #B4B4B4;
+}
+
+.RadETableWrapperFooterRight
+{
+	font-size: 0px;
+	width: 14px;
+	height: 13px;
+	line-height:0px;
+	cursor:nw-resize;
+	background-image: url(CssImg/footerResize.gif);
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #B4B4B4;
+}
+
+.RadETableWrapperFooterRightOver
+{
+	width:0px;
+	height:0px;
+	font-size: 0px;
+	line-height:0px;
+	cursor:nw-resize;
+}
+
+.RadERadWindowHeader
+{
+	font-family: Microsoft Sans Serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: white;
+	height: 27px;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-left: 10px;
+	cursor:default;
+	width:100%;
+	display:inline;
+}
+
+.RadERadWindowButtonClose
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderClose.gif);
+	background-repeat: no-repeat; /* Jan 04 2006 */
+	width:19px;
+	height:27px;
+	display:block;
+}
+
+.RadERadWindowButtonPinOff
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderPinOff.gif);
+	background-repeat: no-repeat; /* Jan 04 2006 */
+	width:16px;
+	height:27px;
+	display:block;
+}
+
+.RadERadWindowButtonPinOn
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderPinOn.gif);
+	background-repeat: no-repeat; /* Jan 04 2006 */
+	width:16px;
+	height:27px;
+	display:block;
+}

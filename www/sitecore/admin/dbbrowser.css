@@ -1,0 +1,421 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body, form {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 8pt;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+}
+
+textarea {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+table
+{ 
+  border-collapse: collapse;
+}
+
+td 
+{
+  font-size:  8pt;
+  padding: 2px;
+}
+
+input
+{
+  font-size:  8pt;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+select
+{
+  font-size:  8pt;
+}
+
+a, a:visited
+{
+  color: blue;
+  text-decoration: none;
+}
+
+a:active, a:hover 
+{
+  color: blue;
+  text-decoration: underline;
+}
+
+.scStretch
+{
+  height: 100%;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.scStretchAbsolute {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: activecaption;
+}
+
+.content
+{
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+a.TreeNode, a:visited.TreeNode
+{
+  color: windowtext;
+  padding: 2px 4px;
+  text-decoration: none;
+  white-space:nowrap;
+}
+
+a:active.TreeNode, a:hover.TreeNode
+{
+  color: windowtext;
+  padding: 2px 4px;
+  text-decoration: underline;
+  white-space:nowrap;
+}
+  
+a.TreeNodeSelected, a:visited.TreeNodeSelected
+{
+  background: highlight;
+  color: highlighttext;
+  padding: 2px 4px;
+  text-decoration: none;
+  white-space:nowrap;
+}
+
+a:active.TreeNodeSelected, a:hover.TreeNodeSelected
+{
+  background: highlight;
+  color: highlighttext;
+  padding: 2px 4px;
+  text-decoration: underline;
+  white-space:nowrap;
+}
+
+.TreeNodeRow
+{
+  padding:1px 0px 2px 0px;
+  white-space:nowrap;
+}
+
+.TreeNodeRow > img {
+  vertical-align: top;  
+}
+
+.caption
+{
+  color: captiontext;
+  font-weight: 600; 
+  font-size: 10pt;
+  padding:8px 4px 8px 4px;
+}
+
+.dataBases {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.tree
+{
+  background:threedface;
+  padding:4px; 
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+a.TreeNodeSelected 
+{
+  color: highlighttext;
+  background: highlight;
+  padding:2px 4px;
+}
+
+.TreeNode
+{
+  padding:2px;
+}
+
+.contentEditor
+{
+  background: threedface;
+  display: inline-block;
+  width: 80%;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+}
+
+.Scroller
+{
+  border: 1px inset #e0e0e0;
+  background:white;  
+  width:100%;
+  height:100%;
+  overflow:auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.FieldsScroller
+{
+  width: 75%;
+  height:100%;
+  overflow:auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.Fields
+{
+  border: none;
+  border-collapse: collapse;
+}
+
+.FieldLabel
+{
+  background: threedface;
+  border-bottom: 1px solid threedshadow;
+}
+
+  .FieldLabel > div {
+    text-align: center;
+  }
+
+.FieldInput
+{
+  background: window;
+  border-bottom: 1px solid threedshadow;
+  border-left: 1px solid threedshadow;
+}
+
+.FieldSection
+{
+  background:threedface;
+  padding: 2px 0px 2px 4px;
+  border-bottom: 1px solid threedshadow;
+  font-weight: 600; 
+  font-size: 8pt;
+}
+
+.FieldTextbox
+{
+  border: none;
+}
+
+.FieldReadOnlyLabel
+{
+  background: threedface;
+  border-bottom: 1px solid threedshadow;
+  border-right: 1px solid threedshadow;
+  padding: 2px 0px 2px 12px;
+}
+
+.FieldReadOnlyInput
+{
+  background: window;
+  color: #666666;
+  border-bottom: 1px solid threedshadow;
+  border-left: 1px solid threedshadow;
+  padding: 3px 0px 3px 4px;
+}
+
+.ItemPath
+{
+  background: threedface;
+  padding: 2px;
+}
+
+.ItemPathDivider
+{
+}
+
+.Edge
+{
+  background: white;
+  border-top:1px solid threedshadow;
+  height: 1px;
+}
+
+.Anchor
+{
+  color: #666666;
+  font-weight: 600; 
+  font-size: 8pt;
+  padding: 0px 0px 0px 4px;
+}
+
+.AnchorSelected 
+{
+  color: black; 
+  font-weight: 600; 
+  font-size: 8pt;
+  padding: 0px 0px 0px 4px;
+}
+
+.ToolButton
+{
+  border:none;
+  vertical-align: middle;
+  padding:3px;
+  margin: 0px 2px 0px 0px;
+}
+
+a.ItemPathFragment, a:visited.ItemPathFragment
+{
+  font-weight: 600; 
+  font-size: 8pt;	
+  color:threeddarkshadow; 
+  text-decoration: none;
+}
+
+a.ItemPathTemplate, a:visited.ItemPathTemplate
+{
+  font-weight: 600; 
+  font-size: 8pt;	
+  color:#6375D6; 
+  text-decoration: none;
+}
+
+a:hover.ItemPathFragment, a:active.ItemPathFragment
+{
+  font-weight: 600; 
+  font-size: 8pt;	
+  color:threeddarkshadow; 
+}
+
+.Tasks
+{
+  border:1px inset;
+  color:White;
+  background: #6375D6;
+}
+
+.Taskbox
+{
+  background: #D6DFF7;
+  width:100%;
+}
+
+.TaskScroller
+{
+  width: 25%;
+  height:100%;
+  overflow:auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.TaskCaption
+{
+  border-top:1px solid white;
+  border-left:1px solid white;
+  border-right:1px solid white;
+  color:#215DC6;
+  background:white;
+  padding:3px;
+  font-weight: 600; 
+  font-size: 8pt;
+}
+
+.TaskBody
+{
+  background: #D6DFF7;
+  border-left:1px solid white;
+  border-right:1px solid white;
+  color:#4B76DF;
+}
+
+.TaskFooter
+{
+  border-left:1px solid white;
+  border-right:1px solid white;
+  border-bottom:1px solid white;
+}
+
+.TaskInput
+{
+  width:100%;
+}
+
+.TaskButton
+{
+  padding:2px;
+}
+
+a.DatabaseLink, a:visited.DatabaseLink
+{
+  color: silver;
+  text-decoration: none;
+  margin: 0px 16px 0px 0px;
+}
+
+a:active.DatabaseLink, a:hover.DatabaseLink
+{
+  color: silver;
+  text-decoration: underline;
+  margin: 0px 16px 0px 0px;
+}
+  
+a.DatabaseLinkSelected, a:visited.DatabaseLinkSelected
+{
+  color: white;
+  text-decoration: none;
+  margin: 0px 16px 0px 0px;
+}
+
+a:active.DatabaseLinkSelected, a:hover.DatabaseLinkSelected
+{
+  color: white;
+  text-decoration: underline;
+  margin: 0px 16px 0px 0px;
+}
+  
+.fields
+{
+  position: absolute;
+  top: 80px;
+  lefT: 0;
+  right: 0;
+  bottom: 0;
+}

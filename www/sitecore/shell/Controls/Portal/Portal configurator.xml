@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortalConfigurator>
+    <CodeBeside Type="Sitecore.Shell.Controls.Portal.PortalConfiguratorForm,Sitecore.Client"/>
+
+    <Stylesheet Src="Sidebar.css"/>
+    <Stylesheet Src="/sitecore/portal/tech/tech.css"/>
+      
+    <FormDialog Icon="Applications/32x32/flash.png" Header="Portal" 
+      Text="Select the content to display on your personal portal. Click Apply to update the portal." OKButton="Apply">
+      
+      <GridPanel ID="Portlets" Columns="2" Width="100%" CellSpacing="4"/>
+
+    </FormDialog>
+  </PortalConfigurator>
+</control>

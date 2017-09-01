@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CarouselTinyItem>
+    <Border Class="scRollOver" RollOver="true" Padding="2px 6px 2px 6px" Click="$Click" ContextMenu="$ContextMenu" Style="white-space:nowrap" Foreground="white" Drag="$Drag" Drop="$Drop" ToolTip="$ToolTip">
+      <ThemedImage Src="$Icon" Width="16" Height="16" Margin="0px 4px 0px 0px" Align="absmiddle" ToolTip="$ToolTip"/>
+      <Literal Text="$Header"/>
+    </Border>
+  </CarouselTinyItem>
+  
+  <CarouselSmallItem>
+    <Border Class="scRollOver" RollOver="true" Padding="2px 6px 2px 6px" Click="$Click" ContextMenu="$ContextMenu" Style="white-space:nowrap" Foreground="white" Drag="$Drag" Drop="$Drop" ToolTip="$ToolTip">
+      <ThemedImage Src="$Icon" Width="24" Height="24" Margin="0px 4px 0px 0px" Align="absmiddle" ToolTip="$ToolTip"/>
+      <Literal Text="$Header"/>
+    </Border>
+  </CarouselSmallItem>
+
+  <CarouselMediumItem>
+    <Border Class="scRollOver" RollOver="true" Padding="2px 6px 2px 6px" Click="$Click" ContextMenu="$ContextMenu" Style="white-space:nowrap" Foreground="white" Drag="$Drag" Drop="$Drop" ToolTip="$ToolTip">
+      <ThemedImage Src="$Icon" Width="32" Height="32" Margin="0px 4px 0px 0px" Align="absmiddle" ToolTip="$ToolTip"/>
+      <Literal Text="$Header"/>
+    </Border>
+  </CarouselMediumItem>
+
+  <CarouselBigItem>
+    <Border Class="scRollOver" RollOver="true" Align="center" Click="$Click" ContextMenu="$ContextMenu" Style="white-space:nowrap" Foreground="white" Drag="$Drag" Drop="$Drop" ToolTip="$ToolTip">
+      <ThemedImage Src="$Icon" Width="48" Height="48" Align="absmiddle" ToolTip="$ToolTip"/><br/>
+      <Literal Text="$Header"/>
+    </Border>
+  </CarouselBigItem>
+
+  <CarouselHomeItem>
+    <Border Class="scRollOver" RollOver="true" Align="center" Click="$Click" ContextMenu="$ContextMenu" Style="white-space:nowrap" Foreground="white" Drag="$Drag" Drop="$Drop" ToolTip="$ToolTip">
+      <ThemedImage Src="$Icon" Width="48" Height="48" Align="absmiddle" ToolTip="$ToolTip"/><br/>
+      <b><Literal Text="$Header"/></b>
+    </Border>
+  </CarouselHomeItem>
+ 
+</control>

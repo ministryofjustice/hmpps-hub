@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skins xmlns:sc="http://www.sitecore.net/skin">
+
+  <skin>
+    <div class="scEditorSections">
+      <sc:sections/>
+    </div>
+  </skin>
+
+  <skin type="section">
+    <sc:sectionpanel>
+      <sc:fields/>
+    </sc:sectionpanel>
+  </skin>
+
+  <skin type="field">
+    <sc:marker>
+      <sc:label/>
+      <sc:buttons/>
+      <sc:input/>
+    </sc:marker>
+  </skin>
+
+  <skin type="field" fieldtype="Checkbox">
+    <sc:marker>
+      <sc:input/>
+      <sc:label/>
+      <sc:buttons/>
+    </sc:marker>
+  </skin>
+</skins>

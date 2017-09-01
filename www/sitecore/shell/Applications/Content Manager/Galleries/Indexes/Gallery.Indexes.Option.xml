@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.Indexes.Option>
+    <Border RollOver="true" Class="scMenuPanelItem" Click="$Click">
+      <GridPanel Columns="2">
+        <Border Class="scClickFont" NoWrap="true" GridPanel.VAlign="top">
+          <Literal Text="$Number"/>
+        </Border>
+
+        <Border NoWrap="true">
+
+          <Border>
+            <Literal Text="$Header"/>
+          </Border>
+
+        </Border>
+      </GridPanel>
+    </Border>
+  </Gallery.Indexes.Option>
+</control>

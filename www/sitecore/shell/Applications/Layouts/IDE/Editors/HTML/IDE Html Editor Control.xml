@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell" xmlns:html="http://www.sitecore.net/html">
+  <IDEHtmlEditorControl>
+    &lt;!DOCTYPE HTML&gt;
+    <html>
+      <head>
+        <title>Sitecore</title>
+        <meta name="GENERATOR" content="Sitecore" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta http-equiv="imagetoolbar" content="false" />
+        <Script Src="/sitecore/shell/Applications/Layouts/IDE/Editors/Html/IDE Html Editor Control.js"/>
+      </head>
+      <body scroll="no" style="margin:0px"
+            onload="javascript:scOnLoad()"
+            onmouseover="javascript:this.bg=this.style.background;this.style.background='#EBEBEE'"
+            onmouseout="javascript:this.style.background=this.bg"
+            ondblclick="javascript:scDblClick()"
+            onclick="javascript:scClick()">
+        <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Editors.Html.IDEHtmlEditorControlControlForm,Sitecore.Client"/>
+        <html:HtmlForm def:ID="Form" style="margin:0px">
+          <Border ID="CustomizePage" Visible="false"/>
+          <Border ID="Control" Style="display:inline;cursor:default"/>
+        </html:HtmlForm>
+      </body>
+    </html>
+  </IDEHtmlEditorControl>
+</control>

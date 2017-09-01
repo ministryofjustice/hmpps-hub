@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <ToolTasks def:inherits="Sitecore.Shell.Controls.Toolbars.ToolTasksXmlControl,Sitecore.Client">
+    <GridPanel def:id="Options" Columns="2"/>
+  </ToolTasks>
+</control>
+

@@ -1,0 +1,11 @@
+﻿label[data-sc-id='TrackThis'] > span {
+    display: none
+}
+
+div[data-sc-id='RuleTemplateRadioRow'] {
+    margin-left: 5px !important;
+}
+
+label[data-sc-id='CustomRadioButton'] {
+    padding-right: 0 !important
+}

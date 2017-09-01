@@ -1,0 +1,23 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Containers.Panels.OverlayPanelRenderingModel
+@{
+  Model.Class.Append("sc-ovelaypanel");
+  Model.DataBind
+    .IsVisible()
+    .Bind("attr", "{title: Tooltip()}")
+    .Bind("css", "Size");
+}
+<div @Model.HtmlAttributes>
+  <div class="sc-ovelaypanel-wrapper">
+    <div class="sc-ovelaypanel-header">
+      @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Header").ToHtmlString())
+    </div>
+    <a data-bind="click:close" class="sc-ovelaypanel-close" href="#"></a>
+    <div class="sc-ovelaypanel-content">
+      @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Content").ToHtmlString())
+    </div>
+    <div class="sc-ovelaypanel-buttons">
+      @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Buttons").ToHtmlString())
+    </div>
+  </div>
+</div>

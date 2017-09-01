@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MediaListviewItem>
+    <Border ID="$ControlID" Class="scListviewItemThumbnails" Width="$Width" Height="$Height" ToolTip="$Header" tabindex="0" onfocus="javascript:this.click()" hidefocus="true">
+      <GridPanel Columns="2" Width="100%">
+      
+        <Border GridPanel.VAlign="top" GridPanel.Width="50%">
+          <ThemedImage Src="$Image" Width="128" Height="128" Margin="0px 4px 0px 0px" ToolTip="$Header"/>
+        </Border>
+
+        <Border Foreground="#999999" Padding="4px 0px 0px 0px" Align="left" GridPanel.Width="50%">
+          <Border Foreground="black" Style="font-weight:bold">
+            <Literal Text="$Header"/>
+          </Border>
+          <Literal Text="$Details"/>
+        </Border>
+
+      </GridPanel>
+    </Border>
+  </MediaListviewItem>
+</control>

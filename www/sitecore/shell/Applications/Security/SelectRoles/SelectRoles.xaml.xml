@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <Sitecore.Shell.Applications.Security.SelectRoles x:inherits="Sitecore.Shell.Applications.Security.SelectRoles.SelectRolesPage,Sitecore.Client">
+    <Sitecore.Controls.DialogPage Header="Select roles" Icon="Network/32x32/id_card.png" runat="server">
+      <x:register assembly="ComponentArt.Web.UI" namespace="ComponentArt.Web.UI"/>
+
+      <Stylesheet Src="Grid.css" DeviceDependant="true" runat="server" />
+
+      <Script type="text/javascript" language="javascript" runat="server" x:placeholder="Scripts">
+      <![CDATA[
+      Event.observe(window, 'load', function(){ $$('form')[0].setStyle({overflow:'auto'}); });
+      
+        function getSelected() {
+          var selected = $$("[id$='SelectedRoles']").first();
+
+          return selected;
+        }
+        
+        function onDoubleClick() {
+          scAdd();
+        }
+        
+        function onSelectedDoubleClick() {
+          scRemove();
+        }
+        
+        function scAdd() {
+          var selectedOptions = getSelected();
+          var selectedRoles = Roles.getSelectedItems();
+          
+          if (selectedRoles.length == 0) {
+            alert(scForm.translate("Please select a role"));
+            return false;
+          }
+
+          var added = false;
+
+          selectedRoles.each(function(role) {
+            var roleName = role.Id.decodeId();
+            if (roleExists(roleName)) {
+              foundExisting = true;
+            }
+            else {
+              var opt = document.createElement("OPTION");
+              selectedOptions.appendChild(opt);
+              opt.innerHTML = roleName;
+              added = true;
+            }
+          });
+          
+          if (!added) {
+            alert(scForm.translate("The roles are already assigned to the user"));
+          }
+          
+          update();
+          return false;
+        }
+        
+        function scRemove() {
+          var selected = getSelected();
+          var newIndex = -1;
+          var removed = false;
+          
+          $A(selected.options).each(function(option, index) {
+            if (option.selected) {
+              $(option).remove();
+              removed = true;
+              
+              if (newIndex < 0) {
+                newIndex = index - 1;
+              }
+            }
+          });
+          
+          if (removed) {
+            // IE listbox hack
+            selected.style.position = selected.style.position == 'relative' ? 'static' : 'relative';
+          } else {
+            alert(scForm.translate("Please select a role"));
+            return false
+          }
+          
+          update();
+          
+          var selected = getSelected();
+          
+          var options = $A(selected.options);
+          
+          if (options.length > 0) {
+            if (newIndex < 0) {
+              options[0].selected = true;
+            }
+            else if (options.length > newIndex) {
+              options[newIndex].selected = true;
+            }
+            else {
+              options[options.length - 1].selected = true;
+            }
+          }
+          
+          return false;
+        }
+        
+        function roleExists(roleName) {
+          var selected = getSelected();
+          
+          return $A(selected.options).find(function(option) {
+              return option.innerHTML == roleName;
+          });
+        }
+        
+        function update() {
+          var hiddenField = $$("[id$='SelectedValues']").first();
+          
+          var result = "";
+          $A(getSelected().options).each(function(option) {
+            var optionValue = option.innerHTML;
+           
+            result += encodeURIComponent(optionValue) + "|";
+          });
+
+          hiddenField.value = result;
+        }
+        setInterval(function () {
+          var searchBox = document.querySelector("[id$=searchBox]");
+          if (searchBox && searchBox.value.indexOf('\"') != -1) {
+            searchBox.value = searchBox.value.replace(/"/g, "");
+          };
+        }, 50);
+        
+        var timer = setInterval(adjustHeight, 10);
+
+        function adjustHeight() {
+          if (window.Roles && Roles.Loaded) {
+              clearInterval(timer);
+              scForm.autoIncreaseModalDialogHeight();
+              var gridHeight = document.querySelectorAll('table.Grid table')[1].getHeight();
+              getSelected().style.height = gridHeight + 'px';
+          }
+        }
+
+      ]]>
+      </Script>
+      
+      <style>
+        .GridGroupingNotification {
+        display: none;
+        }
+
+        #RolesContainer {
+        overflow:auto;
+        min-height:100px;
+        }
+
+        .Grid{
+          height: auto !important;
+        }
+
+        .scSelectRolesContainer {
+        margin:5px 10px;
+        overflow:auto;
+        }
+
+        .Row *, .SelectedRow *, .HeadingRow * {
+        width: auto !important;
+        }
+
+        .scAddRemoveButtonsContainer {
+          padding-bottom: 9px;
+        }
+       
+      </style>
+      
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <html:HtmlInputHidden ID="SelectedValues" runat="server" />
+
+      <Border class="col2"  runat="server">
+        <Literal class="scFieldLabel sc-text-bold" Text="Available roles:" runat="server" />
+        <Border runat="server" ID="RolesContainer">
+          <Grid id="Roles"
+                RunningMode="Callback"
+                CssClass="Grid"
+
+                ShowHeader="true"
+                HeaderCssClass="GridHeader"
+                AutoFocusSearchBox="false"
+
+                FooterCssClass="GridFooter"
+
+                GroupByText = ""
+                GroupingNotificationText = ""
+                GroupByCssClass="GroupByCell"
+                GroupByTextCssClass="GroupByText"
+                GroupBySortAscendingImageUrl="group_asc.gif"
+                GroupBySortDescendingImageUrl="group_desc.gif"
+                GroupBySortImageWidth="10"
+                GroupBySortImageHeight="10"
+
+                GroupingNotificationTextCssClass="GridHeaderText GridGroupingNotification"
+                GroupingPageSize="5"
+
+                PageSize="15"
+                PagerStyle="Slider"
+                PagerTextCssClass="GridFooterText"
+                PagerButtonHoverEnabled="True"
+                PagerImagesFolderUrl="/sitecore/shell/themes/standard/componentart/grid/pager/"
+
+                ShowSearchBox="true"
+                SearchTextCssClass="GridHeaderText scTextAlignRight "
+                SearchBoxCssClass="SearchBox"
+
+                SliderHeight="20"
+                SliderWidth="150"
+                SliderGripWidth="24"
+                SliderPopupOffsetX="20"
+                SliderPopupClientTemplateId="SliderTemplate"
+
+                TreeLineImagesFolderUrl="/sitecore/shell/themes/standard/componentart/grid/lines/"
+                TreeLineImageWidth="22"
+                TreeLineImageHeight="19"
+
+                PreExpandOnGroup="false"
+                ImagesBaseUrl="/sitecore/shell/themes/standard/componentart/grid/"
+                IndentCellWidth="22"
+
+                LoadingPanelClientTemplateId="LoadingFeedbackTemplate"
+                LoadingPanelPosition="MiddleCenter"
+
+                Width="100%" Height="100%" runat="server">
+
+            <Levels>
+              <GridLevel
+                DataKeyField="scGridID"
+                ShowTableHeading="false"
+                ShowSelectorCells="false"
+                RowCssClass="Row"
+                ColumnReorderIndicatorImageUrl="reorder.gif"
+                DataCellCssClass="DataCell"
+                HeadingCellCssClass="HeadingCell"
+                HeadingCellHoverCssClass="HeadingCellHover"
+                HeadingCellActiveCssClass="HeadingCellActive"
+                HeadingRowCssClass="HeadingRow"
+                HeadingTextCssClass="HeadingCellText"
+                SelectedRowCssClass="SelectedRow scUnselectable"
+                GroupHeadingCssClass="GroupHeading"
+                SortAscendingImageUrl="asc.gif"
+                SortDescendingImageUrl="desc.gif"
+                SortImageWidth="13"
+                SortImageHeight="13" runat="server">
+                <Columns>
+                  <GridColumn DataField="scGridID" Visible="false" runat="server" />
+                  <GridColumn DataField="Name" AllowSorting="false" AllowGrouping="false" IsSearchable="true" SortedDataCellCssClass="SortedDataCell" HeadingText="Role" runat="server" />
+                </Columns>
+              </GridLevel>
+            </Levels>
+
+            <ClientTemplates>
+              <ClientTemplate Id="LoadingFeedbackTemplate" runat="server">
+                <table cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td>
+                      <Literal Text="Loading..." runat="server" />;
+                    </td>
+                    <td>
+                      <img src="/sitecore/shell/themes/standard/componentart/grid/spinner.gif" width="16" height="16" border="0" />
+                    </td>
+                  </tr>
+                </table>
+              </ClientTemplate>
+
+              <ClientTemplate Id="SliderTemplate" runat="server">
+                <div class="SliderPopup">
+                  ## DataItem.PageIndex + 1 ## / ## Roles.PageCount ##
+                </div>
+              </ClientTemplate>
+            </ClientTemplates>
+          </Grid>
+        </Border>
+      </Border>
+      <Border class="col2" runat="server">
+        <Literal class="scFieldLabel sc-text-bold" Text="Selected roles:" runat="server" />
+        <div class="scAddRemoveButtonsContainer">
+          <html:HtmlButton ID="Add" type="button" class="scButton" javascript:Click="return scAdd()" runat="server">
+            <Literal Text="Add" runat="server" />
+          </html:HtmlButton>
+          <html:HtmlButton ID="Remove" type="button" class="scButton" javascript:Click="return scRemove()" runat="server">
+            <Literal Text="Remove" runat="server" />
+          </html:HtmlButton>
+        </div>
+        <html:HtmlSelect ID="SelectedRoles" Multiple="true" ondblclick="javascript:onSelectedDoubleClick();" runat="server"/>
+      </Border>
+
+    </Sitecore.Controls.DialogPage>
+  </Sitecore.Shell.Applications.Security.SelectRoles>
+</xamlControls>

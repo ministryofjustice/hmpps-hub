@@ -1,0 +1,178 @@
+﻿td.component-cell
+{
+ width: 120px;
+}
+
+.test-run td.component-cell
+{
+ width: 100px;
+}
+
+.testing-components
+{
+  width: 100%;
+  height: 100%;  
+}
+
+td.component-cell
+{
+   vertical-align:top;
+   text-align: center;   
+}
+
+.component-title
+{
+  display: block;
+}
+
+td.variations-cell
+{
+  vertical-align:top;
+  text-align: left;
+}
+
+.variation-container
+{
+  height: 60px;
+  overflow-y: scroll;
+  background-color: White;
+  border: 1px solid #999;
+}
+
+.variation-container table
+{   
+  width: 100%;
+  table-layout: fixed;  
+}
+
+.ff .variation-container
+{
+  height: 58px; 
+}
+
+.variations-header-line
+{
+  margin-right: 18px;
+  height: 16px;
+}
+
+.variaton-header-value
+{
+  float: right;
+  width: 25%;
+}
+
+.test-not-run .variaton-header-value
+{
+  display: none;
+}
+
+.variation-container table
+{
+  width: 100%; 
+}
+
+td.variation
+{  
+  padding: 3px 4px;
+  border: none;  
+  white-space: nowrap;
+}
+
+td.variation.hover, td.variation:hover 
+{
+  padding: 2px 3px;
+  border: 1px solid;
+  border-color: #ddcf9b #d2c08e #ccc2a3 #d2c08e;
+  background: #fffbd3 url(/sitecore/shell/Themes/Standard/Images/Ribbon/SmallButtonActive.png) repeat-x;
+}
+
+td.variation.selected, td.variation.selected:hover
+{
+  padding: 2px 3px;
+  border: 1px solid;  
+  border-color: #d2c08e #d2c08e #ccc2a3 #d2c08e;
+  background: #feeb92 url(/sitecore/shell/Themes/Standard/Images/RibbonSmallButtonDown.png) repeat-x left -2px;
+}
+
+td.variation-value
+{
+  width: 25%;
+}
+
+.test-not-run td.variation-value
+{
+  display: none;
+}
+
+.variation-name
+{
+  margin-left: 4px;
+}
+
+.component-cell, .variations-cell
+{
+  padding: 4px;
+}
+
+.edit-variations
+{
+  margin-top: 4px;
+}
+
+tr.component-row
+{
+  height: 116px;
+}
+
+.bar-chart
+{
+  height: 16px; 
+  margin: 1px 4px;
+  line-height: 16px;  
+  font-size: 11px;
+  position:relative;
+}
+
+.ff .bar-chart
+{
+  height: 15px;
+  line-height: 15px;
+}
+
+.bar-chart-inner
+{
+  height: 16px;    
+  background-image: url('/sitecore/shell/Themes/Standard/Images/PageEditor/bar-chart.png');
+  background-repeat:repeat-x; 
+  background-position:left top;
+  border-right: 1px solid #299A73;
+  border-top: 1px solid #73CBC6; 
+}
+
+.zero-value.bar-chart-inner
+{
+  border: none;
+}
+
+.ff .bar-chart-inner
+{
+  height: 15px;
+}
+
+span.value-text
+{
+  position: absolute;
+  left: 50%;
+}
+
+span.value-text-inner
+{
+  position: absolute;
+  left: -50%;
+}
+
+.component-icon
+{
+  margin-top: 16px;
+}

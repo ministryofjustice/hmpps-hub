@@ -1,0 +1,22 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Common.TextBoxes.ButtonTextBoxRenderingModel
+@{
+  Model.Class.Append("sc-buttontextbox input-group");
+  Model.DataBind
+    .IsVisible()
+    .Bind("attr", "{title: Tooltip()}");
+}
+<div @Model.HtmlAttributes>  
+  <input class="form-control"
+         data-bind="enable:IsEnabled, value:Value, attr: { maxlength: MaxLength, readonly:IsReadOnly}"
+         @Model.MaxLengthAttribute @Model.TypeAttribute placeholder="@Model.Watermark" value="@Model.Value" />
+  <span class="input-group-btn">
+    <button data-bind="enable:IsEnabled, click:clickHandler, css: {'icon': Icon()!=''}" class="btn sc-button btn-@Model.ButtonType.ToLowerInvariant()">
+      <div style="background-image:url(''); background-position: @Model.SpritePosition;" data-bind="style: {'backgroundImage': 'url(' + Icon() + ')', 'backgroundPosition': SpritePosition}" class="sc-icon"></div>
+      @if (!string.IsNullOrEmpty(Model.ButtonText))
+      {
+        <span class="sc-button-text" data-bind="text:ButtonText">@Model.ButtonText</span>
+      }
+    </button>
+  </span>
+</div>

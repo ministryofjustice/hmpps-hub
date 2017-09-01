@@ -1,0 +1,89 @@
+﻿.left-column, .right-column
+{
+  border: 1px solid #828790;
+}
+
+.right-column
+{
+  background-color: White;
+  padding: 8px;
+  -moz-box-sizing: border-box;
+}
+
+.section-header
+{
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 2px;
+  text-align:justify;
+}
+
+.ie #InternalLinkTreeview, .ie #MediaLinkTreeview
+{
+  position: relative;
+  margin-left: -16px; 
+}
+
+#InternalLinkTreeview > div.scContentTreeNode, #MediaLinkTreeview > div.scContentTreeNode
+{
+  padding-left: 0px;
+}
+
+#InternalLinkTreeviewContainer, #MediaLinkTreeviewContainer
+{
+  padding-top: 8px;
+}
+
+span.disabled
+{
+  color: #999;
+}
+
+/*Mode*/
+.mode
+{
+  display: block;
+  height: 80px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.mode:active
+{
+  outline: none;
+}
+
+.ff .mode
+{
+  height: 64px;
+}
+
+.mode:hover
+{
+  background-color: #E8F5FD;
+  border: 1px solid #D8F0FA;
+  padding: 7px;
+}
+
+.selected .mode, .selected .mode:hover, .selected .mode:active
+{
+  background-color: #D5EFFC;
+  border: 1px solid #99DEFD;
+  padding: 7px;
+}
+
+.mode-icon
+{
+  display: block;
+  margin: 0px auto;
+  height: 32px;
+  width: 32px;
+}
+
+.mode-text
+{
+  margin-top: 4px;
+}
+/*end mode*/

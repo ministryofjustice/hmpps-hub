@@ -1,0 +1,35 @@
+div[data-sc-id="ScoreValuePanel"],
+div[data-sc-id="GuessValuePanel"],
+div[data-sc-id="EffectValuePanel"],
+div[data-sc-id="ActivityValuePanel"],
+div[data-sc-id="BarPanel"] {
+  padding: 0;
+  background-color: #f2f2f2;
+}
+div[data-sc-id="ScoreLabelPanel"],
+div[data-sc-id="GuessLabelPanel"],
+div[data-sc-id="EffectLabelPanel"],
+div[data-sc-id="ActivityLabelPanel"],
+div[data-sc-id="MetricNamePanel"] {
+  padding: 0;
+}
+.sc-ValueBar {
+  display: block;
+  height: 20px;
+  background-color: #b7d69e;
+}
+.sc-ValueBar.score {
+  background-color: #6ea244;
+}
+.average .sc-ValueBar {
+  background-color: #fce179;
+}
+.average .sc-ValueBar.score {
+  background-color: #e0b406;
+}
+.below-average .sc-ValueBar {
+  background-color: #ee8b86;
+}
+.below-average .sc-ValueBar.score {
+  background-color: #ca241c;
+}

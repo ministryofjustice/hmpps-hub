@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <DebuggerPage>
+    <FormPage Background="transparent">
+      <Stylesheet Src="Sidebar.css"/>
+      <Stylesheet Src="/sitecore/portal/tech/tech.css"/>
+
+      <Script Src="/sitecore/shell/Controls/SitecoreSidebar.js" Form="true"/>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Debugger.DebuggerPageForm,Sitecore.Client"/>
+
+      <SidebarPortal PortalID="DebuggerPortal" PortalDataSource="/sitecore/content/Applications/Debugger/Portal"/>
+
+    </FormPage>
+  </DebuggerPage>
+</control>

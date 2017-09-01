@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <CloneItem>
+    <FormDialog Icon="Core3/24x24/Copy_To_Folder.png" Header="Clone Item"
+      Text="Select the location where you want to store the clone." OKButton="Clone">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.CopyTo.CopyToForm,Sitecore.Client"/>
+
+      <DataContext ID="DataContext" Root="/"/>
+      <Tabstrip ID="Tabs" Width="100%" Height="100%">
+        <Tab ID="TreeTab" Header="Browse" Height="100%">
+          <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+            <Scrollbox Width="100%" Height="100%" Class="scScrollbox scFixSize scInsetBorder" Background="white" Padding="0" GridPanel.Height="100%">
+              <TreeviewEx ID="Treeview" DataContext="DataContext" Click="SelectTreeNode" ContextMenu='Treeview.GetContextMenu("contextmenu")' />
+            </Scrollbox>
+
+            <Border Padding="4px 0px 4px 0px">
+              <GridPanel Width="100%" Columns="2">
+
+                <Border Padding="0px 4px 0px 0px" Class="scDialogNoWrap">
+                  <Literal Text="Path:"/>
+                </Border>
+
+                <Edit ID="Filename" Width="100%" GridPanel.Width="100%"/>
+              </GridPanel>
+            </Border>
+
+          </GridPanel>
+        </Tab>
+        <SearchTab Mode="FieldResults" Header="Search" Height="100%"/>
+      </Tabstrip>
+    </FormDialog>
+  </CloneItem>
+</control>

@@ -1,0 +1,134 @@
+/* r.a.d.spell Microsoft Office 12 skin - Main.css */
+
+.RadETableWrapperResizeSpan
+{
+	cursor: default;	
+	border: solid 3px #ccc;
+}
+
+.RadETableWrapper
+{
+	border: 0px;
+	font-size: 0px;
+}
+
+.RadETableWrapperHeaderLeft 
+{
+	background: url('CssImg/dialogueHeaderLeft.gif') no-repeat;
+	width: 4px;
+}
+
+.RadETableWrapperHeaderLeft:before,
+.RadETableWrapperHeaderRight:before,
+.RadETableWrapperFooterLeft:before
+{
+	display: block;
+	content: " ";
+	width: 4px;
+}
+
+.RadETableWrapperHeaderCenter 
+{		
+	text-align: left;
+	height: 50px;
+	font: normal 14px Arial, Verdana, Sans-serif;
+	color: white;
+	background: url('CssImg/dialogueHeaderCenter.gif') repeat-x;
+} 
+
+.RadETableWrapperHeaderRight 
+{
+	background: url('CssImg/dialogueHeaderRight.gif') repeat-x;
+	width: 4px;
+} 
+
+.RadETableWrapperBodyLeft,
+.RadETableWrapperBodyRight
+{
+	width: 5px;
+	background: url('CssImg/dialogueBody.gif') repeat-y;
+}
+
+.RadETableWrapperBodyLeft:before,
+.RadETableWrapperBodyRight:before
+{
+	display: block;
+	content: "";
+	width: 5px;
+}
+
+.RadETableWrapperBodyCenter 
+{	
+	width: 100%;
+	height: 100%;
+}
+
+.RadETableWrapperFooterLeft 
+{
+	background: url('CssImg/dialogueFooterLeft.gif') no-repeat; 
+	height: 20px;
+	font-size: 0px;
+	width: 4px;
+} 
+
+.RadETableWrapperFooterCenter 
+{
+	width: 100%;
+	height: 20px;
+	font-size: 0px;
+	background: url('CssImg/dialogueFooterCenter.gif') repeat-x;
+} 
+
+.RadETableWrapperFooterRight 
+{
+	background: url('CssImg/dialogueFooterRight.gif') no-repeat; 
+	height: 20px;
+	font-size: 0px;
+	width: 20px;
+} 
+
+.RadETableWrapperFooterRight:before
+{
+	width: 20px;
+	content: " ";
+	display: block;
+}
+
+.RadETableWrapperFooterRightOver 
+{
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	cursor: nw-resize;
+}
+
+.RadERadWindowHeader
+{
+	font: bold 14px Arial, Verdana, Sans-serif;
+	color: white;
+	height: 17px;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-left: 10px;	
+	cursor: default;	
+	width: 100%;
+	display: inline;
+}
+
+.RadERadWindowButtonClose
+{
+	cursor: hand;
+	cursor: pointer;
+	width: 13px;	
+	height: 25px;
+	display: block;
+}
+
+.RadERadWindowButtonClose
+{
+	background: url('CssImg/dialogueHeaderClose.gif') no-repeat;
+	width: 11px;
+	height: 11px;
+	margin-right: 4px;
+}

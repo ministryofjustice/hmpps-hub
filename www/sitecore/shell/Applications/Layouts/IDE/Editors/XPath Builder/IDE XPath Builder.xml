@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <IDE.XPath.Builder>
+    <FormPage Background="threedface">
+      <Script Src="/sitecore/shell/Applications/Layouts/IDE/IDE.js"/>
+      <Script Key="XPathBuilder">
+        scSitecore.prototype.setModified = function(value) {
+          this.modified = false;
+        }
+      </Script>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Editors.XPathBuilder.IDEXPathBuilderForm,Sitecore.Client"/>
+
+      <RegisterKey KeyCode="c69" Click="Evaluate"/>
+
+      <DataContext ID="DataContext" Root="/sitecore" DataViewName="Master"/>
+
+      <GridPanel Width="100%" Height="100%" CellPadding="4">
+        <GridPanel Columns="2" Width="100%" Height="100%" CellPadding="4">
+
+          <Border GridPanel.NoWrap="true" GridPanel.Align="right">
+            <Literal Text="Context Node:"/>
+          </Border>
+
+          <GridPanel Width="100%" Columns="2" GridPanel.Width="100%">
+            <TreePicker ID="DataSource" DataContext="DataContext" SelectOnly="true" GridPanel.Width="100%" Padding="1"/>
+
+            <Combobox ID="Databases" Change="ChangeDatabase" GridPanel.Style="padding:0px 0px 0px 4px"/>
+          </GridPanel>   
+
+          <Literal Text="XPath Expression:" GridPanel.NoWrap="true" GridPanel.VAlign="top" GridPanel.Align="right"/>
+
+          <Memo ID="Editor" Width="100%" Height="100" Wrap="off" Value="/sitecore/content/*" GridPanel.Height="100" GridPanel.Width="100%"/>
+
+          <Space GridPanel.Style="padding:0px 4px 16px 4px"/>
+
+          <Border GridPanel.Style="padding:0px 4px 16px 4px">
+            <Border NoWrap="true" Float="right">
+              <Radiobutton ID="Sitecore" Name="Sitecore" Value="Sitecore" Header="Sitecore Query Notation" Checked="true" Tooltip="E.g. /sitecore/content/Home"/>
+              <Radiobutton ID="Real" Name="Sitecore" Value="Real" Header="XPath" Tooltip="E.g. /item[@key='sitecore']/item[@key='content']/item[@key='Home']"/>
+            </Border>
+
+            <Button Header="Evaluate" Click="Evaluate"/>
+          </Border>
+
+          <Literal Text="Result:" GridPanel.NoWrap="true" GridPanel.VAlign="top" GridPanel.Align="right"/>
+
+          <Scrollbox ID="Result" Height="100%" GridPanel.Height="100%" Padding="0">
+            <Border Align="Center" Padding="32px 0px 0px 0px" Foreground="#999999">
+              <Literal Text="Enter an expression in the XPath Expression field."/>
+            </Border>
+          </Scrollbox>
+
+        </GridPanel>
+      </GridPanel>
+
+    </FormPage>
+  </IDE.XPath.Builder>
+</control>
+

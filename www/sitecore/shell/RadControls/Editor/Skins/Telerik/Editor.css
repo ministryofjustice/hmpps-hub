@@ -1,0 +1,746 @@
+/*set the background color in Moz from here*/
+.RadEWrapper iframe
+{	
+	background-color:white;
+}
+
+/* ----------------------- MODIFY CAREFULLY! Css classes that are needed for the fixed toolbar---------------------------------*/
+.RadEFixedToolbarHolderMozilla
+{
+	border:1px solid #808080;
+	width:100%;
+	background-color: #fefefe;
+	position:fixed !important;
+	top:0px !important;
+	left:0px !important;
+	text-align: left;
+	z-index:10000;
+}
+
+.RadEFixedToolbarHolderIE {
+	/* IE5.5+/Win */
+	position:absolute;
+	left: expression( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft  + 'px');
+	top: expression(  ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop  + 'px');
+	background-color: #fefefe;
+	border:1px solid #808080;
+	width:100%;
+	text-align: left;
+	z-index:51200;
+}
+/* ----------------------- End css classes that are needed for the fixed toolbar---------------------------------*/
+
+/* Context menu / Dropdown related styles */
+body.RadEContextMenu div.ContentElement
+{
+	height:100%;
+	overflow: hidden;
+	width: 99%;
+}
+
+.RadEMozillaDropdownIframe
+{
+      border: 1px solid #808080;
+      background-color: white;
+      overflow-y: scroll;
+}
+
+body.RadEDropdownMenu div.ContentElement
+{
+	_border:1px solid #808080;
+	height:100%;
+	background-color: white;
+	scrollbar-face-color: #BACBF4;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #7E9FD2;
+	scrollbar-3dlight-color: #E6EEFC;
+	scrollbar-arrow-color: #4D6185;
+	scrollbar-track-color: #F7F7F3;
+	scrollbar-darkshadow-color: #C6D1DC;
+}
+
+body.RadEDropdownMenuNonScrollable div.ContentElement
+{
+	border:1px solid #d3fd2c;
+	background-color: #fefefe;
+}
+
+.RadEToolText
+{
+	font:normal 11px Tahoma;
+	margin-left:2px;
+	margin-right:2px;
+	cursor:default;
+}
+
+.RadEToolDown
+{
+	font:normal 11px Tahoma;
+	white-space:nowrap;
+	height: 24px;
+	width: 26px;
+}
+
+/* RadETool */
+.RadEToolOn
+{
+	background-image: url(CssImg/toolOnbg.gif);
+	font: normal 11px Tahoma;
+	white-space:nowrap;
+	height: 24px;
+	width: 26px;
+}
+
+.RadEToolOff
+{
+	font:normal 11px Tahoma;
+	white-space:nowrap;
+	height: 24px;
+	width: 26px;
+}
+
+.RadEToolOnOver, .RadEToolOffOver
+{
+	background: #e6ead8 url(CssImg/toolOverBg.gif) no-repeat;
+	font:normal 11px Tahoma;
+	white-space:nowrap;
+	height: 24px;
+	width: 26px;
+}
+
+.RadEToolDisabled
+{
+	filter:alpha(opacity=30);
+	-moz-opacity:0.5;
+	opacity: 0.5;
+	margin: 1px;
+	white-space:nowrap;
+}
+
+/* RadEToolLong */
+.RadEToolLongOff
+{
+	font:normal 11px Tahoma;
+	height: 24px;
+}
+
+.RadEToolLongOn
+{
+	height: 24px;
+	font:normal 11px Tahoma;
+}
+
+.RadEToolLongOnOver,.RadEToolLongOffOver
+{
+	
+	background: url(CssImg/toolLongOverBg.gif) no-repeat;
+	font:normal 11px Tahoma;
+	white-space:nowrap;
+	cursor:default;
+	height: 24px;
+	width: 35px;
+}
+
+.RadEToolLongDisabled
+{
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity: 0.5;
+	height: 24px;
+}
+
+.RadEXhtmlButton
+{
+	background: transparent url(CssImg/xhtmlBtnBg.gif) repeat-x;
+	border: solid 1px #ccc;
+	font-size: 11px;
+	font-weight: bold;
+	height: 18px;
+	vertical-align: top;
+	margin-top: 2px;
+	color: black;
+	width: auto;
+}
+
+.RadEModuleTable
+{
+	background-color: #f2f2f2;
+	color:#333333;
+	text-align:left;
+	border: solid 1px #cccccc;
+	border-top: solid 1px white;
+}
+
+.RadEModuleTable .RadESideGripHorizontal
+{
+	height: 28px !important;
+	width: 10px !important;
+	background-position: center;
+	background-image: url(CssImg/moduleResize.gif) !important;
+	background-repeat: no-repeat;
+}
+
+.RadEModule
+{
+	color:#333333;
+	width:100%;
+	height:100%;	
+	padding-top:1px;	
+	font:normal 11px Tahoma;
+}
+
+A.DomPathLink, A.DomPathLink:visited, A.DomPathLink:active, A.DomPathLink:link
+{
+	text-decoration:underline;
+	font:11px normal Tahoma;
+	padding:3px 2px 1px 2px;	
+	color:#3333cc;
+}
+
+A.DomPathLink:hover
+{
+	background-color: white;	
+}
+
+A.DomPathLinkSelected
+{
+	padding:1px 2px 1px 2px;
+	text-decoration:none;
+	border:1px solid #C4D5E4;
+	background-color: white;
+	font:11px normal Tahoma;
+	font-weight:bold;
+	color: #333333;
+}
+
+.RadEToggleButton
+{
+	margin: 1px;
+	border: 0px;
+	TEXT-ALIGN: center;
+	width: 24px;
+	height: 24px;
+	background-color: transparent;
+}
+
+.RadEToggleButtonPressed
+{
+	border: 1px solid #4681BC;
+	text-align: center;
+	width: 24px;
+	height: 24px;
+	background-color: #A7C9F3;
+}
+
+/* Table wrapper and DOCKING ZONES classes */
+TABLE.RadEWrapper
+{
+	border: 1px solid #cccccc;
+	background-image: url(CssImg/editorBg.gif);
+	background-repeat: repeat-x;
+	background-color: #f2f2f2;
+	padding: 1px;
+	
+}
+
+.RadEWrapper .RadEVerticalDockingZone
+{
+	font-size:0px;
+	line-height:0px;
+	width:1px;
+}
+
+.RadEWrapper .RadEDockingZone
+{
+	font-size:0px;
+	line-height:0px;
+}
+
+TD.RadEContentContainer
+{
+	border-left: 1px solid #d4d4d4;
+	border-right: 1px solid #d4d4d4;
+	border-bottom: 1px solid #d4d4d4;
+	border-top: 1px solid #d3fd2c;
+}
+
+/* NEW */
+.RadETitleGrip
+{
+	background-image: url(CssImg/draggedToolbarTitleBg.gif);
+	height: 18px;
+	border-top: solid 1px #e6e6e6;
+	color: #666666;
+	font-weight: bold;
+}
+
+.RadESideGripHorizontal
+{
+	background-image: url(CssImg/dragHandle.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 10px;
+}
+
+.RadESideGripVertical
+{
+	background-image: url(CssImg/dragHandleVertical.gif);
+	background-repeat: no-repeat;
+	height: 11px !important;
+	background-color: transparent;
+}
+
+.RadEToolbar
+{
+	background-image: url(CssImg/ToolbarRowBackground.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	border-right: solid 1px #a7a7a7;
+	font:normal 11px Tahoma;
+	height: 28px;
+}
+
+.RadEToolbarVertical
+{
+	background-image: url(CssImg/ToolbarRowBgVertical.gif);
+	background-repeat: repeat-y;
+	background-color: transparent;
+	font:normal 11px Tahoma;
+	width: 22px;
+	border-bottom: solid 1px #a7a7a7;
+}
+
+.RadAutoDockButton
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/AutoDockButton.gif);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 18px;
+	margin-right: 8px;
+	float: right;
+}
+
+.RadESeparator
+{
+	width:1px;
+	font-size:3px;			
+	background-image: url(CssImg/ToolbarRowBackground.gif);
+	background-position:center;
+	background-repeat:no-repeat;
+	display: none;
+}
+
+
+.RadESeparatorHorizontal
+{
+	font-size:1px;
+	height:3px;
+	background-image: url(CssImg/SeparatorHorizontal.gif);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+/*----------------- Editor additional HTML objects' styles */
+.RadEErrorMessage
+{
+	color: red;
+	font:normal 11px Tahoma;
+	text-align:left;
+	margin:3px;
+}
+
+TEXTAREA.RadETextArea
+{
+	border: #808080 1px solid;
+	font:normal 11px Tahoma;
+	background-color: white;
+	color: #5d8009;
+	/* Bug in IE - crashing the browser - do not set scrollbar styles! */
+}
+
+INPUT.RadEButton, BUTTON.RadEButton
+{
+	border: 0px;
+	margin: 3px;
+	width: 86px;
+	font-family: Arial;
+	height: 21px;
+	color: #343434;
+	background-image: url(CssImg/button.gif);
+	background-color: Transparent;
+	text-align: center;
+	line-height: 19px;
+}
+
+/* ------------------------ Editor ContextMenu Styles -----------------------------*/
+.RadEContextMenu
+{
+	background-color:#FDFAFF;
+	background-image: url(Dialogs/tableBorderControlV.gif);
+	background-repeat:repeat-y;
+}
+
+/* ------------------------- Editor Dropdown "Header" Styles ---------------------------------*/
+.RadEDropDownOff
+{
+	cursor:default;
+	background-color:white;
+	border:1px solid #d4d4d4;
+	font:normal 11px Tahoma;
+	margin-left:1px;
+}
+
+.RadEDropDownOn, .RadEDropDownOffOver
+{
+	cursor:default;
+	background-color:white;
+	border:1px solid #d3fd2c;
+	font:normal 11px Tahoma;
+	margin-left:1px;
+}
+
+.RadEDropDownDisabled
+{
+	background-color: white;
+	border:1px solid #d2d2d2;
+	font:normal 11px Tahoma;
+	margin-left:1px;
+	cursor: no-drop !important;
+	color: #808080;
+}
+
+.RadEDropDownDisabled img
+{
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+}
+
+/* --------------------------------- Symbol Picker -------------------------------- */
+.RadESymbolPicker
+{
+	background-color:#f2f2f2;
+}
+
+.RadESymbolPicker td
+{
+	text-align:center;
+	width:20px;
+	height:20px;
+	color:#000000;
+	font:normal 11px Tahoma;
+	border:1px solid #f2f2f2;
+}
+
+.RadESymbolPicker td.Over
+{
+	border:1px solid #808080;
+	background-color: #d3fd2c;
+}
+
+/*-------------------- Table Dropdown Related Styles --------------------------*/
+.RadETablePicker
+{
+	background-color:#fefefe;
+	cursor:default;
+	font-family:Tahoma;
+}
+.RadETablePicker td
+{
+	border:1px solid #000000;
+	background-color:#FFFFFF;
+	font-size:11px;
+}
+
+.RadETablePicker td.Over
+{
+	background-color:#0A246A;
+	color:#ffffff;
+}
+
+.RadETablePicker .Wizard
+{
+	border:1px solid #AAAAAA;
+	background-color: #fefefe;
+	cursor:default;
+	font:normal 11px Tahoma;
+	text-align:center;
+}
+
+.RadETablePicker .WizardOver
+{
+	border:1px solid #5d8009;
+	background-color: #efffae;
+	cursor:default;
+	font:normal 11px Tahoma;
+	text-align:center;
+}
+
+.RadETablePicker td.Counter
+{
+	text-align:center;
+	font:normal 11px Tahoma;
+	background-color:#fefefe;
+	border:none;
+}
+
+.RadETablePickerToolTable
+{
+	vertical-align:top;
+	text-align: left;
+	padding-left:2px;
+	padding-bottom:2px;
+}
+
+/*-------------------- ColorPicker Related Styles --------------------------*/
+.RadEColorPicker
+{
+	background-color:#fefefe;
+	cursor:default;
+	margin:2px;
+}
+.RadEColorPicker td
+{
+	border:1px solid #fefefe;
+	width:14px;
+	height: 14px;
+	text-align:center;
+	font:normal 11px Tahoma;
+}
+
+.RadEColorPicker td.Over
+{
+	border:1px solid #808080;
+}
+
+.RadEColorPicker td div, .RadEColorPicker td span
+{
+	border: 1px solid #808080;
+	width: 12px;
+	height: 12px;
+	font-size:6px;
+}
+
+/*-------------------- Font Dropdown Related Styles --------------------------*/
+.RadEDropDownFont
+{
+	background-color:#FFFFFF;
+}
+
+.RadEDropDownFont td
+{
+	font:normal 11px Tahoma;
+	border: 1px solid #FFFFFF;
+	padding: 0px 1px 0px 1px;
+}
+
+.RadEDropDownFont td.Over
+{
+	border:1px solid #0A246A;
+	cursor:pointer;
+	cursor:default;
+}
+
+/*-------------------- Common Dropdown (Snippet, Paragraph, Sweeper, CssClass) Related Styles --------------------------*/
+.RadEDropDownTable
+{
+	background-color:#ffffff;
+}
+.RadEDropDownTable td
+{
+	border:1px solid #AAAAAA;
+	font:normal 11px Tahoma;
+	color:#000000;
+}
+
+.RadEDropDownTable td.Over
+{
+	border:1px solid #0A246A;
+}
+
+/*------------------------------ Links Dropdown Styles ----------------------------*/
+.RadELinks
+{
+	background-color:#FFFFFF;
+}
+
+.RadELinks td, .RadELinks span
+{
+	color:black;
+	text-decoration:none;
+	padding:1px;
+	padding-left:2px;
+	font:normal 11px Tahoma;
+}
+
+.RadELinks td.Over, .RadELinks span.Over
+{
+	color:#5d8009;
+	text-decoration:underline;
+	font:normal 11px Tahoma;
+}
+
+/* Table Wrapper related styles */
+.RadETableWrapperResizeSpan
+{
+	cursor : default;
+	border : 3px solid #cccccc;
+}
+
+.RadETableWrapper
+{
+	font-size: 1px;
+	background-color: #f0f0f0;
+}
+
+.RadETableWrapperHeaderLeft
+{
+	background: url(CssImg/DialogueHeaderLeft.gif);
+	width: 18px !important;
+	height: 29px;
+}
+.RadETableWrapperHeaderCenter
+{
+	text-align: left;
+	height: 29px;
+	font-family:Tahoma;
+	color: #4c4c4c;
+	background: url(CssImg/dialogueHeaderCenter.gif);
+	background-repeat: repeat-x;
+	background-color: #e1e1e1;
+}
+.RadETableWrapperHeaderRight
+{
+	background: url(CssImg/DialogueHeaderRight.gif);
+	width: 18px !important;
+	height: 29px;
+}
+
+.RadETableWrapperBodyLeft
+{
+	width: 1px;
+	border-left: solid 1px #e1e1e1;
+}
+.RadETableWrapperBodyCenter
+{
+	width: 100%;
+	height: 100%;
+}
+.RadETableWrapperBodyRight
+{
+	width: 1px;
+	border-right: solid 1px #e1e1e1;
+}
+
+.RadETableWrapperFooterLeft
+{
+	width: 1px;
+	background-color: #e1e1e1;
+	height: 14px;
+	font-size: 0px;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.RadETableWrapperFooterCenter
+{
+	width:100%;
+	height: 14px;
+	font-size: 0px;
+	line-height:0px;
+	border-bottom: 1px solid #e1e1e1;
+}
+.RadETableWrapperFooterRight
+{
+	font-size: 0px;
+	width: 14px;
+	height: 13px;
+	line-height:13px;
+	cursor:nw-resize;
+	background-image: url(CssImg/footerResize.gif);
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+}
+
+.RadETableWrapperFooterRightOver
+{
+	width:0px;
+	height:0px;
+	font-size: 0px;
+	line-height:0px;
+	cursor: nw-resize;
+}
+
+.RadERadWindowHeader
+{
+	font-family: Microsoft Sans Serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666666;
+	height: 29px;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-left: 10px;
+	cursor:default;
+	width: 100%;
+	display: inline;
+}
+
+.RadERadWindowButtonClose
+{
+	cursor: hand;
+	cursor: pointer;
+	background-image: url(CssImg/dialogueHeaderClose.gif);
+	width: 33px;
+	height: 29px;
+	display: block;
+}
+
+.RadERadWindowButtonPinOff
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderPinOff.gif);
+	width:16px;
+	height:27px;
+	display:block;
+}
+.RadERadWindowButtonPinOn
+{
+	cursor: hand;
+	cursor:pointer;
+	background-image: url(CssImg/dialogueHeaderPinOn.gif);
+	width:16px;
+	height:27px;
+	display:block;
+}
+
+/* RIBBON BAR-RELATED STYLES BEGIN */
+.RadERibbon 
+{
+	border: solid 1px #c8c8c8;
+	margin-right: 1px;
+	margin-bottom: 1px;
+}
+
+.RadERibbon .RadAutoDockButton
+{
+	cursor: default;
+	margin-top: 1px;
+}
+
+.RadERibbon .RadETitleGrip 
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+	cursor: default;
+	border: 0px;
+	border-top: solid 1px #c8c8c8;
+}
+
+.RadERibbon .RadEToolbar
+{
+	border: 0px;
+}
+/* RIBBON BAR-RELATED STYLES END */

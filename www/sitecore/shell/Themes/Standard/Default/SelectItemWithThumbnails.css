@@ -1,0 +1,110 @@
+﻿/*Overrides Dialog.css rule*/
+table.scDialogContentContainer
+{
+  padding: 0px 4px;
+}
+
+.scDisplayNone
+{
+  display: none;
+}
+ 
+a:link, a:visited, a:hover, a:active
+{
+  outline: none;
+}
+
+.scItemThumbnail, .scItemThumbnailSelected 
+{
+  width: 134px;
+  height: 170px;
+  float: left;
+  cursor: default;
+  padding: 5px 12px;
+  text-align: center;
+  vertical-align: top;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  overflow: hidden;  
+}
+
+* html .scItemThumbnail, * html .scItemThumbnailSelected
+{
+  width: 158px;
+  height: 180px;  
+}
+
+a.scItemThumbnail:hover
+{
+  background-color: #E8F5FD;
+  border: 1px solid #D8F0FA;  
+  padding: 4px 11px;
+  text-decoration: none;
+}
+
+a.scItemThumbnailSelected  
+{
+  background-color: #D5EFFC;
+  border: 1px solid #99DEFD; 
+  padding: 4px 11px; 
+}
+
+a.scItemThumbnailSelected:hover
+{
+  text-decoration: none;
+} 
+
+div.scImageContainer 
+{
+  border: 1px solid #CCCCCC; 
+  margin: 0px auto 8px auto;
+  height: 132px;  
+  width: 132px;
+  background-color: #FFFFFF;
+}
+
+div.scImageContainer *
+{
+  vertical-align: middle;
+}
+
+span.scDisplayName
+{
+  display: block;
+  cursor: default;
+}
+
+td.scThinSplitter
+{
+  padding: 0px;
+  width: 2px !important;
+  overflow: hidden !important;
+}
+
+div.scRenderingTooltip
+{
+  position: absolute;
+  padding: 5px;
+  border: 1px solid #dfdfdf;
+  background-color: White;
+  width: 120px;
+  z-index: 10001;
+}
+
+div.scTooltipElem
+{
+  display: none !important;
+}
+
+table.scEmptyPreview
+{
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+table.scEmptyPreview td
+{
+  text-align:center;
+  vertical-align:middle;
+}

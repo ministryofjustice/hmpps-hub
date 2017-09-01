@@ -1,0 +1,24 @@
+﻿textarea[data-sc-id='DomainTabValidationGeneratedScriptTextArea'] {
+    opacity: 1 !important;
+    cursor: text !important;
+    resize: none;
+}
+
+/* summary panel */
+div[data-sc-id='SummaryRowsBorder']{
+    background-color: white;
+}
+
+div[data-sc-id='SummaryRowsBorder'] .row{
+    border-bottom: 1px solid #f0f0f0;
+    margin-top: 9px;
+}
+
+span[data-sc-id='ScriptHelpText'] {
+    font-style: italic;
+    color: grey;
+}
+
+div[data-sc-id='SummaryDomainUrlRow'] {
+  word-wrap: break-word;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <TaskWhatDoYouWantToDo def:inherits="Sitecore.Shell.Controls.Tasks.TaskWhatDoYoWantToDoXmlControl,Sitecore.Client">
+  
+    <Border Padding='${StringUtil.GetString($Padding, "0px")}' Style='display:expression(scForm.isSiblingsHidden(this) ? "" : "none")'>
+      <GridPanel def:ID="Grid" Columns="2">
+        <ThemedImage Src="$Icon" Width="48" Height="48" Margin="0px 8px 0px 0px" GridPanel.VAlign="top"/>
+        
+        <Border GridPanel.VAlign="top">
+          <Border Class="scTaskWhatDoYouWantToDo"><Literal Text='${StringUtil.GetString($Header, "What do you want to do?")}'/></Border>
+          
+          <Border Padding="0px 8px 0px 0px">
+            <def:Placeholder/>
+          </Border>
+        </Border>
+      
+      </GridPanel>
+    </Border>
+    
+  </TaskWhatDoYouWantToDo>
+</control>

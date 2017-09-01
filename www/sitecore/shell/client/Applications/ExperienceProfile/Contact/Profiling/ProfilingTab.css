@@ -1,0 +1,223 @@
+﻿.sc-text-label, .sc-text-largetitle {
+    display: block;
+}
+
+div[data-sc-id=ChartBorder] {
+    float: left;
+    margin-right: 20px;
+}
+
+img[data-sc-id=ProfileImage] {
+    float: left;
+    margin-right: 30px;
+    margin-top: 25px;
+}
+
+span[data-sc-id=BestMatch] {
+    margin-bottom: 10px !important;
+    margin-top: 25px !important;
+}
+
+div[data-sc-id=LatestMatchBorder] {
+    clear: both;
+}
+
+.ci-progress {
+  background-color: #e3e3e3;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 52%;
+  position: relative;
+}
+
+.ci-progress-bar {
+  color: #FFFFFF;
+  float: left;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
+  width: 0;
+}
+
+.ci-progress-bar-green {
+  background-color: #5CB85C;
+}
+
+.ci-progress-bar-orange {
+  background-color: #F0AD4E;
+}
+
+.ci-progress-bar-red {
+  background-color: #D9534F;
+}
+
+.ci-progress-bar-best {
+  background-color: #95c36f;
+}
+
+.ci-progress-bar-other {
+  background-color: #a2ca81;
+}
+
+.ci-progress-bar-label {
+  padding: 0 2px 2px 7px;
+  line-height: 30px;
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+.ci-bars > .ci-bars-item .ci-progress .ci-progress-bar-label {
+  color: #131313;
+}
+
+.ci-progress-bar-name.ci-bold {
+  font-weight: bold;
+}
+
+.ci-bars-separator {
+  padding: 15px 0 5px 0;
+  line-height: 14px;
+  display: block;
+}
+
+.ci-progress-bar-name {
+  display: inline-block;
+  width: 140px;
+  vertical-align: middle;
+}
+
+.ci-bars-item {
+  padding: 4px 0;
+}
+
+.ci-bars {
+  height: 90%;
+}
+
+.sc div[data-sc-id=HeaderIconButton].sc-icon-button {
+  float: right;
+  margin-right: -5px;
+}
+
+.sc div[data-sc-id=MoreBarsIconButton].sc-icon-button {
+    float: right;
+}
+
+div[data-sc-id=ProfilingRowAccordion] {
+  margin-bottom: 30px;
+}
+
+.sc span[data-sc-id=RadarErrorHeader].sc-text, .sc span[data-sc-id=BarsErrorHeader].sc-text, .sc span[data-sc-id=CardsErrorHeader] {
+  margin-left: 8px;
+  color: red;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.sc-border[data-sc-id=RadarBorder] {
+  width: 280px;
+}
+
+.ci-legend {
+    width: 280px;   
+    text-align: left;
+    padding: 15px 0;
+    float: left;
+}
+
+.ci-legend > div {
+    width: 130px;
+    float: left;
+    padding-right: 10px;
+}
+
+.ci-legend > div span {
+    display: block;
+    float:left;
+    width: 100px;    
+}
+
+.ci-legend > div span.ci-value {
+    display: block;
+    float: none;
+    width: auto;
+    padding-left: 100px;
+    text-align:right;
+}
+
+.sc-text[data-sc-id=PatternCardHeader] {
+  font-weight: bold;
+}
+
+img[data-sc-id=PatternCardImage] {
+  float: left;
+}
+
+div.sc-border[data-sc-id=DescriptionBorder] {
+  padding-left: 42px;
+}
+
+div.sc-border[data-sc-id=ProfilePatternDetailsBorder] {
+  padding-bottom: 10px;
+  width: 100%;
+  float: left;
+}
+
+.sc-smartpanel span.sc-text-label[data-sc-id=CardsErrorText] {
+  font-size: 100%;
+}
+
+label[data-sc-id=BestPatternMatchLabel] {
+  width: 100%;
+}
+
+label[data-sc-id=RadarChartLabel] {
+  width: 280px;
+  max-width: none;
+  text-align: center;
+  float: left;
+}
+
+.sc-accordion[data-sc-id=ProfilingRowAccordion] .sc-accordion-body {
+  padding-bottom: 15px;
+}
+
+.sc-progressindicator[data-sc-id=ProgressIndicator] {
+  z-index: 2500 !important;
+}
+
+@media (min-width: 700px) {
+  .col-md-4[data-sc-id=BarColumn] {
+    width: 33%;
+  }
+
+  .col-md-3[data-sc-id=BestPatternColumn] {
+    width: 27%;
+  }
+
+  .col-md-5[data-sc-id=RadarColumn] {
+    width: 40%;
+  }
+}
+
+.ci-bars div .ci-bars-item:nth-child(2) .ci-progress-bar-other {
+  background: #b7d69e;
+}
+
+.ci-bars div .ci-bars-item:nth-child(3) .ci-progress-bar-other {
+  background: #cae1b7;
+}
+
+.ci-bars div .ci-bars-item:nth-child(4) .ci-progress-bar-other {
+  background: #e2eed7;
+}
+
+.ci-bars div .ci-bars-item:nth-child(5) .ci-progress-bar-other {
+  background: #f2f7ed;
+}
+
+
+
+

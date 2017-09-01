@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <StatusBarSection>
+    <Border Border="solid 1px silver" GridPanel.Width="$Width">
+      <Literal ID="StatusText" Text="$Text" Style="padding:1px"/>
+    </Border>
+  </StatusBarSection>
+</control>

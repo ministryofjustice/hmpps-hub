@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Index>
+    <Sitecore.Controls.XHtmlPage runat="server">
+      <link href="/sitecore/shell/Applications/Xaml/Tutorials.xaml.css" rel="stylesheet" type="text/css" />
+
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Pane runat="server" Header="Welcome to Xaml#">
+        Welcome to the Xaml# tutorials.
+        <p />
+        Xaml# is a markup language for defining web user interfaces and interaction.
+        The Sitecore Client has been built using an early version of Xaml# (AKA Sheer UI).
+        <p />
+        Xaml# integrates elements from HTML, CSS, Microsoft XAML, XSLT Transformations, AJAX
+        and a little dose of our own inventions.
+        <p />
+        <ul>
+          <li>
+            <a href="~/xaml/Sitecore.Xaml.Tutorials.Basic.Index.aspx">Basic Xaml#</a>
+          </li>
+          <li>
+            <a href="~/xaml/Sitecore.Xaml.Tutorials.Language.Index.aspx">Language</a>
+          </li>
+          <li>
+            <a href="~/xaml/Sitecore.Xaml.Tutorials.Styles.Index.aspx">Styles</a>
+          </li>
+          <li>
+            <a href="~/xaml/Sitecore.Xaml.Tutorials.Server.Index.aspx">Server</a>
+          </li>
+          <li>
+            <a href="~/xaml/Sitecore.Xaml.Tutorials.Ajax.Index.aspx">Ajax</a>
+          </li>
+        </ul>
+      </Pane>
+
+    </Sitecore.Controls.XHtmlPage>
+  </Sitecore.Xaml.Tutorials.Index>
+
+</xamlControls>
+                                                                                                                         
+                                                                                                                         

@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DialogPage.master.cs" ViewStateMode="Disabled" EnableViewState="false" Inherits="Sitecore.Shell.MasterDialog" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title></title>
+  <asp:ContentPlaceHolder ID="Head" runat="server">
+  </asp:ContentPlaceHolder>
+  <link href="/sitecore/shell/Themes/Standard/Default/Dialogs.css" rel="stylesheet" />
+</head>
+<body>
+  <form runat="server">
+    <div class="scFlexColumnContainer" style="height: 100%;">
+
+      <asp:ContentPlaceHolder ID="DialogHeader" runat="server">
+      </asp:ContentPlaceHolder>
+      <div class="scFlexContent scFormDialogContent">
+        <div class="scStretchAbsolute scDialogContentContainer">
+
+          <asp:ContentPlaceHolder ID="Content" runat="server">
+          </asp:ContentPlaceHolder>
+        </div>
+      </div>
+      <div class="scFormDialogFooter">
+        <div class="footerOkCancel">
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

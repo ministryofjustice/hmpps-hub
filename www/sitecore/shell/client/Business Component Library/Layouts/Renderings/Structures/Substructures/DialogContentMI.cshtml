@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  var showToolbar = userControl.GetBool("ShowToolbar", true);
+
+  var phActions = Html.Sitecore().Placeholder("DialogContent.Actions");
+  var phBack = Html.Sitecore().Placeholder("DialogContent.Back");
+  var phContextSwitch = Html.Sitecore().Placeholder("DialogContent.ContextSwitch");
+  var phInfo = Html.Sitecore().Placeholder("DialogContent.Info");
+  var phMain = Html.Sitecore().Placeholder("DialogContent.Main");
+
+  var phBackIsEmpty = string.IsNullOrEmpty(phBack.ToString());
+  var phContextSwitchIsEmpty = string.IsNullOrEmpty(phContextSwitch.ToString());
+
+  var dialogActionsStyles = phBackIsEmpty && phContextSwitchIsEmpty ? "width: 100%;" : string.Empty;
+}
+@if (showToolbar)
+{
+  <section class="sc-dialogContent-toolbar">
+    @if (!phBackIsEmpty)
+    {
+      <div class="sc-dialogContent-toolbar-back">
+        @phBack
+      </div>
+    }
+    @if (!phContextSwitchIsEmpty)
+    {
+      <div class="sc-dialogContent-toolbar-contextSwitcher">
+        @phContextSwitch
+      </div>
+    }
+    <div class="sc-dialogContent-toolbar-actions text-right" style="@dialogActionsStyles">
+      @phActions
+    </div>
+  </section>
+}
+<div class="row sc-contentRowFix">
+  <div class="col-md-9">
+    <section class=" sc-dialogContent-main">
+      @phMain
+    </section>
+  </div>
+  <aside class="col-md-3 sc-dialogContent-info">
+    @phInfo
+  </aside>
+</div>

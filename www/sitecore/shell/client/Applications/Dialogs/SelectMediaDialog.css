@@ -1,0 +1,67 @@
+.sc-dialogContent-main {
+  position:relative;
+}
+
+section.sc-dialogContent-main div[data-sc-id="MainBorder"] {
+  padding-right: 240px;
+}
+
+section.sc-dialogContent-title, section.sc-dialogContent-toolbar {
+  position:relative;
+  z-index:1;
+}
+
+div.sc-navigation-content section.sc-dialogContent-main div[data-sc-id="InfoBorderBox"] {
+  position: fixed;
+  width: 240px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  clip: rect(auto, auto, auto, -5px);
+}
+
+div[data-sc-id="InfoNameRow"], div[data-sc-id="InfoTypeRow"], div[data-sc-id="InfoDimensionRow"] {
+  clear: both;
+}
+
+span[data-sc-id="InfoNameLabel"], span[data-sc-id="InfoTypeLabel"], span[data-sc-id="InfoDimensionLabel"] {
+  float: left;
+}
+
+span[data-sc-id="InfoName"], span[data-sc-id="InfoType"], span[data-sc-id="InfoDimension"] {
+  float: right;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  height: 25px;
+  white-space: nowrap;
+  max-width: 140px;
+}
+
+img[data-sc-id="InfoImage"] {
+  width: 210px;
+  height: 210px;
+  border: 1px rgb(204, 204, 204) solid;
+  margin: 15px 0;
+}
+
+div[data-sc-id="InfoBorderBox"] span[data-sc-id="InfoTitle"] {
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div[data-sc-id="PreviewBorder"] {
+  width: 210px;
+  margin-top: 30px;
+  text-align:center;
+}
+
+div[data-sc-id="InfoBorder"] {
+  position: fixed;
+  width: 210px;
+  top: 180px;
+}

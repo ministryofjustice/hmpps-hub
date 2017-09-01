@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <InsertLink>
+    <FormDialog Icon="Network/32x32/link.png" Header="Insert a link" 
+      Text="Select an item or a media item. When done click the Link button." OKButton="Link">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.InsertLink.InsertLinkForm,Sitecore.Client"/>
+
+      <DataContext ID="InternalLinkDataContext"/>
+      <DataContext ID="MediaDataContext" Root="{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}"/>
+  
+      <Tabstrip ID="Tabs" Width="100%" Height="100%"> 
+  
+        <Tab ID="InternalLinkTab" Header="Internal link">
+          <Scrollbox Width="100%" Height="100%" Background="white" Border="none" Padding="0">
+            <TreeviewEx ID="InternalLinkTreeview" DataContext="InternalLinkDataContext" Root="true" />
+          </Scrollbox>
+        </Tab>
+        
+        <Tab ID="MediaTab" Header="Media">
+          <Scrollbox Width="100%" Height="100%" Background="white" Border="none" Padding="0">
+            <TreeviewEx ID="MediaTreeview" DataContext="MediaDataContext" Root="true" />
+          </Scrollbox>
+        </Tab>
+
+      </Tabstrip>
+      
+    </FormDialog>
+  </InsertLink>
+</control>

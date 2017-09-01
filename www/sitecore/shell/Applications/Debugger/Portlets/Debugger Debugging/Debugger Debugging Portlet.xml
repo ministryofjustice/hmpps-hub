@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Debugger.Debugging.Portlet def:inherits="Sitecore.Shell.Applications.Portlets.DebuggerDebugging.DebuggerDebuggingPortletXmlControl,Sitecore.Client">
+    <Border def:ID="Portlet">
+      <DefaultPortletWindow def:ID="Window" Header="Debugging" Icon="Software/16x16/debug.png">
+
+        <SidebarTileButton def:ID="Borders" Icon="Software/24x24/element_selection.png" Header="Draw Borders"/>
+        <SidebarTileButton def:ID="Info" Icon="Software/24x24/element_view.png" Header="Enable Rendering Info (requires Trace)"/>
+        <SidebarTileButton def:ID="Trace" Icon="Applications/24x24/gears_view.png" Header="Open ASP.NET Trace"/>
+        <SidebarTileButton def:ID="ValidatePage" Icon="Applications/24x24/document_ok.png" Header="Validate Page (W3C)"/>
+        <SidebarTileButton def:ID="Stop" Icon="Software/24x24/debug_stop.png" Header="Stop Debugging"/>
+
+      </DefaultPortletWindow>
+    </Border>
+  </Debugger.Debugging.Portlet>
+</control>

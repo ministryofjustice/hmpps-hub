@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" 
+         xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+         xmlns:html="http://www.sitecore.net/html">
+  <WebPanel>
+    <DocumentType />
+    <html>
+      <html:HtmlHead>
+        <html:HtmlTitle><Literal Text='${StringUtil.GetString($Title, "Sitecore")}'/></html:HtmlTitle>
+        <meta name="GENERATOR" content="Sitecore" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta http-equiv="imagetoolbar" content="false" />
+      </html:HtmlHead>
+      <def:Placeholder />
+    </html>
+  </WebPanel>
+</control>

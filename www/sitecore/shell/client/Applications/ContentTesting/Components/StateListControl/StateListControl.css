@@ -1,0 +1,285 @@
+.sc-statelistcontrol {
+  margin-top: 0;
+  *zoom: 1;
+}
+.sc-statelistcontrol .sc-table {
+  table-layout: fixed;
+  margin-bottom: 0;
+  background: white;
+}
+.sc-statelistcontrol .sc-table tbody tr td,
+.sc-statelistcontrol .sc-table thead td,
+.sc-statelistcontrol .sc-table tbody tr th,
+.sc-statelistcontrol .sc-table thead th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-indent: 8px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.sc-statelistcontrol .sc-table tbody tr td img,
+.sc-statelistcontrol .sc-table thead td img,
+.sc-statelistcontrol .sc-table tbody tr th img,
+.sc-statelistcontrol .sc-table thead th img {
+  height: 18px;
+}
+.sc-statelistcontrol .sc-table tbody tr td,
+.sc-statelistcontrol .sc-table thead td {
+  padding: 14px 15px;
+  border: 1px solid #d6d6d6;
+  color: #474747;
+}
+.sc-statelistcontrol .sc-table tbody tr td a,
+.sc-statelistcontrol .sc-table thead td a {
+  color: #dc271e;
+  text-decoration: none;
+}
+.sc-statelistcontrol .sc-table tbody tr th,
+.sc-statelistcontrol .sc-table thead th {
+  padding: 15px;
+  border: 0;
+  background: #5e5e5e;
+  color: white;
+  font-weight: normal;
+  position: relative;
+  letter-spacing: 0.02em;
+}
+.sc-statelistcontrol .sc-table tbody tr th .sc-table-sortable,
+.sc-statelistcontrol .sc-table thead th .sc-table-sortable {
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  border-left: 0.500em solid transparent;
+  border-right: 0.500em solid transparent;
+  border-top: 8px solid white;
+  border-bottom: 0px solid white;
+}
+.sc-statelistcontrol .sc-table tbody tr th .sc-table-sortable.up,
+.sc-statelistcontrol .sc-table thead th .sc-table-sortable.up {
+  border-bottom: 8px solid white;
+  border-top: 0px solid white;
+}
+.sc-statelistcontrol .sc-table tbody tr th .sc-table-sortable.noDirection,
+.sc-statelistcontrol .sc-table thead th .sc-table-sortable.noDirection {
+  border-bottom: 8px solid white;
+  border-top: 0px solid white;
+}
+.sc-statelistcontrol .sc-table tbody tr td.cb,
+.sc-statelistcontrol .sc-table thead td.cb,
+.sc-statelistcontrol .sc-table tbody tr th.cb,
+.sc-statelistcontrol .sc-table thead th.cb {
+  width: 50px;
+  max-width: 50px;
+  text-indent: 0px;
+  text-align: center;
+}
+.sc-statelistcontrol .sc-table tbody tr th[data-sc-sort],
+.sc-statelistcontrol .sc-table thead th[data-sc-sort] {
+  position: relative;
+  padding-right: 20px;
+}
+.sc-statelistcontrol .sc-table tbody tr th[data-sc-sort] i.sort,
+.sc-statelistcontrol .sc-table thead th[data-sc-sort] i.sort {
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 10px;
+  top: 20px;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+}
+.sc-statelistcontrol .sc-table tbody tr th[data-sc-sort] i.sort.asc,
+.sc-statelistcontrol .sc-table thead th[data-sc-sort] i.sort.asc {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #131313;
+}
+.sc-statelistcontrol .sc-table tbody tr th[data-sc-sort] i.sort.desc,
+.sc-statelistcontrol .sc-table thead th[data-sc-sort] i.sort.desc {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #131313;
+}
+.sc-statelistcontrol .sc-table tbody tr th[data-sc-sort] a,
+.sc-statelistcontrol .sc-table thead th[data-sc-sort] a {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 35px;
+  top: 6px;
+}
+.sc-statelistcontrol .sc-table tbody tr td.label1,
+.sc-statelistcontrol .sc-table thead td.label1 {
+  background: #6ac0e2;
+  border-right: 1px solid #8ccee8;
+}
+.sc-statelistcontrol .sc-table tbody tr td.label2,
+.sc-statelistcontrol .sc-table thead td.label2 {
+  background: #a2ca81;
+}
+.sc-statelistcontrol .sc-table tbody tr td.label3,
+.sc-statelistcontrol .sc-table thead td.label3 {
+  background: #fb9851;
+}
+.sc-statelistcontrol .sc-table tbody tr:hover td,
+.sc-statelistcontrol .sc-table thead:hover td {
+  background-color: #e3e3e3;
+}
+.sc-statelistcontrol .sc-table tbody tr td.ventilate,
+.sc-statelistcontrol .sc-table thead td.ventilate {
+  overflow: hidden;
+  margin-right: 2px;
+  position: relative;
+}
+.sc-statelistcontrol .sc-table tbody tr.empty td {
+  text-align: center;
+}
+.sc-statelistcontrol .sc-table thead th.sc-table-head:last-child {
+  border-right: 0;
+}
+.sc-statelistcontrol .sc-table thead th.sc-table-head:last-child:after {
+  background: none;
+}
+.sc-statelistcontrol .sc-table.sc-table-footer {
+  border: 0;
+  width: 100%;
+  border-left: 1px solid #d6d6d6;
+  border-right: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  position: relative;
+}
+.sc-statelistcontrol .sc-table.sc-table-footer tr td {
+  text-align: center;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  position: relative;
+}
+.sc-statelistcontrol .sc-table.sc-table-footer tr td a {
+  position: absolute;
+  right: 10px;
+}
+.sc-statelistcontrol:before,
+.sc-statelistcontrol:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.sc-statelistcontrol:after {
+  clear: both;
+}
+.sc-statelistcontrol .table > tbody > tr.active > td {
+  background: #aadbee;
+}
+.sc-statelistcontrol .table > tbody > tr.checked > td {
+  background: #aadbee;
+}
+.sc-statelistcontrol .empty {
+  margin: 20px;
+}
+.sc-statelistcontrol .sc-text-align-center {
+  text-align: center;
+}
+.sc-statelistcontrol .sc-text-align-left {
+  text-align: left;
+}
+.sc-statelistcontrol .sc-text-align-right {
+  text-align: right;
+}
+.sc-statelistcontrol .sc-text-sortpadding {
+  padding-right: 16px;
+}
+.sc-statelistcontrol .sc-table-header th.sc-text-align-right > div {
+  padding-right: 25px;
+}
+.sc-statelistcontrol .sc-table-header th > div {
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.sc-statelistcontrol .sc-table-header .sc-table-header-container {
+  cursor: default;
+}
+.sc-statelistcontrol .sc-table-header th.sc-table-head:after {
+  background: #d6d6d6 right center;
+  position: absolute;
+  width: 1px;
+  display: block;
+  height: 20px;
+  top: 15px;
+  right: 0;
+  content: "";
+}
+.sc-statelistcontrol .sc-rc-handle-container {
+  position: relative;
+}
+.sc-statelistcontrol .sc-rc-handle {
+  position: absolute;
+  width: 7px;
+  cursor: ew-resize;
+  margin-left: -3px;
+}
+.sc-statelistcontrol .sc-rc-handle-border-container {
+  position: relative;
+  width: 0px;
+  height: 0px;
+}
+.sc-statelistcontrol .sc-rc-handle-border {
+  border-left: 1px dashed #969696;
+  position: absolute;
+  width: 1px;
+  cursor: ew-resize;
+  display: none;
+}
+.sc-statelistcontrol table.sc-rc-table-resizing {
+  cursor: ew-resize;
+}
+.sc-statelistcontrol table.sc-rc-table-resizing thead,
+.sc-statelistcontrol table.sc-rc-table-resizing thead > th,
+.sc-statelistcontrol table.sc-rc-table-resizing thead > th > a {
+  cursor: ew-resize;
+}
+.sc-statelistcontrol .scrollbar-spacer {
+  padding: 0;
+  width: 30px;
+}
+.sc-statelistcontrol .sc-table tbody tr th .sc-table-sortable,
+.sc-statelistcontrol .sc-table thead th .sc-table-sortable {
+  right: 12px;
+  top: 5px;
+}
+.sc-statelistcontrol .sc-statelistcontrol-body .table,
+.sc-statelistcontrol .sc-statelistcontrol-body .sc-table {
+  border-top: none;
+}
+.sc-statelistcontrol .sc-statelistcontrol-body .table tr:nth-child(even),
+.sc-statelistcontrol .sc-statelistcontrol-body .sc-table tr:nth-child(even) {
+  background: #f7f7f7;
+}
+.sc-statelistcontrol .sc-statelistcontrol-body .table tr:first-child td,
+.sc-statelistcontrol .sc-statelistcontrol-body .sc-table tr:first-child td {
+  border-top: none;
+}
+.sc-statelistcontrol .sc-statelistcontrol-body .table tr td,
+.sc-statelistcontrol .sc-statelistcontrol-body .sc-table tr td {
+  color: #2b2b2b;
+}
+.sc-statelistcontrol[data-sc-behaviors="Scrollbar"][data-sc-viewmode="DetailList"] {
+  padding-right: 15px;
+}
+.sc-statelistcontrol[data-sc-behaviors="Scrollbar"][data-sc-viewmode="DetailList"] .sc-statelistcontrol-body .mCSB_scrollTools {
+  right: -20px;
+}
+.sc-statelistcontrol[data-sc-behaviors="Scrollbar"][data-sc-viewmode="DetailList"] .sc-statelistcontrol-body .mCSB_container {
+  margin-right: 0;
+}

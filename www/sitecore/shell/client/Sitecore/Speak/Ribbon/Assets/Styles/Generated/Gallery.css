@@ -1,0 +1,7 @@
+﻿.scGalleryFrame {
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+  -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
+}

@@ -1,0 +1,69 @@
+﻿a {
+  color: #e33327;
+}
+
+#MainArea, #CommentArea {
+  min-height: 400px;
+  background: white; 
+  border-bottom: 1px solid #BFBFBF; 
+}
+
+#ItemDescriptor {
+  height: 100%;
+  line-height: 25px;
+  text-align: right;
+}
+
+#ItemDescriptor .content-path {
+  font-weight: bold;
+  font-size: 11px;
+  margin-right: 2px;
+}
+
+#ItemDescriptor .language img {
+  margin-top: 3px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+#ItemDescriptor .version {
+  margin-right: 4px;
+  font-size: 12px;
+  font-size: 11px;
+}
+
+#Result {
+  padding-right: 96px;
+}
+
+#ActionIcon {
+  width: 150px;
+  float: left;
+}
+
+#ActionIcon img {
+  margin: 30px 0 0 80px;
+}
+
+#ActionInfo {
+  padding-top: 1em;
+  margin-left: 150px;
+}
+
+#ActionTitle, .comment-intro {
+  font-size: 1.2em;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+#Additional {
+  margin: 64px 0 0 150px;
+}
+
+#CloseWindow {
+  margin-top: 150px;
+  width: 100%;
+  text-align: center;  
+}

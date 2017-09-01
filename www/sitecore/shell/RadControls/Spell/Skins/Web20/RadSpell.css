@@ -1,0 +1,57 @@
+/*external components outside RadSpell wrapper*/
+
+/*common*/
+.RadSpell_Web20_Ext
+{
+    margin:1em 0 0;
+    padding:0;
+    font:normal 11px/16px arial,sans-serif;
+}
+.RadSpell_Web20_Ext.spLinkImg,
+.RadSpell_Web20_Ext.spButton
+{
+    display:block;
+    /*the same as background images' dimensions*/
+    width:67px;
+    height:21px;
+    line-height:21px;
+}
+
+/*text link*/
+.RadSpell_Web20_Ext.spLink,
+.RadSpell_Web20_Ext.spLinkImg
+{
+    color:#fff;
+}
+
+/*image link*/
+.RadSpell_Web20_Ext.spLinkImg
+{
+    text-align:center;
+    text-decoration:none;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+}
+
+/*button*/
+.RadSpell_Web20_Ext.spButton
+{
+    border:0;
+    text-align:center;
+    color:#fff;
+    cursor:pointer;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+}
+
+.RadSpell_Web20_Ext.spLinkImg:hover,
+.RadSpell_Web20_Ext.spButton.spHovered
+{
+    background-position:0 -21px;/*the same as background images' height*/
+}
+
+/*select*/
+.RadSpell_Web20_Ext.spSelect
+{
+    width:67px; /*the same as background images' width*/
+    border:1px solid #ccc;
+    font-size:0.8em;
+}

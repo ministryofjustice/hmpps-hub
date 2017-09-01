@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SearchAdvanced>
+    <FormPage Scroll="yes">   
+    
+      <CodeBeside Type="Sitecore.Shell.Applications.Search.SearchForm,Sitecore.Client"/> 
+      <Stylesheet Src="/sitecore/shell/Applications/Search/Search.css"/>
+      
+      <Border ID="Advanced">
+        <Border Padding="8px 8px 0px 8px">
+          <GridPanel Columns="3" CellPadding="2">
+            <a href="/sitecore/shell/Applications/Search.aspx" style="color:#666666; text-decoration:none"><ThemedImage Src="Applications/48x48/find.png" Width="48" Height="48" Margin="0px 8px 0px 0px" Align="absmiddle"/><Literal Class="scLargeFont" Foreground="#666666" Text="Advanced search:"/></a>
+            
+            <Edit ID="Search3" Name="Search3" Width="250"/>
+              
+            <input value="Search" type="submit"/>
+          </GridPanel>
+        </Border>
+        
+        <Border Background="#e5ecf9" Margin="8px 0px 0px 0px" Padding="2" Style="border-top:1px solid #3366cc">
+          <Literal Text="Options"/>
+        </Border>
+        
+        <Border>
+          <GridPanel Columns="2" Width="100%">
+            <Literal Text="Published between:"/>
+            
+            <Border GridPanel.NoWrap="true">
+              <DatePicker Width="100" Style="display:inline"/> 
+              <Literal Text=" and "/>
+              <DatePicker Width="100" Style="display:inline"/> 
+            </Border>
+            
+            <Literal Text="Updated between:"/>
+            
+            <Border GridPanel.NoWrap="true">
+              <DatePicker Width="100" Style="display:inline"/> 
+              <Literal Text=" and "/>
+              <DatePicker Width="100" Style="display:inline"/> 
+            </Border>
+
+          </GridPanel>
+        </Border>
+        
+      </Border>
+      
+    </FormPage>
+  </SearchAdvanced>
+</control>

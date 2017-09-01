@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <IDE.GettingStartedPortlet def:inherits="Sitecore.Shell.Applications.Layouts.IDE.Editors.Startpage.Portlets.GettingStarted.IDEGettingStartedPortletXmlControl,Sitecore.Client">
+    <Border def:ID="Portlet">                          
+      <DefaultPortletWindow def:ID="Window" Header="Getting Started" Icon="People/16x16/cubes.png">
+
+        <Border>
+          <IDE.TaskOption ID="NewLayout" Header="Create a New Layout" Click='GettingStartedPortlet.Click("ide:startwizard(itemid={6F8DE850-B12E-4715-9E27-EF5F49E354E9})")'/>
+          <IDE.TaskOption ID="NewXSLT" Header="Create a New XSLT Rendering" Click='GettingStartedPortlet.Click("ide:startwizard(itemid={EB940DD0-30AF-420A-9258-809723520DA7})")'/>
+          <IDE.TaskOption ID="NewSublayout" Header="Create a New Sublayout" Click='GettingStartedPortlet.Click("ide:startwizard(itemid={85BA99CF-611E-413D-97C2-C71AA8A4063C})")'/>
+          <IDE.TaskOption ID="NewFile" Header="Create a File" Click='GettingStartedPortlet.Click("ide:newfile")'/>
+          <IDE.TaskOption ID="Open" Header="Open an Existing Solution Item" Click='GettingStartedPortlet.Click("ide:open")'/>
+        </Border>
+      </DefaultPortletWindow>
+    </Border>
+  </IDE.GettingStartedPortlet>
+</control>

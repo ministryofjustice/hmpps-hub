@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Web
+@model Sitecore.Mvc.Presentation.RenderingModel
+<!DOCTYPE html>
+<html data-sc-app>
+@if (!string.IsNullOrEmpty(WebUtil.GetQueryString("sc_debug")))
+{
+  <script>
+    window.startTime = performance.now();
+  </script>
+}
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  @{
+    var useFullWidth = (Sitecore.Context.Item["UseFullWidth"] == "1");
+    var bodyClass = useFullWidth ? "sc-fullWidth" : string.Empty;
+  }
+  @Html.Sitecore().Placeholder("Page.Stylesheets")
+  @Html.Sitecore().Placeholder("Page.Code")
+</head>
+<body class="sc @bodyClass">
+  @Html.Sitecore().InitializeSpeakLayout()
+  <div class="sc-list">
+    @this.Html.Sitecore().Placeholder("Page.Internal.BeforeGrid")
+    <div class="container-narrow">
+      @this.Html.Sitecore().Placeholder("Page.Body")
+    </div>
+    @this.Html.Sitecore().Placeholder("Page.Internal.AfterGrid")
+  </div>
+</body>
+</html>

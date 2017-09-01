@@ -1,0 +1,111 @@
+﻿#RibbonContainer {
+  background-image: url(/sitecore/shell/themes/standard/gradients/gray1.gif);
+  background-position: 50% 0px; 
+}
+
+#Editor {
+  padding:8px;
+}
+
+#Editor div {
+  height:32px;
+  border:1px dotted #666666;
+  margin:4px;
+  padding:4px 4px 0px 4px;
+}
+
+#Editor td {
+  border:1px dotted #666666;
+  margin:4px;
+  padding:4px;
+}
+
+#Editor span {
+  display:block;
+  background:#F8EED0;
+  border:1px solid #F0CCA5;
+  padding:2px;
+  color:Black;
+}
+
+#Editor table {
+  border:1px dotted #666666;
+  border-collapse:separate;
+}
+  
+#Editor .scGridDesignerArea {
+  cursor:crosshair;
+}
+
+#Editor .scGridDesignerSelected {
+  background:#E6F4FF;
+  border:1px dotted #666666;
+}
+
+#Divider {
+  background:#999999;
+}
+
+#Editor div.scGridDesignerIgnore {
+  border:none;
+  height:auto;
+  margin:0px;
+  padding:0px;
+}
+
+#PageHolder {
+  padding:8px 12px 12px 8px
+}
+
+#Page {
+}
+
+.PageTable {
+  table-layout:fixed;
+}
+
+.PagePanel {
+  border:1px solid #666666;
+  position: relative;  
+  left: -4px;  
+  top: -4px;  
+  height:100%;
+}
+
+#Shadow {  
+  position: relative;  
+  left: 4px;  
+  top: 4px;  
+  margin-right: 4px;  
+  margin-bottom: 4px;  
+  background:#666666;
+  height:100%;
+}  
+
+.ff #Editor {
+  padding:0px;
+}
+
+.ff #PageHolder {
+  padding:0px;
+}
+
+.ff .PagePanel {
+  position: static;  
+  left: 0px;  
+  top: 0px;  
+}
+
+.ff #Shadow {  
+  position: static;  
+  left: 0px;  
+  top: 0px;  
+  margin-right: 0px;  
+  margin-bottom: 0px;  
+}  
+
+.scRibbonNavigatorButtonsGroupHeader,
+.scRibbonNavigatorButtonsContextualGroupHeader 
+{
+  height:0px;
+}

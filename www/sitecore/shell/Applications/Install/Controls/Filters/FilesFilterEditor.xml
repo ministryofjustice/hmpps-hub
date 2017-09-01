@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.FilesFilterEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.FilesFilterEditor,Sitecore.Client">
+    <Scrollbox Height="100%" Padding="$Padding" Style="$Style" Class="$Class">
+      <Groupbox Header="File name filter">
+        <Installer.FileNameFilterEditor def:ID="NameFilter"/>
+      </Groupbox>
+
+      <Groupbox Header="Creation date filter">
+        <Installer.FileDateFilterEditor def:ID="CreationDateFilter" DateFilterType="CreatedFilter"/>
+      </Groupbox>
+
+      <Groupbox Header="Modification date filter">
+        <Installer.FileDateFilterEditor def:ID="ModificationDateFilter" DateFilterType="ModifiedFilter"/>
+      </Groupbox>
+
+    </Scrollbox>
+  </Installer.FilesFilterEditor>
+</control>

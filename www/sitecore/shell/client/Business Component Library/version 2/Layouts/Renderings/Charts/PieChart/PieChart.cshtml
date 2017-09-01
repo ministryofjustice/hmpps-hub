@@ -1,0 +1,24 @@
+﻿@model Sitecore.Speak.Components.Models.Charts.D3ChartBaseRenderingModel
+@{
+  Model.Class.Append("sc-d3-piechart");
+  Model.DataBind.IsVisible();
+}
+
+<div @Model.HtmlAttributes>
+  @{
+    if (Model.Title.Length > 0)
+    {
+      <div class="chart-title sc-text x-large">@Model.Title</div>
+    }
+  }
+  <div class="sc-d3-nodata-panel">@Model.NoDataToDisplay</div>
+  <div class="svg-wrapper">
+    <svg class="sc-d3-chart-canvas" id="svg-@Model.ControlId"></svg>
+    <svg class="sc-d3-chart-legend" id="svg-legend-@Model.ControlId">
+      <g class="nv-legendWrap nvd3-svg" transform="translate(0,0)">
+        <g class="nvd3 nv-legend" transform="translate(0,0)"></g>
+      </g>
+    </svg>
+  </div>
+</div>
+

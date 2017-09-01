@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.FileSourceRootEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.FileSourceRootEditor,Sitecore.Client">
+    <Border Height="100%" Padding="$Padding" Style="$Style" Class="$Class">
+      <DataContext def:ID="DataContext" DefaultItem="/" Filter="Contains('${Sitecore.Data.DataProviders.FileSystemDataProvider.FolderID.ToString()}', @@templateid)"/>
+
+      <Scrollbox Border="1px solid #ccc" padding="10px 5px 10px 5px">
+        <DataTreeview def:ID="Treeview" MultiSelect="false" Root="true"/>
+      </Scrollbox>
+
+    </Border>
+  </Installer.FileSourceRootEditor>
+</control>

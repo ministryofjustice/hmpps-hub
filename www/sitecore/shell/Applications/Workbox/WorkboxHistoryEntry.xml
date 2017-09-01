@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WorkboxHistoryEntry>
+    <Border Style="border-bottom:1px solid #999999" Padding="0px 0px 15px 0px" Margin="0px 15px 10px 15px">
+      <GridPanel Width="100%" Columns="3">
+        <ThemedImage Src="$Icon" Width="24" Height="24" Margin="0px 10px 0px 0px" GridPanel.VAlign="top" GridPanel.RowSpan="4"/>
+        
+        <Literal Class="scClickFont" FontBold="true" Text="$User" GridPanel.VAlign="top" GridPanel.Width="100%"/>
+        
+        <Literal Text="$Date" GridPanel.VAlign="top" GridPanel.NoWrap="true" GridPanel.Align="right"/>
+        
+        <Border Background="#dddddd" Margin="2px 0px 2px 0px" GridPanel.ColSpan="3" Height="1"><Space/></Border>
+      
+        <Literal Text="$Action" GridPanel.ColSpan="3"/>
+        <Literal Foreground="#999999" Text="$Text" GridPanel.ColSpan="3"/>
+      </GridPanel>
+    </Border>
+  </WorkboxHistoryEntry>
+</control>

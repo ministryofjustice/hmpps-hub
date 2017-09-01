@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <IDE.RecentFilesPortlet def:inherits="Sitecore.Shell.Applications.Layouts.IDE.Editors.Startpage.Portlets.RecentFiles.IDERecentFilePortletXmlControl,Sitecore.Client">
+    <Border def:ID="Portlet">
+      <DefaultPortletWindow def:ID="Window" Header="Recent Files" Icon="Applications/16x16/document_time.png">
+      
+        <Border def:ID="Body"/>
+
+        <Border Style="border-top:1px solid #b6b8cb; margin:4px 0px 0px 0px">
+          <IDE.TaskOption ID="RecentFilesOpen" Header="Open" Click='RecentFilesPortlet.Click("ide:open")'/>
+        </Border>
+
+        <Border Class="PortletOptions">
+          <PortalToolbutton def:ID="ClearButton" Header="Clear"/>
+          <PortalToolbutton def:ID="RefreshButton" Header="Refresh"/>
+        </Border>
+        
+      </DefaultPortletWindow>
+    </Border>
+  </IDE.RecentFilesPortlet>
+</control>

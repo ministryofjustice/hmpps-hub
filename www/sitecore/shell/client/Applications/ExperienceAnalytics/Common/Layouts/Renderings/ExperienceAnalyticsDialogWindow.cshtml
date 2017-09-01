@@ -1,0 +1,31 @@
+﻿@using Sitecore.ExperienceAnalytics.Client
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Common.Renderings
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@using UserControl = Sitecore.Web.UI.Controls.Common.UserControls.UserControl
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+  var rendering = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+
+  rendering.Class = "sc-ExperienceDialogWindow";
+  rendering.HasNestedComponents = true;
+}
+
+@EmbedFilters(rendering)
+
+@helper EmbedFilters(UserControl rendering)
+{
+  var renderingId = rendering.ControlId;
+  var helper = new RenderingHelper(Html, renderingId);
+
+  helper.MakeDialogWindow("Modal", renderingId + "Wrapper", entry =>
+  {
+    helper.MakeText("Text", entry, Globals.System.Texts.ErrorMessages.YourSessionHasExpiredAndYouNeedToLoginAgain, ".Content");
+    helper.MakeButton("Button", entry, Globals.System.Texts.Ok, ".Buttons", "Primary", "javascript:window.location.assign('/sitecore/')");
+  });
+
+  // Rendering
+  <div @rendering.HtmlAttributes>
+    @Html.Sitecore().Controls().Rendering(Html, Globals.Bcl.Renderings.Containers.Border, renderingId + "Wrapper", "", new { })
+  </div>
+}

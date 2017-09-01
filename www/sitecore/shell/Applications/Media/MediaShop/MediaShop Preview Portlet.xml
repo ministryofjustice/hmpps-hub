@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MediaShopPreviewPortlet def:inherits="Sitecore.Shell.Applications.Media.MediaShop.MediaShopPreviewPortletXmlControl,Sitecore.Client" def:renderas="Literal">
+
+    <Border def:ID="Portlet">
+      <DefaultPortletWindow def:ID="Window">
+        <Border def:ID="Body" Padding="2px 0px 2px 0px">
+          <GridPanel def:ID="IconBody" Columns="2" Visible="false">
+
+            <ThemedImage Src="$Icon" Width="48" Height="48" Margin="4px 4px 0px 8px" GridPanel.Width="48"/>
+
+            <Border Height="100%">
+              <Border ID="IconTitle" Class="scLargeFont" Foreground="white" Padding="4px 32px 0px 4px" Style="overflow:hidden; text-overflow:ellipsis; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='#333333', Positive='true')" NoWrap="nowrap"/>
+              <Border ID="IconDetails" Foreground="white" Padding="4px 32px 0px 4px"  NoWrap="nowrap"/>
+            </Border>
+            
+          </GridPanel>
+
+          <GridPanel def:ID="PreviewBody" Columns="2">
+          
+            <Border def:ID="ThumbnailPane" Width="56" GridPanel.Valign="top" Padding="2px 4px 0px 4px">
+              <Border Border="1px solid black" Background="white" Padding="2">
+                <Image Src="$Thumbnail" Height="100" Width="150"/>
+              </Border>
+            </Border>
+                                    
+            <Border Foreground="white" Padding="2px 0px 0px 4px" GridPanel.Valign="top">
+              <Border Class="scLargeFont"><Literal Text="$Title"/></Border>
+              <Border><Literal Text="$Description"/></Border>
+            </Border>
+            
+          </GridPanel>
+        </Border>
+      </DefaultPortletWindow>
+    </Border>
+    
+  </MediaShopPreviewPortlet>
+</control>

@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+
+@model RenderingModel
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  userControl.Class = "sc-expander";
+  if (userControl.GetString("IsOpen") != String.Empty)
+  {
+      userControl.Attributes["data-sc-isopen"] = userControl.GetString("IsOpen").ToLower();
+  }
+  userControl.Requires.Script("business", "expander.js");
+  userControl.HasNestedComponents = true;
+  userControl.IsCloaked = true;
+
+  var text = userControl.GetString("Text", "Text");
+  var placeholderName = userControl.ControlId + ".Body";
+  
+  var htmlAttributes = userControl.HtmlAttributes;
+}                                                                                  
+<div @htmlAttributes data-bind="visible: isVisible, css: { 'open': isOpen }">
+  <div class="sc-expander-header" data-bind="click: toogle">
+    <div>@text</div>
+    <div class="sc-expander-toggler">
+      <a href="#" class="sc-expander-button">
+        <div class="sc-expander-chevron" data-bind="css: { 'up': isOpen }"></div>
+      </a>
+    </div>
+  </div>
+  <div class="sc-expander-body">
+    @Html.Sitecore().Placeholder(placeholderName)
+  </div>
+</div>  

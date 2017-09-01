@@ -1,0 +1,40 @@
+﻿@using System.Web.Mvc.Html
+@using Sitecore
+@using Sitecore.ExperienceAnalytics.Client
+@using Sitecore.ExperienceAnalytics.Client.Mvc
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Common.ProgressIndicators
+@using Sitecore.Web.UI.Controls.Common.Renderings
+@using Sitecore.Web.UI.Controls.Common.Texts
+@using UserControl = Sitecore.Web.UI.Controls.Common.UserControls.UserControl
+@using Globals = Sitecore.ExperienceAnalytics.Client.Globals
+@model Sitecore.ExperienceAnalytics.Client.Mvc.Presentation.ExperienceAnalyticsLineChartViewModel
+
+@EmbedChart(Model.Control)
+
+@Html.Partial("/sitecore/shell/client/Applications/ExperienceAnalytics/Common/Layouts/Renderings/Shared/_DvcWrapper.cshtml", Model)
+
+
+@helper EmbedChart(UserControl rendering)
+{
+    var helper = new RenderingHelper(Html.HtmlHelper(), rendering.ControlId);
+
+    var bindingTitle = "{Binding " + rendering.ControlId + ".title}";
+
+    helper.MakeAdvancedExpander("AdvancedExpander", rendering.ControlId + "Wrapper", bindingTitle, false, entry =>
+    {
+        helper.MakeActionControl("ActionControl", entry, Sitecore.ExperienceAnalytics.Client.Globals.System.ChartActionControl, ".ActionBar");
+        helper.MakeDataProvider("DataProvider", entry, Model.DataUrl ?? string.Empty, ".Body");
+        if (Model.IsValid == false)
+        {
+            helper.DisplayConfigurationError("LineChart", entry, ".Body");
+            rendering.Attributes["data-sc-configurationerror"] = "true";
+        }
+        else
+        {
+            helper.MakeLineChart("LineChart", entry, "", ".Body", Model.Control.GetString("Metrics"));
+        }
+    });
+}
+
+@this.Html.Sitecore().Controls().ProgressIndicator(Model.Control.ControlId + "ProgressIndicator", false, new { TargetControl = Model.Control.ControlId + "LineChart" })

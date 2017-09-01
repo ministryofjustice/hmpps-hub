@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ContinueAlwaysAbort>
+    <FormDialog Header="Message">
+      <Stylesheet>
+        .footerOkCancel{
+            display: none;
+        }
+
+        .scButtonsSubstituteContainer {
+            position: absolute;
+            right: 15px;
+            top: 8px;
+        }
+
+        .scConfirmationContainer td:first-child{
+            width: 1px;
+        }
+
+        .scConfirmationContainer td:last-child{
+            padding-left: 15px;
+        }
+      </Stylesheet>
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.ContinueAlwaysAbort,Sitecore.Client"/>
+
+      <GridPanel class="scConfirmationContainer" Columns="2" Width="100%" >
+        <ThemedImage class="scConfirmationIcon" Src="Images/warning.png" />
+        <Literal class="scDialogMessage" ID="Text"/>
+      </GridPanel>
+
+      <Border class="scButtonsSubstituteContainer" def:placeholder="Buttons">
+        <Button Click="Continue" Header="Continue" KeyCode="13" class="scButton scButtonPrimary" />
+        <Button Click="ContinueAlways" Header="Continue Always" />
+        <Button Click="Abort" Header="Abort" />
+      </Border>
+
+    </FormDialog>
+  </ContinueAlwaysAbort>
+</control>

@@ -1,0 +1,65 @@
+body {
+  font:8pt tahoma;
+}
+
+#scPage {
+  text-align:center;
+}
+
+#scDialogBorder {
+  border:1px solid windowframe;
+  width:300px;
+  margin:64px 0px 0px 0px;
+}
+
+#scDialog {
+  border:1px outset;
+  background:threedface;
+  width:298px;
+}
+
+#scCaption {
+  background:activecaption;
+  color:captiontext;
+  font:bold 8pt tahoma;
+  padding:2px 4px 2px 2px;
+  text-align:left;
+  border-bottom:1px solid threeddarkshadow;
+}
+
+.scCaptionIcon {
+  width:16px;
+  height:16px;
+  vertical-align:middle;
+  margin:0px 0px 0px 0px;
+}
+
+#scContentPanel {
+  text-align:left;
+  padding:8px;
+}
+
+#scContent {
+}
+
+.scIcon {
+  width:32px;
+  height:32px;
+  margin:0px 8px 0px 0px;
+}
+
+#scContent td {
+  font:8pt tahoma;
+}
+
+#scButtons {
+  text-align:right;
+  padding:4px 8px 8px 0px;
+}
+
+#scButtons button {
+  font:8pt tahoma;
+  margin:0px 2px 0px 2px;
+  width:75px;
+  height:21px;
+}

@@ -1,0 +1,10 @@
+﻿@model Sitecore.Speak.Components.Models.Common.TextBoxes.TextBoxRenderingModel
+@{  
+  Model.Class.Append("sc-textbox form-control");
+  Model.DataBind
+    .IsEnabled()
+    .IsVisible()
+    .Value("Value")    
+    .Bind("attr", "{enabled:IsEnabled, readonly: IsReadOnly, maxlength: MaxLength, placeholder: Watermark ,title: Tooltip()}");
+}
+<input @Model.HtmlAttributes @Model.MaxLengthAttribute @Model.TypeAttribute placeholder="@Model.Watermark" value="@Model.Value" />

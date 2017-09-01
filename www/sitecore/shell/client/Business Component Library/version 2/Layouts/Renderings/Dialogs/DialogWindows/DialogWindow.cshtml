@@ -1,0 +1,49 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Dialogs.DialogWindows.DialogWindowRenderingModel
+@{
+  Model.DataBind.IsVisible();
+  Model.DataBind.Bind("attr", "{" + "'data-modal-overflow':ModalOverflow," + "'data-keyboard':IsKeyboardEnabled()?'true':'false'," + "'data-replace':Replace," + "'data-consume-tab':ConsumeTab," + "'data-focus-on':FocusOn," + "'data-backdrop':Backdrop" + "}");
+
+  Model.DataBind.Bind("css", "{fade:IsAnimated}");
+  Model.DataBind.Bind("css", "{maximize:IsMaximized}");
+  Model.Class.Append("sc-dialogWindow modal");
+
+  var headerLessClass = Model.Headerless ? "hide" : "";
+  var footerContents = ClientHost.Web.PlaceHolder(Model.ControlId + ".Buttons").ToHtmlString();
+}
+<div @Model.HtmlAttributes data-width="@Model.Width" data-height="@Model.Height">
+  @if (!Model.Headerless)
+  {
+    <div class="sc-dialogWindow-header @headerLessClass">
+      <div class="sc-dialogWindow-header-row1">
+        <a class="sc-dialogWindow-maximize" aria-hidden="true"></a>
+        <a class="sc-dialogWindow-restore" aria-hidden="true"></a>
+        <a class="sc-dialogWindow-close" data-dismiss="modal" aria-hidden="true"></a>
+        <div class="sc-dialogWindow-actions">@Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Actions").ToHtmlString())</div>
+        <span class="sc-dialogWindow-header-title">@Model.HeaderText</span>
+      </div>
+      <div class="sc-dialogWindow-header-row2">
+        <div class="sc-dialogWindow-navigation">
+          @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Navigation").ToHtmlString())
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  }
+
+  <div class="modal-body sc-dialogWindow-body">
+    @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".DialogMessage").ToHtmlString())
+
+    <div class="sc-dialogWindow-body-container">
+      @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Content").ToHtmlString())
+    </div>
+  </div>
+
+  @if (!string.IsNullOrEmpty(footerContents))
+  {
+    <div class="sc-dialogWindow-buttons">
+      @Html.Raw(footerContents)
+    </div>
+  }
+
+</div>

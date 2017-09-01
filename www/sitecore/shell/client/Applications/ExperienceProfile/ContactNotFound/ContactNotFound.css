@@ -1,0 +1,59 @@
+﻿body.sc {
+  min-width: 700px;
+  overflow-x: auto;
+}
+/*should be delete after fixing header issue in speak project*/
+header.sc-globalHeader {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+header.sc-globalHeader .sc-global-logo {
+  margin-left: 15px;
+}
+/*----------*/
+
+div[data-sc-id=SearchBorder] {
+    display: inline-block;
+    width: 450px;
+}
+
+button[data-sc-id=SearchButton] {
+    margin-left: 8px;
+}
+
+
+.sc-messageBar {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+input[data-sc-id=SearchTextBox] {
+  width: 370px;
+  float: left;
+}
+
+div[data-sc-id=NotFoundBorder] {
+  width: 465px;
+  margin: 0 auto;
+}
+
+div.sc-border[data-sc-id=NotFoundInfoBorder] {
+  padding-left: 25px;
+}
+
+img[data-sc-id=NotFoundImage] {
+  float: left;
+}
+
+div.sc-border[data-sc-id=AdviceBorder] {
+  padding-top: 10px;
+}
+
+div.sc-advancedExpander[data-sc-id=NotFoundAccordion] {
+  margin-top: 20px
+}
+
+.sc-breadcrumb > ul > li {
+  color: #f9d8d7;
+}

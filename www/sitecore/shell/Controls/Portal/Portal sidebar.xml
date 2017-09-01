@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortalSidebar>
+    <FormPage Background="transparent">
+      <Stylesheet Src="Sidebar.css"/>
+      <Stylesheet Src="/sitecore/portal/tech/tech.css"/>
+
+      <Script Src="/sitecore/shell/Controls/SitecoreSidebar.js" Form="true"/>
+
+      <CodeBeside Type="Sitecore.Shell.Controls.Portal.PortalSidebarForm2,Sitecore.Client"/>
+
+      <SidebarPortal ID="Portal"/>
+ 
+    </FormPage>
+  </PortalSidebar>
+</control>

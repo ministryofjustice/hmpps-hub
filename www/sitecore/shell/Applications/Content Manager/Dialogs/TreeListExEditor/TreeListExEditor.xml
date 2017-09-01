@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:content="http://www.sitecore.net/content">
+  <TreeListExEditor>
+    <FormDialog ID="Dialog" Icon="Control/32x32/treeview.png" Header="Select Items" Text="Please select the items that you wish to use.">
+      <Stylesheet Key="TreeListExEditor">
+        .scContentControl {
+        height:100%;
+        }
+      </Stylesheet>
+      <Script Src="/sitecore/shell/applications/content manager/dialogs/treeListExEditor/TreeListExEditor.js" RunAt="server"/>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentEditor.Dialogs.TreeListExEditor.TreeListExEditorForm,Sitecore.Client"/>
+
+      <VerticalTabstrip GridPanel.Height="100%" Height="99%">
+        <TabSection Header="Options" />
+        <Tab ID="Templates" Header="Editors">
+          <content:TreeList ID="TreeList" Activation="false" Style="" />
+        </Tab>
+
+      </VerticalTabstrip>
+
+    </FormDialog>
+  </TreeListExEditor>
+</control>

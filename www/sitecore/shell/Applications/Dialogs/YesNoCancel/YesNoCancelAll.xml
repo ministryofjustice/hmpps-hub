@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <YesNoCancelAll Header="Message">
+    <FormDialog>
+      <Stylesheet>
+        .footerOkCancel{
+            display: none;
+        }
+
+        .scButtonsSubstituteContainer {
+            position: absolute;
+            right: 15px;
+            top: 8px;
+        }
+
+        .scConfirmationContainer td:first-child{
+            width: 1px;
+        }
+
+        .scConfirmationContainer td:last-child{
+            padding-left: 15px;
+        }
+      </Stylesheet>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.YesNoCancelAll.YesNoCancelAllForm,Sitecore.Client"/>
+
+      <GridPanel class="scConfirmationContainer" Columns="2" Width="100%" >
+        <ThemedImage class="scConfirmationIcon" Src="Images/warning.png" />
+        <Literal class="scDialogMessage" ID="Text"/>
+      </GridPanel>
+
+      <Border class="scButtonsSubstituteContainer"  def:placeholder="Buttons">
+        <Button Click="Yes" class="scButton scButtonPrimary" KeyCode="13" Header="Yes" />
+        <Button Click="YesToAll" Header="Yes to all" />
+        <Button Click="No" Header="No" />
+        <Button Click="NoToAll" Header="No to all" />
+        <Button Click="Cancel" Header="Cancel" />
+      </Border>
+
+    </FormDialog>
+  </YesNoCancelAll>
+</control>

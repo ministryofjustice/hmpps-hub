@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="experience-explorer.js">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/jquery/jquery-1.10.2.js</file>
+  <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/jquery-cookie-plugin/jquery.cookie.js</file>
+  <file>/sitecore modules/Web/ExperienceExplorer/Assets/js/experience-explorer-slide-out.js</file>
+  <file>/sitecore modules/Web/ExperienceExplorer/Assets/js/experience-explorer-init.js</file>
+</bundle>

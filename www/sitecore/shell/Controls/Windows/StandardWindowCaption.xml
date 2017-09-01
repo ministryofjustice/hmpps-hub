@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <StandardWindowCaption>
+    <div class="standardWindowCaption scUnselectable">
+      <ThemedImage Src="$Icon" class="windowCaptionIcon" />
+      <div Class="scWindowCaption">
+        <Inline ID="WindowCaption" />
+        <Literal Text="$Header"/>
+      </div>  
+      <StandardWindowButtons Maximize="$Maximize" Minimize="$Minimize" Close="$Close" NoWrap="true"/>
+    </div>
+  </StandardWindowCaption>
+</control>

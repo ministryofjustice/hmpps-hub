@@ -1,0 +1,99 @@
+﻿@using Sitecore
+@using Sitecore.Mvc
+@using Sitecore.Names
+@using Sitecore.Web.UI.Controls
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  userControl.Class = "sc-advancedExpander";
+  userControl.HasNestedComponents = true;
+  userControl.Requires.Script("business", "AdvancedExpander.js");
+  userControl.DataBind = "visible: isVisible, css: { 'open': isOpen }";
+  userControl.IsCloaked = true;
+  
+  var itemId = (string.IsNullOrEmpty(userControl.DataSource)?ClientHost.Items.ContextItem:(ClientHost.Items.GetItem(userControl.DataSource) ?? ClientHost.Items.ContextItem)).ID.ToShortID();
+  var controlId = userControl.ControlId;
+  var header = userControl.GetString("Header", "Header");
+  var enableAdditional = userControl.GetBool("EnableAdditional", "enableAdditional");
+  userControl.Attributes["data-sc-enableadditional"] = enableAdditional.ToString();
+  var showAdditional = userControl.GetBool("ShowAdditional", "showAdditional");
+  userControl.Attributes["data-sc-showadditional"] = showAdditional.ToString();
+  var isOpen = userControl.GetBool("IsOpen", "IsOpen", true);
+  var isCollapsible = userControl.GetBool("IsCollapsible", "IsCollapsible", true);
+  userControl.Attributes["data-sc-iscollapsible"] = isCollapsible.ToString();
+  var contentHeight = userControl.GetUnit("ContentHeight", "ContentHeight").ToString();
+  userControl.Attributes["data-sc-contentheight"] = contentHeight;
+  userControl.Attributes["data-sc-header"] = header;
+  var imageUrl = userControl.GetString("ImageUrl", "imageUrl");
+  userControl.Attributes["data-sc-imageurl"] = imageUrl;
+  var isStateDiscarded = userControl.GetBool("IsStateDiscarded", "IsStateDiscarded", false);
+  var lessDetails = ClientHost.Globalization.Translate(Sitecore.Names.Texts.LessDetails);
+  var moreDetails = ClientHost.Globalization.Translate(Sitecore.Names.Texts.MoreDetails);
+
+  var userProfileKey = string.Format(Sitecore.Names.Constants.UserProfileKeyFormat, itemId, userControl.ControlId);
+  try
+  {
+    if (!isStateDiscarded)
+    {
+      var contextUser = ClientHost.Context.User;
+      var userProfileValue = contextUser.Profile.GetCustomProperty(userProfileKey);
+      if (!string.IsNullOrEmpty(userProfileValue))
+      {
+        userControl.Attributes["data-sc-userstate"] = userProfileValue;
+      }
+    }
+    
+  }
+  finally
+  {
+    userControl.Attributes["data-sc-userprofilekey"] = userProfileKey;
+    userControl.Attributes["data-sc-isopen"] = isOpen.ToString();
+  }
+
+  var htmlAttributes = userControl.HtmlAttributes;
+}
+
+<div @htmlAttributes>
+  <div class="sc-advancedExpander-header" data-bind="click: toggle">
+    <table>
+      <tr>
+        <td class="sc-advancedExpander-header-icon-container " data-bind="css: {'not-empty': imageUrl()!='' }">
+          <img class="sc-advancedExpander-header-icon" onerror="this.style.display='none'" onload="this.style.display='inline';" alt="" data-bind="attr : {src: imageUrl}" src="@imageUrl" />
+        </td>
+        <td class="sc-advancedExpander-header-title">
+          <span class="sc-advancedExpander-header-title-text" data-bind="text: header">@header</span>
+        </td>
+        <td class="sc-advancedExpander-header-actionbar" data-bind="css: {'sc-actionbar-collapsed': !showActionBar() }"><div class="sc-advancedExpander-header-actionbar-container" data-bind="visible: showActionBar">@this.Html.Sitecore().Placeholder(controlId + ".ActionBar")</div></td>
+        @if (isCollapsible)
+        {
+          <td class="sc-advancedExpander-header-chevron">
+            <a href="#">
+              <span class="sc-advancedExpander-header-chevron-glyph" data-bind="css: { 'sc-advancedExpander2-header-chevron-glyph-open': isOpen }"></span>
+            </a>
+          </td>
+        }
+      </tr>
+      <tr>
+        <td class="sc-advancedExpander-header-promotedfields" colspan=@(isCollapsible ? "4": "3")>
+          @Html.Sitecore().Placeholder(controlId + ".PromotedFields")
+        </td>
+      </tr>
+    </table>
+  </div>
+    
+  <div class="sc-advancedExpander-body" data-bind="visible: isOpen">
+    <div data-bind="style: { height: contentHeight }" class="sc-advancedExpander-bodywrapper">
+      @this.Html.Sitecore().Placeholder(controlId + ".Body")
+    </div>
+                     
+    <div class="sc-advancedExpander-footer" data-bind="visible: enableAdditional">
+      <div class="sc-advancedExpander-footer-less" data-bind="visible: showAdditional">
+        <a href="#" data-bind="click: toggleAdditional">@lessDetails</a>
+      </div>
+      <div class="sc-advancedExpander-footer-more" data-bind="visible: !showAdditional()">
+        <a href="#" data-bind="click: toggleAdditional">@moreDetails</a>
+      </div>
+    </div>
+  </div>
+</div>

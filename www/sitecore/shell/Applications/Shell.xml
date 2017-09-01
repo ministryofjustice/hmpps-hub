@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Shell>
+    <Favicon Src="/sitecore/images/favicon.ico" />
+    <Stylesheet Src="Shell.css" DeviceDependant="true"/>
+    <Stylesheet Src="Startbar.css" DeviceDependant="true"/>
+    <Script type="text/JavaScript" src="/sitecore/shell/controls/SitecoreObjects.js" />
+    <Script type="text/JavaScript" src="/sitecore/shell/controls/SitecoreWindowManager.js" />
+    <Script type="text/JavaScript" src="/sitecore/shell/controls/lib/scriptaculous/scriptaculous.js?load=effects" />
+
+    <Script type="text/JavaScript" language="javascript" key="TrackModified">
+      scSitecore.prototype.setModified = function(value) {
+        this.modified = false;
+      }
+    </Script>
+
+    <FormPage Submittable="false" TrackModified="false" ForceGlobalHeader="true" Title="Desktop">
+      <CodeBeside Type="Sitecore.Shell.Applications.ShellForm,Sitecore.Client" FrameName="Shell"/>
+      <img ID="Wallpaper" src="" alt=""/>
+      
+      <Border KeyDown="ShowStartMenu" KeyFilter="c91">
+        <Border Class="DesktopArea" ID="Desktop" ContextMenu="ShowContextMenu">
+          <Border ID="Links" Click="ClosePopups" DblClick="Launch"/>
+        </Border>
+        <div class="scStartbar">
+          <Startbar />
+        </div>
+      </Border>
+    </FormPage>
+  </Shell>
+</control>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.FlatButton>
+    <a href="#" onclick="return scForm.invoke('$Click');" Class="scFlatButton" Style="display:block">
+      <ThemedImage Src="$Icon"/>
+      <Literal Class="scFlatButtonHeader" Text="$Header"/>
+    </a>
+  </Installer.FlatButton>
+</control>

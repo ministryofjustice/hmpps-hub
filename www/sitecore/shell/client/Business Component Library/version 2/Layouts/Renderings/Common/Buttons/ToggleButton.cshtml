@@ -1,0 +1,28 @@
+﻿@model Sitecore.Speak.Components.Models.Common.Buttons.ToggleButtonRenderingModel
+@{
+  Model.Class.Append("btn sc-togglebutton");
+  Model.Class.AppendIf(Model.ShowArrow, "toggle");
+  Model.Class.AppendIf(Model.ButtonType, string.Empty, "btn-default").
+    AppendIf(Model.ButtonType, "Primary", "btn-primary").
+    AppendIf(Model.ButtonType, "Inverse", "btn-inverse").
+    AppendIf(string.IsNullOrEmpty(Model.Text), "noText");
+
+  Model.DataBind
+    .IsVisible()
+    .IsEnabled()
+    .Click("toggle")
+    .Bind("css", "{'up': IsOpen(),'btn-full-width': IsFullWidth() }");
+}
+<button @Model.HtmlAttributes type="button">
+  @if (!string.IsNullOrEmpty(Model.Icon))
+{
+  <div style="background-image:url('@Model.Icon');background-position: @Model.SpritePosition ;" data-bind="style: {'backgroundImage': 'url(' + Icon() + ')', 'backgroundPosition': SpritePosition()}" class="sc-icon"></div>
+}
+  <span class="sc-togglebutton-text" data-bind="text: Text">@Model.Text</span>
+  @if (Model.ShowArrow)
+  {
+    <div class="sc-togglebutton-toggler">
+      <div class="sc-togglebutton-chevron" data-bind="css: { 'up': IsOpen() }"></div>
+    </div>
+  }
+</button>

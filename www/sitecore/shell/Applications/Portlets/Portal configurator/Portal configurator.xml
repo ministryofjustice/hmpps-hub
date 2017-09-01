@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PortalConfiguratorPortlet def:inherits="Sitecore.Shell.Applications.Today.Portlets.PortalConfiguratorPortletXmlControl,Sitecore.Client">
+    <Border def:ID="Portlet">
+
+      <DefaultPortletWindow def:ID="Window" Header="Portal" Icon="Applications/16x16/flash.png">
+      
+        <Toolbutton ID="AddContent" Icon="Applications/24x24/add.png" Header="Add content" Width="100%"/>
+        <!-- <Toolbutton ID="ChangeSkin" Icon="People/24x24/flower_blue.png" Header="Change skin" Width="100%"/> -->
+        
+      </DefaultPortletWindow>
+
+    </Border>
+  </PortalConfiguratorPortlet>
+</control>

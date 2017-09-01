@@ -1,0 +1,236 @@
+.scStartMenu {
+  display:inline;
+  background:#999999;
+}
+
+/* Top */                   
+
+.scStartMenuTop  {
+  background:url(/sitecore/shell/themes/Standard/Images/Startbar/top.png);
+  height:65px;
+  width:380px;
+}
+
+.scStartMenuTopIcon  {
+  float:left;
+  height:32px;
+  margin:17px 16px 16px 16px;
+  width:32px;
+}
+
+.scStartMenuTopNames {
+  color:white;
+  display:inline;
+  padding:12px 0px 0px 0px;
+  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='#333333', Positive='true');
+  height:65px;
+}
+
+.scStartMenuTopUserName {
+  font:14pt Franklin Gothic Medium;
+}
+
+.scStartMenuTopFullName {
+}
+
+/* Bottom */
+
+.scStartMenuBottom {
+  background:url(/sitecore/shell/themes/standard/Images/Startbar/Bottom.png);
+  color:white; 
+  height:41px;
+  padding:6px 8px 0px 0px;
+  text-align:right;
+  width:380px;
+}
+
+/* Content */
+
+.scStartMenuContent {
+ border-left:1px solid #485052;
+ border-right:1px solid #485052;
+}
+
+.scStartMenuContentColumns {
+  border:none;
+  border-left:1px solid #9EA6A8; 
+  border-right:1px solid #5E6668;
+  width:378px;
+  table-layout:fixed;
+}
+
+/* Left */
+
+.scStartMenuLeft {
+  width:187px;
+  background:#FFFFFF;
+  vertical-align:top;
+}
+
+.scStartMenuLeftDivider {
+  text-align:center;
+  padding:2px;
+}
+
+.scStartMenuLeftDividerIcon {
+  height:1px;
+  width:128px;
+}
+
+.scStartMenuLeftOption,
+.scStartMenuLeftOption:link, 
+.scStartMenuLeftOption:visited, 
+.scStartMenuLeftOption:hover, 
+.scStartMenuLeftOption:active 
+{
+  display:block;
+  height:36px;
+  margin:3px 0px 3px 0px;
+  padding:2px 0px 2px 4px;
+  text-decoration:none;
+}
+
+.scStartMenuLeftOption:hover {
+  background:#EDB078;
+}
+
+.scStartMenuLeftOptionIcon {
+  border:none;
+  float:left;
+  height:32px;
+  margin:0px 8px 0px 0px;
+  vertical-align:middle;
+  width:32px;
+}
+
+.scStartMenuLeftOptionDisplayName {
+  padding:2px 0px 0px 0px;
+  font-weight:bold;
+}
+
+.scStartMenuLeftOptionToolTip {
+}
+
+/* Middle */
+.scStartMenuMiddle {
+  width:1px;
+  background:#FEE9CA;
+}
+
+/* Right */
+
+.scStartMenuRight {
+  background:#FFF8E5;
+  vertical-align:top;
+  width:188px;
+}
+
+.scStartMenuRightDivider {
+  text-align:center;
+  padding:2px;
+}
+
+.scStartMenuRightDividerIcon {
+  height:1px;
+  width:128px;
+}
+
+.scStartMenuRightOption,
+.scStartMenuRightOption:link, 
+.scStartMenuRightOption:visited, 
+.scStartMenuRightOption:hover, 
+.scStartMenuRightOption:active 
+{
+  display:block;
+  height:24px;
+  padding:2px;
+  text-decoration:none;
+}
+
+.scStartMenuRightOption:hover {
+  background:#EDB078;
+}
+
+.scStartMenuRightOptionIcon {
+  border:none;
+  float:left;
+  height:24px;
+  margin:0px 4px 0px 0px;
+  vertical-align:middle;
+  width:24px;
+}
+
+.scStartMenuRightOptionDisplayName {
+  padding:5px 0px 0px 0px;
+}
+
+.scStartMenuRightFolder,
+.scStartMenuRightFolder:link, 
+.scStartMenuRightFolder:visited, 
+.scStartMenuRightFolder:hover, 
+.scStartMenuRightFolder:active 
+{
+  display:block;
+  height:24px;
+  padding:2px;
+  text-decoration:none;
+}
+
+.scStartMenuRightFolder:hover {
+  background:#EDB078;
+}
+
+.scStartMenuRightFolderIcon {
+  border:none;
+  float:left;
+  height:24px;
+  margin:0px 4px 0px 0px;
+  vertical-align:middle;
+  width:24px;
+}
+
+.scStartMenuRightFolderDisplayName {
+  padding:5px 0px 0px 0px;
+}
+
+.scStartMenuRightFolderGlyph {
+  border:none;
+  float:right;
+  height:16px;
+  margin:5px 0px 0px 4px;
+  vertical-align:middle;
+  width:16px;
+}
+
+/* Programs */
+
+.scStartMenuPrograms {
+  background:white;
+  vertical-align:bottom;
+}
+
+.scStartMenuProgramsMenu,
+.scStartMenuProgramsMenu:link, 
+.scStartMenuProgramsMenu:visited, 
+.scStartMenuProgramsMenu:hover, 
+.scStartMenuProgramsMenu:active 
+{
+  display:block;
+  font-weight:bold;
+  height:24px;
+  padding:6px 6px 6px 30px;
+  text-decoration:none;
+}
+
+.scStartMenuProgramsMenu:hover {
+  background:#EDB078;
+}
+
+.scStartMenuProgramsGlyph {
+  border:none;
+  height:24px;
+  margin:0px 0px 0px 8px;
+  vertical-align:middle;
+  width:24px;
+}
+

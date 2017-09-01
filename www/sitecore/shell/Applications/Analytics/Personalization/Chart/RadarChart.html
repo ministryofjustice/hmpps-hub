@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <!--[if IE]>
+      <script type="text/javascript" src="excanvas.js"></script>
+      <script type="text/javascript" src="base64.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="canvas2image.js"></script>
+    <script type="text/javascript" src="canvastext.js"></script>
+    <script type="text/javascript" src="../../../../../../sitecore/shell/controls/lib/prototype/prototype.js"></script>
+    <script type="text/javascript" src="flotr.js"></script>
+    <style type="text/css">
+    .flotr-legend-label
+    {
+        font-size:inherit;
+    }
+</style>
+</head>
+
+
+<body>
+
+    <div>
+    </div>
+    <script type="text/javascript">
+
+        function getParameter(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if (results == null)
+                return "";
+            else
+                return results[1];
+        }
+
+        document.observe('dom:loaded', function initialize() {
+
+            var ticks = new Array();
+            var arrayList = new Array();
+
+            var values = getParameter('value').split(';');
+            if (values.length > 0) {
+
+                var index = 0;
+                var profileName = '';
+
+                for (i = 0; i < values.length; i++) {
+
+                    if (values[i] == '') {
+                        continue;
+                    }
+                    var splitted = values[i].split('=');
+                    if (splitted == null) {
+                        continue;
+                    }
+                    if (splitted[0].toLowerCase() == 'profilename') {
+                        profileName = splitted[1];
+                        continue;
+                    }
+                    if ((splitted[0].toLowerCase() == 'total') || (splitted[0].toLowerCase() == 'count')) {
+                        continue;
+                    }
+
+                    ticks[index] = new Array(2);
+                    ticks[index][0] = index;
+                    ticks[index][1] = splitted[0];
+
+                    arrayList[index] = new Array(2);
+                    arrayList[index][0] = index;
+                    arrayList[index][1] = splitted[1];
+                    index++;
+                }
+            }
+
+           
+
+            var div = document.createElement("div");
+            document.body.appendChild(div);
+          
+            var width = 600;
+            var height = 300;
+            var radarChart = parent.document.getElementById('radarChart' + profileName);
+            if (radarChart != null) {
+                width = radarChart.offsetWidth - 100;
+                height = width / 2;
+
+                radarChart.height = height + 100;
+            }
+            var fontSize = width / 60 ;
+
+            var s1 = { label: profileName, data: arrayList, fontSize: fontSize };
+            div.setAttribute('style', 'width:' + width + 'px;height:' + height + 'px;font-size:'+(fontSize+3)+'pt;');
+            
+            var f = Flotr.draw(div, [s1], {
+                radar: { show: true },
+                grid: { circular: true, minorHorizontalLines: true },
+                fontSize: fontSize,
+                xaxis: { ticks: ticks }
+            });
+        });
+    </script>
+</body>
+</html>

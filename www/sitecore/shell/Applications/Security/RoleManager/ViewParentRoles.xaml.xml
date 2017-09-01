@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <Sitecore.Shell.Applications.Security.RoleManager.ViewParentRoles x:inherits="Sitecore.Shell.Applications.Security.RoleManager.ViewParentRolesPage,Sitecore.Client">
+    <Sitecore.Controls.ModalDialogPage Header="Member Of" Text="Add or remove the roles that the selected role must be a member of." ButtonText="Close" runat="server">
+      <x:register assembly="ComponentArt.Web.UI" namespace="ComponentArt.Web.UI"/>
+
+      <Stylesheet Src="Grid.css" DeviceDependant="true" runat="server" />
+      
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Script type="text/javascript" language="javascript" runat="server" x:placeholder="Scripts">
+        <![CDATA[
+
+        function Users_onItemSelect(sender, eventArgs) {
+          update();
+        }
+
+        function update() {
+          var users = Users.getSelectedItems();
+          var value = "";
+          
+          for(var n = 0; n < users.length; n++) {
+            if (n > 0) {
+              value += "|";
+            }
+
+            value += users[n].GetMember('scGridID').Value.decodeId();
+            value += "^" + users[n].GetMember('AccountType').Value;
+          }
+
+          document.getElementById("UserName").value = value;
+        }
+        
+        setInterval(function () {
+          var searchBox = document.querySelector("[id$=searchBox]");
+          if (searchBox && searchBox.value.indexOf('\"') != -1) {
+            searchBox.value = searchBox.value.replace(/"/g, "");
+          };
+        }, 50);
+        
+        ]]>
+      </Script>
+
+      <input id="UserName" name="UserName"  type="hidden" />
+
+      <GridPanel Height="100%" Width="100%" runat="server">
+        <Border runat="server" GridPanel.Height="100%" Height="100%" GridPanel.VAlign="top">
+          <Grid id="Users"
+            RunningMode="Callback"
+            CssClass="Grid"
+
+            ShowHeader="true"
+            HeaderCssClass="GridHeader"
+            
+            FooterCssClass="GridFooter"
+
+            GroupByText = ""
+            GroupingNotificationText = ""
+            GroupByCssClass="GroupByCell"
+            GroupByTextCssClass="GroupByText"
+            GroupBySortAscendingImageUrl="group_asc.gif"
+            GroupBySortDescendingImageUrl="group_desc.gif"
+            GroupBySortImageWidth="10"
+            GroupBySortImageHeight="10"
+
+            GroupingNotificationTextCssClass="GridHeaderText"
+            GroupingPageSize="5"
+            
+            PagerStyle="Slider"
+            PagerTextCssClass="GridFooterText"
+            PagerButtonHoverEnabled="True"
+            PagerImagesFolderUrl="/sitecore/shell/themes/standard/componentart/grid/pager/"
+            
+            ShowSearchBox="true"
+            SearchTextCssClass="GridHeaderText scTextAlignRight "
+            SearchBoxCssClass="SearchBox"
+      	    
+            SliderHeight="20"
+            SliderWidth="150"
+            SliderGripWidth="24"
+            SliderPopupOffsetX="20"
+            SliderPopupClientTemplateId="SliderTemplate"
+            
+            TreeLineImagesFolderUrl="/sitecore/shell/themes/standard/componentart/grid/lines/"
+            TreeLineImageWidth="22"
+            TreeLineImageHeight="19"
+            
+            PreExpandOnGroup="false"
+            ImagesBaseUrl="/sitecore/shell/themes/standard/componentart/grid/"
+            IndentCellWidth="22"
+
+            LoadingPanelClientTemplateId="LoadingFeedbackTemplate"
+            LoadingPanelPosition="MiddleCenter"
+            
+            Width="100%" Height="100%" runat="server">
+
+            <Levels>
+              <GridLevel
+                DataKeyField="scGridID"
+                ShowTableHeading="false"
+                ShowSelectorCells="false"
+                RowCssClass="Row"
+                ColumnReorderIndicatorImageUrl="reorder.gif"
+                DataCellCssClass="DataCell"
+                HeadingCellCssClass="HeadingCell"
+                HeadingCellHoverCssClass="HeadingCellHover"
+                HeadingCellActiveCssClass="HeadingCellActive"
+                HeadingRowCssClass="HeadingRow"
+                HeadingTextCssClass="HeadingCellText"
+                SelectedRowCssClass="SelectedRow"
+                GroupHeadingCssClass="GroupHeading"
+                SortAscendingImageUrl="asc.gif"
+                SortDescendingImageUrl="desc.gif"
+                SortImageWidth="13"
+                SortImageHeight="13" runat="server">
+                <Columns runat="server">
+                  <GridColumn DataField="scGridID" Visible="false" runat="server"/>
+                  <GridColumn DataField="AccountType" Visible="false" runat="server"/>
+                  <GridColumn DataField="Domain" AllowSorting="false" IsSearchable="false" AllowGrouping="false" SortedDataCellCssClass="SortedDataCell" HeadingText="Domain" runat="server" />
+                  <GridColumn DataField="LocalName" AllowSorting="false" IsSearchable="true" AllowGrouping="false" SortedDataCellCssClass="SortedDataCell" HeadingText="Local name" runat="server" />
+                  <GridColumn DataField="Name" AllowSorting="false" IsSearchable="false" AllowGrouping="false" SortedDataCellCssClass="SortedDataCell" HeadingText="Full name" runat="server" />
+                  <GridColumn DataField="Description" AllowSorting="false" IsSearchable="false" AllowGrouping="false" SortedDataCellCssClass="SortedDataCell" HeadingText="Comment" runat="server" />
+                </Columns>
+              </GridLevel>
+            </Levels>
+
+            <ClientTemplates>
+              <ClientTemplate Id="LoadingFeedbackTemplate" runat="server">
+                <table cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td style="font-size:10px;">
+                      <Literal Text="Loading..." runat="server" />;
+                    </td>
+                    <td>
+                      <img src="/sitecore/shell/themes/standard/componentart/grid/spinner.gif" width="16" height="16" border="0" />
+                    </td>
+                  </tr>
+                </table>
+              </ClientTemplate>
+
+              <ClientTemplate Id="SliderTemplate" runat="server">
+                <div class="SliderPopup">
+                  ## DataItem.PageIndex + 1 ## / ## Users.PageCount ##
+                </div>
+              </ClientTemplate>
+            </ClientTemplates>
+          </Grid>          
+        </Border>
+
+        <Border runat="server">
+          <Button Header="Add" ID="Add" Click="rolemanager:addmemberof" runat="server" />
+          <Button Header="Remove" ID="Remove" Click="rolemanager:removememberof" runat="server" />
+        </Border>
+      </GridPanel>
+      
+    </Sitecore.Controls.ModalDialogPage>
+  </Sitecore.Shell.Applications.Security.RoleManager.ViewParentRoles>
+
+</xamlControls>
+                           

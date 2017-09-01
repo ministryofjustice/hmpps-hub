@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <TemplateInheritance>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Templates.TemplateInheritance.TemplateInheritanceForm,Sitecore.Client"/>
+      <Stylesheet Src="TemplateWorkspaceBaseTemplates.css" DeviceDependant="true"/>
+
+      <Scrollbox ID="TemplateList" Height="100%" Background="White" Padding="15px" Border="none" GridPanel.Height="100%"/>
+
+    </FormPage>
+  </TemplateInheritance>
+</control>

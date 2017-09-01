@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Word.EditField x:inherits="Sitecore.Shell.Applications.ContentManager.WordOCX.EditField,Sitecore.Client">
+    <Sitecore.Controls.HtmlPage Overflow="hidden" runat="server">
+
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Script runat="server" type="text/javascript" language="javascript"  x:placeholder="Scripts" Src="/sitecore/shell/Applications/Content%20Manager/WordOCX/WordOCX.js" />
+      <Stylesheet runat="server" Src="Dialogs.css" DeviceDependant="true" x:placeholder="Stylesheets"/>
+      <Stylesheet runat="server" Src="Content Manager.css" DeviceDependant="true" x:placeholder="Stylesheets" />
+      <Stylesheet runat="server" Src="Ribbon.css" DeviceDependant="true" x:placeholder="Stylesheets" />
+      <Stylesheet Key="EditHtml" runat="server">
+        .scRibbon {
+        padding:0px;
+        }
+      </Stylesheet>
+
+      <input type="hidden" id="scActiveRibbonStrip" name="scActiveRibbonStrip" />
+
+      <asp:Literal id="litBlobId" runat="server" />
+      <input type="hidden" id="hdnUploadResult" name="hdnUploadResult"  />
+
+      <label id="lblProperties" runat="server" />
+
+      <div Class="scFlexColumnContainer scStretch">
+        <div class="scFlexContent">
+          <div class="scStretchAbsolute">
+            <object classid="clsid:7342394C-7225-11E0-8FB2-28CB4724019B" id="word" class="scStretch" codebase="/sitecore/shell/Applications/Content%20Manager/WordOCX/officeviewer.cab#5,4,518,1">
+              <param name="BorderColor" value="FFFFFF" />
+              <param name="BackColor" value="FFFFFF" />
+              <param name="ForeColor" value="FFFFFF" />
+              <param name="TitlebarColor" value="FFFFFF" />
+              <param name="TitlebarTextColor" value="FFFFFF" />
+              <param name="Titlebar" value="0" />
+              <param name="Toolbars" value="1" />
+              <param name="Menubar" value="0" />
+              <param name="ActivationPolicy" value="0" />
+              <param name="FrameHookPolicy" value="0" />
+              <param name="MenuAccelerators" value="1" />
+            </object>
+            <SCRIPT FOR="word" EVENT= "OnFileCommand()">
+              document.word.fileMenuUsed = true;
+            </SCRIPT>
+            <SCRIPT FOR="word" EVENT= "OnDocumentOpened(Item, Cancel)">
+              if (document.word.fileMenuUsed){
+              document.word.fileWasOpened = true;
+              }
+            </SCRIPT>
+            <script language="javascript"> <![CDATA[
+       
+  function InsertLink(link, defaultText) {
+    WordOCX_InsertLink(document.word, link, defaultText);
+  }
+        
+  function InsertPicture(imagePath, alt, imageWidth, imageHeight) {
+    var image = WordOCX_InsertPicture(document.word, imagePath, alt);
+    // Don't need to do resizing - image, get from imagePath, will already be resized
+    }
+
+ function InitWord() {
+   var word = document.getElementById("word");
+   
+   if(typeof(word.CreateNew) != 'undefined') {
+   word.CreateNew("Word.Document");
+    word.currentView = word.ActiveDocument.ActiveWindow.View.Type;
+   
+      var downloadLink = document.getElementById("hdnDonwloadLink").value;
+      if(downloadLink != '') {
+        LoadFromStream(downloadLink);
+      } else {
+        word.CreateNew("Word.Document");
+      }
+    }
+ }
+ 
+ function LoadFromStream(url) {
+   var word = document.getElementById("word");
+   word.Open(url, "Word.Document");
+ }
+
+  function UploadDocument() {
+    var uploadResult = document.getElementById("hdnUploadResult");
+   
+    var word = document.getElementById("word");              
+    
+    if(!word.IsOpened) {
+      alert("A document should be opened");
+      return;
+    }
+    
+    if(word.IsDirty || word.fileWasOpened) {
+      var uploadLink = document.getElementById("hdnUploadLink").value;
+    
+      WordOCX_UploadDocument(word, uploadLink);
+    
+      uploadResult.value = "no error";
+    } else {
+      uploadResult.value = "not modified";
+    }
+    return scForm.postEvent(this,event,'OK_Click');
+  }
+
+  function RestoreViewType(){
+    var word = document.getElementById("word");
+    WordOCX_RestoreViewType(word);
+  }
+
+  WordOCX_Initialize(document.word);
+  setTimeout("InitWord()", 0);
+          
+]]> </script>
+
+          </div>
+        </div>
+
+        <div Class="scFormDialogFooter">
+          <div class="footerOkCancel">
+            <Button class="scButton scButtonPrimary" onclick="return UploadDocument()" ID="btnAccept">
+              <Literal runat="server" Text="Accept"/>
+            </Button>
+
+            <Button runat="server" ID="Cancel" Click="Cancel_Click" onclick="RestoreViewType" >
+              <Literal runat="server" Text="Reject"/>
+            </Button>
+          </div>
+          <Button runat="server" ID="InsertLink" Click="InsertLink_Click">
+            <Literal runat="server" Text="Insert a link"/>
+          </Button>
+          <Button runat="server" ID="InsertMedia" Click="InsertMedia_Click">
+            <Literal runat="server" Text="Insert media item"/>
+          </Button>
+        </div>
+
+      </div>
+    </Sitecore.Controls.HtmlPage>
+  </Sitecore.Word.EditField>
+
+</xamlControls>

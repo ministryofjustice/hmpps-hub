@@ -1,0 +1,31 @@
+﻿.loadingItems
+{
+    background-image: url('/sitecore/shell/Applications/Buckets/images/load.gif');
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+
+.bucketSearch {
+    width: auto !important;
+    display: inline-block !important;
+}
+
+.bucketSearch.active
+{
+    background-color:#fff;
+}
+
+.bucketSearch.inactive
+{
+    color: #969696;
+}
+
+.scBucketListBox, .scBucketListSelectedBox {
+    height: calc(100% - 35px);
+}
+
+.scBucketListSelectedBox
+{
+    margin-top: 50px;
+}

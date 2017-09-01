@@ -1,0 +1,58 @@
+.scAccountName {
+  font:8pt tahoma;
+  text-align:right;
+  padding:2px 4px 2px 4px;
+}
+
+.scAccountHeader {
+  padding:2px 4px 2px 4px;
+  font:bold 8pt tahoma;
+}
+
+.scAccountRight {
+  padding:2px 16px 2px 4px;
+  font:8pt tahoma;
+}
+
+.scAccountRightAllow {
+  color:Green;
+}
+
+.scAccountRightDeny {
+  color:red;
+}
+
+.scAccountRightUnknown {
+  color:silver;
+}
+
+.scAccountSpacer {
+  padding:0px 0px 8px;
+}
+
+.scAccountName a:link,
+.scAccountName a:visited,
+.scAccountName a:hover,
+.scAccountName a:active {
+  text-decoration:none;
+  color:black;
+  cursor:default;
+}
+
+.scAccountName a:hover,
+.scAccountName a:active {
+  text-decoration:underline;
+}
+
+#Permissions a:link,
+#Permissions a:visited,
+#Permissions a:hover,
+#Permissions a:active {
+  text-decoration:none;
+  color:blue;
+}
+
+#Permissions a:hover,
+#Permissions a:active {
+  text-decoration:underline;
+}

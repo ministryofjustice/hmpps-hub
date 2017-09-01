@@ -1,0 +1,6 @@
+﻿.lang_ja_jp .HeadingCellText,
+.lang_ja_jp .GridHeaderText,
+.lang_ja_jp .Row TD.DataCell,
+.lang_ja_jp .SelectedRow TD.DataCell {
+  font-family: メイリオ, Meiryo, Microsoft YaHei, tahoma, sans-serif;  
+}

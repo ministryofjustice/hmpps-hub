@@ -1,0 +1,93 @@
+﻿.scSectionHeader {
+  background: #e9e9e9 url(/sitecore/shell/themes/standard/images/listviewheader16x17.png) repeat-x;
+  height: 17px;
+  text-align: left;
+  padding: 2px 0px 0px 4px;
+  font-weight: bold;
+}
+
+.rightsTableContainer {
+  width: 100%;
+  text-align: center;
+}
+
+#RightsTable {
+  margin-top: 8px;
+}
+
+.rightsTable {
+  padding: 2px;
+  margin-top: 6px;
+  width: 70%;
+  table-layout: fixed;
+}
+
+.rightsTable td {
+  padding: 2px;
+  text-wrap: no-wrap;
+}
+
+.rightNameColumn {
+  text-align: right;
+  width: 25%;
+}
+
+.separatorColumn {
+  width: 2%;
+}
+
+.itemRightsColumn {
+  width: 36%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.descendantsRightsColumn {
+  width: 35%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scSecurityItem, .scSecurityItemDisabled, .scSecurityItemEnabled, .scSecurityItemDeny {
+  padding: 0px 4px 0px 4px;
+}
+.scSecurityItemDisabled {
+  color: #999999;
+}
+
+.scSecurityItemEnabled {
+  color: green;
+}
+
+.scSecurityItemDeny, .scInheritanceWarning {
+  color: red;
+}
+
+.disabled {
+  background-color: #efefef;
+}
+
+#Accounts.disabled {
+  background-color: white;
+}
+
+#NoAccounts a {
+  color: blue;
+}
+
+.scItemSecurityEditorContainer {
+  padding: 10px;
+  overflow: auto !important;
+}
+
+.scItemSecurityEditorAccounts {
+  overflow: hidden;
+}
+
+#Inheritance {
+  height: 40px;
+}
+
+.permissionsLabel {
+  padding: 12px 0 2px;
+}

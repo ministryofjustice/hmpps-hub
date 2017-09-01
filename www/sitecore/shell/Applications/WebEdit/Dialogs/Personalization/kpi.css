@@ -1,0 +1,35 @@
+.sc-kpi {
+  background-color: #f7f7f7;
+  width: 95px;
+}
+.sc-kpi .sc-kpi-Row {
+  display: table-row;
+}
+.sc-kpi .sc-kpi-Cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 32px;
+}
+.sc-kpi .sc-kpi-Arrow {
+  display: inline-block;
+}
+.sc-kpi .sc-kpi-Arrow svg {
+  width: 40px;
+  height: 32px;
+}
+.sc-kpi .sc-kpi-Arrow .sc-kpi-Up {
+  fill: #6f9d58;
+}
+.sc-kpi .sc-kpi-Arrow .sc-kpi-Down {
+  fill: #d93c1c;
+}
+.sc-kpi .sc-kpi-Arrow .sc-kpi-Equal {
+  fill: #7b7b7b;
+}
+.sc-kpi .sc-kpi-Value {
+  line-height: normal;
+  font-size: 2.5em;
+}
+.sc-kpi.compact {
+  width: 50px;
+}

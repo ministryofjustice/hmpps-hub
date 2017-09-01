@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Installer.InstallPackage>
+    <Script Src="/sitecore/shell/Applications/Install/installer.js" />
+    <Stylesheet>
+      #LicenseAgreement {
+          overflow: auto;
+          padding-right: 8px;
+          margin-bottom: 5px;
+          height: 100%;
+      }
+
+
+      .scCheckGroup {
+          margin-top: 10px;
+      }
+      
+      .scRadioGroup > div, .scCheckGroup > div{
+          padding: 5px 0;
+      }
+
+      .scLicenseAgreementContainer{
+          overflow: hidden;
+          padding-bottom: 55px;
+      }
+
+    </Stylesheet>
+    <WizardForm Application="Tools/Installer/InstallationWizard" CodeBeside="Sitecore.Shell.Applications.Install.Dialogs.InstallPackage.InstallPackageForm,Sitecore.Client">
+
+      <WizardFormPage ID="LoadPackage" Header="Install a Package" Text="Select a package to install.">
+        <WizardFormPadding>
+          <Literal class="scFieldLabel" Text="Name:"/>
+
+          <Edit ID="PackageFile" Width="100%"/>
+
+          <br/>
+          <div>
+            <Button ID="Browse" Header="Choose package" ToolTip="Choose a package that is already uploaded to your Sitecore installation." Click="installer:browse"/>
+            <Space/>
+            <Button ID="Upload" Header="Upload package" ToolTip="Upload a package from your local computer." Click="installer:upload"/>
+          </div>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="License" Header="Install a Package" Text="Please read and accept the terms of the license agreement.">
+        <WizardFormPadding>
+          <div class="scStretch scLicenseAgreementContainer">
+            <Border ID="LicenseAgreement" >.</Border>
+
+            <div class="scRadioGroup">
+              <div>
+                <Radiobutton ID="Accept" Name="AcceptLicense" Header="I accept the terms of the license agreement." Value="yes" Change="Agree" Click="Agree"/>
+              </div>
+              <div>
+                <Radiobutton ID="Decline" Name="AcceptLicense" Header="I do not accept the terms of the license agreement." Value="no" Change="Disagree" Click="Disagree"/>
+              </div>
+            </div>
+
+          </div>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Readme" Header="Install a Package" Text="Please read the additional installation instructions before you continue.">
+        <WizardFormPadding>
+
+          <Memo ID="ReadmeText" class="scStretch" Wrap="off" ReadOnly="true" />
+
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Ready" Header="Install a Package" Text="Verify the package information before you click install.">
+        <WizardFormPadding>
+          <GridPanel class="scFormTable" Columns="2" CellPadding="2">
+
+            <Literal Text="Package name:" />
+            <Edit ID="PackageName" Width="100%" ReadOnly="true" GridPanel.Width="100%"/>
+
+            <Literal Text="Version:" />
+            <Edit ID="Version" Width="100%" ReadOnly="true"/>
+
+            <Literal Text="Author:" />
+            <Edit ID="Author" Width="100%" ReadOnly="true"/>
+
+            <Literal Text="Publisher:" />
+            <Edit ID="Publisher" Width="100%" ReadOnly="true"/>
+
+          </GridPanel>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormProgressPage ID="Installing" Header="Install a Package" Text="Please wait while the package is being installed. This may take a few minutes." ActionText="Installing...">
+        <TaskMonitor ID="Monitor" />
+      </WizardFormProgressPage>
+
+      <WizardFormPage ID="LastPage" Header="Install a Package">
+        <WizardFormPadding>
+          <Border ID="SuccessMessage">
+            <Literal class="sc-text-largevalue" Text="The package has been installed."/>
+
+            <div class="scCheckGroup">
+              <div>
+                <Checkbox ID="Restart" Header="Restart the Sitecore client." />
+              </div>
+              <div>
+                <Checkbox ID="RestartServer" Header="Restart the Sitecore server." />
+              </div>
+            </div>
+          </Border>
+
+          <Border ID="ErrorMessage" Style="display:none;">
+            <Literal class="sc-text-largevalue" Text="The installation failed." />
+
+            <GridPanel Fixed="true" Style="margin-right:0;width:auto;">
+              <Border Style="font-weight:600;word-wrap:break-word;" Padding="10px 0">
+                <Literal ID="FailingReason" />
+              </Border>
+            </GridPanel>
+
+            <Border Style="display:none;" >
+              <Literal ID="ErrorDescription"/>
+            </Border>
+
+            <Literal class="scFieldLabel" Text="For more information see the Sitecore log."/>
+            <Literal class="scFieldLabel" Text="Try one of the following options:"/>
+
+            <Border Class="scRollOver" style="vertical-align:bottom" Click="RestartInstallation">
+              <ThemedImage Src="Office/16x16/refresh.png" Width="16" Height="16" Align="middle" Margin="0px 2px 0px 0px"/>
+              <Literal Text="Retry the installation"/>
+            </Border>
+          </Border>
+
+          <Border ID="AbortMessage" style="display:none;" >
+            <Literal class="sc-text-largevalue" Text="Installation was aborted by user." />
+          </Border>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+    </WizardForm>
+  </Installer.InstallPackage>
+</control>

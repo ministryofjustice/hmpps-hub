@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns:installer="Sitecore.Shell.Applications.Install.Controls">
+   <Installer.ItemUserFilterEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ItemUserFilterEditor,Sitecore.Client">
+      <div class="filterEditorChildContainer">
+        <Installer.SelectAccount def:ID="AccountSelector" />
+        <Button def:ID="ClearButton" Header="Clear Filter"/>
+      </div>
+   </Installer.ItemUserFilterEditor>
+</control>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Debugger.Profiling.Portlet def:inherits="Sitecore.Shell.Applications.Portlets.DebuggerProfiling.DebuggerProfilingPortletXmlControl,Sitecore.Client">
+    <Border def:ID="Portlet">
+      <DefaultPortletWindow def:ID="Window" Header="Profiling" Icon="Software/16x16/debug_time.png">
+                                            
+        <SidebarTileButton def:ID="Profile" Icon="Software/24x24/debug_time.png" Header="Enable Profiling"/>
+        <SidebarTileButton def:ID="Save" Icon="Applications/24x24/disk_blue.png" Header="Save Profile"/>
+        <SidebarTileButton def:ID="Download" Icon="Network/24x24/inbox_into.png" Header="Download Profile"/>
+
+      </DefaultPortletWindow>
+    </Border>
+  </Debugger.Profiling.Portlet>
+</control>

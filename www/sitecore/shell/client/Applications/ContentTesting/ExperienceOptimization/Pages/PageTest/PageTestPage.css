@@ -1,0 +1,309 @@
+.sc-accordion {
+  margin-top: 2em;
+}
+.sc-accordion-header-actionbar .sc-icon-button {
+  float: right;
+}
+div[data-sc-id="SelectPageBorder"].sc-border {
+  background-color: white;
+  height: 10em;
+  line-height: 10em;
+  vertical-align: middle;
+  border: solid 1px #cacaca;
+  margin-top: 2em;
+}
+div[data-sc-id="AddPageBorder"] div,
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"] {
+  display: inline-block;
+}
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"],
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] {
+  border: 1px solid #cccccc;
+  background: #e3e3e3;
+  vertical-align: middle;
+  text-align: center;
+  margin: 1em;
+  width: 150px;
+}
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"] {
+  background-image: url('/sitecore/shell/client/Applications/ContentTesting/Assets/icon-add.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent;
+  line-height: 150px;
+  height: 150px;
+}
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"]:hover {
+  text-decoration: none;
+  color: transparent;
+  background-color: gainsboro;
+}
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] {
+  height: 150px;
+}
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] .sc-border {
+  display: block;
+}
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] div[data-sc-id="PageThumbnail"] {
+  height: 116px;
+}
+div[data-sc-id="FirstButtonBorder"] {
+  margin-top: 2em;
+}
+div[data-sc-id="BottomButtonBorder"] {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar {
+  width: 6px;
+  margin-left: 15px;
+  background-color: whitesmoke;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #8f8e99;
+}
+div[data-sc-id="DetailsColumn"]::-webkit-scrollbar-thumb:hover {
+  background-color: #606066;
+  border: 1px solid #333333;
+}
+.tab-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+.tab-content::-webkit-scrollbar {
+  width: 6px;
+  margin-left: 15px;
+  background-color: whitesmoke;
+}
+.tab-content::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #8f8e99;
+}
+.tab-content::-webkit-scrollbar-thumb:hover {
+  background-color: #606066;
+  border: 1px solid #333333;
+}
+.sc-dialogContent {
+  margin-left: 14px;
+  margin-right: 15px;
+}
+.sc-dialogContent-main {
+  padding: 0;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sc div[data-sc-id="ThumbnailImage"] {
+  border-radius: 0;
+}
+.sc .sc-border.sc-show-padding {
+  padding: 15px 15px 15px 15px;
+}
+.sc .row.sc-show-padding {
+  padding: 5px 0 4px 0;
+}
+.sc .sc-label {
+  position: relative;
+  top: 6px;
+}
+.sc-advancedExpander-header-actionbar {
+  width: 20px;
+}
+.sc [data-sc-id="TopGoalsAccordion"] .sc-advancedExpander-header-chevron a,
+.sc [data-sc-id="TopClicksToPagesAccordion"] .sc-advancedExpander-header-chevron a,
+.sc [data-sc-id="SiteUsageAccordion"] .sc-advancedExpander-header-chevron a {
+  display: block;
+}
+.sc-advancedExpander .sc-advancedExpander-body {
+  background-color: white;
+}
+.sc [data-sc-id="PreviewBorder"],
+.sc [data-sc-id="ExpectedChangeBorder"],
+.sc [data-sc-id="VariablesInTestBorder"],
+.sc [data-sc-id="ExpectedTimeBorder"],
+.sc [data-sc-id="TrafficAllocationBorder"],
+.sc [data-sc-id="StatisticsBorder"],
+.sc [data-sc-id="TestObjectiveProtection"],
+.sc [data-sc-id="SchedulingProtection"] {
+  padding: 0 !important;
+}
+.sc [data-sc-id="TestWizardTabControl"] {
+  margin-left: 5px;
+}
+.sc-advancedExpander {
+  margin-top: 15px;
+  margin-right: 5px;
+}
+.sc [data-sc-id="WinnerAutoSelectBorder"],
+.sc [data-sc-id="WinnerAutoSelectUnlessBorder"],
+.sc [data-sc-id="WinnerManualSelectBorder"] {
+  padding-bottom: 10px;
+}
+.form-control {
+  height: 30px;
+  padding: 6px 12px;
+}
+.scFiltList-dvList {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.sc [data-sc-id="RadioBtnBorder"] .sc-border {
+  display: inline-block;
+  margin-right: 60px;
+}
+.sc [data-sc-id="RadioBtnBorder"] .sc-border:last-child {
+  margin-right: 0px;
+}
+.sc [data-sc-id="RadioBtnBorder"] .sc-ArrowIndicator-Arrow {
+  right: 2px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.sc [data-sc-id="RadioBtnBorder"] .sc-ArrowIndicator-Value {
+  display: none;
+}
+.sc [data-sc-id="ConfidencePanel"] .sc-radiobutton {
+  margin-right: 150px;
+}
+.sc .sc-dialogContent-title {
+  display: none;
+}
+.sc .sc-navigation-menu {
+  top: initial;
+  bottom: initial;
+  height: 675px;
+}
+.sc .form-control {
+  height: 36px;
+}
+.sc .sc-applicationContent-main {
+  padding: 0 0 0 15px;
+}
+.sc .sc-advancedExpander {
+  margin-right: 0;
+}
+.sc div[data-sc-id="DetailTitleRow"] {
+  padding-top: 0px !important;
+}
+.sc div[data-sc-id="DetailPanelBorder"] {
+  border-top: 1px solid #e7e7e7;
+}
+.sc select[data-sc-id="AddPreviousVersionComboBox"] {
+  width: 85%;
+}
+.sc span[data-sc-id="SummaryTitle"] {
+  font-weight: bold;
+  font-size: 15px;
+  color: #474747;
+  margin-bottom: 9px;
+  display: block;
+}
+div[data-sc-id="SummaryBorder"],
+div[data-sc-id="Main"],
+div[data-sc-id="PageUsagePanel"] div {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+div[data-sc-id="SummaryRepeater"] div[data-sc-id="Entry"] {
+  border-bottom: solid 1px #e1e1e1;
+  vertical-align: middle;
+  background-color: white;
+  line-height: 38px;
+  padding-left: 0;
+  padding-right: 0;
+}
+div[data-sc-id="SummaryRepeater"] div[data-sc-id="EntryPanel"] {
+  margin-left: 0;
+  margin-right: 0;
+}
+div[data-sc-id="KPIRow"] {
+  border: solid 1px #e1e1e1;
+  margin: 15px 0;
+  background-color: white;
+  padding: 15px;
+}
+div[data-sc-id="KPIRow"] div[data-sc-id="KPIEffectPanel"],
+div[data-sc-id="KPIRow"] div[data-sc-id="KPIConfidencePanel"],
+div[data-sc-id="KPIRow"] div[data-sc-id="KPIScorePanel"] {
+  text-align: left;
+}
+.sc-tile-option {
+  text-align: center;
+}
+div[data-sc-id="AddPageExistingBorder"],
+div[data-sc-id="AddPreviousPageVersionBorder"],
+div[data-sc-id="AddNewPageVersionBorder"] {
+  display: inline-block;
+  margin: 15px;
+}
+div[data-sc-id="AddPageExistingBorder"] .sc-hyperlinkbutton,
+div[data-sc-id="AddPreviousPageVersionBorder"] .sc-hyperlinkbutton,
+div[data-sc-id="AddNewPageVersionBorder"] .sc-hyperlinkbutton {
+  width: 140px;
+  display: inline-block;
+  padding-top: 140px;
+  text-align: center;
+  color: #131313;
+}
+div[data-sc-id="AddPageExistingBorder"] .sc-hyperlinkbutton:hover,
+div[data-sc-id="AddPreviousPageVersionBorder"] .sc-hyperlinkbutton:hover,
+div[data-sc-id="AddNewPageVersionBorder"] .sc-hyperlinkbutton:hover {
+  background-color: #e3e3e3;
+  text-decoration: none;
+  color: #131313;
+}
+div[data-sc-id="AddPageExistingBorder"] a {
+  background: #f0f0f0 url('/sitecore/shell/client/Applications/ContentTesting/Assets/icon-existing-page.png') center 10px no-repeat;
+}
+div[data-sc-id="AddPreviousPageVersionBorder"] a {
+  background: #f0f0f0 url('/sitecore/shell/client/Applications/ContentTesting/Assets/icon-page-version.png') center 10px no-repeat;
+}
+div[data-sc-id="AddNewPageVersionBorder"] a {
+  background: #f0f0f0 url('/sitecore/shell/client/Applications/ContentTesting/Assets/icon-page-version.png') center 10px no-repeat;
+}
+div[data-sc-id="ReachBorder"] {
+  margin-top: 20px;
+  padding: 0 !important;
+}
+.scExp-dvExperienceList {
+  margin-top: 10px;
+}
+[data-sc-id="TrafficAllocationSlider"] .slider.slider-horizontal {
+  margin-left: 0 !important;
+}
+[data-sc-id="TrafficAllocationSlider"] .slider.slider-horizontal .tooltip.top {
+  top: -51px !important;
+}
+div[data-sc-id="TrailingValueIndicator"] .sc-ArrowIndicator-Arrow {
+  display: none;
+}
+div[data-sc-id="ExperienceKPIRowPanel"] .col-md-6 {
+  text-align: center;
+}
+div[data-sc-id="ExperienceKPIRowPanel"] .col-md-6 .sc-ArrowIndicator-Row {
+  display: inline-block;
+}
+div[data-sc-id="BorderRight"] {
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  border-right: 0px !important;
+}
+span[data-sc-id="RightPanelHeader"] {
+  padding-left: 15px;
+}
+select[data-sc-id="ComboBoxLanguageVersion"] {
+  margin-top: 10px !important;
+  display: inline-block;
+}
+span[data-sc-id="languageVersionText"] {
+  margin-top: 20px !important;
+  display: inline-block;
+}

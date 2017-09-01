@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <OKCancelButtons>
+    <Border Align="right" Padding="0px 0px 4px 8px" NoWrap="NoWrap" Height="34px">
+      <Button ID="btnOK" Header="$OK" Width="75px" Height="23px" Click="dialog:ok"/>
+      <Space Width="4" />
+      <Button ID="btnCancel" Visible='${$Cancel == "-" ? "false" : "true"}' Header='${StringUtil.GetString($Cancel, Sitecore.Globalization.Globalization.ls("Cancel"))}' Width="75px" Height="23px" Click="dialog:cancel" />
+    </Border>
+  </OKCancelButtons>
+</control>
+          

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarPortal>           
+    <Scrollbox Background="transparent" Height="100%" Border="none" Padding="0px" Style="overflow:expression(document.body.offsetWidth > 32 ? 'auto' : 'hidden')">
+      <GridPanel Height="100%" Width="100%" Class="scSidebar">
+      
+        <Portal ID="$PortalID" Class="Portal" DataSource="$PortalDataSource" GridPanel.VAlign="top" GridPanel.Height="100%" Background="transparent">
+
+          <GridPanel Foreground="white" Height="100%" Width="100%">
+      
+            <PortalZone ID="DefaultZone" GridPanel.VAlign="top" GridPanel.Height="100%">
+              <def:Placeholder/>
+            </PortalZone>
+
+            <Border GridPanel.VAlign="bottom"><PortalZone ID="Footer"/></Border>
+            
+          </GridPanel>
+          
+        </Portal>
+      
+      </GridPanel>
+    </Scrollbox>    
+  </SidebarPortal>
+</control>

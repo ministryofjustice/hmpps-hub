@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <FileItemViewerOpen>
+    <FormPage>
+
+      <GridPanel Width="100%" Height="100%">
+      
+        <Literal Text="Click the Show file task option to view the file." GridPanel.Align="Center"/>
+       
+      </GridPanel>
+      
+    </FormPage>
+  </FileItemViewerOpen>
+</control>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Analytics.CampaignField x:inherits="Sitecore.Shell.Applications.Analytics.CampaignField.CampaignFieldPage,Sitecore.Xdb.Client">
+    <Sitecore.Controls.HtmlPage runat="server">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+      <script type="text/javascript" language="javascript">
+        function scGetFrameValue() {
+        return "";
+        }
+      </script>
+
+      <Scrollbox ID="Message" Width="100%" Height="100%" Padding="0px" Border="none" runat="server" />
+      
+    </Sitecore.Controls.HtmlPage>
+  </Sitecore.Shell.Applications.Analytics.CampaignField>
+
+</xamlControls>
+                           

@@ -1,0 +1,54 @@
+﻿.sc-globalHeader-content,
+.sc-applicationContent,
+.sc-applicationHeader-content {
+  max-width: none;
+}
+.sc-applicationContent-main {
+  max-width: 1200px;
+  margin-left: 30px;
+  padding: 0;
+}
+.sc-controlpanel-box {
+  margin-top: 30px;
+}
+.sc-controlpanel-box-header {
+  text-transform: uppercase;
+  color: #5e5e5e;
+}
+.sc-controlpanel-box-header h4 {
+  font-weight: bold;
+  color: #474747;
+}
+.sc-controlpanel-box-content {
+  background: white;
+  min-height: 250px;
+  position: relative;
+}
+.sc-controlpanel-box-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sc-controlpanel-box-content li {
+  padding: 10px 15px 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.sc-controlpanel-box-content li a {
+  color: #131313;
+}
+.row-0 .sc-controlpanel-box-content {
+  min-height: 228px;
+}
+.row-1 .sc-controlpanel-box-content {
+  min-height: 114px;
+}
+.row-2 .sc-controlpanel-box-content {
+  min-height: 76px;
+}
+.sc-controlpanel-no-items {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  margin-top: -6px;
+  width: 100%;
+}

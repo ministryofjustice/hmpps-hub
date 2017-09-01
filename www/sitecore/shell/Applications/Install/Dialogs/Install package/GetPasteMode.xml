@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+   <Installer.GetPasteMode>
+     <FormDialog Header="Message">
+        <Stylesheet>
+          .footerOkCancel{
+          display: none;
+          }
+
+          .scButtonsSubstituteContainer {
+          position: absolute;
+          right: 15px;
+          top: 8px;
+          }
+
+        </Stylesheet>
+         <CodeBeside Type="Sitecore.Shell.Applications.Install.Dialogs.InstallPackage.GetPasteModeForm,Sitecore.Client"/>
+         <div class="scStretch">
+           <div class="pasteModeContent">
+             <ThemedImage Src="Images/warning.png" style="width:56px; height:56px;float:left;"/>
+             <Border style="overflow:hidden; padding: 0 0 0 15px;">
+               <GridPanel ID="PnlCollision" width="100%">
+                 <Literal class="scFieldLabel" Text="Item being installed already exists in database."/>
+                 <GridPanel class="scFormTable" width="100%" Columns="2">
+                   <Literal Text="ID:" GridPanel.Width="40px" />
+                   <Edit ID="FldItemID" ReadOnly="true" Disabled="False" OnClick="this.select()" HideFocus="hidefocus" Style="border-style:none;background:none;box-shadow:none;" />
+                 </GridPanel>
+               </GridPanel>
+               <GridPanel Id="PathGridPanel" class="scFormTable" Columns="2" Style="width:100%">
+                 <Literal Text="Path:" GridPanel.Width="40px" />
+                 <Edit ID="FldItemPath" ReadOnly="true" Disabled="False" OnClick="this.select()" HideFocus="hidefocus" Style="border-style:none;background:none;box-shadow:none;text-overflow:ellipsis;" />
+               </GridPanel>
+
+               <Literal class="scFieldLabel" Text="Please choose one of the following options:"/>
+
+               <Installer.BehaviourOptionEditor ID="OptionEditor" User="EndUser"/>
+             </Border>
+           </div>
+         </div>
+         <Border class="scButtonsSubstituteContainer"  def:placeholder="Buttons">
+           <Button Click="Apply" Header="Apply" KeyCode="13" class="scButton scButtonPrimary" />
+           <Button Click="ApplyToAll" Header="Apply to all" />
+           <Button Click="Cancel" Header="Abort" />
+         </Border>
+      </FormDialog>
+   </Installer.GetPasteMode>
+</control>
+

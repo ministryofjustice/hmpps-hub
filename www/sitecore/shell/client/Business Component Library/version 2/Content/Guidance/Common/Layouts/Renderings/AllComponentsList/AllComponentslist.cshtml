@@ -1,0 +1,47 @@
+﻿@using Sitecore
+@using Sitecore.Data.Items
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+  var items = new List<Item>();
+  //var roots = ClientHost.Databases.Database.SelectItems("fast://*[@@id='{9BBC8B0C-E600-4C27-835C-043835B75778}' or @@id='{53F1488C-421B-4240-95AD-C8A591547C74}']");
+  var roots = ClientHost.Databases.Database.SelectItems("fast://*[@@id='{9BBC8B0C-E600-4C27-835C-043835B75778}']");
+  
+  foreach (var root in roots)
+  {
+    items.AddRange(root.Children);
+  }  
+}
+<section>
+    <table id="tblExport" class="table table-bordered table-striped table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>
+            Category
+          </th>         
+          <th>
+            Component Name
+          </th>                
+        </tr>
+      </thead>
+      <tbody>
+
+      @{
+  foreach (Item folder in items.OrderBy(i => i.DisplayName))
+        {
+          foreach (Item item in folder.Children)
+          {         
+            <tr>
+              <td>
+                @folder.DisplayName
+              </td>     
+              <td>
+                @item.Name
+              </td>
+            </tr>                            
+          }
+        }
+      }
+      </tbody>
+    </table> 
+</section>

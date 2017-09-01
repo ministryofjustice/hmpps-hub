@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.Grip>
+    <Border Class="scGalleryGrip" style="$style"
+            onmousedown="javascript:scGallery.mouseDown(this, event)"
+            onmousemove="javascript:scGallery.mouseMove(this, event)"
+            onmouseup="javascript:scGallery.mouseUp(this, event)">
+      <ThemedImage Src="Images/Galleries/Grip.png" Class="scGalleryGripIcon" />
+    </Border>
+  </Gallery.Grip>
+</control>

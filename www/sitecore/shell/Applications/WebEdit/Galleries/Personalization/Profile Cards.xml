@@ -1,0 +1,45 @@
+﻿<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Gallery.ProfileCards>
+    <Stylesheet>
+      #Options
+      {
+      border-top: 1px solid #dfdfdf !important;
+      width: 100%;
+      }
+
+      .scSectionHeader
+      {
+      padding: 4px;
+      background-color: #f5f5f5;
+      }
+
+      .scSectionHeader span
+      {
+      font-weight: bolder;
+      }
+
+      #Cards .scRibbonLargeImageButtonDown, #Cards .scRibbonLargeImageButtonDisabled, #Cards .scRibbonLargeImageButton
+      {
+        margin: 2px;
+      }
+
+      [class~=ie] .scMenuItemCaption_Hover, [class~=ie] .scMenuItemCaption
+      {  
+        line-height: 16px;
+      }
+    </Stylesheet>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.WebEdit.Galleries.Personalization.ProfileCardsForm,Sitecore.ExperienceEditor"/>
+      <GridPanel Width="100%" Height="100%" Fixed="true">
+        <Scrollbox Width="100%" Height="100%" Padding="0px" Border="none" GridPanel.Class="scFillParent" GridPanel.Height="100%" Class="scFixSize scScrollbox">
+          <!--Adding scRibbon css class to make large buttons render properly-->
+          <GridPanel VAlign="top" Width="100%" Padding="0" Class="scRibbon" ID="Cards">
+          </GridPanel>
+        </Scrollbox>
+        <Menu ID="Options" GridPanel.Height="24px" Border="None">
+          <MenuItem Header="Edit the profiles." Click="item:personalize" />
+        </Menu>
+      </GridPanel>
+    </Gallery>
+  </Gallery.ProfileCards>
+</control>

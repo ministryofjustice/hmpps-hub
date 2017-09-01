@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <AboutSitecore>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.About.AboutForm,Sitecore.Client"/>
+      <Script>
+        top.scForm.setDialogDimension(450, 600);
+      </Script>
+      <Stylesheet>
+        #VersionInfo {
+           font-weight:600;
+           padding:0 0 8px;
+           line-height: 1.42857143;
+        }
+
+        .infoContainer {
+            line-height: 1.42857143;
+        }
+
+        .scLicenseTable > tbody > tr > td {
+            padding: 3px;
+        }
+
+        .scLicenseTable > tbody > tr > td:first-child {
+            color: #5E5E5E;
+            vertical-align: top;
+            padding-left: 0;
+            padding-right: 15px;
+        }
+
+      </Stylesheet>
+
+      <div class="scStretch scFlexColumnContainer">
+        <div class="scFlexContent infoContainer">
+          <div class="scStretchAbsolute scApplicationContentContainer">
+            <Border ID="VersionInfo" />
+            <Literal Text="License:" />
+
+            <GridPanel Class="scLicenseTable" CellPadding="2" Columns="2">
+              <Literal Text="Licensed to:" GridPanel.NoWrap="true" />
+              <Literal ID="LicensedTo" GridPanel.Width="100%" />
+
+              <Literal Text="Company no:" GridPanel.NoWrap="true" />
+              <Literal ID="CompanyNo" />
+
+              <Literal Text="Address:" GridPanel.NoWrap="true" />
+              <Literal ID="Address" />
+
+              <Literal Text="Version:" GridPanel.NoWrap="true" />
+              <Literal ID="Version" />
+
+              <Literal Text="Expiration:" GridPanel.NoWrap="true" />
+              <Literal ID="Expiration" />
+
+              <Literal Text="Purpose:" GridPanel.NoWrap="true" />
+              <Literal ID="Purpose" />
+
+              <Literal Text="For use at:" GridPanel.NoWrap="true" />
+              <Literal ID="ForUseAt" />
+
+              <Literal Text="Reseller:" GridPanel.NoWrap="true" />
+              <Literal ID="Reseller" />
+
+            </GridPanel>
+
+            <Border ID="LicenseAgreement" Margin="10px 0 0 0">
+            </Border>
+
+            <Literal Text="Copyright:" Style="padding:0 0 5px; display: block;" />
+
+            <div ID="Copyright" style="padding: 10px; border: 1px solid #ccc">
+              <Literal Text="All the licenses to copyrighted products that are distributed with Sitecore are stored in the \\Website\\sitecore\\Copyrights folder. For more information about the copyrighted licenses, see the \\Website\\sitecore\\Copyrights folder." />
+            </div>
+
+            <Literal Text="Additional Information:" Style="padding:10px 0 5px; display: block;" />
+            <div ID="AdditionalInfoContainer" style="padding: 10px; border: 1px solid #ccc">
+              <Literal ID="AdditionalInfo" />
+            </div>
+
+            <Border Padding="8px 0px 0px 0px">
+              <Literal Text="Visit the Sitecore homepage at" Padding="0px 0.5em 0px 0px" />
+              <a href="http://www.sitecore.net" target="_blank">www.sitecore.net</a>.
+            </Border>
+
+            <Border Padding="8px 0px 0px 0px">
+              <Literal ID="Warning" />
+            </Border>
+          </div>
+
+        </div>
+        <div class="scApplicationFooter" >
+          <Button ID="OK" class="scButton" KeyCode="13">
+            <Literal Text="Close"/>
+          </Button>
+        </div>
+      </div>
+
+    </FormPage>
+  </AboutSitecore>
+</control>

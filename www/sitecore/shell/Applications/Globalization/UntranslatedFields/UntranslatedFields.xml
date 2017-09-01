@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <UntranslatedFields>
+    <WizardForm Application="Globalization/Untranslated Fields" CodeBeside="Sitecore.Shell.Applications.Globalization.UntranslatedFields.UntranslatedFieldsForm,Sitecore.Client">
+
+      <WizardFormPage ID="Languages" Header="Scan for Untranslated Fields" Text="Select the languages that you want to scan for untranslated fields.">
+        <WizardFormIndent>
+          <Literal class="scFieldLabel sc-text-bold" Text="Database:"/>
+          <Listbox ID="Database" Style="width: 50%;" Change="BuildLanguages"/>
+          <Groupbox ID="LanguagesPanel" Header="Languages">
+            <Border ID="LanguageList"/>
+          </Groupbox>
+
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Start" Header="Scan for Untranslated Fields" Text="Select the item that you want to scan for untranslated fields. The scanning includes all the subitems.">
+        <WizardFormIndent>
+          
+          <DataContext ID="DataContext" Root="/" Folder="/sitecore/content" DataViewName="Master"/>
+          <Border class="scScrollbox" style="padding:0 5px 0 0!important;">
+            <TreeviewEx ID="Root" DataContext="DataContext"/>
+          </Border>
+
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormProgressPage ID="Scanning" Header="Scan for Untranslated Fields" Text="Please wait while the database is being scanned." ActionText="Scanning...">
+        <Border ID="Status" Align="center">&#160;</Border>
+      </WizardFormProgressPage>
+
+      <WizardFormPage ID="Retry" Header="Scan for Untranslated Fields" Text="An error occurred while scanning." Icon="Network/32x32/Earth_Delete.png">
+        <WizardFormPadding>
+          <Memo ID="ErrorText" ReadOnly="true" class="scStretch" />
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="LastPage" Header="Scan for Untranslated Fields">
+        <WizardFormPadding>
+          <Literal class="sc-text-largevalue" Text="The scan of the database has completed."/>
+          <Literal class="scFieldLabel" Text="Result:"/>
+          <Memo ID="ResultText" style="height: calc(100% - 55px)" ReadOnly="true"/>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+    </WizardForm>
+  </UntranslatedFields>
+</control>

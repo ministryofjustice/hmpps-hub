@@ -1,0 +1,8 @@
+﻿@model Sitecore.Speak.Components.Models.Common.Buttons.BackButtonRenderingModel
+@{
+  Model.Class.Append("btn sc-backbutton");
+  Model.DataBind.IsVisible().IsEnabled().Bind("attr", "{title: Tooltip()}").Click("handler");
+}
+<button @Model.HtmlAttributes type="button">
+  <span class="sc-backbutton-text" data-bind="text:Text">@Sitecore.ClientHost.Globalization.Translate(Model.Text)</span>
+</button>

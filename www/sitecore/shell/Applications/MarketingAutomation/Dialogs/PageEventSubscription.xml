@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <PageEventSubscription>
+    <FormDialog Header="State Evaluation Triggers" Text="When a visitor in this state achieves a selected goal or activates a selected page event, Sitecore evaluates the conditions associated with this state for that visitor." Icon="Applications/32x32/flash.png">
+      <CodeBeside Type="Sitecore.Shell.Applications.MarketingAutomation.Dialogs.PageEventSubscriptionForm,Sitecore.Shell.MarketingAutomation" />
+
+      <Script>
+        function scFocus(sender, evt) {
+        sender.style.color = "#000000";
+
+        if (!sender.isValue) {
+        sender.watermark = sender.value;
+        sender.value = "";
+        sender.isValue = false;
+        }
+        }
+
+        function scBlur(sender, evt) {
+        if (sender.value == "") {
+        sender.isValue = false;
+        sender.value = sender.watermark;
+        sender.style.color = "#999999";
+        }
+        else {
+        sender.isValue = true;
+        }
+        }
+
+        function scFilterPageEvents(sender, evt) {
+        var text = sender.value.toLowerCase();
+
+        $$(".scPageEventOption").each(function(e) {
+        visible(e.up(), e.innerHTML.toLowerCase().indexOf(text) >= 0);
+        });
+
+        $$(".scSection").each(function(e) {
+        var isVisible = false;
+
+        e.next().select(".scPageEventOption").each(function(o) {
+        isVisible |= o.up().visible();
+        });
+
+        visible(e, isVisible);
+        });
+
+        }
+
+        function visible(e, isVisible) {
+        if (isVisible) {
+        e.show();
+        }
+        else {
+        e.hide();
+        }
+        }
+      </Script>
+
+      <div class="scStretch" style="padding-bottom:34px;" >
+        <Literal runat="server" Text="Select the goals and page events that you want to associate with this state." />
+        <Edit id="PageEventFilter" onfocus="javascript:scFocus(this,event)" onblur="javascript:scBlur(this,event)" style="color:#999999; font:8pt tahoma; width:100%; margin:0px 0px 2px 0px" onkeyup="javascript:scFilterPageEvents(this,event)" oncut="javascript:scFilterPageEvents(this,event)" onpaste="javascript:scFilterPageEvents(this,event)" runat="server" />
+        <Scrollbox ID="PageEvents" runat="server"/>
+      </div>
+
+    </FormDialog>
+  </PageEventSubscription>
+</control>

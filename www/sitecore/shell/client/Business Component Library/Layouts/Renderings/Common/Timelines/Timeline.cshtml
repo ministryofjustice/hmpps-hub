@@ -1,0 +1,75 @@
+﻿@using System.Collections.Generic
+@using Newtonsoft.Json
+@using Sitecore
+@using Sitecore.Configuration
+@using Sitecore.Data.Items
+@using Sitecore.Diagnostics
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Shell.Framework.Commands.ContentEditor
+@using Sitecore.StringExtensions
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+    var rendering = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+    rendering.Class = "sc-timeline";
+    rendering.Requires.Script("client", "timeline.js");
+
+    var isVisible = rendering.GetBool("IsVisible", "IsVisible", true);
+    rendering.Attributes["data-sc-isvisible"] = isVisible.ToString().ToLowerInvariant();
+
+    var months = this.GetChildrenTexts("{727AD468-5F85-4F91-B3EE-2F497DDC333E}");
+    var monthsShort = this.GetChildrenTexts("{BBF7DD8F-2E5F-4B40-B15B-112319291E0A}");
+    var days = this.GetChildrenTexts("{D36AD737-7334-40F8-82A3-00AAE13CCAFB}");
+    var daysShort = this.GetChildrenTexts("{535A1757-DAD2-44A9-9676-C8CBC15B40FA}");
+    var language = Sitecore.Context.Culture.IetfLanguageTag;
+
+    rendering.Attributes["data-sc-months"] = JsonConvert.SerializeObject(months);
+    rendering.Attributes["data-sc-monthsshort"] = JsonConvert.SerializeObject(monthsShort);
+    rendering.Attributes["data-sc-days"] = JsonConvert.SerializeObject(days);
+    rendering.Attributes["data-sc-daysshort"] = JsonConvert.SerializeObject(daysShort);
+    rendering.Attributes["data-sc-language"] = language;
+
+    var data = rendering.GetString("Data", "data");
+    var htmlAttributes = rendering.HtmlAttributes;
+}
+
+@functions {
+    private static string GetItemText(string id)
+    {
+        if (ClientHost.Settings.UnitTests.IsUnitTesting)
+        {
+            return string.Empty;
+        }
+
+        return ClientHost.Items.GetItem(id)["Text"];
+    }
+
+    private List<string> GetChildrenTexts(string id)
+    {
+        Item item = ClientHost.Items.GetItem(id);
+        if (item == null)
+        {
+            Log.Error("SPEAK: DatePicker: The '{0} item has not been found.".FormatWith(id), this);
+            return new List<string>
+                ();
+        }
+
+        var monthNames = item.GetChildren();
+        var months = new List<string>
+            ();
+
+        foreach (Item month in monthNames)
+        {
+            months.Add(GetItemText(month.ID.ToString()));
+        }
+
+        return months;
+    }
+
+}
+
+<div @htmlAttributes data-bind="visible: isVisible">
+    <div class="timeline"></div>
+</div>
+

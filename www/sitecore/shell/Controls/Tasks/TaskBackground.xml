@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <TaskBackground>
+    <Border Height="100%" Style="filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#6375D6', EndColorStr='#6375D6')">
+      <Scrollbox Height="100%" Border="none" Padding="0px" Background="#6375D6 url(/sitecore/shell/themes/standard/images/controlpanel.png) no-repeat bottom right">
+        <def:Placeholder/>
+      </Scrollbox>
+    </Border>
+  </TaskBackground>
+</control>

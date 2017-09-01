@@ -1,0 +1,40 @@
+.sc-KPISpot .spot {
+  text-align: left;
+}
+.sc-KPISpot .spot {
+  position: relative;
+}
+.sc-KPISpot-value {
+  word-wrap: break-word;
+  width: 100%;
+  font-size: 36px;
+  color: #e0b406;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  line-height: 24px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.sc-KPISpot-text {
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.value-increase .sc-KPISpot-value {
+  color: #6ea244;
+  background: no-repeat url('/sitecore/shell/client/Applications/ContentTesting/Assets/height25/increase25.png');
+  padding-left: 28px;
+}
+.value-decrease .sc-KPISpot-value {
+  color: #ca241c;
+  background: no-repeat url('/sitecore/shell/client/Applications/ContentTesting/Assets/height25/decrease25.png');
+  padding-left: 28px;
+}
+.value-nochange .sc-KPISpot-value {
+  color: #e0b406;
+  background: no-repeat url('/sitecore/shell/client/Applications/ContentTesting/Assets/height25/nochange25.png');
+  padding-left: 45px;
+}
+.sc-KPISpot-tooltip {
+  margin-left: 10px;
+  text-transform: none;
+}

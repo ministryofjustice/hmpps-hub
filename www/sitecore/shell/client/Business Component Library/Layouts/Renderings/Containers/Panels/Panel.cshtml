@@ -1,0 +1,20 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  userControl.Class = "sc-panel";
+  userControl.Requires.Script("business", "panel.js");
+
+  var text = userControl.GetString("Text", "Text");
+  var bodyPlaceholderName = userControl.ControlId + ".Body";
+  
+  var htmlAttributes = userControl.HtmlAttributes;
+}
+<div @htmlAttributes  data-bind="visible: isVisible">
+  <div class="sc-panel-header">@text</div>  
+  <div class="sc-panel-body">
+    @Html.Sitecore().Placeholder(bodyPlaceholderName)
+  </div>
+</div>   

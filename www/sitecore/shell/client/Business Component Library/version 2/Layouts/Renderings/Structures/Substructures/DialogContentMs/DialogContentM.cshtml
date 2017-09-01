@@ -1,0 +1,38 @@
+﻿@using Sitecore.Mvc
+@model Sitecore.Speak.Components.Models.Structures.Substructures.DialogContentMs.DialogContentMRenderingModel
+@{
+  var phActions = Html.Sitecore().Placeholder("DialogContent.Actions");
+  var phBack = Html.Sitecore().Placeholder("DialogContent.Back");
+  var phContextSwitch = Html.Sitecore().Placeholder("DialogContent.ContextSwitch");
+  var phMain = Html.Sitecore().Placeholder("DialogContent.Main");
+  
+  var phBackIsEmpty = string.IsNullOrEmpty(phBack.ToString());
+  var phContextSwitchIsEmpty = string.IsNullOrEmpty(phContextSwitch.ToString());
+  
+  var dialogActionsStyles = phBackIsEmpty && phContextSwitchIsEmpty ? "width: 100%;" : string.Empty;
+}
+<div>
+  @if (Model.ShowToolbar)
+  {
+    <section class="sc-dialogContent-toolbar">
+      @if (!phBackIsEmpty)
+      {
+        <div class="sc-dialogContent-toolbar-back">
+          @phBack
+        </div>
+      }
+      @if (!phContextSwitchIsEmpty)
+      {
+        <div class="sc-dialogContent-toolbar-contextSwitcher">
+          @phContextSwitch
+        </div>
+      }
+      <div class="sc-dialogContent-toolbar-actions text-right" style="@dialogActionsStyles">
+        @phActions
+      </div>
+    </section>
+  }
+  <section class="sc-dialogContent-main">
+    @phMain
+  </section>
+</div>

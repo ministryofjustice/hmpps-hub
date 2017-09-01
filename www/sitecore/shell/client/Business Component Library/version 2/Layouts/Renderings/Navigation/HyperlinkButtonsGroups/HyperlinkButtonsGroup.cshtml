@@ -1,0 +1,22 @@
+﻿@using Sitecore.Data.Items
+@model Sitecore.Speak.Components.Models.Navigation.HyperlinkButtonsGroups.HyperlinkButtonsGroupRenderingModel
+@{
+  Model.Class.Append("sc-hyperlinkbuttonsgroup");
+  Model.DataBind.IsVisible().IsEnabled();
+  //TODO: testing with the "new hypeling button"
+}
+<div @Model.HtmlAttributes>
+  <div>
+    <ul>
+      @foreach (Item item in Model.Hyperlinks)
+      {
+        <li data-sc-item-id="@item.ID" data-sc-selected="@Model.IsSelected(item)">
+          @using (new ContextItemSwitcher(item))
+          {
+            @Html.Raw(Model.ItemRendererComponent.Render());
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WindowFrame>           
+    <GridPanel Width="100%" Height="100%">
+                        
+      <GridPanel Columns="3" Width="100%" Height="2">
+        <ThemedImage Src="windowtopleft14x2.png" Width="4" Height="2" GridPanel.Width="4"/>
+        <Border Height="2" Style="border-top:1px solid #232323" GridPanel.Width="100%">
+          <ThemedImage Src="gradient2800x1.png" Width="100%" Height="1" />
+        </Border>
+        <ThemedImage Src="windowtopright14x2.png" Width="4" Height="2" GridPanel.Width="4"/>
+      </GridPanel>
+      
+      <GridPanel Columns="3" Width="100%" Height="2">
+        <ThemedImage Src="windowtopleft22x2.png" Width="2" Height="2" GridPanel.Width="4"/>
+        <ThemedImage Src="gradient800x16.png" Width="100%" Height="2" GridPanel.Width="100%"/>
+        <ThemedImage Src="windowtopright22x2.png" Width="2" Height="2" GridPanel.Width="4"/>
+      </GridPanel>
+
+      <Border Height="100%" Style="border:1px solid #232323; border-top:none" GridPanel.Height="100%">
+        <GridPanel Height="100%" Width="100%" Style="border:1px solid #848484; border-top:none">
+          <def:Placeholder GridPanel.Style="border:2px solid #4E4E4E; border-top:none"/>
+        </GridPanel>
+      </Border>
+      
+    </GridPanel>
+  </WindowFrame>
+</control>

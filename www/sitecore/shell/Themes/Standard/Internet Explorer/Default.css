@@ -1,0 +1,24 @@
+﻿[hidden] {
+  display: none;
+}
+
+.scFixSize > *
+{
+  display: inherit;
+}
+
+.scFixSize > script, .scFixSize > style
+{
+  display: none;
+}
+
+.SecurityLegend
+{
+    overflow:visible !important;
+}
+
+/*OnTime Issue #348368*/
+.scContentControlLayout, .scContentControlLayout_Active
+{
+  position: relative;
+}

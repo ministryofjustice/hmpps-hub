@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Prompt>
+    <FormDialog Header="Message">
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.Prompt.Prompt,Sitecore.Client"/>
+
+      <Script Src="/sitecore/shell/Applications/Dialogs/prompt/prompt.js" />
+
+      <Literal id="Header" class="scFieldLabel" />
+      <input id="Value" autocomplete="off" />
+
+
+      <Border id="scMessageBar" class="scMessageBar scError scHidden" def:placeholder="Toolbar">
+        <Border class="scMessageBarIcon"></Border>
+        <div class="scMessageBarTextContainer">
+          <Border id="scMessageBarText" class="scMessageBarText">
+          </Border>
+        </div>
+      </Border>
+
+    </FormDialog>
+  </Prompt>
+</control>

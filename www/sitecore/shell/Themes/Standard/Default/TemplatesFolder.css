@@ -1,0 +1,81 @@
+#FileList a, 
+#FileList a:link, 
+#FileList a:visited, 
+#FileList a:hover, 
+#FileList a:active{  
+  cursor:default;
+  display:inline;
+  padding: 5px;
+  text-decoration:none;
+  width:196px;
+  vertical-align:top;
+}
+
+#FileList a:hover, #FileList a:active{  
+  background:#e8f5fd;
+  border:1px solid #d8f0fa;
+  padding: 4px;
+}
+
+
+#FileList a.scOption, 
+#FileList a.scOption:link, 
+#FileList a.scOption:visited, 
+#FileList a.scOption:hover, 
+#FileList a.scOption:active{  
+  cursor:default;
+  display:inline;
+  padding: 5px;
+  text-decoration:none;
+  width:80px;
+  vertical-align:top;
+  font:8pt tahoma;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#FileList a.scOption:hover, 
+#FileList a.scOption:active{  
+  background:#e8f5fd;
+  border:1px solid #d8f0fa;
+  padding: 4px;
+}
+
+.scMediaBorder {
+  float:left;
+  margin:0px 2px 0px 0px;
+}
+
+.scMediaIcon {
+  vertical-align:middle;
+}
+
+.scMediaTitle {
+}
+
+.scMediaDetails {
+  padding:4px 0px 0px 0px;
+  color:#999999;
+}
+
+.scMediaValidation {
+  padding:2px 0px 0px 0px;
+  color:red;
+}
+
+.scMediaUsages {
+  padding:2px 0px 0px 0px;
+  color:#999999;
+}
+
+.scTitle {
+  font:8pt tahoma;
+  font-weight: bold;
+  padding:8px 0px 4px 4px;
+  border-bottom:1px solid #999999;
+}
+
+.scBackground {
+ background: white;
+}

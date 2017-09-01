@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Basic.Index>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Sitecore.Controls.XHtmlPage runat="server">
+      <link runat="server" href="/sitecore/shell/Applications/Xaml/Tutorials.xaml.css" rel="stylesheet" type="text/css" x:placeholder="Stylesheets"/>  
+                                                           
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Pane runat="server" Header="Basic Xaml#">
+        XamlSharp controls are build from other XamlSharp controls and
+        standard ASP.NET web controls. A XamlSharp control is defined in
+        XML.
+      </Pane>
+
+      <Test1 runat="server" />
+      <Test2 runat="server" />
+      <Test3 runat="server" />
+      <Test4 runat="server" />
+
+    </Sitecore.Controls.XHtmlPage>
+  </Sitecore.Xaml.Tutorials.Basic.Index>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Basic.Test1>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Using Xaml# controls">
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Tags that have a runat="server" are rendered as server controls. This
+          is the same as ASP.NET controls. Tags without the runat="server" attribute
+          are considered literals.
+          <p/>
+          "Inline" web control with a runat="server" attribute.
+        </Description>
+
+        <Test runat="server">
+          Result: <Inline Foreground="lime" runat="server">Test passed.</Inline>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          "Inline" web control without runat="server" attribute.
+        </Description>
+
+        <Test runat="server">
+          Result: <Inline Foreground="lime">Test passed, if white.</Inline>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Generic web control with runat="server" attribute.
+        </Description>
+
+        <Test runat="server">
+          Result: <span runat="server" style="color:lime">Test passed.</span>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Xaml# controls can be build from other Xaml# controls.
+        </Description>
+
+        <Test runat="server">
+          Result: <Test1a runat="server"/>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          The names of Xaml# controls are case sensitive.
+        </Description>
+
+        <Test runat="server">
+          Result: <test1a runat="server"/>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Basic.Test1>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test1a>
+    <Inline runat="server" Foreground="lime">Test passed.</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test1a>
+
+  <Sitecore.Xaml.Tutorials.Basic.test1a>
+    <Inline runat="server" Foreground="lime">Test passed (case-sensitive).</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.test1a>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Basic.Test2>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 2: Parameters">
+      Xaml# controls can declare parameters. Parameter names are case-sensitive.
+      <p />
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Passing parameter the Color parameter.
+        </Description>
+
+        <Test runat="server">
+          Result: <Test2a runat="server" Color="lime"/>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Not passing a parameter.
+        </Description>
+
+        <Test runat="server">
+          Result: <Test2b runat="server" />
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Passing parameters from one control to another.
+        </Description>
+
+        <Test runat="server">
+          Result: <Test2c runat="server"  Color="lime"/>
+        </Test>
+      </TestCase>
+
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Basic.Test2>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test2a>
+    <x:param name="Color" value="red" />
+
+    <Inline runat="server" Foreground="{Color}">Test passed.</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test2a>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test2b>
+    <x:param name="Color" value="lime" />
+
+    <Inline runat="server" Foreground="{Color}">Test passed.</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test2b>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test2c>
+    <x:param name="Color" value="blue"/>
+
+    <Test2d Color="{Color}" runat="server"/>
+  </Sitecore.Xaml.Tutorials.Basic.Test2c>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test2d>
+    <x:param name="Color" value="red"/>
+
+    <Inline runat="server" Foreground="{Color}">Test passed.</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test2d>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Basic.Test3>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 3: Namespaces">
+      XamlSharp can be declared using namespaces. Namespaces are simple 
+      text prefixes (case-sensitive).
+      <p />
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Fully qualified control:
+        </Description>
+
+        <Test runat="server">
+          Result: <Sitecore.Xaml.Tutorials.Basic.Test3a runat="server" />
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Partially qualified control:
+        </Description>
+
+        <Test runat="server">
+          Result: <Basic.Test3b runat="server" />
+        </Test>
+      </TestCase>
+
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Basic.Test3>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test3a>
+    <Inline runat="server" Foreground="lime">Test passed.</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test3a>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test3b>
+    <Inline runat="server" Foreground="lime">Test passed.</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test3b>
+
+  <Sitecore.Xaml.Tutorials.Basic.Test3b>
+    <Inline runat="server" Background="red">Failed (duplicate definition)</Inline>
+  </Sitecore.Xaml.Tutorials.Basic.Test3b>
+
+  <Sitecore.Xaml.Tutorials.Basic2.Test3b>
+    <Inline runat="server" Background="red">Failed (in other namespace)</Inline>
+  </Sitecore.Xaml.Tutorials.Basic2.Test3b>
+
+  <Test3b>
+    <Inline runat="server" Background="red">Failed (global namespace)</Inline>
+  </Test3b>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Basic.Test4>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+    <x:param name="FontWeight" value="bold"/>
+    <x:param name="Color" value="lime"/>
+
+    <Pane runat="server" Header="Test 4: Expressions">
+      Xaml# can evaluate expressions.
+      <p />
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Complex Expression:
+        </Description>
+
+        <Test runat="server">
+          Result:
+          <span runat="server" style="color:{Color};font-weight:{FontWeight};">
+            Test passed, if green and bold.
+          </span>
+        </Test>
+      </TestCase>
+
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Basic.Test4>
+
+</xamlControls>

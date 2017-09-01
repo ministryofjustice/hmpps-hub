@@ -1,0 +1,33 @@
+﻿<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MoveVisitorToAnotherState>
+
+    <FormDialog ID="Dialog" Icon="Software/32x32/graph_edge_directed.png"
+                Header="Move Contact to Another State"
+                Text="Select the engagement plan and state that you want to move the visitor to" >
+
+      <CodeBeside Type="Sitecore.Shell.Applications.MarketingAutomation.Dialogs.ActionEditors.MoveVisitorToAnotherState, Sitecore.Shell.MarketingAutomation"/>
+
+      <div>
+        <Literal ID="SelectSate" Text="State:"/>
+        <div style="padding-top:5px; position: relative;">
+          <GroupedList ID = "StateList" runat="server" 
+                       ParentItemId="4497A9BE-0A00-4EE4-9AE0-50D6CBB4FAB2"  
+                       TemplateGroupId="6E5B63D6-2401-4A52-8B4D-CFEF5E4E9752"
+                       TemplateItemId="8CE2707A-3742-4A89-933B-065E5BE02BC9"
+                       Height="400px"/>
+        </div>
+      </div>
+      <div>
+        <GridPanel Class="EntryGrid" Columns="2" runat="server">
+
+          <Literal ID="EngagementPlanLiteral" runat="server" Text="Engagement Plan:" GridPanel.Align="right" Class="ui-title"/>
+          <Literal ID="PlanName" Class="ui-value" GridPanel.Align="left" runat="server"/>
+
+          <Literal ID="StateLiteral" runat="server" Text="State:" GridPanel.Align="right" Class="ui-title" />
+          <Literal ID="StateName" Class="ui-value" runat="server" GridPanel.Align="left" style="text-decoration:italic"  />
+
+        </GridPanel>
+      </div>
+    </FormDialog>
+  </MoveVisitorToAnotherState>
+</control>

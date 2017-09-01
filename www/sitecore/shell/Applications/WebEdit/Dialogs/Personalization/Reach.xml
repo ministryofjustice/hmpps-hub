@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Sitecore.Shell.Applications.WebEdit.Dialogs.Personalization.Reach>
+    <Border  title="The percentage of visitors who have viewed this personalization.">
+      <Border class="sc-text condition-header">
+        <Literal Text="$Label"/>
+      </Border>
+      <Border class="sc-kpi-Row">
+        <Border class="sc-kpi-Cell">
+          <Border class="sc-kpi-Value sc-kpi-Normal">
+            <Literal Text="$Value"/>
+          </Border>
+        </Border>
+      </Border>
+    </Border>
+  </Sitecore.Shell.Applications.WebEdit.Dialogs.Personalization.Reach>
+</control>

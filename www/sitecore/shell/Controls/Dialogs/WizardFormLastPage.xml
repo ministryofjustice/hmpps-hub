@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WizardFormLastPage def:inherits="Sitecore.Web.UI.Pages.WizardDialogBaseXmlControl,Sitecore.Kernel">
+    <Border class="scStretch" Style="display:none">
+
+      <Border class="scWizardLastPageLeftPanel">
+        <Border class="scWizardSmallIcon">
+          <ThemedImage Src="$Icon" Height="48" Width="48"/>
+        </Border>
+        <Border class="scWizardLargeIcon">
+          <ThemedImage Src="$Icon" Width="196" Height="196"/>
+        </Border>
+      </Border>
+
+      <Border class="scWizardLastPageContent">
+        <def:Placeholder class="scWizardWelcomePanel" />
+      </Border>
+   
+    </Border>
+  
+  </WizardFormLastPage>
+</control>

@@ -1,0 +1,58 @@
+﻿#Editor {
+}
+
+#ContentEditor {
+  background:#dbdbdb;
+}
+
+#Editor div {
+  height:32px;
+  border:1px dotted #666666;
+  margin:4px;
+  padding:4px 4px 0px 4px;
+}
+
+#Editor td {
+  border:1px dotted #666666;
+  margin:4px;
+  padding:4px;
+}
+
+#Editor span {
+  display:block;
+  background:#F8EED0;
+  border:1px solid #F0CCA5;
+  padding:2px;
+  color:Black;
+}
+
+#Editor table {
+  border:1px dotted #666666;
+  border-collapse:separate;
+}
+  
+#Page {
+  background:#dbdbdb;
+}
+
+#Page table {
+  table-layout:fixed;
+  padding:8px 12px 12px 8px
+}
+
+#Page iframe {
+  border:1px solid #666666;
+  position: relative;  
+  left: -4px;  
+  top: -4px;  
+}
+
+#Shadow {  
+  position: relative;  
+  left: 4px;  
+  top: 4px;  
+  margin-right: 4px;  
+  margin-bottom: 4px;  
+  background:#666666;
+}  
+  

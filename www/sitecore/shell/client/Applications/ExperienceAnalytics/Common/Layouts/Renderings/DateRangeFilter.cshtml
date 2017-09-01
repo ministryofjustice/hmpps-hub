@@ -1,0 +1,109 @@
+﻿@using Newtonsoft.Json
+@using Sitecore
+@using Sitecore.ExperienceAnalytics.Client
+@using Sitecore.ExperienceAnalytics.Core.Extensions
+@using Sitecore.Mvc
+@using Sitecore.Web.UI.Controls.Common.Renderings
+@using Sitecore.Web.UI.Controls.Common.Texts
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@using Globals = Sitecore.ExperienceAnalytics.Client.Globals
+@using UserControl = Sitecore.Web.UI.Controls.Common.UserControls.UserControl
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+  var rendering = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  rendering.Class = "sc-DateRangeFilter";
+  rendering.Requires.Script("client", "DateRangeFilter.js");
+  rendering.Attributes.Add("data-bind", "visible: isVisible");
+  rendering.HasNestedComponents = true;
+
+  var errorMessages = new
+  {
+    InvalidDate = Helper.GetTextValue(Globals.System.Texts.ErrorMessages.InvalidDate)
+  };
+  
+  rendering.Attributes.Add("data-sc-errortexts", JsonConvert.SerializeObject(errorMessages));
+  rendering.Attributes.Add("data-sc-serverdate", DateUtil.ToServerTime(DateTime.UtcNow).ToDashedDateRangeFormat());
+  rendering.Attributes.Add("data-sc-defaultdaterangeoffset-from", Config.DefaultDateRangeOffsetFrom.ToString());
+  rendering.Attributes.Add("data-sc-defaultdaterangeoffset-to", Config.DefaultDateRangeOffsetTo.ToString());
+}
+
+@EmbedDateRangeFilter(rendering)
+
+@helper EmbedDateRangeFilter(UserControl rendering)
+{
+  var renderingId = rendering.ControlId;
+  var helper = new RenderingHelper(Html, renderingId);
+
+  helper.MakeBorder("ContentWrapper", renderingId + "DropDownWrapper", contentWrapper =>
+  {
+    helper.MakeRow("DescriptionRow", contentWrapper, true, descriptionRow =>
+    {
+      helper.MakeText("Description", descriptionRow, Globals.System.Texts.DefineCustomDateRangeFilter, TextType.Title);
+    });
+
+    helper.MakeRow("ControlsRow", contentWrapper, false, controlsRow =>
+    {
+      helper.MakeColumn("DatePickersColumn", controlsRow, 5, datepickersColumn =>
+      {
+        helper.MakeRow("FromDatePickerRow", datepickersColumn, false, fromRow =>
+        {
+          helper.MakeColumn("FromDatePickerLeftColumn", fromRow, 2, leftColumn =>
+          {
+            helper.MakeText("FromDatePickerText", leftColumn, Globals.System.Texts.From);
+          });
+
+          helper.MakeColumn("FromDatePickerRightColumn", fromRow, 10, rightColumn =>
+          {
+            helper.MakeDataPicker("FromDatePicker", rightColumn);
+          });
+        });
+
+        helper.MakeRow("ToDatepickerRow", datepickersColumn, false, toRow =>
+        {
+          helper.MakeColumn("ToDatePickerLeftColumn", toRow, 2, leftColumn =>
+          {
+            helper.MakeText("ToDatePickerText", leftColumn, Globals.System.Texts.To);
+          });
+
+          helper.MakeColumn("ToDatePickerRightColumn", toRow, 10, rightColumn =>
+          {
+            helper.MakeDataPicker("ToDatePicker", rightColumn);
+          });
+        });
+      });
+
+      helper.MakeColumn("PresetsColumn", controlsRow, 3, presetsColumn =>
+      {
+        helper.MakeRow("PresetsInnerRow", presetsColumn, false, innerRow =>
+        {
+          helper.MakeColumn("PresetsInnerLeftColumn", innerRow, 6, leftColumn =>
+          {
+            helper.MakeRadioButton("Yesterday", leftColumn, "daterangepreset", "day", Globals.System.Texts.DateRangePresets.Yesterday.Guid.ToString(), true);
+            helper.MakeRadioButton("LastWeek", leftColumn, "daterangepreset", "week", Globals.System.Texts.DateRangePresets.LastWeek.Guid.ToString());
+            helper.MakeRadioButton("LastMonth", leftColumn, "daterangepreset", "month", Globals.System.Texts.DateRangePresets.LastMonth.Guid.ToString());
+          });
+
+          helper.MakeColumn("PresetsInnerRightColumn", innerRow, 6, rightColumn =>
+          {
+              helper.MakeRadioButton("LastQuarter", rightColumn, "daterangepreset", "quarter", Globals.System.Texts.DateRangePresets.LastQuarter.Guid.ToString());
+              helper.MakeRadioButton("LastTwoQuarters", rightColumn, "daterangepreset", "twoquarter", Globals.System.Texts.DateRangePresets.LastTwoQuarters.Guid.ToString());
+              helper.MakeRadioButton("LastYear", rightColumn, "daterangepreset", "year", Globals.System.Texts.DateRangePresets.LastYear.Guid.ToString());
+          });
+        });
+      });
+
+      helper.MakeColumn("ButtonsColumn", controlsRow, 4, buttonsColumn =>
+      {
+        helper.MakeButton("SubmitButton", buttonsColumn, Globals.System.Texts.Apply.Guid.ToString(), "Primary");
+        helper.MakeButton("ResetButton", buttonsColumn, Globals.System.Texts.RevertFiltersToStandard.Guid.ToString());
+      });
+    });
+  });
+  
+  <div @rendering.HtmlAttributes>
+      @Html.Sitecore().Controls().Rendering(Html, Globals.Bcl.Renderings.Containers.Border, renderingId + "DropDownWrapper", "", new
+      {
+          UsePadding = true
+      })
+  </div>
+}

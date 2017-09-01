@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Language.Index>
+    <x:using runat="serer" namespace="Sitecore.Xaml.Tutorials" />
+
+    <link href="/sitecore/shell/Applications/Xaml/Tutorials.xaml.css" rel="stylesheet" type="text/css" />
+
+    <html:Form runat="server" x:Style="Form">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Pane runat="server" Header="Language">
+        <![CDATA[
+        ]]>
+      </Pane>
+
+      <Test1 runat="server" />
+      <Test2 runat="server" />
+      <Test3 runat="server" />
+      <Test4 runat="server" />
+      <Test5 runat="server" />
+
+    </html:Form>
+
+  </Sitecore.Xaml.Tutorials.Language.Index>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Language.Test1>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials.Language.Imported" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Using the <code>Using</code> extension to import another namespace.
+        </Description>
+
+        <Test runat="server">
+          Result: <Test1a runat="server" />
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Language.Test1>
+
+  <Sitecore.Xaml.Tutorials.Language.Imported.Test1a>
+    <span style="color:lime">Test Passed</span>
+  </Sitecore.Xaml.Tutorials.Language.Imported.Test1a>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Language.Test2>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+    <x:register runat="server" assembly="Sitecore.Client" namespace="Sitecore.Shell.Applications.Xaml" />
+
+    <Pane runat="server" Header="Test 2: Register">
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Using the <code>Register</code> extension to import an assembly and namespace.
+        </Description>         
+
+        <Test runat="server">                   
+          Result: <RegisterExtension runat="server" />
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Language.Test2>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Language.Test3>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+    <x:param name="Color" value="lime"/>
+
+    <Pane runat="server" Header="Test 3: Templates">
+      The <code>call-template</code> and <code>template</code> extensions enables you to build small subcontrols
+      locally within a control.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          3 subcontrols:
+        </Description>
+
+        <Test runat="server">
+          <x:call-template name="testTemplate" />
+          <x:call-template name="testTemplate" />
+          <x:call-template name="testTemplate" />
+        </Test>
+      </TestCase>
+    </Pane>
+
+    <x:template name="testTemplate">
+      <div>
+        Result:
+        <span runat="server" style="color:{Color}">
+          Test passed.
+        </span>
+      </div>
+    </x:template>
+
+  </Sitecore.Xaml.Tutorials.Language.Test3>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Language.Test4>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <x:variable name="Color" value="lime"/>
+    <x:variable name="Color2" value="lightgreen"/>
+
+    <Pane runat="server" Header="Test 4: Variables">
+      Variables. Please notice that the scope of a variable is the webcontrol under which it is declared.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Control scope:
+        </Description>
+
+        <Test runat="server">
+          Result: <span runat="server" style="color:{Color}">Test passed.</span>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Local scope:
+        </Description>
+
+        <Test runat="server">
+          <x:variable name="Color" value="lightgreen"/>
+          Result: <span runat="server" style="color:{Color}">Test passed, if lightgreen.</span>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Outside scope with expression:
+        </Description>
+        
+        <Test runat="server">
+          <x:variable name="OutsideScope" value="red"/>
+          <x:set-variable name="OutsideScope" value="{Color2}" />
+
+          Result:
+          <span runat="server" style="color:{OutsideScope}">
+            Test passed, if lightgreen.
+          </span>
+        </Test>
+        
+        <Inline runat="server" style="color:{OutsideScope}" Padding="0px 0px 0px 32px">
+          Test passed, if not red.
+        </Inline>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Language.Test4>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Language.Test5>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+    <x:param name="Color" value="blue"/>
+
+    <Pane runat="server" Header="Test 5: If statement">
+      XamlSharp cn use if statements.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Testing if a variable has a certain value:
+        </Description>
+
+        <Test runat="server">
+          Result:
+          <x:if test="$Color = 'blue'">
+            <span style="color:lime">Test passed</span>
+          </x:if>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Language.Test5>
+
+
+</xamlControls>

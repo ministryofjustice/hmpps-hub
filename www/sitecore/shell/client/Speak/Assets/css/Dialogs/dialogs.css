@@ -1,0 +1,46 @@
+﻿.sc-smartpanel div[data-sc-id="InfoNameRow"] {
+padding: 30px 0 5px 0;
+}
+
+.sc-smartpanel div[data-sc-id="InfoTypeRow"] {
+padding: 5px 0;
+}
+
+.sc-smartpanel div[data-sc-id="InfoDimensionRow"] {
+  padding: 5px 0;
+}
+
+.sc-smartpanel span[data-sc-id="InfoName"] {
+  position: absolute;
+  left: 100px;
+}
+
+.sc-smartpanel span[data-sc-id="InfoType"] {
+  position: absolute;
+  left: 100px;
+}
+
+.sc-smartpanel span[data-sc-id="InfoDimension"] {
+  position: absolute;
+  left: 100px;
+}
+
+.sc-smartpanel span[data-sc-id="Path"] {
+  position: absolute;
+  left: 100px;
+}
+
+.sc-smartpanel span[data-sc-id="ItemName"] {
+  position: absolute;
+  left: 100px;
+}
+
+.sc-text[data-sc-id="SelectedMediaTitle"] {  
+  padding-top: 5px;
+  display: block;
+}
+
+div[data-sc-id="TreeView"]
+{
+  padding-top: 14px;
+}

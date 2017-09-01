@@ -1,0 +1,70 @@
+.scMDITabs {
+  background:#fffbe9;
+  border:1px solid #aca899;
+  cursor:default;
+  height:32px;
+  padding: 2px 4px 2px 4px;
+}
+
+.scMDITab {
+	background: transparent;
+	border: none;
+	color: white;
+	cursor: default;
+	height: 26px;
+	white-space: nowrap;
+	padding: 3px 4px 2px 5px;
+}
+
+.scMDITab_Hover {
+	background: transparent;
+	border: none;
+	color: white;
+	cursor: default;
+	height: 26px;
+	white-space: nowrap;
+	padding: 3px 4px 2px 5px;
+  text-decoration:underline;
+}
+
+.scMDITabActive {
+	background: #AAB4BF;
+  border:1px solid #F0CCA5;
+	color: black;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	height: 26px;
+	white-space: nowrap;
+	padding: 1px 4px 2px 3px;
+}
+
+.scMDITabActive_Hover {
+	background: #AAB4BF;
+  border:1px solid #F0CCA5;
+	color: black;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#F8EED0', EndColorStr='#F8D5A6');
+	cursor: default;
+	height: 26px;
+	white-space: nowrap;
+	padding: 1px 4px 2px 3px;
+}
+
+.ff #MDITabs table
+{
+  table-layout:fixed;
+}
+
+.ff #MDITabs table td
+{
+  width:auto;
+}
+
+.ff #MDITabs span
+{
+  float:left;
+}
+
+.ff #MDITabs img
+{
+  float:left;
+}

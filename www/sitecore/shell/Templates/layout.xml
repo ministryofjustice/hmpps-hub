@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <__NAME__>
+    <FormPage>
+      <CodeBeside Type="My.__NAME__Form,__NAME__.dll"/>
+    </FormPage>
+  </__NAME__>
+</control>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarTileHeader>           
+    <Border Padding="0px 0px 4px 0px" Class="scRollOver">
+      <ThemedImage Src="$Icon" Width="16" Height="16" Align="absmiddle" Margin="0px 0px 0px 4px" Float="right"/>
+      <Literal Class="scClickFont" Text="$Header"/>
+    </Border>
+  </SidebarTileHeader>
+</control>

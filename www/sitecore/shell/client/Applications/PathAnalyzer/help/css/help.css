@@ -1,0 +1,209 @@
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+  position: relative;
+  z-index: 2;
+  color:#ccc;
+  padding: 9px 15px;
+  border-left: 4px solid #2694c0;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+  display: none;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+  padding-left: 30px;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+  padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+  padding-left: 28px;
+}
+
+/* Show and affix the side nav when space allows it */
+.bs-docs-sidebar .nav > .active > ul {
+    display: block;
+}
+/* Widen the fixed sidebar */
+.bs-docs-sidebar.affix,
+.bs-docs-sidebar.affix-bottom {
+  width: 230px;
+}
+.bs-docs-sidebar.affix, .bs-docs-sidebar.affix-top {
+  position: fixed; /* Undo the static from mobile first approach */
+  top: 50px;
+  left:15px
+}
+.bs-docs-sidebar.affix-bottom {
+  position: absolute; /* Undo the static from mobile first approach */
+}
+.bs-docs-sidebar.affix-bottom .bs-docs-sidenav,
+.bs-docs-sidebar.affix .bs-docs-sidenav {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-docs-sidebar.affix-bottom,
+  .bs-docs-sidebar.affix {
+    width: 263px;
+  }
+}
+
+/* Space things out */
+.bs-docs-section {
+  margin-bottom: 60px;
+}
+.bs-docs-section:last-child {
+  margin-bottom: 0;
+}
+
+
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+@media (max-width: 979px) {
+  .navbar-fixed-top, .navbar-fixed-bottom {
+      position: fixed;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .bs-docs-sidenav.affix {
+      top: 50px;
+  }
+}
+
+
+nav .nav > li > a {
+  padding-top:0;
+  padding-bottom:0;
+  line-height:20px;
+  font-size: 12px
+}
+
+.bs-docs-sidenav {
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+.bs-docs-sidenav > li > a {
+  display: block;
+  width: 190px \9;
+  margin: 0 0 -1px;
+  padding: 2px 14px;
+  border: 4px solid transparent;
+  
+}
+
+.bs-docs-sidenav > li a {
+  color:#5E5E5E;
+}
+
+.bs-docs-sidenav > li a:hover {
+  background-color:#e3e3e3;
+  border-left:4px solid #e3e3e3;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 0px 0px 0 0;
+     -moz-border-radius: 0px 0px 0 0;
+          border-radius: 0px 0px 0 0;
+}
+
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 0px 0px;
+     -moz-border-radius: 0 0 0px 0px;
+          border-radius: 0 0 0px 0px;
+}
+
+footer {
+  margin-top: 60px;
+}
+
+.container-fluid {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+a.menuButton {
+ background-color:rgba(255,255,255,.75);
+ display: block;
+ width: 34px;
+ line-height: 30px;
+ text-align: center;
+ position: fixed;
+ top:15px;
+ left:15px; 
+ z-index: 2;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+-moz-box-shadow: 0px 0px 4px rgba(204,204,204,.5);
+-webkit-box-shadow: 0px 0px 4px rgba(204,204,204,.5);
+box-shadow: 0px 0px 4px rgba(204,204,204,.5);
+cursor: pointer;
+}
+
+a.menuButton:hover {
+-moz-box-shadow:inset 0px 0px 4px rgba(204,204,204,.5);
+-webkit-box-shadow:inset 0px 0px 4px rgba(204,204,204,.5);
+box-shadow:inset 0px 0px 4px rgba(204,204,204,.5);
+ background-color:rgba(227,227,227,.75);
+ color:#fff;  
+}
+
+
+
+h1 ~ img,
+h2 ~ img {
+display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h3 ~ img,
+h4 ~ img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  width:50%;
+  float:left;
+  position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+img ~ p {
+  margin-top: 10px 
+} 
+
+h1,h2 {color:#474747}
+h3,h4 {color:#5E5E5E}

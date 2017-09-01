@@ -1,0 +1,125 @@
+.scToolCombobutton {
+	border: none;
+	display: inline;
+	height: 26px;
+	padding-right: 1px;
+	vertical-align: middle;
+}
+.scToolCombobutton_Disabled {
+	cursor: default;
+	height: 26px;
+	display: inline;
+	vertical-align: middle;
+}
+.scToolCombobutton_Down {
+	cursor: default;
+	height: 26px;
+	display: inline;
+	vertical-align: middle;
+}
+.scToolCombobutton_Hover {
+	cursor: default;
+	display: inline;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#AAB4BF', EndColorStr='#8995A3');
+	height: 26px;
+	vertical-align: middle;
+}
+.scToolCombobutton_Hot {
+	cursor: default;
+	height: 26px;
+	display: inline;
+	vertical-align: middle;
+}
+
+.scToolCombobuttonMain {
+	border: none;
+	background: transparent;
+	color: white;
+	display: inline;
+	height: 100%;
+	padding: 4px 2px 1px 5px;
+	white-space: nowrap;
+}
+.scToolCombobuttonMain_Disabled {
+	display: inline;
+	height: 100%;
+	padding: 4px 2px 1px 5px;
+	white-space: nowrap;
+	border: none;
+	background: transparent;
+	color: buttontext;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}
+.scToolCombobuttonMain_Down {
+	height: 100%;
+	display: inline;
+	padding: 3px 2px 0px 4px;
+	white-space: nowrap;
+	border: 1px solid #4A4A4A;
+	border-right: none;
+	color: white;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#A5ADAF', EndColorStr='#7A8284');
+}
+.scToolCombobuttonMain_Hover {
+	height: 100%;
+	display: inline;
+	padding: 2px 3px 1px;
+	white-space: nowrap;
+	border-top: 1px solid #E2E5E9;
+	border-left: 1px solid #C5CAD0;
+	border-right: 1px solid #C5CAD0;
+	border-bottom: 1px solid #909CAA;
+	border-right: none;
+	color: white;
+}
+.scToolCombobuttonMain_Hot {
+	height: 100%;
+	display: inline;
+	padding: 3px 2px 0px 4px;
+	white-space: nowrap;
+	border: 1px solid #242424;
+	border-right: none;
+	color: white;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#7A8284', EndColorStr='#A4ACAE');
+}
+
+.scToolCombobuttonDrop {
+	display: inline;
+	height: 100%;
+	padding: 4px 1px 1px 3px;
+	border: none;
+}
+.scToolCombobuttonDrop_Disabled {
+	display: inline;
+	height: 100%;
+	padding: 4px 1px 1px 3px;
+	border: none;
+}
+.scToolCombobuttonDrop_Down {
+	display: inline;
+	height: 100%;
+	padding: 3px 1px 0px 2px;
+	border: 1px solid #242424;
+	border-left: 1px solid #6E7475;
+	color: buttontext;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#7A8284', EndColorStr='#A5ADAF');
+}
+.scToolCombobuttonDrop_Hover {
+	display: inline;
+	height: 100%;
+	padding: 2px 2px 1px 1px;
+	border-top: 1px solid #E2E5E9;
+	border-right: 1px solid #C5CAD0;
+	border-bottom: 1px solid #909CAA;
+	border-left: 1px solid #6E7475;
+	color: buttontext;
+}
+.scToolCombobuttonDrop_Hot {
+	display: inline;
+	height: 100%;
+	padding: 3px 1px 0px 2px;
+	border: 1px solid #242424;
+	border-left: 1px solid #6E7475;
+	color: buttontext;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#A5ADAF', EndColorStr='#7A8284');
+}

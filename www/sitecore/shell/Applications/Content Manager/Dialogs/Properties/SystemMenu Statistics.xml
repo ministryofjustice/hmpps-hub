@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SystemMenu.Statistics def:inherits="Sitecore.Shell.Applications.ContentManager.Galleries.SystemMenu.SystemMenuStatisticsXmlControl,Sitecore.Client">
+    
+    <Section ID="StatisticsSection" Header="Statistics" Icon="Business/16x16/date-time_preferences.png" Class="scSection">
+
+      <Border>
+        <GridPanel Columns="2" Class="scListControl">
+
+          <Literal GridPanel.Class="scKey" Text="Modified:"/>
+          <Literal GridPanel.Class="scValue" def:ID="Updated" />
+
+          <Literal GridPanel.Class="scKey" Text="Created:"/>
+          <Literal GridPanel.Class="scValue" def:ID="Created" />
+
+        </GridPanel>
+      </Border>
+      
+    </Section>
+    
+  </SystemMenu.Statistics>
+</control>

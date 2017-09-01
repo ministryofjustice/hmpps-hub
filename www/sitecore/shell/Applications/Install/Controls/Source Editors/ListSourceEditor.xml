@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ListSourceEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ListSourceEditor,Sitecore.Client">
+    <Border class="scStretch" Style="$Style">
+      <GridPanel Width="100%" Columns="2" class="scFormTable" >
+        <Literal Text="Search for key:" />
+        <div>
+          <Edit def:ID="Filter" style="display: inline-block; width: calc(100% - 110px)" />
+          <Border def:ID="ButtonFrame" style="display: inline-block;"/>
+        </div>
+      </GridPanel>
+
+      <Scrollbox def:ID="ViewScroll" Margin="10px 0 0 0" style="height: calc(100% - 75px)">
+        <Listview def:ID="View" View="Details" MultiSelect="true">
+          <ListviewHeader>
+            <ListviewHeaderItem Header="Entry Key"/>
+          </ListviewHeader>
+        </Listview>
+      </Scrollbox>
+
+      <Border def:ID="Pager" GridPanel.Height="20px" />
+    </Border>
+   
+  </Installer.ListSourceEditor>
+</control>

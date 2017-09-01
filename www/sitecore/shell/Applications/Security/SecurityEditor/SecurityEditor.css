@@ -1,0 +1,28 @@
+﻿.scTreeview .scExtendedSecurityItem {
+    height: 36px;
+}
+
+    .scTreeview .scExtendedSecurityItem li {
+        line-height: 32px;
+    }
+
+    .scTreeview .scExtendedSecurityItem .scDescendantAccessRights {
+        float: left;
+        line-height: normal;
+    }
+
+    .scRibbonClose{
+          top: auto;
+          bottom: 0px;
+    }
+    .scRibbonOpen {
+          top: 0px;
+          bottom: auto;
+    }
+    
+    #RibbonPanel {
+        position: relative;
+        border-bottom: 1px solid #e3e3e3;
+        background-color: #f7f7f7;
+    }
+

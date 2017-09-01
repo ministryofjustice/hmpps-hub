@@ -1,0 +1,13 @@
+﻿@model Sitecore.Speak.Components.Models.Charts.Legacy.ChartBaseRenderingModel
+@{
+  Model.Class.Append("sc-FusionChartsRadarChart");
+  Model.DataBind.IsVisible();
+}
+
+<div class="sc-progressindicatorpanel sc-progressindicatorpanel-fullwidth sc-isbusy">
+  <div class="sc-spinner-wrapper">
+    <div @Model.HtmlAttributes style="@Model.Style"></div>
+    <div class="sc-spinner"></div>
+    <div class="sc-spinner-background"></div>
+  </div>
+</div>

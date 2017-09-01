@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.SectionFrame>
+    <Border Class="scProjectSection" RollOver="true">
+      <Literal Class="scSectionHeader" Text="$Header"/>
+      <Border Style="padding-left:1em">
+        <def:Placeholder/>
+      </Border>
+    </Border>
+  </Installer.SectionFrame>
+</control>

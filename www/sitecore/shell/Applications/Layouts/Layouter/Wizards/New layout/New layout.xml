@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <NewLayout>
+    <WizardForm Background="#e9e9e9" CodeBeside="Sitecore.Shell.Applications.Layouts.Layouter.Wizards.NewLayout.NewLayoutForm,Sitecore.Client" Submittable="false">
+    
+      <WizardFormFirstPage ID="FirstPage" Icon="Applications/32x32/window_new.png">
+        <Border Class="scWizardWelcomeTitle"><Literal ID="Welcome" Text="Welcome to the Create Layout Wizard."/></Border>
+        <Literal Text="This wizard helps you:"/>
+        <ul>
+          <li class="scWizardBullet"><Literal Text="Give a name to the new layout."/></li>
+          <li class="scWizardBullet"><Literal Text="Select a location."/></li>
+          <li class="scWizardBullet"><Literal Text="Select a file location."/></li>
+          <li class="scWizardBullet"><Literal Text="Create the layout."/></li>
+        </ul>
+      </WizardFormFirstPage>
+      
+      <WizardFormPage ID="Name" Header="Name" Text="Enter a name for the new layout. Click Next to continue." Icon="Applications/32x32/window_new.png">
+
+        <WizardFormIndent>
+          <GridPanel CellPadding="4" Width="100%" Columns="2">
+        
+          <Literal Text="Name:"/>
+          <Edit ID="LayoutName" Value="New layout" Width="100%" GridPanel.Width="100%"/>
+          
+        </GridPanel>
+        </WizardFormIndent>
+        
+      </WizardFormPage>
+
+      <WizardFormPage ID="Location" Header="Location" Text="Select the location where the new layout should be stored in the Sitecore content tree. Click Next to continue." Icon="Applications/32x32/window_new.png">
+        <DataContext ID="DataContext" DataViewName="Master" Root="{75CC5CE4-8979-4008-9D3C-806477D57619}" Filter="Contains('{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}', @@templateid)"/>
+
+        <WizardFormIndent>
+          <Scrollbox Width="100%" Height="100%" Background="white" Border="1px inset" Padding="0" ContextMenu="LocationTreeview.GetContextMenu">
+        
+            <DataTreeview ID="LocationTreeview" DataContext="DataContext">
+              <TreeHeader>
+                <TreeHeaderItem Name="name" Header="Name"/>
+                <TreeHeaderItem Name="__Short description" Header="Description"/>
+              </TreeHeader>
+            </DataTreeview>
+
+          </Scrollbox>
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormLastPage ID="LastPage" Icon="Applications/32x32/window_new.png">
+        <Literal Text="The wizard has completed."/>
+      </WizardFormLastPage>
+      
+    </WizardForm>
+  </NewLayout>
+</control>

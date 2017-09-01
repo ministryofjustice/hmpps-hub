@@ -1,0 +1,31 @@
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Gallery.PageVariations>   
+    <Gallery>      
+      <CodeBeside Type="Sitecore.Shell.Applications.WebEdit.Galleries.Testing.GalleryPageVariations,Sitecore.Client"/>
+      <Stylesheet>
+        #Variations a
+        {
+          text-decoration: none;
+          position: static;
+        }
+
+        #Variations a:hover .header
+        {
+          text-decoration: underline;
+        }
+
+        .ff #Variations
+        {
+          height: 148px !important;
+        }
+
+        .ff.wk #Variations
+        {
+          height: 100% !important;
+        }
+      </Stylesheet>      
+      <Scrollbox Border="none" GridPanel.Height="100%" Width="100%" Height="100%" Padding="0"  Class="scScrollbox scFixSize" ID="Variations">
+      </Scrollbox>                    
+    </Gallery>
+  </Gallery.PageVariations>
+</control>

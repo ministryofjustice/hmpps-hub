@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.SecuritySourceEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.SecuritySourceEditor,Sitecore.Client">
+    <Tabstrip def:ID="Tabs" Width="100%" Height="100%">
+      <Tab Header="Accounts">
+        <Installer.ListSourceEditor Padding="4px" />
+      </Tab>
+      <Tab Header="Preview">
+        <Installer.SourceViewer Padding="4px" />
+      </Tab>
+      <Tab Header="Name">
+        <Installer.NameEditor Padding="4px" />
+      </Tab>
+    </Tabstrip>
+  </Installer.SecuritySourceEditor>
+</control>

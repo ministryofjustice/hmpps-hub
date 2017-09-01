@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <TaskDivider>
+      <Space Width="1" Height="24"/>
+      <br/>                                
+  </TaskDivider>
+</control>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MDI def:inherits="Sitecore.Shell.Controls.MDI.MDIXmlControl,Sitecore.Client">
+
+    <Script Type="text/javascript">
+      function resizeFrames() {
+        $$("#MDIFrames iframe").each(function(frame) { 
+          if (frame.style.display != 'none') {
+            frame.style.display = 'none';
+            frame.scWasActive = true;
+          }
+        });
+      
+        var width = $("MDIFrames").getWidth();
+        
+        $$("#MDIFrames iframe").each(function(frame) {
+          frame.width = width;
+          if (frame.scWasActive) {
+            frame.show();
+            frame.scWasActive = false;
+          }
+        });
+      }
+      
+      window.onresize = resizeFrames;
+    </Script>
+    <Stylesheet Src="MDI.css"/>
+
+    <Border ID="MDIWorkspace" Height="100%" Style="display:none">
+      <GridPanel Width="100%" Height="100%">
+          
+        <Border ID="TopSeparator" Background="threedlightshadow">
+          <Space Height="3"/>
+        </Border>  
+      
+        <GridPanel ID="Header" Width="100%" Columns="3" Fixed="true">
+          <Scroller ID="MDIScroller" GridPanel.Width="100%" Border="none">
+            <Border ID="MDITabs" Background="threedlightshadow"/>
+          </Scroller>
+
+          <ImageButton def:ID="ListButton" Src="Images/down.png" Width="16" Height="16" GridPanel.Style="background: threedlightshadow" GridPanel.Width="16"/>
+          <ImageButton def:ID="CloseButton" Src="Images/close.png" Width="16" Height="16" GridPanel.Style="background: threedlightshadow" GridPanel.Width="16"/>
+        </GridPanel>  
+        
+        <Border ID="MDIFrames" Height="100%" GridPanel.Height="100%" GridPanel.NoWrap="true"/>
+        
+      </GridPanel>
+    </Border>
+    
+  </MDI>
+</control>

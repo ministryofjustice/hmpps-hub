@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ExportLanguage>
+    <WizardForm CodeBeside="Sitecore.Shell.Applications.Globalization.ExportLanguage.ExportLanguageForm,Sitecore.Client" Submittable="false">
+
+      <WizardFormPage ID="Languages" Header="Export Languages" Text="Select the languages that you want to export.">
+        <WizardFormIndent>
+
+          <Groupbox ID="LanguagesPanel" Header="Languages" >
+            <Border ID="LanguageList"/>
+          </Groupbox>
+
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Start" Header="Export Languages" Text="Navigate to the starting point of the language export. This exports the content of the selected item and all its subitems in the specified languages.">
+        <WizardFormIndent>
+          <DataContext ID="DataContext" Root="/" Folder="/sitecore/content" DataViewName="Master"/>
+
+          <Literal class="scFieldLabel" Text="Select the Sitecore item."/>
+
+          <Border class="scScrollbox" style="padding:0 5px 0 0!important; height: calc(100% - 25px)" >
+            <TreeviewEx ID="Root" DataContext="DataContext"/>
+          </Border>
+
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="File" Header="Export Languages" Text="Enter the language file name of the language that you want to export.">
+        <WizardFormIndent>
+          <Literal class="scFieldLabel" Text="Language file name:"/>
+          <GridPanel Columns="2">
+            <Edit ID="LanguageFile" GridPanel.Style="width: 100%; padding: 0 10px 0 0;"/>
+            <Button ID="Browse" Header="Browse" Click="export:browse"/>
+          </GridPanel>
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormProgressPage ID="Exporting" Header="Export Languages" Text="Please wait while the languages are being exported." ActionText="Exporting...">
+        <Border ID="Status">&#160;</Border>
+      </WizardFormProgressPage>
+
+      <WizardFormPage ID="Retry" Header="Export Languages" Text="An error occurred while exporting the language file. You can review the error text below.">
+        <WizardFormPadding>
+          <Memo ID="ErrorText" ReadOnly="true" class="scStretch"/>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="LastPage" Header="Export Languages">
+        <WizardFormPadding>
+          <Literal class="sc-text-largevalue" Text="The languages have been exported."/>
+
+          <Literal class="scFieldLabel" Text="To download the language file, click Download "/>
+          <div style="margin-bottom: 10px;">
+            <Button Header="Download" Click="Download"/>
+          </div>
+
+          <Memo ID="ResultText" class="scStretch" style="height: calc(100% - 100px)" ReadOnly="true"/>
+
+        </WizardFormPadding>
+
+      </WizardFormPage>
+
+    </WizardForm>
+  </ExportLanguage>
+</control>

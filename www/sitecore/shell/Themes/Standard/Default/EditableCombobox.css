@@ -1,0 +1,46 @@
+﻿.scEditableCombobox
+{
+	border: 1px solid #A5ACB2;
+}
+
+.scEditableCombobox input
+{
+	padding-left: 2px;
+}
+
+.scEditableComboboxPopup
+{
+	background: window;
+	border: solid 1px #A5ACB2;
+	overflow: auto;
+	padding: 0px 1px 0px 1px;
+	margin: 0;
+	list-style-type: none;
+}
+
+.scEditableComboboxPopup a
+{
+	height: 16px;
+	padding: 0px 0px 0px 2px;
+	text-align: left;
+	display: block;
+	border: 1px solid transparent;
+	margin: 0px;
+}
+
+.ff .scEditableComboboxPopup li
+{
+	width: 100%;
+}
+
+.ff .scEditableComboboxPopup a
+{
+	width: auto;
+}
+
+.scEditableComboboxPopup a:hover
+{
+	background: #e8f5fd url(/sitecore/shell/themes/standard/Images/Tree/TreeNodeNormalBackground.png) repeat-x;
+	border-color: #d8f0fa;
+	text-decoration: none;
+}

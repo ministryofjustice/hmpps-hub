@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ListEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ListEditor,Sitecore.Client">
+    <GridPanel Columns="2">
+      <Scrollbox Height="100%" GridPanel.Height="200px">
+        <Listview def:ID="Entries" Width="100%" Height="400px"/>
+      </Scrollbox>
+
+      <Border GridPanel.Width="32">
+        <Button def:ID="MoveUp" Header="^" Width="32px"/>
+        <Button def:ID="MoveDown" Header="^" Width="32px"/>
+      </Border>
+
+      <GridPanel GridPanel.ColSpan="2" Columns="3">
+        <Button def:ID="Add" Header="Add..." />
+        <Button def:ID="Edit" Header="Edit..."/>
+        <Button def:ID="Remove" Header="Remove..."/>
+      </GridPanel>
+    </GridPanel>
+  </Installer.ListEditor>
+</control>

@@ -1,0 +1,89 @@
+﻿@using Sitecore.Speak.Components
+@model Sitecore.Speak.Components.Models.Forms.UploaderInfo.UploaderInfoRenderingModel
+@functions
+{
+  HtmlString GetStyle(bool isVisible)
+  {
+    string result = isVisible ? string.Empty : "style=\"display: none;\"";
+    return new HtmlString(result);
+  }
+}
+@{
+  Model.Class.Append("sc-uploaderInfo");
+
+  Model.DataBind.IsVisible();
+  Model.DataBind.Bind("attr", "{title: Tooltip()}");
+
+  var globalization = Sitecore.ClientHost.Globalization;
+}
+<div @Model.HtmlAttributes>
+  <div data-bind="foreach: Files, visible: true" style="display: none;">
+    <div>
+      <div class="sc-uploaderInfo-row" data-bind="css: { error: error() }">
+        <div class="sc-uploaderInfo-row-preview col-md-4">
+          <div class="sc-uploaderInfo-row-preview-item-wrap">
+            <div class="sc-uploaderInfo-row-preview-item">
+              <img data-bind="attr: { src: image }" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <form class="form-horizontal">
+            <div class="control-group" @GetStyle(Model.ShowNameField)>
+              <label class="control-label" for="name">
+                @globalization.Translate(Texts.Name):</label>
+              <div class="controls">
+                <input class="form-control" name="name" data-bind="value: name, disable: percentage() > 0 || error()" type="text">
+              </div>
+            </div>
+            <div class="control-group" @GetStyle(Model.ShowDescriptionField)>
+              <label class="control-label" for="description">@globalization.Translate(Texts.Description):</label>
+              <div class="controls">
+                <textarea class="form-control sc-textarea" name="description" data-bind="value: description, disable: percentage() > 0 || error()"></textarea>
+              </div>
+            </div>
+            <div class="control-group" @GetStyle(Model.ShowAlternateTextField)>
+              <label class="control-label" for="alternate">@globalization.Translate(Texts.AlternateText):</label>
+              <div class="controls">
+                <input class="form-control" name="alternate" data-bind="value: alternate, disable: percentage() > 0 || error()" type="text">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4 sc-uploaderInfo-action">
+          <div class="sc-uploaderInfo-extra">
+            <div class="sc-uploaderInfo-extra-status">
+              <div class="ready" data-bind="visible: percentage() == 0 && !error()">
+                <p>
+                  @globalization.Translate(Texts.ReadyToUpload)
+                </p>
+              </div>
+              <div class="progress" data-bind="visible: percentage() > 0 && percentage() < 100 && !error()">
+                <div class="bar" data-bind="style: { width: percentage() + '%' }"></div>
+              </div>
+              <div class="completed" data-bind="visible: percentage() == 100 && !error()">
+                <p>
+                  @globalization.Translate(Texts.UploadCompleted)
+                </p>
+              </div>
+              <div class="failed" data-bind="visible: error()">
+                <p>
+                  @globalization.Translate(Texts.UploadFailed)
+                </p>
+              </div>
+            </div>
+            <div class="sc-uploaderInfo-extra-action">
+              <button class="btn sc-button btn-default remove" data-bind="click: $parent.remove.bind($parent, $index()), disable: percentage() > 0, visible: percentage() < 100 && !error()">
+                @globalization.Translate(Texts.Remove)
+              </button>
+            </div>
+          </div>
+          <div class="sc-uploaderInfo-imageDetails">
+            <p data-bind="text:fileSize"></p>
+            <p data-bind="text:type"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

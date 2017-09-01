@@ -1,0 +1,25 @@
+﻿[data-sc-id="SelectedDateBorder"], [data-sc-id="SelectedTimeBorder"]
+{
+  position: relative;
+  float: left;
+}
+
+[data-sc-id="SelectedDateBorder"]
+{
+  width: 377px;
+}
+
+[data-sc-id="SelectedTimeBorder"]
+{
+  width: 105px;
+}
+
+.sc .sc-text[data-sc-id="DateTimeText"]
+{
+  margin-right: 14px;
+}
+
+.sc .sc-datepicker.form-control[data-sc-id="SelectedDate"]
+{
+  display: inline-block;
+}

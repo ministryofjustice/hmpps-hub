@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ContentEditor.Properties>
+    <FormDialog Header="Item Properties" Text="View the properties for the selected item." CancelButton="false">
+      <Stylesheet Src="/sitecore/shell/Applications/Content Manager/Dialogs/Properties/Properties.css" />
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Dialogs.Properties.PropertiesForm,Sitecore.Client"/>
+
+      <Border ID="Summary" />
+
+    </FormDialog>
+  </ContentEditor.Properties>
+</control>

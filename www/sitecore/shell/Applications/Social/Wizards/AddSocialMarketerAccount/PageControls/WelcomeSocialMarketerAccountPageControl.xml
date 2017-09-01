@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WelcomeSocialMarketerAccountPageControl def:inherits="Sitecore.Social.Client.Wizards.AddSocialMarketerAccount.PageControls.WelcomeSocialMarketerAccountPageControl,Sitecore.Social.Client">
+    <Border Class="scWizardWelcomeTitle">
+      <Literal Text="Welcome to the Create a Social Marketer Account Wizard."/>
+    </Border>
+    <Literal Text="This wizard helps you:"/>
+    <ul>
+      <li>
+        <Literal Text="Create a Social Marketer account."/>
+      </li>
+      <li>
+        <Literal Text="Select the workflow that messages created for this account are placed in."/>
+      </li>
+      <li>
+        <Literal Text="Select the security roles that message reviewers must be members of."/>
+      </li>
+    </ul>
+  </WelcomeSocialMarketerAccountPageControl>
+</control>
+

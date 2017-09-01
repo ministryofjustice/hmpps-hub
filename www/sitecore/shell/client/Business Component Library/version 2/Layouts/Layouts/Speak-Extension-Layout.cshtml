@@ -1,0 +1,27 @@
+﻿@using Sitecore.Mvc
+@model Sitecore.Mvc.Presentation.RenderingModel
+<!DOCTYPE html>
+<html data-sc-app>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="/sitecore/shell/client/Business Component Library/version 2/assets/lib/speakext.js"></script>
+
+  @Html.Sitecore().Placeholder("Page.Stylesheets")
+  @Html.Sitecore().Placeholder("Page.Code")
+</head>
+<body class="sc">
+  @Html.Sitecore().Placeholder("Page.TestCode")
+  <div>
+    <div class="sc-list">
+      @this.Html.Sitecore().Placeholder("Page.Internal.BeforeGrid")
+      <div class="container-narrow">
+        @this.Html.Sitecore().Placeholder("Page.Body")
+      </div>
+      @this.Html.Sitecore().Placeholder("Page.Internal.AfterGrid")
+    </div>
+  </div>
+  @this.Html.Sitecore().Placeholder("Page.Test")
+</body>
+</html>

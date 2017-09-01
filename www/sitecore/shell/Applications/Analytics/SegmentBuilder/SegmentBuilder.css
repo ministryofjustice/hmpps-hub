@@ -1,0 +1,211 @@
+﻿/*Common*/
+table.scDialogContentContainer
+{
+  padding-top:0px;
+}
+
+.wk table.scDialogContentContainer
+{
+  padding-bottom: 2px;
+}
+
+.scDialogContentContainer {
+  padding: 12px;
+  padding-right: 6px;
+}
+
+.top-row {
+  background-color: #e3e3e3; 
+  height: 60px;
+}
+
+.top-row .total  {
+  float: left;
+  height: 48px;
+  display:inline-block;
+  padding: 0;
+  line-height: 48px;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+.top-row .value {
+  font-weight:bold;
+}
+
+div.scEditorSectionCaptionExpanded,
+div.scEditorSectionCaptionCollapsed {
+  line-height: 45px;
+}
+
+div.scEditorSectionPanel {
+  margin: 0;
+}
+
+#no-rules-added {
+  display: flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
+#non-default-container
+{
+  display: block;
+}
+
+#RulesContainer
+{
+  padding-top: 0px !important;
+  padding-right: 6px !important;
+}
+
+.rule-body
+{
+  border: 1px solid #e5e5e5;
+}
+
+.rule-body
+{
+  width: 100%;
+}
+
+.rule-body td
+{
+  padding: 8px;
+  vertical-align: top;
+}
+
+.rule-body td.left-column
+{
+  padding-left: 14px;  
+}
+
+.rule-body .left-column .scButton.edit-button  {
+ margin-left: 5px;
+}
+
+.left-column .scConditionsActions
+{
+  padding-left: 0px !important;
+  border-bottom: none;
+}
+
+.scLine {
+  padding-left: 0px;
+  padding-top: 0px;
+  position: static !important;
+}
+
+.right-column
+{
+  width: 200px;
+  background-color: #F7F7F7;
+  padding: 10px;
+}
+
+.rule-body .right-column
+{
+  padding: 10px;
+  padding-top: 16px;
+}
+
+.rule-body .right-column .value    {
+  font-weight: bold;
+  padding: 0 0 0 4px;
+}
+
+/* Conditions */
+.condition-header
+{
+  font-weight: 600;
+}
+
+.edit-button
+{
+  float: right;
+  margin-right: 0;
+}
+
+.add-rule-button{
+  background-image: url(/sitecore/shell/~/icon/office/24x24/plus.png.ashx);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #cccccc;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  margin-top: 14px;
+  margin-right: 10px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.add-rule-button:hover {
+  background-image: url(/sitecore/shell/~/icon/office/24x24/plus.png.ashx);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.add-rule-button:focus {
+  outline: 0;
+}
+
+.rule-container {
+  margin-bottom: 15px;
+}
+
+.condition-container
+{
+  margin-top: 8px;
+}
+
+.condition-container.default
+{
+  margin-top: 20px;
+}
+
+.condition-container .scRule, .condition-container hr
+{
+  display: none;
+}
+
+.condition-container .Draggable
+{
+  white-space: normal !important;
+}
+
+/* Menu */
+#actionsMenu
+{
+  position: absolute;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background: #969696;
+  -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #969696;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+}

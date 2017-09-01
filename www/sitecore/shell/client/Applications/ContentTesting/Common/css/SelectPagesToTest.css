@@ -1,0 +1,49 @@
+.sc-accordion {
+  margin-top: 2em;
+}
+.sc-accordion-header-actionbar .sc-icon-button {
+  float: right;
+}
+div[data-sc-id="SelectPageBorder"].sc-border {
+  background-color: white;
+  height: 10em;
+  line-height: 10em;
+  vertical-align: middle;
+  border: solid 1px #cacaca;
+  margin-top: 2em;
+}
+div[data-sc-id="AddPageBorder"] div,
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"] {
+  display: inline-block;
+}
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"],
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] {
+  border: 1px solid #cccccc;
+  background: #e3e3e3;
+  vertical-align: middle;
+  text-align: center;
+  margin: 1em;
+  width: 150px;
+}
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"] {
+  background-image: url('/sitecore/shell/client/Applications/ContentTesting/Assets/icon-add.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent;
+  line-height: 150px;
+  height: 150px;
+}
+div[data-sc-id="AddPageBorder"] a[data-sc-id="AddPage"]:hover {
+  text-decoration: none;
+  color: transparent;
+  background-color: gainsboro;
+}
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] {
+  height: 150px;
+}
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] .sc-border {
+  display: block;
+}
+div[data-sc-id="AddPageBorder"] div[data-sc-id="Entry"] div[data-sc-id="PageThumbnail"] {
+  height: 116px;
+}

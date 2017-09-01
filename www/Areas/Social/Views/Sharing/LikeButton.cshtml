@@ -1,0 +1,35 @@
+﻿@using Sitecore.Data
+@model Sitecore.Social.Client.Mvc.Areas.Social.Models.ShareButtonViewModel
+@{
+  var shareButtonId = string.Format("likeButton_{0}", ShortID.NewId());
+}
+
+<script>
+(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div style="float: right;">
+  <div id="@shareButtonId" class="fb-like" data-href="@Model.SharePageUrlWithAnalyticsParameters" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+</div>
+
+<script>
+  (function () {
+    var previous = window.fbAsyncInit;
+    window.fbAsyncInit = function () {
+      if (previous) {
+        previous();
+      }
+
+      FB.Event.subscribe('edge.create', function (response, target) {
+        if (target.id === '@shareButtonId') {
+          @Html.Raw(Model.SubscribeToShareButtonEventScript)
+        }
+      });
+    };
+  })();
+</script>

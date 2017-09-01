@@ -1,0 +1,7 @@
+body p:first-child {
+  margin-top: 0;
+}
+
+body p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <ToolOption>
+    <Border Style="width:100; text-overflow:ellipsis; display:inline; scClick:$Click" ClientClass="scClick" Foreground="white" Background="transparent" Align="Center">
+      <ThemedImage Src="$Icon" Width="24" Height="24" Margin="0px 0px 2px 0px"/><br/>
+      <Literal Class="scClickFont" Text="$Header"/>
+      <def:Placeholder/>  
+    </Border>
+  </ToolOption>
+</control>
+

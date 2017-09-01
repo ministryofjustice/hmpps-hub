@@ -1,0 +1,81 @@
+﻿@using Sitecore
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Charts.Legacy
+@using Sitecore.Web.UI.Controls.Common.IconButtons
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@using Sitecore.Web.UI.Controls.Common.ProgressIndicators
+
+@model RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  var data = userControl.GetString("Data", "data");
+  var cssClass = "sc-FusionChartsJourneyChart";
+  userControl.Requires.Script("business", "FusionChartsJourneyChart.js");
+
+  ChartHelper.SetAttributes(userControl, 300);
+
+  userControl.AppendClass(cssClass);
+
+  var segmentSelectedAction = userControl.GetString("SegmentSelectedAction", "NoAction");
+  var isDurationButtonsPanelVisible = userControl.GetBool("IsDurationButtonsPanelVisible", true);
+  userControl.Attributes["data-sc-segmentselectedaction"] = segmentSelectedAction;
+  userControl.Attributes["data-sc-isdurationbuttonspanelvisible"] = isDurationButtonsPanelVisible.ToString();
+
+  var durationItemsSourceId = userControl.GetString("DurationItems");
+  if (string.IsNullOrEmpty(durationItemsSourceId))
+  {
+    durationItemsSourceId = "{B395F502-D27E-4190-A680-969C560C12EB}";
+  }
+  
+  var durationItems = ClientHost.Items.GetItem(durationItemsSourceId).GetChildren().ToList();
+
+  var selectedDurationItemId = userControl.GetString("SelectedDurationItemId");
+
+  var durationButtonsSortOrder = durationItems[0]["canDrillDown"] != "1" ? "asc" : "desc";
+  userControl.Attributes["data-sc-durationbuttonssortorder"] = durationButtonsSortOrder;
+  
+  userControl.HasNestedComponents = true;
+  
+  var htmlAttributes = userControl.HtmlAttributes;  
+}
+
+<div @htmlAttributes>
+  <div class="sc-navigation-arrow double left" title=""></div>
+  <div class="sc-navigation-arrow single left" title=""></div>
+  <div class="sc-selected-segment">
+    @this.Html.Sitecore().Controls().IconButton(userControl.ControlId + "SelectedSegmentButton", "/sitecore/shell/client/Speak/Assets/img/sc-sprite.png", new { IsVisible = false, BackgroundPosition = "-323px -323px", Click = "javascript:app." + userControl.ControlId + ".viewModel.showSelectedSegmentPage();" })
+  </div>
+  <div class="sc-navigation-buttons">
+    @foreach (var durationItem in durationItems)
+    {
+      var isSelected = durationItem.ID.ToString().Equals(selectedDurationItemId);
+      var durationValue = durationItem["duration"];
+      var unitValue = durationItem["unit"];
+      var unitStep = durationItem["unitStep"];
+      var canDrillUp = durationItem["canDrillUp"];
+      var canDrillDown = durationItem["canDrillDown"];
+      var name = durationItem.Appearance.DisplayName;
+      if (canDrillDown == "1")
+      {
+      <button class="btn sc-togglebutton" data-isSelected="@isSelected" data-canDrillDown="1" data-canDrillUp="@canDrillUp" data-durationValue="@durationValue" data-unitValue="@unitValue" data-unitStep="@unitStep">@name</button>
+      }
+      else
+      {
+      <button class="btn sc-togglebutton" style="display: none" data-canDrillUp="@canDrillUp" data-canDrillDown="0" data-durationValue="@unitValue">@name</button>
+      }
+    }
+  </div>
+  <div class="sc-navigation-arrow single right" title=""></div>
+  <div class="sc-navigation-arrow double right" title=""></div>
+  <div class="sc-currentTimeRangeTitle sc-text sc-text-largetitle"></div>
+  <div class="sc-zoom-buttons">
+    @this.Html.Sitecore().Controls().IconButton(userControl.ControlId + "DrillDownButton", "/sitecore/shell/client/Speak/Assets/img/sc-sprite.png", new { BackgroundPosition = "-204px -170px", Click = "javascript:app." + userControl.ControlId + ".viewModel.drillDown();" })
+    @this.Html.Sitecore().Controls().IconButton(userControl.ControlId + "DrillUpButton", "/sitecore/shell/client/Speak/Assets/img/sc-sprite.png", new { BackgroundPosition = "-238px -136px", Click = "javascript:app." + userControl.ControlId + ".viewModel.drillUp();" })
+  </div>
+</div>
+
+<div class="sc-journey-details" style="display: none;">
+  @this.Html.Sitecore().Placeholder(userControl.ControlId + ".DetailsPanel")
+</div>
+@this.Html.Sitecore().Controls().ProgressIndicator(userControl.ControlId + "ProgressIndicator", false, new { TargetControl = userControl.ControlId })

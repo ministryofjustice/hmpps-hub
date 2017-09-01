@@ -1,0 +1,8 @@
+.sc-GroupedCheckboxList ul,
+.sc-GroupedCheckboxList li {
+  padding: 0;
+  margin: 0;
+}
+.sc-GroupedCheckboxList li {
+  list-style: none;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Run>
+    <FormPage Submittable="false">
+      <CodeBeside Type="Sitecore.Shell.Applications.Tools.Run.RunForm,Sitecore.Client"/>
+      <Stylesheet Src="Dialogs.css" DeviceDependant="true"/>
+      <Border Class="scDialogContentContainer">
+        <Border Style="padding-bottom: 15px">
+          <Literal Text="Enter the name of the application, folder, document, or internet resource that you want to open."/>
+        </Border>
+        <GridPanel Class="scFormTable" Width="100%" Columns="3">
+          <Label For="Program" GridPanel.NoWrap="true">
+            <Literal Text="Name:" />
+          </Label>
+          <SubmittableEdit ID="Program" Submit="run:ok"/>
+          <Button Header="Browse" Click="run:browse" GridPanel.Width="1" GridPanel.NoWrap="true"/>
+        </GridPanel>
+      </Border>
+      <Border Class="scFormDialogFooter" Style="position: fixed; bottom: 0; width: 100%">
+        <Border Class="footerOkCancel">
+          <Button Header="OK" Class="scButton scButtonPrimary" Click="run:ok"/>
+          <Button Header="Cancel" Click="run:cancel"/>
+        </Border>
+      </Border>
+    </FormPage>
+  </Run>
+</control>

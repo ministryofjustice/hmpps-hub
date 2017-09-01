@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarTileTask>           
+    <Border Class="scRollOver" ID="$ID" Padding="4px 0px 4px 0px" Click="$Click" RollOver="true" TabStop="true" NoWrap="true">
+      <ThemedImage Src="$Icon" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/><Literal Text="$Header"/>
+    </Border>
+  </SidebarTileTask>
+</control>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WorldLingo>
+    <FormDialog Icon="Network/24x24/earth_new.png" Header="Translate" 
+      Text="This dialog translates the text using the WorldLingo service. When you click OK, the translated text is copied to the clipboard and the dialog is closed." OKButton="OK">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Globalization.WorldLingo.WorldLingoForm,Sitecore.Client"/>
+      
+      <Inline def:placeholder="Buttons">
+        <Button Header="Translate" Click="Translate"/>&#160;
+        <Button Header="Copy" Click="CopyToClipboard"/>
+      </Inline>
+      
+      <GridPanel Width="100%" Height="100%">
+        <Border Padding="0px 0px 16px 0px">
+          <Literal Text="WorldLingo is a commercial translation service. For furher information please visit the web site &lt;a href='http://www.worldlingo.com' target='_blank' hidefocus='true'&gt;www.worldlingo.com&lt;/a&gt;."/>
+
+          <Border ID="EvaluationBorder" Padding="4px 0px 0px 0px" Visible="false">
+            <ThemedImage Src="Applications/16x16/warning.png" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/>
+            <Literal Text="WorldLingo is running in evaluation mode. The output will be in a random language and limited to 25 words. Please contact your administrator to enable WorldLingo."/>
+          </Border>
+        </Border>
+      
+        <Border ID="StatusBorder" Foreground="red" Padding="0px 0px 8px 0px" FontBold="true">
+          <ThemedImage Src="Applications/16x16/warning.png" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/>
+          <Literal Text="WorldLingo Error:"/>&#160;<Literal ID="Status"/>
+        </Border>
+      
+        <Border>
+          <ThemedImage ID="SourceIcon" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/>
+          <Literal Text="Text:"/>
+        </Border>
+        
+        <Memo Class="scClickFont" ID="Phrase" Width="100%" Height="100%" GridPanel.Height="50%"/>
+      
+        <Border Padding="8px 0px 0px 0px">
+          <ThemedImage ID="TargetIcon" Width="16" Height="16" Align="absmiddle" Margin="0px 4px 0px 0px"/>
+          <Literal Text="Translated text:"/>
+        </Border>
+        
+        <Memo Class="scClickFont" ID="Result" Width="100%" Height="100%" GridPanel.Height="50%"/>
+        
+      </GridPanel>
+      
+    </FormDialog>
+  </WorldLingo>
+</control>

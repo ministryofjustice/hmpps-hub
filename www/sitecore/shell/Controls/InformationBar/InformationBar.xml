@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <InformationBar def:inherits="Sitecore.Shell.Controls.InformationBar.InformationBarXmlControl,Sitecore.Client">
+    <Border def:ID="Bar" Class="scInformationBar">
+      <ImageButton def:ID="Close" Src="Images/close_red.png" Width="16" Height="16" Float="right" Alt="Do not show this message again."/>
+      <ThemedImage Src="$Icon" Width="16" Height="16" Float="left" Margin="0px 8px 0px 4px"/>
+      <Literal Text="$Text"/>
+    </Border>
+  </InformationBar>
+</control>

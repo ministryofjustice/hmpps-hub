@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ExternalApplication>
+    <FormPage>
+      <script type="text/JavaScript" language="javascript" src="/sitecore/shell/controls/sitecorewindows.js">1</script>
+
+      <WindowChrome Icon='${WebUtil.GetQueryString("icon")}' Header='${WebUtil.GetQueryString("header")}'>
+        
+        <Frame Background="window" SourceUri='${WebUtil.GetQueryString("url")}'/>
+      
+      </WindowChrome>
+      
+    </FormPage>
+  </ExternalApplication>
+</control>

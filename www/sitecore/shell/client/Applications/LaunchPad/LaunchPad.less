@@ -1,0 +1,167 @@
+﻿@import '../../SpeakSDK/Speak-DefaultTheme/Speak/speak-theme-variables.less';
+@import '../../SpeakSDK/Speak-DefaultTheme/Speak/speak-palette.less';
+
+
+.sc-globalHeader-content,
+.sc-applicationContent,
+.sc-applicationHeader-content {
+  max-width: none;
+}
+
+.sc-applicationHeader-bottom,
+.sc-applicationHeader-row2 {
+  display: none;
+}
+
+.sc-launchpad {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin: 0 50px;
+}
+
+.sc-launchpad-group {
+  display: inline-block;
+  margin: 0 50px 0 50px;
+  vertical-align: top;
+
+  &.first {
+    margin: 0 50px 10px 0;
+  }
+
+  &.last {
+    margin: 0 0 0 50px;
+  }
+}
+
+.sc-launchpad-group-title{
+  font-size: 16px;
+  font-weight: 400;
+  color: #969696;
+  margin-top: 15px;
+}
+
+.sc-launchpad-group-row {
+  white-space: nowrap;
+  vertical-align: top;
+  height: 166px;
+  overflow: hidden;
+}
+
+.sc-launchpad-item {
+  display: inline-block;
+  width: 98px;
+  min-height: 120px;
+  text-align: center;
+  margin: 16px 8px 16px 0;
+  white-space: normal;
+  vertical-align: top;
+  color: @SC-Theme-Foreground;
+
+  &:hover {
+    color: @SC-Theme-Foreground;
+  }
+
+  .icon {
+    background-color:#f7f7f7;
+    background-image: -webkit-linear-gradient(white, @SC-Theme-Basic-XXX-Light);
+    background-image: -o-linear-gradient(white, @SC-Theme-Basic-XXX-Light);
+    background-image: linear-gradient(white, @SC-Theme-Basic-XXX-Light);
+    border: 1px solid @SC-Theme-Basic-Light;
+    border-radius: 4px;
+    height: 98px;
+    width: 98px;
+    margin-bottom: 2px;
+    display: block;
+
+    img {
+      width: 48px;
+      height: 48px;
+      margin: 24px;
+    }
+  }
+
+  .icon:hover {
+    background: white;
+  }
+
+  &:active .icon {
+    box-shadow: inset 0 0 20px @SC-Theme-Basic-Light;
+  }
+
+  .sc-launchpad-text {
+    display: block;
+    max-width: 100px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+}
+
+.sc-tiles {
+  margin: 15px 0 0 50px;
+  overflow:hidden;
+}
+
+.sc-tile {
+  float:left;
+  margin-right:30px;
+}
+
+.sc-tile-header {
+  text-transform: uppercase;
+  color: @SC-Theme-Basic-XX-Dark;
+  font-weight:bold;
+}
+
+.sc-tile-content {
+  margin-top: 8px;
+  min-height: 350px;
+  border: 1px solid @SC-Theme-Basic-Light;
+  padding: 8px;
+  vertical-align: middle;
+  text-align: center;
+  background: white;
+
+  img {
+    max-height: 363px;
+    max-width: 100%;
+  }
+}
+.sc {
+  .sc-border[data-sc-id="RowPanelTilesWrapper"],
+  .sc-border[data-sc-id="FallBackMessageBorder"] {
+    padding: 0 50px;
+  }
+
+  .sc-border[data-sc-id="AnalyticsFallback"] {
+    background-color: #fff;
+  }
+
+  .sc-border[data-sc-id="FallbackMessageHeaderWrap"] {
+    padding: 15px;
+    color: #474747;
+  }
+
+  .sc-border[data-sc-id="FallbackMessageWrap"] {
+    border-top: 1px solid #F0F0F0;
+    min-height: 400px;
+    position: relative;
+
+    .sc-text[data-sc-id="FallBackMessage"] {
+      position: absolute;
+      top: 20px;
+      display: block;
+      text-align: left;
+      left: 15px;
+      right: 15px;
+    }
+  }
+  div[data-sc-id="ColumnPanelInteractions"],
+  div[data-sc-id="ColumnPanelCampaigns"]{
+    display:none;
+  }
+  
+}

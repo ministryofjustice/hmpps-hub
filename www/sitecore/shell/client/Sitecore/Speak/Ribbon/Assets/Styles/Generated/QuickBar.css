@@ -1,0 +1,72 @@
+.sc-quickbar {
+  padding: 0 1em;
+  background-color: #474747;
+  background: #474747;
+  /*background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f7f7f7), color-stop(1, #ebebeb));
+  background: -ms-linear-gradient(bottom, #f7f7f7, #ebebeb);
+  background: -moz-linear-gradient(center bottom, #f7f7f7 0%, #ebebeb 100%);
+  background: -o-linear-gradient(#ebebeb, #f7f7f7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#f7f7f7', GradientType=0);*/
+  line-height: 1.5;
+}
+.sc-quickbar:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-quickbar-item {
+  display: block;
+  float: left;
+  margin-left: .25em;
+  padding: .5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+.sc-quickbar-item.sc-alternate-position {
+  float: right;
+  margin-right: .25em;
+  margin-left: 0;
+}
+.sc-quickbar-item img {
+  vertical-align: middle;
+}
+.sc-quickbar-button {
+  margin: .25em 0;
+  min-width: 20px;
+  border: 1px solid transparent;
+  background: #fafafa;
+  height: 33px;
+}
+[data-sc-id="QuickRibbon"].sc-quickbar-button,
+[data-sc-id="QuickRibbon"].sc-quickbar-button:hover {
+  background: transparent;
+}
+.sc-quickbar-button:hover {
+  background: rgb(227, 227, 227);
+}
+.sc-quickbar-button.disabled {
+  opacity: .4;
+  cursor: default;
+}
+.sc-quickbar-tab {
+  margin-top: .25em;
+  margin-bottom: -2px;
+  padding: 8px 1.25em .75em;
+  border: 1px solid #cccccc;
+  border-color: transparent;
+  text-decoration: none;
+}
+.sc-quickbar-tab:hover {
+  text-decoration: none;
+  color: #2B2B2B;
+  background-color: rgb(227, 227, 227);
+}
+.sc-quickbar-tab.sc-quickbar-tab-selected {
+  border: 1px solid transparent;
+  background-color: #fafafa;
+  color: #2B2B2B;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <IDEXslt>
+    <FormPage Submittable="false">
+      <Stylesheet Src="IDE.css" DeviceDependant="true"/>
+      <Script Src="/sitecore/shell/Controls/SitecoreKeyboard.js"/>
+
+      <script type="text/javascript">
+        if (scForm) {
+          scForm.enableModifiedHandling();
+        }
+      </script>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Editors.Xslt.IDEXsltForm,Sitecore.Client"/>
+      
+      <GridPanel ID="TabGrid" Width="100%" Height="100%">
+      
+        <Border Height="100%" GridPanel.Width="100%" GridPanel.Height="100%">
+          <Border ID="EditorPane" Height="100%" GridPanel.Height="100%">
+            <GridPanel Width="100%" Height="100%" Fixed="true">
+              <DataToolbar DataSource="/sitecore/content/Applications/Layouts/IDE/File types/Xslt/Toolbar" IconSize="id16x16"/>
+
+              <Memo ID="Editor" Width="100%" Height="100%" Border="none" Wrap="off" GridPanel.Height="100%" GridPanel.Width="100%" Margin="0px" Padding="0px"/>
+            </GridPanel>
+          </Border>
+          
+          <Frame ID="ContentEditor" Width="100%" Height="100%" Visible="false"/>
+        </Border>
+      
+        <Border Height="1px" Background="#999999" GridPanel.Height="1px"><Space/></Border>
+          
+        <Toolbar ID="Toolbar">
+          <Toolbutton ID="TextButton" Header="Text" Icon="Software/16x16/text_code.png" IconSize="id16x16" Click="ShowText" Down="true"/>
+          <Toolbutton ID="ContentButton" Header="Content" Icon="People/16x16/cube_blue.png" IconSize="id16x16" Click="ShowContent"/>
+        </Toolbar>
+      
+        <HSplitter ID="IDEXsltBottom" GridPanel.Height="2" Target="bottom" GridPanel.Row.ID="Preview1"/>
+      
+        <GridPanel ID="PreviewBar" Width="100%" Height="100%" GridPanel.Height="150px" GridPanel.Row.ID="Preview2" Style="table-layout:fixed">
+        
+          <Border Height="1px" Background="#999999" GridPanel.Height="1px"><Space/></Border>
+          
+          <Border Height="20px" GridPanel.Height="20px" Padding="2px 0px 0px 4px" Style="background:#e0e0c8 url(/sitecore/shell/themes/standard/images/toolbar_background.png) repeat-x">
+          
+            <GridPanel Columns="2" Width="100%">
+              <Border Padding="0px 0px 2px 0px" Width="100%">
+                <ThemedImage Src="Network/16x16/earth_view.png" Width="16" Height="16" Margin="0px 4px 0px 0px" Align="absmiddle"/>
+                <Literal Text="Preview:"/>
+              </Border>
+              
+              <ImageButton Src="Images/close.png" Width="16" Height="16" GridPanel.Align="right" Click="HidePreview"/>
+            </GridPanel>
+            
+          </Border>
+
+          <Border Height="1px" Background="#999999" GridPanel.Height="1px"><Space/></Border>
+
+          <Border Height="20px" GridPanel.Height="20px" Padding="2px 0px 0px 4px" Style="background:#e0e0c8 url(/sitecore/shell/themes/standard/images/toolbar_background.png) repeat-x">
+            <DataContext ID="DataContext" Root="/sitecore/content" DataViewName="Master"/>
+
+            <GridPanel Columns="4" Width="100%">
+              <TreePicker ID="DataSource" DataContext="DataContext" GridPanel.Width="80%" Height="12px" Width="100%" />
+
+              <Space Width="4" />
+              
+              <Listbox ID="PreviewSites" Width="100%" Change="PreviewSites_Change" TrackModified="false" GridPanel.VAlign="top" GridPanel.Width="100%" Height="20px"/>
+              
+              <Toolbutton Icon="Applications/24x24/refresh.png" IconSize="id16x16" Click="Refresh" ToolTip="Refresh Preview"/>
+            </GridPanel>
+          </Border>
+
+          <Border GridPanel.Height="100%" Height="100%" GridPanel.Style="border:1px inset">
+            <Frame SourceUri="about:blank" ID="Preview" Height="100%" FrameBorder="0" Style="display:block;background:white"/>
+          </Border>
+          
+        </GridPanel>
+        
+      </GridPanel>
+
+    </FormPage>
+  </IDEXslt>
+</control>
+

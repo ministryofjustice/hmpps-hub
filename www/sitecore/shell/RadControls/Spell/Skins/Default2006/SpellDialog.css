@@ -1,0 +1,175 @@
+/*RadSpell Default skin*/
+
+.RadSpell_Default2006
+{
+    width:460px;
+    height:310px;
+    border:1px solid #ccc;
+    background:url(Img/spellWinBack.gif) 0 0 repeat-x #f7f7f7;
+}
+.RadSpell_Default2006 .RichTextView,
+.RadSpell_Default2006 textarea,
+.RadSpell_Default2006 select,
+.RadSpell_Default2006 .MainOptions
+{
+    margin-left:7px;
+}
+.RadSpell_Default2006,
+.RadSpell_Default2006 textarea,
+.RadSpell_Default2006 select
+{
+    font:normal 10px/16px arial,sans-serif;
+}
+/*RadSpell headings start*/
+.RadSpell_Default2006 h3,
+.RadSpell_Default2006 h3 em
+.RadSpell_Default2006 h3 span
+{
+    height:27px; /*the same as background images' height*/
+    line-height:27px; /*may be different to vertically align the text inside the tab*/
+}
+.RadSpell_Default2006 h3
+{
+    margin:10px 10px 0;
+    padding-left:12px; /*the same as spellHeadLeft.gif's width*/
+    background:url(Img/spellHeadLeft.gif) 0 0 no-repeat;
+    font-size:1.2em;
+}
+.RadSpell_Default2006 h3 em
+{
+    float:left;
+    padding-right:33px; /*the same as spellHeadRight.gif's width*/
+    background:url(Img/spellHeadRight.gif) 100% 0 no-repeat #fff;
+    font-style:normal;
+}
+.RadSpell_Default2006 h3 span
+{
+    float:left;
+    padding:0 0 0 5px;
+    background:url(Img/spellHeadMiddle.gif) 0 0 repeat-x;
+}
+.RadSpell_Default2006 h4
+{
+    margin-top:1em;
+    padding-left:7px;
+    font-size:1.1em;
+    font-weight:normal;
+}
+/*RadSpell headings end*/
+
+/*RadSpell text boxes start*/
+.RadSpell_Default2006 .RichTextView,
+.RadSpell_Default2006 textarea
+{
+    height:80px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#000 #ccc #ccc #000;
+    background:#fff;
+    font-size:1.1em;
+}
+.RadSpell_Default2006 textarea
+{
+    width:318px;/*this width + side padding = .RichTextView width + side padding*/
+    padding:3px 5px 3px 3px;
+}
+.RadSpell_Default2006 .RichTextView
+{
+    width:320px;/*this width + side padding = textarea width + side padding*/
+    padding:3px;
+    font-family:tahoma,sans-serif;
+    cursor:text;
+}
+.RadSpell_Default2006 .RichTextView strong
+{
+    color:#f00;
+    text-decoration:underline
+}
+.RadSpell_Default2006 .RichTextView em
+{
+    font-style:normal;
+    color:#000;
+}
+/*RadSpell text boxes end*/
+
+/*RadSpell combobox start*/
+.RadSpell_Default2006 select,
+.RadSpell_Default2006 .MainOptions
+{
+    width:328px;/*2px more than .RichTextView width + side padding*/
+}
+.RadSpell_Default2006 select
+{
+    height:80px;
+    font-size:1.1em;
+}
+/*the next two must be separate*/
+/*IE 7 only*/
+*:first-child+html .RadSpell_Default2006 select
+{
+    height:85px;/*5px more than select*/
+}
+/*IE 5-6 only*/
+* html .RadSpell_Default2006 select
+{
+    height:85px;/*5px more than select*/
+}
+.RadSpell_Default2006 select option
+{
+    padding:1px 3px 0;
+}
+/*RadSpell combobox end*/
+
+/*RadSpell buttons start*/
+.RadSpell_Default2006 .SpellOptions li,
+.RadSpell_Default2006 .SpellOptions a
+{
+    /*the same as background images' height*/
+    height:22px;
+    line-height:22px;
+}
+.RadSpell_Default2006 .SpellOptions li
+{
+    width:78px;
+    text-align:center;
+    font-size:1.1em;
+}
+.RadSpell_Default2006 .SpellOptions a
+{
+    color:#333;
+    background:url(Img/spellButtonCombined.gif) 0 0 no-repeat;
+    text-decoration:none;
+}
+.RadSpell_Default2006 .SpellOptions a:hover
+{
+    background-position:0 -22px;
+}
+.RadSpell_Default2006 .MainOptions
+{
+    margin-top:10px;
+}
+.RadSpell_Default2006 .MainOptions li
+{
+    float:right;
+    margin-left:10px;
+}
+.RadSpell_Default2006 .AuxOptions
+{
+    float:right;
+    width:100px;
+    margin-top:20px;
+}
+.RadSpell_Default2006 .AuxOptions li
+{
+    margin-top:8px;
+}
+.RadSpell_Default2006 a.disabled
+{
+    color:#999;
+}
+.RadSpell_Default2006 .SpellOptions a.disabled:hover
+{
+    background-position:0 0;
+}
+/*RadSpell buttons end*/
+

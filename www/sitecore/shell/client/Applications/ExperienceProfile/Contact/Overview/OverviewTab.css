@@ -1,0 +1,69 @@
+﻿div[data-sc-id=DetailsRow] {
+  padding-top: 10px;
+}
+
+div[data-sc-id=DetailsRow] > div > div {
+    clear: both;
+}
+
+.sc-text-label, .sc-text-smalltitle, .sc-text-largetitle, .sc-text-value {
+    display: block;
+}
+
+div[data-sc-id=BestPatternMatchesAccordion] {
+    margin-right: 7px;
+}
+
+div[data-sc-id=RecentCampaignsAccordion] {
+    margin-left: 8px;
+}
+
+div[data-sc-id=MatchBorder], div[data-sc-id=CampaignBorder] {
+    margin-bottom: 20px !important;
+}
+
+img[data-sc-id=MatchImage] {
+    float: left;
+}
+
+div[data-sc-id=MatchTextBorder] {
+    margin-left: 45px;
+}
+
+div[data-sc-id=EventBorder] {
+    margin-bottom: 15px !important;
+}
+
+div[data-sc-id=EventBorder] > img {
+    float: left;
+  margin-top: 4px;
+}
+
+div[data-sc-id=EventBorder] > div {
+    margin-left: 30px;
+}
+
+div[data-sc-id=EventBorder] > div > span:first-child {
+    color: #707070;
+}
+
+div[data-sc-id=BestPatternMatchesColumn] {
+  padding-right: 0;
+}
+
+div[data-sc-id=RecentCampaignsColumn] {
+  padding-left: 0;
+}
+
+span.sc-text[data-sc-id=CampaignName],
+span.sc-text[data-sc-id=CampaignColon] {
+  font-weight: bold;
+}
+
+div.sc-border[data-sc-id=CampaignNameBorder] .sc-text-value {
+  display: inline;
+}
+
+span.sc-text[data-sc-id=CampaignColon] {
+  margin-right: 5px;
+}

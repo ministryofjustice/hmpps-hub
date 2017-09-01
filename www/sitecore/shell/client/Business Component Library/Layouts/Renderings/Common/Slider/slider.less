@@ -1,0 +1,191 @@
+@import "../../../../../SpeakSDK/Speak-DefaultTheme/Speak/speak-core.less";
+
+.sc-Slider.disabled {
+  .sc-disabled-opacity();
+}
+
+.sc-Slider.disabled * {
+  cursor: not-allowed;
+}
+
+.sc-Slider {
+   position: relative;
+  
+   .titleBar {
+    position: absolute;    
+    top: 8px;    
+    z-index: 1030;
+    display: block;
+    visibility: visible;
+    font-size: 11px;
+    filter: alpha(opacity=0);
+    width: 100%;
+    height: 17px;
+
+    .childVal {
+      display: inline-block;
+      height: 100%;
+      text-align: center;     
+      
+      span {
+        font: bold 12px arial;
+        position: relative;
+        margin-left: 4px;
+      }
+ 
+      img {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+.slider {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;  
+}
+
+.slider.slider-horizontal {
+  width: 98%;
+  height: 67px;
+}
+
+.slider.slider-horizontal .slider-track {
+  height: 10px;
+  width: 100%;
+  margin-top: -3px;
+  top: 50%;
+  left: 0;
+}
+
+.slider.slider-horizontal .slider-selection {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.slider.slider-horizontal .slider-handle {
+  margin-left: -10px;
+  margin-top: -7px;
+}
+
+.slider.slider-horizontal .slider-handle.rectangle {
+  border-width: 10px 5px 10px 5px;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  margin-top: -7px;
+  background-color: @SC-Theme-Basic-XX-Dark;  
+  .sc-rounded-corners(2px);
+}
+
+.slider input {
+  display: none;
+}
+
+.slider .tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  visibility: visible;
+  padding: 5px;
+  font-size: 11px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+    margin-left: 2px;
+}
+
+.slider .tooltip.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.slider .tooltip.top {  
+  margin-top: 45px;
+  &.titleBar {
+    margin-top: 25px;
+  }
+}
+
+
+.slider .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: @SC-Theme-InverseForeground;
+  text-align: center;
+  text-decoration: none;
+  background-color: @SC-BaseFontColor;
+  .sc-rounded-corners(4px);
+}
+
+.slider .tooltip-inner {
+  white-space: nowrap;
+}
+
+.slider .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.slider .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: @SC-BaseFontColor;
+  top: 26px;
+}
+
+.slider-handle.hide {
+  display: none;
+}
+
+.slider-handle.show {
+  display: block;
+}
+
+.slider-track {
+  position: absolute;
+  cursor: pointer;
+  background-color: @SC-Theme-Basic-X-Light;
+  -webkit-box-shadow: inset 0 1px 2px @SC-Theme-Basic-Default;
+  -moz-box-shadow: inset 0 1px 2px @SC-Theme-Basic-Default;
+  box-shadow: inset 0 1px 2px @SC-Theme-Basic-Default;
+  .sc-rounded-corners(4px);
+}
+
+.slider-selection {
+  position: absolute;
+  background-color: @SC-Theme-Primary-Dark;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  .sc-rounded-corners(4px);
+}
+
+.slider-handle {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image:linear-gradient(to bottom, @SC-Theme-Basic-XX-Light 0%, @SC-Theme-Basic-Light 100%);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  border: 2 solid @SC-Theme-Primary-Dark;
+}
+
+.slider-handle.round {
+  .sc-rounded-corners(15px);
+}
+ 
+.slider-handle.rectangle {
+  background: transparent none;
+}

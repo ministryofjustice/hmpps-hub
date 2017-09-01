@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <ToolOptions>
+    <def:Code><![CDATA[
+    
+    protected override void OnLoad(EventArgs e) {
+      base.OnLoad(e);
+      
+      Item itm = SiteContext.Current.Presentation.Items[DataSource];
+      Error.Assert(itm != null, "Unable to find item from DataSource " + DataSource) ;
+      
+      foreach(Item child in itm.Children) {
+        System.Web.UI.Control ctl = ControlFactory.GetControl("ToolOption");
+        Error.Assert(ctl != null, "Unable to create control ToolOption");
+        
+        ReflectionUtil.SetProperty(ctl, "Icon", child["Icon"]);
+        ReflectionUtil.SetProperty(ctl, "Header", child["Header"]);
+        ReflectionUtil.SetProperty(ctl, "Click", child["Click"]);
+        
+        Options.Controls.Add(ctl);
+      }
+    }
+    
+    ]]></def:Code>
+    
+    <Border def:id="Options" Padding="2px 8px 2px 8px" Align="center"/>
+    
+  </ToolOptions>
+</control>
+

@@ -1,0 +1,1 @@
+<%@ Page Language="c#" Inherits="Sitecore.Syndication.Web.FeedDeliveryLayout, Sitecore.Kernel" CodePage="65001" %>

@@ -1,0 +1,62 @@
+﻿@using Sitecore.ListManagement.Client
+@using Sitecore.ListManagement.Client.Web.UI.Controls.ImportMapTo
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+  var rendering = new ImportMapTo(new DatasourceBasedParametersResolver(Model.Rendering)) { Class = "sc-importMapTo" };
+
+  rendering.Requires.Script("listmanager", "ImportMapTo.js");
+  rendering.Requires.Css("listmanager", "ImportMapTo.css");
+
+  rendering.SetAttribute("data-sc-importmodel", rendering.GetImportModelJSon());
+
+  var controlId = rendering.ControlId;
+  var htmlAttributes = rendering.HtmlAttributes;
+}
+
+<script data-layout-importmapto-row="@controlId" type="text/x-sc-importMapTo">
+  <div class="row row-fluid sc-show-padding">
+    <div class="col-md-5">
+      <select class="form-control sc-combobox" name="sc-combobox-@controlId"
+              id="sc-combobox-@controlId" data-position="<%= position %>"
+              data-datafield="<%= dataField %>" data-automap="<%= autoMap %>"
+              data-automapsource="<%= autoMapSource %>">
+        <option value="-1" selected="selected" data-lastposition="">@Sitecore.ClientHost.Globalization.Translate(Texts.SelectFieldFromFile)</option>
+        <% for (var i = 0; i < fileFields.length; i = i + 1) { %>
+        <option value="<%= i %>"><%= fileFields[i] %></option>
+        <% } %>
+      </select>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+      <span class="sc-text pull-left"><% if(required == true) { %> <span class="lm-asterisk">*</span> <% } %><%= fieldName %></span>
+    </div>
+  </div>
+</script>
+
+<div @htmlAttributes>
+  <div>
+    <div>
+      <div class="row row-fluid sc-show-paddingLeftBottom">
+        <div class="col-md-9">
+          <span class="pull-left" title="@Sitecore.ClientHost.Globalization.Translate(Texts.TheContactIdentifierIsTheUniqueValueThatIdentifiesYourContacts)">
+            <input type="checkbox" class="sc-importmaptomanualmap" /> @Sitecore.ClientHost.Globalization.Translate(Texts.ManuallyMapContactIdentifiersToUseEmailAddressAsTheContactIdentifierLeaveUnchecked)
+          </span>
+        </div>
+      </div>
+      <div class="lm-header">
+        <div class="row row-fluid sc-show-padding">
+          <div class="col-md-5">
+            <label class="sc-label pull-left"><strong>@Sitecore.ClientHost.Globalization.Translate(Texts.FileField)</strong></label>
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <label class="sc-label pull-left"><strong>@Sitecore.ClientHost.Globalization.Translate(Texts.SitecoreField)</strong></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lm-scroll-import">
+      <div class="sc-align-center sc-importmaptobody">
+      </div>
+    </div>
+  </div>
+</div>

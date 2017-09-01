@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Aliases>
+    <FormDialog Icon="Network/24x24/spy.png" Header="Aliases" Text="Add or remove URL aliases for the current item." CancelButton="false">
+      
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Dialogs.Aliases.AliasesForm,Sitecore.Client"/>
+
+      <Stylesheet>
+        .optionButtons {
+        position: absolute;
+        top: 25px;
+        right: 0;
+        width: 90px;
+        text-align: right;
+        white-space: normal;
+        }
+
+        .optionButtons > .scButton:first-child {
+        margin-top:0;
+        }
+
+        .aliasesContainer {
+        position: relative;
+        margin-right: 90px;
+        height: 100%;
+        }
+        
+        .aliasesContainer > input {
+        width: 100%;
+        }
+        
+        .aliasesListContainer {
+        position: absolute;
+        top: 75px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        }
+      </Stylesheet>
+
+      <Script>
+        function scCreateAlias(id, header, value) {
+        var list = $("List");
+
+        var option = document.createElement("option");
+        list.options.add(option);
+
+        option.setAttribute("id", id);
+        option.setAttribute("value", value);
+        option.innerHTML = header;
+        }
+
+        function scRemoveAlias(id) {
+          var list = $("List");
+          var option = $(id);
+
+          for (var n = list.length - 1; n >= 0; n--) {
+            var option = list.options[n];
+            
+            if (option.id == id) {
+             list.options.remove(n);
+            }
+          }
+        }
+      </Script>
+
+      <div class="scStretch">
+        <div class="aliasesContainer">
+          <Label Class="scFieldLabel" For="NewALias"><Literal text="Name:"/></Label>
+          <Edit ID="NewAlias" Class="scIgnoreModified"/>
+          <div class="aliasesListContainer">
+            <Listbox ID="List" class="scStretch" Size="8" Multiple="true"/>
+          </div>
+        </div>
+
+        <div class="optionButtons">
+          <Button ID="Add" Header="Add" Click="Add_Click" Style="margin-bottom:15px;"/>
+          <Button ID="Remove" Header="Remove" Click="Remove_Click"/>
+        </div>
+
+      </div>
+      
+    </FormDialog>
+  </Aliases>
+</control>

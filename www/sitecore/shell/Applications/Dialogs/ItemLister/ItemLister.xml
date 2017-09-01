@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Applications.Items.ItemLister>
+    <Stylesheet Src="ItemLister.css" DeviceDependant="true" />
+    
+    <FormDialog ID="Dialog" Icon="Core/32x32/open_document.png" Header="Open Item" 
+      Text="Select the item that you wish to open. Then click the Open button." OKButton="Open">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.ItemLister.ItemListerForm,Sitecore.Client"/>
+
+      <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+        <Scrollbox ID="Items" Width="100%" Height="100%" Background="white" Border="1px inset" Padding="0" GridPanel.Height="100%" />
+      </GridPanel>
+
+    </FormDialog>
+  </Applications.Items.ItemLister>
+</control>

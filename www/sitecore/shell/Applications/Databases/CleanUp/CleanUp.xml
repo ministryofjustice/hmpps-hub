@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Databases.CleanUp>
+    <WizardForm CodeBeside="Sitecore.Shell.Applications.Databases.CleanUp.CleanUpForm,Sitecore.Client">
+
+      <WizardFormPage ID="Databases" Header="Clean up Databases" Text="Select the databases that you want to clean up and click Clean." >
+        <WizardFormIndent>
+
+          <Groupbox ID="DatabasesPanel" Header="Databases">
+            <Border ID="DatabasesList"/>
+          </Groupbox>
+
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormProgressPage ID="Cleaning" Header="Clean up Databases" Text="Please wait for while the databases are cleaned up." ActionText="Cleaning up..." >
+        <Border ID="Status">&#160;</Border>
+      </WizardFormProgressPage>
+
+      <WizardFormPage ID="Retry" Header="Error" Text="An error occurred while cleaning up." >
+        <WizardFormPadding>
+          <Memo ID="ErrorText" ReadOnly="true" class="scStretch" />
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="LastPage" Header="Clean up Databases">
+        <WizardFormPadding>
+          <div class="scStretch scFlexColumnContainerWithoutFlexie">
+            <Literal class="sc-text-largevalue" Text="The cleanup of the databases has completed."/>
+            <Literal class="scFieldLabel" Text="Result:"/>
+            <div class="scFlexContentWithoutFlexie scWizardLastPageResultText">
+              <div class="scStretchAbsolute">
+                <Memo ID="ResultText" class="scStretch" ReadOnly="true"/>
+              </div>
+            </div>
+          </div>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+    </WizardForm>
+  </Databases.CleanUp>
+</control>

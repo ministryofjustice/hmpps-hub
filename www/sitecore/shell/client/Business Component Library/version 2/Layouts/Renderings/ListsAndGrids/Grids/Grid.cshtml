@@ -1,0 +1,20 @@
+﻿@using Sitecore
+@using Sitecore.Mvc
+@using Sitecore.Speak.Components.Models.ListsAndGrids.Grids
+@model Sitecore.Speak.Components.Models.ListsAndGrids.Grids.GridRenderingModel
+
+@{
+  Model.Class.Append("sc-grid row");
+  Model.DataBind.IsVisible();
+}
+<div @Model.HtmlAttributes>
+  @for (var index = 0; index < Model.NumberOfCells; index++)
+  {
+    <div class="@Html.GetColumnsClass(Model.GridAttributes, Model.GridCellSizes, Model.PaddingClass, index)">
+    
+    @Html.Raw(ClientHost.Web.PlaceHolder(Model.Id + ".Cell" + (index + 1)).ToHtmlString())
+  </div>
+
+    @Html.RenderClearFix(Model.GridAttributes, index)
+  }
+  </div>

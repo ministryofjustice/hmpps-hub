@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Gallery.WorkflowEdit>
+    <Stylesheet Key="Gallery.WorkflowEdit">
+      body {
+      height:auto;
+      }
+    </Stylesheet>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Galleries.WorkflowEdit.GalleryWorkflowEditForm,Sitecore.Client"/>
+
+      <Menu ID="Options" Style="width:100%;" Border="none"/>
+
+    </Gallery>
+  </Gallery.WorkflowEdit>
+</control>

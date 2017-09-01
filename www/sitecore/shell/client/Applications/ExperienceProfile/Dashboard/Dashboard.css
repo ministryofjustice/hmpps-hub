@@ -1,0 +1,94 @@
+﻿body.sc {
+  min-width: 700px;
+  overflow-x: auto;
+}
+/*should be delete after fixing header issue in speak project*/
+header.sc-globalHeader {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*----------*/
+.sc .sc-table thead tr th:after
+{
+  background: #d6d6d6 right center;
+  position: absolute;
+  width: 1px;
+  display: block;
+  height: 15px;
+  right: 0;
+  content: "";
+  top: 50%;
+  margin-top: -7px;
+}
+
+div[data-sc-id=SearchBorder] {
+    display: inline-block;
+    width: 450px;
+}
+
+.sc-accordion .sc-table {
+  border: none;
+}
+
+div[data-sc-id=VisitorsAccordion] {
+  margin-top: 30px;
+}
+
+.sc-messageBar {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.sc .sc-table thead th {
+  text-indent: 0; 
+  white-space: normal; 
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.sc .sc-table tbody tr td.ventilate:after, 
+.sc .sc-table thead td.ventilate:after {
+  top: 50%;
+  margin-top: -7px;
+}
+
+div.sc-border[data-sc-id=DescriptionBorder] {
+  padding-top: 4px;
+}
+
+div.sc-border[data-sc-id=Main] {
+  padding: 0 15px;
+}
+
+div.sc-accordion[data-sc-id=VisitorsAccordion] {
+  margin-bottom: 15px;
+}
+
+div.sc-advancedExpander[data-sc-id=VisitorsAccordion] .sc-advancedExpander-body
+{
+  border: none;
+}
+
+.sc-listcontrol .sc-table-header th.sc-table-head:after {
+  top: 50%;
+  margin-top: -7px;
+}
+
+.sc-listcontrol .sc-table tbody tr td a {
+  padding: 14px 15px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sc-listcontrol .sc-table tbody tr td a[href] {
+  text-decoration: underline;
+}
+
+.sc-listcontrol .sc-table tbody tr td a[href]:hover {
+  text-decoration: none;
+}

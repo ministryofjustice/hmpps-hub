@@ -1,0 +1,40 @@
+﻿@using Sitecore
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Resources
+@using Sitecore.Web.UI
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  userControl.Class = "sc-accountInformation";
+  userControl.Requires.Script("business", "AccountInformation.js");
+
+  var htmlAttributes = userControl.HtmlAttributes;
+
+  var user = ClientHost.Context.User;
+
+  var name = user.Profile.FullName;
+  if (string.IsNullOrEmpty(name))
+  {
+    name = user.LocalName;
+  }
+
+  var portraitUrl = Images.GetThemedImageSource(user.Profile.Portrait, ImageDimension.id32x32);
+  if (string.IsNullOrEmpty(portraitUrl))
+  {
+    portraitUrl = "/sitecore/shell/client/Business Component Library/Assets/img/Speak/AccountInformation/default_user_image.png";
+  }
+
+  var LogoutLocalizedText = ClientHost.Globalization.Translate("Log out");
+}
+<ul @htmlAttributes>
+  <li><a class="logout" data-bind="click:logout" href="#">@LogoutLocalizedText</a></li>
+  <li>
+    @name
+    @if (!string.IsNullOrEmpty(portraitUrl))
+    {
+      <img src="@portraitUrl" />
+    }
+  </li>
+</ul>

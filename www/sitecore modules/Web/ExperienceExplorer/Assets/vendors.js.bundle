@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="vendors.js">
+    <!--The order of the <file> elements determines the order of them when bundled.-->
+    <file>/sitecore modules/web/experienceExplorer/assets/vendors/jquery/jquery-1.10.2.min.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/jquery-ui/js/jquery-ui.1.9.1.min.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/bootstrap/js/widget.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/bootstrap/js/bootstrap-transition.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/bootstrap/js/bootstrap-tooltip.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/bootstrap/js/bootstrap-button.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/jquery-cookie-plugin/jquery.cookie.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/jsviews/jsviews.min.js</file>
+    <file>/sitecore modules/Web/ExperienceExplorer/Assets/vendors/jcarousel/jquery.jcarousel.js</file>
+</bundle>

@@ -1,0 +1,56 @@
+.scToolbar {
+	background: #505050 url(/sitecore/shell/themes/standard/Images/Toolbar/ToolbarBackground.png) repeat-x;
+	border: none;
+	color: black;
+	height:22px;
+	padding: 4px 0px 0px 4px;
+	vertical-align:middle;
+}
+.scToolbutton {
+  float:left;
+	background: transparent;
+	border: none;
+	cursor: default;
+	height: 14px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 2px 2px 3px 1px;
+	margin:0px 4px 0px 4px;
+}
+  
+.scToolbutton_Disabled {
+  float:left;
+	background: transparent;
+	color: buttontext;
+  -moz-opacity: 0.35;
+	border: none;
+	cursor: default;
+	height: 14px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 2px 2px 3px 1px;
+	margin:0px 4px 0px 4px;
+}
+.scToolbutton_Hover {
+  float:left;
+	background: #c1d2ee;
+	border: 1px solid #316ac5;
+	cursor: default;
+	height: 14px;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 1px 1px 2px 0px;
+	margin:0px 4px 0px 4px;
+}
+.scToolbutton_Down, .scToolbutton_Down_Hover {
+  float:left;
+	background: white;
+	border: 1px solid #316ac5;
+	color: black;
+	cursor: default;
+	height:14px;
+	vertical-align: bottom;
+	white-space: nowrap;
+	padding: 1px 1px 2px 0px;
+	margin:0px 4px 0px 4px;
+}

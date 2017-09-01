@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <IDEHtmlEditor>
+    <FormPage>
+      <Stylesheet Src="IDE.css" DeviceDependant="true"/>
+      <Script Src="/sitecore/shell/Controls/SitecoreKeyboard.js"/>
+      <Script type="text/javascript">
+        function scSetEditorText(text) {
+        var editor = scForm.browser.getControl('Editor').contentWindow;
+          if (editor) {
+            if (editor.scSetText) {
+              editor.scSetText(text);
+            }
+          }
+        }
+
+        if (scForm) {
+          scForm.enableModifiedHandling();
+        }
+      </Script>
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.IDE.Editors.HTML.IDEHtmlEditorForm,Sitecore.Client"/>
+
+      <DataContext ID="DataContext" Root="/sitecore/content" DataViewName="Master"/>
+
+      <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+      
+        <Border Class="scFixSize" GridPanel.Width="100%" GridPanel.Height="100%" Height="100%">
+          <Frame ID="GridDesigner" Width="100%" Height="100%" />
+          
+          <Frame ID="Editor" Width="100%" Height="100%" Visible="false"/>
+
+          <Border ID="HtmlEditorPane" Visible="false" Height="100%">
+            <Memo ID="HtmlEditor" Width="100%" Height="100%" Border="none" Wrap="off" Margin="0px" Padding="0px"/>
+          </Border>
+          
+          <Border ID="CodeEditorPane" Visible="false" Height="100%">
+            <Memo ID="CodeEditor" Width="100%" Height="100%" Border="none" Wrap="off" Padding="0px" Margin="0px"/>
+          </Border>
+
+          <Frame ID="ContentEditor" Width="100%" Height="100%" Visible="false"/>          
+        </Border>
+        
+        <Toolbar GridPanel.Height="27">
+          <GridPanel Columns="3">
+          
+            <Border NoWrap="true">
+              <Toolbutton ID="GridButton" Header="Grid" Icon="Business/16x16/table_edit.png" IconSize="id16x16" Down="true" Click="ShowGrid" ToolTip="Show Grid Editor Mode"/>
+              <Toolbutton ID="DesignButton" Header="Design" Icon="Applications/16x16/text_view.png" IconSize="id16x16" Down="false" Click="ShowDesign" ToolTip="Show Design Mode"/>
+              <Toolbutton ID="HtmlButton" Header="HTML" Icon="Software/16x16/text_code.png" IconSize="id16x16" Click="ShowHtml" ToolTip="Show HTML Codes"/>
+              <Toolbutton ID="CodeButton" Header="Code" Icon="Software/16x16/text_code_csharp.png" IconSize="id16x16" Click="ShowCode" ToolTip="Show Code Behind"/>
+              <Toolbutton ID="ContentButton" Header="Content" Icon="People/16x16/cube_blue.png" IconSize="id16x16" Click="ShowContent" ToolTip="Show Content Item"/>
+              <ThemedImage Src="Images/draghandle9x15.png" Width="9" Height="15" Align="Bottom"/>
+              <Toolbutton ID="LiveButton" Icon="Network/16x16/earth_view.png" IconSize="id16x16" Click="ShowLiveMode" ToolTip="Toggle Live Mode"/>
+              <Space Width="4"/>
+            </Border>
+            
+            <Border Padding="0px 0px 0px 0px">
+              <TreePicker ID="DataSource" DataContext="DataContext" Width="256px" Changed="SetDataSource" SelectOnly="true"/>
+            </Border>
+            
+            <Toolbutton Icon="Applications/24x24/refresh.png" IconSize="id16x16" Click="SetDataSource"/>
+            
+          </GridPanel>
+        </Toolbar>
+
+      </GridPanel>
+        
+    </FormPage>
+  </IDEHtmlEditor>
+</control>
+

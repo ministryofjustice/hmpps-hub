@@ -1,0 +1,630 @@
+/* Global Styles */
+LEGEND
+{
+	FONT: menu;
+	COLOR: #bbbbbb;
+}
+FIELDSET
+{
+	border-top: 2px outset white;
+	border-left: 2px outset white; 
+	border-bottom: 2px inset white;
+	border-right: 2px inset white;  
+	margin:4px;
+} 
+BODY
+{
+	scrollbar-face-color: #E9E9E9;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #E9E9E9;
+	scrollbar-3dlight-color: #DBDBDB;
+	scrollbar-arrow-color: #787878;
+	scrollbar-track-color: #F5F5F5;
+	scrollbar-darkshadow-color: #AEAEAE;
+	background-color:#fff;
+	border:0px;
+	margin:0px;	
+}
+BODY.Body {
+	background-color: #fff;
+	font-family: Arial, Verdana;
+}
+
+
+/* Text-related Styles */
+.Text
+{
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Arial, Verdana;
+	color: black;
+}
+
+LABEL, .Label
+{
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Arial, Verdana;
+	color: black;
+	padding-left:4px;
+}
+.DisabledLabel
+{
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Arial, Verdana;
+	color: Gray;
+}
+.Message
+{
+	FONT-SIZE: 12px;
+	COLOR: blue;
+	FONT-FAMILY: Tahoma
+}
+.ErrorMessage
+{
+	FONT-SIZE: 12px;
+	COLOR: red;
+	FONT-FAMILY: Tahoma
+}
+
+/* Button related styles */
+
+INPUT.Button, BUTTON.Button 
+{
+	border: 1px solid #0b0b0b; 
+	margin: 3px; 
+	margin-left:6px;
+	WIDTH: 78px; 
+	FONT-FAMILY: Arial; 
+	HEIGHT: 22px; 
+	BACKGROUND-image: url(CssImg/button.gif);
+	background-color: Transparent; 
+	TEXT-ALIGN: center;
+	font-size:11px;
+	vertical-align:middle;
+	color: white;
+}
+
+BUTTON.ImageButton
+{
+	border: 0px;
+	background-color: Transparent;
+	width:22px;
+	height:20px;
+	vertical-align:top;
+}
+
+.DialogUtilityArea
+{
+	border:1px solid #999999;
+	background-color:#ccccee;
+	margin-top:3px;	
+	margin-bottom:0px;	
+}
+
+/* Dialog Holder related properties */
+.FileNodeTreeHolder
+{
+	border: #bbbbbb 1px solid;
+	OVERFLOW: auto;
+	WIDTH: 200px;
+	HEIGHT: 250px;
+	BACKGROUND-COLOR: #fcfcfc;
+	vertical-align:top;
+}
+
+.PreviewAreaHolder
+{
+	border: #bbbbbb 1px solid;
+	VERTICAL-ALIGN: middle;
+	OVERFLOW: auto;
+	WIDTH: 250px;
+	HEIGHT: 250px;
+	BACKGROUND-COLOR: #fcfcfc;
+	TEXT-ALIGN: center;
+}
+
+/* Image-button related styles in the dialogs */ 
+.ImageButtonHolder
+{
+	background-color: white;
+	border: 1px solid #bbbbbb;
+	border-bottom: 0px solid #cccccc;
+}
+
+.ImageButtonHolder A
+{	
+	width:22px;/*IE*/
+	margin:1px;	
+}
+
+.ImageButtonHolder A:hover
+{
+	margin:0px;
+	background-color:#e3e3e3;
+	border:1px solid #666666;	
+}
+ 
+.ImageButtonHolder A.Disabled, .ImageButtonHolder A.Disabled:hover
+{	
+	width:22px;/*IE*/	
+	margin:1px;	
+	background-color:transparent;
+	border:0px solid transparent;		
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;	
+}
+
+INPUT.ButtonDisabled, BUTTON.ButtonDisabled
+{
+	border: 1px solid #0b0b0b; 
+	margin: 3px; 
+	margin-left:6px;
+	WIDTH: 78px; 
+	FONT-FAMILY: Arial; 
+	HEIGHT: 22px; 
+	BACKGROUND-image: url(CssImg/button.gif);
+	background-color: Transparent; 
+	TEXT-ALIGN: center;
+	font-size:11px;
+	vertical-align:middle;
+	color: #fff;
+}
+
+INPUT.File
+{	
+	border:1px solid #999999;
+	font-size:11px;	
+}
+
+/* TextBox related styles */
+INPUT.RadETextBox
+{
+	padding-left:2px;
+	border: 1px solid #bbbbbb; 
+	font: menu;
+	font-size: 12px; 
+	margin:1px;	 
+}
+
+/* DropDown related styles */
+SELECT.DropDown
+{
+	FONT-FAMILY: Tahoma;
+	padding-left:2px;
+	font-size:11px;
+	margin:2px;
+}
+
+/* MainTable related styles */
+TABLE.MainTable
+{
+	BACKGROUND-COLOR: #fff;
+}
+TABLE.MainTable TH
+{
+	text-align:left;
+	padding-left: 10px;
+	font-family: Arial;
+	height: 41px;
+	background-color: #e5e5e5;
+	width: 100%;
+}
+TABLE.MainTable TD.MainTableContentCell
+{
+	padding: 8px 5px 5px 5px;
+}
+
+/* TD Related styles */
+TD.Padded
+{
+	padding: 2px 2px 2px 1px;
+}
+
+/* Separator-related styles */
+TD.VerticalSeparator 
+{
+	WIDTH: 2px
+}
+
+TD.HorizontalSeparator
+{
+}
+
+/* Tab related styles */
+
+TABLE.Tab
+{	
+	cursor:pointer;
+	cursor:hand;
+	font-family: Arial, Verdana, Tahoma;
+	font-size:11px;
+	height:24px;
+	color: #666666;
+}
+
+TABLE.TabSelected
+{
+	cursor:default;
+	background: white;
+	font-family: Arial, Verdana, Tahoma;
+	font-size:12px;
+	height:27px;
+	color: #333;
+}
+.TabLeftSelected
+{
+
+} 
+.TabCenterSelected
+{
+	padding: 0 10px;
+}
+.TabRightSelected
+{
+
+}
+
+.TabLeft
+{
+
+}
+.TabCenter
+{
+	padding: 0 10px;
+}
+.TabRight
+{
+
+}
+
+TABLE.TabDisabled
+{
+	cursor: crosshair;
+	cursor:no-drop;
+	font-family: Arial, Verdana, Tahoma;
+	font-size:11px;
+	height:27px;
+	color:gray;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;	
+}
+
+.TabLeftDisabled
+{
+
+}
+
+.TabCenterDisabled
+{
+	padding: 0 10px;
+}
+.TabRightDisabled
+{
+
+}
+
+
+/* Tree-node related styles */
+.TreeNodeSelected TD, .TreeNodeSelected TD A
+{
+	cursor:hand;
+	cursor:pointer;
+	font-size:11px;
+	font-family:Tahoma;
+	padding:1px 0px 1px 1px;	
+	background-color: #f2f2f2;
+	text-decoration:none;
+	color: black;
+}
+
+.TreeNodeDefault TD, .TreeNodeDefault A, .TreeNodeDefault A:visited
+{
+	cursor:hand;
+	cursor:pointer;
+	font-size:11px;
+	font-family:Tahoma;
+	padding:1px 0px 1px 1px;	
+	text-decoration:none;
+}
+
+.TreeNodeDefault A:hover
+{
+	color:#999999;
+	cursor:hand;
+	cursor:pointer;
+	text-decoration:underline;
+	font-size:11px;
+	font-family:Tahoma;
+	padding:1px 0px 1px 1px;		
+}
+
+.FileBrowserSortHeader
+{
+	cursor:hand;
+	cursor:pointer;
+	font-size:11px;
+	font-family:Tahoma;
+	border-top: 0px;
+	border-right: 1px solid #bbbbbb;
+	border-bottom: 1px solid #bbbbbb;
+	border-left:1px solid #cccccc;
+	background-color: #e5e5e5;
+	color: #333;
+}
+
+/*ERJO - RELATED TO THE Tables Dialog!!!*/
+TD.TableDialogCell
+{
+	background-color: #cccccc;
+}
+
+
+TD.TableDialogSelectedCell
+{
+	background-color: #999999;
+}
+
+TD.TableDialogTableHolder
+{
+	background-color:White;
+	border:1px solid #bbbbbb;
+}
+
+/* --- Drop down menu --- */
+.MenuButton		
+{
+	margin:3px; 
+	position:absolute;
+	width:14px; 
+	height:14px; 
+	font-size:4pt; 
+	border:1px solid #cccccc;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.MenuElement
+{
+	position: absolute;
+	background-color: #009900;	
+	z-index: 1000;
+}
+
+/* --- Color picker --- */
+.RadEColorPicker
+{
+	border:1px solid #7F9DB9;
+	background-color: white; 
+	cursor:default;
+}
+.RadEColorPicker TD
+{	
+	border:1px solid white; 
+	height:14px;
+	text-align:center;
+}
+
+.RadEColorPicker TD.Over
+{
+	border:1px solid #bbbbbb;			
+	height:14px;
+}
+
+.RadEColorPicker TD DIV
+{
+	border: 1px solid #808080;
+	width: 12px;
+	height: 13px;
+	font-size:5pt;			
+}
+
+/* --- Alignment selector --- */
+.AlignmentControlTable
+{
+	background-color:#fefefe;
+	border: 1px solid #7F9DB9;
+	cursor:default;
+}
+
+.AlignmentControlTable A
+{	
+	width:22px;/*IE*/
+	margin:1px;	
+}
+
+.AlignmentControlTable A:hover
+{
+	margin:0px;
+	background-color:#e3e3e3;
+	border:1px solid #bbbbbb;	
+} 
+
+/* TableBorderControl */
+.TableBorderControlMain 
+{
+	border: 1px solid #bbbbbb;
+	BACKGROUND-COLOR: white;
+	margin:5px;
+}
+
+.TableBorderControlMain A
+{	
+}
+
+.TableBorderControlMain A:hover
+{
+	background-color:#e3e3e3;
+	border:1px solid #666666;
+}
+
+.TableBorderControlMain TD.HButtonHolder
+{
+	border: 1px solid #bbbbbb;
+	background-image: url(Dialogs/tableBorderControlH.gif);
+	background-repeat: repeat-x;
+	padding: 2px;
+} 
+
+.TableBorderControlMain TD.VButtonHolder 
+{
+	text-align:left;
+	border: 1px solid #bbbbbb;
+	background-image: url(Dialogs/tableBorderControlV.gif);
+	background-repeat: repeat-y;
+	width: 20px;
+}
+
+.TableBorderControlMain TD.Preview
+{
+	border: 1px solid #bbbbbb;
+	background-color: #f7f7f7;
+}
+				
+.TableBorderControlPreview
+{
+	/*border-color: #0099cc;*/
+	background-color: #ffffff;		
+}
+
+.TableBorderControlPreview TD 
+{
+	/*border-color: #0099cc;*/
+}
+
+.TableBorderControlPreviewNoBorder
+{ 
+	background-color: #ffffff;
+	BORDER-RIGHT: 1px dotted #999999;
+	BORDER-BOTTOM: 1px dotted #999999;
+}
+
+.TableBorderControlPreviewNoBorder TD
+{
+	padding: 2px;
+	background-color: #ffffff;
+	BORDER-TOP: 1px dotted #999999;  
+	BORDER-LEFT: 1px dotted #999999;
+}
+
+
+/* Plus and Minus "buttons" */
+TD.SizeButtonHolder
+{
+}
+
+TD.SizeButtonHolder IMG
+{
+	border: 1px solid #2E74CF;
+	background-color: White;
+}
+
+TD.SizeButtonHolder IMG.Over
+{
+	background-color: #e3e3e3;
+	border: 1px solid #666666;
+}
+
+TD.SizeButtonHolder IMG.Disabled
+{
+	background-color:transparent;
+	border:0px solid transparent;
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+}
+
+/* --- Color picker --- */
+.RadEColorPickerLabel
+{
+	font-size: 11px;
+	font-family: Arial, Verdana;
+	color: green;
+	text-align: center;
+}
+
+.ColorPickerMainButton 
+{
+	height:22px;
+	width:30px;
+	/*padding-left:4px;	*/
+	vertical-align:middle;
+	border:0px solid #cccccc;
+	text-align:left;
+	background-color:Transparent;
+	background-image:url(Dialogs/ColorPickerIcon.gif);
+}
+
+.ColorPickerMainButtonOver
+{
+	height:22px;
+	width:30px;
+	/*padding-left:4px;	*/
+	vertical-align:middle;
+	border:0px solid red;
+	text-align:left;
+	background-color:Transparent;
+	background-image:url(Dialogs/ColorPickerIconOver.gif);
+}
+
+.ColorPickerMenuSpan
+{
+	margin:3px;
+	/*position:absolute;*/
+	width:12px; 
+	height:12px; 
+	font-size:4pt; 
+	border:1px solid #cccccc;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* --- Alignment selector --- */
+.AlignmentMainButton 
+{
+	height:22px;
+	width:30px;
+	padding-left:4px;	
+	vertical-align:middle;
+	border:0px solid #cccccc;
+	text-align:left;
+	background-color:Transparent;
+	background-image:url(Dialogs/AlignmentSelectorIcon.gif);
+}
+
+.AlignmentMainButtonOver
+{
+	height:22px;
+	width:30px;
+	padding-left:4px;	
+	vertical-align:middle;
+	border:0px solid #cccccc;
+	text-align:left;
+	background-color:Transparent;
+	background-image:url(Dialogs/AlignmentDropdownOver.gif);
+}
+
+/* --- TableBorderControl --- */
+.TableBorderControlMain	TABLE.ImageButtonHolder
+{
+	background-color: Transparent;
+	border: 0px solid #cccccc;
+}
+
+/* ------------------------- Editor Dropdown "Header" Styles ---------------------------------*/
+.RadEDropDown
+{
+	cursor:default;
+	background-color:white;
+	border:1px solid #A6A6A6;
+	font:normal 11px Tahoma;
+	width: 13px;
+	height: 16px;
+}
+
+.RadEDropDownOver
+{
+	cursor:default;
+	background-color:white;
+	border:1px solid #0A246A;
+	font:normal 11px Tahoma;
+	width: 13px;
+	height: 16px;
+}

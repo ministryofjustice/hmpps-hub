@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  userControl.Class = "sc-filtercontrol";
+  userControl.DataBind = "visible: isVisible";
+  userControl.Requires.Script("business", "filtercontrol.js");
+
+  var facets = userControl.GetString("Facets", "Facets");
+
+  var htmlAttributes = userControl.HtmlAttributes;
+}       
+<div @htmlAttributes>
+  <div>
+    <table>
+      <tr data-bind="foreach: facetList">
+        <th data-bind="text: name">
+        </th>
+      </tr>
+      <tr data-bind="foreach: facetList">
+        <td>
+          <div data-bind="foreach: $data.values" class="sc-filterControl-panel">
+            <div class="sc-filtercontrol-item">
+              <label>
+                <input type="checkbox" data-bind="disable: count() == 0, checked: checked, attr: { 'data-sc-value': value }" />
+                <span data-bind="text: displayText + ' (' + count() + ')'"></span>
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>  
+  </div>
+</div>

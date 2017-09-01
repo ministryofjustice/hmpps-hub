@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WebEditSearch>
+    <FormDialog Icon="Applications/32x32/find_next.png" Header="Navigate to Item" Text="Use this dialog to search for content from the content tree and redirect to this item in the browser" OKButton="OK">
+      <Stylesheet Key="Style">
+        .BindMeToItem {
+        width: 100%;
+        margin-top: 10px !important;
+        }
+
+        .webEditSearchContainer {
+        padding-bottom: 36px;
+        }
+      </Stylesheet>
+      <CodeBeside Type="Sitecore.Buckets.FieldTypes.BucketDatasourceForm,Sitecore.Buckets"/>
+      
+      <DataContext ID="InternalLinkDataContext"/>
+      
+      <div class="scStretch webEditSearchContainer">
+        <Scrollbox class="scScrollbox" Background="window" Padding="0" Border="1px solid #CFCFCF">
+          <Frame SourceUri="/sitecore/shell/Applications/Buckets/DataSourceResult.aspx" Width="100%" Height="100%"></Frame>    
+        </Scrollbox>
+        <Edit ID="ItemLink" class="BindMeToItem" />
+      </div>
+    </FormDialog>
+  </WebEditSearch>
+</control>

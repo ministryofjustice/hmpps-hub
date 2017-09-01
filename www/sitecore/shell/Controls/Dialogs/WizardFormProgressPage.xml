@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <WizardFormProgressPage def:inherits="Sitecore.Web.UI.Pages.WizardDialogBaseXmlControl,Sitecore.Kernel">
+    <Border class="scStretch scFlexColumnContainerWithoutFlexie" style="display:none">
+
+      <Border class="scFormDialogHeader">
+        <Border>
+          <Border Class="DialogHeader">
+            <Literal Text="$Header"/>
+          </Border>
+          <Border Class="DialogHeaderDescription">
+            <Literal Text="$Text"/>
+          </Border>
+        </Border>
+      </Border>
+      <def:Placeholder name="Notifications"/>
+      
+      <Border class="scWizardProgressPage">
+        <ThemedImage class="scSpinner" Src="Images/ProgressIndicator/sc-spinner32.gif" />
+        <Literal class="scFieldLabel scActionText" Text="$ActionText"/>
+        <def:Placeholder />
+      </Border>
+
+    </Border>
+  </WizardFormProgressPage>
+</control>

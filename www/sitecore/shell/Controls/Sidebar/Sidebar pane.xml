@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SidebarPane>           
+    <SidebarDivider/>
+    <Border Class="scSidebarTile">
+      <def:Placeholder/>
+    </Border>
+  </SidebarPane>
+</control>

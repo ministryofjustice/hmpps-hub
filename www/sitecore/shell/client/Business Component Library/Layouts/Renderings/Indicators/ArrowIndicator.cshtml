@@ -1,0 +1,47 @@
+﻿@using System.Globalization
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  var cssClass = "sc-ArrowIndicator";
+  userControl.Requires.Script("business", "ArrowIndicator.js");
+
+  var oldValue = userControl.GetDouble("OldValue", "oldValue");
+  var newValue = userControl.GetDouble("NewValue", "newValue");
+  var valueFormat = userControl.GetString("ValueFormat", "valueFormat", "Number");
+  var upArrowColor = userControl.GetString("UpArrowColor", "upArrowColor");
+  var downArrowColor = userControl.GetString("DownArrowColor", "downArrowColor");
+  var equalSignColor = userControl.GetString("EqualSignColor", "equalSignColor");
+  var valueColor = userControl.GetString("ValueColor", "valueColor");
+  var valueSize = userControl.GetString("ValueSize", "valueSize", "Normal");
+  var imageSize = userControl.GetString("ImageSize", "imageSize", "Normal");
+  var showMinusSign = userControl.GetString("ShowMinusSign", "showMinusSign");
+  var language = Sitecore.Context.Culture.IetfLanguageTag;
+
+  userControl.Attributes["data-sc-oldvalue"] = oldValue.ToString(CultureInfo.InvariantCulture);
+  userControl.Attributes["data-sc-newvalue"] = newValue.ToString(CultureInfo.InvariantCulture);
+  userControl.Attributes["data-sc-valueformat"] = valueFormat;
+  userControl.Attributes["data-sc-uparrowcolor"] = upArrowColor;
+  userControl.Attributes["data-sc-downarrowcolor"] = downArrowColor;
+  userControl.Attributes["data-sc-equalsigncolor"] = equalSignColor;
+  userControl.Attributes["data-sc-valuecolor"] = valueColor;
+  userControl.Attributes["data-sc-showminussign"] = showMinusSign;  
+  userControl.Attributes["data-sc-language"] = language;
+  
+  userControl.AppendClass(cssClass);
+  var htmlAttributes = userControl.HtmlAttributes;       
+}
+
+<div @htmlAttributes>
+  <div class="sc-ArrowIndicator-Row">
+    <div class="sc-ArrowIndicator-Cell">
+      <div class="sc-ArrowIndicator-Arrow sc-ArrowIndicator-@imageSize">        
+      </div>
+    </div>
+    <div class="sc-ArrowIndicator-Cell">
+      <div class="sc-ArrowIndicator-Value sc-ArrowIndicator-@valueSize" data-bind="html: indicatorValue"></div>
+    </div>
+  </div>
+</div>

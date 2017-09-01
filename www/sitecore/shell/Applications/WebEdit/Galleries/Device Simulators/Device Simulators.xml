@@ -1,0 +1,28 @@
+﻿<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <Gallery.DeviceSimulators>
+    <Stylesheet Src="/sitecore/shell/Themes/Standard/Default/SelectItemWithThumbnails.css" />
+    <Stylesheet>          
+      #Simulators
+      {
+        background-color:#f5f5f5;                
+      }
+      
+      .scItemThumbnail
+      {
+        margin: 2px;
+        display: none;
+      }     
+    </Stylesheet>
+    <Script Src="/sitecore/shell/Applications/WebEdit/Galleries/Device Simulators/DeviceSimulators.js"/>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.WebEdit.Galleries.DeviceSimulatorsForm,Sitecore.ExperienceEditor"/>     
+      <Scrollbox Border="none" Width="100%" Class="scScrollbox" Height="100%" Padding="0" Margin="0" ID="Simulators">
+      </Scrollbox>
+      <Script Type="text/javascript">
+        if (scTGallery) {
+          scTGallery.prototype.autoAdjustSize = function() { return false; };
+        }
+      </Script>
+    </Gallery>
+  </Gallery.DeviceSimulators>
+</control>

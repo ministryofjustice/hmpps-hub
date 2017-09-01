@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Ajax.Index>
+    <Sitecore.Controls.XHtmlPage runat="server">
+      <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+      <link href="/sitecore/shell/Applications/Xaml/Tutorials.xaml.css" rel="stylesheet" type="text/css" runat="server" x:placeholder="Stylesheets"/>
+
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Pane runat="server" Header="Server">
+        Xaml# comes with built-in Ajax support.
+      </Pane>
+
+      <Test1 runat="server" />
+      <Test2 runat="server" />
+      <Test3 runat="server" />
+
+    </Sitecore.Controls.XHtmlPage>
+  </Sitecore.Xaml.Tutorials.Ajax.Index>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Ajax.Test1 x:inherits="Sitecore.Shell.Applications.Xaml.Test12,Sitecore.Client">
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      XamlSharp supports Ajax calls.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Hello World alert box.
+        </Description>
+
+        <Test runat="server">
+          <button id="HelloWorld" runat="server" ajax:Click="HelloWorld_Click()">Show Hello World</button>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Change button text.
+        </Description>
+
+        <Test runat="server">
+          <button id="ChangeButton" runat="server" ajax:Click='ChangeButton_Click("{Text}")'>Click Me</button>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Ajax.Test1>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Ajax.Test2 x:inherits="Sitecore.Shell.Applications.Xaml.Test13,Sitecore.Client">
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      XamlSharp supports Continuations.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Confirm box
+        </Description>
+
+        <Test runat="server">
+          <button id="HelloWorld" runat="server" ajax:Click="Confirm_Click()">Please Confirm</button>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Ajax.Test2>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Ajax.Test3 x:inherits="Sitecore.Shell.Applications.Xaml.Test18,Sitecore.Client">
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      Rest calls are really fast server calls. Rest call specify a target method in an object that is invoked without
+      restoring viewstate or the control hierachy - there is not even a Page object. This makes Rest very fast and flexible.
+
+      The State statebag property on the AjaxScriptManager is preserved between calls which allows some state information to
+      be stored in the server.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Show Hello World using explicit target.
+        </Description>
+
+        <Test runat="server">
+          <button id="RestHelloWorld" runat="server" rest:Click="Sitecore.Shell.Applications.Xaml.Test18.Hello()">Show Hello World</button>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Show Hello World using default target.
+        </Description>
+
+        <Test runat="server">
+          <button id="RestHelloWorld" runat="server" rest:Click="Hello()">Show Hello World</button>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Ajax.Test3>
+
+</xamlControls>

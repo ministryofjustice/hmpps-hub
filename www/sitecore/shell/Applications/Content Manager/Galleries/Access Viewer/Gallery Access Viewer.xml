@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.AccessViewer>
+    <Gallery>
+      <CodeBeside Type="Sitecore.Shell.Applications.ContentManager.Galleries.AccessViewer.GalleryAccessViewerForm,Sitecore.Client"/>
+
+      <input type="hidden" id="reloadOnShow" value="1" />
+      
+      <GridPanel Width="100%" Height="100%">
+        <Frame ID="Frame" Width="100%" Height="100%" GridPanel.Height="100%"/>
+
+        <GalleryMenuLine GridPanel.Height="2" />
+
+        <Gallery.Grip GridPanel.Height="10"/>
+        
+      </GridPanel>
+      
+    </Gallery>
+  </Gallery.AccessViewer>
+</control>

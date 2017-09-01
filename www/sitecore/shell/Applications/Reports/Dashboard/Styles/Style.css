@@ -1,0 +1,17 @@
+﻿html, body
+{
+  height: 100%;
+  margin: 0;
+  overflow:hidden;
+}
+body
+{
+  padding: 0;
+  margin: 0;
+}
+#silverlightControlHost
+{
+  height: 100%;
+  text-align: center;
+  margin: 0;
+}     

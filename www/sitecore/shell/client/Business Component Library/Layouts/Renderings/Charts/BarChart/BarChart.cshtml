@@ -1,0 +1,35 @@
+@using Sitecore
+@using Sitecore.Web.UI.Controls.Charts
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+  userControl.Class = "sc-d3-barchart";
+  userControl.Requires.Script("/sitecore/shell/client/Business Component Library/Layouts/Renderings/Charts/BarChart/BarChart.js");
+  ChartHelper.SetAttributes(userControl, "BarChart");
+
+  var htmlAttributes = userControl.HtmlAttributes;
+  var height = ChartHelper.GetHeight(userControl.GetString("Height"));
+  var title = userControl.GetString("Title");
+}
+
+<div @htmlAttributes style="height: @height;">
+    @{
+        if (title.Length > 0)
+        {
+            <div class="chart-title sc-text x-large">@title</div>
+        }
+    }
+  <div class="sc-d3-nodata-panel">@ClientHost.Globalization.Translate(Sitecore.Names.Texts.NoDataToDisplay)</div>
+    <svg class="sc-d3-chart-legend" id="svg-legend-@userControl.ControlId">
+        <g class="nv-legendWrap nvd3-svg">
+            <g class="nvd3 nv-legend"></g>
+        </g>
+    </svg>
+    <div class="nv-axislabel custom"></div>
+  <svg class="sc-d3-chart-canvas" id="svg-@userControl.ControlId"></svg>
+ </div>
+

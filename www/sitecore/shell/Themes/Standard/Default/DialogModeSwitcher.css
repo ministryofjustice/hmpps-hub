@@ -1,0 +1,55 @@
+﻿.mode
+{
+  display: block;
+  height: 80px;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.mode:active
+{
+  outline: none;
+}
+
+.ff .mode
+{
+  height: 64px;
+}
+
+.mode:hover
+{
+  background-color: #E8F5FD;
+  border: 1px solid #D8F0FA;
+  padding: 7px;
+}
+
+.selected .mode, .selected .mode:hover, .selected .mode:active
+{
+  background-color: #D5EFFC;
+  border: 1px solid #99DEFD;
+  padding: 7px;
+}
+
+.option-disabled .mode, .option-disabled .mode:hover, .option-disabled .mode:active
+{
+  cursor: default;
+  text-decoration: none;
+  color: #8D8D8D;
+  border: none;
+  background: none;
+  padding: 8px;
+}
+
+.mode-icon
+{
+  display: block;
+  margin: 0px auto;
+  height: 32px;
+  width: 32px;
+}
+
+.mode-text
+{
+  margin-top: 4px;
+}

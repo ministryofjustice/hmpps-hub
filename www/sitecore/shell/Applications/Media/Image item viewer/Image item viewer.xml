@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <ImageItemViewer>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Media.ImageItemViewer.ImageItemViewerForm,Sitecore.Client"/>
+      
+      <GridPanel Width="100%" Height="100%">
+      
+        <Commandbar ID="Commandbar" Glyph="Applications/48x48/photo_scenery.png" Title="Image" Description="" DataSource="/sitecore/content/Applications/Media/Image item viewer/Toolbar" Background="scPurpleGradient"/>
+        
+        <GridPanel CellPadding="8" Width="100%" Height="100%" GridPanel.Height="100%" Fixed="true">
+          <Scrollbox Width="100%" Height="100%" Border="1px solid black" Padding="0">
+            <Image ID="Image" Width="" Height=""/>
+          </Scrollbox>
+        </GridPanel>
+        
+      </GridPanel>
+      
+    </FormPage>
+  </ImageItemViewer>
+</control>

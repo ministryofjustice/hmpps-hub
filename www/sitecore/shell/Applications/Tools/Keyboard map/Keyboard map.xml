@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <KeyboardMap>
+    <FormPage OnLoadEvent="scForm.focus(scForm.browser.getControl('KeyCode'))">
+      <CodeBeside Type="Sitecore.Shell.Applications.Tools.KeyboardMap.KeyboardMapForm,Sitecore.Client"/>
+    
+      <Border Class="scBackground" KeyDown="KeyDown" style="padding:15px;box-sizing:border-box;height: 100%;">
+        <div>
+          <Literal Text="You can use this functionality to assign keyboard shortcuts to an action in Sitecore, for example, Save or Open."/>
+          <br/><br/>
+          <Literal Text="Place your cursor in the Keyboard code field and press the shortcut keys that you want assign to the Sitecore action. Copy the keyboard code that appears to the Keycode field of the relevant item in the Content Editor."/>
+          <br/><br/>
+        </div>
+        
+        <GridPanel columns="2" class="scFormTable">
+          <Literal style="color:rgb(19, 19, 19);" Text="Keyboard code:"/>
+          <Edit ID="KeyCode" Width="80" Background="white" ReadOnly="true"/>
+        </GridPanel>
+      </Border>
+    </FormPage>
+  </KeyboardMap>
+</control>

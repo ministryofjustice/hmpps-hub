@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ItemSourceRootEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.ItemSourceRootEditor,Sitecore.Client">
+    <Stylesheet Key="Style">
+      .scSelectRootItem{
+      margin-top:10px;
+      height:calc(100% - 45px);
+      }
+
+      .scTreeHeaderItem {
+      width: 100% !important;
+      }
+    </Stylesheet>
+    <Border Height="100%" Padding="$Padding" Style="$Style" Class="$Class">
+      <DataContext def:ID="DataContext" Root="/" filter="@@virtual=0"/>
+
+      <GridPanel columns="2" class="scFormTable">
+        <Literal Text="Database:&#160;"/>
+        <Combobox def:ID="Databases" Change="ChangeDatabase"/>
+      </GridPanel>
+
+
+      <Scrollbox Class="scScrollbox scSelectRootItem">
+        <DataTreeview def:ID="Treeview" Root="true">
+          <TreeHeader>
+            <TreeHeaderItem Name="name" Header="Name"/>
+          </TreeHeader>
+        </DataTreeview>
+      </Scrollbox>
+
+
+    </Border>
+  </Installer.ItemSourceRootEditor>
+</control>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <LayouterImage>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Layouts.Layouter.Viewers.Image.LayouterImageForm,Sitecore.Client"/>
+
+      <Frame ID="Editor" Width="100%" Height="100%"/>
+
+    </FormPage>
+  </LayouterImage>
+</control>
+

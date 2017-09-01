@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Layouts.PageDesignerNoLayout x:inherits="Sitecore.Shell.Applications.Layouts.PageDesigner.PageDesignerNoLayoutPage,Sitecore.Client">
+    <Sitecore.Controls.HtmlPage runat="server">
+      <AjaxScriptManager runat="server" />
+      <ContinuationManager runat="server" />
+
+      <Border runat="server" Padding="16px 8px 8px 8px">
+        <GridPanel runat="server" Columns="2">
+          <ThemedImage runat="server" Src="Applications/32x32/window_delete.png" Width="32" Height="32" Margin="0px 8px 0px 0px" GridPanel.VAlign="top"/>
+
+          <Border runat="server" GridPanel.VAlign="top">
+            <Border runat="server" FontName="Franklin Gothic Medium" FontSize="18pt">
+              <Literal runat="server" ID="Text" Text="The current item is not assigned a layout."/>
+            </Border>
+
+            <Border ID="Assign1" runat="server" Padding="16px 0px 0px 0px" FontName="Verdana" FontSize="10pt"  Foreground="#666666">
+              <Literal runat="server" Text="To assign a layout, click the Assign a Layout option below."/>
+            </Border>
+
+            <Border ID="Assign2" runat="server" Padding="16px 0px 0px 0px">
+              <Inline runat="server" Class="scRollOver" Click="pagedesigner:assignlayout">
+                <ThemedImage runat="server" Src="Images/Go16x16.png" Width="16" Height="16" Margin="0px 6px 0px 0px" Align="absmiddle"/>
+
+                <Literal runat="server" Text="Assign a Layout"/>
+              </Inline>
+            </Border>
+          </Border>
+
+        </GridPanel>
+      </Border>
+    </Sitecore.Controls.HtmlPage>
+  </Sitecore.Shell.Applications.Layouts.PageDesignerNoLayout>
+  
+</xamlControls>

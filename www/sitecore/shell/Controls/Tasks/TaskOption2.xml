@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:sc="sitecore">
+  <TaskOption2>
+    <Border Class="scTaskOption" Style="scClass:scClick; scClick:$Click" Background="transparent">
+      <ThemedImage Src="Images/Go16x16.png" Width="16" Height="16" Margin="0px 6px 0px 6px" Align="absmiddle"/>
+      <Literal Text="$Header"/>
+      <def:Placeholder/>  
+    </Border>
+  </TaskOption2>
+</control>

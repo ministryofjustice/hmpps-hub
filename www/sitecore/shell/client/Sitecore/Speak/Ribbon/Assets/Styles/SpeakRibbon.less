@@ -1,0 +1,224 @@
+@import "_variables.less";
+@import "_mixins.less";
+
+
+
+
+.sc-ribbon {
+    background-color: @sc-ribbon-background;
+    border-top: @sc-ribbon-border-top;
+    border-bottom: @sc-ribbon-border-bottom;
+
+
+    .sc-strip {
+        .clearfix();
+        display: none;
+        min-height: 91px;
+
+        &:first-child {
+            display: block;
+        }
+    }
+
+    .sc-strip-label {
+        display: none;
+    }
+
+    .sc-chunk {
+        float: left;
+        padding: 1em .5em .25em;
+        text-align: center;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 15%;
+            right: 0;
+            width: 1px;
+            height: 70%;
+            background-color: #ccc;
+        }
+
+        &:last-child {
+        }
+    }
+
+    .sc-chunk-button-list {
+        .clearfix();
+
+        ul {
+            width: auto;
+            list-style: none;
+            background: #fafafa;
+            border: 1px solid @quinary-color;
+            position: absolute;
+            left: 3em;
+            top: 2em;
+            padding: 0.3em 0.5em;
+            margin: 0;
+            text-align: left;
+            z-index: 999;
+
+            span {
+                padding: 0 0 0 0.5em;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .sc-chunk-button,
+    .sc-chunk-button-dropdown {
+        .sc-chunk-button();
+    }
+
+    .sc-chunk-button-small {
+        .clearfix();
+        cursor: pointer;
+        display: block;
+        padding: .3em .5em;
+        border: @sc-chunk-button-border;
+
+        &:hover {
+            border: @sc-chunk-button-border-hover;
+            .sc-gradient();
+            text-decoration: none;
+        }
+
+
+        img {
+            float: left;
+            margin: 0 .4em 0 0;
+        }
+
+        .sc-chunk-button-label {
+            float: left;
+        }
+    }
+
+    .disabled {
+        opacity: .4;
+        cursor: default;
+
+        &:hover {
+            border-color: transparent;
+            background: transparent;
+        }
+
+        img {
+            -webkit-filter: grayscale(1);
+        }
+    }
+
+    .pressed {
+        border: @sc-chunk-button-border-hover;
+        .sc-dark-gradient();
+    }
+
+    .sc-chunk-button-label {
+        display: block;
+    }
+
+    .sc-chunk-label {
+        margin: 0;
+        font-size: 1em;
+        color: @sc-chunk-label-text;
+        line-height: 1.5em;
+    }
+
+    .sc-chunk-check-list,
+    .sc-chunk-button-small-list {
+        display: block;
+        float: left;
+    }
+
+    .sc-chunk-check-small {
+        .clearfix();
+        display: block;
+        padding: 0 .5em;
+
+        input[type="checkbox"] {
+            float: left;
+            margin-top: .2em;
+        }
+
+        label {
+            float: left;
+        }
+    }
+
+
+    .sc-chunk-panel {
+        cursor: pointer;
+        display: block;
+        float: left;
+        margin: 0 .5em;
+        padding: .5em;
+        height: 44px;
+        border: @sc-chunk-button-border-hover;
+        .sc-gradient();
+    }
+
+    .sc-chunk-datepanel {
+
+        a {
+            display: block;
+            float: left;
+            text-decoration: none;
+        }
+
+        span {
+            float: left;
+        }
+
+        .sc-chunk-datepanel-monthyear {
+            float: left;
+            width: 7em;
+            text-align: center;
+
+            span {
+                float: none;
+            }
+        }
+
+        .sc-chunk-datepanel-changedate {
+            .sc-chunk-button();
+            margin-top: 0.5em;
+        }
+
+        .sc-chunk-datepanel-datetime {
+            .sc-chunk-button();
+            float: left;
+            text-align: left;
+        }
+
+        .sc-chunk-datepanel-day {
+            display: none;
+            font-size: 3.2em;
+            padding: 0 0.4em;
+        }
+
+        .sc-chunk-datepanel-date {
+            font-size: 3.4em;
+            padding: 0.3em 0;
+        }
+
+        .sc-chunk-datepanel-month {
+        }
+
+        .sc-chunk-datepanel-year {
+        }
+
+        .sc-chunk-datepanel-time {
+            font-size: 2em;
+            padding: 0.3em;
+        }
+
+        .sc-chunk-datepanel-timedesignator {
+            font-size: 50%;
+        }
+    }
+}

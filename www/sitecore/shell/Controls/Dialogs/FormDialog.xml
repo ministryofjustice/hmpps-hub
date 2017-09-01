@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <FormDialog CancelButton="">
+    <def:Code><![CDATA[
+    
+    protected override void OnLoad(EventArgs e) {
+      if (CancelButton == "false") {
+        Cancel.Visible = false;
+      }
+    }
+    
+    ]]></def:Code>
+    <Stylesheet Src="Dialogs.css" DeviceDependant="true"/>
+
+    <Script Key="FormDialog">
+
+      scForm.browser.attachEvent(window, "onload", scLoad);
+
+      function scLoad() {
+      scForm.browser.attachEvent(document.forms[0], "onsubmit", scSubmit);
+      }
+
+      function scSubmit() {
+      var ctl = scForm.browser.getControl("OK");
+
+      if (ctl != null) {
+      ctl.click();
+      }
+
+      return false;
+      }
+
+    </Script>
+
+    <FormPage Application="$Application"  Overflow="true" FormTarget="$FormTarget" Enctype="$Enctype" DictionaryDomain="$DictionaryDomain" Submittable='${MainUtil.GetString($Submittable,"true")}'>
+      <div Class='scFlexColumnContainer scStretch'>
+
+        <div>
+          <div class="scFormDialogHeader">
+            <div Class="DialogHeader">
+              <Literal Class="$HeaderCssClass" Text="$Header"/>
+            </div>
+            <div Class="DialogHeaderDescription">
+              <Literal Class="$TextCssClass" Text="$Text"/>
+            </div>
+          </div>
+        </div>
+        <def:Placeholder name="Toolbar"/>
+
+        <Border Class="scFlexContent scFormDialogContent" Background='${StringUtil.GetString($ClientBackground, "transparent")}' 
+                   Border='${StringUtil.GetString($ClientBorder, "none")}'>
+          <div class="scStretchAbsolute scDialogContentContainer">
+            <def:Placeholder/>
+          </div>
+        </Border>
+        
+        <div Class="scFormDialogFooter">     
+          <div class="footerOkCancel">
+            <Button ID="OK" class='${StringUtil.GetString($OKButtonClass, "scButton scButtonPrimary")}' Click="#" KeyCode="13">
+              <Literal Text='${StringUtil.GetString($OKButton, "OK")}'/>
+            </Button>
+            <Button ID="Cancel" Click="#" KeyCode="27">
+              <Literal Text="Cancel"/>
+            </Button>
+          </div>
+          
+          <def:Placeholder name="Buttons"/>
+        </div>
+      </div>
+    </FormPage>
+  </FormDialog>
+</control>

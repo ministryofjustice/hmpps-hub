@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <FileItemViewer>
+    <FormPage>
+      <CodeBeside Type="Sitecore.Shell.Applications.Media.FileItemViewer.FileItemViewerForm,Sitecore.Client"/>
+      
+      <GridPanel Width="100%" Height="100%">
+      
+        <Commandbar ID="Commandbar" Glyph="Applications/48x48/text.png" Title="File" Description="" DataSource="/sitecore/content/Applications/Media/File item viewer/Toolbar" Background="scPurpleGradient"/>
+        
+          <GridPanel CellPadding="8" Width="100%" Height="100%" GridPanel.Height="100%">
+            <Frame ID="File" XmlControl="FileItemViewerOpen" Border="1px solid black"/>
+          </GridPanel>
+        
+      </GridPanel>
+      
+    </FormPage>
+  </FileItemViewer>
+</control>

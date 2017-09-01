@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition">
+  <Installer.ExplicitFileSourceEditor def:inherits="Sitecore.Shell.Applications.Install.Controls.BaseSourceEditor,Sitecore.Client">
+    <Tabstrip def:ID="Tabs" Width="100%" Height="100%">
+      <Tab Header="Entries">
+        <Installer.ListSourceEditor Padding="4px" />
+      </Tab>
+      <Tab Header="Installation options">
+        <Installer.SourceOutputEditor Padding="4px" MergeOption="false" />
+      </Tab>
+      <Tab Header="Preview">
+        <Installer.SourceViewer Padding="4px" />
+      </Tab>
+      <Tab Header="Name">
+        <Installer.NameEditor Padding="4px" />
+      </Tab>
+    </Tabstrip>
+  </Installer.ExplicitFileSourceEditor>
+</control>

@@ -1,0 +1,323 @@
+body {
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+.sc-globalHeader-content {
+  max-width: none;
+}
+
+div.container-narrow .sc-globalHeader {
+  position: relative;
+}
+
+.sc-ribbon {
+  background-color: #fafafa;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+.sc-ribbon .sc-strip {
+  display: none;
+  min-height: 91px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.sc-ribbon .sc-strip:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-ribbon .sc-strip:first-child {
+  display: block;
+}
+.sc-ribbon .sc-strip-label {
+  display: none;
+}
+.sc-ribbon .sc-chunk {
+  padding: 1em .5em .25em;
+  text-align: center;
+  position: relative;
+  white-space: nowrap;
+  display: inline-block;
+}
+.sc-ribbon .sc-chunk:after {
+  content: "";
+  position: absolute;
+  top: 1%;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #e3e3e3;
+}
+::-webkit-scrollbar-thumb {
+  background: #f7f7f7;
+}
+.sc-ribbon .sc-chunk-button-list:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-ribbon .sc-chunk-button-list ul {
+  width: auto;
+  list-style: none;
+  background: #fafafa;
+  border: 1px solid #cbcdd1;
+  position: absolute;
+  left: 3em;
+  top: 2em;
+  padding: 0.3em 2em;
+  margin: 0;
+  text-align: left;
+  z-index: 999;
+}
+.sc-ribbon .sc-chunk-button-list ul span {
+  padding: 0 0 0 0.5em;
+}
+.sc-ribbon .sc-chunk-button-list ul a {
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+}
+.sc-ribbon .sc-chunk-button-list span {
+  color: #2B2B2B;
+}
+.sc-ribbon .sc-chunk-button-list .sc-chunk-check-list div {
+  height: 51px;
+  max-height: 51px;
+}
+.sc-ribbon .sc-chunk-button,
+.sc-ribbon .sc-chunk-button-dropdown,
+.sc-ribbon .sc-chunk-gallerybutton {
+  cursor: pointer;
+  display: block;
+  float: left;
+  text-align: center;
+  text-decoration: none;
+  margin: .3em .5em;
+  padding: .5em;
+  border: 1px solid transparent;
+}
+.sc-ribbon .sc-chunk-button:hover,
+.sc-ribbon .sc-chunk-button-dropdown:hover,
+.sc-ribbon .sc-chunk-gallerybutton:hover {
+  /*border: 1px solid #cccccc;*/
+  /*background: #f2f4f8;*/
+  /*background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fcfcfc), color-stop(1, #eef1f6));
+  background: -ms-linear-gradient(bottom, #fcfcfc, #eef1f6);
+  background: -moz-linear-gradient(center bottom, #fcfcfc 0%, #eef1f6 100%);
+  background: -o-linear-gradient(#eef1f6, #fcfcfc);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eef1f6', endColorstr='#fcfcfc', GradientType=0);*/
+  background-color: #E3E3E3;
+  text-decoration: none;
+}
+.sc-ribbon .sc-chunk-button-small {
+  cursor: pointer;
+  display: block;
+  padding: .3em .5em;
+  border: 1px solid transparent;
+  padding: .5em;
+}
+.sc-ribbon .sc-chunk-button-small:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-ribbon .sc-chunk-button-small:hover {
+  /*border: 1px solid #cccccc;*/
+  background: #E3E3E3;
+  /*background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fcfcfc), color-stop(1, #eef1f6));
+  background: -ms-linear-gradient(bottom, #fcfcfc, #eef1f6);
+  background: -moz-linear-gradient(center bottom, #fcfcfc 0%, #eef1f6 100%);
+  background: -o-linear-gradient(#eef1f6, #fcfcfc);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eef1f6', endColorstr='#fcfcfc', GradientType=0);*/
+  text-decoration: none;
+}
+.sc-ribbon .sc-chunk-button-small img {
+  float: left;
+  margin: 0 .4em 0 0;
+}
+.sc-ribbon .sc-chunk-button-small .sc-chunk-button-label {
+  float: left;
+}
+.sc-ribbon .disabled {
+  opacity: .4;
+  cursor: default;
+}
+.sc-ribbon .disabled:hover {
+  border-color: transparent;
+  background: transparent;
+}
+.sc-ribbon .disabled img {
+  -webkit-filter: grayscale(1);
+}
+.sc-ribbon .pressed {
+  /*border: 1px solid #cccccc;
+  background: #dee4ed;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f2f2f2), color-stop(1, #cdd6e4));
+  background: -ms-linear-gradient(bottom, #f2f2f2, #cdd6e4);
+  background: -moz-linear-gradient(center bottom, #f2f2f2 0%, #cdd6e4 100%);
+  background: -o-linear-gradient(#cdd6e4, #f2f2f2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cdd6e4', endColorstr='#f2f2f2', GradientType=0);*/
+  background-color: rgb(208, 235, 246);
+}
+.sc-ribbon .sc-chunk-button-label {
+  display: block;
+}
+.sc-ribbon .sc-chunk-label {
+  margin: 0;
+  font-size: 1em;
+  color: #999999;
+  line-height: 1.5em;
+}
+.sc-ribbon .sc-chunk-check-list,
+.sc-ribbon .sc-chunk-button-small-list {
+  display: block;
+  float: left;
+}
+.sc-chunk-button-small-list {
+  margin-top: -3px;
+  margin-bottom: 3px;
+}
+.sc-ribbon .sc-chunk-check-small {
+  display: block;
+  padding: .3em .5em;
+  border: 1px solid transparent;
+  margin-top: -1px;
+  margin-bottom: 1px;
+}
+.sc-ribbon .sc-chunk-check-small:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.sc-ribbon .sc-chunk-check-small input[type="checkbox"] {
+  float: left;
+  margin-top: .2em;
+}
+.sc-ribbon .sc-chunk-check-small label {
+  float: left;
+}
+.sc-ribbon .sc-chunk-panel {
+  cursor: pointer;
+  display: block;
+  float: left;
+  margin: .3em .5em;
+  padding: .4em;
+  padding-left: 1px;
+  padding-right: 1px;
+  height: 55px;
+  border: 1px solid #cccccc;
+  background: #fff;
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eef1f6', endColorstr='#fcfcfc', GradientType=0);
+}
+.sc-ribbon .sc-chunk-datepanel a {
+  display: block;
+  float: left;
+  text-decoration: none;
+}
+.sc-ribbon .sc-chunk-datepanel span {
+  float: left;
+}
+.sc-chunk-datepanel div {
+  width: auto;
+  margin-top: -0.3em;
+  height: 51px;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-monthyear {
+  float: left;
+  width: 7em;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-monthyear span {
+  float: none;
+  margin-right: 4px;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-changedate {
+  cursor: pointer;
+  display: block;
+  float: left;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  border: 1px solid transparent;
+  margin-top: -0.3em;
+  height: 51px;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-changedate img {
+  margin-top: 7px;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-changedate:hover {
+  /*border: 1px solid #cccccc;
+  background: #f2f4f8;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fcfcfc), color-stop(1, #eef1f6));
+  background: -ms-linear-gradient(bottom, #fcfcfc, #eef1f6);
+  background: -moz-linear-gradient(center bottom, #fcfcfc 0%, #eef1f6 100%);
+  background: -o-linear-gradient(#eef1f6, #fcfcfc);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eef1f6', endColorstr='#fcfcfc', GradientType=0);
+  */
+  background: #E3E3E3;
+  text-decoration: none;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-datetime {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  /*margin: 0 .5em;*/
+  border: 1px solid transparent;
+  float: left;
+  text-align: left;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-datetime:hover {
+  /*border: 1px solid #cccccc;
+  background: #f2f4f8;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fcfcfc), color-stop(1, #eef1f6));
+  background: -ms-linear-gradient(bottom, #fcfcfc, #eef1f6);
+  background: -moz-linear-gradient(center bottom, #fcfcfc 0%, #eef1f6 100%);
+  background: -o-linear-gradient(#eef1f6, #fcfcfc);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eef1f6', endColorstr='#fcfcfc', GradientType=0);
+  */
+  background: #E3E3E3;
+  text-decoration: none;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-day {
+  display: none;
+  font-size: 3.2em;
+  padding: 0 0.4em;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-date {
+  font-size: 3.4em;
+  /*padding: 0.3em 0;*/
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-time {
+  font-size: 2em;
+  padding: 0.3em;
+}
+.sc-ribbon .sc-chunk-datepanel .sc-chunk-datepanel-timedesignator {
+  font-size: 50%;
+}
+
+.OptionTitle {
+  margin-left: 10px;
+}
+
+.sc-simpleCommand, .sc-commandDependency {
+  display: none;
+}

@@ -1,0 +1,1868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.w3.org/1999/XSL/Transform" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://schemas.sitecore.net/Visual-Studio-Intellisense" elementFormDefault="qualified" xmlns:vs="http://schemas.sitecore.net/Visual-Studio-Intellisense" vs:ishtmlschema="false" vs:iscasesensitive="true" vs:friendlyname="Sitecore Controls v2.0 Schema">
+  <xsd:attributeGroup name="ComponentAttributes" />
+  <xsd:element name="Component">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ComponentAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:group name="__Content">
+    <xsd:sequence>
+      <xsd:element ref="Component" />
+      <xsd:element ref="Control" />
+      <xsd:element ref="Edit" />
+      <xsd:element ref="TreeviewEx" />
+      <xsd:element ref="FavoritesTreeviewEx" />
+      <xsd:element ref="GalleryMenuLine" />
+      <xsd:element ref="Frame" />
+      <xsd:element ref="Item" />
+      <xsd:element ref="ItemList" />
+      <xsd:element ref="Treeview" />
+      <xsd:element ref="DataTreeview" />
+      <xsd:element ref="Ribbon" />
+      <xsd:element ref="Head" />
+      <xsd:element ref="Checkbox" />
+      <xsd:element ref="Checklist" />
+      <xsd:element ref="ChecklistItem" />
+      <xsd:element ref="Listbox" />
+      <xsd:element ref="Combobox" />
+      <xsd:element ref="Memo" />
+      <xsd:element ref="TreePicker" />
+      <xsd:element ref="Listview" />
+      <xsd:element ref="DataListview" />
+      <xsd:element ref="Page" />
+      <xsd:element ref="DataContext" />
+      <xsd:element ref="ClientCommand" />
+      <xsd:element ref="ClientCommands" />
+      <xsd:element ref="CodeBeside" />
+      <xsd:element ref="JavaScriptSettings" />
+      <xsd:element ref="WebPanel" />
+      <xsd:element ref="TimePicker" />
+      <xsd:element ref="TimePickerPopup" />
+      <xsd:element ref="TabSection" />
+      <xsd:element ref="VerticalTabstrip" />
+      <xsd:element ref="WebFolderView" />
+      <xsd:element ref="KeyMap" />
+      <xsd:element ref="Border" />
+      <xsd:element ref="QuickFind" />
+      <xsd:element ref="RegisterKey" />
+      <xsd:element ref="Script" />
+      <xsd:element ref="Stylesheet" />
+      <xsd:element ref="TemplateFilteredDataContext" />
+      <xsd:element ref="Bevel" />
+      <xsd:element ref="ControlLiteral" />
+      <xsd:element ref="Image" />
+      <xsd:element ref="ImageButton" />
+      <xsd:element ref="Inline" />
+      <xsd:element ref="Literal" />
+      <xsd:element ref="Space" />
+      <xsd:element ref="ThemedImage" />
+      <xsd:element ref="Xsl" />
+      <xsd:element ref="Button" />
+      <xsd:element ref="DataCheckbox" />
+      <xsd:element ref="DataEdit" />
+      <xsd:element ref="DataMemo" />
+      <xsd:element ref="DateCalendar" />
+      <xsd:element ref="DateCalendarPopup" />
+      <xsd:element ref="DatePicker" />
+      <xsd:element ref="DateTimePicker" />
+      <xsd:element ref="Groupbox" />
+      <xsd:element ref="Label" />
+      <xsd:element ref="ListboxItem" />
+      <xsd:element ref="ListItem" />
+      <xsd:element ref="Radiobutton" />
+      <xsd:element ref="Radiogroup" />
+      <xsd:element ref="RadioItem" />
+      <xsd:element ref="SubmittableEdit" />
+      <xsd:element ref="ListviewItem" />
+      <xsd:element ref="DataListviewItem" />
+      <xsd:element ref="ListviewHeader" />
+      <xsd:element ref="ListviewHeaderItem" />
+      <xsd:element ref="ListviewNavigator" />
+      <xsd:element ref="Menu" />
+      <xsd:element ref="ContextMenu" />
+      <xsd:element ref="MenuHeader" />
+      <xsd:element ref="MenuLine" />
+      <xsd:element ref="MenuPanel" />
+      <xsd:element ref="DataContextMenu" />
+      <xsd:element ref="Menubar" />
+      <xsd:element ref="MenubarItem" />
+      <xsd:element ref="MenuDivider" />
+      <xsd:element ref="MenuItem" />
+      <xsd:element ref="Popup" />
+      <xsd:element ref="Navigator" />
+      <xsd:element ref="Panel" />
+      <xsd:element ref="Scrollbox" />
+      <xsd:element ref="Scroller" />
+      <xsd:element ref="Section" />
+      <xsd:element ref="Tab" />
+      <xsd:element ref="Tabstrip" />
+      <xsd:element ref="RenderItem" />
+      <xsd:element ref="RenderList" />
+      <xsd:element ref="Reporter" />
+      <xsd:element ref="UserControlRenderer" />
+      <xsd:element ref="EditFrame" />
+      <xsd:element ref="FeedRenderer" />
+      <xsd:element ref="Placeholder" />
+      <xsd:element ref="FieldRenderer" />
+      <xsd:element ref="Date" />
+      <xsd:element ref="Link" />
+      <xsd:element ref="Text" />
+      <xsd:element ref="WebEditButton" />
+      <xsd:element ref="WebEditContentEditor" />
+      <xsd:element ref="WebEditRibbon" />
+      <xsd:element ref="LanguageMeta" />
+      <xsd:element ref="GalleryMenu" />
+      <xsd:element ref="Action" />
+      <xsd:element ref="RenderLiteral" />
+      <xsd:element ref="UpAction" />
+      <xsd:element ref="Taskbox" />
+      <xsd:element ref="TaskboxItem" />
+      <xsd:element ref="TaskboxItems" />
+      <xsd:element ref="Toolbutton" />
+      <xsd:element ref="Dropbutton" />
+      <xsd:element ref="Toolmenubutton" />
+      <xsd:element ref="Toolmenu" />
+      <xsd:element ref="DataToolmenu" />
+      <xsd:element ref="AutoToolmenu" />
+      <xsd:element ref="DataToolmenubutton" />
+      <xsd:element ref="AutoToolmenubutton" />
+      <xsd:element ref="Combobutton" />
+      <xsd:element ref="Toolbar" />
+      <xsd:element ref="DataToolbar" />
+      <xsd:element ref="DataToolbutton" />
+      <xsd:element ref="Tooldivider" />
+      <xsd:element ref="Treecrumb" />
+      <xsd:element ref="DataTreecrumb" />
+      <xsd:element ref="TreecrumbNode" />
+      <xsd:element ref="TreeNode" />
+      <xsd:element ref="DataTreeNode" />
+      <xsd:element ref="TreeHeader" />
+      <xsd:element ref="TreeHeaderItem" />
+      <xsd:element ref="TreeviewNavigator" />
+      <xsd:element ref="ContentDot" />
+      <xsd:element ref="ControlRenderer" />
+      <xsd:element ref="Document" />
+      <xsd:element ref="GridPanel" />
+      <xsd:element ref="ItemRenderer" />
+      <xsd:element ref="Method" />
+      <xsd:element ref="Rendering" />
+      <xsd:element ref="StandardErrorControl" />
+      <xsd:element ref="Sublayout" />
+      <xsd:element ref="NamingContainerLiteral" />
+      <xsd:element ref="WebPage" />
+      <xsd:element ref="XslFile" />
+      <xsd:element ref="AjaxScriptManager" />
+      <xsd:element ref="ContinuationManager" />
+      <xsd:element ref="DynamicControlPanel" />
+      <xsd:element ref="MessageManager" />
+      <xsd:element ref="StyleManager" />
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:attributeGroup name="ControlAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+    <xsd:attribute name="Action" />
+    <xsd:attribute name="Activate" />
+    <xsd:attribute name="Activation" type="xsd:boolean" />
+    <xsd:attribute name="Background" type="xsd:string" vs:builder="color" />
+    <xsd:attribute name="Class" />
+    <xsd:attribute name="ContextMenu" />
+    <xsd:attribute name="DataContext" />
+    <xsd:attribute name="Deactivate" />
+    <xsd:attribute name="Disabled" type="xsd:boolean" />
+    <xsd:attribute name="FontBold" type="xsd:boolean" />
+    <xsd:attribute name="FontItalic" type="xsd:boolean" />
+    <xsd:attribute name="FontName" />
+    <xsd:attribute name="FontOverline" type="xsd:boolean" />
+    <xsd:attribute name="FontSize" />
+    <xsd:attribute name="FontStrikeout" type="xsd:boolean" />
+    <xsd:attribute name="FontUnderline" type="xsd:boolean" />
+    <xsd:attribute name="KeyDown" />
+    <xsd:attribute name="KeyFilter" />
+    <xsd:attribute name="Name" />
+    <xsd:attribute name="RollOver" type="xsd:boolean" />
+    <xsd:attribute name="TabStop" type="xsd:boolean" />
+    <xsd:attribute name="Value" />
+    <xsd:attribute name="Visible" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="Control">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ControlAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="InputAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="ReadOnly" type="xsd:boolean" />
+    <xsd:attribute name="Change" />
+    <xsd:attribute name="TrackModified" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="EditAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Hidden" type="xsd:boolean" />
+    <xsd:attribute name="Password" type="xsd:boolean" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="Edit">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="EditAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreeviewExAttributes">
+    <xsd:attribute name="AllowDragging" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="ContextMenu" />
+    <xsd:attribute name="DataContext" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="ShowRoot" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreeviewEx">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreeviewExAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="FavoritesTreeviewExAttributes">
+    <xsd:attributeGroup ref="TreeviewExAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="FavoritesTreeviewEx">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="FavoritesTreeviewExAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="GalleryMenuLineAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="GalleryMenuLine">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="GalleryMenuLineAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="FrameAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="AllowTransparency" type="xsd:boolean" />
+    <xsd:attribute name="Disabled" type="xsd:boolean" />
+    <xsd:attribute name="Height" />
+    <xsd:attribute name="Scrolling" />
+    <xsd:attribute name="SourceUri" />
+    <xsd:attribute name="Width" />
+    <xsd:attribute name="XmlControl" />
+  </xsd:attributeGroup>
+  <xsd:element name="Frame">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="FrameAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ItemAttributes">
+    <xsd:attribute name="Presentation" />
+  </xsd:attributeGroup>
+  <xsd:element name="Item">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ItemListAttributes" />
+  <xsd:element name="ItemList">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ItemListAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreeviewAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="CheckParents" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="Depth" />
+    <xsd:attribute name="Drag" />
+    <xsd:attribute name="Drop" />
+    <xsd:attribute name="ItemsOnly" type="xsd:boolean" />
+    <xsd:attribute name="MultiSelect" type="xsd:boolean" />
+    <xsd:attribute name="ShowCheckboxes" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="Treeview">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreeviewAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataTreeviewAttributes">
+    <xsd:attributeGroup ref="TreeviewAttributes" />
+    <xsd:attribute name="AllowDragging" type="xsd:boolean" />
+    <xsd:attribute name="AutoUpdateDataContext" type="xsd:boolean" />
+    <xsd:attribute name="IgnoreSorting" type="xsd:boolean" />
+    <xsd:attribute name="Root" type="xsd:boolean" />
+    <xsd:attribute name="ShowRoot" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataTreeview">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataTreeviewAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RibbonAttributes">
+    <xsd:attribute name="ActiveStrip" />
+    <xsd:attribute name="CustomizeStrips" type="xsd:boolean" />
+    <xsd:attribute name="GroupHeadersAreVisible" type="xsd:boolean" />
+    <xsd:attribute name="PreserveActiveStrip" type="xsd:boolean" />
+    <xsd:attribute name="ShowContextualTabs" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="Ribbon">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RibbonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="HeadAttributes" />
+  <xsd:element name="Head">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="HeadAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="CheckboxAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="HeaderStyle" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="Checkbox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="CheckboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="HeaderedItemsControlAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="HeaderStyle" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="ChecklistAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Click" />
+  </xsd:attributeGroup>
+  <xsd:element name="Checklist">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ChecklistAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ChecklistItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="LineBreak" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="ChecklistItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ChecklistItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListboxAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="Change" />
+    <xsd:attribute name="Multiple" type="xsd:boolean" />
+    <xsd:attribute name="Size" />
+    <xsd:attribute name="TrackModified" type="xsd:boolean" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="Listbox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ComboboxAttributes">
+    <xsd:attributeGroup ref="ListboxAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Combobox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ComboboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MemoAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Value" />
+    <xsd:attribute name="Wrap" />
+  </xsd:attributeGroup>
+  <xsd:element name="Memo">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MemoAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ComboboxBaseAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Glyph" />
+    <xsd:attribute name="SelectOnly" type="xsd:boolean" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="TreePickerAttributes">
+    <xsd:attributeGroup ref="ComboboxBaseAttributes" />
+    <xsd:attribute name="AllowNone" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreePicker">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreePickerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListviewAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="Drop" />
+    <xsd:attribute name="ItemsOnly" type="xsd:boolean" />
+    <xsd:attribute name="MultiSelect" type="xsd:boolean" />
+    <xsd:attribute name="ShowCheckboxes" type="xsd:boolean" />
+    <xsd:attribute name="SortAscending" type="xsd:boolean" />
+    <xsd:attribute name="SortBy" />
+    <xsd:attribute name="View" />
+  </xsd:attributeGroup>
+  <xsd:element name="Listview">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListviewAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataListviewAttributes">
+    <xsd:attributeGroup ref="ListviewAttributes" />
+    <xsd:attribute name="AllowDragging" type="xsd:boolean" />
+    <xsd:attribute name="Selected" />
+    <xsd:attribute name="Src" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataListview">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataListviewAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="PageAttributes" />
+  <xsd:element name="Page">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="PageAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataContextAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="DataViewName" />
+    <xsd:attribute name="DefaultItem" />
+    <xsd:attribute name="Filter" />
+    <xsd:attribute name="Folder" />
+    <xsd:attribute name="Offset" />
+    <xsd:attribute name="Parameters" />
+    <xsd:attribute name="Range" />
+    <xsd:attribute name="Root" />
+    <xsd:attribute name="ShowRoot" type="xsd:boolean" />
+    <xsd:attribute name="SortAscending" type="xsd:boolean" />
+    <xsd:attribute name="SortBy" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataContext">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataContextAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ClientCommandAttributes">
+    <xsd:attribute name="Command" />
+  </xsd:attributeGroup>
+  <xsd:element name="ClientCommand">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ClientCommandAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ClientCommandsAttributes" />
+  <xsd:element name="ClientCommands">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ClientCommandsAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="CodeBesideAttributes">
+    <xsd:attribute name="Type" />
+    <xsd:attribute name="FrameName" />
+  </xsd:attributeGroup>
+  <xsd:element name="CodeBeside">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="CodeBesideAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="JavaScriptSettingsAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="JavaScriptSettings">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="JavaScriptSettingsAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="WebPanelAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="WebPanel">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="WebPanelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TimePickerAttributes">
+    <xsd:attributeGroup ref="ComboboxBaseAttributes" />
+    <xsd:attribute name="Format" />
+  </xsd:attributeGroup>
+  <xsd:element name="TimePicker">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TimePickerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TimePickerPopupAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Format" />
+    <xsd:attribute name="SendOnClose" />
+    <xsd:attribute name="Time" />
+  </xsd:attributeGroup>
+  <xsd:element name="TimePickerPopup">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TimePickerPopupAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TabSectionAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="TabSection">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TabSectionAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="VerticalTabstripAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Active" />
+    <xsd:attribute name="ActiveTabID" />
+    <xsd:attribute name="FixSize" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="VerticalTabstrip">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="VerticalTabstripAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="WebFolderViewAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Height" />
+    <xsd:attribute name="Scrolling" />
+    <xsd:attribute name="Width" />
+    <xsd:attribute name="AllowTransparency" type="xsd:boolean" />
+    <xsd:attribute name="OptionsID" />
+    <xsd:attribute name="SourceUri" />
+    <xsd:attribute name="RootItem" />
+    <xsd:attribute name="ReadOnlyView" type="xsd:boolean" />
+    <xsd:attribute name="RequiresAuthentication" type="xsd:boolean" />
+    <xsd:attribute name="ViewName" />
+    <xsd:attribute name="SiteName" />
+  </xsd:attributeGroup>
+  <xsd:element name="WebFolderView">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="WebFolderViewAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="KeyMapAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="KeyMap">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="KeyMapAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="BorderAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="Drag" />
+    <xsd:attribute name="DragOverCursor" />
+    <xsd:attribute name="Drop" />
+    <xsd:attribute name="Height" />
+    <xsd:attribute name="InnerHtml" />
+    <xsd:attribute name="Width" />
+  </xsd:attributeGroup>
+  <xsd:element name="Border">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="BorderAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="QuickFindAttributes">
+    <xsd:attributeGroup ref="BorderAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="QuickFind">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="QuickFindAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RegisterKeyAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+    <xsd:attribute name="KeyCode" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Group" />
+  </xsd:attributeGroup>
+  <xsd:element name="RegisterKey">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RegisterKeyAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ScriptAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+    <xsd:attribute name="Key" />
+    <xsd:attribute name="Language" />
+    <xsd:attribute name="Src" />
+    <xsd:attribute name="Type" />
+  </xsd:attributeGroup>
+  <xsd:element name="Script">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ScriptAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="StylesheetAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+    <xsd:attribute name="DeviceDependant" type="xsd:boolean" />
+    <xsd:attribute name="Key" />
+    <xsd:attribute name="Src" />
+  </xsd:attributeGroup>
+  <xsd:element name="Stylesheet">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="StylesheetAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TemplateFilteredDataContextAttributes">
+    <xsd:attributeGroup ref="DataContextAttributes" />
+    <xsd:attribute name="ExcludeTemplates" />
+    <xsd:attribute name="IncludeTemplates" />
+  </xsd:attributeGroup>
+  <xsd:element name="TemplateFilteredDataContext">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TemplateFilteredDataContextAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="BevelAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Type" type="BevelTypeEnumeration" />
+  </xsd:attributeGroup>
+  <xsd:simpleType name="BevelTypeEnumeration">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="VerticalLine" />
+      <xsd:enumeration value="HorizontalLine" />
+      <xsd:enumeration value="RaisedBox" />
+      <xsd:enumeration value="LoweredBox" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Bevel">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="BevelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ControlLiteralAttributes" />
+  <xsd:element name="ControlLiteral">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ControlLiteralAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ImageAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Alt" />
+    <xsd:attribute name="Align" />
+    <xsd:attribute name="Border" />
+    <xsd:attribute name="Src" />
+  </xsd:attributeGroup>
+  <xsd:element name="Image">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ImageAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ImageButtonAttributes">
+    <xsd:attributeGroup ref="ImageAttributes" />
+    <xsd:attribute name="Click" />
+  </xsd:attributeGroup>
+  <xsd:element name="ImageButton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ImageButtonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="InlineAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+  </xsd:attributeGroup>
+  <xsd:element name="Inline">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="InlineAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="LiteralAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Text" />
+  </xsd:attributeGroup>
+  <xsd:element name="Literal">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="LiteralAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="SpaceAttributes">
+    <xsd:attributeGroup ref="ComponentAttributes" />
+    <xsd:attribute name="Align" />
+  </xsd:attributeGroup>
+  <xsd:element name="Space">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="SpaceAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ThemedImageAttributes">
+    <xsd:attributeGroup ref="ImageAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="ThemedImage">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ThemedImageAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="XslAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="EnableScript" type="xsd:boolean" />
+    <xsd:attribute name="RootTag" />
+    <xsd:attribute name="Source" />
+    <xsd:attribute name="XslFile" />
+  </xsd:attributeGroup>
+  <xsd:element name="Xsl">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="XslAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ButtonAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="KeyCode" />
+  </xsd:attributeGroup>
+  <xsd:element name="Button">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ButtonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ComboEditAttributes">
+    <xsd:attributeGroup ref="EditAttributes" />
+    <xsd:attribute name="InputClass" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="DataCheckboxAttributes">
+    <xsd:attributeGroup ref="CheckboxAttributes" />
+    <xsd:attribute name="FieldName" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataCheckbox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataCheckboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataEditAttributes">
+    <xsd:attributeGroup ref="EditAttributes" />
+    <xsd:attribute name="FieldName" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataEdit">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataEditAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataMemoAttributes">
+    <xsd:attributeGroup ref="MemoAttributes" />
+    <xsd:attribute name="FieldName" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataMemo">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataMemoAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DateCalendarAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DateTime" />
+    <xsd:attribute name="ShowDays" type="xsd:boolean" />
+    <xsd:attribute name="ShowToday" type="xsd:boolean" />
+    <xsd:attribute name="ShowYear" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="DateCalendar">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DateCalendarAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DateCalendarPopupAttributes">
+    <xsd:attributeGroup ref="DateCalendarAttributes" />
+    <xsd:attribute name="SendOnClose" />
+  </xsd:attributeGroup>
+  <xsd:element name="DateCalendarPopup">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DateCalendarPopupAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DatePickerAttributes">
+    <xsd:attributeGroup ref="ComboboxBaseAttributes" />
+    <xsd:attribute name="Format" />
+  </xsd:attributeGroup>
+  <xsd:element name="DatePicker">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DatePickerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DateTimePickerAttributes">
+    <xsd:attributeGroup ref="BorderAttributes" />
+    <xsd:attribute name="Date" />
+    <xsd:attribute name="ShowTime" type="xsd:boolean" />
+    <xsd:attribute name="Time" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="DateTimePicker">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DateTimePickerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="GroupboxAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Groupbox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="GroupboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="LabelAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="For" type="xsd:string" vs:builder="color" />
+  </xsd:attributeGroup>
+  <xsd:element name="Label">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="LabelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListboxItemAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="Selected" type="xsd:boolean" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="ListboxItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListboxItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListItemAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="IsTranslable" type="xsd:boolean" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="Selected" type="xsd:boolean" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="ListItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RadiobuttonAttributes">
+    <xsd:attributeGroup ref="InputAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="HeaderStyle" />
+    <xsd:attribute name="Value" />
+  </xsd:attributeGroup>
+  <xsd:element name="Radiobutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RadiobuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RadiogroupAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Click" />
+  </xsd:attributeGroup>
+  <xsd:element name="Radiogroup">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RadiogroupAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RadioItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="RadioItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RadioItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="SubmittableEditAttributes">
+    <xsd:attributeGroup ref="EditAttributes" />
+    <xsd:attribute name="Submit" />
+  </xsd:attributeGroup>
+  <xsd:element name="SubmittableEdit">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="SubmittableEditAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListviewItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="ClassPrefix" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="Drag" />
+    <xsd:attribute name="ToolTip" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="Selected" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="ListviewItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListviewItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataListviewItemAttributes">
+    <xsd:attributeGroup ref="ListviewItemAttributes" />
+    <xsd:attribute name="Created" />
+    <xsd:attribute name="DocumentTitle" />
+    <xsd:attribute name="DocumentText" />
+    <xsd:attribute name="Drop" />
+    <xsd:attribute name="HasChildren" />
+    <xsd:attribute name="ItemID" />
+    <xsd:attribute name="Name" />
+    <xsd:attribute name="Template" />
+    <xsd:attribute name="Updated" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataListviewItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataListviewItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListviewHeaderAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="ListviewHeader">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListviewHeaderAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListviewHeaderItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="ListviewHeaderItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListviewHeaderItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ListviewNavigatorAttributes">
+    <xsd:attributeGroup ref="ListviewItemAttributes" />
+    <xsd:attribute name="Count" />
+    <xsd:attribute name="PageSize" />
+    <xsd:attribute name="Offset" />
+  </xsd:attributeGroup>
+  <xsd:element name="ListviewNavigator">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ListviewNavigatorAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenuAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Menu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ContextMenuAttributes">
+    <xsd:attributeGroup ref="MenuAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="ContextMenu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ContextMenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenuHeaderAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="MenuHeader">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenuHeaderAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenuLineAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="MenuLine">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenuLineAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenuPanelAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="MenuPanel">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenuPanelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataContextMenuAttributes">
+    <xsd:attributeGroup ref="ContextMenuAttributes" />
+    <xsd:attribute name="Target" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataContextMenu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataContextMenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenubarAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Menubar">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenubarAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenubarItemAttributes">
+    <xsd:attributeGroup ref="MenuAttributes" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="HeaderStyle" />
+  </xsd:attributeGroup>
+  <xsd:element name="MenubarItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenubarItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenuDividerAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="MenuDivider">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenuDividerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MenuItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Disabled" type="xsd:boolean" />
+    <xsd:attribute name="Drag" />
+    <xsd:attribute name="Hotkey" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="KeyCode" />
+    <xsd:attribute name="Radiogroup" />
+    <xsd:attribute name="Submenu" />
+    <xsd:attribute name="Type" type="MenuItemTypeEnumeration" />
+  </xsd:attributeGroup>
+  <xsd:simpleType name="MenuItemTypeEnumeration">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Normal" />
+      <xsd:enumeration value="Check" />
+      <xsd:enumeration value="Radiogroup" />
+      <xsd:enumeration value="Submenu" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="MenuItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MenuItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="PopupAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Popup">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="PopupAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="NavigatorAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Count" />
+    <xsd:attribute name="Offset" />
+    <xsd:attribute name="PageSize" />
+  </xsd:attributeGroup>
+  <xsd:element name="Navigator">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="NavigatorAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="PanelAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Align" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="InnerHtml" />
+  </xsd:attributeGroup>
+  <xsd:element name="Panel">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="PanelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ScrollboxAttributes">
+    <xsd:attributeGroup ref="PanelAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Scrollbox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ScrollboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ScrollerAttributes">
+    <xsd:attributeGroup ref="PanelAttributes" />
+    <xsd:attribute name="LeftImage" />
+    <xsd:attribute name="RightImage" />
+  </xsd:attributeGroup>
+  <xsd:element name="Scroller">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ScrollerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="SectionAttributes">
+    <xsd:attributeGroup ref="PanelAttributes" />
+    <xsd:attribute name="Collapsed" type="xsd:boolean" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="FeedLink" />
+    <xsd:attribute name="ShowChevron" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="Section">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="SectionAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TabAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Active" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+  </xsd:attributeGroup>
+  <xsd:element name="Tab">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TabAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TabstripAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Active" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+  </xsd:attributeGroup>
+  <xsd:element name="Tabstrip">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TabstripAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RenderItemAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="DefinitionSource" />
+    <xsd:attribute name="DisplayMode" />
+  </xsd:attributeGroup>
+  <xsd:element name="RenderItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RenderItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RenderListAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="DisplayMode" />
+    <xsd:attribute name="Filter" />
+  </xsd:attributeGroup>
+  <xsd:element name="RenderList">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RenderListAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ReporterAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="SourceType" />
+    <xsd:attribute name="SourceParameters" />
+    <xsd:attribute name="FormatterType" />
+    <xsd:attribute name="FormatterParameters" />
+  </xsd:attributeGroup>
+  <xsd:element name="Reporter">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ReporterAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="UserControlRendererAttributes">
+    <xsd:attribute name="Src" />
+  </xsd:attributeGroup>
+  <xsd:element name="UserControlRenderer">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="UserControlRendererAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="EditFrameAttributes">
+    <xsd:attribute name="Buttons" />
+    <xsd:attribute name="Debug" type="xsd:boolean" />
+    <xsd:attribute name="FramePadding" />
+    <xsd:attribute name="HintOffset" />
+    <xsd:attribute name="Title" />
+  </xsd:attributeGroup>
+  <xsd:element name="EditFrame">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="EditFrameAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="FeedRendererAttributes" />
+  <xsd:element name="FeedRenderer">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="FeedRendererAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="PlaceholderAttributes">
+    <xsd:attribute name="CacheKey" />
+    <xsd:attribute name="Key" />
+    <xsd:attribute name="MetaDataItemId" />
+  </xsd:attributeGroup>
+  <xsd:element name="Placeholder">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="PlaceholderAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="FieldRendererAttributes">
+    <xsd:attribute name="After" />
+    <xsd:attribute name="Before" />
+    <xsd:attribute name="DisableWebEditing" type="xsd:boolean" />
+    <xsd:attribute name="EnclosingTag" />
+    <xsd:attribute name="FieldName" />
+  </xsd:attributeGroup>
+  <xsd:element name="FieldRenderer">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="FieldRendererAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="FieldControlAttributes">
+    <xsd:attribute name="DataSource" />
+    <xsd:attribute name="DisableWebEditing" type="xsd:boolean" />
+    <xsd:attribute name="Field" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="DateAttributes">
+    <xsd:attributeGroup ref="FieldControlAttributes" />
+    <xsd:attribute name="Format" />
+  </xsd:attributeGroup>
+  <xsd:element name="Date">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DateAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="LinkAttributes">
+    <xsd:attributeGroup ref="FieldControlAttributes" />
+    <xsd:attribute name="Target" />
+    <xsd:attribute name="Text" />
+    <xsd:attribute name="Title" />
+  </xsd:attributeGroup>
+  <xsd:element name="Link">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="LinkAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TextAttributes">
+    <xsd:attributeGroup ref="FieldControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Text">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TextAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="WebEditButtonAttributes" />
+  <xsd:element name="WebEditButton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="WebEditButtonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="WebEditControlAttributes" />
+  <xsd:attributeGroup name="WebEditContentEditorAttributes">
+    <xsd:attributeGroup ref="WebEditControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="WebEditContentEditor">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="WebEditContentEditorAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="WebEditRibbonAttributes">
+    <xsd:attributeGroup ref="WebEditControlAttributes" />
+    <xsd:attribute name="Debug" type="xsd:boolean" />
+    <xsd:attribute name="SiteName" />
+    <xsd:attribute name="WebEdit" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="WebEditRibbon">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="WebEditRibbonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ErrorControlAttributes">
+    <xsd:attribute name="Details" />
+    <xsd:attribute name="ItemPath" />
+    <xsd:attribute name="Message" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="LanguageMetaAttributes">
+    <xsd:attribute name="HideContentLanguage" type="xsd:boolean" />
+    <xsd:attribute name="HideContentType" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="LanguageMeta">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="LanguageMetaAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="GalleryMenuAttributes">
+    <xsd:attributeGroup ref="MenuAttributes" />
+    <xsd:attribute name="Fill" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="GalleryMenu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="GalleryMenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ActionAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="Disabled" type="xsd:boolean" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="Root" />
+    <xsd:attribute name="ToolTip" />
+    <xsd:attribute name="Visible" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="Action">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ActionAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RenderLiteralAttributes" />
+  <xsd:element name="RenderLiteral">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RenderLiteralAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="UpActionAttributes">
+    <xsd:attributeGroup ref="ActionAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="UpAction">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="UpActionAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TaskboxAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Collapsed" type="xsd:boolean" />
+    <xsd:attribute name="Icon" />
+  </xsd:attributeGroup>
+  <xsd:element name="Taskbox">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TaskboxAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TaskboxItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Hotkey" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="Click" />
+  </xsd:attributeGroup>
+  <xsd:element name="TaskboxItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TaskboxItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TaskboxItemsAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="TaskboxItems">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TaskboxItemsAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ToolbuttonAttributes">
+    <xsd:attributeGroup ref="ButtonAttributes" />
+    <xsd:attribute name="Disabled" type="xsd:boolean" />
+    <xsd:attribute name="Down" type="xsd:boolean" />
+    <xsd:attribute name="Glyph" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="IconSize" type="ImageDimensionEnumeration" />
+    <xsd:attribute name="RadioGroup" />
+    <xsd:attribute name="Toggle" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:simpleType name="ImageDimensionEnumeration">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="idDefault" />
+      <xsd:enumeration value="id16x16" />
+      <xsd:enumeration value="id24x24" />
+      <xsd:enumeration value="id32x32" />
+      <xsd:enumeration value="id48x48" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Toolbutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ToolbuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DropbuttonAttributes">
+    <xsd:attributeGroup ref="ToolbuttonAttributes" />
+    <xsd:attribute name="PopupControl" />
+  </xsd:attributeGroup>
+  <xsd:element name="Dropbutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DropbuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ToolmenubuttonAttributes">
+    <xsd:attributeGroup ref="DropbuttonAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Toolmenubutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ToolmenubuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ToolmenuAttributes">
+    <xsd:attributeGroup ref="ToolmenubuttonAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Toolmenu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ToolmenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataToolmenuAttributes">
+    <xsd:attributeGroup ref="ToolmenuAttributes" />
+    <xsd:attribute name="Target" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataToolmenu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataToolmenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="AutoToolmenuAttributes">
+    <xsd:attributeGroup ref="DataToolmenuAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="AutoToolmenu">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="AutoToolmenuAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataToolmenubuttonAttributes">
+    <xsd:attributeGroup ref="ToolmenubuttonAttributes" />
+    <xsd:attribute name="Target" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataToolmenubutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataToolmenubuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="AutoToolmenubuttonAttributes">
+    <xsd:attributeGroup ref="DataToolmenubuttonAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="AutoToolmenubutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="AutoToolmenubuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="CombobuttonAttributes">
+    <xsd:attributeGroup ref="ToolbuttonAttributes" />
+    <xsd:attribute name="PopupControl" />
+  </xsd:attributeGroup>
+  <xsd:element name="Combobutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="CombobuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ToolbarAttributes">
+    <xsd:attributeGroup ref="PanelAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Toolbar">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ToolbarAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataToolbarAttributes">
+    <xsd:attributeGroup ref="ToolbarAttributes" />
+    <xsd:attribute name="IconSize" type="ImageDimensionEnumeration" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataToolbar">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataToolbarAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataToolbuttonAttributes">
+    <xsd:attributeGroup ref="ToolbuttonAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataToolbutton">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataToolbuttonAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TooldividerAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="Tooldivider">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TooldividerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreecrumbAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Glyph" />
+    <xsd:attribute name="ItemsOnly" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="Treecrumb">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreecrumbAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataTreecrumbAttributes">
+    <xsd:attributeGroup ref="TreecrumbAttributes" />
+    <xsd:attribute name="BuildMenus" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="OnPopup" />
+    <xsd:attribute name="Src" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataTreecrumb">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataTreecrumbAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreecrumbNodeAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="OnPopup" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreecrumbNode">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreecrumbNodeAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreeNodeAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+    <xsd:attribute name="Checked" type="xsd:boolean" />
+    <xsd:attribute name="ChildrenOnly" type="xsd:boolean" />
+    <xsd:attribute name="Click" />
+    <xsd:attribute name="DblClick" />
+    <xsd:attribute name="Depth" />
+    <xsd:attribute name="Expandable" type="xsd:boolean" />
+    <xsd:attribute name="Expanded" type="xsd:boolean" />
+    <xsd:attribute name="Header" />
+    <xsd:attribute name="Icon" />
+    <xsd:attribute name="ItemStyle" />
+    <xsd:attribute name="NodeOnly" type="xsd:boolean" />
+    <xsd:attribute name="Selected" type="xsd:boolean" />
+    <xsd:attribute name="ShowCheckBox" type="xsd:boolean" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreeNode">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreeNodeAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DataTreeNodeAttributes">
+    <xsd:attributeGroup ref="TreeNodeAttributes" />
+    <xsd:attribute name="Drag" />
+    <xsd:attribute name="Drop" />
+    <xsd:attribute name="ItemID" />
+    <xsd:attribute name="DragSort" />
+  </xsd:attributeGroup>
+  <xsd:element name="DataTreeNode">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DataTreeNodeAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreeHeaderAttributes">
+    <xsd:attributeGroup ref="ControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreeHeader">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreeHeaderAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreeHeaderItemAttributes">
+    <xsd:attributeGroup ref="HeaderedItemsControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreeHeaderItem">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreeHeaderItemAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="TreeviewNavigatorAttributes">
+    <xsd:attributeGroup ref="TreeNodeAttributes" />
+    <xsd:attribute name="Count" />
+    <xsd:attribute name="PageSize" />
+    <xsd:attribute name="Offset" />
+  </xsd:attributeGroup>
+  <xsd:element name="TreeviewNavigator">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="TreeviewNavigatorAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ContentDotAttributes">
+    <xsd:attribute name="AlwaysDisplay" type="xsd:boolean" />
+    <xsd:attribute name="HSpace" />
+    <xsd:attribute name="SpaceCssClass" />
+    <xsd:attribute name="VSpace" />
+  </xsd:attributeGroup>
+  <xsd:element name="ContentDot">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ContentDotAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ControlRendererAttributes">
+    <xsd:attribute name="ControlName" />
+  </xsd:attributeGroup>
+  <xsd:element name="ControlRenderer">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ControlRendererAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DocumentAttributes">
+    <xsd:attribute name="DividerHtml" />
+    <xsd:attribute name="LinkToDocument" type="xsd:boolean" />
+    <xsd:attribute name="ShowSubdocuments" type="xsd:boolean" />
+    <xsd:attribute name="SubdocumentTemplates" />
+    <xsd:attribute name="TextClass" />
+    <xsd:attribute name="TextField" />
+    <xsd:attribute name="TextStyle" />
+    <xsd:attribute name="TitleClass" />
+    <xsd:attribute name="TitleField" />
+    <xsd:attribute name="TitleStyle" />
+  </xsd:attributeGroup>
+  <xsd:element name="Document">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DocumentAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="GridPanelAttributes">
+    <xsd:attribute name="CellPadding" />
+    <xsd:attribute name="CellSpacing" />
+    <xsd:attribute name="Columns" />
+    <xsd:attribute name="Fixed" type="xsd:boolean" />
+    <xsd:attribute name="KeyDown" />
+    <xsd:attribute name="KeyFilter" />
+  </xsd:attributeGroup>
+  <xsd:element name="GridPanel">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="GridPanelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ItemRendererAttributes">
+    <xsd:attribute name="AllowDefaultRenderer" type="xsd:boolean" />
+    <xsd:attribute name="Mode" />
+  </xsd:attributeGroup>
+  <xsd:element name="ItemRenderer">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ItemRendererAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MethodAttributes">
+    <xsd:attribute name="AssemblyName" />
+    <xsd:attribute name="ClassName" />
+    <xsd:attribute name="MethodName" />
+  </xsd:attributeGroup>
+  <xsd:element name="Method">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MethodAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="RenderingAttributes">
+    <xsd:attribute name="Path" />
+  </xsd:attributeGroup>
+  <xsd:element name="Rendering">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="RenderingAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="StandardErrorControlAttributes">
+    <xsd:attributeGroup ref="ErrorControlAttributes" />
+  </xsd:attributeGroup>
+  <xsd:element name="StandardErrorControl">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="StandardErrorControlAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="SublayoutAttributes">
+    <xsd:attribute name="Path" />
+    <xsd:attribute name="ID" />
+  </xsd:attributeGroup>
+  <xsd:element name="Sublayout">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="SublayoutAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="NamingContainerLiteralAttributes" />
+  <xsd:element name="NamingContainerLiteral">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="NamingContainerLiteralAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="WebPageAttributes">
+    <xsd:attribute name="Url" />
+  </xsd:attributeGroup>
+  <xsd:element name="WebPage">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="WebPageAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="XslFileAttributes">
+    <xsd:attribute name="EnableDocument" type="xsd:boolean" />
+    <xsd:attribute name="EnableScript" type="xsd:boolean" />
+    <xsd:attribute name="Parameters" />
+    <xsd:attribute name="Path" />
+  </xsd:attributeGroup>
+  <xsd:element name="XslFile">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="XslFileAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="AjaxScriptManagerAttributes" />
+  <xsd:element name="AjaxScriptManager">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="AjaxScriptManagerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="ContinuationManagerAttributes" />
+  <xsd:element name="ContinuationManager">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="ContinuationManagerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="DynamicControlPanelAttributes">
+    <xsd:attribute name="ControlTree" />
+  </xsd:attributeGroup>
+  <xsd:element name="DynamicControlPanel">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="DynamicControlPanelAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="MessageManagerAttributes" />
+  <xsd:element name="MessageManager">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="MessageManagerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:attributeGroup name="StyleManagerAttributes" />
+  <xsd:element name="StyleManager">
+    <xsd:complexType mixed="true">
+      <xsd:group ref="__Content" />
+      <xsd:attributeGroup ref="StyleManagerAttributes" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

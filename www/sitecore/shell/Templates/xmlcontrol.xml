@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--=============================================================
+    File: $filename                                                   
+    Created by: $user.Name                                       
+    Created: $time                                               
+==============================================================-->
+
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <$identifier>
+  </$identifier>
+</control>

@@ -1,0 +1,39 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{ 
+  var rendering = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  rendering.Class = "sc-progressbar";
+  rendering.Requires.Script("client", "Progressbar.js");
+  rendering.DataBind = "visible: isVisible";
+ 
+  var showLabel = rendering.GetBool("ShowLabel", "ShowLabel", true);
+  rendering.Attributes["data-sc-showlabel"] = showLabel.ToString().ToLowerInvariant();  
+  
+  var value = rendering.GetString("Value", "Value", "0");
+  if (string.IsNullOrEmpty(value))
+  {
+    value = "0";
+  }  
+  rendering.Attributes["data-sc-value"] = value;
+  
+  var maxValue = rendering.GetString("MaxValue", "MaxValue", "100");
+  if (string.IsNullOrEmpty(maxValue))
+  {
+    maxValue = "100";
+  }
+  rendering.Attributes["data-sc-maxvalue"] = maxValue;
+  
+  var updateInterval = rendering.GetString("UpdateInterval", "UpdateInterval");
+  rendering.Attributes["data-sc-updateinterval"] = updateInterval;
+  var htmlAttributes = rendering.HtmlAttributes; 
+
+}
+   
+<div @htmlAttributes>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar"  data-bind="style: {width: percentage() + '%'}"></div>
+    <span data-bind="text: percentage() + '%', visible: showLabel"></span>
+  </div>
+</div>

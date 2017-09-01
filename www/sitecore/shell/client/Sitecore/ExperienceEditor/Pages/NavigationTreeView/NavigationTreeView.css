@@ -1,0 +1,13 @@
+﻿[data-sc-id="ContentBorder"] {
+  width: 300px;
+  height: 320px;
+  overflow: auto;
+}
+
+.disabledItem {
+  cursor: pointer;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  border: none;
+}
+

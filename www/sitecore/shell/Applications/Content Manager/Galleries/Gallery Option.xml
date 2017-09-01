@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <Gallery.Option>
+    <Border>
+
+      <GridPanel Columns="2" Width="100%" RollOver="true" Class="scRollOver">
+
+        <Border Padding="3px 4px 3px 4px" Style="border-right:1px solid #e1e1e1" Background="#ebebeb" GridPanel.Width="24" GridPanel.Height="22">
+          <ThemedImage Src="$Icon" Width="16" Height="16" Align="absmiddle"/>
+        </Border>
+
+        <Border Padding="0px 8px 0px 8px" Style="border-right:1px solid white; white-space:nowrap">
+          <Literal Text="$Header"/>
+        </Border>
+
+      </GridPanel>
+
+    </Border>
+  </Gallery.Option>
+</control>

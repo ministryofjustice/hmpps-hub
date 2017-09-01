@@ -1,0 +1,17 @@
+﻿@using Sitecore
+@model Sitecore.Speak.Components.Models.Containers.Borders.ProgressIndicatorPanelRenderingModel
+@{
+  Model.Class.Append("sc-progressindicatorpanel");
+  Model.Class.Append("sc-progressindicatorpanel-fullwidth");
+  Model.Class.AppendIf(Model.IsBusy, "sc-isbusy");
+  Model.DataBind.IsVisible();
+  Model.DataBind.Bind("attr", "{title: Tooltip()}");
+  Model.DataBind.Css("sc-progressindicatorpanel-fullwidth", "IsFullWidth");
+}
+<div @Model.HtmlAttributes>
+  <div class="sc-spinner-wrapper">
+    @Html.Raw(ClientHost.Web.PlaceHolder(Model.ControlId + ".Content").ToHtmlString())
+    <div class="sc-spinner"></div>
+    <div class="sc-spinner-background"></div>
+  </div>
+</div>

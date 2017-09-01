@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<skins xmlns:sc="http://www.sitecore.net/skin">
+  <skin>
+    <style>
+      #scTabularEditor .scEditorFieldLabel {
+      padding:4px 0px 0px 0px;
+      }
+    </style>
+
+    <div id="scTabularEditor">
+      <sc:sections />
+    </div>
+  </skin>
+
+  <skin type="section">
+    <sc:sectionpanel>
+      <table cellpadding="2" width="100%" border="0">
+        <sc:fields />
+      </table>
+    </sc:sectionpanel>
+  </skin>
+
+  <skin type="section" name="Image">
+    <sc:sectionpanel>
+      <table cellpadding="2" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td valign="top" align="right" nowrap="nowrap">
+            <sc:label name="Alt" />
+          </td>
+          <td width="100%">
+            <sc:input name="Alt" />
+          </td>
+        </tr>
+
+        <tr>
+          <td valign="top" align="right" nowrap="nowrap" class="scEditorFieldLabel">
+            Dimensions:
+          </td>
+          <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="200">
+              <tr>
+                <td width="50%">
+                  <sc:input name="Width" />
+                </td>
+                <td style="padding:0px 4px 0px 4px">x</td>
+                <td width="50%">
+                  <sc:input name="Height" />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+    </sc:sectionpanel>
+  </skin>
+
+  <skin type="field">
+    <tr>
+      <td valign="top" align="right" nowrap="nowrap">
+        <sc:label />
+      </td>
+      <td width="100%">
+        <sc:input />
+      </td>
+    </tr>
+  </skin>
+
+  <skin type="field" fieldtype="checkbox">
+    <tr>
+      <td></td>
+      <td>
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td>
+              <sc:input />
+            </td>
+            <td>
+              <sc:label/>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </skin>
+
+</skins>

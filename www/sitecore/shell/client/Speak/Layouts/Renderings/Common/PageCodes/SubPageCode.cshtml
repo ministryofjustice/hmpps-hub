@@ -1,0 +1,49 @@
+﻿@using Sitecore.Configuration
+@using Sitecore.Extensions.StringExtensions
+@using Sitecore.IO
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Reflection
+@using Sitecore.Web.PageCodes
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{                             
+  var userControl = this.Html.Sitecore().Controls().GetUserControl(this.Model.Rendering);
+  
+  // run the server side page code
+  var pageCodeTypeName = userControl.GetString("PageCodeTypeName");
+  
+  var behaviors = userControl.GetString("Behaviors") ?? string.Empty;
+  if (!string.IsNullOrEmpty(behaviors)) {
+    behaviors = "data-sc-behaviors=\"" + behaviors + "\"";
+  }
+  
+  if (!string.IsNullOrEmpty(pageCodeTypeName))
+  {
+    var pageCode = ReflectionUtil.CreateObject(pageCodeTypeName) as IPageCode;
+    if (pageCode == null)
+    {
+      throw new InvalidOperationException("Page Code object not found: " + pageCodeTypeName);
+    }
+
+    pageCode.Initialize(RenderingContext.Current);
+  }
+
+  // find the client side page code java script file
+  var scriptFileName = userControl.GetString("PageCodeScriptFileName");
+  if (string.IsNullOrEmpty(scriptFileName))
+  {
+    scriptFileName = "/sitecore/shell/client/" + this.Model.PageItem.Paths.Path.Mid(17) + "/" + this.Model.PageItem.Name + ".js";
+  }
+
+  if (!FileUtil.FileExists(scriptFileName))
+  {
+    scriptFileName = null;
+  }
+}                                      
+
+@if (!string.IsNullOrEmpty(scriptFileName))
+{
+  <script data-sc-require="@scriptFileName" type="text/x-sitecore-pagecode" @behaviors>
+  </script>
+}

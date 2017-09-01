@@ -1,0 +1,17 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Web.UI.Controls.Common.UserControls
+@model RenderingModel
+@{
+  var userControl = Html.Sitecore().Controls().GetUserControl(Model.Rendering);
+
+  userControl.Requires.Script("controls", "entitydatasource.js");
+
+  userControl.Attributes["data-sc-serviceURL"] = userControl.GetString("ServiceUrl", "serviceUrl");
+  userControl.Attributes["data-sc-entityID"] = userControl.GetString("EntityID", "entityID");
+  userControl.Attributes["data-sc-isBusy"] = userControl.GetString("IsBusy", "isBusy");    
+
+  var controlId = userControl.ControlId;
+  var htmlAttributes = userControl.HtmlAttributes;
+}
+<script @htmlAttributes type="text/x-sitecore-entitydatasource"></script>

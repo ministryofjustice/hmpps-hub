@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls 
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+
+  <!-- ========================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Server.Index>
+    <x:using runat="serer" namespace="Sitecore.Xaml.Tutorials" />
+
+    <link href="/sitecore/shell/Applications/Xaml/Tutorials.xaml.css" rel="stylesheet" type="text/css" />
+
+    <html:Form runat="server" x:Style="Form">
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+
+      <Pane runat="server" Header="Server">
+        <![CDATA[
+        ]]>
+      </Pane>
+
+      <Test1 runat="server" />
+      <Test2 runat="server" />
+      <Test3 runat="server" />
+      <Test4 runat="server" />
+
+    </html:Form>
+
+  </Sitecore.Xaml.Tutorials.Server.Index>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Server.Test1 x:inherits="Sitecore.Shell.Applications.Xaml.Test7,Sitecore.Client">
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      XamlSharp can inherit from classes.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Output from inherited class:
+        </Description>
+
+        <Test runat="server">
+          Result: <span id="DivTag" runat="server" style="color:green"></span>
+        </Test>
+      </TestCase>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Standard ASP.NET server clicks works:
+        </Description>
+
+        <Test runat="server">
+          Changes to "I was clicked" when clicked:
+          <asp:Button runat="server" id="MyButton" Text="Click Me"></asp:Button>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Server.Test1>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Server.Test2>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      XamlSharp can use Sitecore renderings directly.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Rendering the Sample Rendering rendering on /sitecore/content/Home:
+        </Description>
+
+        <Test runat="server">
+          <r:Sample_Rendering runat="server" DataSource="/sitecore/content/Home"/>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Server.Test2>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Server.Test3>
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      XamlSharp supports extensible properties.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Settings an extensible property on the Border tag.
+        </Description>
+
+        <Test runat="server">
+          Result:
+          <span runat="server" Border.Foreground="green">
+            Test passed
+          </span>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Server.Test3>
+
+  <!-- ===================================================================== -->
+
+  <Sitecore.Xaml.Tutorials.Server.Test4 x:inherits="Sitecore.Shell.Applications.Xaml.Test14,Sitecore.Client">
+    <x:using runat="server" namespace="Sitecore.Xaml.Tutorials" />
+
+    <Pane runat="server" Header="Test 1: Usings">
+      The DynamicControlPanel creates dynamic controls from post to post.
+      <p/>
+
+      <TestCase runat="server">
+        <Description runat="server">
+          Dynamic Panel:
+        </Description>
+
+        <Test runat="server">
+          <div id="Count" runat="server">
+            Click to add a new control.
+          </div>
+          <button id="AddControl" runat="server" ajax:Click="AddControl_Click()">Add</button>
+          <DynamicControlPanel runat="server">
+            <div id="ControlList" runat="server">
+            </div>
+          </DynamicControlPanel>
+        </Test>
+      </TestCase>
+    </Pane>
+
+  </Sitecore.Xaml.Tutorials.Server.Test4>
+
+</xamlControls>

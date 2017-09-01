@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.Shell.Applications.Dialogs.Progress x:inherits="Sitecore.Shell.Applications.Dialogs.Progress.ProgressPage,Sitecore.Client">
+    <x:param name="Text" value="Starting..." />
+    <x:using namespace="Sitecore.Controls" />
+
+    <AjaxScriptManager runat="server"/>
+    <ContinuationManager runat="server" />
+
+    <HtmlPage runat="server" Overflow="hidden">
+      <Script runat="server" Src="/sitecore/shell/applications/dialogs/progress/ProgressDialog.js" />
+      <Stylesheet runat="server" Src="Dialogs.css" DeviceDependant="true" x:placeholder="Stylesheets"/>
+      <Stylesheet runat="server" Src="/sitecore/shell/applications/dialogs/progress/ProgressDialog.css" x:placeholder="Stylesheets"/>
+      <Stylesheet runat="server" Src="/sitecore/shell/Themes/Standard/Default/Content Manager.css" DeviceDependant="true" />
+      
+      <input type="hidden" ID="ErrorMessage" />
+
+      <div class="scFlexColumnContainer scStretch">
+        <div class="scDialogHeader">
+          <div class="DialogHeader">
+            <Literal runat="server" ID="HeaderText" Text="In progress" />
+          </div>
+          <Border class="DialogHeaderDescription" runat="server" />
+        </div>
+
+        <div id="MainContent" class="scFlexContent">
+          <div class="scStretchAbsolute scDialogContentContainer">
+
+          <div style="color: #111111;">
+            <ThemedImage runat="server" ID="TitleIcon" Src="/sitecore/shell/themes/standard/images/error.png" Visible="false" Width="32" />
+            <div id="LogContainer" style="display:none" >
+              <Literal ID="Log" runat="server" />
+            </div>
+            <Literal runat="server" Style="white-space:nowrap;" ID="Title" Text="{Text}" />
+            <Literal runat="server" ID="Subtitle" Visible="false" />
+          </div>
+
+          <Image runat="server" ID="ProgressSpacer" Src="/sitecore/images/blank.gif" width="1" height="12" alt="" border="0"/>
+
+          <Border runat="server" ID="Progress">
+
+            <img src="/sitecore/shell/themes/standard/Images/Progress/background_left.png" id="progressBackgroundLeft"/>
+            <img src="/sitecore/shell/themes/standard/Images/Progress/background_center.png" id="progressBackgroundCenter"/>
+            <img src="/sitecore/shell/themes/standard/Images/Progress/background_right.png" id="progressBackgroundRight"/>
+
+            <div id="filler">
+              <img src="/sitecore/shell/themes/standard/Images/Progress/Filler.png" />
+            </div>
+          </Border>
+        </div>
+      </div>
+
+        <div id="Footer" class="scFormDialogFooter">
+          <div ID="Buttons" class="footerOkCancel">
+            <Button runat="server" ID="Close" Header="Close" Click="Close_Click" Visible="false" />
+          </div>
+          <Border runat="server" ID="MoreInformationContainer">
+            <a href="#" class="scContentButton" onclick="javascript:scForm.postRequest('', '', '', 'ToggleInformation');return false">
+              <ThemedImage ID="MoreImage" runat="server" Height="19" Width="19" Src="Images/Progress/more_collapsed.png" />
+              <ThemedImage ID="LessImage" runat="server" Height="19" Width="19" Src="Images/Progress/more_expanded.png" Style="display:none" />
+              <Literal ID="MoreInformation" runat="server" Text="" style="vertical-align:top;" />
+            </a>
+          </Border>
+        </div>
+
+      </div>
+    </HtmlPage>
+  </Sitecore.Shell.Applications.Dialogs.Progress>
+</xamlControls>

@@ -1,0 +1,41 @@
+﻿.sc-ListPath {
+    height: 18px;
+    overflow: hidden;
+}
+.sc-ListPath > ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.sc-ListPath > ul > li {
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+.sc-ListPath > ul > li:first-child > a {
+    text-transform: uppercase;
+}
+.sc-ListPath > ul > li:after {
+    background: url("/Sitecore/shell/client/Applications/ListManager/Controls/ListPath/separator.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    height: 9px;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 7px;
+}
+.sc-ListPath > ul > li:last-child:after {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    height: 7px;
+    margin-left: 15px;
+    width: 7px;
+}
+.sc-ListPath > ul > li a {
+    color: #dc271e;
+    display: inline-block;
+    text-decoration: none;
+}
+.sc-ListPath > ul > li a:hover {
+    text-decoration: underline;
+}

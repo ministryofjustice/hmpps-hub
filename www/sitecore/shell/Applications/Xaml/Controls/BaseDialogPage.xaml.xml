@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:javascript="http://www.sitecore.net/javascript"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <Sitecore.Controls.BaseDialogPage>
+    <x:param name="Icon" value="Applications/32x32/about.png" />                                
+    <x:param name="Header" value="Dialog" />  
+    <x:param name="Text" value="Dialog" />
+
+    <HtmlPage runat="server" Overflow="hidden">
+      <Stylesheet runat="server" Src="Dialogs.css" DeviceDependant="true" x:placeholder="Stylesheets"/>
+      <Style runat="server" x:placeholder="Stylesheets">
+        body.ie
+        {
+        overflow: hidden;
+        }
+      </Style>
+      <Script Key="BaseDialogPage" runat="server">
+        document.observe("keydown", function(event) {
+        if (event.keyCode == 13) {
+        var ctl = event.target;
+        if (ctl != null) {
+        if (ctl.tagName == "INPUT")  {
+        if (ctl.onsubmit){
+        if(ctl.onsubmit.toString().indexOf("return false;") >= 0) {
+        return;
+        }
+        }
+        }
+        }
+
+        var ok = $("OK");
+
+        if (ok != null) {
+        ok.click();
+        }
+        }
+        if (event.keyCode == 27) {
+        var ok = $("Cancel");
+
+        if (ok != null) {
+        ok.click();
+        }
+        }
+        });
+      </Script>
+
+      <div Class="scFlexColumnContainer scStretch">
+        <div class="scDialogHeader">
+          <div class="DialogHeader">
+            <Literal ID="HeaderLiteral" runat="server" Text="{Header}"/>
+          </div>
+          <div class="DialogHeaderDescription">
+            <Literal ID="TextLiteral" runat="server" Text="{Text}"/>
+          </div>
+
+        </div>
+        
+        <Placeholder runat="server" Key="Toolbar" />
+
+        <div class="scFlexContent">
+          <div class="scStretchAbsolute scDialogContentContainer">
+            <Placeholder runat="server" Key="Content"/>
+          </div>
+        </div>
+
+        <div Class="scFormDialogFooter">
+          <div class="footerOkCancel">
+            <Placeholder runat="server" Key="DialogButtons"/>
+          </div>
+          <Placeholder runat="server" Key="Buttons"/>
+        </div>
+
+      </div>
+    </HtmlPage>
+    
+  </Sitecore.Controls.BaseDialogPage>
+</xamlControls>

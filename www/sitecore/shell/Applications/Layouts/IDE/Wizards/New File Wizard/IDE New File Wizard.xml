@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <IDENewFileWizard>
+    <WizardForm Background="#e9e9e9" CodeBeside="Sitecore.Shell.Applications.Layouts.IDE.Wizards.NewFileWizard.IDENewFileWizardForm,Sitecore.Client" Submittable="false">
+    
+      <WizardFormPage ID="Name" Header="Name" Text="Enter a name for the new file. Click Next to continue." Icon="Software/32x32/text_code.png">
+
+        <WizardFormIndent>
+          <GridPanel Class="scFormTable" Width="100%" CellPadding="2" Columns="2">
+        
+          <Literal Text="Name:" Style="white-space:nowrap"/>
+          <Edit ID="FileName" Value="New File" Width="100%" GridPanel.Width="100%"/>
+          
+        </GridPanel>
+        </WizardFormIndent>
+        
+      </WizardFormPage>
+
+      <WizardFormPage ID="Location" Header="Location" Text="Select the location where the item representing the new file should be stored in the Sitecore content tree. Click Next to continue." Icon="Software/32x32/text_code.png">
+          <DataContext ID="DataContext" DataViewName="Master" Root="{32566F0E-7686-45F1-A12F-D7260BD78BC3}" Filter="Contains('{A87A00B1-E6DB-45AB-8B54-636FEC3B5523},{239F9CF4-E5A0-44E0-B342-0F32CD4C6D8B},{93227C5D-4FEF-474D-94C0-F252EC8E8219},{7EE0975B-0698-493E-B3A2-0B2EF33D0522},{3BAA73E5-6BA9-4462-BF72-C106F8801B11}', @@templateid)"/>
+
+        <WizardFormIndent>
+          <Scrollbox Height="100%" Class="scScrollbox" Background="white" >
+            <TreeviewEx ID="LocationTreeview" DataContext="DataContext"/>
+          </Scrollbox>
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="FileLocation" Header="File Location" Text="Select the location where the new file should be stored in the Sitecore webroot file structure. Click Create to create the file." Icon="Software/32x32/text_code.png">
+        <DataContext ID="FileDataContext" DataViewName="FileSystem" Root="/" Folder="/" Filter="Contains('${Sitecore.Data.DataProviders.FileSystemDataProvider.FolderID.ToString()}', @@templateid)"/>
+
+        <WizardFormIndent>
+          <div class="scStretch">
+            <Scrollbox Class="scScrollbox" Background="white" ContextMenu="GetFileContextMenu">
+              <TreeviewEx ID="FileLocationTreeview" DataContext="FileDataContext" Root="false" />
+            </Scrollbox>
+            <Border Padding="4px 0px 0px 0px">
+              <Checkbox ID="CreateCodebehind" Checked="false" Visible="false" Header="Create Associated C# Code Files" />
+            </Border>
+          </div>
+        </WizardFormIndent>
+      </WizardFormPage>
+
+      <WizardFormPage ID="LastPage">
+        <WizardFormPadding>
+          <Literal class="sc-text-largevalue" Text="The wizard has completed."/>
+        </WizardFormPadding>
+      </WizardFormPage>
+      
+    </WizardForm>
+  </IDENewFileWizard>
+</control>

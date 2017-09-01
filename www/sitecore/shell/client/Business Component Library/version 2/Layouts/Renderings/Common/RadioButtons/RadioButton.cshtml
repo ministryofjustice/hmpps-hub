@@ -1,0 +1,12 @@
+@model Sitecore.Speak.Components.Models.Common.RadioButtons.RadioButtonRenderingModel
+@{
+  Model.Class.Append("sc-radiobutton");
+
+  Model.DataBind
+    .IsVisible()
+    .Bind("attr", "{title: Tooltip()}");
+}
+<label @Model.HtmlAttributes>
+  <input class="sc-radiobutton-input" name="@Model.GroupName" data-bind="enable: IsEnabled, checked: _checked().c, value: Value" value="@Model.Value" type="radio">
+  <span class="sc-radiobutton-label" data-bind="text: Label">@Model.Label</span>
+</label>
