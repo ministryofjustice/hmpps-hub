@@ -69,6 +69,15 @@ main {
 // Spacing is set in em, using the px to em function in the elements _helpers.scss file
 
 // Headings
+
+.heading-xxlarge {
+  @include bold-48;
+
+  @include media(desktop) {
+    @include bold-80;
+  }
+
+}
 .heading-xlarge {
   @include bold-48();
 

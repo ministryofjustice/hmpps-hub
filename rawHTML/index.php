@@ -1,19 +1,7 @@
 <?php include('_includes/head.php'); ?>
+<?php include('_includes/header.php'); ?>
 
-
-<header role="banner" id="global-header">
-  <div class="header-wrapper">
-    <div class="header-global">
-
-      <a href="index.php" title="Go to the hub homepage" id="logo" class="content">
-        The Hub
-      </a>
-
-    </div>
-  </div>
-</header>
-
-<main class="elements-index root-index"  role="main" tabindex="-1">
+<main class="elements-index root-index" id="content"  role="main" tabindex="-1">
   <header class="homepage-top">
     <div class="homepage-top-inner">
       <div class="welcome-block">
@@ -46,7 +34,7 @@
       <div class="grid-row">
         <div class="column-one-third">
           <div class="data">
-            <span class="data-item bold-xxlarge">&pound;37.60</span>
+            <span class="data-item heading-xxlarge">&pound;37.60</span>
             <span class="data-item bold-large">Account balance</span>
             <span class="data-item body-text">Last updated: today @ 13:00</span>
           </div>
@@ -54,7 +42,7 @@
 
         <div class="column-one-third">
           <div class="data">
-            <span class="data-item bold-xxlarge">&pound;25.34</span>
+            <span class="data-item heading-xxlarge">&pound;25.34</span>
             <span class="data-item bold-large">Phone credit</span>
             <span class="data-item body-text">Last updated: today @ 13:00</span>
           </div>
