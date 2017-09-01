@@ -1,18 +1,7 @@
 <?php
 $title = 'Videos by Genre';
 include('_includes/head.php'); ?>
-
-<header role="banner" id="global-header">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <h1 class="heading-large hub-logo">
-        <a href="index.php" title="Go to the hub homepage" id="logo" class="content">
-          The Hub
-        </a>
-      </h1>
-    </div>
-  </div>
-</header>
+<?php include('_includes/header.php'); ?>
 
 <div id="global-header-bar"></div>
 

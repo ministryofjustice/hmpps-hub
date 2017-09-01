@@ -7,7 +7,7 @@
 // Allow an ID here, this is useful as it matches the GOV.UK template skiplink
 // scss-lint:disable IdSelector
 #content {
-  @extend %site-width-container;
+  //@extend %site-width-container;
   @extend %contain-floats;
   padding-bottom: $gutter;
 
@@ -63,4 +63,8 @@
 
 .column-full {
   @include grid-column(1);
+}
+
+.add-title-margin{
+  margin-top: 45px;
 }
