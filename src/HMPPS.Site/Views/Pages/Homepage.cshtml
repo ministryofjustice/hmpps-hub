@@ -7,19 +7,19 @@
                 <div class="inner-block floated-children">
                     <div class="welcome-text">
                         <div class="floated-inner-block">
-                            <h1>Welcome</h1>
+                            <h1>@Html.Sitecore().Field("Page Heading")</h1>
                             <h2 class="font-large">Andrew Banfield</h2>
                         </div>
                     </div>
                     <div class="content-links">
                         <div class="floated-inner-block content-links-inner">
-                            <h2>Self service quick links</h2>
+                            <h2>@Html.Sitecore().Field("Quick Links Heading")</h2>
                             <ul>
-                                <li><a href="">Order food</a></li>
-                                <li><a href="">Buy items</a></li>
-                                <li><a href="">Self service link</a></li>
-                                <li><a href="">Self service link</a></li>
-                                <li><a href="">Self service link</a></li>
+                                <li>@Html.Sitecore().Field("Quick Link 1")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 2")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 3")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 4")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 5")</li>
                             </ul>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="column-one-third">
                     <div class="data">
                         <span class="data-item bold-xxlarge">&pound;37.60</span>
-                        <span class="data-item bold-large">Account balance</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Balance Text")</span>
                         <span class="data-item body-text">Last updated: today @@ 13:00</span>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="column-one-third">
                     <div class="data">
                         <span class="data-item bold-xxlarge">&pound;25.34</span>
-                        <span class="data-item bold-large">Phone credit</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Phone Credit Text")</span>
                         <span class="data-item body-text">Last updated: today @@ 13:00</span>
                     </div>
                 </div>

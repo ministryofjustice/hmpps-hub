@@ -58,13 +58,23 @@ Access Sitecore at http://hmpps.localhost/sitecore
 Request an individual username and password from a Sitecore administrator in the project team
 
 
+
+
 ----------------------------
+
 
 FE BUILD
 
+
+
 Open cmd as admin in c:\working_git\HMPPS-CMS\
-Run this commands in order:
+
+Run these commands in order:
+
 npm install yarn
+
 yarn install
+
 yarn dev
+
 yarn build
