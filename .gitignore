@@ -291,3 +291,4 @@ __pycache__/
 proxy.json
 /www
 *.css
+/hmppsAssets/css/*.css
