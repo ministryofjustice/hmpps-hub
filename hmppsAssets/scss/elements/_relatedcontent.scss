@@ -1,11 +1,15 @@
 .related-content {
 	border-top: 10px solid $govuk-blue;
 	padding-top: 15px;
-	
+
 	.heading-medium {
 		margin-top: 0;
 	}
-	
+
+	h2 {
+		@include bold-24;
+	}
+
 	ul li {
 		@include core-16;
 		list-style: none;
