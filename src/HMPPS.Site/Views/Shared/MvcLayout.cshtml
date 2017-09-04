@@ -4,42 +4,7 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <title>
-        Home | The Hub
-    </title>
-
-    <!--[if gt IE 8]><!-->
-    <link href="/hmppsAssets/css/govuk-template.css?0.22.3" media="screen" rel="stylesheet" /><!--<![endif]-->
-    <!--[if IE 6]><link href="/hmppsAssets/css/govuk-template-ie6.css?0.22.3" media="screen" rel="stylesheet" /><![endif]-->
-    <!--[if IE 7]><link href="/hmppsAssets/css/govuk-template-ie7.css?0.22.3" media="screen" rel="stylesheet" /><![endif]-->
-    <!--[if IE 8]><link href="/hmppsAssets/css/govuk-template-ie8.css?0.22.3" media="screen" rel="stylesheet" /><![endif]-->
-    <link href="/hmppsAssets/css/govuk-template-print.css?0.22.3" media="print" rel="stylesheet" />
-
-    <!--[if IE 8]><link href="/hmppsAssets/css/fonts-ie8.css?0.22.3" media="all" rel="stylesheet" /><![endif]-->
-    <!--[if gte IE 9]><!-->
-    <link href="/hmppsAssets/css/fonts.css?0.22.3" media="all" rel="stylesheet" /><!--<![endif]-->
-    <!--[if lt IE 9]><script src="/hmppsAssets/js/ie.js?0.22.3"></script><![endif]-->
-
-    <link rel="shortcut icon" href="/hmppsAssets/img/favicon.ico?0.22.3" type="image/x-icon" />
-
-    <link rel="mask-icon" href="/hmppsAssets/img/gov.uk_logotype_crown.svg?0.22.3" color="#0b0c0c">
-    <link rel="apple-touch-icon" sizes="180x180" href="/hmppsAssets/img/apple-touch-icon-180x180.png?0.22.3">
-    <link rel="apple-touch-icon" sizes="167x167" href="/hmppsAssets/img/apple-touch-icon-167x167.png?0.22.3">
-    <link rel="apple-touch-icon" sizes="152x152" href="/hmppsAssets/img/apple-touch-icon-152x152.png?0.22.3">
-    <link rel="apple-touch-icon" href="/hmppsAssets/img/apple-touch-icon.png?0.22.3">
-
-
-    <meta name="theme-color" content="#0b0c0c" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="/hmppsAssets/img/opengraph-image.png?0.22.3">
-
-    <!--[if gt IE 8]><!-->
-    <link href="/hmppsAssets/css/hmpps.css" rel="stylesheet" type="text/css"><!--<![endif]-->
-    <!--[if IE 6]><link href="/hmppsAssets/css/hmpps-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="/hmppsAssets/css/hmpps-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="/hmppsAssets/css/hmpps-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    @Html.Partial("/Views/Partials/_Head.cshtml")
 </head>
 
 <body class="">
@@ -54,32 +19,13 @@
         </div>
     </div>
 
-    <div id="global-cookie-message">
-        <p>The Hub uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
-    </div>
+    @Html.Partial("/Views/Partials/_CookieNotice.cshtml")
 
-
-
-    <header role="banner" id="global-header">
-        <div class="header-wrapper">
-            <div class="header-global">
-
-                <a href="/" title="Go to the hub homepage" id="logo" class="content">
-                    The Hub
-                </a>
-
-            </div>
-        </div>
-    </header>
+    @Html.Partial("/Views/Partials/_Header.cshtml")
 
     @Html.Sitecore().Placeholder("content")
 
-    <footer class="group js-footer" id="footer" role="contentinfo">
-        <div class="footer-wrapper">
-            <div class="footer-meta">
-            </div>
-        </div>
-    </footer>
+    @Html.Partial("/Views/Partials/_Footer.cshtml")
 
     <div id="global-app-error" class="app-error hidden"></div>
 
