@@ -340,9 +340,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Pages\AuthController.cs" />
     <Compile Include="Controllers\Pages\HomepageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Auth\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
+      <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
+      <Name>HMPPS.Authentication</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
