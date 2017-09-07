@@ -1,6 +1,6 @@
 ﻿@model HMPPS.Site.ViewModels.Pages.HomepageViewModel
 
-<main class="elements-index root-index" role="main" tabindex="-1">
+<main class="elements-index root-index" id="content" role="main" tabindex="-1">
     <header class="homepage-top">
         <div class="homepage-top-inner">
             <div class="welcome-block">
@@ -33,7 +33,7 @@
             <div class="grid-row">
                 <div class="column-one-third">
                     <div class="data">
-                        <span class="data-item bold-xxlarge">&pound;37.60</span>
+                        <span class="data-item data-heading heading-xxlarge">&pound;37.60</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Account Balance Text")</span>
                         <span class="data-item body-text">Last updated: today @@ 13:00</span>
                     </div>
@@ -41,7 +41,7 @@
 
                 <div class="column-one-third">
                     <div class="data">
-                        <span class="data-item bold-xxlarge">&pound;25.34</span>
+                        <span class="data-item data-heading heading-xxlarge">&pound;25.34</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Phone Credit Text")</span>
                         <span class="data-item body-text">Last updated: today @@ 13:00</span>
                     </div>
@@ -53,7 +53,7 @@
                 @Html.Sitecore().Placeholder("feature-blocks-row-1")
             </div>
             <div class="grid-row">
-               @Html.Sitecore().Placeholder("feature-blocks-row-2")
+                @Html.Sitecore().Placeholder("feature-blocks-row-2")
             </div>
         </div>
     </div>
