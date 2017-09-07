@@ -292,3 +292,4 @@ proxy.json
 /www
 *.css
 /hmppsAssets/css/*.css
+/hmppsAssets/js/application.js
