@@ -1,0 +1,22 @@
+﻿---
+ID: "4769c22a-e4ea-4909-9faf-de0f50ef7512"
+Parent: "cb819809-8690-4c95-84dd-9be4c5a319e6"
+Template: "cb819809-8690-4c95-84dd-9be4c5a319e6"
+Path: /sitecore/templates/HMPPS/Base/Core/__Standard Values
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{FD363896-9E28-422D-B24B-7A5DA6D8B1B7}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T152942Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
