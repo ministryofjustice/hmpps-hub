@@ -1,5 +1,5 @@
 <?php
-$title = 'Books by Genre';
+$title = 'Books';
 include('_includes/head.php'); ?>
 <?php include('_includes/header.php'); ?>
 
@@ -9,61 +9,30 @@ include('_includes/head.php'); ?>
   <div class="breadcrumbs">
     <ol>
       <li><a href="index.php">Home</a></li>
-      <li aria-current="page">Books by Genre</li>
+      <li aria-current="page">Books</li>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+    <h1 class="heading-large">Books</h1>
 
-    <div class="browse">
-      <div class="browse-panes section-only" data-state="section" data-module="track-click" aria-busy="false">
-        <div id="section" class="section-pane with-sort pane" style="">
-          <div class="pane-inner alphabetical" style="">
-            <h1 tabindex="-1">Genres</h1>
-            <p class="sort-order" style="">A to Z</p>
-            <ul>
-              <li>
-                <a href="books-two.php" class="">
-                  <h3>Action</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="books-two.php" class="">
-                  <h3>Adventure</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="books-two.php" class="">
-                  <h3>Comedy</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="books-two.php" class="">
-                  <h3>Crime</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="books-two.php" class="">
-                  <h3>Drama</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="books-two.php" class="">
-                  <h3>Horror</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-            </ul>
+    <div class="image-grid">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href="books-two.php"><img src="_dummy/img/entertainment.png" alt="">
+            <h2 class="heading-medium">Entertainment</h2>
+            </a>
           </div>
         </div>
-
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href="books-two.php"><img src="_dummy/img/education.png" alt="">
+            <h2 class="heading-medium">Education</h2>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </main><!-- / #content -->
+    </main><!-- / #content -->
 
 </div>
 
