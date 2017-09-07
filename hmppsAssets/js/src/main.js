@@ -1,6 +1,12 @@
 // Polyfills
+
+
 import './govuk/details.polyfill';
 import './vendor/polyfills/bind';
+
+// libs
+// import './vendor/lib/jszip.min';
+// import './vendor/lib/epub.min';
 
 // import styles
 import '../../scss/hmpps.scss';
@@ -10,9 +16,12 @@ import '../../scss/hmpps-ie6.scss';
 
 // modules
 import govUKCookie from './govuk/cookie';
+import ereader from './modules/ereader';
 
 // set up namespace
-const HMPPS = window.HMPPS || {};
+const HMPPS = window.HMPPS || {
+  ereader,
+};
 
 HMPPS.addCookieMessage = () => {
   const message = document.getElementById('global-cookie-message');

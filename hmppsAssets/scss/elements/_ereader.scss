@@ -1,0 +1,82 @@
+// ereader
+// ==========================================================================
+
+.epub{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.ereader{
+  padding: 5px;
+  background-color: white;
+  //margin-top: 40px;
+  position: relative;
+
+}
+
+.ereader__area{
+
+  margin: 5% auto;
+  max-width: 1250px;
+  background-color: white;
+  text-align: center;
+
+  @include media (desktop) {
+    width: 80%;
+    height: 80%;
+  }
+
+  @include media (mobile) {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+// .ereader iframe {
+//   position: absolute;
+//   top:0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: white;
+//   overflow: scroll;
+// }
+
+// .ereader iframe html{
+//   height: 100%;
+// }
+
+.ereader__buttons{
+  //position: relative;
+  text-align: center;
+  display: block;
+  margin: 25px auto 0;
+}
+
+.ereader__prev,
+.ereader__next{
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  text-indent: -9999px;
+  width: 45px;
+  height: 45px;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+     -moz-user-select: none;
+      -ms-user-select: none;
+  background: url('/hmppsAssets/img/arrow-sprite.png') #fff  0% 50% no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  left: 0;
+}
+
+.ereader__next{
+  background-position: 100% 50%;
+  right: 0;
+  left: auto;
+}
