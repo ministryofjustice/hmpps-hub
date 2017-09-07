@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens;
 using System.Linq;
 using System.Security.Claims;
-using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel.Security.Tokens;
+using System.Text;
 using System.Web;
-//using Microsoft.Practices.ServiceLocation;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security;
 using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
 using Sitecore.Web;
-using Convert = System.Convert;
 using IdentityModel.Client;
 using IdentityModel;
 
@@ -59,13 +58,9 @@ namespace HMPPS.Authentication.Pipelines
 
             if (string.IsNullOrWhiteSpace(tempCookie.Values["nonce"]))
                 throw new InvalidOperationException("Could not validate identity token. Invalid nonce.");
+            
+            //TODO: Remove or disable these SSL hacks for production
 
-            return GetTokenAndClaims(code, tempCookie.Values["nonce"]);
-        }
-
-        public IEnumerable<Claim> GetTokenAndClaims(string code, string nonce)
-        {
-            //TODO: Remove these SSL hacks
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
@@ -81,7 +76,7 @@ namespace HMPPS.Authentication.Pipelines
                 code,
                 Settings.SignInCallbackUrl).Result;
 
-            return ValidateResponseAndSignIn(response, nonce);
+            return ValidateResponseAndSignIn(response, tempCookie.Values["nonce"]);
         }
 
         private IEnumerable<Claim> ValidateResponseAndSignIn(TokenResponse response, string nonce)
@@ -90,11 +85,12 @@ namespace HMPPS.Authentication.Pipelines
                 throw new InvalidOperationException("Could not validate identity token, empty or missing.");
             
             var tokenClaims = ValidateIdentityToken(response.IdentityToken, nonce);
-
-            //TODO: Sign in to record tokens and check them each request.
-            return tokenClaims;
-
+            
             var claims = new List<Claim>();
+            
+            claims.AddRange(tokenClaims.Where(c => c.Type == ClaimTypes.Name
+                                                || c.Type == ClaimTypes.NameIdentifier
+                                                || c.Type == ClaimTypes.Role));
 
             if (!string.IsNullOrWhiteSpace(response.AccessToken))
             {
@@ -112,17 +108,25 @@ namespace HMPPS.Authentication.Pipelines
             //TODO: Sign in to record tokens and check them each request.
             //var id = new ClaimsIdentity(claims, "Cookies");
             //Request.GetOwinContext().Authentication.SignIn(id);
+
+            return claims;
         }
 
         private IEnumerable<Claim> ValidateIdentityToken(string token, string nonce)
         {
-            var cert = new X509Certificate2(Convert.FromBase64String(Settings.PublicKey));
+            // Token is signed HS256 by the client secret 
+            // see https://stackoverflow.com/a/25376518
+            byte[] signingSecretKey = Encoding.UTF8.GetBytes(Settings.ClientSecret);
+            if (signingSecretKey.Length < 64)
+            {
+                Array.Resize(ref signingSecretKey, 64);
+            }
 
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidAudience = Settings.ClientId,
                 ValidIssuer = Settings.ValidIssuer,
-                IssuerSigningToken = new X509SecurityToken(cert)
+                IssuerSigningToken = new BinarySecretSecurityToken(signingSecretKey)
             };
 
             var handler = new JwtSecurityTokenHandler();
@@ -139,12 +143,12 @@ namespace HMPPS.Authentication.Pipelines
 
             return principal.Claims;
         }
-
+        
         private User BuildVirtualUser(SessionSecurityToken sessionToken)
         {
             var domain = "extranet";
-            var userId = sessionToken.ClaimsPrincipal.Claims.Single(c => c.Type.Equals("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")).Value;
-            var roles = sessionToken.ClaimsPrincipal.Claims.Where(c => c.Type.Equals("http://schemas.microsoft.com/ws/2008/06/identity/claims/role")).Select(c => c.Value);
+            var userId = sessionToken.ClaimsPrincipal.Claims.Single(c => c.Type.Equals(ClaimTypes.NameIdentifier)).Value;
+            var roles = sessionToken.ClaimsPrincipal.Claims.Where(c => c.Type.Equals(ClaimTypes.Role)).Select(c => c.Value);
 
             var username = $"{domain}\\{userId}";
             var user = AuthenticationManager.BuildVirtualUser(username, true);
