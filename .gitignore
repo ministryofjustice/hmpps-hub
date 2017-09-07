@@ -289,3 +289,7 @@ __pycache__/
 *.xsd.cs
 
 proxy.json
+/www
+*.css
+/hmppsAssets/css/*.css
+/hmppsAssets/js/application.js
