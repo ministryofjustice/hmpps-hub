@@ -19,6 +19,10 @@
 
 <!-- govuk_elements js -->
 <!-- <script src="/hmppsAssets/js/govuk/details.polyfill.js"></script> -->
+<script src="/hmppsAssets/js/src/vendor/lib/jszip.min.js"></script>
+<script src="/hmppsAssets/js/src/vendor/lib/epub.min.js"></script>
+<!-- <script src="/hmppsAssets/js/src/vendor/lib/hooks.min.js"></script>
+<script src="/hmppsAssets/js/src/vendor/lib/reader.min.js"></script> -->
 <script src="/hmppsAssets/js/application.js"></script>
 </body>
 </html>
