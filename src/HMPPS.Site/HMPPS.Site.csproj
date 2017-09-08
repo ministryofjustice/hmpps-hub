@@ -45,6 +45,9 @@
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
+    <Reference Include="E3.SitecoreHelper, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\E3.SitecoreHelper.1.1.0\lib\net45\E3.SitecoreHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Kamsar.WebConsole, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Kamsar.WebConsole.2.0.0\lib\net40\Kamsar.WebConsole.dll</HintPath>
     </Reference>
@@ -72,6 +75,10 @@
     </Reference>
     <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.0.8\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Caching" />
@@ -362,9 +369,7 @@
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Pages\BookSectionPage.cshtml" />
-    <Content Include="Views\Pages\BookSubSectionPage.cshtml" />
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
-    <Content Include="Views\Pages\BookLandingPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -405,15 +410,11 @@
   <ItemGroup>
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
-    <Compile Include="Controllers\Pages\BookSubSectionPageController.cs" />
     <Compile Include="Controllers\Pages\BookSectionPageController.cs" />
-    <Compile Include="Controllers\Pages\BookLandingPageController.cs" />
     <Compile Include="Controllers\Pages\HomepageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Pages\BookLandingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
-    <Compile Include="ViewModels\Pages\BookSubSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
   </ItemGroup>
