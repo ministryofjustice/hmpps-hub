@@ -142,6 +142,10 @@ namespace HMPPS.Authentication
 
             // validate nonce
             var nonceClaim = principal.FindFirst("nonce");
+            if (nonceClaim == null)
+            {
+                throw new InvalidOperationException("Could not validate identity token. Missing nonce");
+            }
 
             if (!string.Equals(nonceClaim.Value, nonce, StringComparison.Ordinal))
             {

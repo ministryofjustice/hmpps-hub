@@ -11,15 +11,14 @@ namespace HMPPS.Authentication.Tests
     [TestClass]
     public class TokenManagerTests
     {
-        //TODO: Store id and secret in key vault
-        private string testClientId = "CMS_E3_CLIENTID";
-        private string testClientSecret = "KainosCMSE3";
-        private string testIssuer = "https://51.141.55.159:8080/openam/oauth2";
-        private string testIdentityToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiNC1YVHB3cWZsU2Z2eVRpLWpfalBBQSIsInN1YiI6InVzZXIuMCIsImF1ZGl0VHJhY2tpbmdJZCI6ImM1MTZmYzcxLWMxMGMtNGQ1Ny1iN2Q4LWFkMGNiNWM2ODM1NC0zOTgxNyIsImlzcyI6Imh0dHBzOi8vNTEuMTQxLjU1LjE1OTo4MDgwL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImdpdmVuX25hbWUiOiJBYWNjZiIsIm5vbmNlIjoiNmVkZjg4YzdlMDFmNDI4Y2FlMDNkMzQ2ZWI4MmU5NjIiLCJhdWQiOiJDTVNfRTNfQ0xJRU5USUQiLCJjX2hhc2giOiI5YTJzMEFWUXpGTF80RG1rUjZ3OWpnIiwib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6Ijk4ODQzNWJiLTI1ZjktNGVkMy1hMDJiLWVhMTBjMTg2NDI1MiIsImF6cCI6IkNNU19FM19DTElFTlRJRCIsImF1dGhfdGltZSI6MTUwNDgyNTY2NCwibmFtZSI6IkFhY2NmIEFtYXIiLCJyZWFsbSI6Ii8iLCJleHAiOjE1MDQ4Mjk1MTQsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiaWF0IjoxNTA0ODI1OTE0LCJmYW1pbHlfbmFtZSI6IkFtYXIiLCJlbWFpbCI6InVzZXIuMEBtYWlsZG9tYWluLm5ldCIsImZvcmdlcm9jayI6eyJzaWciOiJTPEY-WVskY0VZJkhtMzZ1NSZWV1VKJTFeVio0ezdLIURBWmlCa042In19.DEJ2478MVCckFph-ZO1lnh7XszLnuTntk8_yWUyRKwo";
+        private string testClientId = "www.example.com";
+        private string testClientSecret = "qwertyuiopasdfghjklzxcvbnm123456";
+        private string testIssuer = "Online JWT Builder";
+        private string testIdentityToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE1MDQ4MzM3NDEsImV4cCI6MTkxNTA2MDk0MSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkpvaG5ueSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3N1cm5hbWUiOiJSb2NrZXQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqcm9ja2V0QGV4YW1wbGUuY29tIiwibm9uY2UiOiI2ZWRmODhjN2UwMWY0MjhjYWUwM2QzNDZlYjgyZTk2MiJ9.c3xr-M6-RzFU6FgIXSwcDEjijF1jjASTp2uSr7oqD6s";
         private string testNonce = "6edf88c7e01f428cae03d346eb82e962";
 
         [TestMethod]
-        public void TokenManager_CanGetAuthenticationRedirectUrl()
+        public void TokenManager_GetAuthenticationRedirectUrl()
         {
             var tm = new HMPPS.Authentication.TokenManager(false)
             {
@@ -48,11 +47,10 @@ namespace HMPPS.Authentication.Tests
 
             var principal = tm.ValidateIdentityToken(testIdentityToken, testNonce);
 
-            Assert.AreEqual("user.0", principal.FindFirst(ClaimTypes.NameIdentifier).Value);
-            Assert.AreEqual("Aaccf Amar", principal.FindFirst("name").Value);
-            Assert.AreEqual("Aaccf", principal.FindFirst(ClaimTypes.GivenName).Value);
-            Assert.AreEqual("Amar", principal.FindFirst(ClaimTypes.Surname).Value);
-            Assert.AreEqual("user.0@maildomain.net", principal.FindFirst(ClaimTypes.Email).Value);
+            Assert.AreEqual("Johnny", principal.FindFirst(ClaimTypes.GivenName).Value);
+            Assert.AreEqual("Rocket", principal.FindFirst(ClaimTypes.Surname).Value);
+            Assert.AreEqual("jrocket@example.com", principal.FindFirst(ClaimTypes.Email).Value);
+            Assert.AreEqual("jrocket@example.com", principal.FindFirst(ClaimTypes.NameIdentifier).Value);
         }
 
         [TestMethod]
@@ -123,12 +121,11 @@ namespace HMPPS.Authentication.Tests
             var claims = tm.ExtractClaims(tokenResponse, claimsPrincipal);
 
             Assert.IsNotNull(claims);
-            Assert.AreEqual(5, claims.Count());
-            Assert.AreEqual("user.0", claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value);
-            Assert.AreEqual("user.0@maildomain.net", claims.Single(c => c.Type == ClaimTypes.Email).Value);
-            Assert.AreEqual("Amar", claims.Single(c => c.Type == ClaimTypes.Surname).Value);
-            Assert.AreEqual("Aaccf", claims.Single(c => c.Type == ClaimTypes.GivenName).Value);
-            Assert.AreEqual("Aaccf Amar", claims.Single(c => c.Type == "name").Value);
+            Assert.AreEqual(4, claims.Count());
+            Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.Email).Value);
+            Assert.AreEqual("Rocket", claims.Single(c => c.Type == ClaimTypes.Surname).Value);
+            Assert.AreEqual("Johnny", claims.Single(c => c.Type == ClaimTypes.GivenName).Value);
+            Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value);
         }
 
         [TestMethod]
