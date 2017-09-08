@@ -27,15 +27,16 @@ namespace HMPPS.Site
           */
 
             var container = new Container();
-            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
-                // Set Scoped to behave as "PerWebRequest"
+            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();//Set Scoped to behave as "PerWebRequest"
+
+            RegisterInstances(container);
 
             container.Verify(); // Make sure everything is valid
 
             return container;
         }
 
-        public static void InitializeContainer(Container container)
+        public static void RegisterInstances(Container container)
         {
             // config 
 
