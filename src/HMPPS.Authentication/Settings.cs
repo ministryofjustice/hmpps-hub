@@ -10,6 +10,8 @@ namespace HMPPS.Authentication
     {
         public static string SignInCallbackUrl => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.SignInCallbackUrl");
 
+        public static string LogoutUrl => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.LogoutUrl");
+
         public static string TempCookieName => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.TempCookieName", "TempCookie");
 
         public static string Scope => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.Scope", "openid profile roles all_claims");

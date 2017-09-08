@@ -21,22 +21,19 @@ namespace HMPPS.Authentication.Pipelines
     {
         public override void Process(HttpRequestArgs args)
         {
-            // NOTE - no error handling added. Failed requests are expected to result in an unhandled exception. 
+            // NOTE - no error handling added. Failed requests are expected to result in an unhandled exception, which should show friendly error page.
 
             // Only act on unauthenticated requests against the sign-in callback URL
             if (Context.User == null || Context.User.IsAuthenticated ||
                 Context.User.Identity.GetType() == typeof(UserProfile) ||
                 !args.Context.Request.Url.AbsoluteUri.StartsWith(Settings.SignInCallbackUrl)) return;
 
-            // Validate token and construct claims prinicpal / session security token
+            // Validate token and obtain claims
             var tempCookie = args.Context.Request.Cookies[Settings.TempCookieName];
             var claims = ValidateCodeAndGetClaims(args.Context.Request.QueryString["code"], args.Context.Request.QueryString["state"], tempCookie);
-            var identity = new ClaimsIdentity(claims, "Forms", ClaimTypes.Name, ClaimTypes.Role);
-            var principal = new ClaimsPrincipal(identity);
-            var sessionSecurityToken = new SessionSecurityToken(principal);
 
-            // Build sitecore user and log in 
-            var user = BuildVirtualUser(sessionSecurityToken);
+            // Build sitecore user and log in - this will persist until log out or session ends.
+            var user = BuildVirtualUser(claims);
             AuthenticationManager.LoginVirtualUser(user);
 
             if (tempCookie != null)
@@ -48,7 +45,7 @@ namespace HMPPS.Authentication.Pipelines
             WebUtil.Redirect(targetUrl);
         }
 
-        public IEnumerable<Claim> ValidateCodeAndGetClaims(string code, string state, HttpCookie tempCookie)
+        private IEnumerable<Claim> ValidateCodeAndGetClaims(string code, string state, HttpCookie tempCookie)
         {
             if (tempCookie == null)
                 throw new InvalidOperationException("Could not validate identity token. No temp cookie found.");
@@ -58,100 +55,38 @@ namespace HMPPS.Authentication.Pipelines
 
             if (string.IsNullOrWhiteSpace(tempCookie.Values["nonce"]))
                 throw new InvalidOperationException("Could not validate identity token. Invalid nonce.");
-            
-            //TODO: Remove or disable these SSL hacks for production
+            var nonce = tempCookie.Values["nonce"];
 
-            // Dev service uses fake cert
-            System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            var tokenManager = new TokenManager();
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            //TODO: Call the async version - but you can't from within a pipeline! Move this into a controller and redirect to it?
+            var tokenResponse = tokenManager.RequestAccessToken(code);
 
-            var client = new TokenClient(
-                Settings.TokenEndpoint,
-                Settings.ClientId,
-                Settings.ClientSecret);
-            
-            var response = client.RequestAuthorizationCodeAsync(
-                code,
-                Settings.SignInCallbackUrl).Result;
+            var claimsPrincipal = tokenManager.ValidateIdentityToken(tokenResponse.IdentityToken, nonce);
 
-            return ValidateResponseAndSignIn(response, tempCookie.Values["nonce"]);
-        }
+            var claims = tokenManager.ExtractClaims(tokenResponse, claimsPrincipal);
 
-        private IEnumerable<Claim> ValidateResponseAndSignIn(TokenResponse response, string nonce)
-        {
-            if (string.IsNullOrWhiteSpace(response.IdentityToken))
-                throw new InvalidOperationException("Could not validate identity token, empty or missing.");
-            
-            var tokenClaims = ValidateIdentityToken(response.IdentityToken, nonce);
-            
-            var claims = new List<Claim>();
-            
-            claims.AddRange(tokenClaims.Where(c => c.Type == ClaimTypes.Name
-                                                || c.Type == ClaimTypes.NameIdentifier
-                                                || c.Type == ClaimTypes.Role));
-
-            if (!string.IsNullOrWhiteSpace(response.AccessToken))
-            {
-                //claims.AddRange(await GetUserInfoClaimsAsync(response.AccessToken));
-
-                claims.Add(new Claim("access_token", response.AccessToken));
-                claims.Add(new Claim("expires_at", (DateTime.UtcNow.ToEpochTime() + response.ExpiresIn).ToDateTimeFromEpoch().ToString()));
-            }
-
-            if (!string.IsNullOrWhiteSpace(response.RefreshToken))
-            {
-                claims.Add(new Claim("refresh_token", response.RefreshToken));
-            }
-
-            //TODO: Sign in to record tokens and check them each request.
+            //TODO: Use an Owin auth context to record claims inc tokens in secure cookie and check them each request.
             //var id = new ClaimsIdentity(claims, "Cookies");
             //Request.GetOwinContext().Authentication.SignIn(id);
 
+            //TODO: When detect token has expired, attempt to renew with refresh token, or log out if this fails:
+            //var refreshedToken = tokenManager.RequestRefreshToken(tokenResponse.RefreshToken);
+
             return claims;
         }
-
-        private IEnumerable<Claim> ValidateIdentityToken(string token, string nonce)
-        {
-            // Token is signed HS256 by the client secret 
-            // see https://stackoverflow.com/a/25376518
-            byte[] signingSecretKey = Encoding.UTF8.GetBytes(Settings.ClientSecret);
-            if (signingSecretKey.Length < 64)
-            {
-                Array.Resize(ref signingSecretKey, 64);
-            }
-
-            var tokenValidationParameters = new TokenValidationParameters
-            {
-                ValidAudience = Settings.ClientId,
-                ValidIssuer = Settings.ValidIssuer,
-                IssuerSigningToken = new BinarySecretSecurityToken(signingSecretKey)
-            };
-
-            var handler = new JwtSecurityTokenHandler();
-            SecurityToken jwt;
-            var principal = handler.ValidateToken(token, tokenValidationParameters, out jwt);
-
-            // validate nonce
-            var nonceClaim = principal.FindFirst("nonce");
-
-            if (!string.Equals(nonceClaim.Value, nonce, StringComparison.Ordinal))
-            {
-                throw new InvalidOperationException("Could not validate identity token. Invalid nonce");
-            }
-
-            return principal.Claims;
-        }
         
-        private User BuildVirtualUser(SessionSecurityToken sessionToken)
+        private User BuildVirtualUser(IEnumerable<Claim> claims)
         {
             var domain = "extranet";
-            var userId = sessionToken.ClaimsPrincipal.Claims.Single(c => c.Type.Equals(ClaimTypes.NameIdentifier)).Value;
-            var roles = sessionToken.ClaimsPrincipal.Claims.Where(c => c.Type.Equals(ClaimTypes.Role)).Select(c => c.Value);
+            var userId = claims.Single(c => c.Type.Equals(ClaimTypes.NameIdentifier)).Value;
+            var email = claims.SingleOrDefault(c => c.Type.Equals(ClaimTypes.Email))?.Value;
+            var roles = claims.Where(c => c.Type.Equals(ClaimTypes.Role)).Select(c => c.Value);
 
             var username = $"{domain}\\{userId}";
             var user = AuthenticationManager.BuildVirtualUser(username, true);
+            user.Profile.Email = email;
+            user.Profile.FullName = claims.Single(c => c.Type.Equals("name")).Value;
             AssignUserRoles(user, roles);
             return user;
         }

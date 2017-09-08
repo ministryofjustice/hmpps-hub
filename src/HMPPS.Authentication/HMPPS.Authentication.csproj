@@ -71,10 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pipelines\LogoutRedirector.cs" />
     <Compile Include="Pipelines\LoginRedirector.cs" />
     <Compile Include="Pipelines\OAuth2SignInCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="TokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
