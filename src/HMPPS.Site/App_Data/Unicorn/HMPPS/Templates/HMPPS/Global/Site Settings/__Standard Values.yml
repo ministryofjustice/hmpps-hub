@@ -1,8 +1,8 @@
 ﻿---
-ID: "89c6645d-7e62-40cc-a815-07efc7361d0f"
-Parent: "29d1d9a5-3e5a-4039-bd65-5a30ee0250f2"
-Template: "29d1d9a5-3e5a-4039-bd65-5a30ee0250f2"
-Path: /sitecore/templates/HMPPS/Blocks/Global/Feature Block/__Standard Values
+ID: "d6f1c939-9392-4699-8710-845f152406e5"
+Parent: "4a4f9daa-aa2d-4ecc-94fe-d1dee95937bc"
+Template: "4a4f9daa-aa2d-4ecc-94fe-d1dee95937bc"
+Path: /sitecore/templates/HMPPS/Global/Site Settings/__Standard Values
 DB: master
 SharedFields:
 - ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
@@ -15,11 +15,8 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170901T155731Z
+      Value: 20170908T112351Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\e3_MihaelaR
-    - ID: "888d60b2-401d-44ef-9482-ae3e2e49d447"
-      Hint: Title
-      Value: $name

@@ -1,0 +1,34 @@
+﻿@model HMPPS.Site.ViewModels.Pages.BookLandingPageViewModel
+
+<div id="global-header-bar"></div>
+
+<div class="site-wrapper">
+
+    @Html.Partial("/Views/Partials/_Breadcrumb.cshtml")
+
+    <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+        <h1 class="heading-large">@Html.Sitecore().Field("Page Title")</h1>
+
+        <div class="image-grid">
+            <div class="grid-row">
+                <div class="column-one-third">
+                    <div class="image-grid-item">
+                        <a href="books-two.php">
+                            <img src="_dummy/img/entertainment.png" alt="">
+                            <h2 class="heading-medium">Entertainment</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="column-one-third">
+                    <div class="image-grid-item">
+                        <a href="books-two.php">
+                            <img src="_dummy/img/education.png" alt="">
+                            <h2 class="heading-medium">Education</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main><!-- / #content -->
+
+</div>
