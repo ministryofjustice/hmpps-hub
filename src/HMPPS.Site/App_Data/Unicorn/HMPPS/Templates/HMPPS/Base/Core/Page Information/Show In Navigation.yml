@@ -2,7 +2,7 @@
 ID: "2f241444-6cd0-4450-b5bb-98214e16f8dc"
 Parent: "40923700-7598-4463-a75b-6103291ec0cc"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Base/Core/Page Information/Hide From Navigation
+Path: /sitecore/templates/HMPPS/Base/Core/Page Information/Show In Navigation
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
@@ -16,7 +16,7 @@ Languages:
   Fields:
   - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
     Hint: __Short description
-    Value: Tick to hide this page from the navigation components.
+    Value: Untick to hide this page from the navigation components.
   Versions:
   - Version: 1
     Fields:

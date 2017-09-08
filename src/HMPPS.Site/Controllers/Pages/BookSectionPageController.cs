@@ -18,7 +18,8 @@ namespace HMPPS.Site.Controllers.Pages
         {
             _bspvm = new BookSectionPageViewModel();
             _bspvm.Children = contextItem.Children.ToList();
-            _bspvm.BreadcrumbItems = contextItem.Axes.GetAncestors().Where(i => i["Hide From Navigation"] != "1").ToList();
+            _bspvm.BreadcrumbItems = contextItem.Axes.GetAncestors().Where(i => i["Show In Navigation"] == "1").ToList();
+            _bspvm.BreadcrumbItems.Add(contextItem);
         }
 
         public ActionResult Index()

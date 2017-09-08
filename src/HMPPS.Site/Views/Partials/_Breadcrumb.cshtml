@@ -5,10 +5,10 @@
         <ol>
             @foreach (var item in Model)
             {
-                var linkText = item["Navigation Title"] ?? item["Page Title"];
+                var linkText = E3.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(item, "Navigation Title", "Page Title");
                 var linkUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
 
-                if (item.ID == Sitecore.Context.Item.ID)
+                if (item.ID != Sitecore.Context.Item.ID)
                 {
                     <li><a href="@linkUrl">@linkText</a></li>
                 }
