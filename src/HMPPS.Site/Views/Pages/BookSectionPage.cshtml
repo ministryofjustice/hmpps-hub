@@ -22,17 +22,15 @@
                     {
                         <div class="column-one-third">
                             <div class="image-grid-item">
-                                <a href="@Sitecore.Links.LinkManager.GetItemUrl(item)">
-                                    <img src="@E3.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(item, "Thumbnail Image")" alt="@E3.SitecoreHelper.FieldMethods.GetImageDescription(item, "Thumbnail Image")">
-                                    <h2 class="heading-medium">@E3.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(item, "Navigation Title", "Page Title")</h2>
+                                <a href="@item.Link.Url">
+                                    <img src="@item.Image.Url" alt="@item.Image.AltText">
+                                    <h2 class="heading-medium">@item.Title</h2>
                                 </a>
                             </div>
                         </div>
                     }
                 </div>
                 itemIndex += itemsInRow.Count();
-
-
             }
         }
     </div>

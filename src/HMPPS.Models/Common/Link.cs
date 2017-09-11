@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HMPPS.Models
+namespace HMPPS.Models.Common
 {
-    public class Book
+    public class Link
     {
-        public string Title { get; set; }
         public string Url { get; set; }
 
-        public bool NewWindow { get; set; }
+        public bool NewTarget { get; set; }
 
-        public Image Image { get; set; }
+        public string Title { get; set; }
     }
 }
