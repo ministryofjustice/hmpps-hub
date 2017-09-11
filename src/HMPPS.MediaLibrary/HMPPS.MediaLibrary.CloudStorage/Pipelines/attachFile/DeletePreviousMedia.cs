@@ -1,10 +1,10 @@
-﻿using FS.MediaLibrary.CloudStorage.Interface;
-using FS.MediaLibrary.CloudStorage.Provider;
+﻿using HMPPS.MediaLibrary.CloudStorage.Interface;
+using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Attach;
 using Sitecore.StringExtensions;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.AttachFile
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
 {
     /// <summary>
     /// Deletes media from Cloud storage that was previously associated with item

@@ -1,11 +1,11 @@
 ﻿using System;
-using FS.MediaLibrary.CloudStorage.Interface;
-using FS.MediaLibrary.CloudStorage.Provider;
+using HMPPS.MediaLibrary.CloudStorage.Interface;
+using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
 
-namespace FS.MediaLibrary.CloudStorage.Events
+namespace HMPPS.MediaLibrary.CloudStorage.Events
 {
     public class MediaItemDeleting
     {

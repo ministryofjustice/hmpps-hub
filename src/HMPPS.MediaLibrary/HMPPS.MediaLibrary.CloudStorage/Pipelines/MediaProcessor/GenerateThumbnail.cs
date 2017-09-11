@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Linq;
-using FS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
     /// <summary>
     /// Generate thumbnail of the uploaded media

@@ -3,9 +3,9 @@ using System.Linq;
 using Sitecore.Data;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Upload;
-using FS.MediaLibrary.CloudStorage.Configuration;
+using HMPPS.MediaLibrary.CloudStorage.Configuration;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.uiUpload
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
 {
     /// <summary>
     /// Ensures media uploaded to specified folders is file based

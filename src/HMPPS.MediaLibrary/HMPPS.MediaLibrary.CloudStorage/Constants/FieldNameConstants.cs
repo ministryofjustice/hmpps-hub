@@ -1,6 +1,6 @@
 ﻿
 
-namespace FS.MediaLibrary.CloudStorage.Constants
+namespace HMPPS.MediaLibrary.CloudStorage.Constants
 {
     /// <summary>
     /// The field name constants.

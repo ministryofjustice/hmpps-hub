@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Security.Cryptography;
-using FS.MediaLibrary.CloudStorage.Configuration;
+using HMPPS.MediaLibrary.CloudStorage.Configuration;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.IO;
 using Sitecore.Resources.Media;
 
-namespace FS.MediaLibrary.CloudStorage.Helpers
+namespace HMPPS.MediaLibrary.CloudStorage.Helpers
 {
     public class MediaHelper
     {

@@ -1,7 +1,7 @@
 ﻿using Sitecore.Diagnostics;
 using System.Collections.Generic;
 
-namespace FS.MediaLibrary.CloudStorage.Configuration
+namespace HMPPS.MediaLibrary.CloudStorage.Configuration
 {
     public class LocationConfiguration
     {

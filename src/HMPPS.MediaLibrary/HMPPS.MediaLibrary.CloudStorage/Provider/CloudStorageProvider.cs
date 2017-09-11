@@ -1,9 +1,9 @@
-﻿using FS.MediaLibrary.CloudStorage.Helpers;
-using FS.MediaLibrary.CloudStorage.Interface;
+﻿using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Interface;
 using Sitecore.Configuration;
 using Sitecore.Data.Items;
 
-namespace FS.MediaLibrary.CloudStorage.Provider
+namespace HMPPS.MediaLibrary.CloudStorage.Provider
 {
     public class CloudStorageProvider : ICloudStorageProvider
     {

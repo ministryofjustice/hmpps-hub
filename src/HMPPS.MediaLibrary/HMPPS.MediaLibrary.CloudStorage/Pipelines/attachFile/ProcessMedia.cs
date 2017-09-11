@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using FS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Attach;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.AttachFile
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
 {
     /// <summary>
     /// Kicks off process to start media upload job

@@ -1,11 +1,11 @@
 ﻿using System.Text.RegularExpressions;
-using FS.MediaLibrary.CloudStorage.Interface;
+using HMPPS.MediaLibrary.CloudStorage.Interface;
 using Sitecore.Configuration;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.StringExtensions;
 
-namespace FS.MediaLibrary.CloudStorage.Provider
+namespace HMPPS.MediaLibrary.CloudStorage.Provider
 {
     public abstract class CloudStorageBase : ICloudStorage
     {

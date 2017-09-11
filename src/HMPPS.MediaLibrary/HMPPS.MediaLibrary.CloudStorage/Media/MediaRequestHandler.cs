@@ -1,9 +1,9 @@
 ﻿using System.Web;
-using FS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
 
-namespace FS.MediaLibrary.CloudStorage.Media
+namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
     public class MediaRequestHandler : Sitecore.Resources.Media.MediaRequestHandler
     {

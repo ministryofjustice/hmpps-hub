@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using FS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor;
+using HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor;
 using Sitecore.Data.Items;
 using Sitecore.Pipelines;
 
-namespace FS.MediaLibrary.CloudStorage.Helpers
+namespace HMPPS.MediaLibrary.CloudStorage.Helpers
 {
     public class PipelineHelper
     {

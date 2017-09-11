@@ -1,8 +1,8 @@
-﻿using FS.MediaLibrary.CloudStorage.Helpers;
+﻿using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Resources.Media;
 using SC = Sitecore.Configuration;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.GetMediaStream
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.GetMediaStream
 {
     /// <summary>
     /// Gets the thumbnail of cloud based media stored on disk 

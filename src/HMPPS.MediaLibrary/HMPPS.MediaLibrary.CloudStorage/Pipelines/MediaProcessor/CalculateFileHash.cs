@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics;
 using System.Linq;
-using FS.MediaLibrary.CloudStorage.Constants;
-using FS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Constants;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.SecurityModel;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
     /// <summary>
     /// Calculates MD5 hash of uploaded file and stores in media template

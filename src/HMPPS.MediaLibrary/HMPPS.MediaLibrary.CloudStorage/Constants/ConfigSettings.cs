@@ -1,5 +1,5 @@
 ﻿
-namespace FS.MediaLibrary.CloudStorage.Constants
+namespace HMPPS.MediaLibrary.CloudStorage.Constants
 {
     public class ConfigSettings
     {

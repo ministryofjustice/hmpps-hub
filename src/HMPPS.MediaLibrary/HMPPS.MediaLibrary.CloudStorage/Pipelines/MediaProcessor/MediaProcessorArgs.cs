@@ -2,7 +2,7 @@
 using Sitecore.Data.Items;
 using Sitecore.Pipelines;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
     public class MediaProcessorArgs : PipelineArgs
     {

@@ -1,6 +1,6 @@
 ﻿using Sitecore.Data.Items;
 
-namespace FS.MediaLibrary.CloudStorage.Interface
+namespace HMPPS.MediaLibrary.CloudStorage.Interface
 {
     interface ICloudStorageProvider
     {

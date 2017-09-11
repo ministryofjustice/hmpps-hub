@@ -1,10 +1,10 @@
-﻿using FS.MediaLibrary.CloudStorage.Configuration;
-using FS.MediaLibrary.CloudStorage.Helpers;
+﻿using HMPPS.MediaLibrary.CloudStorage.Configuration;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
 
-namespace FS.MediaLibrary.CloudStorage.Media
+namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
     public class MediaProvider: Sitecore.Resources.Media.MediaProvider
     {

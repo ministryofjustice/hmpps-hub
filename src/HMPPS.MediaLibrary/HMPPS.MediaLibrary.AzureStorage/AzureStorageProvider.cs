@@ -1,5 +1,5 @@
-﻿using System.IO;
-using FS.MediaLibrary.CloudStorage.Provider;
+using System.IO;
+using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
-namespace FS.MediaLibrary.AzureStorage
+namespace HMPPS.MediaLibrary.AzureStorage
 {
     /// <summary>
     /// Uploads media items into Azure Blob storage container

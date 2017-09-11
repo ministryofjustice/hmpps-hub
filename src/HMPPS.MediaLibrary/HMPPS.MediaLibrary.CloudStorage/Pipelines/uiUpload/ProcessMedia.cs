@@ -1,8 +1,8 @@
-﻿using FS.MediaLibrary.CloudStorage.Helpers;
+﻿using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Upload;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.uiUpload
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
 {
     /// <summary>
     /// Processes file based media and calls custom pipeline to further process item

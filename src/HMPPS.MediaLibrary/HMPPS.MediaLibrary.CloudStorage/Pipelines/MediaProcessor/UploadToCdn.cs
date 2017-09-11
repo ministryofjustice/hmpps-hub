@@ -1,15 +1,15 @@
 ﻿using System.Diagnostics;
 using System.Linq;
-using FS.MediaLibrary.CloudStorage.Constants;
-using FS.MediaLibrary.CloudStorage.Interface;
-using FS.MediaLibrary.CloudStorage.Provider;
+using HMPPS.MediaLibrary.CloudStorage.Constants;
+using HMPPS.MediaLibrary.CloudStorage.Interface;
+using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.IO;
 using Sitecore.SecurityModel;
 
-namespace FS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
+namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
     /// <summary>
     /// Uploads media item to azure cloud storage
