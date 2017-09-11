@@ -32,6 +32,7 @@ include('_includes/head.php'); ?>
           </div>
         </div>
       </div>
+    </div>
     </main><!-- / #content -->
 
 </div>
