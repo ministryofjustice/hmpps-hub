@@ -17,6 +17,7 @@
           <!--<li><a href="list-view-3.php">List View 3</a></li>-->
           <li><a href="books-two.php">Books</a></li>
           <li><a href="chess.php">Chess</a></li>
+          <li><a href="suduko.php">Suduko</a></li>
           <li><a href="video.php">Video</a></li>
           <li><a href="audio.php">Audio</a></li>
         </ul>

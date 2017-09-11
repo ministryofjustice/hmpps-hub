@@ -10,7 +10,7 @@ export default (function () {
       if (!chess) {
         return false;
       }
-      const game = HMPPS.games.engineGame();
+      const game = HMPPS.chess.engineGame();
       const newGame = function newGame() {
         // const baseTime = parseFloat($('#timeBase').val()) * 60;
         // const inc = parseFloat($('#timeInc').val());

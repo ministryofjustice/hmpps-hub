@@ -17,12 +17,12 @@ import '../../scss/hmpps-ie6.scss';
 // modules
 import govUKCookie from './govuk/cookie';
 import ereader from './modules/ereader';
-import games from './modules/games';
+import chess from './modules/chess';
 
 // set up namespace
 const HMPPS = window.HMPPS || {
   ereader,
-  games,
+  chess,
 };
 
 HMPPS.addCookieMessage = () => {
