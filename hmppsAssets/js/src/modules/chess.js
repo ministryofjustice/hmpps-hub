@@ -1,5 +1,3 @@
-//import ChessBoard from 'chessboardjs';
-
 export default (function () {
   return {
     init: function init() {

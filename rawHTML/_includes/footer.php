@@ -19,11 +19,14 @@
 <!-- <script src="/hmppsAssets/js/govuk/details.polyfill.js"></script> -->
 
 <!-- scripts needed for Chess -->
-<!-- dev note Jquery not needed on a global level only for chess so far-->
+
 <script src="/hmppsAssets/js/src/vendor/lib/jquery-3.2.1.min.js"></script>
 <script src="/hmppsAssets/js/src/vendor/lib/chessboard-0.3.0.min.js"></script>
 <script src="/hmppsAssets/js/src/vendor/lib/chess.min.js"></script>
 <script src="/hmppsAssets/js/src/vendor/lib/stockfish.js"></script>
+
+<!-- scripts needed for Suduko -->
+<script src="/hmppsAssets/js/src/vendor/lib/sudokuJS.js"></script>
 
 
 <!-- scripts needed for books -->

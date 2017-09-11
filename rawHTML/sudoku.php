@@ -1,5 +1,5 @@
 <?php
-$title = 'Suduko';
+$title = 'Sudoku';
 include('_includes/head.php'); ?>
 
 <?php include('_includes/header.php'); ?>
@@ -11,14 +11,18 @@ include('_includes/head.php'); ?>
     <ol>
       <li><a href="index.php">Home</a></li>
       <li><a href="games.php">Games</a></li>
-      <li aria-current="page">Suduko</li>
+      <li aria-current="page">Sudoku</li>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="pub-c-title__text">Suduko</h1>
+        <h1 class="pub-c-title__text">Sudoku</h1>
+      </div>
+      <div class="games sudoku-board js-sudoku"></div>
+      <div class="js-sudoku-alert">
+        <p>asdf</p>
       </div>
       <div class="content">
         <h3>How to play</h3>
@@ -42,17 +46,17 @@ include('_includes/head.php'); ?>
         </nav>
       </aside>
       <aside class="related-content" data-module="track-click" role="complementary">
-        <h2>Books about Chess</h2>
+        <h2>Books about Sudoku</h2>
         <nav role="navigation">
           <ul class="list">
             <li>
-              <a href="books.php">How to play chess</a>
+              <a href="books.php">How to play sudoku</a>
             </li>
             <li>
-              <a href="books.php">Chess fundamentals</a>
+              <a href="books.php">Sudoku fundamentals</a>
             </li>
             <li>
-              <a href="books.php">How to win at chess</a>
+              <a href="books.php">How to win at sudoku</a>
             </li>
           </ul>
         </nav>

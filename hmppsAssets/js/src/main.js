@@ -18,11 +18,13 @@ import '../../scss/hmpps-ie6.scss';
 import govUKCookie from './govuk/cookie';
 import ereader from './modules/ereader';
 import chess from './modules/chess';
+import sudoku from './modules/sudoku';
 
 // set up namespace
 const HMPPS = window.HMPPS || {
   ereader,
   chess,
+  sudoku,
 };
 
 HMPPS.addCookieMessage = () => {
