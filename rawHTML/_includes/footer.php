@@ -9,8 +9,6 @@
 <div id="global-app-error" class="app-error hidden"></div>
 
 <!-- <script src="/hmppsAssets/js/src/govuk-template.js?0.22.3"></script> -->
-<!--
-<script src="/hmppsAssets/js/vendor/jquery-1.11.0.min.js"></script> -->
 
 <!-- govuk_frontend_toolkit js -->
 <!-- <script src="/hmppsAssets/js/vendor/polyfills/bind.js"></script>
@@ -19,8 +17,20 @@
 
 <!-- govuk_elements js -->
 <!-- <script src="/hmppsAssets/js/govuk/details.polyfill.js"></script> -->
+
+<!-- scripts needed for Chess -->
+<!-- dev note Jquery not needed on a global level only for chess so far-->
+<script src="/hmppsAssets/js/src/vendor/lib/jquery-3.2.1.min.js"></script>
+<script src="/hmppsAssets/js/src/vendor/lib/chessboard-0.3.0.min.js"></script>
+<script src="/hmppsAssets/js/src/vendor/lib/chess.min.js"></script>
+<script src="/hmppsAssets/js/src/vendor/lib/stockfish.js"></script>
+
+
+<!-- scripts needed for books -->
 <script src="/hmppsAssets/js/src/vendor/lib/jszip.min.js"></script>
 <script src="/hmppsAssets/js/src/vendor/lib/epub.min.js"></script>
+
+<!-- scripts needed for books later on in the project (not needed for now) -->
 <!-- <script src="/hmppsAssets/js/src/vendor/lib/hooks.min.js"></script>
 <script src="/hmppsAssets/js/src/vendor/lib/reader.min.js"></script> -->
 <script src="/hmppsAssets/js/application.js"></script>

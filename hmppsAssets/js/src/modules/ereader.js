@@ -74,11 +74,11 @@ export default (function () {
       const keyListener = function(e){
         // Left Key
         if ((e.keyCode || e.which) == 37) {
-          rendition.prev();
+            Book.prevPage();
         }
         // Right Key
         if ((e.keyCode || e.which) == 39) {
-          rendition.next();
+          Book.nextPage();
         }
       };
       Book.on('keyup', keyListener);
