@@ -8,74 +8,35 @@
 
     <main class="elements-index root-index" id="content" role="main" tabindex="-1">
         <h1 class="heading-large">@Html.Sitecore().Field("Page Title")</h1>
-    
+    <div class="image-grid">
         @if (Model.Children.Any())
         {
-            <div class="image-grid">
+            var rows = Model.Children.Count / 3 + 1;
+            var itemIndex = 0;
+
+            for (var rowIndex = 0; rowIndex < rows; rowIndex++)
+            {
+                var itemsInRow = Model.Children.Skip(itemIndex).Take(3);
                 <div class="grid-row">
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/epub/Metamorphosis-jackson.epub" href="book.php">
-                                <img src="_dummy/img/entertainment.png" alt="">
-                                <h2 class="heading-medium">Law &#x26; Politics</h2>
-                            </a>
+                    @foreach (var item in itemsInRow)
+                    {
+                        <div class="column-one-third">
+                            <div class="image-grid-item">
+                                <a href="@Sitecore.Links.LinkManager.GetItemUrl(item)">
+                                    <img src="@E3.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(item, "Thumbnail Image")" alt="@E3.SitecoreHelper.FieldMethods.GetImageDescription(item, "Thumbnail Image")">
+                                    <h2 class="heading-medium">@E3.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(item, "Navigation Title", "Page Title")</h2>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/pdf/dummy.pdf" href="book.php">
-                                <img src="_dummy/img/education.png" alt="">
-                                <h2 class="heading-medium">Maths</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/epub/Metamorphosis-jackson.epub" href="book.php">
-                                <img src="_dummy/img/education.png" alt="">
-                                <h2 class="heading-medium">Sociology</h2>
-                            </a>
-                        </div>
-                    </div>
+                    }
                 </div>
-                <div class="grid-row">
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/pdf/dummy.pdf" href="book.php">
-                                <img src="_dummy/img/entertainment.png" alt="">
-                                <h2 class="heading-medium">Art &#x26; Literature</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/epub/Metamorphosis-jackson.epub" href="book.php">
-                                <img src="_dummy/img/education.png" alt="">
-                                <h2 class="heading-medium">Business &#x26; Economics</h2>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/pdf/dummy.pdf" href="book.php">
-                                <img src="_dummy/img/education.png" alt="">
-                                <h2 class="heading-medium">Science</h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-row">
-                    <div class="column-one-third">
-                        <div class="image-grid-item">
-                            <a class="js-ereader-trigger" target="blank" data-src="_dummy/books/epub/Metamorphosis-jackson.epub" href="book.php" _blank>
-                                <img src="_dummy/img/entertainment.png" alt="">
-                                <h2 class="heading-medium">Philosophy</h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                itemIndex += itemsInRow.Count();
+
+
+            }
         }
-    </main><!-- / #content -->
+    </div>
+
+</main><!-- / #content -->
 
 </div>
