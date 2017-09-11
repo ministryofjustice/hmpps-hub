@@ -18,13 +18,11 @@ export default (function () {
             'fullscreen=yes',
             'scrollbars=yes',
           ].join(',');
-          console.log(params);
           const URL = e.target.parentNode.getAttribute('href');
 
           if (file.indexOf('.pdf') >= 0) {
             const win = window.open(file, '_blank', params);
           } else {
-            console.log(file);
             const win = window.open(file, '_blank', params);
             HMPPS.ereader.createEpub(file, win);
           }
@@ -61,8 +59,6 @@ export default (function () {
         const currentLocation = Book.getCurrentLocationCfi();
         const currentPage = Book.pagination.pageFromCfi(currentLocation);
         currentPage.value = currentPage;
-        console.log(currentPage.value);
-        console.log(currentPage);
       });
 
       prev.addEventListener('click', () => {
@@ -74,11 +70,11 @@ export default (function () {
       const keyListener = function(e){
         // Left Key
         if ((e.keyCode || e.which) == 37) {
-          rendition.prev();
+            Book.prevPage();
         }
         // Right Key
         if ((e.keyCode || e.which) == 39) {
-          rendition.next();
+          Book.nextPage();
         }
       };
       Book.on('keyup', keyListener);
@@ -93,7 +89,7 @@ export default (function () {
         </div>`;
         html.classList.add('ereader');
         win.document.write('<html><head><title>Book</title><link href="/hmppsAssets/css/hmpps.css"  rel="stylesheet" type="text/css"></head><body></body></html>');
-        //console.log(win.document.body);
+
         win.document.body.appendChild(html);
     }
   };
