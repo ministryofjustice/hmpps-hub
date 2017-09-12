@@ -1,4 +1,4 @@
-﻿using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Upload;
 
@@ -16,7 +16,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
             if (args.Destination == UploadDestination.File)
             {
                 var helper = new PipelineHelper();
-                helper.StartMediaProcessorJob(args.UploadedItems);
+                helper.StartMediaProcessorJob(args.UploadedItems, args.Parameters.Get("containerName"));
             }
         }
     }

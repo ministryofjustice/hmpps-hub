@@ -1,9 +1,11 @@
-﻿using System;
+using System;
+using System.Linq;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
 using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Events
 {

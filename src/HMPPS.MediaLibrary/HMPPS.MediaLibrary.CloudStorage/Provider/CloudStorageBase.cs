@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
 using Sitecore.Configuration;
 using Sitecore.Data.Items;
@@ -9,7 +9,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
 {
     public abstract class CloudStorageBase : ICloudStorage
     {
-        public abstract string Put(MediaItem media);
+        public abstract string Put(MediaItem media, string containerName);
 
         public abstract string Update(MediaItem media);
 

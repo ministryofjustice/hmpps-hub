@@ -1,4 +1,4 @@
-﻿using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
 using Sitecore.Configuration;
 using Sitecore.Data.Items;
@@ -14,9 +14,9 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
             Provider = Factory.CreateObject("cloudMediaStorage/storageProvider", true) as ICloudStorage;
         }
 
-        public string Put(MediaItem media)
+        public string Put(MediaItem media, string containerName)
         {
-            return Provider.Put(media);
+            return Provider.Put(media, containerName);
         }
 
         public string Update(MediaItem media)

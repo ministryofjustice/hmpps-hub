@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Data;
 using Sitecore.Diagnostics;
@@ -23,23 +23,26 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
         {
             Assert.ArgumentNotNull(args, "args");
 
-            if (args.Destination == UploadDestination.Database && EnsureUploadAsFile(args.Folder))
+            var mediaLocation = EnsureUploadIntoCloud(args.Folder);
+            if (args.Destination == UploadDestination.Database && mediaLocation != null)
             {
+
                 args.Destination = UploadDestination.File;
+                args.Parameters.Add("containerName", mediaLocation.ContainerName);
             }
         }
 
         /// <summary>
-        /// Checks if passed in folder is configured to force upload as file
+        /// Checks if media folder is configured to force upload to cloud storage
         /// </summary>
         /// <param name="folder">Location current item is being uploaded to</param>
         /// <returns>boolean</returns>
-        private bool EnsureUploadAsFile(string folder)
+        private Location EnsureUploadIntoCloud(string folder)
         {
             Database db = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
             folder = db.GetItem(folder).Paths.FullPath.ToLower();
 
-            return Config.Locations.Any(location => folder.StartsWith(location.MediaFolder.ToLower()));
+            return Config.Locations.FirstOrDefault(location => folder.StartsWith(location.MediaFolder.ToLower()));
         }
     }
 }

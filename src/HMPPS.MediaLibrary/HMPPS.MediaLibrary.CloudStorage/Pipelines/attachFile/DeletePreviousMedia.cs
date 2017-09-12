@@ -1,4 +1,4 @@
-﻿using HMPPS.MediaLibrary.CloudStorage.Interface;
+using HMPPS.MediaLibrary.CloudStorage.Interface;
 using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Attach;
@@ -30,6 +30,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
                 return;
 
             Log.Audit("Deleting '{0}' from Cloud storage".FormatWith(args.MediaItem.FilePath), this);
+
             cloudStorage.Delete(args.MediaItem);
         }
     }

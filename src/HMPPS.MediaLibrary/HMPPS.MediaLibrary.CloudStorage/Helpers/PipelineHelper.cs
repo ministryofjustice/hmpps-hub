@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor;
 using Sitecore.Data.Items;
 using Sitecore.Pipelines;
@@ -11,9 +11,10 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
         /// Creates and starts a Sitecore Job to run as a long running background task
         /// </summary>
         /// <param name="args">The UploadArgs</param>
-        public void StartMediaProcessorJob(IEnumerable<Item> uploadedItems)
+        public void StartMediaProcessorJob(IEnumerable<Item> uploadedItems, string containerName)
         {
             var args = new MediaProcessorArgs { UploadedItems = uploadedItems };
+            args.CustomData.Add("containerName", containerName);
             var jobOptions = new Sitecore.Jobs.JobOptions("CloudMediaProcessor", "MediaProcessing",
                                                           Sitecore.Context.Site.Name,
                                                           this, "RunMediaProcessor", new object[] { args });

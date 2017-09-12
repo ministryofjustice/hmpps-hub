@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Linq;
 using HMPPS.MediaLibrary.CloudStorage.Constants;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
@@ -8,6 +8,7 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.IO;
 using Sitecore.SecurityModel;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
@@ -34,12 +35,19 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             {
                 /* NOTE: We don't deal with versioned files, should prepend file.Language and file.Version... */
 
+                // get container name
+                object containerNameObj;
+                var containerName = string.Empty;
+                if (args.CustomData.TryGetValue("containerName", out containerNameObj))
+                {
+                    containerName = containerNameObj.ToString();
+                }
                 // delete if previously uploaded
                 if (MainUtil.GetBool(file[FieldNameConstants.MediaItem.UploadedToCloud], false))
                     cloudStorage.Delete(file);
 
                 // upload to CDN
-                string filename = cloudStorage.Put(file);
+                string filename = cloudStorage.Put(file, containerName);
 
                 // delete the existing file from disk
                 FileUtil.Delete(StringUtil.EnsurePrefix('/', file[FieldNameConstants.MediaItem.FilePath]));

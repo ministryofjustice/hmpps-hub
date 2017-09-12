@@ -20,3 +20,6 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\e3_MihaelaR
+    - ID: "888d60b2-401d-44ef-9482-ae3e2e49d447"
+      Hint: Title
+      Value: $name

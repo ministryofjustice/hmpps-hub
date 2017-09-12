@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
@@ -19,7 +19,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
                 return;
 
             var helper = new PipelineHelper();
-            helper.StartMediaProcessorJob(new List<Item> { args.MediaItem });
+            helper.StartMediaProcessorJob(new List<Item> { args.MediaItem }, string.Empty);
         }
     }
 }
