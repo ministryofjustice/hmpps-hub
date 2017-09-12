@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using HMPPS.Site.ViewModels.Base;
 using Sitecore.Data.Items;
+using HMPPS.Models;
+using HMPPS.Models.Cms;
 
 namespace HMPPS.Site.ViewModels.Pages
 {
@@ -8,10 +10,10 @@ namespace HMPPS.Site.ViewModels.Pages
     {
         public BookSectionPageViewModel()
         {
-            Children = new List<Item>();
+            Children = new List<Book>();
             BreadcrumbItems = new List<Item>();
         }
-        public List<Item> Children { get; set; }
+        public List<Book> Children { get; set; }
         public List<Item> BreadcrumbItems { get; set; }
     }
 }

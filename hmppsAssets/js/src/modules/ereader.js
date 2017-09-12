@@ -8,34 +8,53 @@ export default (function () {
       // window.reader = ePubReader("http://s3.amazonaws.com/moby-dick/");
 
       const triggers = document.querySelectorAll('.js-ereader-trigger');
+      if (!triggers) {
+        return false;
+      }
       Array.prototype.forEach.call(triggers, (el, i) => {
         el.addEventListener('click', (e) => {
-          e.preventDefault();
-          const file = e.target.parentNode.getAttribute('data-src');
-          const params = [
-            `height=${screen.height - 100}`,
-            `width=${screen.width}`,
-            'fullscreen=yes',
-            'scrollbars=yes',
-          ].join(',');
-          console.log(params);
-          const URL = e.target.parentNode.getAttribute('href');
-
-          if (file.indexOf('.pdf') >= 0) {
-            const win = window.open(file, '_blank', params);
-          } else {
-            console.log(file);
-            const win = window.open(file, '_blank', params);
-            HMPPS.ereader.createEpub(file, win);
+          const click = true;
+          HMPPS.ereader.openBook(e,click);
+        });
+        el.addEventListener('keyup', (e) => {
+          if ((e.keyCode || e.which) === 13) {
+            const click = false;
+            HMPPS.ereader.openBook(e,click);
           }
         });
       });
-
     },
-    createEpub(src,win){
+    openBook(e, click) {
+      e.preventDefault();
+      var file;
+      var URL;
+      if (click) {
+        file = e.target.parentNode.getAttribute('data-src');
+        URL = e.target.parentNode.getAttribute('href');
+      } else {
+        file = e.target.getAttribute('data-src');
+        URL = e.target.getAttribute('href');
+      }
+      console.log(file);
+      const params = [
+        `height=${screen.height - 100}`,
+        `width=${screen.width}`,
+        'fullscreen=yes',
+        'scrollbars=yes',
+      ].join(',');
+
+      if (file.indexOf('.pdf') >= 0) {
+        const win = window.open(file, '_blank', params);
+      } else {
+        const win = window.open(file, '_blank', params);
+        HMPPS.ereader.createEpub(file, win);
+      }
+    },
+    createEpub(src, win) {
       HMPPS.ereader.createMarkup(win);
       const body = win.document.body;
       body.classList.add('epub');
+      console.log(src);
 
       let next = body.querySelector('.js-ereader-next');
       let prev = body.querySelector('.js-ereader-prev');
@@ -52,7 +71,6 @@ export default (function () {
 
       });
 
-      console.log(Book);
       Book.generatePagination(50, 100);
       Book.open(src);
       const rendered = Book.renderTo(area);
@@ -61,8 +79,6 @@ export default (function () {
         const currentLocation = Book.getCurrentLocationCfi();
         const currentPage = Book.pagination.pageFromCfi(currentLocation);
         currentPage.value = currentPage;
-        console.log(currentPage.value);
-        console.log(currentPage);
       });
 
       prev.addEventListener('click', () => {
@@ -71,30 +87,29 @@ export default (function () {
       next.addEventListener('click', () => {
         Book.nextPage();
       });
-      const keyListener = function(e){
+      const keyListener = function (e) {
         // Left Key
-        if ((e.keyCode || e.which) == 37) {
-          rendition.prev();
+        if ((e.keyCode || e.which) === 37) {
+          Book.prevPage();
         }
         // Right Key
-        if ((e.keyCode || e.which) == 39) {
-          rendition.next();
+        if ((e.keyCode || e.which) === 39) {
+          Book.nextPage();
         }
       };
       Book.on('keyup', keyListener);
     },
     createMarkup(win) {
+      let html = document.createElement('div');
+      html.innerHTML = `<div class="ereader__area js-ereader-area"></div>
+      <div class="ereader__buttons">
+        <button class="js-ereader-prev ereader__prev" type="button" name="button">Prev</button>
+        <button class="js-ereader-next ereader__next" type="button" name="button">Next</button>
+      </div>`;
+      html.classList.add('ereader');
+      win.document.write('<html><head><title>Book</title><link href="/hmppsAssets/css/hmpps.css"  rel="stylesheet" type="text/css"></head><body></body></html>');
 
-        let html = document.createElement('div');
-        html.innerHTML = `<div class="ereader__area js-ereader-area"></div>
-        <div class="ereader__buttons">
-          <button class="js-ereader-prev ereader__prev" type="button" name="button">Prev</button>
-          <button class="js-ereader-next ereader__next" type="button" name="button">Next</button>
-        </div>`;
-        html.classList.add('ereader');
-        win.document.write('<html><head><title>Book</title><link href="/hmppsAssets/css/hmpps.css"  rel="stylesheet" type="text/css"></head><body></body></html>');
-        //console.log(win.document.body);
-        win.document.body.appendChild(html);
+      win.document.body.appendChild(html);
     }
   };
 }());
