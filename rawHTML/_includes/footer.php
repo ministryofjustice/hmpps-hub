@@ -32,6 +32,7 @@
 <!-- scripts needed for books -->
 <script src="/hmppsAssets/js/src/third-party/lib/jszip.min.js"></script>
 <script src="/hmppsAssets/js/src/third-party/lib/epub.min.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/mime-types.js"></script>
 
 <!-- scripts needed for books later on in the project (not needed for now) -->
 <!-- <script src="/hmppsAssets/js/src/third-party/lib/hooks.min.js"></script>
