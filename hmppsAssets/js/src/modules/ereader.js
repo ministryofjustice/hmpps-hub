@@ -26,16 +26,16 @@ export default (function () {
     },
     openBook(e, click) {
       e.preventDefault();
-      var file;
-      var URL;
+      var filePath;
+      var fileType;
       if (click) {
-        file = e.target.parentNode.getAttribute('data-src');
-        URL = e.target.parentNode.getAttribute('href');
+        filePath = e.target.parentNode.getAttribute('href');
+        fileType = e.target.parentNode.getAttribute('data-filetype');
       } else {
-        file = e.target.getAttribute('data-src');
-        URL = e.target.getAttribute('href');
+        filePath = e.target.getAttribute('href');
+        fileType = e.target.getAttribute('data-filetype');
+
       }
-      console.log(file);
       const params = [
         `height=${screen.height - 100}`,
         `width=${screen.width}`,
@@ -43,11 +43,11 @@ export default (function () {
         'scrollbars=yes',
       ].join(',');
 
-      if (file.indexOf('.pdf') >= 0) {
-        const win = window.open(file, '_blank', params);
+      if (fileType === 'pdf') {
+        const win = window.open(filePath, '_blank', params);
       } else {
-        const win = window.open(file, '_blank', params);
-        HMPPS.ereader.createEpub(file, win);
+        const win = window.open(filePath, '_blank', params);
+        HMPPS.ereader.createEpub(filePath, win);
       }
     },
     createEpub(src, win) {
@@ -70,6 +70,8 @@ export default (function () {
         //styles: { hmpps: '/hmppsAssets/hmpps.css'},
 
       });
+
+      console.log(Book);
 
       Book.generatePagination(50, 100);
       Book.open(src);
