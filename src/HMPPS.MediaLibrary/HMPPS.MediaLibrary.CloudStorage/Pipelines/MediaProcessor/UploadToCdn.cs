@@ -35,13 +35,8 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             {
                 /* NOTE: We don't deal with versioned files, should prepend file.Language and file.Version... */
 
-                // get container name
-                object containerNameObj;
-                var containerName = string.Empty;
-                if (args.CustomData.TryGetValue("containerName", out containerNameObj))
-                {
-                    containerName = containerNameObj.ToString();
-                }
+                var containerName = PipelineHelper.GetContainerNameFromArgs(args);
+
                 // delete if previously uploaded
                 if (MainUtil.GetBool(file[FieldNameConstants.MediaItem.UploadedToCloud], false))
                     cloudStorage.Delete(file);

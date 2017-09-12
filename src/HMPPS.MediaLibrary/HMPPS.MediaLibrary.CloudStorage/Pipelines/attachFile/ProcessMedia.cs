@@ -19,7 +19,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
                 return;
 
             var helper = new PipelineHelper();
-            helper.StartMediaProcessorJob(new List<Item> { args.MediaItem }, string.Empty);
+            helper.StartMediaProcessorJob(new List<Item> { args.MediaItem }, PipelineHelper.GetContainerNameFromArgs(args));
         }
     }
 }

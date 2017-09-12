@@ -14,7 +14,9 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
         public void StartMediaProcessorJob(IEnumerable<Item> uploadedItems, string containerName)
         {
             var args = new MediaProcessorArgs { UploadedItems = uploadedItems };
-            args.CustomData.Add("containerName", containerName);
+
+            AddContainerNameToArgs(args, containerName);
+
             var jobOptions = new Sitecore.Jobs.JobOptions("CloudMediaProcessor", "MediaProcessing",
                                                           Sitecore.Context.Site.Name,
                                                           this, "RunMediaProcessor", new object[] { args });
@@ -28,6 +30,24 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
         public void RunMediaProcessor(MediaProcessorArgs args)
         {
             CorePipeline.Run("cloud.MediaProcessor", args);
+        }
+
+        public static void AddContainerNameToArgs(PipelineArgs args, string containerName)
+        {
+            args.CustomData.Add("containerName", containerName);
+        }
+
+        public static string GetContainerNameFromArgs(PipelineArgs args)
+        {
+            // get container name
+            object containerNameObj;
+            var containerName = string.Empty;
+            if (args.CustomData.TryGetValue("containerName", out containerNameObj))
+            {
+                containerName = containerNameObj.ToString();
+            }
+
+            return containerName;
         }
     }
 }

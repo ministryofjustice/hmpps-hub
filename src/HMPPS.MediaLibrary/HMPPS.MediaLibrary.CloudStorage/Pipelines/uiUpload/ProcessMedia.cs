@@ -16,7 +16,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
             if (args.Destination == UploadDestination.File)
             {
                 var helper = new PipelineHelper();
-                helper.StartMediaProcessorJob(args.UploadedItems, args.Parameters.Get("containerName"));
+                helper.StartMediaProcessorJob(args.UploadedItems, PipelineHelper.GetContainerNameFromArgs(args));
             }
         }
     }

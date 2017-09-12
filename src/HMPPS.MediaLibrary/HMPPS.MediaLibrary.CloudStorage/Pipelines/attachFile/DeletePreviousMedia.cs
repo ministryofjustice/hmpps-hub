@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
 using HMPPS.MediaLibrary.CloudStorage.Provider;
 using Sitecore.Diagnostics;
@@ -31,7 +34,13 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
 
             Log.Audit("Deleting '{0}' from Cloud storage".FormatWith(args.MediaItem.FilePath), this);
 
+            PipelineHelper.AddContainerNameToArgs(args,  GetContainerNameFromFilePath(args.MediaItem.FilePath));
             cloudStorage.Delete(args.MediaItem);
+        }
+
+        private string GetContainerNameFromFilePath(string filePath)
+        {
+            return filePath.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
         }
     }
 }

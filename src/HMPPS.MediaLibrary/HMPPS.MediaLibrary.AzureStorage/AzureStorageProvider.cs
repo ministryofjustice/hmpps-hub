@@ -113,7 +113,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
             {
                 return _blobDefaultContainer;
             }
-            if (_blobContainers[containerName] != null)
+            if (_blobContainers.Keys.Contains(containerName) && _blobContainers[containerName] != null)
             {
                 return _blobContainers[containerName];
             }

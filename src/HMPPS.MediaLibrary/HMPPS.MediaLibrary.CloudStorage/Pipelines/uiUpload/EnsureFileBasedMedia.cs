@@ -4,6 +4,7 @@ using Sitecore.Data;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.Upload;
 using HMPPS.MediaLibrary.CloudStorage.Configuration;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
 {
@@ -28,7 +29,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
             {
 
                 args.Destination = UploadDestination.File;
-                args.Parameters.Add("containerName", mediaLocation.ContainerName);
+                PipelineHelper.AddContainerNameToArgs(args, mediaLocation.ContainerName);
             }
         }
 
