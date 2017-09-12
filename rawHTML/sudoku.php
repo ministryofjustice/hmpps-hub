@@ -25,6 +25,7 @@ include('_includes/head.php'); ?>
         <p>asdf</p>
       </div>
       <div class="content">
+        <button class="js-sudoku-newgame button" type="button" name="button">Play a new game</button>
         <h3>How to play</h3>
         <p>Sudoku is a game that involves a grid of 81 squares, divided into nine blocks, each containing nine squares</p>
         <p>Each of the nine blocks has to contain the numbers 1-9, each number can only appear once in a row, column or box. Each vertical nine-square column, or horizontal nine-square line across, within the larger square, must also contain the numbers 1-9, without repetition or omission.</p>
