@@ -8,6 +8,9 @@ export default (function () {
       // window.reader = ePubReader("http://s3.amazonaws.com/moby-dick/");
 
       const triggers = document.querySelectorAll('.js-ereader-trigger');
+      if (!triggers) {
+        return false;
+      }
       Array.prototype.forEach.call(triggers, (el, i) => {
         el.addEventListener('click', (e) => {
           e.preventDefault();
