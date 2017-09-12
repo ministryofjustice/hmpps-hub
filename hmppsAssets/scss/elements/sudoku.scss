@@ -16,7 +16,7 @@
 		position: relative;
 		border: 1px solid #ddd;
 		background: white;
-		max-width: 11.11111%;
+		max-width: 10%;
 	}
 		/*rules for drawing the black lines dividing houses
 			-- specific for board size 9! need diff rules for diff board sizes
@@ -43,15 +43,23 @@
 		/* the input for the value of each cell (i.e. 1-9 or empty for standard sudoku*/
 		.sudoku-board-cell input {
 			background: none;
-			font-size: 19.2px;
-			font-size: 1.2rem;
+			font-size: 14px;
+			font-size: 1.4rem;
 			text-align: center;
-			width: 5em;
+			width: 4em;
 			max-width: 100%;
-			height: 5em;
+			height: 4em;
 			border: 0;
 			position: relative;
 			z-index: 1; /*on top of candidates*/
+      @include media (mobile) {
+        width: 3em;
+        height: 3em;
+  		}
+      @include media (desktop) {
+        width: 4em;
+        height: 4em;
+  		}
 		}
 
 			/*highlight new input in board cell*/
@@ -84,7 +92,7 @@
 			}
 		/* when board cells start to get narrower because of small screen,
 			reduce letter spacing for candidates to make them still fit*/
-		@media(max-width: 23em){
+		@include media (desktop) {
 			.sudoku-board .candidates {
 				letter-spacing: -2px;
 			}
