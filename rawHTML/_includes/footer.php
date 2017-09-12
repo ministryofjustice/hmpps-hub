@@ -19,15 +19,23 @@
 <!-- <script src="/hmppsAssets/js/govuk/details.polyfill.js"></script> -->
 
 <!-- scripts needed for Chess -->
-
 <script src="/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js"></script>
 <script src="/hmppsAssets/js/src/third-party/lib/chessboard-0.3.0.min.js"></script>
 <script src="/hmppsAssets/js/src/third-party/lib/chess.min.js"></script>
 <script src="/hmppsAssets/js/src/third-party/lib/stockfish.js"></script>
 
-<!-- scripts needed for Suduko -->
+<!-- scripts needed for Sudoku -->
+<!-- dev note: Jquery needed for Sudoku too! -->
 <script src="/hmppsAssets/js/src/third-party/lib/sudokuJS.js"></script>
 
+<!-- scripts needed for Neontroids -->
+<!-- <script src="/hmppsAssets/js/src/third-party/lib/sound-fx.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/keyboard-io.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/collisions.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/asteroids-sprites.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/asteroids-polygon.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/display-text.js"></script>
+<script src="/hmppsAssets/js/src/third-party/lib/asteroids.js"></script> -->
 
 <!-- scripts needed for books -->
 <script src="/hmppsAssets/js/src/third-party/lib/jszip.min.js"></script>
