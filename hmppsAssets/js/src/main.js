@@ -2,7 +2,7 @@
 
 
 import './govuk/details.polyfill';
-import './fromVendor/polyfills/bind';
+import './third-party/polyfills/bind';
 
 // libs
 // import './vendor/lib/jszip.min';
