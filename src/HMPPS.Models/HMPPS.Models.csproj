@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cms\BookSectionBlock.cs" />
+    <Compile Include="Common\File.cs" />
     <Compile Include="Common\Image.cs" />
     <Compile Include="Common\Link.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
