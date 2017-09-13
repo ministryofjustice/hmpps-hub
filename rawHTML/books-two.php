@@ -1,5 +1,5 @@
 <?php
-$title = 'Books by Genre';
+$title = 'Educational books';
 include('_includes/head.php'); ?>
 <?php include('_includes/header.php'); ?>
 
@@ -10,44 +10,69 @@ include('_includes/head.php'); ?>
     <ol>
       <li><a href="index.php">Home</a></li>
       <li><a href="books-one.php">Books by Genre</a></li>
-      <li aria-current="page">Comedy</li>
+      <li aria-current="page">Educational books</li>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+    <h1 class="heading-large">Educational books</h1>
 
-    <div class="browse">
-      <div class="browse-panes subsection no-root" data-state="section" data-module="track-click" aria-busy="false">
-        <div id="subsection" class="subsection-pane pane" style="">
-          <div class="pane-inner a-to-z">
-            <h1 tabindex="-1">Comedy</h1>
-            <p class="sort-order">A to Z</p>
-            <ul>
-              <li><a href="books-two.php">Action comedy</a></li>
-              <li><a href="books-two.php">Comedy drama</a></li>
-              <li><a href="books-two.php">Romantic comedy</a></li>
-              <li><a href="books-two.php">Horror comedy</a></li>
-              <li><a href="books-two.php">Fantasy comedy</a></li>
-              <li><a href="books-two.php">Military comedy</a></li>
-            </ul>
+    <div class="image-grid">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="epub"  href="_dummy/books/epub/Metamorphosis-jackson.epub"><img src="_dummy/img/entertainment.png" alt="">
+            <h2 class="heading-medium">Law &#x26; Politics</h2>
+            </a>
           </div>
         </div>
-        <div id="section" class="section-pane pane" style="">
-          <div class="pane-inner alphabetical" style="">
-            <h1 tabindex="-1">Genres</h1>
-            <p class="sort-order" style="">A to Z</p>
-            <ul>
-                <li><a href="books-two.php" class="">Action</a></li>
-                <li><a href="books-two.php" class="">Adventure</a></li>
-                <li class="active"><a href="books-two.php" class="">Comedy</a></li>
-                <li><a href="books-two.php" class="">Crime</a></li>
-                <li><a href="books-two.php" class="">Drama</a></li>
-                <li><a href="books-two.php" class="">Horror</a></li>
-            </ul>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="pdf" href="_dummy/books/pdf/dummy.pdf"><img src="_dummy/img/education.png" alt="">
+            <h2 class="heading-medium">Maths</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="epub" href="_dummy/books/epub/Metamorphosis-jackson.epub"><img src="_dummy/img/education.png" alt="">
+              <h2 class="heading-medium">Sociology</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="pdf" href="_dummy/books/pdf/dummy.pdf"><img src="_dummy/img/entertainment.png" alt="">
+            <h2 class="heading-medium">Art &#x26; Literature</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="epub" href="_dummy/books/epub/Metamorphosis-jackson.epub"><img src="_dummy/img/education.png" alt="">
+            <h2 class="heading-medium">Business &#x26; Economics</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="pdf" href="_dummy/books/pdf/dummy.pdf"><img src="_dummy/img/education.png" alt="">
+              <h2 class="heading-medium">Science</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a class="js-ereader-trigger" target="blank" data-filetype="epub" href="_dummy/books/epub/Metamorphosis-jackson.epub" _blank><img src="_dummy/img/entertainment.png" alt="">
+            <h2 class="heading-medium">Philosophy</h2>
+            </a>
           </div>
         </div>
       </div>
     </div>
-
   </main><!-- / #content -->
 
 </div>

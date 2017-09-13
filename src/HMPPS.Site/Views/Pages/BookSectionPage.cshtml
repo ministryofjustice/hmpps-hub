@@ -1,0 +1,40 @@
+﻿@model HMPPS.Site.ViewModels.Pages.BookSectionPageViewModel
+
+<div id="global-header-bar"></div>
+
+<div class="site-wrapper">
+
+    @Html.Partial("/Views/Partials/_Breadcrumb.cshtml", Model.BreadcrumbItems)
+
+    <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+        <h1 class="heading-large">@Html.Sitecore().Field("Page Title")</h1>
+    <div class="image-grid">
+        @if (Model.Children.Any())
+        {
+            var rows = Model.Children.Count / 3 + 1;
+            var itemIndex = 0;
+
+            for (var rowIndex = 0; rowIndex < rows; rowIndex++)
+            {
+                var itemsInRow = Model.Children.Skip(itemIndex).Take(3);
+                <div class="grid-row">
+                    @foreach (var item in itemsInRow)
+                    {
+                        <div class="column-one-third">
+                            <div class="image-grid-item">
+                                <a href="@item.Link.Url">
+                                    <img src="@item.Image.Url" alt="@item.Image.AltText">
+                                    <h2 class="heading-medium">@item.Title</h2>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                itemIndex += itemsInRow.Count();
+            }
+        }
+    </div>
+
+</main><!-- / #content -->
+
+</div>

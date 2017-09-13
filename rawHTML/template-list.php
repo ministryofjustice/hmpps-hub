@@ -10,13 +10,16 @@
         <h2 class="bold-large">Templates</h2>
         <hr>
         <ul class="list list-bullet">
-          <li><a href="../rawHTML/index.php">Homepage</a></li>
-          <li><a href="../rawHTML/games.php">Image grid </a></li>
-          <li><a href="../rawHTML/books-one.php">List View </a></li>
-          <li><a href="../rawHTML/books-two.php">List View 2</a></li>
-          <!--<li><a href="../rawHTML/list-view-3.php">List View 3</a></li>-->
-          <li><a href="../rawHTML/video.php">Video</a></li>
-          <li><a href="../rawHTML/audio.php">Audio</a></li>
+          <li><a href="index.php">Homepage</a></li>
+          <li><a href="games.php">Image grid </a></li>
+          <li><a href="list-one.php">List View </a></li>
+          <li><a href="list-two.php">List View 2</a></li>
+          <!--<li><a href="list-view-3.php">List View 3</a></li>-->
+          <li><a href="books-two.php">Books</a></li>
+          <li><a href="chess.php">Chess</a></li>
+          <li><a href="sudoku.php">Sudoku</a></li>
+          <li><a href="video.php">Video</a></li>
+          <li><a href="audio.php">Audio</a></li>
         </ul>
         </div>
 

@@ -38,6 +38,17 @@ textarea {
 }
 
 
+input[type=number].form-control {
+  opacity: 1;
+  margin: 0;
+}
+
+input[type="number"].form-control:hover,
+input[type="number"].form-control:focus {
+  -moz-appearance: number-input;
+}
+
+
 // 2. Form wrappers
 // ==========================================================================
 
@@ -94,6 +105,9 @@ textarea {
 
 .form-label {
   @include core-19;
+}
+.form-label.form-label-inline {
+  display: inline-block;
 }
 
 .form-label-bold {

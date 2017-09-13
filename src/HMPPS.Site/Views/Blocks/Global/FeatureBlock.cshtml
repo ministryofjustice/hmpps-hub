@@ -2,10 +2,10 @@
 <div class="column-one-third">
     <div class="image-grid-item">
         @Html.Sitecore().BeginField("Link", new { haschildren = true })
-        <h2>@Html.Sitecore().Field("Image")</h2>
+            @Html.Sitecore().Field("Image")      
+            <h2 class="heading-medium">
+                @Html.Sitecore().Field("Title") 
+            </h2>
         @Html.Sitecore().EndField()
-        <h2 class="heading-medium">
-            @Html.Sitecore().Field("Link")
-        </h2>
     </div>
 </div>

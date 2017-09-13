@@ -1,9 +1,10 @@
 ﻿using System.Web.Mvc;
+using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
 
 namespace HMPPS.Site.Controllers.Pages
 {
-    public class HomepageController : Controller
+    public class HomepageController : BaseController
     {
         private readonly HomepageViewModel _hvm;
 
