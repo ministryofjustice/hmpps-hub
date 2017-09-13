@@ -327,7 +327,8 @@
     <Content Include="layouts\Social\Connector\SocialLogin.ashx" />
     <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="App_Config\Include\HMPPS.Authentication.config" />    <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\HMPPS.Authentication.config" />
+    <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
@@ -352,7 +353,8 @@
     <None Include="App_Config\Include\Unicorn\zzzUnicorn.Release.config">
       <DependentUpon>zzzUnicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
-    </None>    <None Include="App_Config\Include\zzDataFolder.Debug.config">
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.Debug.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -432,7 +434,8 @@
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
     </ProjectReference>
-  </ItemGroup>  <PropertyGroup>
+  </ItemGroup>
+  <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
