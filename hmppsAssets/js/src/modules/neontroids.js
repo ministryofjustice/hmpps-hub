@@ -70,11 +70,7 @@ export default (function () {
 
           document.body.appendChild(script);
         });
-
-        //promises.push(promise);
         return promise;
-
-        console.log(promises);
       };
 
       this.loaded = (callbackOnFailed) => {
