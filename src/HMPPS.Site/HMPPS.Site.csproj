@@ -55,6 +55,9 @@
       <HintPath>..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
@@ -324,6 +327,7 @@
     <Content Include="layouts\Social\Connector\SocialLogin.ashx" />
     <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="App_Config\Include\HMPPS.Authentication.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -419,9 +423,16 @@
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Auth\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HMPPS.Models\HMPPS.Models.csproj">
       <Project>{53E7D82F-2335-4401-B970-777CA378709C}</Project>
       <Name>HMPPS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
+      <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
+      <Name>HMPPS.Authentication</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
