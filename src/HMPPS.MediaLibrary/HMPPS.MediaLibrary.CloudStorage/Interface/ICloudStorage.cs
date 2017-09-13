@@ -7,5 +7,6 @@ namespace HMPPS.MediaLibrary.CloudStorage.Interface
         string Put(MediaItem media, string containerName);
         string Update(MediaItem media);
         bool Delete(string filename);
+        string GetUrlWithSasToken(MediaItem media, int expiryMinutes);
     }
 }

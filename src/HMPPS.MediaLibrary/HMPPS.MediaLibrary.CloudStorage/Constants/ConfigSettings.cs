@@ -1,4 +1,4 @@
-﻿
+
 namespace HMPPS.MediaLibrary.CloudStorage.Constants
 {
     public class ConfigSettings

@@ -1,4 +1,4 @@
-﻿using HMPPS.MediaLibrary.CloudStorage.Configuration;
+using HMPPS.MediaLibrary.CloudStorage.Configuration;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
@@ -6,7 +6,7 @@ using Sitecore.Resources.Media;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
-    public class MediaProvider: Sitecore.Resources.Media.MediaProvider
+    public class MediaProvider : Sitecore.Resources.Media.MediaProvider
     {
         public override string GetMediaUrl(MediaItem item)
         {

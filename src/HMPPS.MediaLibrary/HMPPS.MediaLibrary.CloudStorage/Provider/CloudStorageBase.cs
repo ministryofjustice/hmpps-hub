@@ -15,6 +15,8 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
 
         public abstract bool Delete(string filename);
 
+        public abstract string GetUrlWithSasToken(MediaItem media, int expiryMinutes);
+
         #region Helper
         /// <summary>
         /// Extracts the filepath after the prefix link of the media item from the media url

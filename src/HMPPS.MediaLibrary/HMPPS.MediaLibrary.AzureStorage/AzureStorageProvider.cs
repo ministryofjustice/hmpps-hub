@@ -32,7 +32,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
             _storageAccountName = accountName;
             _storageAccountKey = accountKey;
             _storageDefaultContainer = defaultContainer;
-            _storageContainers = containers.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
+            _storageContainers = containers.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
             this.Initialize();
         }
 
@@ -105,7 +105,47 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             return blob.DeleteIfExists();
         }
+
+        public override string GetUrlWithSasToken(MediaItem media, int expiryMinutes)
+        {
+            var filename = media.FilePath;
+
+            var containerName = GetContainerNameFromFilePath(filename);
+
+            var fileToAccess = RemoveContainerNameFromfilePath(filename, containerName);
+
+            var blobContainer = GetCloudBlobContainer(containerName);
+
+            return GetBlobSasUri(blobContainer, fileToAccess, expiryMinutes);
+
+        }
         #endregion
+
+        private static string GetBlobSasUri(CloudBlobContainer container, string blobName, int expiryMinutes)
+        {
+            string sasBlobToken;
+
+            // Get a reference to a blob within the container.
+            // Note that the blob may not exist yet, but a SAS can still be created for it.
+            CloudBlockBlob blob = container.GetBlockBlobReference(blobName);
+
+            // Create a new access policy and define its constraints.
+            // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad-hoc SAS, and
+            // to construct a shared access policy that is saved to the container's shared access policies.
+            SharedAccessBlobPolicy adHocSAS = new SharedAccessBlobPolicy()
+            {
+                // When the start time for the SAS is omitted, the start time is assumed to be the time when the storage service receives the request.
+                // Omitting the start time for a SAS that is effective immediately helps to avoid clock skew.
+                SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(expiryMinutes),
+                Permissions = SharedAccessBlobPermissions.Read
+            };
+
+            // Generate the shared access signature on the blob, setting the constraints directly on the signature.
+            sasBlobToken = blob.GetSharedAccessSignature(adHocSAS);
+
+            // Return the URI string for the container, including the SAS token.
+            return blob.Uri + sasBlobToken;
+        }
 
         private CloudBlobContainer GetCloudBlobContainer(string containerName)
         {

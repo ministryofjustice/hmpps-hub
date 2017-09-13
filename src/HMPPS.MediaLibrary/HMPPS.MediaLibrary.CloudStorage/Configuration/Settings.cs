@@ -1,4 +1,4 @@
-﻿using HMPPS.MediaLibrary.CloudStorage.Constants;
+using HMPPS.MediaLibrary.CloudStorage.Constants;
 using Sitecore;
 using SC = Sitecore.Configuration;
 
