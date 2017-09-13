@@ -13,29 +13,16 @@ export default (function () {
       }
       Array.prototype.forEach.call(triggers, (el, i) => {
         el.addEventListener('click', (e) => {
-          const click = true;
-          HMPPS.ereader.openBook(e,click);
-        });
-        el.addEventListener('keyup', (e) => {
-          if ((e.keyCode || e.which) === 13) {
-            const click = false;
-            HMPPS.ereader.openBook(e,click);
-          }
+
+          HMPPS.ereader.openBook(e);
+          console.log(e);
         });
       });
     },
-    openBook(e, click) {
+    openBook(e) {
       e.preventDefault();
-      var filePath;
-      var fileType;
-      if (click) {
-        filePath = e.target.parentNode.getAttribute('href');
-        fileType = e.target.parentNode.getAttribute('data-filetype');
-      } else {
-        filePath = e.target.getAttribute('href');
-        fileType = e.target.getAttribute('data-filetype');
-
-      }
+      var filePath = e.currentTarget.getAttribute('href');
+      var fileType = e.currentTarget.getAttribute('data-filetype');
       const params = [
         `height=${screen.height - 100}`,
         `width=${screen.width}`,
@@ -67,20 +54,21 @@ export default (function () {
         spreads: 'false',
         restore: 'true',
         bookPath: src,
+        method: 'paginate',
         //styles: { hmpps: '/hmppsAssets/hmpps.css'},
 
       });
 
       console.log(Book);
 
-      Book.generatePagination(50, 100);
-      Book.open(src);
+      //Book.generatePagination(50, 100);
       const rendered = Book.renderTo(area);
 
       rendered.then(() => {
-        const currentLocation = Book.getCurrentLocationCfi();
-        const currentPage = Book.pagination.pageFromCfi(currentLocation);
-        currentPage.value = currentPage;
+        // const currentLocation = Book.getCurrentLocationCfi();
+        // const currentPage = Book.pagination.pageFromCfi(currentLocation);
+        // currentPage.value = currentPage;
+        Book.open(src);
       });
 
       prev.addEventListener('click', () => {

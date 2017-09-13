@@ -293,3 +293,9 @@ proxy.json
 *.css
 /hmppsAssets/css/*.css
 /hmppsAssets/js/application.js
+/hmppsAssets/css
+/hmppsAssets/js/application.js
+/hmppsAssets/css/*.css
+/hmppsAssets/css/fonts/*.eot
+/hmppsAssets/css/images/*.png
+/hmppsAssets/js/*.js
