@@ -14,7 +14,7 @@ namespace HMPPS.Models.Cms
         {
             Link = new Link();
             Image = new Image();
-            File = new File();
+            BookFile = new File();
         }
     }
 }
