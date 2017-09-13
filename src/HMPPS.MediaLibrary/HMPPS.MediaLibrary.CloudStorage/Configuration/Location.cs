@@ -1,4 +1,4 @@
-﻿using Sitecore.Diagnostics;
+using Sitecore.Diagnostics;
 using System.Collections.Generic;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Configuration
@@ -16,7 +16,6 @@ namespace HMPPS.MediaLibrary.CloudStorage.Configuration
         {
             Assert.ArgumentNotNull((object)location, "location");
             this.Locations.Add(location);
-            Log.Info("!!!!!!!!!!!!!!!!!!!!!!!!!1 Location added: " + location.MediaFolder + "," + location.ContainerName, this);
         }
     }
 
