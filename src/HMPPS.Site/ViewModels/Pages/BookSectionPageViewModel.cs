@@ -10,10 +10,10 @@ namespace HMPPS.Site.ViewModels.Pages
     {
         public BookSectionPageViewModel()
         {
-            Children = new List<Book>();
+            Children = new List<BookSectionBlock>();
             BreadcrumbItems = new List<Item>();
         }
-        public List<Book> Children { get; set; }
+        public List<BookSectionBlock> Children { get; set; }
         public List<Item> BreadcrumbItems { get; set; }
     }
 }
