@@ -5,14 +5,14 @@ using HMPPS.Models.Cms;
 
 namespace HMPPS.Site.ViewModels.Pages
 {
-    public class BookSectionPageViewModel : BaseViewModel
+    public class GameListingPageViewModel : BaseViewModel
     {
-        public BookSectionPageViewModel()
+        public GameListingPageViewModel()
         {
-            Children = new List<BookSectionBlock>();
+            Children = new List<GameSectionBlock>();
             BreadcrumbItems = new List<Item>();
         }
-        public List<BookSectionBlock> Children { get; set; }
+        public List<GameSectionBlock> Children { get; set; }
         public List<Item> BreadcrumbItems { get; set; }
     }
 }
