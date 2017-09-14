@@ -21,8 +21,8 @@ function initHighScore() {
 
 function initCanvas() {
     canvas = document.getElementById("canvas");
-    canvas.width = screen.width;
-    canvas.height = screen.height;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     return canvas.getContext("2d");
 }
 

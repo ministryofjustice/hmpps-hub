@@ -35,7 +35,7 @@ export default (function () {
             const modal = document.querySelector('.modal');
 
             if (document.body.classList.contains('modal-active')) {
-              close.addEventListener('keyup', (e) => {
+              document.addEventListener('keyup', (e) => {
                 if ((e.keyCode || e.which) === 27) {
                   HMPPS.neontroids.destroy();
                 }
