@@ -22,6 +22,7 @@ export default (function () {
 
             const root = document.getElementsByTagName('html')[0];
             root.classList.add('modal-active');
+            // below taken from asteroids.js
             initHighScore();
             createRocks();
             initKeyboard();
