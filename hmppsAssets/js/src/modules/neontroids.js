@@ -57,9 +57,11 @@ export default (function () {
       document.body.appendChild(modal)
     },
     destroy(){
+      const root = document.getElementsByTagName('html')[0];
       const modal = document.querySelector('.modal');
       const body = document.body;
       body.removeChild(modal);
+      root.classList.remove('modal-active');
       body.classList.remove('modal-active');
       gameState = 'stopped';
       console.log('aa');
