@@ -10,11 +10,7 @@ var explodingCount = 0;
 var thumpLow;
 var thumpDelay = 1000;
 var timer;
-
-initHighScore();
-createRocks();
-initKeyboard();
-runGame();
+var myReq;
 
 function initHighScore() {
     var previousHighScore = window.localStorage.getItem('neontroids.highscore');
@@ -80,7 +76,7 @@ function createSaucer() {
 }
 
 function runGame() {
-    requestAnimationFrame(runGame);
+    myReq = requestAnimationFrame(runGame);
     clearScreen();
     checkKeyboardInput();
     moveAndRenderActors();
@@ -89,6 +85,7 @@ function runGame() {
     displayText();
     createSaucer();
 }
+
 
 function clearScreen() {
     ctx.color = "black";
@@ -110,6 +107,7 @@ function levelUp() {
 }
 
 function checkForEndOfGame() {
+  console.log('end of game');
     if (gameState === "exploding") {
         explodingCount += 1;
         if (explodingCount > 150) {
@@ -124,6 +122,7 @@ function checkForEndOfGame() {
             saucer.sizeIndex === 0 ? stopSound('largeSaucer') : stopSound('smallSaucer');
         }
         gameState = "attract";
+
         removeSprite(actors, ship);
         removeSprite(actors, saucer);
         thumpDelay = 1000;
@@ -132,4 +131,31 @@ function checkForEndOfGame() {
             window.localStorage.setItem('neontroids.highscore', highScore);
         }
     }
+
+    if (gameState === 'stopped'){
+      stopGame();
+    }
+
+}
+
+function stopGame(){
+  console.log('stopped');
+  clearTimeout(timer);
+  cancelAnimationFrame(myReq);
+  stopSound('largeSaucer');
+  stopSound('smallSaucer');
+  thumpDelay = 1000;
+  stopSound('thumpLow');
+  stopSound('thumpHigh');
+  removeSprite(actors, ship);
+  removeSprite(actors, saucer);
+  actors = [];
+  score = 0;
+  level = 1;
+  saucer = null;
+  totalFrameCount = 0;
+  if (score > highScore) {
+      highScore = score;
+      window.localStorage.setItem('neontroids.highscore', highScore);
+  }
 }

@@ -22,13 +22,25 @@ export default (function () {
 
             const root = document.getElementsByTagName('html')[0];
             root.classList.add('modal-active');
+            initHighScore();
+            createRocks();
+            initKeyboard();
+            runGame();
 
             const close = document.querySelector('.js-neontroids-close');
-            //close.focus();
-
             close.addEventListener('click', () => {
               HMPPS.neontroids.destroy();
             });
+
+            const modal = document.querySelector('.modal');
+
+            if (document.body.classList.contains('modal-active')) {
+              close.addEventListener('keyup', (e) => {
+                if ((e.keyCode || e.which) === 27) {
+                  HMPPS.neontroids.destroy();
+                }
+              });
+            }
           });
 
         });
@@ -48,6 +60,10 @@ export default (function () {
       const modal = document.querySelector('.modal');
       const body = document.body;
       body.removeChild(modal);
+      body.classList.remove('modal-active');
+      gameState = 'stopped';
+      console.log('aa');
+      stopGame();
     },
     ScriptLoader() {
 

@@ -20,8 +20,13 @@ function playSound(name) {
 function startSound(name) {
     continuousSounds[name].loop = true;
     continuousSounds[name].play();
+
 }
 
 function stopSound(name) {
+  if(continuousSounds[name] === undefined){
+    oneOffSounds[name].pause();
+  }else{
     continuousSounds[name].pause();
+  }
 }

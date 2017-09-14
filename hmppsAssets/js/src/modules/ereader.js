@@ -55,6 +55,7 @@ export default (function () {
         restore: 'true',
         bookPath: src,
         method: 'paginate',
+        contained: 'true',
         //styles: { hmpps: '/hmppsAssets/hmpps.css'},
 
       });

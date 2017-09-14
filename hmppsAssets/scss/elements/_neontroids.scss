@@ -5,16 +5,7 @@
 }
 
 .canvas{
-  //margin-top: 53px;
   background-color: black;
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  max-height: 100%;
-  // max-width: 100%;
-  // overflow: hidden;
 }
 
 body.modal-active,
@@ -46,7 +37,7 @@ html.modal-active{
 .neontroids__close{
   position: absolute;
   top: 0;
-  right: 50px;
+  right: 5%;
   border: none;
   background: none;
   color: white;
