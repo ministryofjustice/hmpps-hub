@@ -327,7 +327,10 @@
     <Content Include="layouts\Social\Connector\SocialLogin.ashx" />
     <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="App_Config\Include\HMPPS.Authentication.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -360,6 +363,15 @@
     </None>
     <None Include="App_Config\Include\zzDataFolder.Release.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Release.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="packages.config">
