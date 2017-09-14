@@ -13,29 +13,16 @@ export default (function () {
       }
       Array.prototype.forEach.call(triggers, (el, i) => {
         el.addEventListener('click', (e) => {
-          const click = true;
-          HMPPS.ereader.openBook(e,click);
-        });
-        el.addEventListener('keyup', (e) => {
-          if ((e.keyCode || e.which) === 13) {
-            const click = false;
-            HMPPS.ereader.openBook(e,click);
-          }
+
+          HMPPS.ereader.openBook(e);
+          console.log(e);
         });
       });
     },
-    openBook(e, click) {
+    openBook(e) {
       e.preventDefault();
-      var file;
-      var URL;
-      if (click) {
-        file = e.target.parentNode.getAttribute('data-src');
-        URL = e.target.parentNode.getAttribute('href');
-      } else {
-        file = e.target.getAttribute('data-src');
-        URL = e.target.getAttribute('href');
-      }
-      console.log(file);
+      var filePath = e.currentTarget.getAttribute('href');
+      var fileType = e.currentTarget.getAttribute('data-filetype');
       const params = [
         `height=${screen.height - 100}`,
         `width=${screen.width}`,
@@ -43,11 +30,11 @@ export default (function () {
         'scrollbars=yes',
       ].join(',');
 
-      if (file.indexOf('.pdf') >= 0) {
-        const win = window.open(file, '_blank', params);
+      if (fileType === 'pdf') {
+        const win = window.open(filePath, '_blank', params);
       } else {
-        const win = window.open(file, '_blank', params);
-        HMPPS.ereader.createEpub(file, win);
+        const win = window.open(filePath, '_blank', params);
+        HMPPS.ereader.createEpub(filePath, win);
       }
     },
     createEpub(src, win) {
@@ -67,18 +54,21 @@ export default (function () {
         spreads: 'false',
         restore: 'true',
         bookPath: src,
+        method: 'paginate',
         //styles: { hmpps: '/hmppsAssets/hmpps.css'},
 
       });
 
-      Book.generatePagination(50, 100);
-      Book.open(src);
+      console.log(Book);
+
+      //Book.generatePagination(50, 100);
       const rendered = Book.renderTo(area);
 
       rendered.then(() => {
-        const currentLocation = Book.getCurrentLocationCfi();
-        const currentPage = Book.pagination.pageFromCfi(currentLocation);
-        currentPage.value = currentPage;
+        // const currentLocation = Book.getCurrentLocationCfi();
+        // const currentPage = Book.pagination.pageFromCfi(currentLocation);
+        // currentPage.value = currentPage;
+        Book.open(src);
       });
 
       prev.addEventListener('click', () => {

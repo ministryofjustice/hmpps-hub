@@ -1,16 +1,14 @@
 ﻿---
-ID: "7d270774-28a0-412e-8058-9ead8946364a"
-Parent: "f8777367-b148-4e9c-a80e-ff0cea906db9"
-Template: "f8777367-b148-4e9c-a80e-ff0cea906db9"
-Path: /sitecore/templates/HMPPS/Pages/Book Section Page/__Standard Values
+ID: "94a12d87-1feb-41ce-8d7b-1becfae9aace"
+Parent: "d375ff8d-bfee-452f-a7e7-5c63618e45be"
+Template: "d375ff8d-bfee-452f-a7e7-5c63618e45be"
+Path: /sitecore/templates/HMPPS/Pages/Book Page/__Standard Values
 DB: master
 SharedFields:
 - ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
   Hint: __Masters
   Type: TreelistEx
-  Value: |
-    {F8777367-B148-4E9C-A80E-FF0CEA906DB9}
-    {D375FF8D-BFEE-452F-A7E7-5C63618E45BE}
+  Value: 
 Languages:
 - Language: en
   Versions:

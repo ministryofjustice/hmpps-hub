@@ -18,6 +18,7 @@
           <li><a href="books-two.php">Books</a></li>
           <li><a href="chess.php">Chess</a></li>
           <li><a href="sudoku.php">Sudoku</a></li>
+          <li><a href="neontroids.php">Neontroids</a></li>
           <li><a href="video.php">Video</a></li>
           <li><a href="audio.php">Audio</a></li>
         </ul>

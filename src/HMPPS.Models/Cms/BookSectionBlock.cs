@@ -2,17 +2,19 @@
 
 namespace HMPPS.Models.Cms
 {
-    public class Book
+    public class BookSectionBlock
     {
         public string Title { get; set; }
         public Link Link { get; set; }
         public Image Image { get; set; }
-        public bool OpenEreader { get; set; }
+        public bool IsBookPage { get; set; }
+        public File BookFile { get; set; }
 
-        public Book()
+        public BookSectionBlock()
         {
             Link = new Link();
             Image = new Image();
+            BookFile = new File();
         }
     }
 }

@@ -7,7 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Site", "HMPPS.Site\HM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Models", "HMPPS.Models\HMPPS.Models.csproj", "{53E7D82F-2335-4401-B970-777CA378709C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.MediaLibrary", "HMPPS.MediaLibrary", "{24A4A1FA-5107-4F9E-A7EE-563615C59380}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication", "HMPPS.Authentication\HMPPS.Authentication.csproj", "{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication.Tests", "HMPPS.Authentication.Tests\HMPPS.Authentication.Tests.csproj", "{1B68B8C3-528F-49CD-9939-0147CD6A93EE}"
+EndProjectProject("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.MediaLibrary", "HMPPS.MediaLibrary", "{24A4A1FA-5107-4F9E-A7EE-563615C59380}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.MediaLibrary.AzureStorage", "HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj", "{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}"
 EndProject
@@ -35,6 +38,14 @@ Global
 		{DCB74F23-B2CC-497C-A762-20D1FC9E98D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCB74F23-B2CC-497C-A762-20D1FC9E98D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCB74F23-B2CC-497C-A762-20D1FC9E98D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

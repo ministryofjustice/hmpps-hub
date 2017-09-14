@@ -1,4 +1,4 @@
-﻿@model HMPPS.Site.ViewModels.Pages.HomepageViewModel
+@model HMPPS.Site.ViewModels.Pages.HomepageViewModel
 
 <main class="elements-index root-index" id="content" role="main" tabindex="-1">
     <header class="homepage-top">
@@ -8,7 +8,16 @@
                     <div class="welcome-text">
                         <div class="floated-inner-block">
                             <h1>@Html.Sitecore().Field("Page Title")</h1>
-                            <h2 class="font-large">Andrew Banfield</h2>
+                            <h2 class="font-large">
+                                @if (Sitecore.Context.User.IsAuthenticated)
+                                {
+                                    @Sitecore.Context.User.Profile.FullName <a href="/logout" style="color:#ff6a00">Logout</a>
+                                }
+                                else
+                                {
+                                    <span>Anonymous - <a href="/login" style="color:#ff6a00">Login via IDAM</a></span>
+                                }
+                            </h2>
                         </div>
                     </div>
                     <div class="content-links">
