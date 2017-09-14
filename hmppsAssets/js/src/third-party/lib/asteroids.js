@@ -107,7 +107,6 @@ function levelUp() {
 }
 
 function checkForEndOfGame() {
-  console.log('end of game');
     if (gameState === "exploding") {
         explodingCount += 1;
         if (explodingCount > 150) {
