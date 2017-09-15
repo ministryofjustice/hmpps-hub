@@ -10,8 +10,11 @@ export default (function () {
       const triggers = document.querySelectorAll('.js-ereader-trigger');
       if (!triggers) {
         return false;
-      }
+      }else{}
       Array.prototype.forEach.call(triggers, (el, i) => {
+        const heading = el.querySelector('h2');
+        heading.textContent = heading.textContent + ' (opens in new window)';
+      //  el.textContent = el.textContent + '(opens in a new window)';
         el.addEventListener('click', (e) => {
 
           HMPPS.ereader.openBook(e);
