@@ -31,7 +31,7 @@ export default (function () {
       ].join(',');
 
       if (fileType === 'pdf') {
-        const win = window.open(filePath, '_blank', params);
+        const win = window.open(`${filePath}?page=0`, '_blank', params);
       } else {
         const win = window.open(filePath, '_blank', params);
         HMPPS.ereader.createEpub(filePath, win);
