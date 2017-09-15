@@ -458,6 +458,10 @@
     <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
+      <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
+      <Name>HMPPS.MediaLibrary.CloudStorage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.Models\HMPPS.Models.csproj">
       <Project>{53E7D82F-2335-4401-B970-777CA378709C}</Project>
       <Name>HMPPS.Models</Name>
