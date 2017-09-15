@@ -1,4 +1,4 @@
-﻿@model HMPPS.Site.ViewModels.Pages.BookSectionPageViewModel
+@model HMPPS.Site.ViewModels.Pages.BookSectionPageViewModel
 
 <div id="global-header-bar"></div>
 
@@ -31,7 +31,7 @@
                                 }
                                 else
                                 {
-                                    <a class="js-ereader-trigger" target="blank" data-src="@item.BookFile.Url" href="@item.BookFile.Url" data-filetype="@item.BookFile.Extension.ToLower()">
+                                    <a class="js-ereader-trigger" target="blank" href="@item.BookFile.Url" data-filetype="@item.BookFile.Extension.ToLower()">
                                         <img src="@item.Image.Url" alt="@item.Image.AltText">
                                         <h2 class="heading-medium">@item.Title</h2>
                                     </a>
