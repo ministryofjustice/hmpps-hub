@@ -300,6 +300,7 @@ export default (function () {
           onDragStart: onDragStart,
           onDrop: onDrop,
           onSnapEnd: onSnapEnd,
+          moveSpeed: 'slow',
           pieceTheme: '/hmppsAssets/img/chesspieces/wikipedia/{piece}.png',
         };
 
