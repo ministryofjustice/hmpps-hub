@@ -402,6 +402,7 @@
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
     <Content Include="Views\Pages\ChessGamePage.cshtml" />
     <Content Include="Views\Pages\GameListingPage.cshtml" />
+    <Content Include="Views\Blocks\Global\RelatedLinksBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

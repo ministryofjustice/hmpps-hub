@@ -1,0 +1,18 @@
+﻿---
+ID: "b2a9a8e4-fbca-4597-a4ba-55c726e0da7b"
+Parent: "33aa031a-4ca9-4037-9445-05bcc78f333f"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/HMPPS/Blocks/Global/Related Links Block/Content
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T162042Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
