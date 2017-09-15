@@ -12,10 +12,11 @@ export default (function () {
         return false;
       }
       Array.prototype.forEach.call(triggers, (el, i) => {
-        el.addEventListener('click', (e) => {
+        const heading = el.querySelector('h2');
+        heading.textContent = heading.textContent + ' (opens in new window)';
 
+        el.addEventListener('click', (e) => {
           HMPPS.ereader.openBook(e);
-          console.log(e);
         });
       });
     },
@@ -41,7 +42,7 @@ export default (function () {
       HMPPS.ereader.createMarkup(win);
       const body = win.document.body;
       body.classList.add('epub');
-      console.log(src);
+
 
       let next = body.querySelector('.js-ereader-next');
       let prev = body.querySelector('.js-ereader-prev');
@@ -59,8 +60,6 @@ export default (function () {
         //styles: { hmpps: '/hmppsAssets/hmpps.css'},
 
       });
-
-      console.log(Book);
 
       //Book.generatePagination(50, 100);
       const rendered = Book.renderTo(area);
