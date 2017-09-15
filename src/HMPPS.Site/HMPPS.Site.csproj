@@ -387,7 +387,7 @@
       <IsTransformFile>True</IsTransformFile>
       <SubType>Designer</SubType>
     </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

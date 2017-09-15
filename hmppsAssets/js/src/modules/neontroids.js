@@ -15,24 +15,46 @@ export default (function () {
             return loader.add(file);
           });
 
-          Promise.all(scriptPromises).then( function (){
+          Promise.all(scriptPromises).then( function (response){
 
             neontroidsEl.classList.add('neontroids-active');
             document.body.classList.add('modal-active');
 
             const root = document.getElementsByTagName('html')[0];
             root.classList.add('modal-active');
+            //taken from asteroids.js
+
 
             const close = document.querySelector('.js-neontroids-close');
-            //close.focus();
-
             close.addEventListener('click', () => {
               HMPPS.neontroids.destroy();
             });
+
+            const modal = document.querySelector('.modal');
+
+            if (document.body.classList.contains('modal-active')) {
+              document.addEventListener('keyup', (e) => {
+                if ((e.keyCode || e.which) === 27) {
+                  HMPPS.neontroids.destroy();
+                }
+              });
+            }
+
+            return response;
+          }).then((response) => {
+
+            window.dispatchEvent(new Event('resize'));
+            HMPPS.neontroids.beginGame();
           });
 
         });
       }
+    },
+    beginGame(){
+      initHighScore();
+      createRocks();
+      initKeyboard();
+      runGame();
     },
     build(){
       const modal = document.createElement('div');
@@ -45,9 +67,15 @@ export default (function () {
       document.body.appendChild(modal)
     },
     destroy(){
+      const root = document.getElementsByTagName('html')[0];
       const modal = document.querySelector('.modal');
       const body = document.body;
       body.removeChild(modal);
+      root.classList.remove('modal-active');
+      body.classList.remove('modal-active');
+      gameState = 'stopped';
+      console.log('aa');
+      stopGame();
     },
     ScriptLoader() {
 
