@@ -1,8 +1,8 @@
 ﻿---
-ID: "86249ce0-af04-4716-b10e-85eea8bb5b32"
-Parent: "9f812c05-bfb0-49f2-9a3a-6a1f0b89fbf7"
+ID: "67a5c59a-7bc8-4fd2-ad36-d8814ca6d094"
+Parent: "af44d6ef-fe5e-4416-97da-71393f70d82a"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Pages/Game Listing Page/Content/Thumbnail Image
+Path: /sitecore/templates/HMPPS/Pages/Chess Game Page/Content/Thumbnail Image
 DB: master
 SharedFields:
 - ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"

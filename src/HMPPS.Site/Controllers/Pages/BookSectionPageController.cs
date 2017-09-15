@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Web.Mvc;
 using HMPPS.Models;
 using HMPPS.Models.Cms;
@@ -56,8 +56,7 @@ namespace HMPPS.Site.Controllers.Pages
 
                 _bspvm.Children.Add(bookSection);
             }
-            _bspvm.BreadcrumbItems = contextItem.Axes.GetAncestors().Where(i => i["Show In Navigation"] == "1").ToList();
-            _bspvm.BreadcrumbItems.Add(contextItem);
+            _bspvm.BreadcrumbItems = BreadcrumbItems;
         }
 
         public ActionResult Index()

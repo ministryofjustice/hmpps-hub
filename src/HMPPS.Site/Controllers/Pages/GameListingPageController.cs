@@ -40,8 +40,7 @@ namespace HMPPS.Site.Controllers.Pages
 
                 _glpvm.Children.Add(gameSectionBlock);
             }
-            _glpvm.BreadcrumbItems = contextItem.Axes.GetAncestors().Where(i => i["Show In Navigation"] == "1").ToList();
-            _glpvm.BreadcrumbItems.Add(contextItem);
+            _glpvm.BreadcrumbItems = BreadcrumbItems;
         }
 
         public ActionResult Index()
