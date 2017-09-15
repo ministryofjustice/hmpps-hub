@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cms\GameSectionBlock.cs" />
     <Compile Include="Cms\BookSectionBlock.cs" />
     <Compile Include="Common\File.cs" />
     <Compile Include="Common\Image.cs" />
