@@ -15,18 +15,15 @@ export default (function () {
             return loader.add(file);
           });
 
-          Promise.all(scriptPromises).then( function (){
+          Promise.all(scriptPromises).then( function (response){
 
             neontroidsEl.classList.add('neontroids-active');
             document.body.classList.add('modal-active');
+
             const root = document.getElementsByTagName('html')[0];
             root.classList.add('modal-active');
+            //taken from asteroids.js
 
-            // below taken from asteroids.js
-            initHighScore();
-            createRocks();
-            initKeyboard();
-            runGame();
 
             const close = document.querySelector('.js-neontroids-close');
             close.addEventListener('click', () => {
@@ -42,10 +39,22 @@ export default (function () {
                 }
               });
             }
+
+            return response;
+          }).then((response) => {
+
+            window.dispatchEvent(new Event('resize'));
+            HMPPS.neontroids.beginGame();
           });
 
         });
       }
+    },
+    beginGame(){
+      initHighScore();
+      createRocks();
+      initKeyboard();
+      runGame();
     },
     build(){
       const modal = document.createElement('div');
