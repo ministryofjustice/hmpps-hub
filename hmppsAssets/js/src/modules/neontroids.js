@@ -39,10 +39,10 @@ export default (function () {
                 }
               });
             }
-            console.log('aa');
+
             return response;
           }).then((response) => {
-            console.log('bb');
+
             window.dispatchEvent(new Event('resize'));
             HMPPS.neontroids.beginGame();
           });
