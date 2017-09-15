@@ -31,6 +31,8 @@ export default (function () {
       });
 
       newGame();
+
+
     },
     engineGame(options) {
       const game = new Chess();
@@ -48,6 +50,8 @@ export default (function () {
       let announced_game_over;
         // do not pick up pieces if the game is over
         // only pick up pieces for White
+
+
         const onDragStart = (source, piece, position, orientation) => {
             const re = playerColor == 'white' ? /^b/ : /^w/;
                 if (game.game_over() ||
@@ -276,7 +280,6 @@ export default (function () {
            to: target,
            promotion: radio
          });
-         console.log(move);
 
          // illegal move
          if (move === null) return 'snapback';
@@ -301,6 +304,10 @@ export default (function () {
         };
 
         board = new ChessBoard('js-board', cfg);
+
+        window.onresize = function(event) {
+          board.resize();
+        };
 
         return {
             reset: function() {
