@@ -1,11 +1,14 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Sitecore.Data.Items;
 
 namespace HMPPS.Site.ViewModels.Base
 {
     public class BaseViewModel
     {
+        public BaseViewModel()
+        {
+            BreadcrumbItems = new List<Item>();
+        }
+        public List<Item> BreadcrumbItems { get; set; }
     }
 }

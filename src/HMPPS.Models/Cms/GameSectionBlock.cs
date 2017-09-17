@@ -1,15 +1,14 @@
-﻿using HMPPS.Models.Common;
+using HMPPS.Models.Common;
 
 namespace HMPPS.Models.Cms
 {
-    public class Book
+    public class GameSectionBlock
     {
         public string Title { get; set; }
         public Link Link { get; set; }
         public Image Image { get; set; }
-        public bool OpenEreader { get; set; }
 
-        public Book()
+        public GameSectionBlock()
         {
             Link = new Link();
             Image = new Image();

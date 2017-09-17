@@ -360,11 +360,38 @@
     <None Include="App_Config\Include\zzDataFolder.Debug.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\zzDataFolder.Release.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Debug.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Debug.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
       <DependentUpon>HMPPS.Authentication.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -386,6 +413,9 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Pages\BookSectionPage.cshtml" />
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
+    <Content Include="Views\Pages\ChessGamePage.cshtml" />
+    <Content Include="Views\Pages\GameListingPage.cshtml" />
+    <Content Include="Views\Blocks\Global\RelatedLinksBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -426,18 +456,24 @@
   <ItemGroup>
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
+    <Compile Include="Controllers\Pages\GameListingPageController.cs" />
     <Compile Include="Controllers\Pages\BookSectionPageController.cs" />
     <Compile Include="Controllers\Pages\HomepageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ChessGamePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\GameListingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Views\Auth\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
+      <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
+      <Name>HMPPS.MediaLibrary.CloudStorage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.Models\HMPPS.Models.csproj">
       <Project>{53E7D82F-2335-4401-B970-777CA378709C}</Project>
       <Name>HMPPS.Models</Name>
@@ -445,6 +481,10 @@
     <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj">
+      <Project>{3e58a0d0-44f5-4039-9e17-ef4766d8f6f6}</Project>
+      <Name>HMPPS.MediaLibrary.AzureStorage</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

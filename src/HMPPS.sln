@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Site", "HMPPS.Site\HMPPS.Site.csproj", "{D81E54F2-F4D7-4600-B8B4-8C90C46801A9}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication", "HMPPS.Authentication\HMPPS.Authentication.csproj", "{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication.Tests", "HMPPS.Authentication.Tests\HMPPS.Authentication.Tests.csproj", "{1B68B8C3-528F-49CD-9939-0147CD6A93EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.MediaLibrary", "HMPPS.MediaLibrary", "{24A4A1FA-5107-4F9E-A7EE-563615C59380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.MediaLibrary.AzureStorage", "HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj", "{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.MediaLibrary.CloudStorage", "HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj", "{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,21 @@ Global
 		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B68B8C3-528F-49CD-9939-0147CD6A93EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6} = {24A4A1FA-5107-4F9E-A7EE-563615C59380}
+		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27} = {24A4A1FA-5107-4F9E-A7EE-563615C59380}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0FFE609-A830-44F9-AB6F-6A1BA46F9ECD}

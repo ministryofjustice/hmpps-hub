@@ -1,0 +1,37 @@
+﻿---
+ID: "57c2e3b7-f065-41ed-a1da-5495b47c3918"
+Parent: "f4a43121-2d9f-446a-bac4-e8a1ca75def7"
+Template: "f4a43121-2d9f-446a-bac4-e8a1ca75def7"
+Path: /sitecore/templates/HMPPS/Pages/Game Listing Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{17E5B4CE-E870-4515-9CF9-709C142019FD}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+            l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+            <r
+              id="{B9598803-15D2-4118-9BD8-CB8B3F9D4DDC}"
+              ph="content"
+              uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170908T103129Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
