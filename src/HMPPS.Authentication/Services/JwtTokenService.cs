@@ -10,6 +10,7 @@ using System.Text;
 using HMPPS.Authentication.Interfaces;
 using HMPPS.Authentication.Helpers;
 using Sitecore.Links;
+using Sitecore.Sites;
 
 namespace HMPPS.Authentication.Services
 {
@@ -64,12 +65,19 @@ namespace HMPPS.Authentication.Services
 
         private static string GetHomeAddress()
         {
-            // TODO: check why hostname and targethostname of "website" are missing from Sitecore.config 
-            if (!string.IsNullOrEmpty(Sitecore.Context.Site.TargetHostName))
-                return Sitecore.Context.Site.TargetHostName;
-            var homeItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.ContentStartPath);
-            var urlOptions = new UrlOptions() { AlwaysIncludeServerUrl = true, LanguageEmbedding = LanguageEmbedding.Never };
-            return LinkManager.GetItemUrl(homeItem, urlOptions);
+            // TODO: check why hostname and targethostname of "website" are missing from Sitecore.config
+            // TODO: confirm if authentication logic never will be used from shell site (content editors)
+            var website = SiteContext.GetSite("website");
+
+            if (!string.IsNullOrEmpty(website.TargetHostName))
+                return website.TargetHostName;
+
+            using (var siteContextSwitcher = new SiteContextSwitcher(website))
+            {
+                var homeItem = website.Database.GetItem(website.StartPath);
+                var urlOptions = new UrlOptions() { AlwaysIncludeServerUrl = true, LanguageEmbedding = LanguageEmbedding.Never, SiteResolving = true };
+                return LinkManager.GetItemUrl(homeItem, urlOptions);
+            }
         }
 
         private static byte[] GetRandomBytes(int len)
