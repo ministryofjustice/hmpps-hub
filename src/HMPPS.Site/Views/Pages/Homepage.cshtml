@@ -11,7 +11,7 @@
                             <h2 class="font-large">
                                 @if (Sitecore.Context.User.IsAuthenticated)
                                 {
-                                    @Sitecore.Context.User.Profile.FullName <a href="/logout" style="color:#ff6a00">Logout</a>
+                                    @Sitecore.Context.User.Profile.FullName @*<a href="/logout" style="color:#ff6a00">Logout</a>*@
                                 }
                                 else
                                 {
