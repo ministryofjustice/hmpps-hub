@@ -25,12 +25,12 @@ namespace HMPPS.Site.Controllers.Pages
                 var gameSectionBlock = new GameSectionBlock();
 
                 gameSectionBlock.Title =
-                    E3.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(c, "Navigation Title",
+                    Utilities.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(c, "Navigation Title",
                         "Page Title");
                 gameSectionBlock.Image = new Image()
                 {
-                    Url = E3.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
-                    AltText = E3.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
+                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
+                    AltText = Utilities.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
                 };
                 gameSectionBlock.Link = new Link()
                 {
