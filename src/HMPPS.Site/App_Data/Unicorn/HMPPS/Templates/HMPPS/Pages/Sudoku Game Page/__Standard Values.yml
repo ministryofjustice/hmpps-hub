@@ -1,13 +1,10 @@
 ﻿---
-ID: "fdfb31a4-00da-4146-b7dc-bfdd77d5914f"
-Parent: "17e5b4ce-e870-4515-9cf9-709c142019fd"
-Template: "17e5b4ce-e870-4515-9cf9-709c142019fd"
-Path: /sitecore/templates/HMPPS/Pages/Chess Game Page/__Standard Values
+ID: "80740ca6-2606-4c9e-b570-423592e1c555"
+Parent: "2fc1082e-9d68-4d54-bacd-bc182ce33519"
+Template: "2fc1082e-9d68-4d54-bacd-bc182ce33519"
+Path: /sitecore/templates/HMPPS/Pages/Sudoku Game Page/__Standard Values
 DB: master
 SharedFields:
-- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
-  Hint: __Icon
-  Value: People/32x32/pawn.png
 - ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
   Hint: __Masters
   Type: TreelistEx
@@ -30,7 +27,7 @@ Languages:
               key="right-blocks"
               md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
             <r
-              id="{C02D4B41-959B-4776-AD75-A39B50267EBF}"
+              id="{B3B46A78-3272-4C7F-A44D-7B18821078ED}"
               ph="content"
               uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
           </d>
