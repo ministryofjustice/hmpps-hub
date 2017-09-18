@@ -29,12 +29,12 @@ namespace HMPPS.Site.Controllers.Pages
                 var bookSection = new BookSectionBlock();
 
                 bookSection.Title =
-                    E3.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(c, "Navigation Title",
+                    Utilities.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(c, "Navigation Title",
                         "Page Title");
                 bookSection.Image = new Image()
                 {
-                    Url = E3.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
-                    AltText = E3.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
+                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
+                    AltText = Utilities.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
                 };
                 bookSection.Link = new Link()
                 {

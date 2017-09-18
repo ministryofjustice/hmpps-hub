@@ -1,0 +1,404 @@
+using System;
+using System.Collections.Generic;
+using Sitecore.Data.Fields;
+using Sitecore.Data.Items;
+using Sitecore.Resources.Media;
+
+namespace HMPPS.Utilities.SitecoreHelper
+{
+	/// <summary>
+	///
+	/// </summary>
+    public static class FieldMethods
+    {
+        /// <summary>
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="imageFieldName"></param>
+        /// <param name="includeServerUrl"></param>
+        /// <param name="ensureMediaUrlPrefix"></param>
+        /// <returns></returns>
+        public static string GetMediaItemUrl(Item item, string imageFieldName, bool includeServerUrl, bool ensureMediaUrlPrefix = false)
+		{
+			if (item == null) return string.Empty;
+			ImageField imgField = item.Fields[imageFieldName];
+			if (imgField != null && imgField.MediaItem != null)
+			{
+				MediaItem image = new MediaItem(imgField.MediaItem);
+				var m = new MediaUrlOptions();
+				m.AlwaysIncludeServerUrl = includeServerUrl;
+				var mediaUrl = MediaManager.GetMediaUrl(image, m);
+				if (ensureMediaUrlPrefix)
+					return Sitecore.StringUtil.EnsurePrefix('/', mediaUrl);
+			    return mediaUrl;
+			}
+			return string.Empty;
+		}
+
+		/// <summary>
+		/// Gets the URL of a media item
+		/// Use this method for Sitecore up to version 7.5 (excluding 7.5)
+		/// </summary>
+		/// <param name="item">
+		///		The Data source Item for the media field which
+		///		stores the vale of the desired media item
+		/// </param>
+		/// <param name="imageField">
+		///		The string value of the name of the media field
+		///		on the data source item, which has a value of the media item
+		///		to be reffrenced.
+		/// </param>
+		/// <returns>(string) media item url relative to the root of the site</returns>
+		public static string GetMediaItemUrl(Item item, string imageField, int? maxWidth = null, bool ensureMediaUrlPrefix = false)
+		{
+			try
+			{
+				Sitecore.Data.Fields.ImageField tgtField = (Sitecore.Data.Fields.ImageField)item.Fields[imageField];
+				if (tgtField != null)
+				{
+					MediaUrlOptions opts = new MediaUrlOptions();
+					if (maxWidth != null)
+					{
+						opts.Width = maxWidth.Value;
+					}
+
+					if (tgtField.MediaItem != null)
+					{
+						var mediaUrl = Sitecore.Resources.Media.MediaManager.GetMediaUrl(tgtField.MediaItem, opts);
+						return ensureMediaUrlPrefix ? Sitecore.StringUtil.EnsurePrefix('/', mediaUrl) : mediaUrl;
+					}
+					else
+						return null;
+				}
+				return null;
+			}
+			catch
+			{
+				return null;
+			}
+
+		}
+
+		/// <summary>
+		/// Use this method for Sitecore version 7.5 and up (including 7.5)
+		/// Media hashing not available for earlier versions of Sitecore
+		/// </summary>
+		/// <param name="dataItem"></param>
+		/// <param name="width"></param>
+		/// <returns></returns>
+		public static string GetMediaItemUrlWithHash(Item item, string imageField, int? maxWidth = null, bool ensureMediaUrlPrefix = false)
+		{
+			var mediaUrl = GetMediaItemUrl(item, imageField, maxWidth, ensureMediaUrlPrefix);
+			try
+			{
+				if (!string.IsNullOrEmpty(mediaUrl))
+					return HashingUtils.ProtectAssetUrl(mediaUrl);
+				else
+					return mediaUrl;
+			}
+			catch 
+			{
+				return mediaUrl;
+			}
+		}
+
+		/// <summary>
+		/// Use this method for Sitecore up to version 7.5 (excluding 7.5)
+		/// </summary>
+		/// <param name="dataItem"></param>
+		/// <returns></returns>
+		public static string GetMediaItemUrl(MediaItem dataItem)
+		{
+			if (dataItem != null)
+			{
+				return Sitecore.Resources.Media.MediaManager.GetMediaUrl(dataItem);
+			}
+			else
+			{
+				return string.Empty;
+			}
+		}
+
+		/// <summary>
+		/// Use this method for Sitecore version 7.5 and up (including 7.5)
+		/// </summary>
+		/// <param name="dataItem"></param>
+		/// <param name="width"></param>
+		/// <returns></returns>
+		public static string GetMediaItemUrl(MediaItem dataItem, int width)
+		{
+			if (dataItem != null)
+			{
+				MediaUrlOptions opts = new MediaUrlOptions();
+				opts.Width = width;
+				return Sitecore.Resources.Media.MediaManager.GetMediaUrl(dataItem, opts);
+			}
+			else
+			{
+				return string.Empty;
+			}
+		}
+
+		/// <summary>
+		/// </summary>
+		/// <param name="dataItem"></param>
+		/// <param name="width"></param>
+		/// <returns></returns>
+		public static string GetMediaItemUrlWithHash(MediaItem dataItem, int width)
+		{
+			var mediaUrl = GetMediaItemUrl(dataItem, width);
+			try
+			{
+				if (!string.IsNullOrEmpty(mediaUrl))
+					return HashingUtils.ProtectAssetUrl(mediaUrl);
+				else
+					return mediaUrl;
+			}
+			catch
+			{
+				return mediaUrl;
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="imageFieldName"></param>
+		/// <returns></returns>
+		public static int GetImageHeight(Item item, string imageFieldName)
+		{
+			if (item == null) return 0;
+			int iHeight = 0;
+			ImageField img = ((ImageField)item.Fields[imageFieldName]);
+			if (img != null)
+			{
+				int.TryParse(img.Height, out iHeight);
+			}
+
+			return iHeight;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="imageFieldName"></param>
+		/// <returns></returns>
+		public static int GetImageWidth(Item item, string imageFieldName)
+		{
+			if (item == null) return 0;
+			int iWidth = 0;
+			ImageField img = ((ImageField)item.Fields[imageFieldName]);
+			if (img != null)
+			{
+				int.TryParse(img.Width, out iWidth);
+			}
+
+			return iWidth;
+		}
+
+		/// <summary>
+		/// Returns the description (alt text) of the image
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="imageFieldName"></param>
+		/// <returns></returns>
+		public static string GetImageDescription(Item item, string imageFieldName)
+		{
+			if (item == null) return "";
+			string desc = "";
+			ImageField img = ((ImageField)item.Fields[imageFieldName]);
+			if (img != null)
+			{
+				desc = img.Alt;
+			}
+
+			return desc;
+		}
+
+		/// <summary>
+		/// Returns a datetime value from the given date field of an item
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="dateFieldName"></param>
+		/// <returns></returns>
+		public static DateTime GetDateFieldValue(Item item, string dateFieldName)
+		{
+			if (item == null) return DateTime.MinValue;
+			DateField dateField = item.Fields[dateFieldName];
+			return dateField != null ? dateField.DateTime : DateTime.MinValue;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="fieldName"></param>
+		/// <returns></returns>
+		public static bool FieldHasValue(Item item, string fieldName)
+		{
+			if (item != null && item.Fields[fieldName] != null && !string.IsNullOrEmpty(item.Fields[fieldName].Value))
+			{
+				// Ensure link fields which are "cleared" in the page editor are treated as without value
+				if (item.Fields[fieldName].Type == "General Link" && string.IsNullOrEmpty(((LinkField)item.Fields[fieldName]).Url))
+					return false;
+				if (item.Fields[fieldName].Type == "Droptree" && Sitecore.Data.ID.IsNullOrEmpty(((InternalLinkField)item.Fields[fieldName]).TargetID))
+					return false;
+
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="linkFieldName"></param>
+		/// <returns></returns>
+		public static string GetLinkFieldDescription(Item item, string linkFieldName)
+		{
+			Sitecore.Data.Fields.LinkField lf = item.Fields[linkFieldName];
+			return lf != null ? lf.Text : string.Empty;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="linkFieldName"></param>
+		/// <returns></returns>
+		public static string GetLinkFieldTarget(Item item, string linkFieldName)
+		{
+			Sitecore.Data.Fields.LinkField lf = item.Fields[linkFieldName];
+			return lf != null ? lf.Target : string.Empty;
+		}
+
+		/// <summary>
+		/// Returns the URL from a Sitecore link field
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="linkFieldName"></param>
+		/// <returns></returns>
+		public static string GetLinkFieldUrl(Item item, string linkFieldName, bool includeServerUrl, bool embedLanguage = false)
+		{
+			if (item == null || string.IsNullOrEmpty(linkFieldName))
+				return string.Empty;
+			Sitecore.Data.Fields.LinkField lf = item.Fields[linkFieldName];
+			if (lf == null)
+				return string.Empty;
+
+			string url = string.Empty;
+			var urlOptions = Sitecore.Links.UrlOptions.DefaultOptions;
+			urlOptions.AlwaysIncludeServerUrl = includeServerUrl;
+			urlOptions.LanguageEmbedding = embedLanguage ? Sitecore.Links.LanguageEmbedding.Always : Sitecore.Links.LanguageEmbedding.Never;
+			var mediaUrlOptions = new Sitecore.Resources.Media.MediaUrlOptions();
+			mediaUrlOptions.AlwaysIncludeServerUrl = includeServerUrl;
+			switch (lf.LinkType.ToLower())
+			{
+				case "internal":
+					// Use LinkMananger for internal links, if link is not empty
+					url = lf.TargetItem != null ? Sitecore.Links.LinkManager.GetItemUrl(lf.TargetItem, urlOptions) : string.Empty;
+					break;
+				case "media":
+					// Use MediaManager for media links, if link is not empty
+					url = lf.TargetItem != null ? Sitecore.Resources.Media.MediaManager.GetMediaUrl(lf.TargetItem, mediaUrlOptions) : string.Empty;
+					break;
+				case "external":
+					// Just return external links
+					url = lf.Url;
+					break;
+				case "anchor":
+					// Prefix anchor link with # if link if not empty
+					url = !string.IsNullOrEmpty(lf.Anchor) ? "#" + lf.Anchor : string.Empty;
+					break;
+				case "mailto":
+					// Just return mailto link
+					url = lf.Url;
+					break;
+				case "javascript":
+					// Just return javascript
+					url = lf.Url;
+					break;
+				default:
+					// Just please the compiler, this
+					// condition will never be met
+					url = lf.Url;
+					break;
+			}
+			return url;
+
+		}
+
+		/// <summary>
+		/// Get a treelist field selected items from the current item
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="treelistFieldName"></param>
+		/// <returns></returns>
+		public static List<Item> GetTreelistSelectedItems(Item item, string treelistFieldName)
+		{
+			List<Item> treelistItems = new List<Item>();
+			if (item == null)
+				return treelistItems;
+			Sitecore.Data.ID[] ids = Sitecore.Data.ID.ParseArray(item[treelistFieldName], false);
+			foreach (Sitecore.Data.ID id in ids)
+			{
+				Sitecore.Data.Items.Item targetItem = Sitecore.Context.Database.GetItem(id);
+                if (targetItem != null)
+    				treelistItems.Add(targetItem);
+			}
+
+			return treelistItems;
+		}
+
+		/// <summary>
+		/// Get the selected item from a droplink, droptree, other reference types
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="treelistFieldName"></param>
+		/// <returns></returns>
+		public static Item GetRefFieldSelectedItem(Item item, string refFieldName)
+		{
+			if (item == null) 
+				return null;
+			Sitecore.Data.Fields.ReferenceField field = (ReferenceField)item.Fields[refFieldName];
+			if (field != null && field.TargetItem != null)
+			{
+				return field.TargetItem;
+			}
+			else
+				return null;
+		}
+
+		/// <summary>
+		/// Get a multilist field selected items from the current item
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="multilistFieldName"></param>
+		/// <returns></returns>
+		public static List<Item> GetMultilistSelectedValues(Item item, string multilistFieldName)
+		{
+			if (item != null)
+			{
+				Sitecore.Data.Fields.MultilistField multilistField = item.Fields[multilistFieldName];
+				List<Item> multilistItems = new List<Item>();
+				if (multilistField != null)
+				{
+					foreach (Sitecore.Data.ID id in multilistField.TargetIDs)
+					{
+						Item targetItem = Sitecore.Context.Database.Items[id];
+						if (targetItem != null)
+							multilistItems.Add(targetItem);
+					}
+				}
+				return multilistItems;
+			}
+			return new List<Item>();
+		}
+    }
+}
