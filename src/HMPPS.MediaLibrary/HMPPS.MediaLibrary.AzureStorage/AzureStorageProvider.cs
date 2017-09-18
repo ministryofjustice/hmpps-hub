@@ -64,6 +64,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             var blobContainer = GetCloudBlobContainer(containerName);
             CloudBlockBlob blob = blobContainer.GetBlockBlobReference(filename);
+            blob.Properties.ContentType = !string.IsNullOrEmpty(media.MimeType) ? media.MimeType : "application/octet-stream";
 
             using (Stream fileStream = media.GetMediaStream())
             {
