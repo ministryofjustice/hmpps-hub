@@ -38,6 +38,9 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170908T103129Z
+    - ID: "2ba51e72-ce64-4ff7-b30c-f7fbbd4b5924"
+      Hint: Alert Text
+      Value: 
     - ID: "3a4222da-2a4a-404f-a0de-0770dc74f73c"
       Hint: Right Bold Text
       Value: "Skill Level (0-20)"
@@ -60,6 +63,13 @@ Languages:
     - ID: "9ef2e1df-7080-4817-87b9-35aea8774d60"
       Hint: Knight Name
       Value: Knight
+    - ID: "a0c37d05-6021-448a-873e-7d08ffc3ed79"
+      Hint: Game Instruction Text
+      Value: |
+        <h3>How to play</h3>
+        <p>Sudoku is a game that involves a grid of 81 squares, divided into nine blocks, each containing nine squares</p>
+        <p>Each of the nine blocks has to contain the numbers 1-9, each number can only appear once in a row, column or box. Each vertical nine-square column, or horizontal nine-square line across, within the larger square, must also contain the numbers 1-9, without repetition or omission.</p>
+        <p>Each sudoku puzzle has only one correct solution.</p>
     - ID: "f2098cd4-1803-40a7-a7b2-c2395f8f8bce"
       Hint: Queen Name
       Value: Queen
