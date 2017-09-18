@@ -71,6 +71,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CookieHelper.cs" />
+    <Compile Include="IdamData.cs" />
+    <Compile Include="Interfaces\IJwtTokenService.cs" />
+    <Compile Include="Pipelines\AuthenticationProcessorBase.cs" />
+    <Compile Include="Services\EncryptionService.cs" />
+    <Compile Include="Helpers\ExpirationHelper.cs" />
+    <Compile Include="Interfaces\IEncryptionService.cs" />
+    <Compile Include="Services\JwtTokenService.cs" />
+    <Compile Include="Pipelines\AuthenticationChecker.cs" />
     <Compile Include="Pipelines\LogoutRedirector.cs" />
     <Compile Include="Pipelines\LoginRedirector.cs" />
     <Compile Include="Pipelines\OAuth2SignInCallback.cs" />
@@ -80,7 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\HMPPS.Authentication.config" />
+    <None Include="App_Config\Include\HMPPS.Authentication.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

@@ -6,6 +6,7 @@ using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Sites;
 using Sitecore.Web;
 using IdentityModel.Client;
+using HMPPS.Authentication.Helpers;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -24,11 +25,11 @@ namespace HMPPS.Authentication.Pipelines
                 var state = Guid.NewGuid().ToString("N");
                 var nonce = Guid.NewGuid().ToString("N");
 
-                var cookie = new HttpCookie(Settings.TempCookieName);
-                cookie.Values.Add("state", state);
-                cookie.Values.Add("nonce", nonce);
-                cookie.Values.Add("returnUrl", args.Context.Request.Url.ToString());
-                args.Context.Response.Cookies.Add(cookie);
+                var cookie = new CookieHelper(Settings.TempCookieName, args.Context);
+                cookie.SetValue("state", state);
+                cookie.SetValue("nonce", nonce);
+                cookie.SetValue("returnUrl", args.Context.Request.Url.ToString());
+                cookie.Save();
 
                 var request = new AuthorizeRequest(Settings.AuthorizeEndpoint);
 
