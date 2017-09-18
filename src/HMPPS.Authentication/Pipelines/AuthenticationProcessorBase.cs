@@ -17,8 +17,12 @@ namespace HMPPS.Authentication.Pipelines
             // store claims into a secure cookie
             var jwtTokenService = new JwtTokenService();
             var jwtToken = jwtTokenService.GenerateJwtToken(claims);
+
+            var encryptionService = new EncryptionService();
+            var encryptedJwtToken = encryptionService.Encrypt(jwtToken);
+
             var authenticationCheckerCookie = new CookieHelper(Settings.AuthenticationCheckerCookieName, context);
-            authenticationCheckerCookie.SetValue(Settings.AuthenticationCheckerCookieKey, jwtToken);
+            authenticationCheckerCookie.SetValue(Settings.AuthenticationCheckerCookieKey, encryptedJwtToken);
             authenticationCheckerCookie.Save();
         }
 
@@ -29,11 +33,14 @@ namespace HMPPS.Authentication.Pipelines
                 return null;
 
             cookie.GetCookie();
-            var token = cookie.GetValue(Settings.AuthenticationCheckerCookieKey);
-            if (string.IsNullOrEmpty(token))
+            var encryptedJwtToken = cookie.GetValue(Settings.AuthenticationCheckerCookieKey);
+            if (string.IsNullOrEmpty(encryptedJwtToken))
                 return null;
 
-            var claims = new JwtTokenService().GetClaimsFromJwtToken(token);
+            var encryptionService = new EncryptionService();
+            var jwtToken = encryptionService.Decrypt(encryptedJwtToken);
+
+            var claims = new JwtTokenService().GetClaimsFromJwtToken(jwtToken);
             return new IdamData(claims);
         }
 
