@@ -1,8 +1,8 @@
 ﻿---
-ID: "80740ca6-2606-4c9e-b570-423592e1c555"
-Parent: "2fc1082e-9d68-4d54-bacd-bc182ce33519"
-Template: "2fc1082e-9d68-4d54-bacd-bc182ce33519"
-Path: /sitecore/templates/HMPPS/Pages/Sudoku Game Page/__Standard Values
+ID: "3e9612d5-2a78-4fb8-9c4f-6fb31df78f8e"
+Parent: "08025f51-6506-457a-b5d4-6e4a7fce0494"
+Template: "08025f51-6506-457a-b5d4-6e4a7fce0494"
+Path: /sitecore/templates/HMPPS/Pages/Neontroids Game Page/__Standard Values
 DB: master
 SharedFields:
 - ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
@@ -27,14 +27,11 @@ Languages:
               key="right-blocks"
               md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
             <r
-              id="{B3B46A78-3272-4C7F-A44D-7B18821078ED}"
+              id="{EC8FA10C-038A-4203-99FB-C7E99ED3FDE7}"
               ph="content"
               uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
           </d>
         </r>
-    - ID: "12cb5aad-c7f4-4007-a308-f4b710fce441"
-      Hint: Subtitle 1
-      Value: Moves in this game
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170908T103129Z
@@ -44,37 +41,22 @@ Languages:
     - ID: "39c75454-3597-4c25-883f-c641974fe5f8"
       Hint: Game Instruction Title
       Value: How to play
-    - ID: "3a4222da-2a4a-404f-a0de-0770dc74f73c"
-      Hint: Right Bold Text
-      Value: "Skill Level (0-20)"
-    - ID: "47fcdc22-6aba-4881-99ac-ba312c96fe35"
-      Hint: Left Bold Text
-      Value: Pawns get promoted to
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\e3_MihaelaR
-    - ID: "67645a04-d40e-4ccd-b4a3-645ad9dd04c8"
+    - ID: "6bcf23e8-0a67-42eb-ba69-ef166be2e354"
       Hint: Play Button Text
       Value: Play a new game
-    - ID: "6f62944d-9371-41c5-bc90-8d09c4d17492"
-      Hint: Rook Name
-      Value: Rook
-    - ID: "871300e1-7602-4dcb-80cd-fba80e52dbca"
-      Hint: Bishop Name
-      Value: Bishop
-    - ID: "9ef2e1df-7080-4817-87b9-35aea8774d60"
-      Hint: Knight Name
-      Value: Knight
     - ID: "a0c37d05-6021-448a-873e-7d08ffc3ed79"
       Hint: Game Instruction Text
       Value: |
         <p>Sudoku is a game that involves a grid of 81 squares, divided into nine blocks, each containing nine squares</p>
         <p>Each of the nine blocks has to contain the numbers 1-9, each number can only appear once in a row, column or box. Each vertical nine-square column, or horizontal nine-square line across, within the larger square, must also contain the numbers 1-9, without repetition or omission.</p>
         <p>Each sudoku puzzle has only one correct solution.</p>
-    - ID: "f2098cd4-1803-40a7-a7b2-c2395f8f8bce"
-      Hint: Queen Name
-      Value: Queen
-    - ID: "f3872646-2018-471f-b1f8-e3e00ad91d30"
-      Hint: Subtitle 2
-      Value: Edit and play a new game
+    - ID: "a5fe93e4-a69e-4026-a2f7-a79b60d87d5f"
+      Hint: Game Instruction Text
+      Value: 
+    - ID: "fe389108-1dfc-4beb-b9af-db4cf434a5d0"
+      Hint: Play Button Text
+      Value: Play Neontroids (opens full screen)
