@@ -21,8 +21,8 @@ namespace HMPPS.Authentication.Pipelines
             Sitecore.Security.Authentication.AuthenticationManager.Logout();
             DeleteIdamDataCookie(args.Context);
 
-            // Redirect the user back home - while we have it accept anonymous.
-            WebUtil.Redirect("/");
+            // Redirect the user to the SSO logout URL.
+            WebUtil.Redirect(Settings.LogoutEndpoint);
         }
     }
 }
