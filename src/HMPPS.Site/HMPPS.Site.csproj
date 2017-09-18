@@ -458,7 +458,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
+    <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
       <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
       <Name>HMPPS.MediaLibrary.CloudStorage</Name>
     </ProjectReference>
