@@ -68,5 +68,9 @@
     <Compile Include="Provider\CloudStorageBase.cs" />
     <Compile Include="Provider\CloudStorageProvider.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config" />
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
