@@ -41,12 +41,11 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             BlobRequestOptions interactiveRequestOption = new BlobRequestOptions()
             {
-                RetryPolicy = new LinearRetry(TimeSpan.FromMilliseconds(500), 3),
+                RetryPolicy = new LinearRetry(TimeSpan.FromMilliseconds(1000), 3),
                 // For Read-access geo-redundant storage, use PrimaryThenSecondary.
                 // Otherwise set this to PrimaryOnly.
-                LocationMode = LocationMode.PrimaryOnly,
-                // Maximum execution time based on the business use case. Maximum value up to 10 seconds.
-                MaximumExecutionTime = TimeSpan.FromSeconds(10)
+                // Write operations will only work on primary so we will use PrimaryOnly.
+                LocationMode = LocationMode.PrimaryOnly
             };
 
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
