@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Linq;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
@@ -14,7 +14,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            Log.Debug("Generating Thumbnails for uploaded File Based uploads", this);
+            Log.Debug("MediaStorageProvider - Generating Thumbnails for uploaded File Based uploads", this);
 
             var sw = new Stopwatch();
             sw.Start();
@@ -26,7 +26,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             }
 
             sw.Stop();
-            Log.Debug("Finished generating thumbnails: " + sw.Elapsed, this);
+            Log.Debug("MediaStorageProvider - Finished generating thumbnails: " + sw.Elapsed, this);
         }
     }
 }
