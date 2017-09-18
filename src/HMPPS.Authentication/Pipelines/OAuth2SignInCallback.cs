@@ -64,13 +64,6 @@ namespace HMPPS.Authentication.Pipelines
 
             var claims = tokenManager.ExtractClaims(tokenResponse, claimsPrincipal);
             
-            //TODO: Use an Owin auth context to record claims inc tokens in secure cookie and check them each request.
-            //var id = new ClaimsIdentity(claims, "Cookies");
-            //Request.GetOwinContext().Authentication.SignIn(id);
-
-            //TODO: When detect token has expired, attempt to renew with refresh token, or log out if this fails:
-            //var refreshedToken = tokenManager.RequestRefreshToken(tokenResponse.RefreshToken);
-
             return claims;
         }
     }
