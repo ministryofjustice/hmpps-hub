@@ -9,8 +9,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-
-
+using Microsoft.WindowsAzure.Storage.RetryPolicies;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -39,7 +38,19 @@ namespace HMPPS.MediaLibrary.AzureStorage
         private void Initialize()
         {
             CloudStorageAccount storageAccount = new CloudStorageAccount(new StorageCredentials(_storageAccountName, _storageAccountKey), true);
+
+            BlobRequestOptions interactiveRequestOption = new BlobRequestOptions()
+            {
+                RetryPolicy = new LinearRetry(TimeSpan.FromMilliseconds(500), 3),
+                // For Read-access geo-redundant storage, use PrimaryThenSecondary.
+                // Otherwise set this to PrimaryOnly.
+                LocationMode = LocationMode.PrimaryOnly,
+                // Maximum execution time based on the business use case. Maximum value up to 10 seconds.
+                MaximumExecutionTime = TimeSpan.FromSeconds(10)
+            };
+
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            blobClient.DefaultRequestOptions = interactiveRequestOption;
 
             _blobDefaultContainer = blobClient.GetContainerReference(_storageDefaultContainer);
 
