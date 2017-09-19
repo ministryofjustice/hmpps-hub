@@ -22,11 +22,11 @@ include('_includes/head.php'); ?>
       </div>
       <div class="games sudoku-board js-sudoku"></div>
       <div class="js-sudoku-alert">
-        <p>asdf</p>
+        <p>Alert</p>
       </div>
       <div class="content">
         <button class="js-sudoku-newgame button" type="button" name="button">Play a new game</button>
-        <h3>How to play</h3>
+        <h2 class="heading-large">How to play</h2>
         <p>Sudoku is a game that involves a grid of 81 squares, divided into nine blocks, each containing nine squares</p>
         <p>Each of the nine blocks has to contain the numbers 1-9, each number can only appear once in a row, column or box. Each vertical nine-square column, or horizontal nine-square line across, within the larger square, must also contain the numbers 1-9, without repetition or omission.</p>
         <p>Each sudoku puzzle has only one correct solution.</p>
