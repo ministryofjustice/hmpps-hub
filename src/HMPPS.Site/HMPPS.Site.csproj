@@ -398,6 +398,7 @@
       <DependentUpon>HMPPS.Authentication.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
