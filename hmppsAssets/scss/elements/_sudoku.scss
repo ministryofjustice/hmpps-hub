@@ -9,14 +9,33 @@
 	margin-bottom: 1em;
   width: 100%;
   display: block;
+  clear: fix;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.sudoku__alert{
+  display: none;
 }
 	/*cell (wrapper) contains both cell input and candidates div*/
 	.sudoku-board-cell {
-		display: inline-block;
+		display: block;
+    float: left;
 		position: relative;
 		border: 1px solid #ddd;
 		background: white;
 		max-width: 10%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    padding-bottom: 10%;
+    overflow: hidden;
+    line-height: 0;
 	}
 		/*rules for drawing the black lines dividing houses
 			-- specific for board size 9! need diff rules for diff board sizes
@@ -46,20 +65,22 @@
 			font-size: 14px;
 			font-size: 1.4rem;
 			text-align: center;
-			width: 4em;
+			width: 100%;
 			max-width: 100%;
-			height: 4em;
+      max-height: 100%;
+			//padding-bottom: calc(100% - 15px);
 			border: 0;
 			position: relative;
 			z-index: 1; /*on top of candidates*/
-      @include media (mobile) {
-        width: 3em;
-        height: 3em;
-  		}
-      @include media (desktop) {
-        width: 4em;
-        height: 4em;
-  		}
+      vertical-align: middle;
+      padding: 36% 0;
+      height: 0;
+      overflow: hidden;
+      padding: 50% 0;
+      line-height: 0;
+
+      //display: block;
+
 		}
 
 			/*highlight new input in board cell*/
@@ -85,11 +106,21 @@
 			line-height: 0;
 			text-align: justify;
 		}
-			.sudoku-board .candidates:after {
-				content: "";
-				display: inline-block;
-				width: 100%;
-			}
+
+		.sudoku-board .candidates:after {
+			content: "";
+			display: inline-block;
+			width: 100%;
+		}
+
+    .sudoku-board br {
+      visibility: hidden;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+
+    }
+
 		/* when board cells start to get narrower because of small screen,
 			reduce letter spacing for candidates to make them still fit*/
 		@include media (desktop) {

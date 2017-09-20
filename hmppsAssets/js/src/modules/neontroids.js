@@ -7,6 +7,7 @@ export default (function () {
       if (neontroidsEl) {
         trigger.addEventListener('click', (e) => {
           e.preventDefault();
+          trigger.setAttribute('disabled',true);
           HMPPS.neontroids.build();
           const scripts = ['/hmppsAssets/js/src/third-party/lib/sound-fx.js', '/hmppsAssets/js/src/third-party/lib/keyboard-io.js', '/hmppsAssets/js/src/third-party/lib/collisions.js', '/hmppsAssets/js/src/third-party/lib/asteroids-sprites.js', '/hmppsAssets/js/src/third-party/lib/asteroids-polygon.js', '/hmppsAssets/js/src/third-party/lib/display-text.js', '/hmppsAssets/js/src/third-party/lib/asteroids.js'];
 
@@ -22,7 +23,6 @@ export default (function () {
 
             const root = document.getElementsByTagName('html')[0];
             root.classList.add('modal-active');
-            //taken from asteroids.js
 
 
             const close = document.querySelector('.js-neontroids-close');
@@ -31,6 +31,8 @@ export default (function () {
             });
 
             const modal = document.querySelector('.modal');
+
+            modal.focus();
 
             if (document.body.classList.contains('modal-active')) {
               document.addEventListener('keyup', (e) => {
@@ -74,7 +76,7 @@ export default (function () {
       root.classList.remove('modal-active');
       body.classList.remove('modal-active');
       gameState = 'stopped';
-      console.log('aa');
+      trigger.setAttribute('disabled', false);
       stopGame();
     },
     ScriptLoader() {
@@ -93,7 +95,6 @@ export default (function () {
           }, false);
           script.addEventListener('error', () => {
             reject(script);
-            console.log('was rej');
           }, false);
 
           document.body.appendChild(script);

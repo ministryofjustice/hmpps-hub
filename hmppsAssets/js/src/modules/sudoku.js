@@ -10,7 +10,11 @@ export default (function () {
         difficulty: 'Easy',
         boardFinishedFn: function (data) {
           alert.classList.add('show');
-        }
+          alert.textContent('Congratulations! You solved it.')
+        },
+        boardErrorFn: function(data){
+          alert.textContent(data.msg);
+        },
       });
 
       newGame.addEventListener('click', (e) => {

@@ -21,7 +21,7 @@ include('_includes/head.php'); ?>
         <h1 class="pub-c-title__text">Sudoku</h1>
       </div>
       <div class="games sudoku-board js-sudoku"></div>
-      <div class="js-sudoku-alert">
+      <div class="js-sudoku-alert sudoku__alert">
         <p>Alert</p>
       </div>
       <div class="content">
