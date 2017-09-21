@@ -248,12 +248,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.Analytics.Tracking.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
-    <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
     <Content Include="App_Config\Include\zzDataFolder.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
@@ -310,54 +304,6 @@
     </None>
     <None Include="App_Config\ConnectionStrings.Release.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Analytics.Tracking.CD-Localhost.config">
-      <DependentUpon>Sitecore.Analytics.Tracking.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Analytics.Tracking.CD-Release.config">
-      <DependentUpon>Sitecore.Analytics.Tracking.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Analytics.Tracking.CMS-Localhost.config">
-      <DependentUpon>Sitecore.Analytics.Tracking.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Analytics.Tracking.CMS-Release.config">
-      <DependentUpon>Sitecore.Analytics.Tracking.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Analytics.Tracking.Debug.config">
-      <DependentUpon>Sitecore.Analytics.Tracking.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Analytics.Tracking.Release.config">
-      <DependentUpon>Sitecore.Analytics.Tracking.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Localhost.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Debug.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="App_Config\Include\Unicorn\zzzUnicorn.Debug.config">
