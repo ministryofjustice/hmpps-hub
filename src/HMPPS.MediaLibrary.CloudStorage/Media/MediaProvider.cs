@@ -6,21 +6,25 @@ using Sitecore.Resources.Media;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
+    //TODO: we should find the non Obsolete implementation
+#pragma warning disable CS0612 // Type or member is obsolete
     public class MediaProvider : Sitecore.Resources.Media.MediaProvider
     {
         public override string GetMediaUrl(MediaItem item)
         {
-            Assert.ArgumentNotNull((object)item, "item");
-            return this.GetMediaUrl(item, MediaUrlOptions.Empty);
+            Assert.ArgumentNotNull(item, "item");
+            return GetMediaUrl(item, MediaUrlOptions.Empty);
         }
 
         public override string GetMediaUrl(MediaItem item, MediaUrlOptions options)
         {
-            Assert.ArgumentNotNull((object)item, "item");
-            Assert.ArgumentNotNull((object)options, "options");
+            Assert.ArgumentNotNull(item, "item");
+            Assert.ArgumentNotNull(options, "options");
 
             if (!Settings.AlwaysIncludeCdnServerUrl || !item.FileBased || options.Thumbnail)
+            {
                 return base.GetMediaUrl(item, options);
+            }
 
             var helper = new MediaHelper(item);
             return helper.GetCloudBasedMediaUrl();
@@ -30,9 +34,12 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
         {
             var mi = new MediaItem(item);
             if (mi.FileBased && item[Constants.FieldNameConstants.MediaItem.UploadedToCloud] == "1")
+            {
                 return true;
+            }
 
             return base.HasMediaContent(item);
         }
     }
+#pragma warning restore CS0612 // Type or member is obsolete
 }
