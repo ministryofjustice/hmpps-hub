@@ -1,6 +1,4 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -24,7 +22,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,14 +42,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="EcmaScript.NET, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YUICompressor.NET.2.1.1.0\lib\NET20\EcmaScript.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook, Version=5.4.1.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
-      <HintPath>..\packages\Facebook.5.4.1.0\lib\net40-client\Facebook.dll</HintPath>
+    <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -60,74 +51,46 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\YUICompressor.NET.2.1.1.0\lib\NET20\Iesi.Collections.dll</HintPath>
+    <Reference Include="Kamsar.WebConsole, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kamsar.WebConsole.2.0.0\lib\net40\Kamsar.WebConsole.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Analyzers, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    <Reference Include="MicroCHAP, Version=1.2.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Core, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Core.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.FastVectorHighlighter, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.FastVectorHighlighter.dll</HintPath>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Highlighter, Version=2.3.2.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.PerfCounterCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Memory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Memory.dll</HintPath>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Queries, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Queries.dll</HintPath>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Regex, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Regex.dll</HintPath>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.WindowsServer.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.SimpleFacetedSearch, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SimpleFacetedSearch.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net.Contrib.Snowball, Version=2.0.0.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Snowball.dll</HintPath>
-    </Reference>
-    <Reference Include="Lucene.Net.Contrib.SpellChecker, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
-    </Reference>
-    <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, PublicKeyToken=eb89951a0d41ab86, processorArchitecture=MSIL">
-      <HintPath>..\packages\Markdown.1.14.6\lib\net45\MarkdownSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.WebApi.Extensions.Compression.Server, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Extensions.Compression.Server.2.0.6\lib\net45\Microsoft.AspNet.WebApi.Extensions.Compression.Server.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.TraceListener, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
@@ -136,550 +99,129 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.1.0.0\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.OData.Core, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.OData.Edm, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59d6d24383174ac4, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocation.1.0.0\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Spatial, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Bson.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.4\lib\net45\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Driver.dll</HintPath>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.4.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
-    </Reference>
     <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Abstractions.8.2.170614\lib\NET452\Sitecore.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Abstractions.8.2.170728\lib\NET452\Sitecore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.8.2.170614\lib\NET452\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Analytics.8.2.170728\lib\NET452\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Aggregation, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Aggregation.8.2.170614\lib\NET452\Sitecore.Analytics.Aggregation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Automation, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Automation.8.2.170614\lib\NET452\Sitecore.Analytics.Automation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Automation.Aggregation, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Automation.Aggregation.8.2.170614\lib\NET452\Sitecore.Analytics.Automation.Aggregation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Automation.MongoDB, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Automation.MongoDB.8.2.170614\lib\NET452\Sitecore.Analytics.Automation.MongoDB.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Analytics.Aggregation.8.2.170728\lib\NET452\Sitecore.Analytics.Aggregation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Core.8.2.170614\lib\NET452\Sitecore.Analytics.Core.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Analytics.Core.8.2.170728\lib\NET452\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.DataAccess, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.DataAccess.8.2.170614\lib\NET452\Sitecore.Analytics.DataAccess.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Analytics.DataAccess.8.2.170728\lib\NET452\Sitecore.Analytics.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Model, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Model.8.2.170614\lib\NET452\Sitecore.Analytics.Model.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Analytics.Model.8.2.170728\lib\NET452\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.MongoDB, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.MongoDB.8.2.170614\lib\NET452\Sitecore.Analytics.MongoDB.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.OmniChannel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.OmniChannel.8.2.170614\lib\NET452\Sitecore.Analytics.OmniChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Outcome, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Outcome.8.2.170614\lib\NET452\Sitecore.Analytics.Outcome.dll</HintPath>
+    <Reference Include="Sitecore.Analytics.MongoDB, Version=10.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Analytics.MongoDB.8.2.170728\lib\NET452\Sitecore.Analytics.MongoDB.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Processing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.170614\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.170728\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.RobotDetection, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.RobotDetection.8.2.170614\lib\NET452\Sitecore.Analytics.RobotDetection.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Analytics.Sql, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Analytics.Sql.8.2.170614\lib\NET452\Sitecore.Analytics.Sql.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Apps.Loader, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Apps.Loader.8.2.170614\lib\NET452\Sitecore.Apps.Loader.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Buckets, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Buckets.8.2.170614\lib\NET452\Sitecore.Buckets.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Buckets.Client, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Buckets.Client.8.2.170614\lib\NET452\Sitecore.Buckets.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.CES.8.2.170614\lib\NET452\Sitecore.CES.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES.DeviceDetection, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.CES.DeviceDetection.8.2.170614\lib\NET452\Sitecore.CES.DeviceDetection.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES.DeviceDetection.Rules, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.CES.DeviceDetection.Rules.8.2.170614\lib\NET452\Sitecore.CES.DeviceDetection.Rules.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES.GeoIp, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.CES.GeoIp.8.2.170614\lib\NET452\Sitecore.CES.GeoIp.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.CES.GeoIp.LegacyLocation, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.CES.GeoIp.LegacyLocation.8.2.170614\lib\NET452\Sitecore.CES.GeoIp.LegacyLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Cintel, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Cintel.8.2.170614\lib\NET452\Sitecore.Cintel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Cintel.Client, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Cintel.Client.8.2.170614\lib\NET452\Sitecore.Cintel.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Client.8.2.170614\lib\NET452\Sitecore.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Client.LicenseOptions, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Client.LicenseOptions.8.2.170614\lib\NET452\Sitecore.Client.LicenseOptions.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Cloud.Nexus, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Cloud.Nexus.8.2.170614\lib\NET452\Sitecore.Cloud.Nexus.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Cloud.RestClient, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Cloud.RestClient.8.2.170614\lib\NET452\Sitecore.Cloud.RestClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Commerce, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Commerce.8.2.170614\lib\NET452\Sitecore.Commerce.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Commerce.ExperienceAnalytics, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Commerce.ExperienceAnalytics.8.2.170614\lib\NET452\Sitecore.Commerce.ExperienceAnalytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Commerce.ExperienceProfile, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Commerce.ExperienceProfile.8.2.170614\lib\NET452\Sitecore.Commerce.ExperienceProfile.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.8.2.170614\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Analytics.8.2.170614\lib\NET452\Sitecore.ContentSearch.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Analytics.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Analytics.Client.8.2.170614\lib\NET452\Sitecore.ContentSearch.Analytics.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Azure, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Azure.8.2.170614\lib\NET452\Sitecore.ContentSearch.Azure.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Client, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Client.8.2.170614\lib\NET452\Sitecore.ContentSearch.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Linq.8.2.170614\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq.Lucene, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Linq.Lucene.8.2.170614\lib\NET452\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq.Solr, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.Linq.Solr.8.2.170614\lib\NET452\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.LuceneProvider, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.LuceneProvider.8.2.170614\lib\NET452\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.SolrProvider, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentSearch.SolrProvider.8.2.170614\lib\NET452\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentTesting.8.2.170614\lib\NET452\Sitecore.ContentTesting.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting.Intelligence, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentTesting.Intelligence.8.2.170614\lib\NET452\Sitecore.ContentTesting.Intelligence.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting.Model, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentTesting.Model.8.2.170614\lib\NET452\Sitecore.ContentTesting.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentTesting.Mvc, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ContentTesting.Mvc.8.2.170614\lib\NET452\Sitecore.ContentTesting.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ControlPanel, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ControlPanel.8.2.170614\lib\NET452\Sitecore.ControlPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.Aggregation, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.Aggregation.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.Aggregation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.Api, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.Api.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.Client, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.Client.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.Core.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.ReAggregation, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.ReAggregation.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.ReAggregation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceAnalytics.Reduce, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceAnalytics.Reduce.8.2.170614\lib\NET452\Sitecore.ExperienceAnalytics.Reduce.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceContentManagement.Administration, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceContentManagement.Administration.8.2.170614\lib\NET452\Sitecore.ExperienceContentManagement.Administration.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceEditor, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceEditor.8.2.170614\lib\NET452\Sitecore.ExperienceEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceEditor.Speak, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceEditor.Speak.8.2.170614\lib\NET452\Sitecore.ExperienceEditor.Speak.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceEditor.Speak.Ribbon, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceEditor.Speak.Ribbon.8.2.170614\lib\NET452\Sitecore.ExperienceEditor.Speak.Ribbon.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceExplorer.Business, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceExplorer.Business.8.2.170614\lib\NET452\Sitecore.ExperienceExplorer.Business.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ExperienceExplorer.Web, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ExperienceExplorer.Web.8.2.170614\lib\NET452\Sitecore.ExperienceExplorer.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.FXM, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.FXM.8.2.170614\lib\NET452\Sitecore.FXM.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.FXM.Client, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.FXM.Client.8.2.170614\lib\NET452\Sitecore.FXM.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.FXM.Service, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.FXM.Service.8.2.170614\lib\NET452\Sitecore.FXM.Service.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.FXM.Speak, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.FXM.Speak.8.2.170614\lib\NET452\Sitecore.FXM.Speak.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ItemWebApi, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ItemWebApi.8.2.170614\lib\NET452\Sitecore.ItemWebApi.dll</HintPath>
+    <Reference Include="Sitecore.Cloud.ApplicationInsights, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SC_Azure_8.2_u5\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Kernel.8.2.170614\lib\NET452\Sitecore.Kernel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.LaunchPad, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.LaunchPad.8.2.170614\lib\NET452\Sitecore.LaunchPad.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ListManagement, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ListManagement.8.2.170614\lib\NET452\Sitecore.ListManagement.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ListManagement.Analytics, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ListManagement.Analytics.8.2.170614\lib\NET452\Sitecore.ListManagement.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ListManagement.Client, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ListManagement.Client.8.2.170614\lib\NET452\Sitecore.ListManagement.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ListManagement.ContentSearch, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ListManagement.ContentSearch.8.2.170614\lib\NET452\Sitecore.ListManagement.ContentSearch.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ListManagement.Services, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.ListManagement.Services.8.2.170614\lib\NET452\Sitecore.ListManagement.Services.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Kernel.8.2.170728\lib\NET452\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Logging, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Logging.8.2.170614\lib\NET452\Sitecore.Logging.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Logging.8.2.170728\lib\NET452\Sitecore.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Logging.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Logging.Client.8.2.170614\lib\NET452\Sitecore.Logging.Client.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Logging.Client.8.2.170728\lib\NET452\Sitecore.Logging.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.8.2.170614\lib\NET452\Sitecore.Marketing.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Campaigns.Client, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Campaigns.Client.8.2.170614\lib\NET452\Sitecore.Marketing.Campaigns.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Campaigns.Services, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Campaigns.Services.8.2.170614\lib\NET452\Sitecore.Marketing.Campaigns.Services.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Client.8.2.170614\lib\NET452\Sitecore.Marketing.Client.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Marketing.8.2.170728\lib\NET452\Sitecore.Marketing.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Core.8.2.170614\lib\NET452\Sitecore.Marketing.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Definitions.MarketingAssets.Repositories, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.8.2.170614\lib\NET452\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Marketing.Search, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Search.8.2.170614\lib\NET452\Sitecore.Marketing.Search.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Marketing.Core.8.2.170728\lib\NET452\Sitecore.Marketing.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Taxonomy, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Marketing.Taxonomy.8.2.170614\lib\NET452\Sitecore.Marketing.Taxonomy.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Marketing.Taxonomy.8.2.170728\lib\NET452\Sitecore.Marketing.Taxonomy.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Mvc.8.2.170614\lib\NET452\Sitecore.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Mvc.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Mvc.Analytics.8.2.170614\lib\NET452\Sitecore.Mvc.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Mvc.DeviceSimulator, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Mvc.DeviceSimulator.8.2.170614\lib\NET452\Sitecore.Mvc.DeviceSimulator.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Mvc.ExperienceEditor, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Mvc.ExperienceEditor.8.2.170614\lib\NET452\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Nexus, Version=1.0.4425.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Nexus.8.2.170614\lib\NET452\Sitecore.Nexus.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Mvc.8.2.170728\lib\NET452\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.NVelocity, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.NVelocity.8.2.170614\lib\NET452\Sitecore.NVelocity.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Oracle, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Oracle.8.2.170614\lib\NET452\Sitecore.Oracle.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.PathAnalyzer, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.PathAnalyzer.8.2.170614\lib\NET452\Sitecore.PathAnalyzer.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.PathAnalyzer.Client, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.PathAnalyzer.Client.8.2.170614\lib\NET452\Sitecore.PathAnalyzer.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.PathAnalyzer.Services, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.PathAnalyzer.Services.8.2.170614\lib\NET452\Sitecore.PathAnalyzer.Services.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Publishing.WebDeploy, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Publishing.WebDeploy.8.2.170614\lib\NET452\Sitecore.Publishing.WebDeploy.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Security.AntiCsrf, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Security.AntiCsrf.8.2.170614\lib\NET452\Sitecore.Security.AntiCsrf.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SegmentBuilder, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SegmentBuilder.8.2.170614\lib\NET452\Sitecore.SegmentBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SequenceAnalyzer, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SequenceAnalyzer.8.2.170614\lib\NET452\Sitecore.SequenceAnalyzer.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Services.Client, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.Client.8.2.170614\lib\NET452\Sitecore.Services.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Services.Core, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.Core.8.2.170614\lib\NET452\Sitecore.Services.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Services.Infrastructure, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.Infrastructure.8.2.170614\lib\NET452\Sitecore.Services.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Services.Infrastructure.Sitecore, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.Infrastructure.Sitecore.8.2.170614\lib\NET452\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SessionProvider, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SessionProvider.8.2.170614\lib\NET452\Sitecore.SessionProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SessionProvider.Memory, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SessionProvider.Memory.8.2.170614\lib\NET452\Sitecore.SessionProvider.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SessionProvider.MongoDB, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SessionProvider.MongoDB.8.2.170614\lib\NET452\Sitecore.SessionProvider.MongoDB.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SessionProvider.Redis, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SessionProvider.Redis.8.2.170614\lib\NET452\Sitecore.SessionProvider.Redis.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.SessionProvider.Sql, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.SessionProvider.Sql.8.2.170614\lib\NET452\Sitecore.SessionProvider.Sql.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Shell.MarketingAutomation, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Shell.MarketingAutomation.8.2.170614\lib\NET452\Sitecore.Shell.MarketingAutomation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.8.2.170614\lib\NET452\Sitecore.Social.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Api, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Api.8.2.170614\lib\NET452\Sitecore.Social.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.8.2.170614\lib\NET452\Sitecore.Social.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Api, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.Api.8.2.170614\lib\NET452\Sitecore.Social.Client.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Common, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.Common.8.2.170614\lib\NET452\Sitecore.Social.Client.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Domain, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.Domain.8.2.170614\lib\NET452\Sitecore.Social.Client.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Mvc, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.Mvc.8.2.170614\lib\NET452\Sitecore.Social.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.PublishingService, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.PublishingService.8.2.170614\lib\NET452\Sitecore.Social.Client.PublishingService.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Client.Speak, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Client.Speak.8.2.170614\lib\NET452\Sitecore.Social.Client.Speak.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Configuration, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Configuration.8.2.170614\lib\NET452\Sitecore.Social.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Domain, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Domain.8.2.170614\lib\NET452\Sitecore.Social.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.ExperienceProfile.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.ExperienceProfile.Client.8.2.170614\lib\NET452\Sitecore.Social.ExperienceProfile.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Facebook.8.2.170614\lib\NET452\Sitecore.Social.Facebook.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook.Api, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Facebook.Api.8.2.170614\lib\NET452\Sitecore.Social.Facebook.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Facebook.Client.8.2.170614\lib\NET452\Sitecore.Social.Facebook.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Facebook.Client.Mvc, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Facebook.Client.Mvc.8.2.170614\lib\NET452\Sitecore.Social.Facebook.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.GooglePlus, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.GooglePlus.8.2.170614\lib\NET452\Sitecore.Social.GooglePlus.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.GooglePlus.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.GooglePlus.Client.8.2.170614\lib\NET452\Sitecore.Social.GooglePlus.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.GooglePlus.Client.Mvc, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.GooglePlus.Client.Mvc.8.2.170614\lib\NET452\Sitecore.Social.GooglePlus.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Infrastructure, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Infrastructure.8.2.170614\lib\NET452\Sitecore.Social.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Infrastructure.Logging, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Infrastructure.Logging.8.2.170614\lib\NET452\Sitecore.Social.Infrastructure.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Installation, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Installation.8.2.170614\lib\NET452\Sitecore.Social.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Klout.Api, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Klout.Api.8.2.170614\lib\NET452\Sitecore.Social.Klout.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Klout.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Klout.Client.8.2.170614\lib\NET452\Sitecore.Social.Klout.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.LinkedIn, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.LinkedIn.8.2.170614\lib\NET452\Sitecore.Social.LinkedIn.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.LinkedIn.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.LinkedIn.Client.8.2.170614\lib\NET452\Sitecore.Social.LinkedIn.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.LinkedIn.Client.Mvc, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.LinkedIn.Client.Mvc.8.2.170614\lib\NET452\Sitecore.Social.LinkedIn.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.NetworkProviders, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.NetworkProviders.8.2.170614\lib\NET452\Sitecore.Social.NetworkProviders.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SitecoreAccess, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.SitecoreAccess.8.2.170614\lib\NET452\Sitecore.Social.SitecoreAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SocialMarketer, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.SocialMarketer.8.2.170614\lib\NET452\Sitecore.Social.SocialMarketer.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SocialMarketer.Api, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.SocialMarketer.Api.8.2.170614\lib\NET452\Sitecore.Social.SocialMarketer.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.SocialMarketer.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.SocialMarketer.Client.8.2.170614\lib\NET452\Sitecore.Social.SocialMarketer.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Twitter.8.2.170614\lib\NET452\Sitecore.Social.Twitter.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter.Api, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Twitter.Api.8.2.170614\lib\NET452\Sitecore.Social.Twitter.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Twitter.Client.8.2.170614\lib\NET452\Sitecore.Social.Twitter.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Social.Twitter.Client.Mvc, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Social.Twitter.Client.Mvc.8.2.170614\lib\NET452\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Applications, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.Applications.8.2.170614\lib\NET452\Sitecore.Speak.Applications.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Client, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.Client.8.2.170614\lib\NET452\Sitecore.Speak.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Components, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.Components.8.2.170614\lib\NET452\Sitecore.Speak.Components.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Components.Guidance, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.Components.Guidance.8.2.170614\lib\NET452\Sitecore.Speak.Components.Guidance.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Components.Web, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.Components.Web.8.2.170614\lib\NET452\Sitecore.Speak.Components.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.ItemWebApi, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.ItemWebApi.8.2.170614\lib\NET452\Sitecore.Speak.ItemWebApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Web, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Speak.Web.8.2.170614\lib\NET452\Sitecore.Speak.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Update, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Update.8.2.170614\lib\NET452\Sitecore.Update.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Web, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Web.8.2.170614\lib\NET452\Sitecore.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Xdb.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Xdb.Client.8.2.170614\lib\NET452\Sitecore.Xdb.Client.dll</HintPath>
+      <HintPath>..\packages\Sitecore.NVelocity.8.2.170728\lib\NET452\Sitecore.NVelocity.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Xdb.Configuration, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Xdb.Configuration.8.2.170614\lib\NET452\Sitecore.Xdb.Configuration.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Xdb.Configuration.8.2.170728\lib\NET452\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Zip, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Zip.8.2.170614\lib\NET452\Sitecore.Zip.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Zip.8.2.170728\lib\NET452\Sitecore.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
     </Reference>
-    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    <Reference Include="Rainbow, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rainbow.Core.2.0.0\lib\net452\Rainbow.dll</HintPath>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Sc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rainbow.Storage.Sc.2.0.0\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Yaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rainbow.Storage.Yaml.2.0.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.8\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.4.0.8\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.0.8\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Extensions.Compression.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Extensions.Compression.Server.2.0.6\lib\net45\System.Net.Http.Extensions.Compression.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.OData, Version=5.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.OData.5.9.0\lib\net45\System.Web.OData.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
@@ -695,209 +237,242 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unicorn, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unicorn.Core.4.0.0\lib\net452\Unicorn.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Yahoo.Yui.Compressor, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YUICompressor.NET.2.1.1.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Config\Commands.config" />
-    <Content Include="App_Config\FieldTypes.config" />
-    <Content Include="App_Config\Icons.config" />
-    <Content Include="App_Config\Include\001.Sitecore.Speak.Important.config" />
-    <Content Include="App_Config\Include\CacheContainers.config" />
-    <Content Include="App_Config\Include\CES\Sitecore.CES.config" />
-    <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.CheckInitialization.config.disabled" />
-    <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.config" />
-    <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
-    <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.LegacyLocation.config" />
-    <Content Include="App_Config\Include\Channel\Sitecore.Analytics.Channel.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.ApplicationDependencies.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Azure.IndexConfiguration.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Client.RulePerformance.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Intelligence.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Lucene.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Mvc.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.PreemptiveScreenshot.config" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Processing.Aggregation.config.disabled" />
-    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.Solr.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\DataFolder.config" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.Aggregation.config.disabled" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.Client.config" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.ReAggregation.config.disabled" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.ReAggregation.Scheduling.config.disabled" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.Reduce.config.disabled" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.StorageProviders.config.disabled" />
-    <Content Include="App_Config\Include\ExperienceAnalytics\Sitecore.ExperienceAnalytics.WebAPI.config" />
-    <Content Include="App_Config\Include\ExperienceProfile\Sitecore.ExperienceProfile.Client.config" />
-    <Content Include="App_Config\Include\ExperienceProfile\Sitecore.ExperienceProfile.config" />
-    <Content Include="App_Config\Include\ExperienceProfile\Sitecore.ExperienceProfile.Reporting.config" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Azure.DomainsSearch.DefaultIndexConfiguration.config" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Azure.DomainsSearch.Index.Master.config" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Azure.DomainsSearch.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Bundle.config" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.config" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Lucene.DomainsSearch.DefaultIndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Lucene.DomainsSearch.Index.Master.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Lucene.DomainsSearch.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Solr.DomainsSearch.DefaultIndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Master.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Solr.DomainsSearch.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\FXM\Sitecore.FXM.Speak.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Azure.Index.List.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Azure.IndexConfiguration.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Client.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.DisableListLocking.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Lucene.Index.List.config.disabled" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Lucene.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Services.config" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Solr.Index.List.config.disabled" />
-    <Content Include="App_Config\Include\ListManagement\Sitecore.ListManagement.Solr.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\Marketing\Sitecore.Marketing.Campaigns.Client.config" />
-    <Content Include="App_Config\Include\Marketing\Sitecore.Marketing.Campaigns.Services.config" />
-    <Content Include="App_Config\Include\ScalabilitySettings.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Compatibility.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.ExcludeRobots.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.FieldTypes.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Model.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.MongoDb.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Outcome.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Processing.Aggregation.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Processing.Aggregation.ProcessingPools.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Processing.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Reporting.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.SessionSerialization.config" />
     <Content Include="App_Config\Include\Sitecore.Analytics.Tracking.config" />
-    <Content Include="App_Config\Include\Sitecore.Analytics.Tracking.Outcome.config" />
-    <Content Include="App_Config\Include\Sitecore.AntiCsrf.config" />
-    <Content Include="App_Config\Include\Sitecore.Buckets.config" />
-    <Content Include="App_Config\Include\Sitecore.Commerce.config" />
-    <Content Include="App_Config\Include\Sitecore.Commerce.ExperienceAnalytics.config" />
-    <Content Include="App_Config\Include\Sitecore.Commerce.ExperienceProfile.ReportingServer.config" />
-    <Content Include="App_Config\Include\Sitecore.ContentSearch.Analytics.config" />
-    <Content Include="App_Config\Include\Sitecore.ContentSearch.Azure.DefaultIndexConfiguration.config" />
-    <Content Include="App_Config\Include\Sitecore.ContentSearch.Azure.Index.Core.config" />
-    <Content Include="App_Config\Include\Sitecore.ContentSearch.Azure.Index.Master.config" />
-    <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
-    <Content Include="App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config" />
-    <Content Include="App_Config\Include\Sitecore.DefaultLanguage.config" />
-    <Content Include="App_Config\Include\Sitecore.Diagnostics.config" />
-    <Content Include="App_Config\Include\Sitecore.EngagementAutomation.config" />
-    <Content Include="App_Config\Include\Sitecore.EngagementAutomation.Processing.Aggregation.config" />
-    <Content Include="App_Config\Include\Sitecore.EngagementAutomation.Processing.Aggregation.ProcessingPools.config" />
-    <Content Include="App_Config\Include\Sitecore.EngagementAutomation.Processing.config" />
-    <Content Include="App_Config\Include\Sitecore.EngagementAutomation.TimeoutProcessing.config" />
-    <Content Include="App_Config\Include\Sitecore.EngagementAutomation.Tracking.config" />
-    <Content Include="App_Config\Include\Sitecore.ExperienceAnalytics.config" />
-    <Content Include="App_Config\Include\Sitecore.ExperienceContentManagement.Administration.config" />
-    <Content Include="App_Config\Include\Sitecore.ExperienceEditor.config" />
-    <Content Include="App_Config\Include\Sitecore.ExperienceEditor.Speak.Requests.config" />
-    <Content Include="App_Config\Include\Sitecore.ExperienceExplorer.config" />
-    <Content Include="App_Config\Include\Sitecore.ExperienceExplorer.Speak.Requests.config" />
-    <Content Include="App_Config\Include\Sitecore.Interning.config" />
-    <Content Include="App_Config\Include\Sitecore.ItemWebApi.config" />
-    <Content Include="App_Config\Include\Sitecore.JSNLog.config" />
-    <Content Include="App_Config\Include\Sitecore.LanguageFallback.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Azure.Index.Master.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Azure.IndexConfiguration.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Client.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Azure.Index.Master.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Azure.IndexConfiguration.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Search.config" />
-    <Content Include="App_Config\Include\Sitecore.Marketing.Taxonomy.config" />
-    <Content Include="App_Config\Include\Sitecore.Media.RequestProtection.config" />
-    <Content Include="App_Config\Include\Sitecore.Mvc.config" />
-    <Content Include="App_Config\Include\Sitecore.MvcAnalytics.config" />
-    <Content Include="App_Config\Include\Sitecore.MvcExperienceEditor.config" />
-    <Content Include="App_Config\Include\Sitecore.MvcSimulator.config" />
-    <Content Include="App_Config\Include\Sitecore.PathAnalyzer.Client.config" />
-    <Content Include="App_Config\Include\Sitecore.PathAnalyzer.config" />
-    <Content Include="App_Config\Include\Sitecore.PathAnalyzer.RemoteClient.config" />
-    <Content Include="App_Config\Include\Sitecore.PathAnalyzer.Services.config" />
-    <Content Include="App_Config\Include\Sitecore.PathAnalyzer.StorageProviders.config" />
-    <Content Include="App_Config\Include\Sitecore.Processing.config" />
-    <Content Include="App_Config\Include\Sitecore.SegmentBuilder.config" />
-    <Content Include="App_Config\Include\Sitecore.Services.Client.config" />
-    <Content Include="App_Config\Include\Sitecore.Shell.MarketingAutomation.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.AntiCsrf.SheerUI.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.Applications.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.Components.AntiCsrf.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.Components.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.Components.Mvc.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.ItemWebApi.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.LaunchPad.config" />
-    <Content Include="App_Config\Include\Sitecore.Speak.Mvc.config" />
-    <Content Include="App_Config\Include\Sitecore.Update.config" />
-    <Content Include="App_Config\Include\Sitecore.WebDAV.config" />
-    <Content Include="App_Config\Include\Sitecore.Xdb.config" />
-    <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config" />
-    <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.MarketingAssets.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Analytics.Model.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Azure.Index.Master.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Azure.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Azure.IndexConfiguration.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ContentSearch.Analytics.Facebook.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ExperienceProfile.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Facebook.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.GooglePlus.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Klout.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.LinkedIn.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.Index.Analytics.Facebook.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.Index.Master.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.Facebook.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.GooglePlus.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.LinkedIn.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.Twitter.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.PublishingService.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ScalabilitySettings.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.SocialMarketer.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Solr.Index.Master.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Solr.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Solr.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Twitter.config" />
-    <Content Include="App_Config\Include\Z.SwitchMasterToWeb\SwitchMasterToWeb.config.example" />
-    <Content Include="App_Config\Include\zzDataFolder.config" />
-    <Content Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.config" />
-    <Content Include="App_Config\LanguageDefinitions.config" />
-    <Content Include="App_Config\MimeTypes.config" />
-    <Content Include="App_Config\Portraits.config" />
-    <Content Include="App_Config\Prefetch\Common.config" />
-    <Content Include="App_Config\Prefetch\Core.config" />
-    <Content Include="App_Config\Prefetch\Master.config" />
-    <Content Include="App_Config\Prefetch\Webdb.config" />
-    <Content Include="App_Config\Prototypes.config" />
-    <Content Include="App_Config\Security\Domains.config" />
-    <Content Include="App_Config\Security\GlobalRoles.config" />
-    <Content Include="App_Config\Sitecore.config" />
-    <Content Include="App_Config\XamlSharp.config" />
-    <Content Include="layouts\Social\Connector\SocialLogin.ashx" />
+    <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="App_Config\Include\zzDataFolder.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="App_Config\Sitecore.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="App_Config\Include\HMPPS.Authentication.config" />
+    <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.HMPPS.config" />
+    <Content Include="App_Config\Include\Unicorn\zzzUnicorn.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="App_Config\ConnectionStrings.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\ConnectionStrings.CD-Localhost.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\ConnectionStrings.CD-Release.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\ConnectionStrings.CMS-Localhost.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\ConnectionStrings.CMS-Release.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\ConnectionStrings.Debug.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\ConnectionStrings.Release.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Release.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Localhost.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Debug.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Release.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Unicorn\zzzUnicorn.Debug.config">
+      <DependentUpon>zzzUnicorn.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Unicorn\zzzUnicorn.Release.config">
+      <DependentUpon>zzzUnicorn.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.CD-Localhost.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.CD-Release.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.CMS-Localhost.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.CMS-Release.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.CustomProfile.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.Debug.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.Release.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Debug.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Debug.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
+    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
+      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Release.config">
+      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CMS-Localhost.config">
+      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CMS-Release.config">
+      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.Debug.config">
+      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.Release.config">
+      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Sitecore.CD-Localhost.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Sitecore.CD-Release.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Sitecore.CMS-Localhost.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Sitecore.CMS-Release.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Sitecore.Debug.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Sitecore.Release.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Shared\ExperienceExplorerView.cshtml" />
+    <Content Include="bin\Auth\Newtonsoft.Json.dll" />
+    <Content Include="Views\Pages\Homepage.cshtml" />
+    <Content Include="Views\Shared\MvcLayout.cshtml" />
+    <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
+    <Content Include="Views\Partials\_CookieNotice.cshtml" />
+    <Content Include="Views\Partials\_Head.cshtml" />
+    <Content Include="Views\Partials\_Header.cshtml" />
+    <Content Include="Views\Partials\_Footer.cshtml" />
+    <Content Include="Views\Pages\BookSectionPage.cshtml" />
+    <Content Include="Views\Partials\_Breadcrumb.cshtml" />
+    <Content Include="Views\Pages\ChessGamePage.cshtml" />
+    <Content Include="Views\Pages\GameListingPage.cshtml" />
+    <Content Include="Views\Blocks\Global\RelatedLinksBlock.cshtml" />
+    <Content Include="Views\Pages\SudokuGamePage.cshtml" />
     <Content Include="Views\Web.config" />
+    <None Include="Properties\PublishProfiles\CD-Localhost.pubxml" />
+    <None Include="Properties\PublishProfiles\CMS-Localhost.pubxml" />
+    <None Include="Web.CD-Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.CMS-Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -906,37 +481,80 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Z.SwitchMasterToWeb\important.txt" />
-    <Content Include="layouts\QueryableRulesRunner.ascx" />
-    <Content Include="layouts\Sample Datasource Sublayout.ascx" />
-    <Content Include="layouts\Sample Inner Sublayout.ascx" />
-    <Content Include="layouts\Sample layout.aspx" />
-    <Content Include="layouts\Sample Sublayout.ascx" />
-    <Content Include="layouts\Social\Connector\Login with Facebook.ascx" />
-    <Content Include="layouts\Social\Connector\Login with Google.ascx" />
-    <Content Include="layouts\Social\Connector\Login with LinkedIn.ascx" />
-    <Content Include="layouts\Social\Connector\Login with Twitter.ascx" />
-    <Content Include="layouts\Social\Connector\Style.css" />
-    <Content Include="layouts\Social\Sharing\GooglePlusOneButton.ascx" />
-    <Content Include="layouts\Social\Sharing\LikeButton.ascx" />
-    <Content Include="layouts\Social\Sharing\LinkedInShareButton.ascx" />
-    <Content Include="layouts\Social\Sharing\SocialEvents.aspx" />
-    <Content Include="layouts\Social\Sharing\TweetButton.ascx" />
-    <Content Include="layouts\System\VIChecker.aspx" />
-    <Content Include="layouts\System\VisitorIdentification.ascx" />
-    <Content Include="layouts\System\VisitorIdentification.aspx" />
-    <Content Include="layouts\System\VisitorIdentification.js" />
-    <Content Include="layouts\System\VisitorIdentificationCss.aspx" />
-    <Content Include="layouts\xmlcontrol.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="..\..\hmppsAssets\**">
+      <Link>hmppsAssets\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
+    <Compile Include="App_Start\SslMongoDbOverride.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
+    <Compile Include="Controllers\Pages\GameListingPageController.cs" />
+    <Compile Include="Controllers\Pages\BookSectionPageController.cs" />
+    <Compile Include="Controllers\Pages\HomepageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ChessGamePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\GameListingPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="layouts\" />
+    <Folder Include="Views\Auth\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
+      <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
+      <Name>HMPPS.MediaLibrary.CloudStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Models\HMPPS.Models.csproj">
+      <Project>{53E7D82F-2335-4401-B970-777CA378709C}</Project>
+      <Name>HMPPS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
+      <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
+      <Name>HMPPS.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj">
+      <Project>{3e58a0d0-44f5-4039-9e17-ef4766d8f6f6}</Project>
+      <Name>HMPPS.MediaLibrary.AzureStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
+      <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>
+      <Name>HMPPS.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CMS-Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CD-Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -959,12 +577,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

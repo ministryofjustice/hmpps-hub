@@ -1,0 +1,25 @@
+﻿---
+ID: "eb32a1ce-0a92-4046-a576-1a5305a7e7fc"
+Parent: "9ff24706-eb27-4730-bc32-173a702aac72"
+Template: "9ff24706-eb27-4730-bc32-173a702aac72"
+Path: /sitecore/templates/HMPPS/Folders/Block Folders/Feature Block Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {9FF24706-EB27-4730-BC32-173A702AAC72}
+    {29D1D9A5-3E5A-4039-BD65-5A30EE0250F2}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T155543Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR

@@ -1,0 +1,32 @@
+﻿---
+ID: "5ca0feb8-a89d-43f8-b852-9a1b95bf09b6"
+Parent: "df774c7a-21be-44d4-ae48-51223ae8b8ad"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/HMPPS/Blocks/Global/Related Links Block
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/HMPPS/Blocks/Global/Related Links Block
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/Blocks/Global/RelatedLinksBlock.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: /sitecore/content/Global/HMPPS/Blocks/Related Link Blocks
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{D4DDB4C0-DB47-4B5F-8EF7-A7830184AAB6}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170915T132438Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
