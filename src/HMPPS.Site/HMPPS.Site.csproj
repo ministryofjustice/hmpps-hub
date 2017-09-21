@@ -248,10 +248,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.Analytics.Tracking.config" />
-    <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
     <Content Include="App_Config\Include\zzDataFolder.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
@@ -310,30 +306,6 @@
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Localhost.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Debug.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <None Include="App_Config\Include\Unicorn\zzzUnicorn.Debug.config">
       <DependentUpon>zzzUnicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -358,10 +330,6 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\zzDataFolder.CustomProfile.config">
-      <DependentUpon>zzDataFolder.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <None Include="App_Config\Include\zzDataFolder.Debug.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -374,6 +342,22 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Localhost.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Localhost.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Debug.config">
       <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -386,6 +370,22 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Localhost.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Localhost.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Release.config">
+      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Debug.config">
       <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -450,6 +450,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
+    <Content Include="Parameters.xml" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
@@ -466,7 +467,14 @@
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\CD-Localhost.pubxml" />
     <None Include="Properties\PublishProfiles\CMS-Localhost.pubxml" />
+    <None Include="Web.CD-Localhost.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.CD-Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.CMS-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.CMS-Release.config">
@@ -475,9 +483,11 @@
     </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -547,6 +557,26 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CD-Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CD-Localhost|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CMS-Localhost|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
