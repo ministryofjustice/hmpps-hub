@@ -251,32 +251,7 @@
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Analytics.Model.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Azure.Index.Master.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Azure.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Azure.IndexConfiguration.config" />
     <Content Include="App_Config\Include\Social\Sitecore.Social.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ContentSearch.Analytics.Facebook.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ExperienceProfile.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Facebook.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.GooglePlus.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Klout.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.LinkedIn.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.Index.Analytics.Facebook.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.Index.Master.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Lucene.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.Facebook.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.GooglePlus.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.LinkedIn.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ProfileMapping.Twitter.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.PublishingService.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.ScalabilitySettings.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.SocialMarketer.config" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Solr.Index.Master.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Solr.Index.Web.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Solr.IndexConfiguration.config.disabled" />
-    <Content Include="App_Config\Include\Social\Sitecore.Social.Twitter.config" />
     <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Release.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -372,31 +347,9 @@
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="layouts\QueryableRulesRunner.ascx" />
-    <Content Include="layouts\Sample Datasource Sublayout.ascx" />
-    <Content Include="layouts\Sample Inner Sublayout.ascx" />
-    <Content Include="layouts\Sample layout.aspx" />
-    <Content Include="layouts\Sample Sublayout.ascx" />
-    <Content Include="layouts\Social\Connector\SocialLogin.ashx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="layouts\Social\Connector\Login with Facebook.ascx" />
-    <Content Include="layouts\Social\Connector\Login with Google.ascx" />
-    <Content Include="layouts\Social\Connector\Login with LinkedIn.ascx" />
-    <Content Include="layouts\Social\Connector\Login with Twitter.ascx" />
-    <Content Include="layouts\Social\Connector\Style.css" />
-    <Content Include="layouts\Social\Sharing\GooglePlusOneButton.ascx" />
-    <Content Include="layouts\Social\Sharing\LikeButton.ascx" />
-    <Content Include="layouts\Social\Sharing\LinkedInShareButton.ascx" />
-    <Content Include="layouts\Social\Sharing\SocialEvents.aspx" />
-    <Content Include="layouts\Social\Sharing\TweetButton.ascx" />
-    <Content Include="layouts\System\VIChecker.aspx" />
-    <Content Include="layouts\System\VisitorIdentification.ascx" />
-    <Content Include="layouts\System\VisitorIdentification.aspx" />
-    <Content Include="layouts\System\VisitorIdentification.js" />
-    <Content Include="layouts\System\VisitorIdentificationCss.aspx" />
-    <Content Include="layouts\xmlcontrol.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
@@ -451,6 +404,7 @@
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="layouts\" />
     <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
