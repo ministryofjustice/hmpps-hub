@@ -45,21 +45,21 @@ include('_includes/head.php'); ?>
     <div class="column-third add-title-margin">
       <aside class="related-content" data-module="track-click" role="complementary">
         <h2 >
-          More Past, Present and Future
+          Title
         </h2>
         <nav role="navigation">
           <ul class="list">
               <li>
-              <a href="#test">more episodes</a>
+              <a href="#test">link</a>
               </li>
               <li>
-              <a href="#test">more episodes</a>
+              <a href="#test">link</a>
               </li>
               <li>
-              <a href="#test">more episodes</a>
+              <a href="#test">link</a>
               </li>
               <li>
-              <a href="#test">more episodes</a>
+              <a href="#test">link</a>
               </li>
           </ul>
         </nav>
