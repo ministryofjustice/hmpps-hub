@@ -89,6 +89,13 @@
             </a>
           </div>
         </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href="content-page.php"><img src="_dummy/img/unilink.png" alt="">
+            <h2 class="heading-medium">Link to content page</h2>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
