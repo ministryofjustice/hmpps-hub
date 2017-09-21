@@ -43,7 +43,7 @@ include('_includes/head.php'); ?>
       </div>
     </div>
     <div class="column-third add-title-margin">
-      <aside class="related-content" data-module="track-click" role="complementary">
+      <aside class="related-content" role="complementary">
         <h2 >
           Title
         </h2>
