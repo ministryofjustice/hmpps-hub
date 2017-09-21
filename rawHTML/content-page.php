@@ -19,7 +19,7 @@ include('_includes/head.php'); ?>
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="pub-c-title__text ">
+        <h1 class="pub-c-title__text">
           Page title
         </h1>
       </div>
