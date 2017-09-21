@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <!-- SQL -->
+  <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='core']/@connectionString" />
+  </parameter>
+  <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='master']/@connectionString" />
+  </parameter>
+  <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='web']/@connectionString" />
+  </parameter>
+  <!-- SQL END-->
+
+  <!-- MONGO -->
+  <parameter name="mongoAnalytics" description="mongoAnalytics" defaultValue="#{mongoAnalytics}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='analytics']/@connectionString" />
+  </parameter>
+  <parameter name="mongoLive" description="mongoLive" defaultValue="#{mongoLive}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='tracking.live']/@connectionString" />
+  </parameter>
+  <parameter name="mongoContact" description="mongoContact" defaultValue="#{mongoContact}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='tracking.contact']/@connectionString" />
+  </parameter>
+  <!-- MONGO END-->
+
+  <parameter name="reportingKey" description="reportingKey" defaultValue="#{reportingKey}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='reporting.apikey']/@connectionString" />
+  </parameter>
+  <parameter name="search" description="search" defaultValue="#{search}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='cloud.search']/@connectionString" />
+  </parameter>
+  <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='appinsights.instrumentationkey']/@connectionString" />
+  </parameter>
+  
+</parameters>

@@ -450,6 +450,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
+    <Content Include="Parameters.xml" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
