@@ -1,5 +1,6 @@
 using HMPPS.MediaLibrary.CloudStorage.Configuration;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using Sitecore.Abstractions;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
@@ -8,6 +9,11 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
     public class MediaProvider : Sitecore.Resources.Media.MediaProvider
     {
+
+        public MediaProvider(BaseFactory factory) : base(factory)
+        {
+        }
+
         public override string GetMediaUrl(MediaItem item)
         {
             Assert.ArgumentNotNull((object)item, "item");
