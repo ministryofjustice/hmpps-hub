@@ -1,5 +1,5 @@
 <?php
-$title = 'Radio by Genre';
+$title = 'Radio by genre';
 include('_includes/head.php'); ?>
 <?php include('_includes/header.php'); ?>
 
@@ -9,70 +9,35 @@ include('_includes/head.php'); ?>
   <div class="breadcrumbs">
     <ol>
       <li><a href="index.php">Home</a></li>
-      <li aria-current="page">Radio by Genre</li>
+      <li aria-current="page">Radio by genre</li>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+    <h1 class="heading-large">Radio by genre</h1>
 
-    <div class="browse">
-      <div class="browse-panes section-only" data-state="section" data-module="track-click" aria-busy="false">
-        <div id="section" class="section-pane with-sort pane" style="">
-          <div class="pane-inner alphabetical" style="">
-            <h1 tabindex="-1">Genres</h1>
-            <p class="sort-order" style="">A to Z</p>
-            <ul>
-              <li>
-                <a href="radio-two.php" class="">
-                  <h3>Bob and Beyond</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="radio-two.php" class="">
-                  <h3>Check up</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="radio-two.php" class="">
-                  <h3>Freedom inside</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="radio-two.php" class="">
-                  <h3>Hot 20</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="radio-two.php" class="">
-                  <h3>Past, Present and Future</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="radio-two.php" class="">
-                  <h3>Porridge</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                  <a href="radio-two.php" class="">
-                    <h3>Prison news</h3>
-                    <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                  </a>
-                </li>
-                <li>
-                    <a href="radio-two.php" class="">
-                      <h3>Prime time</h3>
-                      <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                    </a>
-                  </li>
-            </ul>
+    <div class="image-grid">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href="audio.php"><img src="https://dummyimage.com/300x200/000/0e6bf5" alt="">
+            <h2 class="heading-medium">Bob and Beyond</h2>
+            </a>
           </div>
         </div>
-
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href="audio.php"><img src="https://dummyimage.com/300x200/000/0e6bf5" alt="">
+            <h2 class="heading-medium">Check up</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href="audio.php"><img src="https://dummyimage.com/300x200/000/0e6bf5" alt="">
+            <h2 class="heading-medium">Freedom inside</h2>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </main><!-- / #content -->
