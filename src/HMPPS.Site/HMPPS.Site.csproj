@@ -286,15 +286,19 @@
     <Content Include="ApplicationInsights.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
+    <None Include="App_Config\ConnectionStrings.CD-Localhost.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\ConnectionStrings.CD-Release.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\ConnectionStrings.CMS-Release.config">
+    <None Include="App_Config\ConnectionStrings.CMS-Localhost.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\ConnectionStrings.CustomProfile.config">
+    <None Include="App_Config\ConnectionStrings.CMS-Release.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -306,15 +310,19 @@
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Release.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Localhost.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CustomProfile.config">
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -334,7 +342,15 @@
       <DependentUpon>zzzUnicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <None Include="App_Config\Include\zzDataFolder.CD-Localhost.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\zzDataFolder.CD-Release.config">
+      <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzDataFolder.CMS-Localhost.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -406,15 +422,19 @@
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <None Include="App_Config\Sitecore.CD-Localhost.config">
+      <DependentUpon>Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Sitecore.CD-Release.config">
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Sitecore.CMS-Release.config">
+    <None Include="App_Config\Sitecore.CMS-Localhost.config">
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Sitecore.CustomProfile.config">
+    <None Include="App_Config\Sitecore.CMS-Release.config">
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -451,6 +471,7 @@
     </None>
     <None Include="Web.CMS-Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
