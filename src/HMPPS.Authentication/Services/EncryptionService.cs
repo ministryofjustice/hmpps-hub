@@ -17,7 +17,7 @@ namespace HMPPS.Authentication.Services
             {
                 encryptedValue = MachineKeyEncryption.Encode(plainValue);
             }
-            catch (Exception e)
+            catch
             {
                 Log.Error(String.Format("HMPPS.Authentication.EncryptionService - Error trying to encrypt {0}", plainValue), this);
                 return encryptedValue;
