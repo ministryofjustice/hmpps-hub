@@ -21,6 +21,7 @@
           <li><a href="neontroids.php">Neontroids</a></li>
           <li><a href="video.php">Video</a></li>
           <li><a href="audio.php">Audio</a></li>
+          <li><a href="content-page.php">Content Page</a></li>
         </ul>
         </div>
 
