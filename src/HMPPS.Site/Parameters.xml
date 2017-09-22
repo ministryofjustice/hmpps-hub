@@ -36,5 +36,16 @@
   <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@key='appinsights.instrumentationkey']/@connectionString" />
   </parameter>
-  
+
+  <!-- MEDIA -->
+  <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@key='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+  </parameter>
+  <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@key='accountName']/" />
+  </parameter>
+  <parameter name="storageaccountkey" description="storageaccountkey" defaultValue="#{storageaccountkey}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@key='accountKey']/" />
+  </parameter>
+
 </parameters>
