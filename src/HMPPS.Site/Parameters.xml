@@ -3,49 +3,63 @@
   <!-- SQL -->
   <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
   </parameter>
   <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
   </parameter>
   <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
   </parameter>
+
   <!-- SQL END-->
 
   <!-- MONGO -->
   <parameter name="mongoAnalytics" description="mongoAnalytics" defaultValue="#{mongoAnalytics}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
   </parameter>
   <parameter name="mongoLive" description="mongoLive" defaultValue="#{mongoLive}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
   </parameter>
   <parameter name="mongoContact" description="mongoContact" defaultValue="#{mongoContact}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
   </parameter>
   <!-- MONGO END-->
 
   <parameter name="reportingKey" description="reportingKey" defaultValue="#{reportingKey}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apikey']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apikey']/@connectionString" />
   </parameter>
   <parameter name="search" description="search" defaultValue="#{search}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
   </parameter>
   <parameter name="redis" description="redis" defaultValue="#{redis}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
   </parameter>
   <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
   </parameter>
 
   <!-- MEDIA -->
   <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
   </parameter>
   <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
   </parameter>
   <parameter name="storageaccountkey" description="storageaccountkey" defaultValue="#{storageaccountkey}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
   </parameter>
 
 </parameters>
