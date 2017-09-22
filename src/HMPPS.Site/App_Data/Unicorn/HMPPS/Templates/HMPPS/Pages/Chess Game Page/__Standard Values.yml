@@ -47,7 +47,7 @@ Languages:
       Value: 20170908T103129Z
     - ID: "3a4222da-2a4a-404f-a0de-0770dc74f73c"
       Hint: Right Bold Text
-      Value: "Skill Level (0-20)"
+      Value: Choose your Skill level
     - ID: "47fcdc22-6aba-4881-99ac-ba312c96fe35"
       Hint: Left Bold Text
       Value: Pawns get promoted to
@@ -73,3 +73,6 @@ Languages:
     - ID: "f3872646-2018-471f-b1f8-e3e00ad91d30"
       Hint: Subtitle 2
       Value: Edit and play a new game
+    - ID: "f6fba462-21a7-4076-91c9-1dabb355529b"
+      Hint: Skill Level Label Text
+      Value: "Skill Level (0-20)"

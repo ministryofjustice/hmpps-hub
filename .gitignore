@@ -356,3 +356,19 @@ proxy.json
 /www/Parameters.xml
 /www/ApplicationInsights.config
 /cd-www/App_Data/diagnostics
+/hmppsAssets/css/hmpps.css
+/hmppsAssets/css/hmpps-ie8.css
+/hmppsAssets/css/hmpps-ie7.css
+/hmppsAssets/css/hmpps-ie6.css
+/hmppsAssets/js/application.js
+/www/App_Data/tools
+/www/App_Data/Unicorn
+/www/App_Data/viewstate
+/www/App_Data/license.xml
+/www/App_Data/debug
+/www/App_Data/diagnostics
+/www/App_Data/indexes
+/www/App_Data/logs
+/www/App_Data/mediaIndexing
+/www/App_Data/packages
+/www/App_Data/Submit Queue
