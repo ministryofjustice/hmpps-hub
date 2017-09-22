@@ -355,3 +355,4 @@ proxy.json
 /www/hmppsAssets
 /www/Parameters.xml
 /www/ApplicationInsights.config
+/cd-www/App_Data/diagnostics
