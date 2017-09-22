@@ -450,7 +450,33 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
-    <Content Include="Parameters.xml" />
+    <None Include="Parameters.Debug.xml">
+      <DependentUpon>Parameters.xml</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Parameters.Release.xml">
+      <DependentUpon>Parameters.xml</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Parameters.CMS-Release.xml">
+      <DependentUpon>Parameters.xml</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Parameters.CD-Release.xml">
+      <DependentUpon>Parameters.xml</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Parameters.CD-Localhost.xml">
+      <DependentUpon>Parameters.xml</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Parameters.CMS-Localhost.xml">
+      <DependentUpon>Parameters.xml</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="Parameters.xml">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
