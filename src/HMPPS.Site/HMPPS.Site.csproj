@@ -631,6 +631,7 @@
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\CD-Localhost.pubxml" />
     <None Include="Properties\PublishProfiles\CMS-Localhost.pubxml" />
+    <Content Include="Views\Pages\NeontroidsGamePage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -671,8 +672,11 @@
     <Compile Include="Controllers\Pages\GameListingPageController.cs" />
     <Compile Include="Controllers\Pages\BookSectionPageController.cs" />
     <Compile Include="Controllers\Pages\HomepageController.cs" />
+    <Compile Include="Controllers\Pages\NeontroidsGamePageController.cs" />
+    <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\NeontroidsGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ChessGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GameListingPageViewModel.cs" />
@@ -682,7 +686,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="layouts\" />
-    <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
