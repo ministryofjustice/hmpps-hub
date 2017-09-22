@@ -1,0 +1,69 @@
+@model HMPPS.Site.ViewModels.Pages.HomepageViewModel
+
+<main class="elements-index root-index" id="content" role="main" tabindex="-1">
+    <header class="homepage-top">
+        <div class="homepage-top-inner">
+            <div class="welcome-block">
+                <div class="inner-block floated-children">
+                    <div class="welcome-text">
+                        <div class="floated-inner-block">
+                            <h1>@Html.Sitecore().Field("Page Title")</h1>
+                            <h2 class="font-large">
+                                @if (Sitecore.Context.User.IsAuthenticated)
+                                {
+                                    @Sitecore.Context.User.Profile.FullName <a href="/logout" style="color:#ff6a00">Logout</a>
+                                }
+                                else
+                                {
+                                    <span>Anonymous - <a href="/login" style="color:#ff6a00">Login via IDAM</a></span>
+                                }
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="content-links">
+                        <div class="floated-inner-block content-links-inner">
+                            <h2>@Html.Sitecore().Field("Quick Links Title")</h2>
+                            <ul>
+                                <li>@Html.Sitecore().Field("Quick Link 1")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 2")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 3")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 4")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 5")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="site-wrapper">
+        <div class="at-a-glance">
+
+            <div class="grid-row">
+                <div class="column-one-third">
+                    <div class="data">
+                        <span class="data-item data-heading heading-xxlarge">&pound;37.60</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Balance Text")</span>
+                        <span class="data-item body-text">Last updated: today @@ 13:00</span>
+                    </div>
+                </div>
+
+                <div class="column-one-third">
+                    <div class="data">
+                        <span class="data-item data-heading heading-xxlarge">&pound;25.34</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Phone Credit Text")</span>
+                        <span class="data-item body-text">Last updated: today @@ 13:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image-grid">
+            <div class="grid-row">
+                @Html.Sitecore().Placeholder("feature-blocks-row-1")
+            </div>
+            <div class="grid-row">
+                @Html.Sitecore().Placeholder("feature-blocks-row-2")
+            </div>
+        </div>
+    </div>
+</main><!-- / #content -->

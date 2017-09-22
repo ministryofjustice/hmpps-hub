@@ -150,7 +150,7 @@ publish/
 *.azurePubxml
 # TODO: Comment the next line if you want to checkin your web deploy settings
 # but database connection strings (with potential passwords) will be unencrypted
-*.pubxml
+#*.pubxml
 *.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
@@ -289,13 +289,70 @@ __pycache__/
 *.xsd.cs
 
 proxy.json
-/www
-*.css
-/hmppsAssets/css/*.css
-/hmppsAssets/js/application.js
-/hmppsAssets/css
-/hmppsAssets/js/application.js
-/hmppsAssets/css/*.css
-/hmppsAssets/css/fonts/*.eot
-/hmppsAssets/css/images/*.png
-/hmppsAssets/js/*.js
+/www/App_Browsers
+/www/App_Config/Include/CES
+/www/App_Config/Include/Channel
+/www/App_Config/Include/ContentTesting
+/www/App_Config/Include/ExperienceAnalytics
+/www/App_Config/Include/ExperienceProfile
+/www/App_Config/Include/FXM
+/www/App_Config/Include/ListManagement
+/www/App_Config/Include/Marketing
+/www/App_Config/Include/Social
+/www/App_Config/Include/Z.SwitchMasterToWeb
+/www/App_Config/Include
+/www/App_Config/Prefetch
+/www/App_Config/Security
+/www/App_Config
+/www/App_Data/indexes
+/www/App_Data/logs
+/www/App_Data/tools/phantomjs
+/www/App_Data/viewstate
+/www/Areas/Social/Views
+/www/layouts
+/www/sitecore
+/www/sitecore modules/Web/ExperienceExplorer
+/www/sitecore_files
+/www/temp
+/www/Views
+/www/xsl
+/www/webedit.css
+/www/Web.config.Oracle
+/www/Web.config
+/www/Global.asax
+/www/default.js
+/www/default.htm.sitedown
+/www/default.css
+/www/Default.aspx
+/www/data/logs
+/www/App_Data/license.xml
+/cd-www/App_Browsers
+/cd-www/App_Config
+/cd-www/App_Data/indexes
+/cd-www/App_Data/logs
+/cd-www/App_Data/tools/phantomjs
+/cd-www/App_Data/viewstate
+/cd-www/App_Data/license.xml
+/cd-www/Areas/Social/Views
+/cd-www/hmppsAssets
+/cd-www/layouts
+/cd-www/sitecore
+/cd-www/sitecore modules/Web/ExperienceExplorer
+/cd-www/sitecore_files
+/cd-www/temp
+/cd-www/Views
+/cd-www/xsl
+/cd-www/webedit.css
+/cd-www/Web.config.Oracle
+/cd-www/Web.config
+/cd-www/Parameters.xml
+/cd-www/Global.asax
+/cd-www/default.js
+/cd-www/default.htm.sitedown
+/cd-www/default.css
+/cd-www/Default.aspx
+/cd-www/ApplicationInsights.config
+/www/hmppsAssets
+/www/Parameters.xml
+/www/ApplicationInsights.config
+/cd-www/App_Data/diagnostics

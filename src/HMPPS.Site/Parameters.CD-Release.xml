@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- For more information on using transformations 
+     see the web.config examples at http://go.microsoft.com/fwlink/?LinkId=214134. -->
+<parameters xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="" xdt:Locator="Match(name)" xdt:Transform="Remove">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
+  </parameter>
+</parameters>

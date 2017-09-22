@@ -9,7 +9,7 @@ namespace HMPPS.Site {
     public static class RazorGeneratorMvcStart {
         public static void Start() {
             var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {
-                UsePhysicalViewsIfNewer = HttpContext.Current.Request.IsLocal
+                UsePhysicalViewsIfNewer = System.Web.HttpContext.Current.Request.IsLocal
             };
 
             ViewEngines.Engines.Insert(0, engine);

@@ -1,0 +1,11 @@
+﻿
+<div class="column-one-third">
+    <div class="image-grid-item">
+        @Html.Sitecore().BeginField("Link", new { haschildren = true })
+            @Html.Sitecore().Field("Image")      
+            <h2 class="heading-medium">
+                @Html.Sitecore().Field("Title") 
+            </h2>
+        @Html.Sitecore().EndField()
+    </div>
+</div>
