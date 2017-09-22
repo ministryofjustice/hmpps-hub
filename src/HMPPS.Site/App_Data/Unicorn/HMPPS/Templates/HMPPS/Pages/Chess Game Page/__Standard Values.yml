@@ -12,6 +12,24 @@ SharedFields:
   Hint: __Masters
   Type: TreelistEx
   Value: 
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <p
+          uid="{E8F05ADE-987F-468E-88F3-558557582DD3}"
+          key="right-blocks"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
+        <r
+          id="{C02D4B41-959B-4776-AD75-A39B50267EBF}"
+          ph="content"
+          uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
+      </d>
+    </r>
 Languages:
 - Language: en
   Versions:
@@ -20,21 +38,7 @@ Languages:
     - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
       Hint: __Final Renderings
       Type: Layout
-      Value: |
-        <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <d
-            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
-            l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
-            <p
-              uid="{E8F05ADE-987F-468E-88F3-558557582DD3}"
-              key="right-blocks"
-              md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
-            <r
-              id="{C02D4B41-959B-4776-AD75-A39B50267EBF}"
-              ph="content"
-              uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
-          </d>
-        </r>
+      Value: 
     - ID: "12cb5aad-c7f4-4007-a308-f4b710fce441"
       Hint: Subtitle 1
       Value: Moves in this game
