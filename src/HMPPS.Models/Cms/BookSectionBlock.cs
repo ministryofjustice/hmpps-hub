@@ -1,19 +1,15 @@
-﻿using HMPPS.Models.Common;
+using HMPPS.Models.Cms.Base;
+using HMPPS.Models.Common;
 
 namespace HMPPS.Models.Cms
 {
-    public class BookSectionBlock
+    public class BookSectionBlock : SectionBlock
     {
-        public string Title { get; set; }
-        public Link Link { get; set; }
-        public Image Image { get; set; }
         public bool IsBookPage { get; set; }
         public File BookFile { get; set; }
 
         public BookSectionBlock()
         {
-            Link = new Link();
-            Image = new Image();
             BookFile = new File();
         }
     }
