@@ -76,6 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cms\Base\SectionBlock.cs" />
+    <Compile Include="Cms\RadioSectionBlock.cs" />
     <Compile Include="Cms\GameSectionBlock.cs" />
     <Compile Include="Cms\BookSectionBlock.cs" />
     <Compile Include="Common\File.cs" />
