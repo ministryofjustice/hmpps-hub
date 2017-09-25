@@ -35,10 +35,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
-      Hint: __Final Renderings
-      Type: Layout
-      Value: 
     - ID: "12cb5aad-c7f4-4007-a308-f4b710fce441"
       Hint: Subtitle 1
       Value: Moves in this game
