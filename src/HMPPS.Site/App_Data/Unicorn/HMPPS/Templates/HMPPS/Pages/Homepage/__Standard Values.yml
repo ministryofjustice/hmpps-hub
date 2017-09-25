@@ -31,6 +31,10 @@ SharedFields:
           uid="{DFDA4C4A-415A-4583-AA0D-42D74B9A209F}"
           key="feature-blocks-row-2"
           md="/sitecore/layout/Placeholder Settings/HMPPS/feature-blocks" />
+        <p
+          uid="{A02D9D0C-4137-4FE9-9675-62E1AEAA2962}"
+          key="feature-blocks-row-3"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/feature-blocks" />
         <r
           id="{8B907AEE-8268-4CED-9162-F776C76B6239}"
           ph="content"
@@ -42,10 +46,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
-      Hint: __Final Renderings
-      Type: Layout
-      Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170901T152749Z
