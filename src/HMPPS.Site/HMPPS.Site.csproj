@@ -257,7 +257,6 @@
     <Content Include="App_Config\Sitecore.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <Content Include="App_Config\Include\HMPPS.Authentication.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -353,6 +352,35 @@
     </None>
     <None Include="App_Config\Include\zzDataFolder.Release.config">
       <DependentUpon>zzDataFolder.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Localhost.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Release.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Localhost.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Release.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Release.config">
+      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
@@ -687,17 +715,17 @@
     <Folder Include="layouts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
+    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
+      <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
+      <Name>HMPPS.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
       <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
       <Name>HMPPS.MediaLibrary.CloudStorage</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.Models\HMPPS.Models.csproj">
       <Project>{53E7D82F-2335-4401-B970-777CA378709C}</Project>
       <Name>HMPPS.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
-      <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
-      <Name>HMPPS.Authentication</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj">
       <Project>{3e58a0d0-44f5-4039-9e17-ef4766d8f6f6}</Project>
@@ -735,8 +763,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CD-Localhost|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -745,8 +773,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CMS-Localhost|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>

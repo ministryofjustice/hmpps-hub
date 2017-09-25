@@ -9,8 +9,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-
-
+using Microsoft.WindowsAzure.Storage.RetryPolicies;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -39,7 +38,18 @@ namespace HMPPS.MediaLibrary.AzureStorage
         private void Initialize()
         {
             CloudStorageAccount storageAccount = new CloudStorageAccount(new StorageCredentials(_storageAccountName, _storageAccountKey), true);
+
+            BlobRequestOptions interactiveRequestOption = new BlobRequestOptions()
+            {
+                RetryPolicy = new LinearRetry(TimeSpan.FromMilliseconds(1000), 3),
+                // For Read-access geo-redundant storage, use PrimaryThenSecondary.
+                // Otherwise set this to PrimaryOnly.
+                // Write operations will only work on primary so we will use PrimaryOnly.
+                LocationMode = LocationMode.PrimaryOnly
+            };
+
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            blobClient.DefaultRequestOptions = interactiveRequestOption;
 
             _blobDefaultContainer = blobClient.GetContainerReference(_storageDefaultContainer);
 
@@ -64,6 +74,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             var blobContainer = GetCloudBlobContainer(containerName);
             CloudBlockBlob blob = blobContainer.GetBlockBlobReference(filename);
+            blob.Properties.ContentType = !string.IsNullOrEmpty(media.MimeType) ? media.MimeType : "application/octet-stream";
 
             using (Stream fileStream = media.GetMediaStream())
             {
@@ -72,8 +83,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             // extend file path with container name
             filename = AddContainerNameToFilePath(filename, containerName);
-
-            Log.Info("File successfully uploaded to Azure Blob Storage: " + filename, this);
+            Log.Audit("MediaStorageProvider - File successfully uploaded to Azure Blob Storage: " + filename, this);
 
             return filename;
         }
