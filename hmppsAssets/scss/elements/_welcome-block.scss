@@ -31,13 +31,15 @@
 
 
 .welcome-block .content-links-inner h2 {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.25;
-    font-weight: 400;
-    text-transform: none;
-    font-size-adjust: 0.5;
-    margin: 0;
+  @include core-19();
+
+  margin-top: em(10, 16);
+  margin-bottom: em(5, 16);
+
+  @include media(tablet) {
+    margin-top: em(20, 19);
+  }
+
 }
 
 .welcome-block .content-links-inner ul {
@@ -46,14 +48,8 @@
 }
 
 .welcome-block .content-links-inner li {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.14286;
-    font-weight: 700;
-    text-transform: none;
-    font-size-adjust: 0.525;
-    list-style: none;
-    margin: 5px 0;
+    @include bold-19();
+    margin-bottom: 0;
 }
 
 
@@ -95,7 +91,7 @@
   }
 
   .welcome-block .content-links-inner li {
-      @include bold-16;
+    margin-bottom: 30px;
   }
 
   .welcome-block .content-links-inner {
@@ -104,9 +100,9 @@
     margin-top: 30px;
   }
 
-  .welcome-block .content-links-inner h2 {
-    @include core-14;
-  }
+  // .welcome-block .content-links-inner h2 {
+  //   @include core-14;
+  // }
 
   .welcome-block .inner-block.floated-children {
       margin: 0 15px;
@@ -120,10 +116,10 @@
 
 @include media (desktop) {
   .welcome-block .content-links-inner ul {
-    margin:10px 0 0
+    margin:10px 0 0;
   }
   .welcome-block .content-links-inner h2 {
-    margin:5px 0 0
+    margin:5px 0 0;
   }
 
 }
