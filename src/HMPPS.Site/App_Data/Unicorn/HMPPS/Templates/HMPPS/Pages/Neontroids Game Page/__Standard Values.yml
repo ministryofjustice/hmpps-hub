@@ -1,0 +1,53 @@
+﻿---
+ID: "3e9612d5-2a78-4fb8-9c4f-6fb31df78f8e"
+Parent: "08025f51-6506-457a-b5d4-6e4a7fce0494"
+Template: "08025f51-6506-457a-b5d4-6e4a7fce0494"
+Path: /sitecore/templates/HMPPS/Pages/Neontroids Game Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: 
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <p
+          uid="{E8F05ADE-987F-468E-88F3-558557582DD3}"
+          key="right-blocks"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
+        <r
+          id="{EC8FA10C-038A-4203-99FB-C7E99ED3FDE7}"
+          ph="content"
+          uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170908T103129Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
+    - ID: "a5fe93e4-a69e-4026-a2f7-a79b60d87d5f"
+      Hint: Game Instruction Text
+      Value: 
+    - ID: "ce770caa-44d6-44ce-a19a-a23d1b830912"
+      Hint: Game Instruction Title
+      Value: How to play
+    - ID: "ced74a0a-a571-4551-a826-3ddf290ff80e"
+      Hint: Game Image
+      Value: 
+    - ID: "fe389108-1dfc-4beb-b9af-db4cf434a5d0"
+      Hint: Play Button Text
+      Value: Play Neontroids (opens full screen)

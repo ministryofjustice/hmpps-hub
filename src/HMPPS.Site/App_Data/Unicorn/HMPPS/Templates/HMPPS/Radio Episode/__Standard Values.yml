@@ -1,13 +1,17 @@
 ﻿---
-ID: "9ab61390-9aca-4448-bd70-e2e421afb970"
-Parent: "33aa031a-4ca9-4037-9445-05bcc78f333f"
-Template: "33aa031a-4ca9-4037-9445-05bcc78f333f"
-Path: /sitecore/templates/HMPPS/Blocks/Global/Related Links Block/__Standard Values
+ID: "89993416-b5ab-4a0d-842d-efdee691a482"
+Parent: "df561ff4-c6fe-4269-93c7-d8561e08c3d0"
+Template: "df561ff4-c6fe-4269-93c7-d8561e08c3d0"
+Path: /sitecore/templates/HMPPS/Radio Episode/__Standard Values
 DB: master
 SharedFields:
 - ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
   Hint: __Default workflow
   Value: "{FD363896-9E28-422D-B24B-7A5DA6D8B1B7}"
+- ID: "fd4e2050-186c-4375-8b99-e8a85dd7436e"
+  Hint: __Enable item fallback
+  Type: Checkbox
+  Value: 1
 Languages:
 - Language: en
   Versions:
@@ -15,11 +19,11 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170901T155731Z
+      Value: 20170925T101203Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\e3_MihaelaR
-    - ID: "fdbd4c6b-6f10-4370-aed4-50270c36e30b"
-      Hint: Title
+    - ID: "7b66010d-8f44-4a10-b2d8-9158d1f299ed"
+      Hint: Radio Episode Title
       Value: $name
