@@ -4,6 +4,7 @@
 import './govuk/details.polyfill';
 import './third-party/polyfills/bind';
 
+
 // libs
 // import './vendor/lib/jszip.min';
 // import './vendor/lib/epub.min';
@@ -20,6 +21,7 @@ import ereader from './modules/ereader';
 import chess from './modules/chess';
 import sudoku from './modules/sudoku';
 import neontroids from './modules/neontroids';
+import audio from './modules/audio';
 
 // set up namespace
 const HMPPS = window.HMPPS || {
@@ -27,6 +29,7 @@ const HMPPS = window.HMPPS || {
   chess,
   sudoku,
   neontroids,
+  audio
 };
 
 HMPPS.addCookieMessage = () => {
