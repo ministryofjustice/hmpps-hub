@@ -1,15 +1,26 @@
 using HMPPS.MediaLibrary.CloudStorage.Configuration;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using Sitecore.Abstractions;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
+using Microsoft.Extensions.DependencyInjection;
+using Sitecore.DependencyInjection;
+
 
 namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
-    //TODO: we should find the non Obsolete implementation
-#pragma warning disable CS0612 // Type or member is obsolete
+   
     public class MediaProvider : Sitecore.Resources.Media.MediaProvider
     {
+
+        public MediaProvider() : base(ServiceProviderServiceExtensions.GetRequiredService<BaseFactory>(ServiceLocator.ServiceProvider))
+        { }
+
+        public MediaProvider(BaseFactory factory) : base(factory)
+        {
+        }
+
         public override string GetMediaUrl(MediaItem item)
         {
             Assert.ArgumentNotNull(item, "item");
@@ -41,5 +52,4 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
             return base.HasMediaContent(item);
         }
     }
-#pragma warning restore CS0612 // Type or member is obsolete
 }
