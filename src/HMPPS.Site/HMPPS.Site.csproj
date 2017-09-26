@@ -173,6 +173,9 @@
     <Reference Include="Sitecore.NVelocity, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.NVelocity.8.2.170728\lib\NET452\Sitecore.NVelocity.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Support.183497">
+      <HintPath>..\lib\sitecore\Sitecore.Support.183497.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Xdb.Configuration, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Xdb.Configuration.8.2.170728\lib\NET452\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
@@ -467,6 +470,7 @@
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\zzz\Sitecore.Support.183497.config" />
     <None Include="App_Config\Sitecore.CD-Localhost.config">
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
