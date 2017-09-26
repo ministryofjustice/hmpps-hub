@@ -23,8 +23,8 @@ include('_includes/head.php'); ?>
           Bob and Beyond 22/01/17
         </h1>
 
-        <div class="audio-player">
-          <audio controls id="audio-player" class="video-js vjs-default-skin" controls preload="auto">
+        <div class="audio-player-wrap">
+          <audio controls id="audio-player" class="video-js audio-player vjs-default-skin" controls preload="auto">
             <source src="http://digital-hub-dev.northeurope.cloudapp.azure.com:11002/sites/default/files/audio/2017-02/170122%20Bob%20and%20Beyond.mp3" type="audio/mp3">
             <p class="vjs-no-js">
               To listen to this audio please enable JavaScript, and consider upgrading to a web browser that

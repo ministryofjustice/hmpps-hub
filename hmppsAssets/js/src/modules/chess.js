@@ -22,16 +22,24 @@ export default (function () {
       }
 
       game.setSkillLevel;
+      newGame();
 
       document.querySelector('#skillLevel').addEventListener('change', (e) => {
         game.setSkillLevel(parseInt(this.value, 10));
+        const form = e.target.parentNode;
+        // refactor
+        // if(e.currentTarget.value === null || e.currentTarget.value === ''){
+        //   form.querySelector('.error-message').style.cssText = "display: block;";
+        // }else{
+        //   form.classList.remove('form-group-error');
+        //   form.querySelector('.error-message').style.cssText = "display: none;";
+        //   newGame();
+        // }
       });
+
       document.querySelector('.js-newgame').addEventListener('click', (e) => {
         newGame();
       });
-
-      newGame();
-
 
     },
     engineGame(options) {

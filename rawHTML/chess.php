@@ -64,8 +64,11 @@ include('_includes/head.php'); ?>
                 <legend>
                   <h1 class="heading-medium">Choose your Skill level</h1>
                 </legend>
-                <div class="form-group">
-                  <label for="skillLevel" class="form-label-bold">Skill Level (0-20)</label>
+                <div class="form-group form-group-error">
+                  <label for="skillLevel" class="form-label-bold" id="error-skill-level">Skill Level (0-20)</label>
+                  <span class="error-message">
+                    This value has to be between 0 and 20
+                  </span>
                   <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
                 </div>
               </fieldset>
