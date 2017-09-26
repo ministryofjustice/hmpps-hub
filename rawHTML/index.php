@@ -30,7 +30,7 @@
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a href="books-one.php">
+            <a href="balance.php">
               <img src="_dummy/img/balance.png" alt="">
               <h2 class="heading-medium">Check Balance</h2>
             </a>

@@ -1,5 +1,5 @@
 <?php
-$title = 'Balance';
+$title = 'Check Balances';
 include('_includes/head.php'); ?>
 <?php include('_includes/header.php'); ?>
 
@@ -8,20 +8,19 @@ include('_includes/head.php'); ?>
   <div class="breadcrumbs">
     <ol>
       <li><a href="index.php">Home</a></li>
-      <li><a href="radio-one.php">Radio by Genre</a></li>
-      <li><a href="radio-two.php">Past, Present and Future</a></li>
-      <li aria-current="page">May</li>
+      <li aria-current="page">Check Balances</li>
     </ol>
   </div>
   <div class="pub-c-title">
-    <h1 class="pub-c-title__text ">
-      Page title
+    <h1 class="pub-c-title__text">
+      Check Balances
     </h1>
   </div>
   <div class="at-a-glance">
     <div class="grid-row">
       <div class="column-one-third">
         <div class="data">
+          <img class="data-img" src="_dummy/img/unilink.png" alt="">
           <span class="data-item data-heading heading-xxlarge">&pound;37.60</span>
           <span class="data-item bold-large">Account balance</span>
           <span class="data-item body-text">Last updated: today @ 13:00</span>
@@ -29,6 +28,7 @@ include('_includes/head.php'); ?>
       </div>
       <div class="column-one-third">
         <div class="data">
+          <img class="data-img" src="_dummy/img/unilink.png" alt="">
           <span class="data-item data-heading heading-xxlarge">&pound;25.34</span>
           <span class="data-item bold-large">Phone credit</span>
           <span class="data-item body-text">Last updated: today @ 13:00</span>
