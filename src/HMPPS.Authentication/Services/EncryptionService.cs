@@ -42,7 +42,7 @@ namespace HMPPS.Authentication.Services
             {
                 return MachineKeyEncryption.Decode(encryptedValue);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Log.Error(String.Format("HMPPS.Authentication.EncryptionService - Error trying to decrypt {0}", encryptedValue), this);
                 return null;
