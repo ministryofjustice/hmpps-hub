@@ -18,7 +18,9 @@ namespace HMPPS.Authentication.Pipelines
             if (Context.User.IsAuthenticated) return;
             if (!SiteManager.CanEnter(Context.Site.Name, Context.User)) return;
             if (Context.Item != null && Context.Item.Access.CanRead()) return;
-            if (Context.Item == null && args.PermissionDenied)
+            // TODO: wait for Sitecore Support fix for proper value of args.PermissionDenied, then revert to commented condition
+            // if (Context.Item == null && args.PermissionDenied)
+            if (Context.Item == null)
             {
                 // generate nonces and set temporary cookie
                 //TODO: consider setting this with claims in a fake owin auth session as per MVC Manual Code Flow Client (IdentityServer3.Samples)
