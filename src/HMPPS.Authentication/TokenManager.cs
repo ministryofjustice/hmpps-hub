@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens;
-using System.Linq;
 using System.Security.Claims;
 using System.ServiceModel.Security.Tokens;
 using System.Text;
 using System.Threading.Tasks;
-using IdentityModel;
 using IdentityModel.Client;
+using HMPPS.Authentication.Helpers;
 
 namespace HMPPS.Authentication
 {
@@ -113,13 +112,10 @@ namespace HMPPS.Authentication
             return response;
         }
         
-        public ClaimsPrincipal ValidateIdentityToken(string token, string nonce)
+        public ClaimsPrincipal ValidateIdentityToken(string token, string nonce = null)
         {
             if (string.IsNullOrWhiteSpace(token))
                 throw new InvalidOperationException("Could not validate identity token, empty or missing.");
-
-            if (string.IsNullOrWhiteSpace(nonce))
-                throw new InvalidOperationException("Could not validate nonce, empty or missing.");
 
             // Token is signed HS256 by the client secret 
             // see https://stackoverflow.com/a/25376518
@@ -140,7 +136,12 @@ namespace HMPPS.Authentication
             SecurityToken jwt;
             var principal = handler.ValidateToken(token, tokenValidationParameters, out jwt);
 
-            // validate nonce
+            // validate nonce only if parameter is provided
+            if (string.IsNullOrEmpty(nonce))
+            {
+                return principal;
+            }
+
             var nonceClaim = principal.FindFirst("nonce");
             if (nonceClaim == null)
             {
@@ -171,14 +172,13 @@ namespace HMPPS.Authentication
                 //claims.AddRange(await GetUserInfoClaimsAsync(response.AccessToken));
 
                 claims.Add(new Claim("access_token", response.AccessToken));
-                claims.Add(new Claim("expires_at", (DateTime.UtcNow.ToEpochTime() + response.ExpiresIn).ToDateTimeFromEpoch().ToString()));
+                claims.Add(new Claim("expires_at", ExpirationHelper.GetExpirationTimeString(response.ExpiresIn)));
             }
 
             if (!string.IsNullOrWhiteSpace(response.RefreshToken))
             {
                 claims.Add(new Claim("refresh_token", response.RefreshToken));
             }
-
             return claims;
         }
     }

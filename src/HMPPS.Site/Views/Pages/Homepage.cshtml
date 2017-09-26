@@ -11,7 +11,7 @@
                             <h2 class="font-large">
                                 @if (Sitecore.Context.User.IsAuthenticated)
                                 {
-                                    @Sitecore.Context.User.Profile.FullName <a href="/logout" style="color:#ff6a00">Logout</a>
+                                    @Sitecore.Context.User.Profile.FullName @*<a href="/logout" style="color:#ff6a00">Logout</a>*@
                                 }
                                 else
                                 {
@@ -24,11 +24,7 @@
                         <div class="floated-inner-block content-links-inner">
                             <h2>@Html.Sitecore().Field("Quick Links Title")</h2>
                             <ul>
-                                <li>@Html.Sitecore().Field("Quick Link 1")</li>
-                                <li>@Html.Sitecore().Field("Quick Link 2")</li>
-                                <li>@Html.Sitecore().Field("Quick Link 3")</li>
-                                <li>@Html.Sitecore().Field("Quick Link 4")</li>
-                                <li>@Html.Sitecore().Field("Quick Link 5")</li>
+                                <li>@Html.Sitecore().Field("Quick Link 1")</li>@*TODO: generate this link dynamically*@
                             </ul>
                         </div>
                     </div>
@@ -37,32 +33,15 @@
         </div>
     </header>
     <div class="site-wrapper">
-        <div class="at-a-glance">
-
-            <div class="grid-row">
-                <div class="column-one-third">
-                    <div class="data">
-                        <span class="data-item data-heading heading-xxlarge">&pound;37.60</span>
-                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Balance Text")</span>
-                        <span class="data-item body-text">Last updated: today @@ 13:00</span>
-                    </div>
-                </div>
-
-                <div class="column-one-third">
-                    <div class="data">
-                        <span class="data-item data-heading heading-xxlarge">&pound;25.34</span>
-                        <span class="data-item bold-large">@Html.Sitecore().Field("Phone Credit Text")</span>
-                        <span class="data-item body-text">Last updated: today @@ 13:00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="image-grid">
             <div class="grid-row">
                 @Html.Sitecore().Placeholder("feature-blocks-row-1")
             </div>
             <div class="grid-row">
                 @Html.Sitecore().Placeholder("feature-blocks-row-2")
+            </div>
+            <div class="grid-row">
+                @Html.Sitecore().Placeholder("feature-blocks-row-3")
             </div>
         </div>
     </div>

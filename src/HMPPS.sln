@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.MediaLibrary", "HMPPS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.MediaLibrary.AzureStorage", "HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj", "{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.MediaLibrary.CloudStorage", "HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj", "{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.MediaLibrary.CloudStorage", "HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj", "{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Utilities", "HMPPS.Utilities\HMPPS.Utilities.csproj", "{AFBD8C13-C752-4AFD-9EEC-6FD04B1E94F9}"
 EndProject
