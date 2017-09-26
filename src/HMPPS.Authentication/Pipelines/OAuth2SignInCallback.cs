@@ -1,23 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens;
-using System.Linq;
 using System.Security.Claims;
-using System.ServiceModel.Security.Tokens;
-using System.Text;
 using System.Web;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security;
-using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
 using Sitecore.Web;
-using IdentityModel.Client;
-using IdentityModel;
+using HMPPS.Authentication.Helpers;
 
 namespace HMPPS.Authentication.Pipelines
 {
-    public class OAuth2SignInCallback : HttpRequestProcessor
+    public class OAuth2SignInCallback : AuthenticationProcessorBase
     {
         public override void Process(HttpRequestArgs args)
         {
@@ -29,19 +23,23 @@ namespace HMPPS.Authentication.Pipelines
                 !args.Context.Request.Url.AbsoluteUri.StartsWith(Settings.SignInCallbackUrl)) return;
 
             // Validate token and obtain claims
-            var tempCookie = args.Context.Request.Cookies[Settings.TempCookieName];
-            var claims = ValidateCodeAndGetClaims(args.Context.Request.QueryString["code"], args.Context.Request.QueryString["state"], tempCookie);
+            //var tempCookie = args.Context.Request.Cookies[Settings.TempCookieName];
+            var tempCookie = new CookieHelper(Settings.TempCookieName, args.Context);
+            var tempHttpCookie = tempCookie.GetCookie();
+            var claims = ValidateCodeAndGetClaims(args.Context.Request.QueryString["code"], args.Context.Request.QueryString["state"], tempHttpCookie);
+
+            // store claims into a secure cookie
+            SaveIdamDataToCookie(claims, args.Context);
 
             // Build sitecore user and log in - this will persist until log out or session ends.
-            var user = BuildVirtualUser(claims);
+            var idamData = new IdamData(claims);
+            var user = BuildVirtualUser(idamData);
             AuthenticationManager.LoginVirtualUser(user);
 
-            if (tempCookie != null)
-            {
-                tempCookie.Expires = DateTime.Now.AddDays(-1);
-                args.Context.Response.Cookies.Add(tempCookie);
-            }
-            var targetUrl = tempCookie?.Values["returnUrl"] ?? "/";
+            var targetUrl = tempCookie.GetValue("returnUrl") ?? "/";
+
+            tempCookie.Delete();
+
             WebUtil.Redirect(targetUrl);
         }
 
@@ -65,41 +63,8 @@ namespace HMPPS.Authentication.Pipelines
             var claimsPrincipal = tokenManager.ValidateIdentityToken(tokenResponse.IdentityToken, nonce);
 
             var claims = tokenManager.ExtractClaims(tokenResponse, claimsPrincipal);
-
-            //TODO: Use an Owin auth context to record claims inc tokens in secure cookie and check them each request.
-            //var id = new ClaimsIdentity(claims, "Cookies");
-            //Request.GetOwinContext().Authentication.SignIn(id);
-
-            //TODO: When detect token has expired, attempt to renew with refresh token, or log out if this fails:
-            //var refreshedToken = tokenManager.RequestRefreshToken(tokenResponse.RefreshToken);
-
+            
             return claims;
-        }
-        
-        private User BuildVirtualUser(IEnumerable<Claim> claims)
-        {
-            var domain = "extranet";
-            var userId = claims.Single(c => c.Type.Equals(ClaimTypes.NameIdentifier)).Value;
-            var email = claims.SingleOrDefault(c => c.Type.Equals(ClaimTypes.Email))?.Value;
-            var roles = claims.Where(c => c.Type.Equals(ClaimTypes.Role)).Select(c => c.Value);
-
-            var username = $"{domain}\\{userId}";
-            var user = AuthenticationManager.BuildVirtualUser(username, true);
-            user.Profile.Email = email;
-            user.Profile.FullName = claims.Single(c => c.Type.Equals("name")).Value;
-            AssignUserRoles(user, roles);
-            return user;
-        }
-        
-        private void AssignUserRoles(User user, IEnumerable<string> roles)
-        {
-            user.RuntimeSettings.AddedRoles.Clear();
-            user.Roles.RemoveAll();
-
-            foreach (var role in roles.Where(Role.Exists))
-            {
-                user.Roles.Add(Role.FromName(role));
-            }
         }
     }
 }

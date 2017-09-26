@@ -27,5 +27,12 @@ namespace HMPPS.Authentication
         public static string TokenEndpoint => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.TokenEndpoint");
 
         public static string LogoutEndpoint => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.LogoutEndpoint");
+
+        public static string JwtTokenSecurityKey => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.JwtTokenSecurityKey");
+
+        public static string AuthenticationCheckerCookieName => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.AuthenticationChecker.CookieName");
+
+        public static string AuthenticationCheckerCookieKey => Sitecore.Configuration.Settings.GetSetting("HMPPS.Authentication.AuthenticationChecker.CookieKey");
+
     }
 }
