@@ -11,12 +11,12 @@
                     <h1 class="pub-c-title__text">@Html.Sitecore().Field("Page Title")</h1>
                 </div>
                 <div class="games sudoku-board js-sudoku"></div>
-                <div class="js-sudoku-alert">
-                   @Html.Sitecore().Field("Alert Text")
+                <div class="js-sudoku-alert sudoku__alert">
+                    @Html.Sitecore().Field("Alert Text")
                 </div>
                 <div class="content">
                     <button class="js-sudoku-newgame button" type="button" name="button">@Html.Sitecore().Field("Play Button Text")</button>
-                    <h2 class="heading-medium">@Html.Sitecore().Field("Game Instruction Title")</h2>
+                    <h2 class="heading-large">@Html.Sitecore().Field("Game Instruction Title")</h2>
                     @Html.Sitecore().Field("Game Instruction Text")
                 </div>
             </div>

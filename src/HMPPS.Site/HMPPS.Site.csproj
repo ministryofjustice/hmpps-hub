@@ -442,6 +442,7 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config" />
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -490,127 +491,6 @@
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="App_Data\Unicorn\HMPPS\Layouts\HMPPS.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Layouts\HMPPS\MvcLayout.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS\feature-blocks.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS\right-blocks.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global\Feature Block.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global\Related Links Block.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Book Section Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Chess Game Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Game Listing Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Homepage.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Sudoku Game Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\feature block.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\related links block.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Browser Title.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Navigation Title.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Page Description.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Page Title.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Show In Navigation.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content\Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content\Link.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content\Title.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 1.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 2.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 3.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 4.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 5.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Title.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Page Specific.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Feature Block Folder.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Feature Block Folder\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Related Links Block Folder.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Related Links Block Folder\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Settings.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Settings\Browser Title Format.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\Content\Book File.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\Content\Thumbnail Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page\Content\Thumbnail Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Content\Thumbnail Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Bishop Name.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Knight Name.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Left Bold Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Play Button Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Queen Name.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Right Bold Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Rook Name.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 1.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 2.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Game Listing Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Game Listing Page\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Game Listing Page\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Content\Account Balance Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Content\Phone Credit Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Link 1.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Link 2.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Link 3.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Link 4.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Link 5.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Links Title.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Content\Thumbnail Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Alert Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Game Instruction Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Play Button Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\__Standard Values.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Approved.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Approved\Auto Publish.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve with Test.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve with Test\Launch Create Test Dialog.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve with Test\Validation Action.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve\Validation Action.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Reject.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\Submit.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave\Auto Submit Action.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -659,6 +539,7 @@
     <None Include="Properties\PublishProfiles\CD-Localhost.pubxml" />
     <None Include="Properties\PublishProfiles\CMS-Localhost.pubxml" />
     <Content Include="Views\Pages\NeontroidsGamePage.cshtml" />
+    <Content Include="Views\Pages\RadioSectionPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -695,6 +576,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\SslMongoDbOverride.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\RadioSectionPageController.cs" />
     <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
     <Compile Include="Controllers\Pages\GameListingPageController.cs" />
     <Compile Include="Controllers\Pages\BookSectionPageController.cs" />
@@ -703,6 +585,7 @@
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\NeontroidsGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ChessGamePageViewModel.cs" />
@@ -712,6 +595,7 @@
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="layouts\" />
   </ItemGroup>
   <ItemGroup>
