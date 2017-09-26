@@ -540,6 +540,7 @@
     <None Include="Properties\PublishProfiles\CMS-Localhost.pubxml" />
     <Content Include="Views\Pages\NeontroidsGamePage.cshtml" />
     <Content Include="Views\Pages\RadioSectionPage.cshtml" />
+    <Content Include="Views\Pages\GeneralContentPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -576,6 +577,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\SslMongoDbOverride.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\GeneralContentPageController.cs" />
     <Compile Include="Controllers\Pages\RadioSectionPageController.cs" />
     <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
     <Compile Include="Controllers\Pages\GameListingPageController.cs" />
@@ -585,6 +587,7 @@
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\NeontroidsGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />
