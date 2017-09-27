@@ -8,6 +8,11 @@ export default (function () {
       if (!chess) {
         return false;
       }
+      const form = document.querySelector('.js-chess .form-group-error');
+      form.classList.remove('form-group-error');
+      const errorMsg = form.querySelector('.error-message');
+      errorMsg.style.cssText = 'display: none;';
+
       const game = HMPPS.chess.engineGame();
       const newGame = function newGame() {
         // const baseTime = parseFloat($('#timeBase').val()) * 60;
@@ -26,15 +31,15 @@ export default (function () {
 
       document.querySelector('#skillLevel').addEventListener('change', (e) => {
         game.setSkillLevel(parseInt(this.value, 10));
-        const form = e.target.parentNode;
         // refactor
-        // if(e.currentTarget.value === null || e.currentTarget.value === ''){
-        //   form.querySelector('.error-message').style.cssText = "display: block;";
-        // }else{
-        //   form.classList.remove('form-group-error');
-        //   form.querySelector('.error-message').style.cssText = "display: none;";
-        //   newGame();
-        // }
+        if (e.currentTarget.value === null || e.currentTarget.value === '') {
+          form.classList.add('form-group-error');
+          errorMsg.style.cssText = 'display: block;';
+        } else {
+          form.classList.remove('form-group-error');
+          errorMsg.style.cssText = 'display: none;';
+          newGame();
+        }
       });
 
       document.querySelector('.js-newgame').addEventListener('click', (e) => {
