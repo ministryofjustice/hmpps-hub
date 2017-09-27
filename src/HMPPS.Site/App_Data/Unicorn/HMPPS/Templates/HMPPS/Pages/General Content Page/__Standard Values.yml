@@ -1,0 +1,41 @@
+﻿---
+ID: "9da9949e-6c3a-4b7d-9d8d-d28ba276c7d7"
+Parent: "74e2b01c-18f1-4fe5-a9be-3d6b5afb2faa"
+Template: "74e2b01c-18f1-4fe5-a9be-3d6b5afb2faa"
+Path: /sitecore/templates/HMPPS/Pages/General Content Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{74E2B01C-18F1-4FE5-A9BE-3D6B5AFB2FAA}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <p
+          uid="{6520F367-6ECF-4740-8B4B-9B5776984F47}"
+          key="right-blocks"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
+        <r
+          id="{673E5226-CDC9-4F78-A153-C69B1F6D63A9}"
+          ph="content"
+          uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170908T103129Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
