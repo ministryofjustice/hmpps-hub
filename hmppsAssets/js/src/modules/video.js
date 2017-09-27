@@ -1,9 +1,9 @@
 export default (function () {
   return {
     init: function init() {
-      const myPlayer = document.querySelector('.video-js.audio-player');
+      const myPlayer = document.querySelector('.video-js.custom-video');
       if (myPlayer) {
-        HMPPS.videojs('audio-player', {
+        HMPPS.videojs('video', {
           controls: true,
           autoplay: false,
           preload: 'auto',
