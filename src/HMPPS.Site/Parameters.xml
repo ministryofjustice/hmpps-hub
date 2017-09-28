@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <parameters>
+<!-- Sitecore Xdb -->
+  <parameter name="repServerUrl" description="repServerUrl" defaultValue="#{repServerUrl}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\Sitecore.Xdb.Remote.Client\.config$" match="/configuration/sitecore/httpTransportFactory/param[@desc='serviceUrl']/text()" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\Sitecore.Xdb.Remote.Client\.config$" match="/configuration/sitecore/httpTransportFactory/param[@desc='serviceUrl']/text()" />
+  </parameter>
+  <!--END Sitecore-->
+
+
+  
   <!-- SQL -->
   <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
