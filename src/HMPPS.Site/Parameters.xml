@@ -62,4 +62,45 @@
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
   </parameter>
 
+  <!--SSO-->
+  <parameter name="ssocallbackurl" description="ssocallbackurl" defaultValue="#{ssocallbackurl}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.SignInCallbackUrl']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.SignInCallbackUrl']/@value" />
+  </parameter>
+  <parameter name="ssologouturl" description="ssologouturl" defaultValue="#{ssologouturl}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutUrl']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutUrl']/@value" />
+  </parameter>
+  <parameter name="ssoclientid" description="ssoclientid" defaultValue="#{ssoclientid}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientId']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientId']/@value" />
+  </parameter>
+  <parameter name="ssoclientsecret" description="ssoclientsecret" defaultValue="#{ssoclientsecret}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientSecret']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientSecret']/@value" />
+  </parameter>
+  <parameter name="ssoscope" description="ssoscope" defaultValue="#{ssoscope}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.Scope']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.Scope']/@value" />
+  </parameter>
+  <parameter name="ssovalidissuer" description="ssovalidissuer" defaultValue="#{ssovalidissuer}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ValidIssuer']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ValidIssuer']/@value" />
+  </parameter>
+  <parameter name="ssoaauthorizeendpoint" description="ssoaauthorizeendpoint" defaultValue="#{ssoaauthorizeendpoint}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
+  </parameter>
+  <parameter name="ssotokenendpoint" description="ssotokenendpoint" defaultValue="#{ssotokenendpoint}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TokenEndpoint']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TokenEndpoint']/@value" />
+  </parameter>
+  <parameter name="ssologoutendpoint" description="ssologoutendpoint" defaultValue="#{ssologoutendpoint}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutEndpoint']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutEndpoint']/@value" />
+  </parameter>
+  <parameter name="ssosecuritykey" description="ssosecuritykey" defaultValue="#{ssosecuritykey}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
+  </parameter>
 </parameters>
