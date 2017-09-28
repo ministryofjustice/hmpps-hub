@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HMPPS.Authentication.Services;
+using System;
 
 namespace HMPPS.Authentication.Tests
 {
@@ -27,7 +28,7 @@ namespace HMPPS.Authentication.Tests
             // Exception expected: 
             var nomisApiService = CreateNomisApiService();
 
-            Assert.ThrowsException<System.Net.Http.HttpRequestException>(() => nomisApiService.GetPrisonerLocationDetails("A1417AEx"));
+            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A1417AEx"));
         }
 
         private NomisApiService CreateNomisApiService()
