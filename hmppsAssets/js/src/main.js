@@ -8,6 +8,7 @@ import './third-party/polyfills/bind';
 // libs
 // import './vendor/lib/jszip.min';
 // import './vendor/lib/epub.min';
+import videojs from 'video.js';
 
 // import styles
 import '../../scss/hmpps.scss';
@@ -22,6 +23,7 @@ import chess from './modules/chess';
 import sudoku from './modules/sudoku';
 import neontroids from './modules/neontroids';
 import audio from './modules/audio';
+import video from './modules/video';
 
 // set up namespace
 const HMPPS = window.HMPPS || {
@@ -29,7 +31,9 @@ const HMPPS = window.HMPPS || {
   chess,
   sudoku,
   neontroids,
-  audio
+  audio,
+  videojs,
+  video
 };
 
 HMPPS.addCookieMessage = () => {

@@ -2,7 +2,7 @@ export default (function () {
   return {
     init: function init() {
       const neontroidsEl = document.querySelector('.js-neontroids');
-      const trigger = document.querySelector('.js-neontroids-trigger');
+      let trigger = document.querySelector('.js-neontroids-trigger');
 
       if (neontroidsEl) {
         trigger.addEventListener('click', (e) => {
@@ -27,7 +27,7 @@ export default (function () {
 
             const close = document.querySelector('.js-neontroids-close');
             close.addEventListener('click', () => {
-              HMPPS.neontroids.destroy();
+              HMPPS.neontroids.destroy(trigger);
             });
 
             const modal = document.querySelector('.modal');
@@ -37,7 +37,7 @@ export default (function () {
             if (document.body.classList.contains('modal-active')) {
               document.addEventListener('keyup', (e) => {
                 if ((e.keyCode || e.which) === 27) {
-                  HMPPS.neontroids.destroy();
+                  HMPPS.neontroids.destroy(trigger);
                 }
               });
             }
@@ -68,7 +68,7 @@ export default (function () {
       modal.innerHTML = canvas;
       document.body.appendChild(modal)
     },
-    destroy(){
+    destroy(trigger){
       const root = document.getElementsByTagName('html')[0];
       const modal = document.querySelector('.modal');
       const body = document.body;
@@ -76,7 +76,7 @@ export default (function () {
       root.classList.remove('modal-active');
       body.classList.remove('modal-active');
       gameState = 'stopped';
-      trigger.setAttribute('disabled', false);
+      trigger.removeAttribute('disabled');
       stopGame();
     },
     ScriptLoader() {
