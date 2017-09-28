@@ -587,8 +587,6 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Radio Episode Folder\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Settings.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Settings\Browser Title Format.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page.yml" />
@@ -708,6 +706,11 @@
     <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Insert Link.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Italic.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Underline.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Browser Title Format.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Cookie Notice Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Logo Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Skip Link Text.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -742,10 +745,6 @@
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
-    <Content Include="Views\Partials\_CookieNotice.cshtml" />
-    <Content Include="Views\Partials\_Head.cshtml" />
-    <Content Include="Views\Partials\_Header.cshtml" />
-    <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Pages\BookSectionPage.cshtml" />
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
     <Content Include="Views\Pages\ChessGamePage.cshtml" />
@@ -758,6 +757,8 @@
     <Content Include="Views\Pages\NeontroidsGamePage.cshtml" />
     <Content Include="Views\Pages\RadioSectionPage.cshtml" />
     <Content Include="Views\Pages\GeneralContentPage.cshtml" />
+    <Content Include="Views\Partials\_Footer.cshtml" />
+    <Content Include="Views\Partials\_Head.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
