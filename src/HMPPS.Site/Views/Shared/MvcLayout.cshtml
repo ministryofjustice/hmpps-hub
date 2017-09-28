@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 @using Sitecore.Mvc
 @using Sitecore.Mvc.Analytics.Extensions
+@using HMPPS.Site.ViewModels.Partials
+
+@{
+    var headModel = new HeadViewModel();
+}
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="en">
@@ -9,7 +14,7 @@
     @Html.Sitecore().VisitorIdentification()
 
 
-    @Html.Partial("/Views/Partials/_Head.cshtml")
+    @Html.Partial("/Views/Partials/_Head.cshtml", headModel)
 </head>
 
 <body class="">
@@ -20,13 +25,21 @@
 
     <div id="skiplink-container">
         <div>
-            <a href="#content" class="skiplink">Skip to main content</a>
+            <a href="#content" class="skiplink">@Html.Sitecore().Field("Skip Link Text", headModel.SiteSettingsItem)</a>
         </div>
     </div>
 
-    @Html.Partial("/Views/Partials/_CookieNotice.cshtml")
+    <div id="global-cookie-message">
+        @Html.Sitecore().Field("Cookie Notice Message", headModel.SiteSettingsItem)
+    </div>
 
-    @Html.Partial("/Views/Partials/_Header.cshtml")
+    <header role="banner" id="global-header">
+        <div class="header-wrapper">
+            <div class="header-global">
+                @Html.Sitecore().Field("Logo Link", headModel.SiteSettingsItem, new { @id = "logo", @class = "content" })
+            </div>
+        </div>
+    </header>
 
     @Html.Sitecore().Placeholder("content")
 

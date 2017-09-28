@@ -36,7 +36,7 @@ namespace HMPPS.Site.Controllers.Pages
                 radioSection.Link = new Link()
                 {
                     Url = Sitecore.Links.LinkManager.GetItemUrl(c),
-                    Title = string.Empty
+                    Text = string.Empty
                 };
                 _rspvm.Children.Add(radioSection);
             }

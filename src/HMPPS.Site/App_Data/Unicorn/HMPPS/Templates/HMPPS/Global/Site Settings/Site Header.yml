@@ -2,7 +2,7 @@
 ID: "19d0ecf6-8cc7-4a0e-bcc0-663ed010678a"
 Parent: "4a4f9daa-aa2d-4ecc-94fe-d1dee95937bc"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/HMPPS/Global/Site Settings/Site Settings
+Path: /sitecore/templates/HMPPS/Global/Site Settings/Site Header
 DB: master
 Languages:
 - Language: en

@@ -39,7 +39,7 @@ namespace HMPPS.Site.Controllers.Pages
                 bookSection.Link = new Link()
                 {
                     Url = Sitecore.Links.LinkManager.GetItemUrl(c),
-                    Title = string.Empty
+                    Text = string.Empty
                 };
                 bookSection.IsBookPage = isBookPage;
 

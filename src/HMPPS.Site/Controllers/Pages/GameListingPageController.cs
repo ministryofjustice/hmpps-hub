@@ -35,7 +35,7 @@ namespace HMPPS.Site.Controllers.Pages
                 gameSectionBlock.Link = new Link()
                 {
                     Url = Sitecore.Links.LinkManager.GetItemUrl(c),
-                    Title = string.Empty
+                    Text = string.Empty
                 };
 
                 _glpvm.Children.Add(gameSectionBlock);
