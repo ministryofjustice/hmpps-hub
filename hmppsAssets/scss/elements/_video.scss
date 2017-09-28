@@ -52,10 +52,13 @@
 }
 
 .video-js.custom-video .vjs-remaining-time,
-.video-js.custom-video .vjs-big-play-button{
+.video-js.custom-video .vjs-big-play-button,
+.video-js.custom-video .vjs-progress-control{
   display: none;
 }
 
-.video-js.custom-video .vjs-current-time{
+.video-js.custom-video .vjs-time-divider,
+.video-js.custom-video .vjs-current-time,
+.video-js.custom-video .vjs-duration{
   display: block;
 }
