@@ -45,6 +45,9 @@
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
+    <Reference Include="E3.Net4.SiteCore">
+      <HintPath>..\lib\sitecore\E3.Net4.SiteCore.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -308,6 +311,33 @@
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Release.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Localhost.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Debug.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Release.config">
+      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\Unicorn\zzzUnicorn.CD-Localhost.config">
       <DependentUpon>zzzUnicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -446,6 +476,7 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -637,6 +668,46 @@
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\Submit.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave\Auto Submit Action.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Buttons.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Buttons\HTML View.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\Head1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\Head2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\Head3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoBodytext.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoHead1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoHead2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoHead3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Configuration Type.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Images.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Images\Help.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Heading 2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Heading 3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Heading 4.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Normal.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Bold.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Divider 2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Divider 3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Find.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Sitecore Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Sitecore Media.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Symbol.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Italic.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Paste Word No Font Sizes.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Redo.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Undo.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Unlink.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Bold.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Edit html.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Insert Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Insert Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Italic.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Underline.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -686,6 +757,7 @@
     <None Include="Properties\PublishProfiles\CMS-Localhost.pubxml" />
     <Content Include="Views\Pages\NeontroidsGamePage.cshtml" />
     <Content Include="Views\Pages\RadioSectionPage.cshtml" />
+    <Content Include="Views\Pages\GeneralContentPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -722,6 +794,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\SslMongoDbOverride.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\GeneralContentPageController.cs" />
     <Compile Include="Controllers\Pages\RadioSectionPageController.cs" />
     <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
     <Compile Include="Controllers\Pages\GameListingPageController.cs" />
@@ -731,6 +804,7 @@
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\NeontroidsGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />

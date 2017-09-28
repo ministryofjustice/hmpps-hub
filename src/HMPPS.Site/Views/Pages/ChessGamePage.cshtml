@@ -39,7 +39,7 @@
                                         <label class="form-label form-label-inline" for="gamechoice3">@Html.Sitecore().Field("Knight Name")</label>
                                     </div>
                                     <div class="multiple-choice">
-                                        <input type="radio" class="js-promote" id="gamechoice4" name="gameChoices" value="b">
+                                        <input type="radio" class="js-promote" id="gamechoice4" name="gameChoices" value="b">               
                                         <label class="form-label form-label-inline" for="gamechoice4">@Html.Sitecore().Field("Bishop Name")</label>
                                     </div>
                                 </fieldset>
@@ -51,8 +51,11 @@
                                     <legend>
                                         <h1 class="heading-medium">@Html.Sitecore().Field("Right Bold Text")</h1>
                                     </legend>
-                                    <div class="form-group">
-                                        <label for="skillLevel" class="form-label-bold">@Html.Sitecore().Field("Skill Level Label Text")</label>
+                                    <div class="form-group form-group-error">
+                                        <label for="skillLevel" class="form-label-bold" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
+                                        <span class="error-message">
+                                            This value has to be between 0 and 20 @*TODO: add this the the CMS template so it can be translated*@
+                                        </span>
                                         <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
                                     </div>
                                 </fieldset>
