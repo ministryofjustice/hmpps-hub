@@ -27,7 +27,9 @@ namespace HMPPS.Authentication.Tests
             // PrisonerId: A1417AEx
             // Exception expected: 
             var nomisApiService = CreateNomisApiService();
-
+            // TODO: fix the reference of Microsoft.Exctensions.DependencyInjection.Abstractions.dll.
+            // All references using vesion  1.0.0.0 but somehow test searches for version 2.0.0.0,
+            // causing FileLoadException instead of expected AggregateException
             Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A1417AEx"));
         }
 
