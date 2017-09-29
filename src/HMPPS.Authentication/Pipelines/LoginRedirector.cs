@@ -1,13 +1,11 @@
 using System;
-using System.Text;
-using System.Web;
+using System.Linq;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Sites;
 using Sitecore.Web;
 using IdentityModel.Client;
-using HMPPS.Authentication.Helpers;
-using System.Linq;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -42,7 +40,7 @@ namespace HMPPS.Authentication.Pipelines
                     redirectUri: Settings.SignInCallbackUrl,
                     state: state,
                     nonce: nonce);
-                
+
                 // Redirect the user to the login page of the identity provider
                 WebUtil.Redirect(url);
             }

@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 
-namespace HMPPS.Authentication
+namespace HMPPS.Utilities.Models
 {
-    public class IdamData
+    public class UserData
     {
         public string NameIdentifier { get; private set; }
         public IList<string> Roles { get; private set; }
@@ -15,10 +16,12 @@ namespace HMPPS.Authentication
         public string AccessToken { get; private set; }
         public string RefreshToken { get; private set; }
         public string ExpiresAt { get; private set; }
+        public string PrisonId { get; private set; }
+        public string PrisonName { get; private set; }
+        public decimal AccountBalance { get; private set; }
 
-        public IdamData(IEnumerable<Claim> claims)
+        public UserData(IEnumerable<Claim> claims)
         {
-
             NameIdentifier = (claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier))?.Value;
             Roles = claims.Where(c => c.Type.Equals(ClaimTypes.Role)).Select(c => c.Value).ToList();
             GivenName = (claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName))?.Value;
@@ -28,6 +31,17 @@ namespace HMPPS.Authentication
             AccessToken = (claims.FirstOrDefault(c => c.Type == "access_token"))?.Value;
             RefreshToken = (claims.FirstOrDefault(c => c.Type == "refresh_token"))?.Value;
             ExpiresAt = (claims.FirstOrDefault(c => c.Type == "expires_at"))?.Value;
+            PrisonId = (claims.FirstOrDefault(c => c.Type == "prison_id"))?.Value;
+            PrisonName = (claims.FirstOrDefault(c => c.Type == "prison_name"))?.Value;
+            AccountBalance = ParseToDecimal((claims.FirstOrDefault(c => c.Type == "account_balance"))?.Value);
+        }
+
+        private static decimal ParseToDecimal(string value)
+        {
+            decimal retval = 0;
+            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture.NumberFormat, out retval))
+                return retval;
+            return (decimal)0;
         }
     }
 }

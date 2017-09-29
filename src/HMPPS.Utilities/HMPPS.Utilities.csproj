@@ -66,11 +66,22 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IdentityModel, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.2.5.1\lib\net45\IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.NoReferences.8.2.170728\lib\NET452\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,11 +90,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CookieHelper.cs" />
+    <Compile Include="Helpers\ExpirationHelper.cs" />
+    <Compile Include="Interfaces\IUserDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\UserDataService.cs" />
     <Compile Include="SitecoreHelper\BaseTemplateMethods.cs" />
     <Compile Include="SitecoreHelper\FieldMethods.cs" />
+    <Compile Include="Interfaces\IEncryptionService.cs" />
+    <Compile Include="Interfaces\IJwtTokenService.cs" />
+    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Services\EncryptionService.cs" />
+    <Compile Include="Services\JwtTokenService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

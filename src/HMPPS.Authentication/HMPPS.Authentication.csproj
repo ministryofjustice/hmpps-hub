@@ -107,14 +107,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\CookieHelper.cs" />
-    <Compile Include="IdamData.cs" />
-    <Compile Include="Interfaces\IJwtTokenService.cs" />
     <Compile Include="Pipelines\AuthenticationProcessorBase.cs" />
-    <Compile Include="Services\EncryptionService.cs" />
-    <Compile Include="Helpers\ExpirationHelper.cs" />
-    <Compile Include="Interfaces\IEncryptionService.cs" />
-    <Compile Include="Services\JwtTokenService.cs" />
     <Compile Include="Pipelines\AuthenticationChecker.cs" />
     <Compile Include="Pipelines\LogoutRedirector.cs" />
     <Compile Include="Pipelines\LoginRedirector.cs" />
@@ -131,6 +124,16 @@
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
+      <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
+      <Name>HMPPS.NomisApiService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
+      <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>
+      <Name>HMPPS.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
