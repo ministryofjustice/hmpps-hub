@@ -387,6 +387,34 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.NomisApiService.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Localhost.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Release.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Localhost.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Release.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Debug.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Release.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
@@ -738,6 +766,7 @@
     </None>
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />

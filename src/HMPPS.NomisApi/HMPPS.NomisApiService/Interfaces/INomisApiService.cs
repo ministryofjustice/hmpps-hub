@@ -1,4 +1,4 @@
-namespace HMPPS.Authentication.Interfaces
+namespace HMPPS.NomisApiService.Interfaces
 {
     public interface INomisApiService
     {

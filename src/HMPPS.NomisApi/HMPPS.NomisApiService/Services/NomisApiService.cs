@@ -4,12 +4,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using HMPPS.Authentication.Interfaces;
 using Jose;
 using Newtonsoft.Json;
 using Sitecore.Diagnostics;
+using HMPPS.NomisApiService.Interfaces;
 
-namespace HMPPS.Authentication.Services
+namespace HMPPS.NomisApiService.Services
 {
     /// <summary>
     /// API docs: http://ministryofjustice.github.io/nomis-api/index.html

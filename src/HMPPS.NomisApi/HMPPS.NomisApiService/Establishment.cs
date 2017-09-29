@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace HMPPS.Authentication
+namespace HMPPS.NomisApiService
 {
     public class Establishment
     {
