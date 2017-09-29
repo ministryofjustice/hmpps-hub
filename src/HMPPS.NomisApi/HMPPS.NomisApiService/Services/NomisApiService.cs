@@ -60,54 +60,12 @@ namespace HMPPS.NomisApiService.Services
             }
         }
 
-        private string GenerateToken(int expireMinutes = 20)
-        {
-            //https://github.com/dvsekhvalnov/jose-jwt
-            var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            var payload = new Dictionary<string, object>()
-            {
-                {"iat", unixTimestamp},
-                {"token", ClientToken}
-            };
-            var secretKeyFile = Convert.FromBase64String(SecretPkcs8);
-            var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
-            return JWT.Encode(payload, secretKey, JwsAlgorithm.ES256);
-        }
         public void InitializeClient()
         {
             AuthenticationToken = GenerateToken(); //todo: when does this token expire?
             Client = new HttpClient();
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AuthenticationToken);
             Client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
-        }
-        /// <summary>
-        /// Returns the version of the API running.
-        /// /version{?show}
-        /// </summary>
-        /// <returns></returns>
-        private async Task<string> GetApiVersionAsync()
-        {
-            return await Client.GetStringAsync(ApiBaseUrl + "/version");
-        }
-        /// <summary>
-        /// Returns general offender information.
-        /// /offenders/{noms_id}
-        /// </summary>
-        /// <param name="prisonerId"></param>
-        /// <returns></returns>
-        private async Task<string> GetPrisonerDetailsAsync(string prisonerId)
-        {
-            return await Client.GetStringAsync(ApiBaseUrl + "/offenders/" + prisonerId);
-        }
-        /// <summary>
-        /// Since the offender’s location can change often and is fairly sensitive (and therefore should not automatically be exposed to all services), this information is not included in the general offender information call.
-        /// /offenders/{noms_id}/location
-        /// </summary>
-        /// <param name="prisonerId"></param>
-        /// <returns></returns>
-        private async Task<string> GetPrisonerLocationDetailsAsync(string prisonerId)
-        {
-            return await Client.GetStringAsync(ApiBaseUrl + "/offenders/" + prisonerId + "/location");
         }
 
         public Establishment GetPrisonerLocationDetails(string prisonerId)
@@ -121,14 +79,72 @@ namespace HMPPS.NomisApiService.Services
             }
             catch (AggregateException aex)
             {
-                aex.Handle(e => HandleInnerException(e, prisonerId));
+                var detailMessage = String.Format("GetPrisonerLocationDetails({0})", prisonerId);
+                aex.Handle(e => HandleInnerException(e, detailMessage));
                 return null;
             }
         }
 
-        private bool HandleInnerException(Exception e, string prisonerId)
+        public Accounts GetPrisonerAccounts(string prisonId, string prisonerId)
         {
-            Log.Error(String.Format("HMPPS.Authentication.Services.NomisApiService - Error trying to get location of prisoner {0}", prisonerId), this);
+            Task<string> task = Task.Run<string>(async () => await GetPrisonerAccountsAsync(prisonId, prisonerId));
+            try
+            {
+                var result = task.Result;
+                var accountsResponse = JsonConvert.DeserializeObject<AccountsResponse>(result);
+                return new Accounts(accountsResponse);
+            }
+            catch (AggregateException aex)
+            {
+                var detailMessage = String.Format("GetPrisonerAccounts({0}, {1})", prisonId, prisonerId);
+                aex.Handle(e => HandleInnerException(e, detailMessage));
+                return null;
+            }
+        }
+
+        private string GenerateToken(int expireMinutes = 20)
+        {
+            //https://github.com/dvsekhvalnov/jose-jwt
+            var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            var payload = new Dictionary<string, object>()
+            {
+                {"iat", unixTimestamp},
+                {"token", ClientToken}
+            };
+            var secretKeyFile = Convert.FromBase64String(SecretPkcs8);
+            var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
+            return JWT.Encode(payload, secretKey, JwsAlgorithm.ES256);
+        }
+
+        /// <summary>
+        /// Since the offender’s location can change often and is fairly sensitive (and therefore should not automatically be exposed to all services), this information is not included in the general offender information call.
+        /// /offenders/{noms_id}/location
+        /// </summary>
+        /// <param name="prisonerId"></param>
+        /// <returns></returns>
+        private async Task<string> GetPrisonerLocationDetailsAsync(string prisonerId)
+        {
+            return await Client.GetStringAsync(ApiBaseUrl + "/offenders/" + prisonerId + "/location");
+        }
+
+        /// <summary>
+        /// Retrieve an offender’s financial account balances.
+        /// Returns balances for the offender’s three sub accounts(Spends, Saves and Cash) for the specified prison.
+        /// Amounts are in all cases represented as an integer number of pence.
+        /// To get: /prison/{prison_id}/offenders/{noms_id}/accounts
+        /// </summary>
+        /// <param name="prisonId"></param>
+        /// <param name="prisonerId"></param>
+        /// <returns></returns>
+        private async Task<string> GetPrisonerAccountsAsync(string prisonId, string prisonerId)
+        {
+            var url = String.Format("{0}/prison/{1}/offenders/{2}/accounts", ApiBaseUrl, prisonId, prisonerId);
+            return await Client.GetStringAsync(url);
+        }
+
+        private bool HandleInnerException(Exception e, string detailMessage)
+        {
+            Log.Error(String.Format("HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {0}", detailMessage), this);
             return false; // exception is not handled
         }
 
