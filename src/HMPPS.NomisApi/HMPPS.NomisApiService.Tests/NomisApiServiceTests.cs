@@ -7,7 +7,7 @@ namespace HMPPS.NomisApiService.Tests
     public class NomisApiServiceTests
     {
         [TestMethod]
-        public void TNomisApiService_GetPrisonerLocationDetails()
+        public void NomisApiService_GetPrisonerLocationDetails()
         {
             // PrisonerId: A1417AE
             // JSON respornse expected: {"establishment":{"code":"BMI","desc":"BIRMINGHAM (HMP)"}}
@@ -21,7 +21,7 @@ namespace HMPPS.NomisApiService.Tests
         }
 
         [TestMethod]
-        public void TNomisApiService_GetPrisonerLocationDetails_InvalidPrisonerId()
+        public void NomisApiService_GetPrisonerLocationDetails_InvalidPrisonerId()
         {
             // PrisonerId: A1417AEx
             // Exception expected: 
