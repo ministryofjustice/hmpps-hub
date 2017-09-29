@@ -40,7 +40,7 @@ include('_includes/head.php'); ?>
           <li>test</li>
           <li>test</li>
         </ol>
-        <img src="../rawHTML/_dummy/img/books.png" alt="">
+        <img src="_dummy/img/books.png" alt="">
       </div>
     </div>
     <div class="column-third add-title-margin">
