@@ -112,4 +112,9 @@
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
   </parameter>
+  <parameter name="ssoauthcookiename" description="ssoauthcookiename" defaultValue="#{ssoauthcookiename}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthenticationChecker.CookieName']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthenticationChecker.CookieName']/@value" />
+  </parameter>
+
 </parameters>
