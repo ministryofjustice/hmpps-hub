@@ -16,7 +16,7 @@
   </parameter>
   <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
+    <!--<parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />-->
   </parameter>
   <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
