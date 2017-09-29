@@ -33,7 +33,7 @@ namespace HMPPS.Site.Controllers.Pages
 
             foreach (var i in allRadioEpisodeItems)
             {
-                var episode = BuildRadioEpisode(i);
+                var episode = BuildRadioEpisode(i, contextItem);
                 allRadioEpisodes.Add(episode);
             }
 
@@ -47,7 +47,7 @@ namespace HMPPS.Site.Controllers.Pages
             if (currentEpisodeId != ID.Null)
             {
                 var currentEpisodeItem = Sitecore.Context.Database.GetItem(currentEpisodeId);
-                currentEpisode = BuildRadioEpisode(currentEpisodeItem);
+                currentEpisode = BuildRadioEpisode(currentEpisodeItem, contextItem);
             }
             else
             {
@@ -59,13 +59,14 @@ namespace HMPPS.Site.Controllers.Pages
             _rpvm.PreviousEpisodes = allRadioEpisodes.Take(5).ToList();
         }
 
-        private RadioEpisode BuildRadioEpisode(Item episodeItem)
+        private RadioEpisode BuildRadioEpisode(Item episodeItem, Item contextItem)
         {
             return new RadioEpisode()
             {
-                Title = episodeItem["Page Title"],
+                Title = episodeItem["Radio Episode Title"],
                 Date = Utilities.SitecoreHelper.FieldMethods.GetDateFieldValue(episodeItem, "Date", DateTime.MinValue),
-                FileUrl = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(episodeItem, "Radio Episode MP3 File")
+                FileUrl = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(episodeItem, "Radio Episode MP3 File"),
+                RadioPageUrl = Sitecore.Links.LinkManager.GetItemUrl(contextItem) + "?episodeId=" + episodeItem.ID.ToShortID()
             };
         }
 

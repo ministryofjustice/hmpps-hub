@@ -9,5 +9,7 @@ namespace HMPPS.Models.Cms
         public string FileUrl { get; set; }
 
         public DateTime Date { get; set; }
+
+        public string RadioPageUrl { get; set; }
     }
 }

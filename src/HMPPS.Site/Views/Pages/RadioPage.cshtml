@@ -37,14 +37,14 @@
                 {
                     <aside class="related-content" data-module="track-click" role="complementary">
                         <h2>
-                            @Html.Sitecore().Field("More Episode Block Title")
+                            @Html.Sitecore().Field("More Episodes Block Title")
                         </h2>
                         <nav role="navigation">
                             <ul class="list">
                                 @foreach (var link in Model.PreviousEpisodes)
                                 {
                                     <li>
-                                        <a href="@link.FileUrl">@link.Title></a>
+                                        <a href="@link.RadioPageUrl">@link.Title></a>
                                     </li>
                                 }
                             </ul>
