@@ -1,28 +1,24 @@
 ﻿---
-ID: "2ca765ef-0eb8-48ec-a02e-44b410221d71"
-Parent: "40923700-7598-4463-a75b-6103291ec0cc"
+ID: "9cd5ad77-6688-4494-83db-7c25b5d141c8"
+Parent: "6fee4c72-a6cf-42c4-8ef0-048bbbb5652d"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Base/Core/Page Information/Browser Title
+Path: /sitecore/templates/HMPPS/Pages/Radio Page/Content/Enable Javascript Message
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
-  Value: "Single-Line Text"
+  Value: Rich Text
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 300
 Languages:
 - Language: en
-  Fields:
-  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
-    Hint: __Short description
-    Value: Shorter title to display in the broswer. If left empty, the Page Title will be used instead.
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170908T102036Z
+      Value: 20170929T082055Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
