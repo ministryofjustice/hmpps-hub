@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AccountsResponse.cs" />
+    <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\Establishment.cs" />
     <Compile Include="Interfaces\INomisApiService.cs" />
     <Compile Include="Services\NomisApiService.cs" />
