@@ -715,30 +715,6 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
-    <None Include="Parameters.Debug.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.Release.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CMS-Release.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CD-Release.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CD-Localhost.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CMS-Localhost.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
