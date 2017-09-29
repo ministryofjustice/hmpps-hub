@@ -112,4 +112,19 @@
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
   </parameter>
-</parameters>
+
+  <!--NOMIS API-->
+  <parameter name="nomisapibaseurl" description="nomisapibaseurl" defaultValue="#{nomisapibaseurl}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.BaseUrl']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.BaseUrl']/@value" />
+  </parameter>
+  <parameter name="nomisapiclienttoken" description="nomisapiclienttoken" defaultValue="#{nomisapiclienttoken}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.ClientToken']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.ClientToken']/@value" />
+  </parameter>
+  <parameter name="nomisapisecretkey" description="nomisapisecretkey" defaultValue="#{nomisapisecretkey}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.SecretKey']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.SecretKey']/@value" />
+  </parameter>
+
+  </parameters>
