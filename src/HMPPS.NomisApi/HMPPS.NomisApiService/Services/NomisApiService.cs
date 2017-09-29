@@ -8,6 +8,7 @@ using Jose;
 using Newtonsoft.Json;
 using Sitecore.Diagnostics;
 using HMPPS.NomisApiService.Interfaces;
+using HMPPS.NomisApiService.Models;
 
 namespace HMPPS.NomisApiService.Services
 {

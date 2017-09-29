@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace HMPPS.NomisApiService
+namespace HMPPS.NomisApiService.Models
 {
     public class Establishment
     {
