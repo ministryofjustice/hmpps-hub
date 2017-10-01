@@ -739,6 +739,13 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Logo Link.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Skip Link Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\Enable Javascript Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\More Episodes Block Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\__Standard Values.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -764,6 +771,7 @@
     <Content Include="Views\Pages\GeneralContentPage.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Head.cshtml" />
+    <Content Include="Views\Pages\RadioPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -801,6 +809,7 @@
     <Compile Include="App_Start\SslMongoDbOverride.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\Pages\GeneralContentPageController.cs" />
+    <Compile Include="Controllers\Pages\RadioPageController.cs" />
     <Compile Include="Controllers\Pages\RadioSectionPageController.cs" />
     <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
     <Compile Include="Controllers\Pages\GameListingPageController.cs" />
@@ -811,6 +820,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\RadioPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\NeontroidsGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />

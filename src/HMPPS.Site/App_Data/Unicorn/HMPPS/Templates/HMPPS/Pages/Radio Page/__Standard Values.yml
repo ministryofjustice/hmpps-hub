@@ -18,7 +18,7 @@ SharedFields:
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
         l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
         <r
-          id="{AB65E15D-3F83-4491-91AE-B2951E8BF896}"
+          id="{4DEF5F7E-2A32-4034-BA08-CF62669A2B62}"
           ph="content"
           uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
       </d>
@@ -35,3 +35,10 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\e3_MihaelaR
+    - ID: "9cd5ad77-6688-4494-83db-7c25b5d141c8"
+      Hint: Enable Javascript Message
+      Value: |
+        <p>
+        To listen to this audio please enable JavaScript, and consider upgrading to a web browser that
+        <a rel="noopener noreferrer" href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
