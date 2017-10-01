@@ -15,12 +15,21 @@ namespace HMPPS.Site.Controllers.Pages
         private RadioPageViewModel _rpvm;
         public ActionResult Index(string episodeId = "")
         {
-            BuildViewModel(Sitecore.Context.Item, episodeId);
+            ID validEpisodeId;
+            try
+            {
+                validEpisodeId = new ID(episodeId);
+            }
+            catch
+            {
+                validEpisodeId = ID.Null;
+            }
 
+            BuildViewModel(Sitecore.Context.Item, validEpisodeId);
             return View("/Views/Pages/RadioPage.cshtml", _rpvm);
         }
 
-        private void BuildViewModel(Item contextItem, string currentEpisodeShortId)
+        private void BuildViewModel(Item contextItem, ID currentEpisodeId)
         {
             _rpvm = new RadioPageViewModel();
 
@@ -37,13 +46,10 @@ namespace HMPPS.Site.Controllers.Pages
                 allRadioEpisodes.Add(episode);
             }
 
-            allRadioEpisodes = allRadioEpisodes.OrderByDescending(e => e.Date).ToList();
+            allRadioEpisodes = allRadioEpisodes.OrderBy(e => e.Date).ToList();
 
             //get the "current" episode URL
-            var currentEpisodeId = ID.Null;
-            if (!string.IsNullOrEmpty(currentEpisodeShortId))
-                currentEpisodeId = new ID(currentEpisodeShortId);
-            var currentEpisode = new RadioEpisode();
+            RadioEpisode currentEpisode;
             if (currentEpisodeId != ID.Null)
             {
                 var currentEpisodeItem = Sitecore.Context.Database.GetItem(currentEpisodeId);
@@ -51,25 +57,34 @@ namespace HMPPS.Site.Controllers.Pages
             }
             else
             {
-                currentEpisode = allRadioEpisodes.FirstOrDefault();
+                currentEpisode = allRadioEpisodes.LastOrDefault();
             }
-            _rpvm.CurrentEpisodeUrl = currentEpisode?.FileUrl;
+            _rpvm.CurrentEpisode = currentEpisode;
 
-            //get the most recent previous 5 episodes
-            _rpvm.PreviousEpisodes = allRadioEpisodes.Take(5).ToList();
+            //get 3 most recent previous episodes and 3 next episodes excluding the current episode
+            const int episodesToShow = 7; //includes current episode removed later
+            var currentEpisodeIndex = allRadioEpisodes.FindIndex(e => currentEpisode != null && e.Id == currentEpisode.Id);
+            var startIndex = currentEpisodeIndex - 3 < 0 ? 0 : currentEpisodeIndex - 3;
+            var lastIndex = (startIndex + episodesToShow > allRadioEpisodes.Count) ? allRadioEpisodes.Count : startIndex + episodesToShow;
+            if (lastIndex - startIndex < episodesToShow)
+                startIndex = lastIndex - episodesToShow < 0 ? 0 : lastIndex - episodesToShow;
+            _rpvm.NeighbourEpisodes = allRadioEpisodes.Skip(startIndex).Take(lastIndex).ToList();
+            currentEpisodeIndex = _rpvm.NeighbourEpisodes.FindIndex(e => currentEpisode != null && e.Id == currentEpisode.Id);
+            if (currentEpisodeIndex >= 0)
+                _rpvm.NeighbourEpisodes.RemoveAt(currentEpisodeIndex);
         }
 
         private RadioEpisode BuildRadioEpisode(Item episodeItem, Item contextItem)
         {
             return new RadioEpisode()
             {
+                Id = episodeItem.ID.Guid,
                 Title = episodeItem["Radio Episode Title"],
-                Date = Utilities.SitecoreHelper.FieldMethods.GetDateFieldValue(episodeItem, "Date", DateTime.MinValue),
+                Date = Utilities.SitecoreHelper.FieldMethods.GetDateFieldValue(episodeItem, "Radio Episode Date", DateTime.MinValue),
                 FileUrl = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(episodeItem, "Radio Episode MP3 File"),
                 RadioPageUrl = Sitecore.Links.LinkManager.GetItemUrl(contextItem) + "?episodeId=" + episodeItem.ID.ToShortID()
             };
         }
-
 
     }
 }

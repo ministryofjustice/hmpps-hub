@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using HMPPS.Models.Cms;
 using HMPPS.Site.ViewModels.Base;
@@ -8,11 +9,12 @@ namespace HMPPS.Site.ViewModels.Pages
     {
         public RadioPageViewModel()
         {
-            PreviousEpisodes = new List<RadioEpisode>();
+            NeighbourEpisodes = new List<RadioEpisode>();
+            CurrentEpisode = new RadioEpisode();
         }
 
-        public List<RadioEpisode> PreviousEpisodes { get; set; }
+        public List<RadioEpisode> NeighbourEpisodes { get; set; }
 
-        public string CurrentEpisodeUrl { get; set; }
+        public RadioEpisode CurrentEpisode { get; set; }
     }
 }
