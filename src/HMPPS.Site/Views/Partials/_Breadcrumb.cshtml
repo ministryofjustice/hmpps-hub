@@ -1,12 +1,13 @@
 @model List<Sitecore.Data.Items.Item>
+@using HMPPS.Site.ViewHelpers
 @if (Model.Any())
 {
     <div class="breadcrumbs">
         <ol>
             @foreach (var item in Model)
             {
-                var linkText = HMPPS.Utilities.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(item, "Navigation Title", "Page Title");
-                var linkUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
+                var linkText = item.GetNavTitleOrPageTitle();
+                var linkUrl = item.GetPageItemUrl();
 
                 if (item.ID != Sitecore.Context.Item.ID)
                 {

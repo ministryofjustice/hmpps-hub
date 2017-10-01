@@ -70,17 +70,18 @@
         <script src="/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js"></script>
         <script src="/hmppsAssets/js/src/third-party/lib/sudokuJS.js"></script>
     }
-    <!-- scripts needed for books -->
-    <script src="/hmppsAssets/js/src/third-party/lib/jszip.min.js"></script>
-    <script src="/hmppsAssets/js/src/third-party/lib/epub.min.js"></script>
-    <script src="/hmppsAssets/js/src/third-party/lib/mime-types.js"></script>
-
-    <!-- scripts needed for books later on in the project (not needed for now) -->
+    @if (Sitecore.Context.Item.TemplateName == "Book Section Page")
+    {
+        <!-- scripts needed for books -->
+        <script src="/hmppsAssets/js/src/third-party/lib/jszip.min.js"></script>
+        <script src="/hmppsAssets/js/src/third-party/lib/epub.min.js"></script>
+        <script src="/hmppsAssets/js/src/third-party/lib/mime-types.js"></script>
+    }
+    @*<!-- scripts needed for books later on in the project (not needed for now) -->
     <!-- <script src="/hmppsAssets/js/src/third-party/lib/hooks.min.js"></script>
-    <script src="/hmppsAssets/js/src/third-party/lib/reader.min.js"></script> -->
+    <script src="/hmppsAssets/js/src/third-party/lib/reader.min.js"></script> -->*@
 
-
-    <script src="/hmppsAssets/js/application.js?d=15092017"></script>
+    <script src="/hmppsAssets/js/application.js?d=01102017"></script>
 </body>
 </html>
 
