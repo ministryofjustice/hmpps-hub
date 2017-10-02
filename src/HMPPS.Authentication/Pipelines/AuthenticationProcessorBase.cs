@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -35,6 +36,7 @@ namespace HMPPS.Authentication.Pipelines
 
             var accounts = nomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
             claims.Add(new Claim("account_balance", ((decimal)(accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
+            claims.Add(new Claim("account_balance_lastupdated", DateTime.Now.ToString(CultureInfo.InvariantCulture)));
         }
 
         protected User BuildVirtualUser(UserData idamData)

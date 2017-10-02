@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace HMPPS.Utilities.Models
         public string PrisonId { get; private set; }
         public string PrisonName { get; private set; }
         public decimal AccountBalance { get; private set; }
+        public DateTime AccountBalanceLastUpdated { get; private set; }
 
         public UserData(IEnumerable<Claim> claims)
         {
@@ -34,6 +36,7 @@ namespace HMPPS.Utilities.Models
             PrisonId = (claims.FirstOrDefault(c => c.Type == "prison_id"))?.Value;
             PrisonName = (claims.FirstOrDefault(c => c.Type == "prison_name"))?.Value;
             AccountBalance = ParseToDecimal((claims.FirstOrDefault(c => c.Type == "account_balance"))?.Value);
+            AccountBalanceLastUpdated = ParseToDateTime((claims.FirstOrDefault(c => c.Type == "account_balance_lastupdated"))?.Value);
         }
 
         private static decimal ParseToDecimal(string value)
@@ -42,6 +45,14 @@ namespace HMPPS.Utilities.Models
             if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture.NumberFormat, out retval))
                 return retval;
             return (decimal)0;
+        }
+
+        private static DateTime ParseToDateTime(string value)
+        {
+            DateTime retval;
+            if (DateTime.TryParse(value, out retval))
+                return retval;
+            return DateTime.MinValue;
         }
     }
 }
