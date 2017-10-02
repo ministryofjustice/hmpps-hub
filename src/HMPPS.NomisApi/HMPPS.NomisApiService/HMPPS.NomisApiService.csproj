@@ -7,8 +7,8 @@
     <ProjectGuid>{DE839094-9E70-43AA-8F0B-A226A38647F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NomisApiService</RootNamespace>
-    <AssemblyName>NomisApiService</AssemblyName>
+    <RootNamespace>HMPPS.NomisApiService</RootNamespace>
+    <AssemblyName>HMPPS.NomisApiService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
