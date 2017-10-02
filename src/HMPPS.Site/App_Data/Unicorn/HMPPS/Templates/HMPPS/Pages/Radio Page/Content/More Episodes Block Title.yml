@@ -1,8 +1,8 @@
 ﻿---
-ID: "9af73709-4ef0-4e9c-8195-aecb4c254f01"
-Parent: "40923700-7598-4463-a75b-6103291ec0cc"
+ID: "9498bac8-cbc5-476a-957a-79e8e441ef92"
+Parent: "6fee4c72-a6cf-42c4-8ef0-048bbbb5652d"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Base/Core/Page Information/Navigation Title
+Path: /sitecore/templates/HMPPS/Pages/Radio Page/Content/More Episodes Block Title
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
@@ -10,19 +10,15 @@ SharedFields:
   Value: "Single-Line Text"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 200
+  Value: 400
 Languages:
 - Language: en
-  Fields:
-  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
-    Hint: __Short description
-    Value: Shorter title to use in navigation components. If left empty, the Page Title will be used instead.
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170908T100936Z
+      Value: 20170929T110234Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

@@ -5,8 +5,6 @@ using HMPPS.Models.Cms;
 using HMPPS.Models.Common;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
-using Sitecore.Data.Items;
-using Sitecore.Resources.Media;
 
 namespace HMPPS.Site.Controllers.Pages
 {
@@ -45,11 +43,10 @@ namespace HMPPS.Site.Controllers.Pages
 
                 if (bookSection.IsBookPage)
                 {
-                    var bookMediaItem = (MediaItem)((Sitecore.Data.Fields.FileField)c.Fields["Book File"])?.MediaItem;
                     bookSection.BookFile = new File()
                     {
-                        Url = MediaManager.GetMediaUrl(bookMediaItem),
-                        Extension = bookMediaItem.Extension
+                        Url = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(c, "Book File"),
+                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFilExtension(c, "Book File")
                     };
                 }
 

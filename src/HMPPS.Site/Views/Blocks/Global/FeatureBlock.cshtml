@@ -1,8 +1,17 @@
-﻿
+@model RenderingModel
+@using HMPPS.Site.ViewHelpers
+
 <div class="column-one-third">
     <div class="image-grid-item">
         @Html.Sitecore().BeginField("Link", new { haschildren = true })
-            @Html.Sitecore().Field("Image")      
+            @if (Sitecore.Context.PageMode.IsExperienceEditorEditing)
+            {
+                @Html.Sitecore().Field("Image")
+            }
+            else
+            {
+                <img src="@Model.Item.GetMediaItemUrl("Image")" alt="">
+            }
             <h2 class="heading-medium">
                 @Html.Sitecore().Field("Title") 
             </h2>
