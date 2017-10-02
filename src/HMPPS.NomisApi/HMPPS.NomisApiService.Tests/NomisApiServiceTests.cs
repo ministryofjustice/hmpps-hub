@@ -39,7 +39,7 @@ namespace HMPPS.NomisApiService.Tests
             // JSON respornse expected: { "spends": 20637, "cash": 38763,"savings": 5000 }
 
             var nomisApiService = CreateNomisApiService();
-            var accounts = nomisApiService.GetPrisonerAccounts("BMI", "A1417AE");
+            var accounts = nomisApiService.GetPrisonerAccounts("BMI", "jd1234");
 
             Assert.AreEqual(accounts.Spends, (decimal)206.37);
             Assert.AreEqual(accounts.Cash, (decimal)387.63);
