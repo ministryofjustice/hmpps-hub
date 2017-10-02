@@ -1,4 +1,7 @@
-﻿using SimpleInjector;
+using System.Reflection;
+using HMPPS.Utilities.Interfaces;
+using HMPPS.Utilities.Services;
+using SimpleInjector;
 using SimpleInjector.Integration.Web;
 
 namespace HMPPS.Site
@@ -31,6 +34,8 @@ namespace HMPPS.Site
 
             RegisterInstances(container);
 
+            container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
+
             container.Verify(); // Make sure everything is valid
 
             return container;
@@ -45,6 +50,7 @@ namespace HMPPS.Site
             // web-request scoped repositories
 
             // services
+            container.Register<IUserDataService, UserDataService>(Lifestyle.Scoped);
 
             // cache
             container.Register(() => System.Runtime.Caching.MemoryCache.Default, Lifestyle.Singleton);

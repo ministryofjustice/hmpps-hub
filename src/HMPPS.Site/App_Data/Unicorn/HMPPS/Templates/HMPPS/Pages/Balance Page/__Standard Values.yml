@@ -1,0 +1,53 @@
+﻿---
+ID: "551702c8-9577-43e4-ba9f-7e1ddf4eeb21"
+Parent: "caf0e55f-e70d-4755-bfa2-2a4099b59962"
+Template: "caf0e55f-e70d-4755-bfa2-2a4099b59962"
+Path: /sitecore/templates/HMPPS/Pages/Balance Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: 
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <p
+          uid="{6520F367-6ECF-4740-8B4B-9B5776984F47}"
+          key="right-blocks"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
+        <r
+          id="{844866F6-BDE1-4910-9D5B-1E5F42135D6F}"
+          ph="content"
+          uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "21b218c9-6467-4025-8f5a-efff4ee57106"
+      Hint: Last Updated Text
+      Value: "Last updated:"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170908T103129Z
+    - ID: "5cfb072d-8d9d-4cdd-b825-96c9aad626f4"
+      Hint: Today Text
+      Value: today
+    - ID: "5d71ac6a-977f-475e-9081-734b4667da69"
+      Hint: Phone Credit Text
+      Value: Phone credit
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
+    - ID: "93b3dc4c-0560-4a9a-8104-02deadce160b"
+      Hint: Account Balance Text
+      Value: Account balance

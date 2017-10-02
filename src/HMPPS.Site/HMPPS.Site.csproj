@@ -746,6 +746,22 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Main Content.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\General Content Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Balance Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Radio Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Show Account Balance.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Show Phone Credit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Last Updated Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Today Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\__Standard Values.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -772,6 +788,7 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Head.cshtml" />
     <Content Include="Views\Pages\RadioPage.cshtml" />
+    <Content Include="Views\Pages\BalancePage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -808,6 +825,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\SslMongoDbOverride.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\BalancePageController.cs" />
     <Compile Include="Controllers\Pages\GeneralContentPageController.cs" />
     <Compile Include="Controllers\Pages\RadioPageController.cs" />
     <Compile Include="Controllers\Pages\RadioSectionPageController.cs" />
@@ -820,6 +838,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
