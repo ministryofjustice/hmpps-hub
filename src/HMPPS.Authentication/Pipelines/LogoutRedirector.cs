@@ -1,11 +1,7 @@
-using System;
-using System.Text;
-using System.Web;
-using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
-using Sitecore.Sites;
 using Sitecore.Web;
-using IdentityModel.Client;
+using HMPPS.Utilities.Services;
+
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -19,7 +15,10 @@ namespace HMPPS.Authentication.Pipelines
             // Temporary so we can test log in and out with different user. Probably can delete this whole thing later.
             // unless we need to add a log out button.
             Sitecore.Security.Authentication.AuthenticationManager.Logout();
-            DeleteIdamDataCookie(args.Context);
+
+            var userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);
+
+            userDataService.DeleteUserDataCookie(args.Context);
 
             // Redirect the user to the SSO logout URL.
             WebUtil.Redirect(Settings.LogoutEndpoint);

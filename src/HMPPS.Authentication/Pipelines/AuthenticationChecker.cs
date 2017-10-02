@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
-using System.Web;
 using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.HttpRequest;
-using HMPPS.Authentication.Helpers;
-using HMPPS.Authentication.Services;
 using Sitecore.Security.Authentication;
+using HMPPS.Utilities.Helpers;
+using HMPPS.Utilities.Services;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -32,30 +29,31 @@ namespace HMPPS.Authentication.Pipelines
 
             Assert.ArgumentNotNull(args, "args");
             var sitecoreUserLoggedIn = Context.IsLoggedIn;
+            var userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);
 
-            var idamData = GetIdamDataFromCookie(args.Context);
+            var userData = userDataService.GetUserDataFromCookie(args.Context);
 
-            if (sitecoreUserLoggedIn && idamData == null)
+            if (sitecoreUserLoggedIn && userData == null)
             {
                 AuthenticationManager.Logout();
                 return;
             }
-            if (!sitecoreUserLoggedIn && idamData != null)
+            if (!sitecoreUserLoggedIn && userData != null)
             {
-                var user = BuildVirtualUser(idamData);
+                var user = BuildVirtualUser(userData);
                 AuthenticationManager.LoginVirtualUser(user);
             }
-            if (sitecoreUserLoggedIn && idamData != null)
+            if (sitecoreUserLoggedIn && userData != null)
             {
-                if (ExpirationHelper.IsExpired(idamData.ExpiresAt))
+                if (ExpirationHelper.IsExpired(userData.ExpiresAt))
                 {
-                    var claims = RefreshIdamData(ref idamData);
-                    SaveIdamDataToCookie(claims, args.Context);
+                    var claims = RefreshUserData(ref userData);
+                    userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
-                else if (! Sitecore.Context.User.LocalName.Equals(idamData.NameIdentifier))
+                else if (!Sitecore.Context.User.LocalName.Equals(userData.NameIdentifier))
                 {
                     AuthenticationManager.Logout();
-                    DeleteIdamDataCookie(args.Context);
+                    userDataService.DeleteUserDataCookie(args.Context);
                 }
             }
         }

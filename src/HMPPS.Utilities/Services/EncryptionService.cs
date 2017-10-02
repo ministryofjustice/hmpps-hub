@@ -2,9 +2,9 @@ using System;
 using System.Web;
 using Sitecore.SecurityModel.Cryptography;
 using Sitecore.Diagnostics;
-using HMPPS.Authentication.Interfaces;
+using HMPPS.Utilities.Interfaces;
 
-namespace HMPPS.Authentication.Services
+namespace HMPPS.Utilities.Services
 {
     public class EncryptionService : IEncryptionService
     {
@@ -19,7 +19,7 @@ namespace HMPPS.Authentication.Services
             }
             catch
             {
-                Log.Error(String.Format("HMPPS.Authentication.EncryptionService - Error trying to encrypt {0}", plainValue), this);
+                Log.Error(String.Format("HMPPS.Utilities.Services.EncryptionService - Error trying to encrypt {0}", plainValue), this);
                 return encryptedValue;
             }
 
@@ -44,7 +44,7 @@ namespace HMPPS.Authentication.Services
             }
             catch (Exception)
             {
-                Log.Error(String.Format("HMPPS.Authentication.EncryptionService - Error trying to decrypt {0}", encryptedValue), this);
+                Log.Error(String.Format("HMPPS.Utilities.Services.EncryptionService - Error trying to decrypt {0}", encryptedValue), this);
                 return null;
             }
         }

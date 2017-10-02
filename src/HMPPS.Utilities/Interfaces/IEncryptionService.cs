@@ -1,4 +1,4 @@
-namespace HMPPS.Authentication.Interfaces
+namespace HMPPS.Utilities.Interfaces
 {
     public interface IEncryptionService
     {

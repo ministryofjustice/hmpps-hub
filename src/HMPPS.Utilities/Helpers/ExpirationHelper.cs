@@ -1,7 +1,7 @@
 using System;
 using IdentityModel;
 
-namespace HMPPS.Authentication.Helpers
+namespace HMPPS.Utilities.Helpers
 {
     public static class ExpirationHelper
     {

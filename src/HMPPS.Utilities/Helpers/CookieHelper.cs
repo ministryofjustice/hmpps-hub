@@ -2,7 +2,7 @@ using System.Web;
 using System.Collections;
 using System.Collections.Specialized;
 
-namespace HMPPS.Authentication.Helpers
+namespace HMPPS.Utilities.Helpers
 {
     public class CookieHelper
     {

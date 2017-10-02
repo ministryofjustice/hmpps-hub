@@ -2,26 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Protocols.WSTrust;
 using System.IdentityModel.Tokens;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.ServiceModel.Security.Tokens;
 using System.Text;
-using HMPPS.Authentication.Interfaces;
-using HMPPS.Authentication.Helpers;
+using HMPPS.Utilities.Interfaces;
+using HMPPS.Utilities.Helpers;
 using Sitecore.Links;
 using Sitecore.Sites;
 
-namespace HMPPS.Authentication.Services
+namespace HMPPS.Utilities.Services
 {
     public class JwtTokenService : IJwtTokenService
     {
 
-        public string GenerateJwtToken(IEnumerable<Claim> claims)
+        public string GenerateJwtToken(IEnumerable<Claim> claims, string jwtTokenSecurityKey)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
-            var symmetricKey = Encoding.UTF8.GetBytes(Settings.JwtTokenSecurityKey);
+            var symmetricKey = Encoding.UTF8.GetBytes(jwtTokenSecurityKey);
 
             var now = DateTime.UtcNow;
             var expiration = ExpirationHelper.GetExpirationTime(86400); // 1 day in sec
@@ -42,12 +41,12 @@ namespace HMPPS.Authentication.Services
 
             return tokenString;
         }
-       
-        public IEnumerable<Claim> GetClaimsFromJwtToken(string tokenString)
+
+        public IEnumerable<Claim> GetClaimsFromJwtToken(string tokenString, string jwtTokenSecurityKey)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
-            var symmetricKey = Encoding.UTF8.GetBytes(Settings.JwtTokenSecurityKey);
+            var symmetricKey = Encoding.UTF8.GetBytes(jwtTokenSecurityKey);
 
             var validationParameters = new TokenValidationParameters()
             {
@@ -61,12 +60,11 @@ namespace HMPPS.Authentication.Services
 
             return claimsPrincipal.Claims;
         }
-    
+
 
         private static string GetHomeAddress()
         {
             // TODO: check why hostname and targethostname of "website" are missing from Sitecore.config
-            // TODO: confirm if authentication logic never will be used from shell site (content editors)
             var website = SiteContext.GetSite("website");
 
             if (!string.IsNullOrEmpty(website.TargetHostName))
