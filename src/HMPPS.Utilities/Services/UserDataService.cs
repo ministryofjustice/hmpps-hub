@@ -22,12 +22,6 @@ namespace HMPPS.Utilities.Services
 
         }
 
-        //public UserDataService()
-        //{
-        //    _encryptionService = (IEncryptionService)Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(IEncryptionService));
-        //    _jwtTokenService = (IJwtTokenService)Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(IJwtTokenService));
-        //}
-
         public void SaveUserDataToCookie(IEnumerable<Claim> claims, HttpContext context)
         {
             // store claims into a secure cookie
