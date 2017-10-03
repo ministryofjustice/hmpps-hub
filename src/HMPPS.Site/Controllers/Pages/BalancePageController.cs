@@ -14,9 +14,10 @@ namespace HMPPS.Site.Controllers.Pages
         private BalancePageViewModel _bpvm;
         private IUserDataService _userDataService;
 
-        public BalancePageController()//(IUserDataService userDataService) TODO sort out DI with Sitecore later
-        {          
-            BuildViewModel(Sitecore.Context.Item);
+        public BalancePageController(IUserDataService userDataService)
+        {
+
+            _userDataService = userDataService;
         }
 
         private void BuildViewModel(Item contextItem)
@@ -27,8 +28,6 @@ namespace HMPPS.Site.Controllers.Pages
 
             _bpvm.ShowAccountBalance = contextItem["Show Account Balance"] == "1";
             _bpvm.ShowPhoneCredit = contextItem["Show Phone Credit"] == "1";
-
-            _userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);//TODO sort out DI with Sitecore later
 
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
 
@@ -45,6 +44,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/BalancePage.cshtml", _bpvm);
         }
     }

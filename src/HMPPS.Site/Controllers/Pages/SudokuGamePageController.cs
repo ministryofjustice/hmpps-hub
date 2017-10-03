@@ -8,11 +8,6 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private SudokuGamePageViewModel _sgpvm;
 
-        public SudokuGamePageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
-
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
             _sgpvm = new SudokuGamePageViewModel();
@@ -22,6 +17,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/SudokuGamePage.cshtml", _sgpvm);
         }
     }

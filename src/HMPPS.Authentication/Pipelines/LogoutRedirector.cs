@@ -1,12 +1,19 @@
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Web;
-using HMPPS.Utilities.Services;
+using HMPPS.Utilities.Interfaces;
 
 
 namespace HMPPS.Authentication.Pipelines
 {
     public class LogoutRedirector : AuthenticationProcessorBase
     {
+
+        private IUserDataService _userDataService;
+
+        public LogoutRedirector(IUserDataService userDataService)
+        {
+            _userDataService = userDataService;
+        }
         public override void Process(HttpRequestArgs args)
         {
             // Only act on requests against the logout URL
@@ -16,9 +23,7 @@ namespace HMPPS.Authentication.Pipelines
             // unless we need to add a log out button.
             Sitecore.Security.Authentication.AuthenticationManager.Logout();
 
-            var userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);
-
-            userDataService.DeleteUserDataCookie(args.Context);
+            _userDataService.DeleteUserDataCookie(args.Context);
 
             // Redirect the user to the SSO logout URL.
             WebUtil.Redirect(Settings.LogoutEndpoint);

@@ -9,7 +9,10 @@ namespace HMPPS.Site.Controllers.Base
     {
         public BaseController()
         {
-            BuildBreadcrumb(Sitecore.Context.Item);
+            if (Sitecore.Context.Item != null)
+            {
+                BuildBreadcrumb(Sitecore.Context.Item);
+            }
         }
 
         private void BuildBreadcrumb(Item contextItem)
