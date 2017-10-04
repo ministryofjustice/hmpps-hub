@@ -12,7 +12,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            Log.Debug("MediaStorageProvider - Republishing Media item", this);
+            Log.Debug("HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor.RepublishMedia - Republishing Media item", this);
 
             RepublishItems(args.UploadedItems);
         }
