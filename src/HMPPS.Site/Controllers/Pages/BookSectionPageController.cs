@@ -12,11 +12,6 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private BookSectionPageViewModel _bspvm;
 
-        public BookSectionPageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
-
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
             _bspvm = new BookSectionPageViewModel();
@@ -58,6 +53,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/BookSectionPage.cshtml", _bspvm);
         }
     }

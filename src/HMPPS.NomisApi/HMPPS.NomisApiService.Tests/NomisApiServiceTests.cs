@@ -42,7 +42,7 @@ namespace HMPPS.NomisApiService.Tests
             var accounts = nomisApiService.GetPrisonerAccounts("BMI", "A1417AE");
 
             Assert.AreEqual(accounts.Spends, (decimal)206.37);
-            Assert.AreEqual(accounts.Cash, (decimal)387.63);
+            Assert.AreEqual(accounts.Cash, (decimal)641.63);
             Assert.AreEqual(accounts.Savings, (decimal)50.00);
 
         }

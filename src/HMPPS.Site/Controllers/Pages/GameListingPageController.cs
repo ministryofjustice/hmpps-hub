@@ -12,11 +12,6 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private GameListingPageViewModel _glpvm;
 
-        public GameListingPageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
-
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
             _glpvm = new GameListingPageViewModel();
@@ -45,6 +40,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/GameListingPage.cshtml", _glpvm);
         }
     }

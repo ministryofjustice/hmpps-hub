@@ -1,10 +1,8 @@
 using System;
 using System.Web.Mvc;
-using HMPPS.Authentication;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
 using HMPPS.Utilities.Interfaces;
-using HMPPS.Utilities.Services;
 using Sitecore.Data.Items;
 
 namespace HMPPS.Site.Controllers.Pages
@@ -12,11 +10,11 @@ namespace HMPPS.Site.Controllers.Pages
     public class BalancePageController : BaseController
     {
         private BalancePageViewModel _bpvm;
-        private IUserDataService _userDataService;
+        private readonly IUserDataService _userDataService;
 
-        public BalancePageController()//(IUserDataService userDataService) TODO sort out DI with Sitecore later
-        {          
-            BuildViewModel(Sitecore.Context.Item);
+        public BalancePageController(IUserDataService userDataService)
+        {
+            _userDataService = userDataService;
         }
 
         private void BuildViewModel(Item contextItem)
@@ -24,9 +22,6 @@ namespace HMPPS.Site.Controllers.Pages
             _bpvm = new BalancePageViewModel();
 
             _bpvm.BreadcrumbItems = BreadcrumbItems;
-
-           
-            _userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);//TODO sort out DI with Sitecore later
 
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;            
@@ -43,6 +38,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/BalancePage.cshtml", _bpvm);
         }
     }

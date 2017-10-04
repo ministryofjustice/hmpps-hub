@@ -10,12 +10,21 @@ using Sitecore.Security.Authentication;
 using Sitecore.Web;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Models;
-using HMPPS.Utilities.Services;
+using HMPPS.Utilities.Interfaces;
+using Sitecore.DependencyInjection;
 
 namespace HMPPS.Authentication.Pipelines
 {
     public class OAuth2SignInCallback : AuthenticationProcessorBase
     {
+        private readonly IUserDataService _userDataService;
+
+        public OAuth2SignInCallback(IUserDataService userDataService)
+        {
+            _userDataService = userDataService;
+        }
+
+
         public override void Process(HttpRequestArgs args)
         {
             // NOTE - no error handling added. Failed requests are expected to result in an unhandled exception, which should show friendly error page.
@@ -34,10 +43,9 @@ namespace HMPPS.Authentication.Pipelines
             AddPrisonerDetailsToClaims(prisonerId, ref claims);
 
             var userData = new UserData(claims);
-            var userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);
 
             // store claims into a secure cookie - TODO: use UserData, not claims
-            userDataService.SaveUserDataToCookie(claims, args.Context);
+            _userDataService.SaveUserDataToCookie(claims, args.Context);
 
             // Build sitecore user and log in - this will persist until log out or session ends.
 

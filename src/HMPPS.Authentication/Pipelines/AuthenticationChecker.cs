@@ -5,7 +5,7 @@ using Sitecore.Diagnostics;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security.Authentication;
 using HMPPS.Utilities.Helpers;
-using HMPPS.Utilities.Services;
+using HMPPS.Utilities.Interfaces;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -22,6 +22,14 @@ namespace HMPPS.Authentication.Pipelines
 
     public class AuthenticationChecker : AuthenticationProcessorBase
     {
+
+        private IUserDataService _userDataService;
+
+        public AuthenticationChecker(IUserDataService userDataService)
+        {
+            _userDataService = userDataService;
+        }
+
         public override void Process(HttpRequestArgs args)
         {
             // Not checking IDAM authentication of content editors
@@ -29,9 +37,10 @@ namespace HMPPS.Authentication.Pipelines
 
             Assert.ArgumentNotNull(args, "args");
             var sitecoreUserLoggedIn = Context.IsLoggedIn;
-            var userDataService = new UserDataService(Settings.AuthenticationCheckerCookieName, Settings.AuthenticationCheckerCookieKey, Settings.JwtTokenSecurityKey);
 
-            var userData = userDataService.GetUserDataFromCookie(args.Context);
+
+
+            var userData = _userDataService.GetUserDataFromCookie(args.Context);
 
             if (sitecoreUserLoggedIn && userData == null)
             {
@@ -48,12 +57,12 @@ namespace HMPPS.Authentication.Pipelines
                 if (ExpirationHelper.IsExpired(userData.ExpiresAt))
                 {
                     var claims = RefreshUserData(ref userData);
-                    userDataService.SaveUserDataToCookie(claims, args.Context);
+                    _userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
                 else if (!Sitecore.Context.User.LocalName.Equals(userData.NameIdentifier))
                 {
                     AuthenticationManager.Logout();
-                    userDataService.DeleteUserDataCookie(args.Context);
+                    _userDataService.DeleteUserDataCookie(args.Context);
                 }
             }
         }

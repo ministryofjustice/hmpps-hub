@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
@@ -9,56 +10,50 @@ namespace HMPPS.Utilities.Services
 {
     public class UserDataService : IUserDataService
     {
+        private readonly IEncryptionService _encryptionService;
 
-        public string UserDataCookieName { get; private set; }
+        private readonly IJwtTokenService _jwtTokenService;
 
-        public string UserDataCookieKey { get; private set; }
-
-        public string JwtTokenSecurityKey { get; private set; }
-
-
-        public UserDataService(string userDataCookieName, string userDataCookieKey, string jwtTokenSecurityKey)
+        public UserDataService(IEncryptionService encryptionService, IJwtTokenService jwtTokenService)
         {
-            UserDataCookieName = userDataCookieName;
-            UserDataCookieKey = userDataCookieKey;
-            JwtTokenSecurityKey = jwtTokenSecurityKey;
+            _encryptionService = encryptionService;
+
+            _jwtTokenService = jwtTokenService;
+
         }
 
         public void SaveUserDataToCookie(IEnumerable<Claim> claims, HttpContext context)
         {
             // store claims into a secure cookie
-            var jwtTokenService = new JwtTokenService();
-            var jwtToken = jwtTokenService.GenerateJwtToken(claims, JwtTokenSecurityKey);
+            var jwtToken = _jwtTokenService.GenerateJwtToken(claims, Settings.JwtTokenSecurityKey);
 
-            var encryptionService = new EncryptionService();
-            var encryptedJwtToken = encryptionService.Encrypt(jwtToken);
+            var encryptedJwtToken = _encryptionService.Encrypt(jwtToken);
 
-            var userDataCookie = new CookieHelper(UserDataCookieName, context);
-            userDataCookie.SetValue(UserDataCookieKey, encryptedJwtToken);
+            var userDataCookie = new CookieHelper(Settings.UserDataCookieName, context);
+            userDataCookie.SetValue(Settings.UserDataCookieKey, encryptedJwtToken);
             userDataCookie.Save();
         }
 
         public UserData GetUserDataFromCookie(HttpContext context)
         {
-            var cookie = new CookieHelper(UserDataCookieName, context);
+            var cookie = new CookieHelper(Settings.UserDataCookieName, context);
             if (cookie == null)
                 return null;
 
             cookie.GetCookie();
-            var encryptedJwtToken = cookie.GetValue(UserDataCookieKey);
+            var encryptedJwtToken = cookie.GetValue(Settings.UserDataCookieKey);
             if (string.IsNullOrEmpty(encryptedJwtToken))
                 return null;
 
-            var encryptionService = new EncryptionService();
-            var jwtToken = encryptionService.Decrypt(encryptedJwtToken);
+            var jwtToken = _encryptionService.Decrypt(encryptedJwtToken);
 
-            var claims = new JwtTokenService().GetClaimsFromJwtToken(jwtToken, JwtTokenSecurityKey);
+            var claims = _jwtTokenService.GetClaimsFromJwtToken(jwtToken, Settings.JwtTokenSecurityKey);
             return new UserData(claims);
         }
 
         public void DeleteUserDataCookie(HttpContext context)
         {
-            var cookie = new CookieHelper(UserDataCookieName, context);
+            var cookie = new CookieHelper(Settings.UserDataCookieName, context);
             if (cookie == null)
                 return;
             cookie.Delete();
