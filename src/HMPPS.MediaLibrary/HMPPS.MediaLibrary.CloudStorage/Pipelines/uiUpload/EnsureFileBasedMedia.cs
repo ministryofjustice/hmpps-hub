@@ -23,11 +23,10 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
         public void Process(UploadArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-
+            if (args.Destination != UploadDestination.Database) return;       
             var mediaLocation = EnsureUploadIntoCloud(args.Folder);
-            if (args.Destination == UploadDestination.Database && mediaLocation != null)
+            if (mediaLocation != null)
             {
-
                 args.Destination = UploadDestination.File;
                 PipelineHelper.AddContainerNameToArgs(args, mediaLocation.ContainerName);
             }
