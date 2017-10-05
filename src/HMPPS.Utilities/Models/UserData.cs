@@ -36,7 +36,7 @@ namespace HMPPS.Utilities.Models
             PrisonId = (claims.FirstOrDefault(c => c.Type == "prison_id"))?.Value;
             PrisonName = (claims.FirstOrDefault(c => c.Type == "prison_name"))?.Value;
             AccountBalance = ParseToDecimal((claims.FirstOrDefault(c => c.Type == "account_balance"))?.Value);
-            AccountBalanceLastUpdated = ParseToDateTime((claims.FirstOrDefault(c => c.Type == "account_balance_lastupdated"))?.Value);
+            AccountBalanceLastUpdated = ParseToUkDateTime((claims.FirstOrDefault(c => c.Type == "account_balance_lastupdated"))?.Value);
         }
 
         private static decimal ParseToDecimal(string value)
@@ -47,11 +47,18 @@ namespace HMPPS.Utilities.Models
             return (decimal)0;
         }
 
-        private static DateTime ParseToDateTime(string value)
+        private static DateTime ParseToUkDateTime(string value)
         {
-            DateTime retval;
-            if (DateTime.TryParse(value, out retval))
-                return retval;
+            DateTime utcDateTime;
+            if (DateTime.TryParse(value, out utcDateTime))
+            {
+                DateTime.SpecifyKind(utcDateTime, DateTimeKind.Utc);
+
+                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
+                TimeSpan offset = tzi.GetUtcOffset(DateTime.Now);
+                DateTime britishDateTime = utcDateTime.Add(offset);
+                return britishDateTime;
+            }
             return DateTime.MinValue;
         }
     }
