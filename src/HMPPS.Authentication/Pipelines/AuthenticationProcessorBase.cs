@@ -36,7 +36,7 @@ namespace HMPPS.Authentication.Pipelines
 
             var accounts = _nomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
             claims.Add(new Claim("account_balance", ((decimal)(accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
-            claims.Add(new Claim("account_balance_lastupdated", DateTime.Now.ToString(CultureInfo.InvariantCulture)));
+            claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
         }
 
         protected User BuildVirtualUser(UserData idamData)
