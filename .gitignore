@@ -333,6 +333,7 @@ proxy.json
 /cd-www/App_Data/tools/phantomjs
 /cd-www/App_Data/viewstate
 /cd-www/App_Data/license.xml
+/cd-www/App_Data/Unicorn
 /cd-www/Areas/Social/Views
 /cd-www/hmppsAssets
 /cd-www/layouts
@@ -373,3 +374,4 @@ proxy.json
 /www/App_Data/packages
 /www/App_Data/Submit Queue
 /www/App_Data/MediaFiles/
+/cd-www/App_Data/MediaCache/website
