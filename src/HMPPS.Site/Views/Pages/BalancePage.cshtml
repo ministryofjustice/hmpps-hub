@@ -18,7 +18,7 @@
                 <div class="column-one-third">
                     <div class="data">
                         @Html.Sitecore().Field("Account Balance Image", new { @class = "data-img" })
-                        <span class="data-item data-heading heading-xxlarge">&pound;@Model.AccountBalance</span>
+                        <span class="data-item data-heading heading-xxlarge">&pound;@Model.AccountBalance.ToString("0.00")</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Account Balance Text")</span>
                         <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalanceLastUpdate.ToShortTimeString()</span>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="column-one-third">
                     <div class="data">
                         @Html.Sitecore().Field("Phone Credit Image", new { @class = "data-img" })
-                        <span class="data-item data-heading heading-xxlarge">&pound;@Model.PhoneCredit</span>
+                        <span class="data-item data-heading heading-xxlarge">&pound;@Model.PhoneCredit.ToString("0.00")</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Phone Credit Text")</span>
                         <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.PhoneCreditLastUpdate.ToShortTimeString()</span>
                     </div>
