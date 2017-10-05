@@ -7,12 +7,14 @@ using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
 using HMPPS.Utilities.Models;
-
+using HMPPS.NomisApiService.Interfaces;
 
 namespace HMPPS.Authentication.Pipelines
 {
     public abstract class AuthenticationProcessorBase : HttpRequestProcessor
     {
+
+        protected INomisApiService _nomisApiService;
 
         public IEnumerable<Claim> RefreshUserData(ref UserData userData)
         {
@@ -27,14 +29,12 @@ namespace HMPPS.Authentication.Pipelines
 
         protected void AddPrisonerDetailsToClaims(string prisonerId, ref List<Claim> claims)
         {
-            var nomisApiService = new NomisApiService.Services.NomisApiService();
-
-            var establishment = nomisApiService.GetPrisonerLocationDetails(prisonerId);
+            var establishment = _nomisApiService.GetPrisonerLocationDetails(prisonerId);
             var prisonId = establishment.Code;
             claims.Add(new Claim("prison_id", prisonId));
             claims.Add(new Claim("prison_name", establishment.Desc));
 
-            var accounts = nomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
+            var accounts = _nomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
             claims.Add(new Claim("account_balance", ((decimal)(accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
             claims.Add(new Claim("account_balance_lastupdated", DateTime.Now.ToString(CultureInfo.InvariantCulture)));
         }

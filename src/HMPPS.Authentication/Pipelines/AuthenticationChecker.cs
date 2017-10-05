@@ -6,6 +6,7 @@ using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security.Authentication;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Interfaces;
+using HMPPS.NomisApiService.Interfaces;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -25,9 +26,10 @@ namespace HMPPS.Authentication.Pipelines
 
         private IUserDataService _userDataService;
 
-        public AuthenticationChecker(IUserDataService userDataService)
+        public AuthenticationChecker(IUserDataService userDataService, INomisApiService nomisApiService)
         {
             _userDataService = userDataService;
+            _nomisApiService = nomisApiService;
         }
 
         public override void Process(HttpRequestArgs args)

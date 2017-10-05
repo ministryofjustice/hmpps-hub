@@ -11,6 +11,7 @@ using Sitecore.Web;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Models;
 using HMPPS.Utilities.Interfaces;
+using HMPPS.NomisApiService.Interfaces;
 using Sitecore.DependencyInjection;
 
 namespace HMPPS.Authentication.Pipelines
@@ -19,9 +20,10 @@ namespace HMPPS.Authentication.Pipelines
     {
         private readonly IUserDataService _userDataService;
 
-        public OAuth2SignInCallback(IUserDataService userDataService)
+        public OAuth2SignInCallback(IUserDataService userDataService, INomisApiService nomisApiService)
         {
             _userDataService = userDataService;
+            _nomisApiService = nomisApiService;
         }
 
 

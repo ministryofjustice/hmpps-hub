@@ -43,7 +43,8 @@ namespace HMPPS.NomisApiService.Services
         public string ApiBaseUrl { get; set; }
 
         private string AuthenticationToken { get; set; }
-        private HttpClient Client { get; set; }
+
+        static HttpClient Client = new HttpClient();
 
         public NomisApiService() : this(true)
         {
@@ -56,20 +57,19 @@ namespace HMPPS.NomisApiService.Services
                 this.ApiBaseUrl = Settings.NomisApiBaseUrl;
                 this.ClientToken = Settings.NomisApiClientToken;
                 this.SecretPkcs8 = Settings.NomisApiSecretKey;
-                InitializeClient();
             }
         }
 
         public void InitializeClient()
         {
-            AuthenticationToken = GenerateToken(); //todo: when does this token expire?
-            Client = new HttpClient();
+            AuthenticationToken = GenerateToken();
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AuthenticationToken);
             Client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
         }
 
         public Establishment GetPrisonerLocationDetails(string prisonerId)
         {
+            InitializeClient();
             Task<string> task = Task.Run<string>(async () => await GetPrisonerLocationDetailsAsync(prisonerId));
             try
             {
@@ -87,6 +87,7 @@ namespace HMPPS.NomisApiService.Services
 
         public Accounts GetPrisonerAccounts(string prisonId, string prisonerId)
         {
+            InitializeClient();
             Task<string> task = Task.Run<string>(async () => await GetPrisonerAccountsAsync(prisonId, prisonerId));
             try
             {
