@@ -34,9 +34,11 @@ export default (function () {
         // refactor
         if (e.currentTarget.value === null || e.currentTarget.value === '') {
           form.classList.add('form-group-error');
+          form.querySelector('input').classList.add('form-control-error');
           errorMsg.style.cssText = 'display: block;';
         } else {
           form.classList.remove('form-group-error');
+          form.querySelector('input').classList.remove('form-control-error');
           errorMsg.style.cssText = 'display: none;';
           newGame();
         }
