@@ -6,7 +6,7 @@ using System.ServiceModel.Security.Tokens;
 using System.Text;
 using System.Threading.Tasks;
 using IdentityModel.Client;
-using HMPPS.Authentication.Helpers;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.Authentication
 {

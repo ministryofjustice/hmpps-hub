@@ -63,37 +63,29 @@
     <Reference Include="MicroCHAP, Version=1.2.2.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.DependencyCollector.dll</HintPath>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.PerfCounterCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.Web.dll</HintPath>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.AI.WindowsServer.dll</HintPath>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.WindowsServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.TraceListener, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.TraceListener">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
@@ -148,9 +140,8 @@
     <Reference Include="Sitecore.Analytics.Processing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.170728\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Cloud.ApplicationInsights, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SC_Azure_8.2_u5\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
+    <Reference Include="Sitecore.Cloud.ApplicationInsights">
+      <HintPath>..\lib\SC_Azure_8.2_u5\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.8.2.170728\lib\NET452\Sitecore.Kernel.dll</HintPath>
@@ -185,9 +176,6 @@
     <Reference Include="Sitecore.Zip, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Zip.8.2.170728\lib\NET452\Sitecore.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http">
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Rainbow, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rainbow.Core.2.0.0\lib\net452\Rainbow.dll</HintPath>
     </Reference>
@@ -207,6 +195,9 @@
       <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.0.8\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -387,6 +378,62 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\zzz\HMPPS.NomisApiService.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Localhost.config">
+      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Release.config">
+      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Localhost.config">
+      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Release.config">
+      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Debug.config">
+      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Release.config">
+      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Localhost.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Release.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Localhost.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Release.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Debug.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Release.config">
+      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
@@ -477,6 +524,7 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config" />
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -711,36 +759,36 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Logo Link.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Skip Link Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\Enable Javascript Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\More Episodes Block Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\General Content Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Balance Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Radio Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Show Account Balance.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Show Phone Credit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Last Updated Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Today Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\__Standard Values.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
-    <None Include="Parameters.Debug.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.Release.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CMS-Release.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CD-Release.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CD-Localhost.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="Parameters.CMS-Localhost.xml">
-      <DependentUpon>Parameters.xml</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
@@ -759,6 +807,8 @@
     <Content Include="Views\Pages\GeneralContentPage.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Head.cshtml" />
+    <Content Include="Views\Pages\RadioPage.cshtml" />
+    <Content Include="Views\Pages\BalancePage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -792,10 +842,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
-    <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
+    <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
+    <Compile Include="DependencyInjection\RegisterServices.cs" />
+    <Compile Include="DependencyInjection\InitializeDependencyInjection.cs" />
     <Compile Include="App_Start\SslMongoDbOverride.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Pages\BalancePageController.cs" />
     <Compile Include="Controllers\Pages\GeneralContentPageController.cs" />
+    <Compile Include="Controllers\Pages\RadioPageController.cs" />
     <Compile Include="Controllers\Pages\RadioSectionPageController.cs" />
     <Compile Include="Controllers\Pages\ChessGamePageController.cs" />
     <Compile Include="Controllers\Pages\GameListingPageController.cs" />
@@ -803,9 +857,13 @@
     <Compile Include="Controllers\Pages\HomepageController.cs" />
     <Compile Include="Controllers\Pages\NeontroidsGamePageController.cs" />
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
+    <Compile Include="DependencyInjection\ServiceCollectionExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\RadioPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\NeontroidsGamePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SudokuGamePageViewModel.cs" />

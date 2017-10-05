@@ -5,19 +5,12 @@ using HMPPS.Models.Cms;
 using HMPPS.Models.Common;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
-using Sitecore.Data.Items;
-using Sitecore.Resources.Media;
 
 namespace HMPPS.Site.Controllers.Pages
 {
     public class BookSectionPageController : BaseController
     {
         private BookSectionPageViewModel _bspvm;
-
-        public BookSectionPageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
 
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
@@ -45,11 +38,10 @@ namespace HMPPS.Site.Controllers.Pages
 
                 if (bookSection.IsBookPage)
                 {
-                    var bookMediaItem = (MediaItem)((Sitecore.Data.Fields.FileField)c.Fields["Book File"])?.MediaItem;
                     bookSection.BookFile = new File()
                     {
-                        Url = MediaManager.GetMediaUrl(bookMediaItem),
-                        Extension = bookMediaItem.Extension
+                        Url = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(c, "Book File"),
+                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFilExtension(c, "Book File")
                     };
                 }
 
@@ -61,6 +53,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/BookSectionPage.cshtml", _bspvm);
         }
     }

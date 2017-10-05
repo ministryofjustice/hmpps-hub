@@ -34,10 +34,12 @@ export default (function () {
         // refactor
         if (e.currentTarget.value === null || e.currentTarget.value === '' ||  e.currentTarget.value < 0 || e.currentTarget.value > 20 ) {
           form.classList.add('form-group-error');
+          form.querySelector('input').classList.add('form-control-error');
           errorMsg.style.cssText = 'display: block;';
           btn.disabled = true;
         } else {
           form.classList.remove('form-group-error');
+          form.querySelector('input').classList.remove('form-control-error');
           errorMsg.style.cssText = 'display: none;';
           btn.disabled = false;
           newGame();
