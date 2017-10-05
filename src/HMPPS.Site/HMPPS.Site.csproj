@@ -782,6 +782,16 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Last Updated Text.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Today Text.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Video Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Video File.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
