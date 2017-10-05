@@ -35,10 +35,13 @@
 
 .video-js.audio-player .vjs-remaining-time,
 .video-js.audio-player .vjs-fullscreen-control,
-.video-js.audio-player .vjs-big-play-button{
+.video-js.audio-player .vjs-big-play-button,
+.video-js.audio-player .vjs-progress-control{
   display: none;
 }
 
-.video-js.audio-player .vjs-current-time{
+.video-js.audio-player .vjs-time-divider,
+.video-js.audio-player .vjs-current-time,
+.video-js.audio-player .vjs-duration{
   display: block;
 }

@@ -22,13 +22,13 @@ include('_includes/head.php'); ?>
       </div>
       <div class="game chess js-chess">
         <div id="js-board" class="chessboard"></div>
-          <h2>Moves in this game</h2>
+          <h3>Moves in this game</h3>
         <div class="moves">
           <p class="js-chessmoves moves__area"></p>
           <pre id=evaluation></pre>
         </div>
         <div class="chess-controls">
-          <h2>Edit and play a new game</h2>
+          <h2 class="heading-large">Edit and play a new game</h2>
           <div class="column-half">
             <div class="form-group">
               <fieldset>
@@ -65,7 +65,7 @@ include('_includes/head.php'); ?>
                   <h1 class="heading-medium">Choose your Skill level</h1>
                 </legend>
                 <div class="form-group form-group-error">
-                  <label for="skillLevel" class="form-label-bold" id="error-skill-level">Skill Level (0-20)</label>
+                  <label for="skillLevel" class="form-label" id="error-skill-level">Skill Level (0-20)</label>
                   <span class="error-message">
                     This value has to be between 0 and 20
                   </span>
