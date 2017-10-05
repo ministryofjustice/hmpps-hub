@@ -9,11 +9,6 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private GeneralContentPageViewModel _gcpvm;
 
-        public GeneralContentPageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
-
         private void BuildViewModel(Item contextItem)
         {
             _gcpvm = new GeneralContentPageViewModel();
@@ -23,6 +18,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/GeneralContentPage.cshtml", _gcpvm);
         }
     }

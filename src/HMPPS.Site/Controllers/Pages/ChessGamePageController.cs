@@ -8,11 +8,6 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private ChessGamePageViewModel _cgpvm;
 
-        public ChessGamePageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
-
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
             _cgpvm = new ChessGamePageViewModel();
@@ -22,6 +17,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/ChessGamePage.cshtml", _cgpvm);
         }
     }

@@ -13,11 +13,6 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private RadioSectionPageViewModel _rspvm;
 
-        public RadioSectionPageController()
-        {          
-            BuildViewModel(Sitecore.Context.Item);
-        }
-
         private void BuildViewModel(Item contextItem)
         {
             _rspvm = new RadioSectionPageViewModel();
@@ -45,6 +40,7 @@ namespace HMPPS.Site.Controllers.Pages
 
         public ActionResult Index()
         {
+            BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/RadioSectionPage.cshtml", _rspvm);
         }
     }
