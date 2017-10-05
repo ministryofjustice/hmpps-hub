@@ -32,12 +32,14 @@ export default (function () {
       document.querySelector('#skillLevel').addEventListener('change', (e) => {
         game.setSkillLevel(parseInt(this.value, 10));
         // refactor
-        if (e.currentTarget.value === null || e.currentTarget.value === '') {
+        if (e.currentTarget.value === null || e.currentTarget.value === '' ||  e.currentTarget.value < 0 || e.currentTarget.value > 20 ) {
           form.classList.add('form-group-error');
           errorMsg.style.cssText = 'display: block;';
+          btn.disabled = true;
         } else {
           form.classList.remove('form-group-error');
           errorMsg.style.cssText = 'display: none;';
+          btn.disabled = false;
           newGame();
         }
       });
