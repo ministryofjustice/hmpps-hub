@@ -782,6 +782,16 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Last Updated Text.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Today Text.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Video Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Video File.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -809,6 +819,7 @@
     <Content Include="Views\Partials\_Head.cshtml" />
     <Content Include="Views\Pages\RadioPage.cshtml" />
     <Content Include="Views\Pages\BalancePage.cshtml" />
+    <Content Include="Views\Pages\VideoSectionPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -842,6 +853,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
     <Compile Include="DependencyInjection\RegisterServices.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjection.cs" />
@@ -862,6 +874,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioSectionPageViewModel.cs" />
