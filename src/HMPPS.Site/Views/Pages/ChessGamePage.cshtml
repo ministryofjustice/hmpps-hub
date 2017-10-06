@@ -13,13 +13,13 @@
                 </div>
                 <div class="game chess js-chess">
                     <div id="js-board" class="chessboard"></div>
-                    <h2>@Html.Sitecore().Field("Subtitle 1")</h2>
+                    <h3>@Html.Sitecore().Field("Subtitle 1")</h3>
                     <div class="moves">
                         <p class="js-chessmoves moves__area"></p>
                         <pre id=evaluation></pre>
                     </div>
                     <div class="chess-controls">
-                        <h2>@Html.Sitecore().Field("Subtitle 2")</h2>
+                        <h2 class="heading-large">@Html.Sitecore().Field("Subtitle 2")</h2>
                         <div class="column-half">
                             <div class="form-group">
                                 <fieldset>
@@ -52,7 +52,7 @@
                                         <h1 class="heading-medium">@Html.Sitecore().Field("Right Bold Text")</h1>
                                     </legend>
                                     <div class="form-group form-group-error">
-                                        <label for="skillLevel" class="form-label-bold" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
+                                        <label for="skillLevel" class="form-label" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
                                         <span class="error-message">
                                             This value has to be between 0 and 20 @*TODO: add this the the CMS template so it can be translated*@
                                         </span>

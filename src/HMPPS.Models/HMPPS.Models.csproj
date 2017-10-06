@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cms\Base\SectionBlock.cs" />
+    <Compile Include="Cms\VideoSectionBlock.cs" />
     <Compile Include="Cms\RadioEpisode.cs" />
     <Compile Include="Cms\RadioSectionBlock.cs" />
     <Compile Include="Cms\GameSectionBlock.cs" />

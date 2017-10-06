@@ -1,0 +1,39 @@
+﻿---
+ID: "2b3038c0-c815-4ff2-b171-19cf3d7860f5"
+Parent: "2f030771-f583-4efd-973b-45aca3e783fe"
+Template: "2f030771-f583-4efd-973b-45aca3e783fe"
+Path: /sitecore/templates/HMPPS/Pages/Video Section Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {2F030771-F583-4EFD-973B-45ACA3E783FE}
+    {84537E49-8024-40B3-99B9-F63930099E6B}
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <r
+          id="{B3DEA547-C49D-4491-8879-AFCC57C21C0F}"
+          ph="content"
+          uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170908T103129Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
