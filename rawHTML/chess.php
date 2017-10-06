@@ -64,9 +64,9 @@ include('_includes/head.php'); ?>
                 <legend>
                   <h1 class="heading-medium">Choose your Skill level</h1>
                 </legend>
-                <div class="form-group form-group-error">
+                <div class="form-group js-form-validation">
                   <label for="skillLevel" class="form-label" id="error-skill-level">Skill Level (0-20)</label>
-                  <span class="error-message">
+                  <span class="error-message visuallyhidden">
                     This value has to be between 0 and 20
                   </span>
                   <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">

@@ -8,10 +8,8 @@ export default (function () {
       if (!chess) {
         return false;
       }
-      const form = document.querySelector('.js-chess .form-group-error');
-      form.classList.remove('form-group-error');
-      const errorMsg = form.querySelector('.error-message');
-      errorMsg.style.cssText = 'display: none;';
+
+
 
       const game = HMPPS.chess.engineGame();
       const newGame = function newGame() {
@@ -32,24 +30,33 @@ export default (function () {
       document.querySelector('#skillLevel').addEventListener('change', (e) => {
         game.setSkillLevel(parseInt(this.value, 10));
         // refactor
-        if (e.currentTarget.value === null || e.currentTarget.value === '' ||  e.currentTarget.value < 0 || e.currentTarget.value > 20 ) {
-          form.classList.add('form-group-error');
-          form.querySelector('input').classList.add('form-control-error');
-          errorMsg.style.cssText = 'display: block;';
-          btn.disabled = true;
-        } else {
-          form.classList.remove('form-group-error');
-          form.querySelector('input').classList.remove('form-control-error');
-          errorMsg.style.cssText = 'display: none;';
-          btn.disabled = false;
-          newGame();
-        }
+        HMPPS.chess.validateForm(e,btn);
+        newGame();
       });
+
+
 
       document.querySelector('.js-newgame').addEventListener('click', (e) => {
         newGame();
       });
 
+    },
+    validateForm(e,btn){
+      const form = document.querySelector('.js-chess .js-form-validation');
+
+      const errorMsg = form.querySelector('.error-message');
+      if (e.currentTarget.value === null || e.currentTarget.value === '' ||  e.currentTarget.value < 0 || e.currentTarget.value > 20 ) {
+        form.classList.add('form-group-error');
+        form.querySelector('input').classList.add('form-control-error');
+        errorMsg.classList.remove('visuallyhidden');
+        btn.disabled = true;
+      } else {
+        form.classList.remove('form-group-error');
+        form.querySelector('input').classList.remove('form-control-error');
+        errorMsg.classList.add('visuallyhidden');
+        btn.disabled = false;
+
+      }
     },
     engineGame(options) {
       const game = new Chess();
@@ -292,22 +299,30 @@ export default (function () {
              return;
            }
          });
+
          const move = game.move({
            from: source,
            to: target,
            promotion: radio
          });
 
+
          // illegal move
          if (move === null) return 'snapback';
+         board.position(game.fen());
 
-         prepareMove();
        };
 
         // update the board position after the piece snap
         // for castling, en passant, pawn promotion
-        const onSnapEnd = function() {
-            board.position(game.fen());
+        // const onSnapEnd = function() {
+        //     board.position(game.fen());
+        // };
+
+        var onMoveEnd = function(oldPos, newPos) {
+
+
+            prepareMove();
         };
 
         const cfg = {
@@ -316,7 +331,7 @@ export default (function () {
           position: 'start',
           onDragStart: onDragStart,
           onDrop: onDrop,
-          onSnapEnd: onSnapEnd,
+          onMoveEnd: onMoveEnd,
           moveSpeed: 'slow',
           pieceTheme: '/hmppsAssets/img/chesspieces/wikipedia/{piece}.png',
         };

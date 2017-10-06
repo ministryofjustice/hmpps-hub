@@ -40,6 +40,9 @@ include('_includes/head.php'); ?>
           <li>test</li>
           <li>test</li>
         </ol>
+        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, iure!</strong>
+        <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, reprehenderit?</i>
+        <p><i><strong>Lorem ipsum dolor sit amet.</strong></i></p>
         <img src="_dummy/img/books.png" alt="">
       </div>
     </div>
