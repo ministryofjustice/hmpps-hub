@@ -20,14 +20,17 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="content-links">
-                        <div class="floated-inner-block content-links-inner">
-                            <h2>@Html.Sitecore().Field("Quick Links Title")</h2>
-                            <ul>
-                                <li>@Html.Sitecore().Field("Quick Link 1")</li>@*TODO: generate this link dynamically*@
-                            </ul>
+                    @if (Model.ShowQuickLinks)
+                    { 
+                        <div class="content-links">
+                            <div class="floated-inner-block content-links-inner">
+                                <h2>@Html.Sitecore().Field("Quick Links Title")</h2>
+                                <ul>
+                                    <li><a href="@Model.SelfHelpLinkUrl" target="_blank">@Html.Sitecore().Field("Self Help Link Text")</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
