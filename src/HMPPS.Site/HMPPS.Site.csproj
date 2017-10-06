@@ -667,7 +667,6 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Content.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Link 1.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Links Title.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page.yml" />
@@ -792,6 +791,9 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Self Help Link Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Self Help Link Url Template.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Validation Message.yml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

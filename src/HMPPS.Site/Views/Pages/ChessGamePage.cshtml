@@ -51,10 +51,10 @@
                                     <legend>
                                         <h1 class="heading-medium">@Html.Sitecore().Field("Right Bold Text")</h1>
                                     </legend>
-                                    <div class="form-group form-group-error">
+                                    <div class="form-group js-form-validation">
                                         <label for="skillLevel" class="form-label" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
-                                        <span class="error-message">
-                                            This value has to be between 0 and 20 @*TODO: add this the the CMS template so it can be translated*@
+                                        <span class="error-message visuallyhidden">
+                                            @Html.Sitecore().Field("Skill Level Validation Message")
                                         </span>
                                         <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
                                     </div>
