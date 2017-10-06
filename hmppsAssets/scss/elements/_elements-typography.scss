@@ -325,9 +325,9 @@ hr {
 }
 
 .data-heading {
-    @media (max-width: 840px){
-      @include bold-46;
-    }
+
+  margin-bottom: 0;
+
 }
 
 .data-img{

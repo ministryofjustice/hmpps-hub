@@ -21,7 +21,7 @@ include('_includes/head.php'); ?>
       <div class="column-one-third">
         <div class="data">
           <img class="data-img" src="_dummy/img/unilink.png" alt="">
-          <span class="data-item data-heading heading-xxlarge">&pound;37.60</span>
+          <span class="data-item data-heading heading-xlarge">&pound;888.88</span>
           <span class="data-item bold-large">Account balance</span>
           <span class="data-item body-text">Last updated: today @ 13:00</span>
         </div>
@@ -29,7 +29,7 @@ include('_includes/head.php'); ?>
       <div class="column-one-third">
         <div class="data">
           <img class="data-img" src="_dummy/img/unilink.png" alt="">
-          <span class="data-item data-heading heading-xxlarge">&pound;25.34</span>
+          <span class="data-item data-heading heading-xlarge">&pound;888.88</span>
           <span class="data-item bold-large">Phone credit</span>
           <span class="data-item body-text">Last updated: today @ 13:00</span>
         </div>
