@@ -1,0 +1,76 @@
+.part-navigation-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #bfc1c3;
+}
+
+@include media(tablet) {
+    .part-navigation-container {
+        margin-bottom:45px;
+    }
+}
+
+.part-navigation {
+    margin-bottom: 15px;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+@include media(desktop) {
+    .part-navigation {
+        font-size:19px;
+        line-height: 1.31579;
+    }
+}
+
+@include media(desktop) {
+    .part-navigation {
+        font-family:"nta", Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 14px;
+        line-height: 1.14286;
+    }
+}
+
+@include media(desktop) {
+    .part-navigation {
+        font-size:16px;
+        line-height: 1.25;
+    }
+}
+
+.part-navigation li {
+
+    margin-bottom: 0.75em;
+    list-style: decimal;
+    margin-left: 1.5em;
+    padding-left: 0.3em;
+}
+
+.part-navigation li a {
+    display: block;
+}
+
+.part-title {
+    margin-bottom: 20px;
+}
+
+.part-title {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1.11111;
+  margin-bottom: 15px;
+}
+
+@include media(desktop) {
+  .part-title {
+      font-size: 27px;
+      line-height: 1.11111;
+  }
+}
