@@ -268,7 +268,7 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.HMPPS.config" />
+    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Unicorn.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
