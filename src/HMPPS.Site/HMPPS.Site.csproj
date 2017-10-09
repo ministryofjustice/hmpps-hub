@@ -385,6 +385,30 @@
       <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.CD-Localhost.config">
+      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.CD-Release.config">
+      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.CMS-Localhost.config">
+      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.CMS-Release.config">
+      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.Debug.config">
+      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.Release.config">
+      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Localhost.config">
       <DependentUpon>HMPPS.Utilities.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -550,6 +574,9 @@
       <IsTransformFile>True</IsTransformFile>
     </None>
     <Content Include="App_Config\Include\zzz\Sitecore.Support.183497.config" />
+    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
     <None Include="App_Config\Sitecore.CD-Localhost.config">
       <DependentUpon>Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
