@@ -23,3 +23,9 @@
 .visuallyhidden {
   @include visually-hidden;
 }
+
+@mixin cfx {
+  content: "";
+  display: table;
+  clear: both;
+}

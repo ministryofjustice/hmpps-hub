@@ -31,3 +31,22 @@ ol {
     padding-left: 28px;
   }
 }
+
+// Bare lists
+.list-bare {
+  list-style-type: none;
+  padding-left: 20px;
+
+  @include ie-lte(7) {
+    padding-left: 28px;
+  }
+}
+
+.list-links{
+  padding: 0;
+  clear: both;
+  list-style-type: none;
+  &:after{
+    @include cfx;
+  }
+}
