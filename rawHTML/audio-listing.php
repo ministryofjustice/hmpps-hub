@@ -1,5 +1,5 @@
 <?php
-$title = 'Content page';
+$title = 'Audio Listing Page';
 include('_includes/head.php'); ?>
 
 <?php include('_includes/header.php'); ?>
@@ -10,7 +10,7 @@ include('_includes/head.php'); ?>
   <div class="breadcrumbs">
     <ol>
       <li><a href="index.php">Home</a></li>
-        <li aria-current="page">Content Page</li>
+        <li aria-current="page">Audio Listings</li>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
@@ -22,68 +22,77 @@ include('_includes/head.php'); ?>
         </h1>
       </div>
       <aside class="part-navigation-container" role="complementary">
-        <nav role="navigation" class="grid-row part-navigation" aria-label="Pages in this guide">
-          <ol class="column-half">
+        <nav role="navigation" class="grid-row part-navigation" aria-label="Audio Listings">
+          <ul class="column-one-third no-gutter list-bare">
               <li>
-                <a href="#"> Your computer (netbook)</a>
+                <a href="#">January</a>
               </li>
               <li>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
+                February
               </li>
               <li>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
+                <a href="#">March</a>
               </li>
               <li>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
+                <a href="#">April</a>
               </li>
-          </ol>
-          <ol class="column-half" start="5">
+          </ul>
+          <ul class="column-one-third no-gutter list-bare" start="5">
               <li>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
-              </li>
-              <li>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
+                <a href="#">May</a>
               </li>
               <li>
-                Lorem ipsum dolor sit amet.
+                <a href="#">June</a>
               </li>
               <li>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
+                <a href="#">July</a>
               </li>
-          </ol>
+              <li>
+                <a href="#">August</a>
+              </li>
+          </ul>
+          <ul class="column-one-third no-gutter list-bare" start="10">
+              <li>
+                <a href="#">September</a>
+              </li>
+              <li>
+                <a href="#">October</a>
+              </li>
+              <li>
+                <a href="#">November</a>
+              </li>
+              <li>
+                <a href="#">December</a>
+              </li>
+          </ul>
         </nav>
       </aside>
-      <div class="content">
-        <div class="column-half"></div>
-
-        <!-- dev note the h2 needs to be created on the creation of the related link above -->
-        <!-- dev note no H1s allowed in content area -->
-        <h2>1. Your computer (netbook) H2</h2>
-
-        <h3>Title H3</h3>
-        <h4>Title H5</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <ul>
-          <li><a href="">test</a></li>
-          <li><a href="">test</a></li>
-          <li><a href="">test</a></li>
-          <li><a href="">test</a></li>
-        </ul>
-        <ol>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-        </ol>
-        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, iure!</strong>
-        <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, reprehenderit?</i>
-        <p><i><strong>Lorem ipsum dolor sit amet.</strong></i></p>
-        <img src="_dummy/img/books.png" alt="">
+      <div class="list-links">
+        <div class="column-half no-gutter">
+          <ul>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+          </ul>
+        </div>
+        <div class="column-half no-gutter">
+          <ul>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+          </ul>
+        </div>
       </div>
       <nav class="pub-c-pagination" role="navigation" aria-label="Pagination">
         <ul class="pub-c-pagination__list">
             <li class="pub-c-pagination__item pub-c-pagination__item--previous">
-              <a href="/universal-credit/your-responsibilities" class="pub-c-pagination__link" rel="prev">
+              <a href="#" class="pub-c-pagination__link" rel="prev">
                 <span class="pub-c-pagination__link-title">
                   <svg class="pub-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
                     <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
@@ -91,11 +100,11 @@ include('_includes/head.php'); ?>
                   Previous
                 </span>
                   <span class="visually-hidden">:</span>
-                  <span class="pub-c-pagination__link-label">Your responsibilities</span>
+                  <span class="pub-c-pagination__link-label">January</span>
               </a>
             </li>
             <li class="pub-c-pagination__item pub-c-pagination__item--next">
-              <a href="/universal-credit/other-financial-support" class="pub-c-pagination__link" rel="next">
+              <a href="#" class="pub-c-pagination__link" rel="next">
                 <span class="pub-c-pagination__link-title">
                   Next
                   <svg class="pub-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
@@ -103,7 +112,7 @@ include('_includes/head.php'); ?>
                   </svg>
                 </span>
                   <span class="visually-hidden">:</span>
-                  <span class="pub-c-pagination__link-label">Other financial support</span>
+                  <span class="pub-c-pagination__link-label">March</span>
               </a>
             </li>
         </ul>
