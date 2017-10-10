@@ -38,7 +38,5 @@ Languages:
     - ID: "9cd5ad77-6688-4494-83db-7c25b5d141c8"
       Hint: Enable Javascript Message
       Value: |
-        <p>
-        To listen to this audio please enable JavaScript, and consider upgrading to a web browser that
-        <a rel="noopener noreferrer" href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-        </p>
+        <p>To listen to this audio please enable JavaScript, and consider upgrading to a web browser that supports HTML5 audio.</p>
+        
