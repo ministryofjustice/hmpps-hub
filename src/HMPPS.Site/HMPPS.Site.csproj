@@ -268,7 +268,33 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" />
+    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" >
+      <TransformOnBuild>true</TransformOnBuild>
+	</Content>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Release.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CMS-Localhost.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CMS-Release.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.Debug.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.Release.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Unicorn.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
@@ -631,6 +657,7 @@
     <Content Include="Views\Pages\RadioPage.cshtml" />
     <Content Include="Views\Pages\BalancePage.cshtml" />
     <Content Include="Views\Pages\VideoSectionPage.cshtml" />
+    <Content Include="Views\Pages\VideoPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -666,6 +693,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
     <Compile Include="DependencyInjection\RegisterServices.cs" />
@@ -694,6 +722,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioPageViewModel.cs" />
