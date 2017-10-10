@@ -54,8 +54,6 @@ include('_includes/head.php'); ?>
         </nav>
       </aside>
       <div class="content">
-        <div class="column-half"></div>
-
         <!-- dev note the h2 needs to be created on the creation of the related link above -->
         <!-- dev note no H1s allowed in content area -->
         <h2>1. Your computer (netbook) H2</h2>
