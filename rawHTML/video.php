@@ -22,7 +22,7 @@ include('_includes/head.php'); ?>
         </h1>
       </div>
       <div class="video-player">
-        <video controls id="video" class="video-js custom-video vjs-default-skin" controls preload="auto">
+        <video controls id="video" class="video-js custom-video vjs-default-skin" poster="_dummy/img/videos.png" controls preload="auto">
           <source src="_dummy/video/dummy-mp4.mp4" type="video/mp4">
             <source src="http://digital-hub-dev.northeurope.cloudapp.azure.com:11002/sites/default/files/videos/2017-04/Timewise%20Intro%20V2%20%282%29.mp4" type="video/mp4">
               <div class="vjs-no-js">
