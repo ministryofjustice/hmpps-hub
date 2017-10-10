@@ -17,8 +17,12 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
         l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <p
+          uid="{25E04A75-441D-4B11-AB47-9CA192FCB210}"
+          key="right-blocks"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/right-blocks" />
         <r
-          id="{B3DEA547-C49D-4491-8879-AFCC57C21C0F}"
+          id="{17BDF319-2D57-4815-A616-9A8263A4A93B}"
           ph="content"
           uid="{BFE8F733-C856-4FCB-909F-84E887F51DBF}" />
       </d>
