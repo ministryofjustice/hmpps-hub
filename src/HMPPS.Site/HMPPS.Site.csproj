@@ -268,7 +268,33 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" />
+    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" >
+      <TransformOnBuild>true</TransformOnBuild>
+	</Content>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Release.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CMS-Localhost.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CMS-Release.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.Debug.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.Release.config">
+      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Unicorn.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
