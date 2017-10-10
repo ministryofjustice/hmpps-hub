@@ -268,12 +268,13 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" >
+    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config">
       <TransformOnBuild>true</TransformOnBuild>
-	</Content>
+    </Content>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Release.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
@@ -688,7 +689,7 @@
     <Content Include="..\..\hmppsAssets\**">
       <Link>hmppsAssets\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Content>
-	<Content Include="App_Data\Unicorn\**">
+    <Content Include="App_Data\Unicorn\**">
     </Content>
   </ItemGroup>
   <ItemGroup>
