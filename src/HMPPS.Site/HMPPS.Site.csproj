@@ -659,6 +659,8 @@
     <Content Include="Views\Pages\BalancePage.cshtml" />
     <Content Include="Views\Pages\VideoSectionPage.cshtml" />
     <Content Include="Views\Pages\VideoPage.cshtml" />
+    <Content Include="Views\Partials\_PrevNext.cshtml" />
+    <Content Include="Views\Partials\_RelatedPages.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -735,6 +737,8 @@
     <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
+    <Compile Include="ViewModels\Partials\PrevNextViewModel.cs" />
+    <Compile Include="ViewModels\Partials\RelatedPagesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="layouts\" />
