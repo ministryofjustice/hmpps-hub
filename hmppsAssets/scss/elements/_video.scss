@@ -33,6 +33,22 @@
   padding-bottom: 56.25%;
 }
 
+.video-js.custom-video .vjs-title-bar{
+	position: absolute;
+	color: white;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	width: 100%;
+	opacity: 1;
+	transition: all ease-in-out 800ms;
+	&.fade-out{
+		opacity: 0;
+	}
+
+}
+
 .video-js.custom-video .vjs-control-bar {
   opacity: 1;
   visibility: visible;
@@ -52,8 +68,7 @@
 }
 
 .video-js.custom-video .vjs-remaining-time,
-.video-js.custom-video .vjs-big-play-button,
-.video-js.custom-video .vjs-progress-control{
+.video-js.custom-video .vjs-big-play-button{
   display: none;
 }
 
