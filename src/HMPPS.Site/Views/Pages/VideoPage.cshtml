@@ -14,8 +14,8 @@
                 </h1>
             </div>
             <div class="video-player">
-                <video controls id="video" class="video-js custom-video vjs-default-skin" controls preload="auto">
-                    <source src="@Model.VideoUrl">
+                <video controls id="video" class="video-js custom-video vjs-default-skin" data-videotitle="@Html.Sitecore().Field("Page Title")" poster="@Model.ThumbnailImageUrl" controls preload="auto">
+                    <source src="@Model.VideoUrl" type="video/mp4">
                     <div class="vjs-no-js">
                         @Html.Sitecore().Field("Enable Javascript Message")
                     </div>

@@ -14,6 +14,8 @@ namespace HMPPS.Site.Controllers.Pages
 
             _vpvm.VideoUrl = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(contextItem, "Video File");
 
+            _vpvm.ThumbnailImageUrl = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(contextItem, "Thumbnail Image");
+
             _vpvm.BreadcrumbItems = BreadcrumbItems;
         }
 
