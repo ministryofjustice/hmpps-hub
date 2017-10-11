@@ -2,7 +2,7 @@
 ID: "7c6d48a3-e745-4e62-9522-72081993a2df"
 Parent: "df561ff4-c6fe-4269-93c7-d8561e08c3d0"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/HMPPS/Radio Episode/Content
+Path: /sitecore/templates/HMPPS/Pages/Radio Episode/Content
 DB: master
 Languages:
 - Language: en

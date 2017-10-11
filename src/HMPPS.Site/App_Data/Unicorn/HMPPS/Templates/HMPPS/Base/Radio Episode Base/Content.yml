@@ -1,8 +1,8 @@
 ﻿---
-ID: "029b65dc-0d68-44b7-9088-76153b24d5a3"
-Parent: "c324a87b-850f-46d6-890a-1fa3ec5a916d"
-Template: "7ee0975b-0698-493e-b3a2-0b2ef33d0522"
-Path: /sitecore/layout/Renderings/HMPPS/Modules/Radio Episode
+ID: "4404e6c3-b639-4c1b-85df-b9c8ae752285"
+Parent: "3bb19b6c-2998-4d7a-a309-511605183ad9"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/HMPPS/Base/Radio Episode Base/Content
 DB: master
 Languages:
 - Language: en
@@ -11,7 +11,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20171010T115537Z
+      Value: 20171011T141342Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

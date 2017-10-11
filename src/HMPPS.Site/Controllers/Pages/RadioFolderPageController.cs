@@ -11,6 +11,7 @@ namespace HMPPS.Site.Controllers.Pages
     public class RadioFolderPageController : BaseController
     {
         private RadioFolderPageViewModel _rfpvm;
+        private List<RadioFolder> _ryl;
         private List<RadioFolder> _rmloy;
         private List<RadioEpisode> _relom;
 
@@ -21,22 +22,18 @@ namespace HMPPS.Site.Controllers.Pages
             _rfpvm.BreadcrumbItems = BreadcrumbItems;
         }
 
-        private void BuildMonthListOfYear(Item contextItem)
+        private List<RadioFolder> PopulateFolderList(Item parent, Item current)
         {
-            if (contextItem.TemplateName != "Radio Folder Year")
-            {
-                return;
-            }
-
-            _rmloy = new List<RadioFolder>();
-            foreach (var c in contextItem.Children.ToList())
+            var folderList = new List<RadioFolder>();
+            foreach (var c in parent.Children.ToList())
             {
                 var radioFolder = new RadioFolder();
                 radioFolder.FolderName = c.Fields["Folder Name"].GetValue(true);
                 radioFolder.FolderUrl = Sitecore.Links.LinkManager.GetItemUrl(c);
-                radioFolder.IsCurrent = c.ID.Guid.Equals(Sitecore.Context.Item.ID.Guid);
-                _rmloy.Add(radioFolder);
+                radioFolder.IsCurrent = c.ID.Guid.Equals(current.ID.Guid);
+                folderList.Add(radioFolder);
             }
+            return folderList;
         }
 
         private void BuildEpisodeListOfMonth(Item contextItem)
@@ -46,7 +43,7 @@ namespace HMPPS.Site.Controllers.Pages
                 return;
             }
 
-            _relom = new List<RadioEpisode>();
+            var episodeList = new List<RadioEpisode>();
             foreach (var c in contextItem.Children.ToList())
             {
                 var radioEpisode = new RadioEpisode();
@@ -57,9 +54,9 @@ namespace HMPPS.Site.Controllers.Pages
                 {
                     radioEpisode.Date = ((Sitecore.Data.Fields.DateField)radioEpisodeDateField).DateTime;
                 }
-                _relom.Add(radioEpisode);
+                episodeList.Add(radioEpisode);
             }
-            _relom.OrderByDescending(c => c.Date);
+            _relom =  episodeList.OrderByDescending(c => c.Date).ToList();
         }
 
         public ActionResult Index()
@@ -71,20 +68,34 @@ namespace HMPPS.Site.Controllers.Pages
         public ActionResult EpisodeListOfMonth()
         {
             BuildEpisodeListOfMonth(Sitecore.Context.Item);
-            return View("/Views/Modules/RadioFolder/EpisodeListOfMonth.cshtml", _relom);
+            return View("/Views/Partials/RadioFolder/EpisodeListOfMonth.cshtml", _relom);
         }
 
         public ActionResult MonthListOfYear()
         {
             if (Sitecore.Context.Item.TemplateName == "Radio Folder Year")
             {
-                BuildMonthListOfYear(Sitecore.Context.Item);
+                _rmloy = PopulateFolderList(Sitecore.Context.Item, Sitecore.Context.Item);
             }
             else if (Sitecore.Context.Item.TemplateName == "Radio Folder Month")
             {
-                BuildMonthListOfYear(Sitecore.Context.Item.Parent);
+                _rmloy = PopulateFolderList(Sitecore.Context.Item.Parent, Sitecore.Context.Item);
             }
-            return View("/Views/Modules/RadioFolder/MonthListOfYear.cshtml", _rmloy);
+            return View("/Views/Partials/RadioFolder/MonthListOfYear.cshtml", _rmloy);
+        }
+
+        public ActionResult YearList()
+        {
+            if (Sitecore.Context.Item.TemplateName == "Radio Folder Year")
+            {
+                _ryl = PopulateFolderList(Sitecore.Context.Item.Parent, Sitecore.Context.Item);
+            }
+            else if (Sitecore.Context.Item.TemplateName == "Radio Folder Month")
+            {
+                _ryl = PopulateFolderList(Sitecore.Context.Item.Parent.Parent, Sitecore.Context.Item);
+            }
+
+            return View("/Views/Partials/RadioFolder/YearList.cshtml", _ryl);
         }
 
     }

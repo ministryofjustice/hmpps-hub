@@ -2,7 +2,7 @@
 ID: "c324a87b-850f-46d6-890a-1fa3ec5a916d"
 Parent: "1beb069a-8e2a-4a3f-a11b-980838f00b4a"
 Template: "7ee0975b-0698-493e-b3a2-0b2ef33d0522"
-Path: /sitecore/layout/Renderings/HMPPS/Modules
+Path: /sitecore/layout/Renderings/HMPPS/Partials
 DB: master
 Languages:
 - Language: en

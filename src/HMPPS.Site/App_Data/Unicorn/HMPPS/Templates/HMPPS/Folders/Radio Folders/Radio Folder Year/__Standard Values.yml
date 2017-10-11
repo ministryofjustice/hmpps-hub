@@ -24,8 +24,16 @@ SharedFields:
           ph="content"
           uid="{1F1EA3BF-8D3F-42AC-8DE3-B1D613ECF19C}" />
         <r
+          ds=""
+          id="{8BE1A498-5C59-440E-96E1-44362E2F8253}"
+          par=""
+          ph="/content/centre_removed"
+          uid="{D79C0D2A-F729-4D41-A138-FDFB71B3C4D4}" />
+        <r
+          ds=""
           id="{51DABC00-B051-49F3-9CA5-DE4C596CC627}"
-          ph="/content/centre"
+          par=""
+          ph="/content/centre_removed"
           uid="{9E7619FA-0968-4868-B95C-E40BBFBC982B}" />
       </d>
     </r>

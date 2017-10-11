@@ -2,7 +2,7 @@
 ID: "51dabc00-b051-49f3-9ca5-de4c596cc627"
 Parent: "029b65dc-0d68-44b7-9088-76153b24d5a3"
 Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
-Path: /sitecore/layout/Renderings/HMPPS/Modules/Radio Episode/MonthListOfYear
+Path: /sitecore/layout/Renderings/HMPPS/Partials/Radio Folder/Month List Of Year
 DB: master
 SharedFields:
 - ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"

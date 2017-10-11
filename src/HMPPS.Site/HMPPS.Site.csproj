@@ -660,8 +660,9 @@
     <Content Include="Views\Pages\VideoSectionPage.cshtml" />
     <Content Include="Views\Pages\VideoPage.cshtml" />
     <Content Include="Views\Pages\RadioFolderPage.cshtml" />
-    <Content Include="Views\Modules\RadioFolder\EpisodeListOfMonth.cshtml" />
-    <Content Include="Views\Modules\RadioFolder\MonthListOfYear.cshtml" />
+    <Content Include="Views\Partials\RadioFolder\EpisodeListOfMonth.cshtml" />
+    <Content Include="Views\Partials\RadioFolder\MonthListOfYear.cshtml" />
+    <Content Include="Views\Partials\RadioFolder\YearList.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
