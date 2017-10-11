@@ -32,6 +32,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: "0e192e7e-d5be-4678-828c-55cd8e606f13"
+      Hint: Enable Javascript Message
+      Value: <p>To watch this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video.</p>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170908T103129Z

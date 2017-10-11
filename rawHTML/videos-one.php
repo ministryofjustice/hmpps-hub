@@ -9,76 +9,81 @@ include('_includes/head.php'); ?>
   <div class="breadcrumbs">
     <ol>
       <li><a href="index.php">Home</a></li>
-      <li aria-current="page">Videos by Genre</li>
+      <li aria-current="page">Videos by genre</li>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+    <h1 class="heading-large">Videos by genre</h1>
 
-    <div class="browse">
-      <div class="browse-panes section-only" data-state="section" data-module="track-click" aria-busy="false">
-        <div id="section" class="section-pane with-sort pane" style="">
-          <div class="pane-inner alphabetical" style="">
-            <h1 tabindex="-1">Genres</h1>
-            <p class="sort-order" style="">A to Z</p>
-            <ul>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Breaking Free Online</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Feature films</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Koestler trust</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Prison and probation ombudsman</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Prison video trust</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Shannon trust</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Straightline</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>TED talks</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-              <li>
-                <a href="videos-two.php" class="">
-                  <h3>Timewise</h3>
-                  <p>Includes when and how benefit payments are made, benefits calculators and benefit fraud</p>
-                </a>
-              </li>
-            </ul>
+    <div class="image-grid">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">All Kinds of Minds</h2>
+            </a>
           </div>
         </div>
-
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Art That Gives You A Voice</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Becoming a non-smoker</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Body of Health</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Dealing with Criticism</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Documentaries</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Electrical Engineering</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Emotional Hygiene</h2>
+            </a>
+          </div>
+        </div>
+        <div class="column-one-third">
+          <div class="image-grid-item">
+            <a href=".php"><img src="https://dummyimage.com/300x200/eaeaea/000" alt="">
+            <h2 class="heading-medium">Category</h2>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </main><!-- / #content -->

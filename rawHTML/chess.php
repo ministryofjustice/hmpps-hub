@@ -22,7 +22,7 @@ include('_includes/head.php'); ?>
       </div>
       <div class="game chess js-chess">
         <div id="js-board" class="chessboard"></div>
-          <h3>Moves in this game</h3>
+          <h2>Moves in this game</h2>
         <div class="moves">
           <p class="js-chessmoves moves__area"></p>
           <pre id=evaluation></pre>

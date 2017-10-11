@@ -274,6 +274,7 @@
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Release.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
