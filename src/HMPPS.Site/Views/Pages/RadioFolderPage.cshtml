@@ -16,6 +16,7 @@
                 </div>
                 @Html.Sitecore().Placeholder("centre")
             </div>
+            @Html.Partial("/Views/Partials/_PrevNext.cshtml", Model.PrevNext)
             <div class="column-third add-title-margin">
                 @Html.Sitecore().Placeholder("right-blocks")
             </div>
