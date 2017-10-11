@@ -1,0 +1,52 @@
+﻿---
+ID: "e6dd73a8-4571-4a53-bc99-5ba172a50167"
+Parent: "45866dd6-6a67-431a-ab63-a71c1ca51abb"
+Template: "45866dd6-6a67-431a-ab63-a71c1ca51abb"
+Path: /sitecore/templates/HMPPS/Folders/Radio Folders/Radio Folder Month/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{DF561FF4-C6FE-4269-93C7-D8561E08C3D0}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <r
+          id="{FF11DDBF-B334-4483-8580-E4D2401A3CB5}"
+          ph="content"
+          uid="{DB8A7A5C-BC8C-4D26-B899-76F4492B5880}" />
+        <r
+          id="{51DABC00-B051-49F3-9CA5-DE4C596CC627}"
+          ph="/content/centre"
+          uid="{AA1284B2-4614-4156-9EDD-0C3DBF0348B3}" />
+        <r
+          id="{93E53FF5-1511-4570-9222-2179CB374AD3}"
+          ph="/content/centre"
+          uid="{CB192CE1-8A51-4EED-8313-565A44323D32}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170901T155543Z
+    - ID: "2f241444-6cd0-4450-b5bb-98214e16f8dc"
+      Hint: Show In Navigation
+      Type: Checkbox
+      Value: 0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
+    - ID: "813f3275-5909-4589-a061-a804ddae6d52"
+      Hint: Folder Name
+      Value: $name

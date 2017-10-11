@@ -268,9 +268,9 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config" >
+    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config">
       <TransformOnBuild>true</TransformOnBuild>
-	</Content>
+    </Content>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -658,6 +658,9 @@
     <Content Include="Views\Pages\BalancePage.cshtml" />
     <Content Include="Views\Pages\VideoSectionPage.cshtml" />
     <Content Include="Views\Pages\VideoPage.cshtml" />
+    <Content Include="Views\Pages\RadioFolderPage.cshtml" />
+    <Content Include="Views\Modules\RadioFolder\EpisodeListOfMonth.cshtml" />
+    <Content Include="Views\Modules\RadioFolder\MonthListOfYear.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -688,11 +691,12 @@
     <Content Include="..\..\hmppsAssets\**">
       <Link>hmppsAssets\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Content>
-	<Content Include="App_Data\Unicorn\**">
+    <Content Include="App_Data\Unicorn\**">
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
@@ -722,6 +726,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />

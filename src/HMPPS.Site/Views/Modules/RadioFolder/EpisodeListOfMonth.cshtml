@@ -1,0 +1,12 @@
+@model List<RadioEpisode>
+@using HMPPS.Models.Cms;
+<div class="list-links">
+    <div class="column-half no-gutter">
+        <ul>
+            @foreach (var episode in Model)
+            {
+                <li><a href="@episode.RadioEpisodeUrl">@episode.Title</a></li>
+            }
+        </ul>
+    </div>
+</div>

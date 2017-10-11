@@ -82,7 +82,7 @@ namespace HMPPS.Site.Controllers.Pages
                 Title = episodeItem["Radio Episode Title"],
                 Date = Utilities.SitecoreHelper.FieldMethods.GetDateFieldValue(episodeItem, "Radio Episode Date", DateTime.MinValue),
                 FileUrl = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(episodeItem, "Radio Episode MP3 File"),
-                RadioPageUrl = Sitecore.Links.LinkManager.GetItemUrl(contextItem) + "?episodeId=" + episodeItem.ID.ToShortID()
+                RadioEpisodeUrl = Sitecore.Links.LinkManager.GetItemUrl(contextItem) + "?episodeId=" + episodeItem.ID.ToShortID()
             };
         }
 
