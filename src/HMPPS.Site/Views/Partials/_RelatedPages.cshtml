@@ -1,0 +1,17 @@
+@model HMPPS.Site.ViewModels.Partials.RelatedPagesViewModel
+<ol class="column-half" start="@Model.StartIndex">
+    @foreach (var page in Model.RelatedPages)
+    {
+        <li>
+            @if (page.Url.Equals(Model.CurrentPageUrl))
+            {
+                @page.Text
+            }
+            else
+            {
+                <a href="@page.Url">@page.Text</a>
+            }
+        </li>
+    }
+</ol>
+
