@@ -35,7 +35,7 @@ namespace HMPPS.Site.Controllers.Pages
 
                 var itemCount = relatedPageItems.Count;
                 var midIndex = (byte) (itemCount / 2 + itemCount % 2);
-                var splitIn2Columns = itemCount > 5;
+                var splitIn2Columns = itemCount > 2;
                 var leftColumnPageItems = splitIn2Columns ? relatedPageItems.Take(midIndex).ToList() : relatedPageItems;
                 var rightColumnPageItems = splitIn2Columns ? relatedPageItems.Skip(midIndex).Take(itemCount - midIndex).ToList() : new List<Item>();
                 _gcpvm.RelatedPagesLeftColumn = new RelatedPagesViewModel()
