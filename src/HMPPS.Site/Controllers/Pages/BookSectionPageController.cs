@@ -45,8 +45,9 @@ namespace HMPPS.Site.Controllers.Pages
                     };
                 }
 
-
-                _bspvm.Children.Add(bookSection);
+                if ((!bookSection.IsBookPage && !string.IsNullOrEmpty(bookSection.Link.Url)) ||
+                    (bookSection.IsBookPage && !string.IsNullOrEmpty(bookSection.BookFile.Url)))
+                    _bspvm.Children.Add(bookSection);
             }
             _bspvm.BreadcrumbItems = BreadcrumbItems;
         }
