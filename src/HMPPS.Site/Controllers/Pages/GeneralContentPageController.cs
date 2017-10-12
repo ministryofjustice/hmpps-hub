@@ -63,17 +63,7 @@ namespace HMPPS.Site.Controllers.Pages
         {
             var pageItem = Utilities.SitecoreHelper.FieldMethods.GetRefFieldSelectedItem(contextItem,
                 fieldName);
-            if (pageItem != null)
-                return new Link()
-                {
-                    NewTarget = false,
-                    Text =
-                        Utilities.SitecoreHelper.BaseTemplateMethods.GetNavTitleOrPageHeading(pageItem,
-                            "Navigation Title",
-                            "Page Title"),
-                    Url = Sitecore.Links.LinkManager.GetItemUrl(pageItem)
-                };
-            return new Link();
+            return BuildLink(pageItem);
         }
 
         private List<Link> GetRelatedPageLinks(List<Item> items)

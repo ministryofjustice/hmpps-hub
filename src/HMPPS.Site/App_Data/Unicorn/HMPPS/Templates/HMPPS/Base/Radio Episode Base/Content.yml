@@ -1,8 +1,8 @@
 ﻿---
-ID: "7c6d48a3-e745-4e62-9522-72081993a2df"
-Parent: "df561ff4-c6fe-4269-93c7-d8561e08c3d0"
+ID: "4404e6c3-b639-4c1b-85df-b9c8ae752285"
+Parent: "3bb19b6c-2998-4d7a-a309-511605183ad9"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/HMPPS/Radio Episode/Content
+Path: /sitecore/templates/HMPPS/Base/Radio Episode Base/Content
 DB: master
 Languages:
 - Language: en
@@ -11,8 +11,8 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170925T101410Z
+      Value: 20171011T141342Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
-        sitecore\e3_MihaelaR
+        sitecore\e3_evad

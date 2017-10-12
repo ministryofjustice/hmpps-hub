@@ -2,7 +2,7 @@
 ID: "bac3c7dd-90c4-4b33-9c6a-42132a04f4c3"
 Parent: "7c6d48a3-e745-4e62-9522-72081993a2df"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Radio Episode/Content/Radio Episode Date
+Path: /sitecore/templates/HMPPS/Pages/Radio Episode/Content/Radio Episode Date
 DB: master
 SharedFields:
 - ID: "21828437-ea4b-40a1-8c61-4ce60ea41db6"

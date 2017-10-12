@@ -2,7 +2,7 @@
 ID: "b5dee99b-4473-4138-95c0-2d2530a2e49d"
 Parent: "7c6d48a3-e745-4e62-9522-72081993a2df"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Radio Episode/Content/Radio Episode MP3 File
+Path: /sitecore/templates/HMPPS/Pages/Radio Episode/Content/Radio Episode MP3 File
 DB: master
 SharedFields:
 - ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"

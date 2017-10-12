@@ -11,6 +11,6 @@ namespace HMPPS.Models.Cms
 
         public DateTime Date { get; set; }
 
-        public string RadioPageUrl { get; set; }
+        public string RadioEpisodeUrl { get; set; }
     }
 }

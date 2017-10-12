@@ -1,20 +1,22 @@
 ﻿---
-ID: "df561ff4-c6fe-4269-93c7-d8561e08c3d0"
-Parent: "29620538-1a80-4031-88b2-6a038860c68c"
+ID: "af58ec46-decb-41cc-aa18-7c92ffb9fd5d"
+Parent: "068f90db-be81-4785-8dbb-7f97e68e3404"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/HMPPS/Radio Episode
+Path: /sitecore/templates/HMPPS/Folders/Radio Folders/Radio Folder Year
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: People/32x32/record.png
+  Value: Applications/32x32/folder_music.png
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
-  Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {87339679-9DD7-4301-9458-213AF59B0F02}
 - ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
-  Value: "{89993416-B5AB-4A0D-842D-EFDEE691A482}"
+  Value: "{7E5AB2D2-1A4F-46E0-AA90-C153709FC013}"
 Languages:
 - Language: en
   Versions:
@@ -22,7 +24,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170925T101059Z
+      Value: 20170901T155529Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

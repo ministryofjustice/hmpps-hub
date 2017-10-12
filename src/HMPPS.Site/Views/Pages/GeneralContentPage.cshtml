@@ -1,5 +1,4 @@
 @model HMPPS.Site.ViewModels.Pages.GeneralContentPageViewModel
-
 <div id="global-header-bar"></div>
 
 <div class="site-wrapper">
@@ -32,7 +31,7 @@
                 <div class="content">
                     @Html.Sitecore().Field("Main Content")
                 </div>
-                @Html.Partial("/Views/Partials/_PrevNext.cshtml", Model.PrevNext)
+                @Html.Partial("/Views/Blocks/Global/PrevNext.cshtml", Model.PrevNext)
             </div>
            
             <div class="column-third add-title-margin">
