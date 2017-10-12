@@ -664,7 +664,8 @@
     <Content Include="Views\Pages\RadioFolderPage.cshtml" />
     <Content Include="Views\Partials\RadioFolder\EpisodeListOfMonth.cshtml" />
     <Content Include="Views\Partials\RadioFolder\MonthListOfYear.cshtml" />
-    <Content Include="Views\Partials\RadioFolder\YearList.cshtml" />    <None Include="Web.CD-Localhost.config">
+    <Content Include="Views\Partials\RadioFolder\YearList.cshtml" />
+    <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.CD-Release.config">
@@ -702,6 +703,7 @@
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
+    <Compile Include="Controllers\Partials\PreviousNextController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
     <Compile Include="DependencyInjection\RegisterServices.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjection.cs" />
