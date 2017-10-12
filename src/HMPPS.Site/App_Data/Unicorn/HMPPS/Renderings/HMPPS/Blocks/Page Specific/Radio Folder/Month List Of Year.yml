@@ -1,13 +1,17 @@
 ﻿---
-ID: "8be1a498-5c59-440e-96e1-44362e2f8253"
+ID: "51dabc00-b051-49f3-9ca5-de4c596cc627"
 Parent: "029b65dc-0d68-44b7-9088-76153b24d5a3"
 Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
-Path: /sitecore/layout/Renderings/HMPPS/Partials/Radio Folder/Year List
+Path: /sitecore/layout/Renderings/HMPPS/Blocks/Page Specific/Radio Folder/Month List Of Year
 DB: master
 SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{5154D265-2803-4059-9384-E37934A87C54}" />
 - ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
-  Value: YearList
+  Value: MonthListOfYear
 - ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: RadioFolderPage

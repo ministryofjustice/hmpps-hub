@@ -10,7 +10,7 @@ using System;
 using Sitecore.Globalization;
 using HMPPS.Models.Common;
 
-namespace HMPPS.Site.Controllers.Pages
+namespace HMPPS.Site.Controllers.Global
 {
     public class PreviousNextController : BaseController
     {
@@ -38,7 +38,7 @@ namespace HMPPS.Site.Controllers.Pages
         public ActionResult Index()
         {
             _pnvm = BuildPrevNextViewModel(Sitecore.Context.Item);
-            return View("/Views/Partials/_PrevNext.cshtml", _pnvm);
+            return View("/Views/Blocks/Global/PrevNext.cshtml", _pnvm);
         }
 
     }

@@ -94,7 +94,7 @@ namespace HMPPS.Site.Controllers.Pages
         public ActionResult EpisodeListOfMonth()
         {
             BuildEpisodeListOfMonth(Sitecore.Context.Item);
-            return View("/Views/Partials/RadioFolder/EpisodeListOfMonth.cshtml", _relom);
+            return View("/Views/Blocks/PageSpecific/RadioFolder/EpisodeListOfMonth.cshtml", _relom);
         }
 
         public ActionResult MonthListOfYear()
@@ -107,7 +107,7 @@ namespace HMPPS.Site.Controllers.Pages
             {
                 _rmloy = PopulateFolderList(Sitecore.Context.Item.Parent, Sitecore.Context.Item);
             }
-            return View("/Views/Partials/RadioFolder/MonthListOfYear.cshtml", _rmloy);
+            return View("/Views/Blocks/PageSpecific/RadioFolder/MonthListOfYear.cshtml", _rmloy);
         }
 
         public ActionResult YearList()
@@ -121,7 +121,7 @@ namespace HMPPS.Site.Controllers.Pages
                 _ryl = PopulateFolderList(Sitecore.Context.Item.Parent.Parent, Sitecore.Context.Item);
             }
 
-            return View("/Views/Partials/RadioFolder/YearList.cshtml", _ryl);
+            return View("/Views/Blocks/PageSpecific/RadioFolder/YearList.cshtml", _ryl);
         }
 
     }
