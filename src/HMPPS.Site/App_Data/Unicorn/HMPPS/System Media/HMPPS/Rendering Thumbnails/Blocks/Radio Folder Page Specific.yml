@@ -1,9 +1,13 @@
 ﻿---
-ID: "4f203a14-7fe2-48a6-b24f-f893c634fd0b"
-Parent: "901d449e-d4ab-4c5a-ac2d-828ca069817f"
+ID: "e6457b87-ee15-4b41-83d0-2da15b76fb4c"
+Parent: "16445a4a-c432-42e8-a211-f93036589121"
 Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
-Path: /sitecore/media library/System/HMPPS/Rendering Thumbnails/Partials
+Path: /sitecore/media library/System/HMPPS/Rendering Thumbnails/Blocks/Radio Folder Page Specific
 DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 10000
 Languages:
 - Language: en
   Versions:
@@ -11,7 +15,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20171012T084044Z
+      Value: 20171012T100757Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

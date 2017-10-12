@@ -1,8 +1,8 @@
 ﻿---
 ID: "5154d265-2803-4059-9384-e37934a87c54"
-Parent: "4f203a14-7fe2-48a6-b24f-f893c634fd0b"
+Parent: "e6457b87-ee15-4b41-83d0-2da15b76fb4c"
 Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
-Path: /sitecore/media library/System/HMPPS/Rendering Thumbnails/Partials/MonthListOfYear
+Path: /sitecore/media library/System/HMPPS/Rendering Thumbnails/Blocks/Radio Folder Page Specific/MonthListOfYear
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

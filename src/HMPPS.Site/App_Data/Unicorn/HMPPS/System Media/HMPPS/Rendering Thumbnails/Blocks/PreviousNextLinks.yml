@@ -1,8 +1,8 @@
 ﻿---
 ID: "6b4901e0-d000-41d0-b376-9c24b37c133c"
-Parent: "4f203a14-7fe2-48a6-b24f-f893c634fd0b"
+Parent: "16445a4a-c432-42e8-a211-f93036589121"
 Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
-Path: /sitecore/media library/System/HMPPS/Rendering Thumbnails/Partials/PreviousNextLinks
+Path: /sitecore/media library/System/HMPPS/Rendering Thumbnails/Blocks/PreviousNextLinks
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
