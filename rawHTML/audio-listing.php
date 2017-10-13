@@ -68,26 +68,31 @@ include('_includes/head.php'); ?>
         </nav>
       </aside>
       <div class="list-links">
-        <div class="column-half no-gutter">
-          <ul>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-          </ul>
+        <div class="grid-row">
+
+          <div class="column-half">
+            <ul>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            </ul>
+          </div>
+          <div class="column-half">
+            <ul>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+              <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            </ul>
+          </div>
+
         </div>
-        <div class="column-half no-gutter">
-          <ul>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-            <li><a href="">Lorem ipsum dolor sit amet.</a></li>
-          </ul>
-        </div>
+
       </div>
       <nav class="pub-c-pagination" role="navigation" aria-label="Pagination">
         <ul class="pub-c-pagination__list">

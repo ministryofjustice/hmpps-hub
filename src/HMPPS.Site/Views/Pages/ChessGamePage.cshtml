@@ -20,49 +20,53 @@
                     </div>
                     <div class="chess-controls">
                         <h2 class="heading-large">@Html.Sitecore().Field("Subtitle 2")</h2>
-                        <div class="column-half">
-                            <div class="form-group">
-                                <fieldset>
-                                    <legend>
-                                        <h1 class="heading-medium">@Html.Sitecore().Field("Left Bold Text")</h1>
-                                    </legend>
-                                    <div class="multiple-choice">
-                                        <input type="radio" class="js-promote" id="gamechoice1" name="gameChoices" checked value="q">
-                                        <label class="form-label form-label-inline" for="gamechoice1">@Html.Sitecore().Field("Queen Name")</label>
-                                    </div>
-                                    <div class="multiple-choice">
-                                        <input type="radio" class="js-promote" id="gamechoice2" name="gameChoices" value="r">
-                                        <label class="form-label form-label-inline" for="gamechoice2">@Html.Sitecore().Field("Rook Name")</label>
-                                    </div>
-                                    <div class="multiple-choice">
-                                        <input type="radio" class="js-promote" id="gamechoice3" name="gameChoices" value="n">
-                                        <label class="form-label form-label-inline" for="gamechoice3">@Html.Sitecore().Field("Knight Name")</label>
-                                    </div>
-                                    <div class="multiple-choice">
-                                        <input type="radio" class="js-promote" id="gamechoice4" name="gameChoices" value="b">               
-                                        <label class="form-label form-label-inline" for="gamechoice4">@Html.Sitecore().Field("Bishop Name")</label>
-                                    </div>
-                                </fieldset>
+                        <div class="grid-row">
+                            <div class="column-half">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend>
+                                            <h1 class="heading-medium">@Html.Sitecore().Field("Left Bold Text")</h1>
+                                        </legend>
+                                        <div class="multiple-choice">
+                                            <input type="radio" class="js-promote" id="gamechoice1" name="gameChoices" checked value="q">
+                                            <label class="form-label form-label-inline" for="gamechoice1">@Html.Sitecore().Field("Queen Name")</label>
+                                        </div>
+                                        <div class="multiple-choice">
+                                            <input type="radio" class="js-promote" id="gamechoice2" name="gameChoices" value="r">
+                                            <label class="form-label form-label-inline" for="gamechoice2">@Html.Sitecore().Field("Rook Name")</label>
+                                        </div>
+                                        <div class="multiple-choice">
+                                            <input type="radio" class="js-promote" id="gamechoice3" name="gameChoices" value="n">
+                                            <label class="form-label form-label-inline" for="gamechoice3">@Html.Sitecore().Field("Knight Name")</label>
+                                        </div>
+                                        <div class="multiple-choice">
+                                            <input type="radio" class="js-promote" id="gamechoice4" name="gameChoices" value="b">
+                                            <label class="form-label form-label-inline" for="gamechoice4">@Html.Sitecore().Field("Bishop Name")</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="column-half">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend>
+                                            <h1 class="heading-medium">@Html.Sitecore().Field("Right Bold Text")</h1>
+                                        </legend>
+                                        <div class="form-group js-form-validation">
+                                            <label for="skillLevel" class="form-label" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
+                                            <span class="error-message visuallyhidden">
+                                                @Html.Sitecore().Field("Skill Level Validation Message")
+                                            </span>
+                                            <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
+                                        </div>
+                                    </fieldset>
+                                </div>
                             </div>
                         </div>
-                        <div class="column-half">
-                            <form>
-                                <fieldset>
-                                    <legend>
-                                        <h1 class="heading-medium">@Html.Sitecore().Field("Right Bold Text")</h1>
-                                    </legend>
-                                    <div class="form-group js-form-validation">
-                                        <label for="skillLevel" class="form-label" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
-                                        <span class="error-message visuallyhidden">
-                                            @Html.Sitecore().Field("Skill Level Validation Message")
-                                        </span>
-                                        <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                        <div class="column-full">
-                            <button class="js-newgame button" type="button" name="button">@Html.Sitecore().Field("Play Button Text")</button>
+                        <div class="grid-row">
+                            <div class="column-full">
+                                <button class="js-newgame button" type="button" name="button">@Html.Sitecore().Field("Play Button Text")</button>
+                            </div>
                         </div>
                     </div>
                 </div>

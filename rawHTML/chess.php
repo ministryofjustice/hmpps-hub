@@ -29,54 +29,60 @@ include('_includes/head.php'); ?>
         </div>
         <div class="chess-controls">
           <h2 class="heading-large">Edit and play a new game</h2>
-          <div class="column-half">
-            <div class="form-group">
-              <fieldset>
+          <div class="grid-row">
 
-                <legend>
-                  <h1 class="heading-medium">Pawns get promoted to</h1>
-                </legend>
+            <div class="column-half">
+              <div class="form-group">
+                <fieldset>
 
-                <div class="multiple-choice">
-                  <input type="radio" class="js-promote" id="gamechoice1" name="gameChoices" checked value="q">
-                  <label class="form-label form-label-inline"  for="gamechoice1">Queen</label>
-                </div>
-                <div class="multiple-choice">
-                  <input type="radio" class="js-promote" id="gamechoice2" name="gameChoices" value="r">
-                  <label class="form-label form-label-inline" for="gamechoice2">Rook</label>
-                </div>
-                <div class="multiple-choice">
-                  <input type="radio" class="js-promote" id="gamechoice3" name="gameChoices" value="n">
-                  <label class="form-label form-label-inline" for="gamechoice3">Knight</label>
-                </div>
-                <div class="multiple-choice">
-                  <input type="radio" class="js-promote" id="gamechoice4" name="gameChoices" value="b">
-                  <label class="form-label form-label-inline" for="gamechoice4">Bishop</label>
-                </div>
+                  <legend>
+                    <h1 class="heading-medium">Pawns get promoted to</h1>
+                  </legend>
 
-              </fieldset>
+                  <div class="multiple-choice">
+                    <input type="radio" class="js-promote" id="gamechoice1" name="gameChoices" checked value="q">
+                    <label class="form-label form-label-inline"  for="gamechoice1">Queen</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input type="radio" class="js-promote" id="gamechoice2" name="gameChoices" value="r">
+                    <label class="form-label form-label-inline" for="gamechoice2">Rook</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input type="radio" class="js-promote" id="gamechoice3" name="gameChoices" value="n">
+                    <label class="form-label form-label-inline" for="gamechoice3">Knight</label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input type="radio" class="js-promote" id="gamechoice4" name="gameChoices" value="b">
+                    <label class="form-label form-label-inline" for="gamechoice4">Bishop</label>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+            <div class="column-half">
+              <div class="form-group">
+
+                <fieldset>
+                  <legend>
+                    <h1 class="heading-medium">Choose your Skill level</h1>
+                  </legend>
+                  <div class="form-group js-form-validation">
+                    <label for="skillLevel" class="form-label" id="error-skill-level">Skill Level (0-20)</label>
+                    <span class="error-message visuallyhidden">
+                      This value has to be between 0 and 20
+                    </span>
+                    <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
+                  </div>
+                </fieldset>
+
+              </div>
             </div>
           </div>
-          <div class="column-half">
-            <form>
-              <fieldset>
+          <div class="grid-row">
 
-                <legend>
-                  <h1 class="heading-medium">Choose your Skill level</h1>
-                </legend>
-                <div class="form-group js-form-validation">
-                  <label for="skillLevel" class="form-label" id="error-skill-level">Skill Level (0-20)</label>
-                  <span class="error-message visuallyhidden">
-                    This value has to be between 0 and 20
-                  </span>
-                  <input type="number" class="form-control" id="skillLevel" value="10" min="0" max="20">
-                </div>
-              </fieldset>
-
-            </form>
-          </div>
-          <div class="column-full">
-            <button class="js-newgame button" type="button" name="button">Play a new game</button>
+            <div class="column-full">
+              <button class="js-newgame button" type="button" name="button">Play a new game</button>
+            </div>
           </div>
          </div>
       </div>
