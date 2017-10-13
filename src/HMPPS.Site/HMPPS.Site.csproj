@@ -251,9 +251,6 @@
     <Content Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <Content Include="App_Config\Sitecore.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -574,7 +571,33 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CD-Localhost.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CD-Release.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CMS-Localhost.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CMS-Release.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.Debug.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.Release.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config" />
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
@@ -604,30 +627,6 @@
     <Content Include="App_Config\Include\zzz\Sitecore.Support.183497.config" />
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.config">
       <TransformOnBuild>true</TransformOnBuild>
-    </None>
-    <None Include="App_Config\Sitecore.CD-Localhost.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.CD-Release.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.CMS-Localhost.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.CMS-Release.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.Debug.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.Release.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
