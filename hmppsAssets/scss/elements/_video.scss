@@ -80,11 +80,6 @@
 
 @include media(mobile) {
 
-	.video-js.custom-video .vjs-time-divider,
-	.video-js.custom-video .vjs-current-time{
-		display: none;
-	}
-
 	.video-js.custom-video .vjs-progress-control.vjs-control{
 		width: 100%;
 		position: absolute;
