@@ -31,7 +31,10 @@ include('_includes/head.php'); ?>
             </div>
         </video>
       </div>
-      <p>This clip shows how Joe’s belief that “you can’t trust anyone” leads to him making assumptions and getting angry at his friend. On his way over to confront his friend, he uses the CUE tool against his belief and forms a more useful belief to try out. When Joe acts as if his new belief is true, it soon becomes clear that he’s been jumping to conclusions.</p>
+      <div class="content">
+        <p>This clip shows how Joe’s belief that “you can’t trust anyone” leads to him making assumptions and getting angry at his friend. On his way over to confront his friend, he uses the CUE tool against his belief and forms a more useful belief to try out. When Joe acts as if his new belief is true, it soon becomes clear that he’s been jumping to conclusions.</p>
+      </div>
+
       <!-- <div class="youtube-player">
         <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"></iframe>
       </div> -->
