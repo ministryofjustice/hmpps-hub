@@ -6,19 +6,21 @@
     </h1>
 </div>
 <div class="list-links">
-    <div class="column-half no-gutter">
-        <ul>
-            @{
-                var i = 0;
-                var firstColEnd = (Model.Count + 1) / 2;
-            }
-            @foreach (var episode in Model)
+    <div class="grid-row">
+        <div class="column-half">
+            <ul>
+                @{
+                    var i = 0;
+                    var firstColEnd = (Model.Count + 1) / 2;
+                }
+                @foreach (var episode in Model)
             {
-                var newUl = (i == firstColEnd) ? "</ul></div><div class=\"column-half no-gutter\"><ul>" : "";
-                @Html.Raw(newUl)
-                <li><a href="@episode.RadioEpisodeUrl">@episode.Title</a></li>
-                i++;
-            }
-        </ul>
+                var newUl = (i == firstColEnd) ? "</ul></div><div class=\"column-half\"><ul>" : "";
+                    @Html.Raw(newUl)
+                    <li><a href="@episode.RadioEpisodeUrl">@episode.Title</a></li>
+                    i++;
+                }
+            </ul>
+        </div>
     </div>
 </div>

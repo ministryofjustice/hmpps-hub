@@ -21,7 +21,9 @@
                     </div>
                 </video>
             </div>
-            <p>@Html.Sitecore().Field("Main Content")</p>
+            <div class="content">
+                <p>@Html.Sitecore().Field("Main Content")</p>
+            </div>
         </div>
         <div class="column-third add-title-margin">
             @Html.Sitecore().Placeholder("right-blocks")
