@@ -1,10 +1,11 @@
-
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.Utilities.Models;
+
 
 namespace HMPPS.Utilities.Services
 {
@@ -47,7 +48,16 @@ namespace HMPPS.Utilities.Services
 
             var jwtToken = _encryptionService.Decrypt(encryptedJwtToken);
 
-            var claims = _jwtTokenService.GetClaimsFromJwtToken(jwtToken, Settings.JwtTokenSecurityKey);
+            IEnumerable<Claim> claims;
+            try
+            {
+                claims = _jwtTokenService.GetClaimsFromJwtToken(jwtToken, Settings.JwtTokenSecurityKey);
+            }
+            catch (Exception ex)
+            {
+                // Sitecore.Diagnostics.Log.Error("HMPPS.Utilities.Services.UserDataService - GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
+                return null;
+            }
             return new UserData(claims);
         }
 

@@ -16,5 +16,7 @@ namespace HMPPS.Site.ViewModels.Pages
         public List<RadioEpisode> NeighbourEpisodes { get; set; }
 
         public RadioEpisode CurrentEpisode { get; set; }
+
+        public string ShowPreviousEpisodesUrl { get; set; }
     }
 }

@@ -1,24 +1,28 @@
 ﻿---
-ID: "9cd5ad77-6688-4494-83db-7c25b5d141c8"
-Parent: "6fee4c72-a6cf-42c4-8ef0-048bbbb5652d"
+ID: "35d8dd74-d7cc-484d-ac6a-2b0799469008"
+Parent: "240ae8c9-2c6c-4d5a-bd51-594e3f0af73c"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Pages/Radio Page/Content/Enable Javascript Message
+Path: /sitecore/templates/HMPPS/Pages/General Content Page/Content/Related Pages Aria Label
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
-  Value: Rich Text
+  Value: "Single-Line Text"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 300
+  Value: 75
 Languages:
 - Language: en
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Hidden label added for accessibility to the related pages navigation element
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170929T082055Z
+      Value: 20171010T120529Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

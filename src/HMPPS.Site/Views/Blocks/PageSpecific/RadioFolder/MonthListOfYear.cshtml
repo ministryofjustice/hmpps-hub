@@ -1,0 +1,29 @@
+@model  List<RadioFolder>
+@using HMPPS.Models.Cms
+<aside class="part-navigation-container" role="complementary">
+    <nav role="navigation" class="grid-row part-navigation" aria-label="Audio Listings">
+        @{
+            var i = 0;
+        }
+        @foreach (var radioFolder in Model)
+        {
+            var ulBegin = (i % 4 == 0) ? "<ul class=\"column-one-third no-gutter list-bare\">" : "";
+            var ulEnd = (i % 4 == 3) ? "</ul>" : "";
+
+            @Html.Raw(ulBegin);
+            <li>
+                @if (radioFolder.IsCurrent)
+                {
+                   @radioFolder.FolderName
+                }
+                else
+                {
+                    <a href="@radioFolder.FolderUrl">@radioFolder.FolderName</a>
+                }
+            </li>
+            @Html.Raw(ulEnd);
+
+            i++;
+        }
+    </nav>
+</aside>

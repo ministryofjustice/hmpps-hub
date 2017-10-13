@@ -1,5 +1,4 @@
 @model HMPPS.Site.ViewModels.Pages.GeneralContentPageViewModel
-
 <div id="global-header-bar"></div>
 
 <div class="site-wrapper">
@@ -14,10 +13,27 @@
                         @Html.Sitecore().Field("Page Title")
                     </h1>
                 </div>
+                @if (Model.ShowRelatedPages)
+                {
+                    <aside class="part-navigation-container" role="complementary">
+                        <nav role="navigation" class="grid-row part-navigation" aria-label="@Model.RelatedPagesAriaLabel">
+                            @if (Model.RelatedPagesLeftColumn.RelatedPages.Any())
+                            {
+                              @Html.Partial("/Views/Partials/_RelatedPages.cshtml", Model.RelatedPagesLeftColumn)
+                            }
+                            @if (Model.RelatedPagesRightColumn.RelatedPages.Any())
+                            {
+                             @Html.Partial("/Views/Partials/_RelatedPages.cshtml", Model.RelatedPagesRightColumn)
+                            }
+                        </nav>
+                    </aside>
+                }
                 <div class="content">
-                   @Html.Sitecore().Field("Main Content")
+                    @Html.Sitecore().Field("Main Content")
                 </div>
+                @Html.Partial("/Views/Blocks/Global/PrevNext.cshtml", Model.PrevNext)
             </div>
+           
             <div class="column-third add-title-margin">
                @Html.Sitecore().Placeholder("right-blocks")
             </div>

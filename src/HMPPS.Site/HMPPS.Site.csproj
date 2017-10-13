@@ -659,6 +659,12 @@
     <Content Include="Views\Pages\BalancePage.cshtml" />
     <Content Include="Views\Pages\VideoSectionPage.cshtml" />
     <Content Include="Views\Pages\VideoPage.cshtml" />
+    <Content Include="Views\Blocks\Global\PrevNext.cshtml" />
+    <Content Include="Views\Partials\_RelatedPages.cshtml" />
+    <Content Include="Views\Pages\RadioFolderPage.cshtml" />
+    <Content Include="Views\Blocks\PageSpecific\RadioFolder\EpisodeListOfMonth.cshtml" />
+    <Content Include="Views\Blocks\PageSpecific\RadioFolder\MonthListOfYear.cshtml" />
+    <Content Include="Views\Blocks\PageSpecific\RadioFolder\YearList.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -694,8 +700,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
+    <Compile Include="Controllers\Global\PreviousNextController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
     <Compile Include="DependencyInjection\RegisterServices.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjection.cs" />
@@ -723,6 +731,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\GeneralContentPageViewModel.cs" />
@@ -735,6 +744,8 @@
     <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
+    <Compile Include="ViewModels\Partials\PrevNextViewModel.cs" />
+    <Compile Include="ViewModels\Partials\RelatedPagesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="layouts\" />
