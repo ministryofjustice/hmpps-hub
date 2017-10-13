@@ -15,7 +15,7 @@ namespace HMPPS.Site.Controllers.Pages
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
             _vspvm = new VideoSectionPageViewModel();
-            foreach (var c in contextItem.Children.OrderBy(v => v.Name).ToList())
+            foreach (var c in contextItem.Children.ToList())
             {
                 var isVideoPage = c.TemplateName == "Video Page";
 
