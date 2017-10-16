@@ -29,7 +29,7 @@
   -o-transition: visibility 0.1s, opacity 0.1s;
   transition: visibility 0.1s, opacity 0.1s;
   background-color: black;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .video-js.audio-player .vjs-remaining-time,
