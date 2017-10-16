@@ -699,8 +699,6 @@
     <Content Include="..\..\hmppsAssets\**">
       <Link>hmppsAssets\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="App_Data\Unicorn\**">
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
