@@ -23,14 +23,13 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  visibility: visible;
-  opacity: 1;
   -webkit-transition: visibility 0.1s, opacity 0.1s;
   -moz-transition: visibility 0.1s, opacity 0.1s;
   -ms-transition: visibility 0.1s, opacity 0.1s;
   -o-transition: visibility 0.1s, opacity 0.1s;
   transition: visibility 0.1s, opacity 0.1s;
   background-color: black;
+  overflow: visible;
 }
 
 .video-js.audio-player .vjs-remaining-time,
@@ -44,4 +43,28 @@
 .video-js.audio-player .vjs-current-time,
 .video-js.audio-player .vjs-duration{
   display: block;
+}
+
+.video-js.custom-video .vjs-time-divider{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: center;
+  min-width: 1em;
+}
+
+.video-js.custom-video .vjs-time-control{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.video-js.custom-video .vjs-volume-panel.vjs-control{
+  width: 3em;
+}
+
+.video-js.custom-video .vjs-mute-control,
+.video-js.custom-video .vjs-play-control.vjs-control,
+.video-js.custom-video .vjs-fullscreen-control.vjs-control{
+  width: 3em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }

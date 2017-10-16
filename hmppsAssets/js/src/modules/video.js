@@ -2,10 +2,10 @@ export default (function () {
   return {
     init: function init() {
       const myPlayer = document.querySelector('.video-js.custom-video');
-      const titleText = document.querySelector('.video-js.custom-video').getAttribute('data-videotitle');
 
       if (myPlayer) {
 
+        const titleText = document.querySelector('.video-js.custom-video').getAttribute('data-videotitle');
         const Component = HMPPS.videojs.getComponent('Component');
         // The videojs.extend function is used to assist with inheritance. In
         // an ES6 environment, `class TitleBar extends Component` would work
@@ -70,7 +70,7 @@ export default (function () {
         player.on('play', (e) =>{
 
           const bar = document.querySelector('.vjs-title-bar');
-          
+
           bar.classList.add('fade-out');
         });
 
