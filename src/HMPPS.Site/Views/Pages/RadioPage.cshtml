@@ -12,7 +12,7 @@
                 <div class="pub-c-title">
                     <h1 class="pub-c-title__text ">
                         @Model.CurrentEpisode.Title <br/>
-                        (@Model.CurrentEpisode.Date.ToString("dd/MM/yyyy"))
+                        (@Model.CurrentEpisode.Date.ToString("dd MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture))
                     </h1>
                 </div>
                 @if (!string.IsNullOrEmpty(Model.CurrentEpisode.FileUrl))
