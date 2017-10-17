@@ -250,6 +250,7 @@
     </Content>
     <Content Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.config">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
@@ -317,6 +318,7 @@
     <None Include="App_Config\ConnectionStrings.CMS-Localhost.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\ConnectionStrings.CMS-Release.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
@@ -332,6 +334,7 @@
     </None>
     <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
@@ -619,6 +622,7 @@
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CMS-Release.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.Debug.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
@@ -640,6 +644,7 @@
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
