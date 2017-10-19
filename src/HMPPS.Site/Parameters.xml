@@ -71,7 +71,7 @@
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
   </parameter>
 
-  <!--SSO-->
+  <!--HMPPS.Authentication-->
   <parameter name="ssocallbackurl" description="ssocallbackurl" defaultValue="#{ssocallbackurl}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.SignInCallbackUrl']/@value" />
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.SignInCallbackUrl']/@value" />
@@ -79,6 +79,10 @@
   <parameter name="ssologouturl" description="ssologouturl" defaultValue="#{ssologouturl}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutUrl']/@value" />
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutUrl']/@value" />
+  </parameter>
+  <parameter name="ssotempcookiename" description="ssotempcookiename" defaultValue="#{ssotempcookiename}#" tags="">
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TempCookieName']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TempCookieName']/@value" />
   </parameter>
   <parameter name="ssoclientid" description="ssoclientid" defaultValue="#{ssoclientid}#" tags="">
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientId']/@value" />
@@ -112,9 +116,11 @@
     <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
     <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
   </parameter>
+
+  <!--HMPPS.Utilities-->
   <parameter name="ssoauthcookiename" description="ssoauthcookiename" defaultValue="#{ssoauthcookiename}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthenticationChecker.CookieName']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthenticationChecker.CookieName']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
+    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
   </parameter>
 
   <!--NOMIS API-->
