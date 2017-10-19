@@ -125,7 +125,7 @@ namespace HMPPS.Authentication.Tests
             Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.Email).Value);
             Assert.AreEqual("Rocket", claims.Single(c => c.Type == ClaimTypes.Surname).Value);
             Assert.AreEqual("Johnny", claims.Single(c => c.Type == ClaimTypes.GivenName).Value);
-            Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value, true);
         }
 
         [TestMethod]

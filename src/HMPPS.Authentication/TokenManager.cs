@@ -160,8 +160,13 @@ namespace HMPPS.Authentication
         {
             var claims = new List<Claim>();
 
-            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.NameIdentifier
-                                                     || c.Type == ClaimTypes.Role
+            var prisonerIdClaim = tokenClaims.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            if (prisonerIdClaim != null)
+            {
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, prisonerIdClaim.Value.ToUpperInvariant()));
+            }
+
+            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.Role
                                                      || c.Type == ClaimTypes.GivenName
                                                      || c.Type == ClaimTypes.Surname
                                                      || c.Type == ClaimTypes.Email
