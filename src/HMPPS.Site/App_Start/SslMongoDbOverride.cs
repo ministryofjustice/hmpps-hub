@@ -9,8 +9,6 @@ namespace HMPPS
     {
         public override void UpdateSettings(UpdateMongoDriverSettingsArgs args)
         {
-            args.MongoSettings.UseSsl = true;
-            args.MongoSettings.VerifySslCertificate = false;
             args.MongoSettings.SslSettings = new SslSettings();
             args.MongoSettings.SslSettings.EnabledSslProtocols = SslProtocols.Tls12;
         }
