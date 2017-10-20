@@ -50,6 +50,7 @@ namespace HMPPS.Authentication.Pipelines
             var user = AuthenticationManager.BuildVirtualUser(username, true);
             user.Profile.Email = email;
             user.Profile.FullName = idamData.Name;
+            user.Profile.Save();
             AssignUserRoles(user, roles);
             return user;
         }
