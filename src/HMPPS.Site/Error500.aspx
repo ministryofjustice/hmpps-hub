@@ -64,20 +64,12 @@
 
 <div class="site-wrapper">
 
-        <div class="breadcrumbs">
-        <ol>
-                    <li><a href="/en">Home</a></li>
-                    <li><a aria-current="page" href="/Error500.aspx">Server error</a></li>
-        </ol>
-    </div>
-
-
     <main class="elements-index root-index" id="content" role="main" tabindex="-1">
         <div class="grid-row">
             <div class="column-two-thirds">
                 <div class="pub-c-title">
                     <h1 class="pub-c-title__text">
-                        Server error - 500
+                        Server error
                     </h1>
                 </div>
                 <div class="content">

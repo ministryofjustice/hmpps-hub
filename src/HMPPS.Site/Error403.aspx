@@ -64,20 +64,12 @@
 
 <div class="site-wrapper">
 
-        <div class="breadcrumbs">
-        <ol>
-                    <li><a href="/en">Home</a></li>
-                    <li><a aria-current="page" href="/Error403.aspx">Unauthenticated</a></li>
-        </ol>
-    </div>
-
-
     <main class="elements-index root-index" id="content" role="main" tabindex="-1">
         <div class="grid-row">
             <div class="column-two-thirds">
                 <div class="pub-c-title">
                     <h1 class="pub-c-title__text">
-                        Unauthenticated - 403
+                        Unauthenticated
                     </h1>
                 </div>
                 <div class="content">
