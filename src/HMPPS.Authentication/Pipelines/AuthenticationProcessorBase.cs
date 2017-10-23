@@ -14,7 +14,7 @@ namespace HMPPS.Authentication.Pipelines
     public abstract class AuthenticationProcessorBase : HttpRequestProcessor
     {
 
-        protected INomisApiService _nomisApiService;
+        protected INomisApiService NomisApiService;
 
         public IEnumerable<Claim> RefreshUserData(ref UserData userData)
         {
@@ -29,12 +29,12 @@ namespace HMPPS.Authentication.Pipelines
 
         protected void AddPrisonerDetailsToClaims(string prisonerId, ref List<Claim> claims)
         {
-            var establishment = _nomisApiService.GetPrisonerLocationDetails(prisonerId);
+            var establishment = NomisApiService.GetPrisonerLocationDetails(prisonerId);
             var prisonId = establishment.Code;
             claims.Add(new Claim("prison_id", prisonId));
             claims.Add(new Claim("prison_name", establishment.Desc));
 
-            var accounts = _nomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
+            var accounts = NomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
             claims.Add(new Claim("account_balance", ((decimal)(accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
             claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
         }

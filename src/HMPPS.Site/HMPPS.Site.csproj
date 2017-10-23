@@ -646,6 +646,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Error500.aspx" />
+    <Content Include="robots.txt" />
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />

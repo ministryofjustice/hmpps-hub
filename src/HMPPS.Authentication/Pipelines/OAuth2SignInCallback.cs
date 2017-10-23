@@ -23,7 +23,7 @@ namespace HMPPS.Authentication.Pipelines
         public OAuth2SignInCallback(IUserDataService userDataService, INomisApiService nomisApiService)
         {
             _userDataService = userDataService;
-            _nomisApiService = nomisApiService;
+            NomisApiService = nomisApiService;
         }
 
 
