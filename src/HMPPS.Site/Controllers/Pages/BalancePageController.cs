@@ -1,12 +1,14 @@
 using System;
 using System.Web.Mvc;
+using Sitecore.Data.Items;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
 using HMPPS.Utilities.Interfaces;
-using Sitecore.Data.Items;
+using HMPPS.Site.Mvc;
 
 namespace HMPPS.Site.Controllers.Pages
 {
+    [NoCacheGlobalActionFilter]
     public class BalancePageController : BaseController
     {
         private BalancePageViewModel _bpvm;
