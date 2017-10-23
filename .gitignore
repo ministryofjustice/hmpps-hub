@@ -376,4 +376,8 @@ proxy.json
 /www/App_Data/MediaFiles/
 /cd-www/App_Data/MediaCache/website
 /cd-www/status.aspx
+/cd-www/Error500.aspx
+/cd-www/Error403.aspx
 /www/status.aspx
+/www/Error500.aspx
+/www/Error403.aspx
