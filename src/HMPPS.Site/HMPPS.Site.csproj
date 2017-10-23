@@ -640,10 +640,12 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
+    <Content Include="Error403.aspx" />
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Error500.aspx" />
     <Content Include="robots.txt" />
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
@@ -683,6 +685,7 @@
     </None>
     <None Include="Web.CMS-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.CMS-Release.config">
       <DependentUpon>Web.config</DependentUpon>
