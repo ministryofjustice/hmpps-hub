@@ -730,6 +730,7 @@
     <Compile Include="Controllers\Pages\NeontroidsGamePageController.cs" />
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="DependencyInjection\ServiceCollectionExtensions.cs" />
+    <Compile Include="Mvc\NoCacheGlobalActionFilter .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="status.aspx.cs">
       <DependentUpon>status.aspx</DependentUpon>
