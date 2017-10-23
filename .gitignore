@@ -377,3 +377,5 @@ proxy.json
 /cd-www/App_Data/MediaCache/website
 /cd-www/status.aspx
 /www/status.aspx
+/www/SessionAbandon.aspx
+/www/robots.txt

@@ -11,7 +11,7 @@ namespace HMPPS.Utilities.Services
 
         public string Encrypt(string plainValue, bool urlEncode = false)
         {
-            string encryptedValue = string.Empty;
+            var encryptedValue = string.Empty;
 
             try
             {
@@ -19,7 +19,7 @@ namespace HMPPS.Utilities.Services
             }
             catch
             {
-                Log.Error(String.Format("HMPPS.Utilities.Services.EncryptionService - Error trying to encrypt {0}", plainValue), this);
+                Log.Error($"HMPPS.Utilities.Services.EncryptionService - Error trying to encrypt {plainValue}", this);
                 return encryptedValue;
             }
 
@@ -44,7 +44,7 @@ namespace HMPPS.Utilities.Services
             }
             catch (Exception)
             {
-                Log.Error(String.Format("HMPPS.Utilities.Services.EncryptionService - Error trying to decrypt {0}", encryptedValue), this);
+                Log.Error($"HMPPS.Utilities.Services.EncryptionService - Error trying to decrypt {encryptedValue}", this);
                 return null;
             }
         }

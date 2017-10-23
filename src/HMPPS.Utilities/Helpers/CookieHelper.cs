@@ -6,36 +6,33 @@ namespace HMPPS.Utilities.Helpers
 {
     public class CookieHelper
     {
-        private HttpContext _ctx = null;
-        private string _cookieName = null;
+        private readonly HttpContext _ctx;
+        private readonly string _cookieName;
         private HybridDictionary _data;
         public HybridDictionary CookieData
         {
             get
             {
-                if (CookieData == null)
+                if (_data == null)
                 {
-                    this.GetCookie();
+                    GetCookie();
                 }
                 return _data;
             }
-            set
-            {
-                _data = value;
-            }
+            set => _data = value;
         }
-        public void SetValue(string Key, string Value)
+        public void SetValue(string key, string value)
         {
             if (_data == null)
                 _data = new HybridDictionary();
-            _data.Add(Key, Value);
+            _data.Add(key, value);
         }
-        public string GetValue(string Key)
+        public string GetValue(string key)
         {
-            string retValue = string.Empty;
+            var retValue = string.Empty;
             if (_data != null)
             {
-                retValue = _data[Key].ToString();
+                retValue = _data[key].ToString();
             }
             return retValue;
         }
@@ -58,17 +55,15 @@ namespace HMPPS.Utilities.Helpers
         public void Save()
         {
             // Setting a cookie's value and/or subvalue using the HttpCookie class
-            HttpCookie cookie;
             if (_ctx.Request.Cookies[_cookieName] != null)
                 _ctx.Request.Cookies.Remove(_cookieName);
-            cookie = new HttpCookie(_cookieName);
+            var cookie = new HttpCookie(_cookieName);
             if (_data.Count > 0)
             {
                 IEnumerator cookieData = _data.GetEnumerator();
-                DictionaryEntry item;
                 while (cookieData.MoveNext())
                 {
-                    item = (DictionaryEntry)cookieData.Current;
+                    var item = (DictionaryEntry)cookieData.Current;
                     cookie.Values.Add(item.Key.ToString(), item.Value.ToString());
                 }
             }
@@ -79,7 +74,7 @@ namespace HMPPS.Utilities.Helpers
             // Retrieving a cookie's value(s)
             if (_ctx.Request.Cookies[_cookieName] != null)
             {
-                NameValueCollection values = _ctx.Request.Cookies[_cookieName].Values;
+                var values = _ctx.Request.Cookies[_cookieName].Values;
                 if (values.Count > 0)
                 {
                     _data = new HybridDictionary(values.Count);

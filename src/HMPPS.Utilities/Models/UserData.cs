@@ -41,22 +41,20 @@ namespace HMPPS.Utilities.Models
 
         private static decimal ParseToDecimal(string value)
         {
-            decimal retval = 0;
-            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture.NumberFormat, out retval))
+            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture.NumberFormat, out var retval))
                 return retval;
-            return (decimal)0;
+            return 0;
         }
 
         private static DateTime ParseToUkDateTime(string value)
         {
-            DateTime utcDateTime;
-            if (DateTime.TryParse(value, out utcDateTime))
+            if (DateTime.TryParse(value, out var utcDateTime))
             {
                 DateTime.SpecifyKind(utcDateTime, DateTimeKind.Utc);
 
-                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
-                TimeSpan offset = tzi.GetUtcOffset(DateTime.Now);
-                DateTime britishDateTime = utcDateTime.Add(offset);
+                var tzi = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
+                var offset = tzi.GetUtcOffset(DateTime.Now);
+                var britishDateTime = utcDateTime.Add(offset);
                 return britishDateTime;
             }
             return DateTime.MinValue;

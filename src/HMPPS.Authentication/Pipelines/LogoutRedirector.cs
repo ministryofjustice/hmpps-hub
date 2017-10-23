@@ -8,7 +8,7 @@ namespace HMPPS.Authentication.Pipelines
     public class LogoutRedirector : AuthenticationProcessorBase
     {
 
-        private IUserDataService _userDataService;
+        private readonly IUserDataService _userDataService;
 
         public LogoutRedirector(IUserDataService userDataService)
         {
