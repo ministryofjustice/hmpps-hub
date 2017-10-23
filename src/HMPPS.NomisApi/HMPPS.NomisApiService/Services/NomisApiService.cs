@@ -18,15 +18,6 @@ namespace HMPPS.NomisApiService.Services
     public class NomisApiService : INomisApiService
     {
         /// <summary>
-        /// EC PRIVATE KEY - NOT USED BY CODE
-        /// Use the below code to generate symmetric Secret Key
-        ///     var hmac = new HMACSHA256();
-        ///     var key = Convert.ToBase64String(hmac.Key);
-        /// </summary>
-        //private const string Secret =
-        //    "MHcCAQEEILYQ31dncLlkX1Y07pzbTy0/5Xg31ZX9ShT/5d/e4TU6oAoGCCqGSM49AwEHoUQDQgAEaS61Nr0aTl4Q4WnNf/kpnjHYv8EuokFdQUYUAEC03CFQsjxJKsah2NXLDtsBz3b2saaPKtujp31h2S5U5rRh1A==";
-
-        /// <summary>
         /// EC PRIVATE KEY converted to PKCS8 format using $ openssl pkcs8 -topk8 -nocrypt -in e3-nomis-api.key -out ec2.pem
         /// This is the key needed below
         /// </summary>
@@ -54,9 +45,9 @@ namespace HMPPS.NomisApiService.Services
         {
             if (useSitecoreSettings)
             {
-                this.ApiBaseUrl = Settings.NomisApiBaseUrl;
-                this.ClientToken = Settings.NomisApiClientToken;
-                this.SecretPkcs8 = Settings.NomisApiSecretKey;
+                ApiBaseUrl = Settings.NomisApiBaseUrl;
+                ClientToken = Settings.NomisApiClientToken;
+                SecretPkcs8 = Settings.NomisApiSecretKey;
             }
         }
 
@@ -79,7 +70,7 @@ namespace HMPPS.NomisApiService.Services
             }
             catch (AggregateException aex)
             {
-                var detailMessage = String.Format("GetPrisonerLocationDetails({0})", prisonerId);
+                var detailMessage = $"GetPrisonerLocationDetails({prisonerId})";
                 aex.Handle(e => HandleInnerException(e, detailMessage));
                 return null;
             }
@@ -97,7 +88,7 @@ namespace HMPPS.NomisApiService.Services
             }
             catch (AggregateException aex)
             {
-                var detailMessage = String.Format("GetPrisonerAccounts({0}, {1})", prisonId, prisonerId);
+                var detailMessage = $"GetPrisonerAccounts({prisonId}, {prisonerId})";
                 aex.Handle(e => HandleInnerException(e, detailMessage));
                 return null;
             }
@@ -139,13 +130,14 @@ namespace HMPPS.NomisApiService.Services
         /// <returns></returns>
         private async Task<string> GetPrisonerAccountsAsync(string prisonId, string prisonerId)
         {
-            var url = String.Format("{0}/prison/{1}/offenders/{2}/accounts", ApiBaseUrl, prisonId, prisonerId);
+            var url = $"{ApiBaseUrl}/prison/{prisonId}/offenders/{prisonerId}/accounts";
             return await Client.GetStringAsync(url);
         }
 
         private bool HandleInnerException(Exception e, string detailMessage)
         {
-            Log.Error(String.Format("HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {0}", detailMessage), this);
+            Log.Error(
+                $"HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {detailMessage}", this);
             return false; // exception is not handled
         }
 
