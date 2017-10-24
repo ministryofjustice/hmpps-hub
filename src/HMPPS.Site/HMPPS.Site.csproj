@@ -408,6 +408,7 @@
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Debug.config">
       <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
@@ -494,31 +495,6 @@
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
