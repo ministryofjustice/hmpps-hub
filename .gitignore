@@ -384,4 +384,11 @@ proxy.json
 /www/Error403.aspx
 /www/SessionAbandon.aspx
 /www/status.aspx
+/www/SessionAbandon.aspx
 /www/robots.txt
+/cd-www/Error403.aspx
+/cd-www/Error500.aspx
+/cd-www/robots.txt
+/cd-www/SessionAbandon.aspx
+/www/Error500.aspx
+/www/Error403.aspx
