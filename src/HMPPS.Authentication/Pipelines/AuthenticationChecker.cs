@@ -55,16 +55,18 @@ namespace HMPPS.Authentication.Pipelines
             }
             if (sitecoreUserLoggedIn)
             {
+                if (!Context.User.LocalName.Equals(userData.NameIdentifier))
+                {
+                    AuthenticationManager.Logout();
+                    _userDataService.DeleteUserDataCookie(args.Context);
+                    return;
+                }
                 if (ExpirationHelper.IsExpired(userData.ExpiresAt))
                 {
                     var claims = RefreshUserData(ref userData);
                     _userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
-                else if (!Context.User.LocalName.Equals(userData.NameIdentifier))
-                {
-                    AuthenticationManager.Logout();
-                    _userDataService.DeleteUserDataCookie(args.Context);
-                }
+                BuildVirtualUser(userData);
             }
         }
     }
