@@ -392,8 +392,8 @@ proxy.json
 /cd-www/SessionAbandon.aspx
 /www/Error500.aspx
 /www/Error403.aspx
-/src/HMPPS.Site/CMSLocalhostSettings.config
 /cd-www/WebAppSettings.CMS-Localhost.config
 /www/WebAppSettings.CMS-Localhost.config
 /src/HMPPS.Site/WebAppSettings.CMS-Localhost.config
 /src/HMPPS.Site/WebAppSettings.CD-Localhost.config
+/cd-www/WebAppSettings.CD-Localhost.config
