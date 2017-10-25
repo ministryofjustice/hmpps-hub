@@ -1,4 +1,8 @@
+$wwwAppConfigInclude = "D:\home\site\wwwroot\App_Config\Include"
 $wwwAdminLocation = "D:\home\site\wwwroot\sitecore\admin"
+
+ren "$wwwAppConfigInclude\Sitecore.WebDAV.config" "Sitecore.WebDAV.config.disabled"
+
 ren "$wwwAdminLocation\Cache.aspx" "Cache.aspx.disabled"
 ren "$wwwAdminLocation\DBCleanup.aspx" "DBCleanup.aspx.disabled"
 ren "$wwwAdminLocation\dbbrowser.aspx" "dbbrowser.aspx.disabled"
