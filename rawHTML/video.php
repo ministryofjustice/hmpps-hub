@@ -15,44 +15,46 @@ include('_includes/head.php'); ?>
     </ol>
   </div>
   <main role="main" id="content" class="answer" lang="en">
-    <div class="column-two-thirds">
-      <div class="pub-c-title">
-        <h1 class="heading-xlarge">Video title</h1>
-      </div>
-      <div class="video-player">
-        <video controls id="video" class="video-js custom-video vjs-default-skin" data-videotitle="The title of the video" poster="_dummy/img/videos.png" controls preload="auto">
-          <source src="_dummy/video/dummy-mp4.mp4" type="video/mp4">
-          <source src="http://digital-hub-dev.northeurope.cloudapp.azure.com:11002/sites/default/files/videos/2017-04/Timewise%20Intro%20V2%20%282%29.mp4" type="video/mp4">
-            <div class="vjs-no-js">
-              <p>To listen to this audio please enable JavaScript, and consider upgrading to a web browser that
-              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-            </div>
-        </video>
-      </div>
-      <div class="content">
-        <p>This clip shows how Joe’s belief that “you can’t trust anyone” leads to him making assumptions and getting angry at his friend. On his way over to confront his friend, he uses the CUE tool against his belief and forms a more useful belief to try out. When Joe acts as if his new belief is true, it soon becomes clear that he’s been jumping to conclusions.</p>
-      </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="pub-c-title">
+          <h1 class="heading-xlarge">Video title</h1>
+        </div>
+        <div class="video-player">
+          <video controls id="video" class="video-js custom-video vjs-default-skin" data-videotitle="The title of the video" poster="_dummy/img/videos.png" controls preload="auto">
+            <source src="_dummy/video/dummy-mp4.mp4" type="video/mp4">
+              <source src="http://digital-hub-dev.northeurope.cloudapp.azure.com:11002/sites/default/files/videos/2017-04/Timewise%20Intro%20V2%20%282%29.mp4" type="video/mp4">
+                <div class="vjs-no-js">
+                  <p>To listen to this audio please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                  </div>
+                </video>
+              </div>
+              <div class="content">
+                <p>This clip shows how Joe’s belief that “you can’t trust anyone” leads to him making assumptions and getting angry at his friend. On his way over to confront his friend, he uses the CUE tool against his belief and forms a more useful belief to try out. When Joe acts as if his new belief is true, it soon becomes clear that he’s been jumping to conclusions.</p>
+              </div>
 
-      <!-- <div class="youtube-player">
-        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"></iframe>
-      </div> -->
-    </div>
-    <div class="column-third add-title-margin">
-      <aside class="related-content" role="complementary">
-        <h2 class="heading-medium">More Timewise videos</h2>
-        <nav role="navigation">
-          <ul>
-            <li><a href="#">Dealing with Criticism</a></li>
-            <li><a href="#">Getting Perspective</a></li>
-            <li><a href="#">Getting yourself accross</a></li>
-            <li><a href="#">Reading Situations</a></li>
-            <li><a href="#">Seeing how it is</a></li>
-            <li><a href="#">Staying in control</a></li>
-            <li><a href="#">Staying on Track</a></li>
-            <li><a href="#">Understanding what I do</a></li>
-          </ul>
-        </nav>
-      </aside>
+              <!-- <div class="youtube-player">
+              <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"></iframe>
+            </div> -->
+          </div>
+      <div class="column-third add-title-margin">
+            <aside class="related-content" role="complementary">
+              <h2 class="heading-medium">More Timewise videos</h2>
+              <nav role="navigation">
+                <ul>
+                  <li><a href="#">Dealing with Criticism</a></li>
+                  <li><a href="#">Getting Perspective</a></li>
+                  <li><a href="#">Getting yourself accross</a></li>
+                  <li><a href="#">Reading Situations</a></li>
+                  <li><a href="#">Seeing how it is</a></li>
+                  <li><a href="#">Staying in control</a></li>
+                  <li><a href="#">Staying on Track</a></li>
+                  <li><a href="#">Understanding what I do</a></li>
+                </ul>
+              </nav>
+            </aside>
+          </div>
     </div>
   </main><!-- / #content -->
 </div>
