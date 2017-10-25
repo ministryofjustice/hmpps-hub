@@ -19,9 +19,7 @@ include('_includes/head.php'); ?>
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="pub-c-title__text ">
-          Bob and Beyond 22/01/17
-        </h1>
+        <h1 class="heading-xlarge">Bob and Beyond</h1>
       </div>
       <div class="audio-player-wrap">
         <audio controls id="audio-player" class="video-js audio-player vjs-default-skin" controls preload="auto">
