@@ -88,6 +88,30 @@
 	text-shadow: none;
 }
 
+.video-js.custom-video .vjs-time-divider{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: center;
+  min-width: 1em;
+}
+
+.video-js.custom-video .vjs-time-control{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.video-js.custom-video .vjs-volume-panel.vjs-control{
+  width: 3em;
+}
+
+.video-js.custom-video .vjs-mute-control,
+.video-js.custom-video .vjs-play-control.vjs-control,
+.video-js.custom-video .vjs-fullscreen-control.vjs-control{
+  width: 3em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
 @include media(mobile) {
 
 	.video-js.custom-video .vjs-progress-control.vjs-control{
