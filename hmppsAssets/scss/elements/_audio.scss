@@ -45,25 +45,25 @@
   display: block;
 }
 
-.video-js.custom-video .vjs-time-divider{
+.video-js.audio-player .vjs-time-divider{
   padding-left: 0.5em;
   padding-right: 0.5em;
   text-align: center;
   min-width: 1em;
 }
 
-.video-js.custom-video .vjs-time-control{
+.video-js.audio-player .vjs-time-control{
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
-.video-js.custom-video .vjs-volume-panel.vjs-control{
+.video-js.audio-player .vjs-volume-panel.vjs-control{
   width: 3em;
 }
 
-.video-js.custom-video .vjs-mute-control,
-.video-js.custom-video .vjs-play-control.vjs-control,
-.video-js.custom-video .vjs-fullscreen-control.vjs-control{
+.video-js.audio-player .vjs-mute-control,
+.video-js.audio-player .vjs-play-control.vjs-control,
+.video-js.audio-player .vjs-fullscreen-control.vjs-control{
   width: 3em;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -71,4 +71,51 @@
 
 .video-js.audio-player .vjs-mute-control.vjs-control.vjs-button{
 	padding-bottom: 2.9em;
+}
+
+.video-js.audio-player .vjs-control:focus:before,
+.video-js.audio-player .vjs-control:hover:before,
+.video-js.audio-player .vjs-control:focus{
+	text-shadow: none;
+}
+
+@include media(mobile) {
+
+	.video-js.audio-player .vjs-progress-control.vjs-control{
+		width: 100%;
+		position: absolute;
+		top: -9px;
+		height: 13px;
+	}
+
+	.video-js.audio-player .vjs-progress-control .vjs-progress-holder{
+		margin: 0;
+	}
+
+	.video-js.audio-player .vjs-volume-control.vjs-control.vjs-volume-horizontal{
+		width: 2em;
+	}
+	.video-js.audio-player .vjs-volume-bar{
+		margin: 1.35em 0.20em;
+		width: 2em;
+	}
+	.video-js .vjs-volume-control.vjs-control.vjs-volume-horizontal{
+		margin-right: 5px;
+	}
+
+	.video-js.audio-player .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-volume-control:hover.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-volume-control:focus.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-mute-control:active ~ .vjs-volume-control.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-mute-control:focus ~ .vjs-volume-control.vjs-volume-horizontal, .video-js.audio-player .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal{
+		width: 3em;
+	}
+
+	.video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal:hover, .video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal:focus, .video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal:active, .video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-slider-active{
+		width: 6em;
+	}
+	.video-js.audio-player .vjs-control-bar {
+		height: 40px;
+	}
+	.video-js.audio-player {
+
+	  font-size: 14px;
+
+	}
 }

@@ -82,7 +82,9 @@
 	padding-bottom: 2.9em;
 }
 
-.video-js.custom-video .vjs-mute-control.vjs-control.vjs-button:focus{
+.video-js.custom-video .vjs-control:focus:before,
+.video-js.custom-video .vjs-control:hover:before,
+.video-js.custom-video .vjs-control:focus{
 	text-shadow: none;
 }
 
