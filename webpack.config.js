@@ -95,7 +95,7 @@ module.exports = {
     inline: true,
     port: thePort,
     proxy: {
-      '*': proxy
+      '**': proxy
     }
   },
   resolve: {

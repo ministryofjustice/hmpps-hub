@@ -17,9 +17,7 @@ include('_includes/head.php'); ?>
   <main role="main" id="content" class="answer" lang="en">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="pub-c-title__text ">
-          Video title
-        </h1>
+        <h1 class="heading-xlarge">Video title</h1>
       </div>
       <div class="video-player">
         <video controls id="video" class="video-js custom-video vjs-default-skin" data-videotitle="The title of the video" poster="_dummy/img/videos.png" controls preload="auto">

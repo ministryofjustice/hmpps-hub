@@ -18,7 +18,7 @@ include('_includes/head.php'); ?>
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="heading-xlarge">Page title</h1>
+        <h1 class="heading-xlarge">Chess</h1>
       </div>
       <div class="game chess js-chess">
         <div id="js-board" class="chessboard"></div>
