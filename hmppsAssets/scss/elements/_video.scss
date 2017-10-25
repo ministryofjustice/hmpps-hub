@@ -78,6 +78,14 @@
   display: block;
 }
 
+.video-js.custom-video .vjs-mute-control.vjs-control.vjs-button{
+	padding-bottom: 2.9em;
+}
+
+.video-js.custom-video .vjs-mute-control.vjs-control.vjs-button:focus{
+	text-shadow: none;
+}
+
 @include media(mobile) {
 
 	.video-js.custom-video .vjs-progress-control.vjs-control{
