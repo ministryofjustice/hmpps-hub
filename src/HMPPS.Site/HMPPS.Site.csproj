@@ -408,10 +408,6 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="App_Config\Include\zzz\HMPPS.NomisApiService.config">
-      <TransformOnBuild>true</TransformOnBuild>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
@@ -471,30 +467,6 @@
     </None>
     <None Include="App_Config\Include\zzz\HMPPS.Utilities.Release.config">
       <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Localhost.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Localhost.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Debug.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
