@@ -408,10 +408,6 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
-      <TransformOnBuild>true</TransformOnBuild>
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Debug.config">
       <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -442,31 +438,6 @@
     </None>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.Release.config">
       <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Localhost.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Debug.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">

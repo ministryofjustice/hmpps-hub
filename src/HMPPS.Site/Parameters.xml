@@ -117,8 +117,8 @@
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
     </parameter>
     <parameter name="ssoauthcookiename" description="ssoauthcookiename" defaultValue="#{ssoauthcookiename}#" tags="">
-        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
-        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Utilities.UserDataCookieName']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Utilities.UserDataCookieName']/@value" />
     </parameter>
 
     <!--NOMIS API-->
