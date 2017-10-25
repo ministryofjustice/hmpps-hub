@@ -684,8 +684,6 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="WebAppSettings.CD-Localhost.config" />
-    <Content Include="WebAppSettings.CMS-Localhost.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config">
