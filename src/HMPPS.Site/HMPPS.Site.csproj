@@ -113,6 +113,12 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NWebsec, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NWebsec.4.3.0\lib\45\NWebsec.dll</HintPath>
+    </Reference>
+    <Reference Include="NWebsec.Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NWebsec.Core.1.6.0\lib\45\NWebsec.Core.dll</HintPath>
+    </Reference>
     <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
     </Reference>
@@ -408,6 +414,7 @@
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Debug.config">
       <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
@@ -494,31 +501,6 @@
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
@@ -636,14 +618,20 @@
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.config">
       <TransformOnBuild>true</TransformOnBuild>
     </None>
+    <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
+    <Content Include="Error403.aspx" />
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Error500.aspx" />
+    <Content Include="robots.txt" />
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
@@ -682,6 +670,7 @@
     </None>
     <None Include="Web.CMS-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.CMS-Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -726,6 +715,7 @@
     <Compile Include="Controllers\Pages\NeontroidsGamePageController.cs" />
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="DependencyInjection\ServiceCollectionExtensions.cs" />
+    <Compile Include="Mvc\NoCacheGlobalActionFilter .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="status.aspx.cs">
       <DependentUpon>status.aspx</DependentUpon>

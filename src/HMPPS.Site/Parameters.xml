@@ -1,145 +1,143 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <parameters>
-<!-- Sitecore Xdb -->
-  <parameter name="repServerUrl" description="repServerUrl" defaultValue="#{repServerUrl}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\Sitecore.Xdb.Remote.Client\.config$" match="/configuration/sitecore/httpTransportFactory/param[@desc='serviceUrl']/text()" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\Sitecore.Xdb.Remote.Client\.config$" match="/configuration/sitecore/httpTransportFactory/param[@desc='serviceUrl']/text()" />
-  </parameter>
-  <!--END Sitecore-->
+    <!-- Sitecore Xdb -->
+    <parameter name="repServerUrl" description="repServerUrl" defaultValue="#{repServerUrl}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\Sitecore.Xdb.Remote.Client\.config$" match="/configuration/sitecore/httpTransportFactory/param[@desc='serviceUrl']/text()" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\Sitecore.Xdb.Remote.Client\.config$" match="/configuration/sitecore/httpTransportFactory/param[@desc='serviceUrl']/text()" />
+    </parameter>
+    <!--END Sitecore-->
 
+    <!-- SQL -->
+    <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
+    </parameter>
+    <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
+        <!--<parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />-->
+    </parameter>
+    <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
+    </parameter>
 
-  
-  <!-- SQL -->
-  <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
-  </parameter>
-  <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
-    <!--<parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />-->
-  </parameter>
-  <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
-  </parameter>
+    <!-- SQL END-->
 
-  <!-- SQL END-->
+    <!-- MONGO -->
+    <parameter name="mongoAnalytics" description="mongoAnalytics" defaultValue="#{mongoAnalytics}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
+    </parameter>
+    <parameter name="mongoLive" description="mongoLive" defaultValue="#{mongoLive}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
+    </parameter>
+    <parameter name="mongoContact" description="mongoContact" defaultValue="#{mongoContact}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
+    </parameter>
+    <!-- MONGO END-->
 
-  <!-- MONGO -->
-  <parameter name="mongoAnalytics" description="mongoAnalytics" defaultValue="#{mongoAnalytics}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
-  </parameter>
-  <parameter name="mongoLive" description="mongoLive" defaultValue="#{mongoLive}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
-  </parameter>
-  <parameter name="mongoContact" description="mongoContact" defaultValue="#{mongoContact}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
-  </parameter>
-  <!-- MONGO END-->
+    <parameter name="reportingKey" description="reportingKey" defaultValue="#{reportingKey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apikey']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apikey']/@connectionString" />
+    </parameter>
+    <parameter name="search" description="search" defaultValue="#{search}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
+    </parameter>
+    <parameter name="redis" description="redis" defaultValue="#{redis}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
+    </parameter>
+    <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
+    </parameter>
 
-  <parameter name="reportingKey" description="reportingKey" defaultValue="#{reportingKey}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apikey']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apikey']/@connectionString" />
-  </parameter>
-  <parameter name="search" description="search" defaultValue="#{search}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
-  </parameter>
-  <parameter name="redis" description="redis" defaultValue="#{redis}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
-  </parameter>
-  <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
-  </parameter>
+    <!-- MEDIA -->
+    <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+    </parameter>
+    <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
+    </parameter>
+    <parameter name="storageaccountkey" description="storageaccountkey" defaultValue="#{storageaccountkey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
+    </parameter>
 
-  <!-- MEDIA -->
-  <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
-  </parameter>
-  <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
-  </parameter>
-  <parameter name="storageaccountkey" description="storageaccountkey" defaultValue="#{storageaccountkey}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
-  </parameter>
+    <!--HMPPS.Authentication-->
+    <parameter name="ssocallbackurl" description="ssocallbackurl" defaultValue="#{ssocallbackurl}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.SignInCallbackUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.SignInCallbackUrl']/@value" />
+    </parameter>
+    <parameter name="ssologouturl" description="ssologouturl" defaultValue="#{ssologouturl}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.LogoutUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.LogoutUrl']/@value" />
+    </parameter>
+    <parameter name="ssotempcookiename" description="ssotempcookiename" defaultValue="#{ssotempcookiename}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.TempCookieName']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.TempCookieName']/@value" />
+    </parameter>
+    <parameter name="ssoclientid" description="ssoclientid" defaultValue="#{ssoclientid}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.ClientId']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.ClientId']/@value" />
+    </parameter>
+    <parameter name="ssoclientsecret" description="ssoclientsecret" defaultValue="#{ssoclientsecret}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.ClientSecret']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.ClientSecret']/@value" />
+    </parameter>
+    <parameter name="ssoscope" description="ssoscope" defaultValue="#{ssoscope}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.Scope']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.Scope']/@value" />
+    </parameter>
+    <parameter name="ssovalidissuer" description="ssovalidissuer" defaultValue="#{ssovalidissuer}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.ValidIssuer']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.ValidIssuer']/@value" />
+    </parameter>
+    <parameter name="ssoaauthorizeendpoint" description="ssoaauthorizeendpoint" defaultValue="#{ssoaauthorizeendpoint}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
+    </parameter>
+    <parameter name="ssotokenendpoint" description="ssotokenendpoint" defaultValue="#{ssotokenendpoint}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key=='HMPPS.Authentication.TokenEndpoint']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.TokenEndpoint']/@value" />
+    </parameter>
+    <parameter name="ssologoutendpoint" description="ssologoutendpoint" defaultValue="#{ssologoutendpoint}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.LogoutEndpoint']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Authentication.LogoutEndpoint']/@value" />
+    </parameter>
 
-  <!--HMPPS.Authentication-->
-  <parameter name="ssocallbackurl" description="ssocallbackurl" defaultValue="#{ssocallbackurl}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.SignInCallbackUrl']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.SignInCallbackUrl']/@value" />
-  </parameter>
-  <parameter name="ssologouturl" description="ssologouturl" defaultValue="#{ssologouturl}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutUrl']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutUrl']/@value" />
-  </parameter>
-  <parameter name="ssotempcookiename" description="ssotempcookiename" defaultValue="#{ssotempcookiename}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TempCookieName']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TempCookieName']/@value" />
-  </parameter>
-  <parameter name="ssoclientid" description="ssoclientid" defaultValue="#{ssoclientid}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientId']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientId']/@value" />
-  </parameter>
-  <parameter name="ssoclientsecret" description="ssoclientsecret" defaultValue="#{ssoclientsecret}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientSecret']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ClientSecret']/@value" />
-  </parameter>
-  <parameter name="ssoscope" description="ssoscope" defaultValue="#{ssoscope}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.Scope']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.Scope']/@value" />
-  </parameter>
-  <parameter name="ssovalidissuer" description="ssovalidissuer" defaultValue="#{ssovalidissuer}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ValidIssuer']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.ValidIssuer']/@value" />
-  </parameter>
-  <parameter name="ssoaauthorizeendpoint" description="ssoaauthorizeendpoint" defaultValue="#{ssoaauthorizeendpoint}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
-  </parameter>
-  <parameter name="ssotokenendpoint" description="ssotokenendpoint" defaultValue="#{ssotokenendpoint}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TokenEndpoint']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.TokenEndpoint']/@value" />
-  </parameter>
-  <parameter name="ssologoutendpoint" description="ssologoutendpoint" defaultValue="#{ssologoutendpoint}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutEndpoint']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.LogoutEndpoint']/@value" />
-  </parameter>
-  <parameter name="ssosecuritykey" description="ssosecuritykey" defaultValue="#{ssosecuritykey}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Authentication\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Authentication.JwtTokenSecurityKey']/@value" />
-  </parameter>
+    <!--HMPPS.Utilities-->
+    <parameter name="ssosecuritykey" description="ssosecuritykey" defaultValue="#{ssosecuritykey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
+    </parameter>
+    <parameter name="ssoauthcookiename" description="ssoauthcookiename" defaultValue="#{ssoauthcookiename}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
+    </parameter>
 
-  <!--HMPPS.Utilities-->
-  <parameter name="ssoauthcookiename" description="ssoauthcookiename" defaultValue="#{ssoauthcookiename}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Utilities\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.Utilities.UserDataCookieName']/@value" />
-  </parameter>
+    <!--NOMIS API-->
+    <parameter name="nomisapibaseurl" description="nomisapibaseurl" defaultValue="#{nomisapibaseurl}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.BaseUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.BaseUrl']/@value" />
+    </parameter>
+    <parameter name="nomisapiclienttoken" description="nomisapiclienttoken" defaultValue="#{nomisapiclienttoken}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.ClientToken']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.ClientToken']/@value" />
+    </parameter>
+    <parameter name="nomisapisecretkey" description="nomisapisecretkey" defaultValue="#{nomisapisecretkey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.SecretKey']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.SecretKey']/@value" />
+    </parameter>
 
-  <!--NOMIS API-->
-  <parameter name="nomisapibaseurl" description="nomisapibaseurl" defaultValue="#{nomisapibaseurl}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.BaseUrl']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.BaseUrl']/@value" />
-  </parameter>
-  <parameter name="nomisapiclienttoken" description="nomisapiclienttoken" defaultValue="#{nomisapiclienttoken}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.ClientToken']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.ClientToken']/@value" />
-  </parameter>
-  <parameter name="nomisapisecretkey" description="nomisapisecretkey" defaultValue="#{nomisapisecretkey}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.SecretKey']/@value" />
-    <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.NomisApiService\.config$" match="/configuration/sitecore/settings/setting[@name='HMPPS.NomisApiService.SecretKey']/@value" />
-  </parameter>
-  
-  <!--SITECORE UNICORN-->
-  <parameter name="unicornsharedsecret" description="unicornsharedsecret" defaultValue="#{unicornsharedsecret}#" tags="">
-    <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Unicorn.zSharedSecret\.config$" match="/configuration/sitecore/unicorn/authenticationProvider/SharedSecret/text()" />
-  </parameter>
-  
-  </parameters>
+    <!--SITECORE UNICORN-->
+    <parameter name="unicornsharedsecret" description="unicornsharedsecret" defaultValue="#{unicornsharedsecret}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Unicorn.zSharedSecret\.config$" match="/configuration/sitecore/unicorn/authenticationProvider/SharedSecret/text()" />
+    </parameter>
+
+</parameters>
