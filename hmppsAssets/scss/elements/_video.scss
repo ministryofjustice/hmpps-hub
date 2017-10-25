@@ -112,7 +112,15 @@
   padding-right: 1.5em;
 }
 
+
+
+
 @include media(mobile) {
+
+	.video-js.custom-video .vjs-fullscreen-control.vjs-control{
+		position: absolute;
+		right: 0;
+	}
 
 	.video-js.custom-video .vjs-progress-control.vjs-control{
 		width: 100%;
