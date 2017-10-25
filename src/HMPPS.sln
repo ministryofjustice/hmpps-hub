@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Site", "HMPPS.Site\HMPPS.Site.csproj", "{D81E54F2-F4D7-4600-B8B4-8C90C46801A9}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService", "HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj", "{DE839094-9E70-43AA-8F0B-A226A38647F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService.Tests", "HMPPS.NomisApi\HMPPS.NomisApiService.Tests\HMPPS.NomisApiService.Tests.csproj", "{A0F3E4CB-FBA5-49CF-98BE-2EBAEE600FF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.Authenticate", "HMPPS.Authenticate", "{94C7A417-8AD5-41C8-A0C3-8377DD5580BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -148,6 +150,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A} = {94C7A417-8AD5-41C8-A0C3-8377DD5580BC}
+		{1B68B8C3-528F-49CD-9939-0147CD6A93EE} = {94C7A417-8AD5-41C8-A0C3-8377DD5580BC}
 		{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6} = {24A4A1FA-5107-4F9E-A7EE-563615C59380}
 		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27} = {24A4A1FA-5107-4F9E-A7EE-563615C59380}
 		{DE839094-9E70-43AA-8F0B-A226A38647F7} = {22433735-FACA-4F07-86C5-45637A588937}

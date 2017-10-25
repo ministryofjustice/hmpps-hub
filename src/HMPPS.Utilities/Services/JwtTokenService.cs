@@ -10,6 +10,8 @@ using HMPPS.Utilities.Interfaces;
 using HMPPS.Utilities.Helpers;
 using Sitecore.Links;
 using Sitecore.Sites;
+using Sitecore.SecurityModel;
+using Sitecore.Data.Items;
 
 namespace HMPPS.Utilities.Services
 {
@@ -72,9 +74,13 @@ namespace HMPPS.Utilities.Services
 
             using (var siteContextSwitcher = new SiteContextSwitcher(website))
             {
-                var homeItem = website.Database.GetItem(website.StartPath);
-                var urlOptions = new UrlOptions() { AlwaysIncludeServerUrl = true, LanguageEmbedding = LanguageEmbedding.Never, SiteResolving = true };
-                return LinkManager.GetItemUrl(homeItem, urlOptions);
+                Item homeItem = null;
+                using (new SecurityDisabler())
+                {
+                    homeItem = website.Database.GetItem(website.StartPath);
+                    var urlOptions = new UrlOptions() { AlwaysIncludeServerUrl = true, LanguageEmbedding = LanguageEmbedding.Never, SiteResolving = true };
+                    return LinkManager.GetItemUrl(homeItem, urlOptions);
+                }
             }
         }
 

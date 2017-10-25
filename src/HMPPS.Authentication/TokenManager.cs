@@ -18,16 +18,14 @@ namespace HMPPS.Authentication
 
         public TokenManager(bool useSitecoreSettings)
         {
-            if (useSitecoreSettings)
-            {
-                this.AuthorizeEndpoint = Settings.AuthorizeEndpoint;
-                this.SignInCallbackUrl = Settings.SignInCallbackUrl;
-                this.TokenEndpoint = Settings.TokenEndpoint;
-                this.ClientId = Settings.ClientId;
-                this.ClientSecret = Settings.ClientSecret;
-                this.Scope = Settings.Scope;
-                this.ValidIssuer = Settings.ValidIssuer;
-            }
+            if (!useSitecoreSettings) return;
+            AuthorizeEndpoint = Settings.AuthorizeEndpoint;
+            SignInCallbackUrl = Settings.SignInCallbackUrl;
+            TokenEndpoint = Settings.TokenEndpoint;
+            ClientId = Settings.ClientId;
+            ClientSecret = Settings.ClientSecret;
+            Scope = Settings.Scope;
+            ValidIssuer = Settings.ValidIssuer;
         }
 
         public string AuthorizeEndpoint { get; set; }
@@ -119,7 +117,7 @@ namespace HMPPS.Authentication
 
             // Token is signed HS256 by the client secret 
             // see https://stackoverflow.com/a/25376518
-            byte[] signingSecretKey = Encoding.UTF8.GetBytes(ClientSecret);
+            var signingSecretKey = Encoding.UTF8.GetBytes(ClientSecret);
             if (signingSecretKey.Length < 64)
             {
                 Array.Resize(ref signingSecretKey, 64);
@@ -160,8 +158,13 @@ namespace HMPPS.Authentication
         {
             var claims = new List<Claim>();
 
-            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.NameIdentifier
-                                                     || c.Type == ClaimTypes.Role
+            var prisonerIdClaim = tokenClaims.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            if (prisonerIdClaim != null)
+            {
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, prisonerIdClaim.Value.ToUpperInvariant()));
+            }
+
+            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.Role
                                                      || c.Type == ClaimTypes.GivenName
                                                      || c.Type == ClaimTypes.Surname
                                                      || c.Type == ClaimTypes.Email

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Sitecore;
 using Sitecore.Diagnostics;
@@ -24,18 +23,18 @@ namespace HMPPS.Authentication.Pipelines
     public class AuthenticationChecker : AuthenticationProcessorBase
     {
 
-        private IUserDataService _userDataService;
+        private readonly IUserDataService _userDataService;
 
         public AuthenticationChecker(IUserDataService userDataService, INomisApiService nomisApiService)
         {
             _userDataService = userDataService;
-            _nomisApiService = nomisApiService;
+            NomisApiService = nomisApiService;
         }
 
         public override void Process(HttpRequestArgs args)
         {
             // Not checking IDAM authentication of content editors
-            if ((new String[] { "shell", "login", "admin" }).Contains(Sitecore.Context.Site.Name)) return;
+            if ((new[] { "shell", "login", "admin" }).Contains(Context.Site.Name)) return;
 
             Assert.ArgumentNotNull(args, "args");
             var sitecoreUserLoggedIn = Context.IsLoggedIn;
@@ -54,18 +53,20 @@ namespace HMPPS.Authentication.Pipelines
                 var user = BuildVirtualUser(userData);
                 AuthenticationManager.LoginVirtualUser(user);
             }
-            if (sitecoreUserLoggedIn && userData != null)
+            if (sitecoreUserLoggedIn)
             {
+                if (!Context.User.LocalName.Equals(userData.NameIdentifier))
+                {
+                    AuthenticationManager.Logout();
+                    _userDataService.DeleteUserDataCookie(args.Context);
+                    return;
+                }
                 if (ExpirationHelper.IsExpired(userData.ExpiresAt))
                 {
                     var claims = RefreshUserData(ref userData);
                     _userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
-                else if (!Sitecore.Context.User.LocalName.Equals(userData.NameIdentifier))
-                {
-                    AuthenticationManager.Logout();
-                    _userDataService.DeleteUserDataCookie(args.Context);
-                }
+                BuildVirtualUser(userData);
             }
         }
     }

@@ -14,7 +14,7 @@ namespace HMPPS.Authentication.Pipelines
         public override void Process(HttpRequestArgs args)
         {
             if (Context.Database == null || Context.Site == null) return;
-            if ((new String[] { "shell", "login", "admin" }).Contains(Sitecore.Context.Site.Name)) return;
+            if ((new[] { "shell", "login", "admin" }).Contains(Context.Site.Name)) return;
             if (Context.User.IsAuthenticated) return;
             if (!SiteManager.CanEnter(Context.Site.Name, Context.User)) return;
             if (Context.Item != null && Context.Item.Access.CanRead()) return;

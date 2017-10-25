@@ -1,5 +1,4 @@
 using System.Web;
-using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
@@ -9,11 +8,11 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
     public class MediaRequestHandler : Sitecore.Resources.Media.MediaRequestHandler
     {
-        private ICloudStorage Provider;
+        private readonly ICloudStorage _provider;
 
         public MediaRequestHandler()
         {
-            Provider = Factory.CreateObject("cloudMediaStorage/storageProvider", true) as ICloudStorage;
+            _provider = Factory.CreateObject("cloudMediaStorage/storageProvider", true) as ICloudStorage;
         }
 
         protected override bool DoProcessRequest(HttpContext context)
@@ -40,7 +39,8 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
         {
             //var helper = new MediaHelper(media.MediaData.MediaItem);
             //string redirectUrl = helper.GetCloudBasedMediaUrl();
-            string redirectUrl = Provider.GetUrlWithSasToken(media.MediaData.MediaItem, 5);
+            //all blob urls set to expire in 24h (1440 minutes)
+            var redirectUrl = _provider.GetUrlWithSasToken(media.MediaData.MediaItem, 1440);
             context.Response.Redirect(redirectUrl, false);
             context.ApplicationInstance.CompleteRequest();
             return true;

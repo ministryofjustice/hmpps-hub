@@ -237,40 +237,42 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Unicorn, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unicorn.Core.4.0.0\lib\net452\Unicorn.dll</HintPath>
+    <Reference Include="Unicorn, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unicorn.Core.4.0.2\lib\net452\Unicorn.dll</HintPath>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\zzDataFolder.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
     <Content Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.config">
       <TransformOnBuild>true</TransformOnBuild>
-    </Content>
-    <Content Include="App_Config\Sitecore.config">
-      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
+    <Content Include="App_Config\Include\CES\Sitecore.CES.config" />
+    <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.config" />
+    <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
+    <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.LegacyLocation.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -316,6 +318,7 @@
     <None Include="App_Config\ConnectionStrings.CMS-Localhost.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\ConnectionStrings.CMS-Release.config">
       <DependentUpon>ConnectionStrings.config</DependentUpon>
@@ -331,6 +334,7 @@
     </None>
     <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CD-Localhost.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
@@ -574,7 +578,33 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CD-Localhost.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CD-Release.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CMS-Localhost.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CMS-Release.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.Debug.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.Release.config">
+      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config" />
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
@@ -592,6 +622,7 @@
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CMS-Release.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.Debug.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
@@ -605,38 +636,18 @@
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.config">
       <TransformOnBuild>true</TransformOnBuild>
     </None>
-    <None Include="App_Config\Sitecore.CD-Localhost.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.CD-Release.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.CMS-Localhost.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.CMS-Release.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.Debug.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Sitecore.Release.config">
-      <DependentUpon>Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
+    <Content Include="Error403.aspx" />
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Error500.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Shared\MvcLayout.cshtml" />
@@ -674,6 +685,7 @@
     </None>
     <None Include="Web.CMS-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.CMS-Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -694,8 +706,6 @@
     </Content>
     <Content Include="..\..\hmppsAssets\**">
       <Link>hmppsAssets\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Content>
-    <Content Include="App_Data\Unicorn\**">
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -720,6 +730,7 @@
     <Compile Include="Controllers\Pages\NeontroidsGamePageController.cs" />
     <Compile Include="Controllers\Pages\SudokuGamePageController.cs" />
     <Compile Include="DependencyInjection\ServiceCollectionExtensions.cs" />
+    <Compile Include="Mvc\NoCacheGlobalActionFilter .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="status.aspx.cs">
       <DependentUpon>status.aspx</DependentUpon>

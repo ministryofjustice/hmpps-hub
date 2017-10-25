@@ -18,9 +18,7 @@ namespace HMPPS.Utilities.Helpers
 
         public static bool IsExpired(string expiryDateTime)
         {
-            DateTime expiration;
-
-            if (DateTime.TryParse(expiryDateTime, out expiration))
+            if (DateTime.TryParse(expiryDateTime, out var expiration))
             {
                 return expiration <= DateTime.UtcNow;
             }
