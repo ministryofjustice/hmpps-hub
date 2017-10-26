@@ -450,31 +450,6 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Debug.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />

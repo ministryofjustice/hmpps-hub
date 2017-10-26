@@ -57,8 +57,8 @@
 
     <!-- MEDIA -->
     <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
-        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='CloudMedia.MediaLinkCdnServerUrl']/@value" />
-        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.CloudStorage.MediaLinkCdnServerUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.CloudStorage.MediaLinkCdnServerUrl']/@value" />
     </parameter>
     <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountName']/@value" />
