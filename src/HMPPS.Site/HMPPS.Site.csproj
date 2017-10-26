@@ -447,31 +447,6 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Debug.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>

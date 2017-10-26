@@ -57,16 +57,16 @@
 
     <!-- MEDIA -->
     <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
-        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
-        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.CloudStorage\.config$" match="/configuration/sitecore/settings/setting[@name='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='CloudMedia.MediaLinkCdnServerUrl']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='CloudMedia.MediaLinkCdnServerUrl']/@value" />
     </parameter>
     <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
-        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
-        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountName']/text()" />
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountName']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountName']/@value" />
     </parameter>
     <parameter name="storageaccountkey" description="storageaccountkey" defaultValue="#{storageaccountkey}#" tags="">
-        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
-        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.MediaLibrary.AzureStorageProvider\.config$" match="/configuration/sitecore/cloudMediaStorage/storageProvider/param[@name='accountKey']/text()" />
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountKey']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountKey']/@value" />
     </parameter>
 
     <!--HMPPS.Authentication-->

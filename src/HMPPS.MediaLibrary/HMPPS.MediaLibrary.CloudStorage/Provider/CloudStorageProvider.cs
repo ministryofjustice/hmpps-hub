@@ -7,21 +7,21 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
 {
     public class CloudStorageProvider : ICloudStorageProvider
     {
-        private ICloudStorage Provider;
+        private readonly ICloudStorage _provider;
 
         public CloudStorageProvider()
         {
-            Provider = Factory.CreateObject("cloudMediaStorage/storageProvider", true) as ICloudStorage;
+            _provider = Factory.CreateObject("cloudMediaStorage/storageProvider", true) as ICloudStorage;
         }
 
         public string Put(MediaItem media, string containerName)
         {
-            return Provider.Put(media, containerName);
+            return _provider.Put(media, containerName);
         }
 
         public string Update(MediaItem media)
         {
-            return Provider.Update(media);
+            return _provider.Update(media);
         }
 
         public bool Delete(MediaItem media)
@@ -30,12 +30,12 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
             var mediaHelper = new MediaHelper(media);
             mediaHelper.DeleteThumbnail();
 
-            return Provider.Delete(media.FilePath);
+            return _provider.Delete(media.FilePath);
         }
 
         public string GetUrlWithSasToken(MediaItem media, int expiryMinutes)
         {
-            return Provider.GetUrlWithSasToken(media, expiryMinutes);
+            return _provider.GetUrlWithSasToken(media, expiryMinutes);
         }
     }
 }
