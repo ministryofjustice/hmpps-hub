@@ -389,3 +389,10 @@ proxy.json
 /cd-www/robots.txt
 /cd-www/Error500.aspx
 /cd-www/Error403.aspx
+/src/HMPPS.Site/App_Config/ConnectionStrings.CMS-Localhost.Source.config
+/src/HMPPS.Site/App_Config/ConnectionStrings.CD-Localhost.Source.config
+/cd-www/WebAppSettings.CD-Localhost.Source.config
+/src/HMPPS.Site/WebAppSettings.CMS-Localhost.Source.config
+/src/HMPPS.Site/WebAppSettings.CD-Localhost.Source.config
+/www/WebAppSettings.CMS-Localhost.Source.config
+/www/ConnectionStrings.CMS-Localhost.Source.config
