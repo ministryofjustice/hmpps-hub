@@ -458,6 +458,7 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\zzz\HMPPS.Sitecore.CD-Localhost.config">
       <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
