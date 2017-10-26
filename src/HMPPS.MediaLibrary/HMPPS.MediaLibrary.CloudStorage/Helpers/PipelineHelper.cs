@@ -10,7 +10,6 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
         /// <summary>
         /// Creates and starts a Sitecore Job to run as a long running background task
         /// </summary>
-        /// <param name="args">The UploadArgs</param>
         public void StartMediaProcessorJob(IEnumerable<Item> uploadedItems, string containerName)
         {
             var args = new MediaProcessorArgs { UploadedItems = uploadedItems };

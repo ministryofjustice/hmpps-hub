@@ -408,13 +408,6 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="App_Config\Include\zzz\HMPPS.NomisApiService.config">
-      <TransformOnBuild>true</TransformOnBuild>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Debug.config">
       <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -447,140 +440,16 @@
       <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Localhost.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Debug.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Localhost.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Localhost.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Debug.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Debug.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Debug.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />

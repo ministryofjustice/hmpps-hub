@@ -5,17 +5,17 @@ namespace HMPPS.MediaLibrary.CloudStorage.Configuration
 {
     public class LocationConfiguration
     {
-        public IList<Location> Locations { get; private set; }
+        public IList<Location> Locations { get; }
 
         public LocationConfiguration()
         {
-            this.Locations = (IList<Location>)new List<Location>();
+            Locations = new List<Location>();
         }
 
         public virtual void AddLocation(Location location)
         {
             Assert.ArgumentNotNull((object)location, "location");
-            this.Locations.Add(location);
+            Locations.Add(location);
         }
     }
 
