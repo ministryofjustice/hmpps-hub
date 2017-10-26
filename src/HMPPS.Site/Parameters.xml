@@ -140,4 +140,21 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Unicorn.zSharedSecret\.config$" match="/configuration/sitecore/unicorn/authenticationProvider/SharedSecret/text()" />
     </parameter>
 
+    <!--Telerik encryption key-->
+    <parameter name="telerikencryptionkey" description="telerikencryptionkey" defaultValue="#{telerikencryptionkey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.AsyncUpload.ConfigurationEncryptionKey']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.AsyncUpload.ConfigurationEncryptionKey']/@value" />
+
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.Upload.ConfigurationHashKey']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.Upload.ConfigurationHashKey']/@value" />
+
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.Web.UI.DialogParametersEncryptionKey']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.Web.UI.DialogParametersEncryptionKey']/@value" />
+
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.AsyncUpload.ConfigurationEncryptionKey']/@value" />
+
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.Upload.ConfigurationHashKey']/@value" />
+
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/settings/add[@key='Telerik.Web.UI.DialogParametersEncryptionKey']/@value" />
+    </parameter>
 </parameters>
