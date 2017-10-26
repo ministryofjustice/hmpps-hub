@@ -283,6 +283,9 @@
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.LegacyLocation.config" />
     <Content Include="App_Config\Include\UploadFilter.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>

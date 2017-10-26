@@ -108,6 +108,7 @@
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\ExpirationHelper.cs" />
     <Compile Include="Interfaces\IUserDataService.cs" />
+    <Compile Include="Pipelines\ImageFieldSizeAttributesRemover.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UserDataService.cs" />
     <Compile Include="Settings.cs" />
@@ -121,6 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
