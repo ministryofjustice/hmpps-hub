@@ -176,9 +176,6 @@
     <Reference Include="Sitecore.Support.183497">
       <HintPath>..\lib\sitecore\Sitecore.Support.183497.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.UploadFilter">
-      <HintPath>..\lib\sitecore\Sitecore.UploadFilter.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.Xdb.Configuration, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Xdb.Configuration.8.2.170728\lib\NET452\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
@@ -282,7 +279,6 @@
     <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.LegacyLocation.config" />
-    <Content Include="App_Config\Include\UploadFilter.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
       <SubType>Designer</SubType>
     </Content>
@@ -564,7 +560,6 @@
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\YearList.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
-      <SubType>Designer</SubType>
     </None>
     <None Include="Web.CD-Release.config">
       <DependentUpon>Web.config</DependentUpon>
