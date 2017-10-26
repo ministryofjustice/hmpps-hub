@@ -18,7 +18,7 @@ include('_includes/head.php'); ?>
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="pub-c-title__text">Neontroids</h1>
+        <h1 class="heading-xlarge">Neontroids</h1>
       </div>
       <div class="games neontroids js-neontroids">
         <img class="neontroids__img" src="_dummy/img/neontroids.png" alt="">

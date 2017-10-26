@@ -20,19 +20,19 @@ namespace HMPPS.MediaLibrary.AzureStorage
     {
         private CloudBlobContainer _blobDefaultContainer;
         private Dictionary<string, CloudBlobContainer> _blobContainers;
-        private string _storageAccountName;
-        private string _storageAccountKey;
-        private string _storageDefaultContainer;
-        private IList<string> _storageContainers;
+        private readonly string _storageAccountName;
+        private readonly string _storageAccountKey;
+        private readonly string _storageDefaultContainer;
+        private readonly IList<string> _storageContainers;
 
         #region ctor
-        public AzureStorageProvider(string accountName, string accountKey, string defaultContainer, string containers)
+        public AzureStorageProvider(string defaultContainer, string containers)
         {
-            _storageAccountName = accountName;
-            _storageAccountKey = accountKey;
+            _storageAccountName = Settings.AccountName;
+            _storageAccountKey = Settings.AccountKey;
             _storageDefaultContainer = defaultContainer;
-            _storageContainers = containers.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
-            this.Initialize();
+            _storageContainers = containers.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
+            Initialize();
         }
 
         private void Initialize()
@@ -63,10 +63,12 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
 
         #region Implementation
+
         /// <summary>
         /// Uploads the media file into Azure Storage container
         /// </summary>
         /// <param name="media">Media Item to upload</param>
+        /// <param name="containerName"></param>
         /// <returns>Location of file in container</returns>
         public override string Put(MediaItem media, string containerName)
         {
