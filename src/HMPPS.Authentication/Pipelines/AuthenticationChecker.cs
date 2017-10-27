@@ -37,11 +37,12 @@ namespace HMPPS.Authentication.Pipelines
             if ((new[] { "shell", "login", "admin" }).Contains(Context.Site.Name)) return;
             // force login only for normal website usage, not for preview / debugging / experienceediting / profiling
             if (!Context.PageMode.IsNormal) return;
+            // Not checking IDAM auth for /-/speak/v1/assets/main.js
+            // Unfortunately it is requested with Context.Site.Name == "website" and Context.PageMode.IsNormal == true
+            if (Context.IsLoggedIn && Context.User.Domain.Name == "sitecore") return;
 
             Assert.ArgumentNotNull(args, "args");
             var sitecoreUserLoggedIn = Context.IsLoggedIn;
-
-
 
             var userData = _userDataService.GetUserDataFromCookie(args.Context);
 
