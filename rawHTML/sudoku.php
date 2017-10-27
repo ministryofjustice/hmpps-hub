@@ -18,7 +18,7 @@ include('_includes/head.php'); ?>
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="pub-c-title__text">Sudoku</h1>
+        <h1 class="heading-xlarge">Sudoku</h1>
       </div>
       <div class="games sudoku-board js-sudoku"></div>
       <div class="js-sudoku-alert sudoku__alert">
