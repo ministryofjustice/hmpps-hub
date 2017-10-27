@@ -66,7 +66,8 @@ namespace HMPPS.Authentication.Pipelines
                     var claims = RefreshUserData(ref userData);
                     _userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
-                BuildVirtualUser(userData);
+                var user = BuildVirtualUser(userData);
+                AuthenticationManager.LoginVirtualUser(user);
             }
         }
     }

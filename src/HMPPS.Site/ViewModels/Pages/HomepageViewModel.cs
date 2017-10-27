@@ -6,5 +6,7 @@ namespace HMPPS.Site.ViewModels.Pages
     {
         public bool ShowQuickLinks { get; set; }
         public string SelfHelpLinkUrl { get; set; }
+
+        public string UserName { get; set; }
     }
 }
