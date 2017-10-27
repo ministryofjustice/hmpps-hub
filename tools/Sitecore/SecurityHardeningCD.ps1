@@ -32,5 +32,3 @@ if ([IO.File]::Exists("$wwwAdminLocation\ShowConfig.aspx")) { ren "$wwwAdminLoca
 if ([IO.File]::Exists("$wwwAdminLocation\SqlShell.aspx")) { ren "$wwwAdminLocation\SqlShell.aspx" "SqlShell.aspx.disabled" }
 if ([IO.File]::Exists("$wwwAdminLocation\stats.aspx")) { ren "$wwwAdminLocation\stats.aspx" "stats.aspx.disabled" }
 if ([IO.File]::Exists("$wwwAdminLocation\unlock_admin.aspx")) { ren "$wwwAdminLocation\unlock_admin.aspx" "unlock_admin.aspx.disabled" }
-
-Remove-Item "$wwwRoot\App_Data\Unicorn" -Recurse -ErrorAction Ignore
