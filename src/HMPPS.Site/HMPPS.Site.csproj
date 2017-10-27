@@ -45,9 +45,6 @@
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
-    <Reference Include="E3.Net4.SiteCore">
-      <HintPath>..\lib\sitecore\E3.Net4.SiteCore.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -145,6 +142,9 @@
     </Reference>
     <Reference Include="Sitecore.Analytics.Processing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.170728\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Client.NoReferences.8.2.170728\lib\NET452\Sitecore.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Cloud.ApplicationInsights">
       <HintPath>..\lib\SC_Azure_8.2_u5\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
