@@ -6,7 +6,7 @@ using System.Configuration;
 namespace HMPPS.NomisApiService.Tests
 {
     [TestClass]
-    public class NomisApiServiceTests
+    public class NomisApiServiceIntegrationTests
     {
         [TestMethod]
         public void NomisApiService_GetPrisonerLocationDetails()
