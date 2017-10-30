@@ -4,10 +4,10 @@ namespace HMPPS.Site.ViewModels.Partials
 {
     public class HeadViewModel
     {
-        public HeadViewModel()
+        public HeadViewModel(Item siteSettingsItem, Item contextItem)
         {
-            GetSiteSettingsItem(Sitecore.Context.Database);
-            GetBrowserTitle(Sitecore.Context.Item);
+            SiteSettingsItem = siteSettingsItem;
+            GetBrowserTitle(contextItem);
         }
         public string PageBrowserTitle { get; set; }
 
@@ -21,9 +21,5 @@ namespace HMPPS.Site.ViewModels.Partials
             PageBrowserTitle = string.IsNullOrEmpty(titleFormat) ? pageTitle : titleFormat.Replace("{Browser Title}", pageTitle);
         }
 
-        private void GetSiteSettingsItem(Sitecore.Data.Database db)
-        {
-            SiteSettingsItem = db.Items["/sitecore/content/Global/HMPPS/Site Settings"];
-        }
     }
 }
