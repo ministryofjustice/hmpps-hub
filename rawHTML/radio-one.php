@@ -13,7 +13,7 @@ include('_includes/head.php'); ?>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
-    <h1 class="heading-large">Radio by genre</h1>
+    <h1 class="heading-xlarge">Radio by genre</h1>
 
     <div class="image-grid">
       <div class="grid-row">
