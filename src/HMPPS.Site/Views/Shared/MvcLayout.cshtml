@@ -28,7 +28,7 @@
 
     <div id="global-app-error" class="app-error hidden"></div>
 
-    @Html.Action("Scripts", "MvcLayout")
+    @Html.Partial("/Views/Partials/_Scripts.cshtml", Sitecore.Context.Item.TemplateName)
 </body>
 </html>
 

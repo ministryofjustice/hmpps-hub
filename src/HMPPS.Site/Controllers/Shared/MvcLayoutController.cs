@@ -19,12 +19,6 @@ namespace HMPPS.Site.Controllers.Shared
             return View("/Views/Partials/_CookieMessage.cshtml", Sitecore.Context.Database.Items[siteSettingsItemPath]);
         }
 
-        // GET: Scripts
-        public ActionResult Scripts()
-        {
-            return View("/Views/Partials/_Scripts.cshtml", Sitecore.Context.Item.TemplateName);
-        }
-
         // GET: SkipLink
         public ActionResult SkipLink()
         {
