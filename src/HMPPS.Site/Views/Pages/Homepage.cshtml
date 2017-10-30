@@ -8,20 +8,23 @@
                     <div class="welcome-text">
                         <div class="floated-inner-block">
                             <h1>@Html.Sitecore().Field("Page Title")</h1>
-                            <h2 class="font-large">
-                                @if (Sitecore.Context.User.IsAuthenticated)
-                                {
-                                    @Sitecore.Context.User.Profile.FullName @*<a href="/logout" style="color:#ff6a00">Logout</a>*@
-                                }
-                                else
-                                {
+                            @if (Sitecore.Context.User.IsAuthenticated)
+                            {
+                                <h2 class="font-large">
+                                    @Model.UserName @*<a href="/logout" style="color:#ff6a00">Logout</a>*@
+                                </h2>
+
+                            }
+                            else
+                            {
+                                <h2 class="font-large">
                                     <span>Anonymous - <a href="/login" style="color:#ff6a00">Login via IDAM</a></span>
-                                }
-                            </h2>
+                                </h2>
+                            }
                         </div>
                     </div>
                     @if (Model.ShowQuickLinks)
-                    { 
+                    {
                         <div class="content-links">
                             <div class="floated-inner-block content-links-inner">
                                 <h2>@Html.Sitecore().Field("Quick Links Title")</h2>

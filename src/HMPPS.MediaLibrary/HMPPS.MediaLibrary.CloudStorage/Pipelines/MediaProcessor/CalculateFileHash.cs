@@ -26,7 +26,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
                 using (new EditContext(file, SecurityCheck.Disable))
                 {
                     var helper = new MediaHelper(file);
-                    file[FieldNameConstants.MediaItem.MD5Hash] = helper.CalculateMd5();
+                    file[FieldNameConstants.MediaItem.Md5Hash] = helper.CalculateMd5();
                 }
             }
 

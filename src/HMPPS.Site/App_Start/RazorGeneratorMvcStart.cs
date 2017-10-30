@@ -16,6 +16,8 @@ namespace HMPPS.Site {
 
             // StartPage lookups are done by WebPages. 
             VirtualPathFactoryManager.RegisterVirtualPathFactory(engine);
+
+            MvcHandler.DisableMvcResponseHeader = true;
         }
     }
 }

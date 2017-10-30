@@ -35,6 +35,8 @@ namespace HMPPS.Authentication.Pipelines
         {
             // Not checking IDAM authentication of content editors
             if ((new[] { "shell", "login", "admin" }).Contains(Context.Site.Name)) return;
+            // force login only for normal website usage, not for preview / debugging / experienceediting / profiling
+            if (!Context.PageMode.IsNormal) return;
 
             Assert.ArgumentNotNull(args, "args");
             var sitecoreUserLoggedIn = Context.IsLoggedIn;
@@ -66,7 +68,8 @@ namespace HMPPS.Authentication.Pipelines
                     var claims = RefreshUserData(ref userData);
                     _userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
-                BuildVirtualUser(userData);
+                var user = BuildVirtualUser(userData);
+                AuthenticationManager.LoginVirtualUser(user);
             }
         }
     }
