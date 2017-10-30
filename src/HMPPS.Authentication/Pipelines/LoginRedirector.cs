@@ -24,7 +24,6 @@ namespace HMPPS.Authentication.Pipelines
             if (Context.Item == null && args.PermissionDenied)
             {
                 // generate nonces and set temporary cookie
-                //TODO: consider setting this with claims in a fake owin auth session as per MVC Manual Code Flow Client (IdentityServer3.Samples)
                 var state = Guid.NewGuid().ToString("N");
                 var nonce = Guid.NewGuid().ToString("N");
 

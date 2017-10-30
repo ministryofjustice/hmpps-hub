@@ -131,6 +131,7 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
