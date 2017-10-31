@@ -26,28 +26,39 @@ namespace HMPPS.ContactIdentification.Services
         private void SetContactFacets(User user)
         {
             IContactPersonalInfo personalFacet = Tracker.Current.Contact.GetFacet<IContactPersonalInfo>("Personal");
-            personalFacet.FirstName = GetFirstName(user.Profile.FullName);
-            personalFacet.Surname = GetSurName(user.Profile.FullName);
-            IContactEmailAddresses addressesFacet = Tracker.Current.Contact.GetFacet<IContactEmailAddresses>("Emails");
-            IEmailAddress address;
-            if (!addressesFacet.Entries.Contains("work_email"))
-            {
-                address = addressesFacet.Entries.Create("work_email");
-                address.SmtpAddress = user.Profile.Email;
-                addressesFacet.Preferred = "work_email";
-            }
+            personalFacet.FirstName = string.Empty;
+            personalFacet.Surname = user.LocalName;
+
+            //// Removed real FirstName, LastName and email from contact facets
+            //// TODO: delete codes if not needed
+            
+            //personalFacet.FirstName = GetFirstName(user.Profile.FullName);
+            //personalFacet.Surname = GetSurName(user.Profile.FullName);
+            //IContactEmailAddresses addressesFacet = Tracker.Current.Contact.GetFacet<IContactEmailAddresses>("Emails");
+            //IEmailAddress address;
+            //if (!addressesFacet.Entries.Contains("work_email"))
+            //{
+            //    address = addressesFacet.Entries.Create("work_email");
+            //    address.SmtpAddress = user.Profile.Email;
+            //    addressesFacet.Preferred = "work_email";
+            //}
+            
         }
-        private static string GetFirstName(string fullname)
-        {
-            if (fullname.Contains(' '))
-                return fullname.Substring(0, fullname.IndexOf(" "));
-            return fullname;
-        }
-        private static string GetSurName(string fullname)
-        {
-            if (fullname.Contains(' '))
-                return fullname.Substring(fullname.IndexOf(" ") + 1);
-            return String.Empty;
-        }
+
+        //// Removed real FirstName, LastName and email from contact facets
+        //// TODO: delete codes if not needed
+
+        //private static string GetFirstName(string fullname)
+        //{
+        //    if (fullname.Contains(' '))
+        //        return fullname.Substring(0, fullname.IndexOf(" "));
+        //    return fullname;
+        //}
+        //private static string GetSurName(string fullname)
+        //{
+        //    if (fullname.Contains(' '))
+        //        return fullname.Substring(fullname.IndexOf(" ") + 1);
+        //    return String.Empty;
+        //}
     }
 }

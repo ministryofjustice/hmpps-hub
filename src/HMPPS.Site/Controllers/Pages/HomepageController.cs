@@ -2,7 +2,6 @@ using System.Web.Mvc;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
 using HMPPS.Utilities.Interfaces;
-using HMPPS.ContactIdentification.Services;
 
 namespace HMPPS.Site.Controllers.Pages
 {
@@ -17,8 +16,6 @@ namespace HMPPS.Site.Controllers.Pages
         }
         public ActionResult Index()
         {
-            var cis = new ContactIdentificationService();
-            cis.IdentifyTrackerContact();
             BuildViewModel(Sitecore.Context.Item);
             return View("/Views/Pages/Homepage.cshtml", _hvm);
         }

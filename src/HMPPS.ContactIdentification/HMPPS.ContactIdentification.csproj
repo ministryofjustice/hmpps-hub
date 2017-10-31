@@ -135,11 +135,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IContactIdentificationService.cs" />
+    <Compile Include="Pipelines\IdentifyContact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ContactIdentificationService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
