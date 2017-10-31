@@ -292,6 +292,9 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
