@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Site", "HMPPS.Site\HM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Models", "HMPPS.Models\HMPPS.Models.csproj", "{53E7D82F-2335-4401-B970-777CA378709C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication", "HMPPS.Authentication\HMPPS.Authentication.csproj", "{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.Authentication", "HMPPS.Authentication", "{94C7A417-8AD5-41C8-A0C3-8377DD5580BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication.Tests", "HMPPS.Authentication.Tests\HMPPS.Authentication.Tests.csproj", "{1B68B8C3-528F-49CD-9939-0147CD6A93EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication", "HMPPS.Authentication\HMPPS.Authentication\HMPPS.Authentication.csproj", "{B80A6038-A9F3-495A-AAAC-10DEFBAFB18A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Authentication.Tests", "HMPPS.Authentication\HMPPS.Authentication.Tests\HMPPS.Authentication.Tests.csproj", "{1B68B8C3-528F-49CD-9939-0147CD6A93EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.MediaLibrary", "HMPPS.MediaLibrary", "{24A4A1FA-5107-4F9E-A7EE-563615C59380}"
 EndProject
@@ -25,8 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService", "HM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService.Tests", "HMPPS.NomisApi\HMPPS.NomisApiService.Tests\HMPPS.NomisApiService.Tests.csproj", "{A0F3E4CB-FBA5-49CF-98BE-2EBAEE600FF0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.Authenticate", "HMPPS.Authenticate", "{94C7A417-8AD5-41C8-A0C3-8377DD5580BC}"
-EndProject
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.ContactIdentification", "HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj", "{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}"
 EndProject
 Global
