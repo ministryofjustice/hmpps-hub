@@ -129,11 +129,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
+    <ProjectReference Include="..\..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
       <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
       <Name>HMPPS.NomisApiService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
+    <ProjectReference Include="..\..\HMPPS.Utilities\HMPPS.Utilities.csproj">
       <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>
       <Name>HMPPS.Utilities</Name>
     </ProjectReference>
