@@ -1,4 +1,4 @@
-﻿
+
 
 namespace HMPPS.MediaLibrary.CloudStorage.Constants
 {
@@ -11,7 +11,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Constants
         {
             public const string FilePath = "File Path";
             public const string UploadedToCloud = "Uploaded To Cloud";
-            public const string MD5Hash = "MD5 Hash";
+            public const string Md5Hash = "MD5 Hash";
 
         }
     }

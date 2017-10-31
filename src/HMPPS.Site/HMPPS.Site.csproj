@@ -45,9 +45,6 @@
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
-    <Reference Include="E3.Net4.SiteCore">
-      <HintPath>..\lib\sitecore\E3.Net4.SiteCore.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -113,6 +110,12 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NWebsec, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NWebsec.4.3.0\lib\45\NWebsec.dll</HintPath>
+    </Reference>
+    <Reference Include="NWebsec.Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NWebsec.Core.1.6.0\lib\45\NWebsec.Core.dll</HintPath>
+    </Reference>
     <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
     </Reference>
@@ -139,6 +142,9 @@
     </Reference>
     <Reference Include="Sitecore.Analytics.Processing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.170728\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Client.NoReferences.8.2.170728\lib\NET452\Sitecore.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Cloud.ApplicationInsights">
       <HintPath>..\lib\SC_Azure_8.2_u5\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
@@ -273,6 +279,9 @@
     <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.LegacyLocation.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -402,13 +411,6 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <Content Include="App_Config\Include\zzz\HMPPS.NomisApiService.config">
-      <TransformOnBuild>true</TransformOnBuild>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\zzz\HMPPS.Utilities.config">
-      <TransformOnBuild>true</TransformOnBuild>
-    </Content>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Debug.config">
       <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -441,142 +443,20 @@
       <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Localhost.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CD-Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.CMS-Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Debug.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Utilities.Release.config">
-      <DependentUpon>HMPPS.Utilities.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Localhost.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CD-Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Localhost.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.CMS-Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Debug.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.NomisApiService.Release.config">
-      <DependentUpon>HMPPS.NomisApiService.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Authentication.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CD-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Localhost.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.CMS-Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Debug.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Authentication.Release.config">
-      <DependentUpon>HMPPS.Authentication.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CD-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.CMS-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Debug.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.AzureStorageProvider.Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.AzureStorageProvider.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CD-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Localhost.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.CMS-Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Debug.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.Release.config">
-      <DependentUpon>HMPPS.MediaLibrary.CloudStorage.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
       <TransformOnBuild>true</TransformOnBuild>
@@ -637,6 +517,9 @@
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.config">
       <TransformOnBuild>true</TransformOnBuild>
     </None>
+    <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -677,6 +560,10 @@
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\EpisodeListOfMonth.cshtml" />
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\MonthListOfYear.cshtml" />
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\YearList.cshtml" />
+    <Content Include="Views\Partials\_Scripts.cshtml" />
+    <Content Include="Views\Partials\_SkipLink.cshtml" />
+    <Content Include="Views\Partials\_CookieMessage.cshtml" />
+    <Content Include="Views\Partials\_Header.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -715,6 +602,7 @@
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
     <Compile Include="Controllers\Global\PreviousNextController.cs" />
+    <Compile Include="Controllers\Shared\MvcLayoutController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
     <Compile Include="DependencyInjection\RegisterServices.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjection.cs" />

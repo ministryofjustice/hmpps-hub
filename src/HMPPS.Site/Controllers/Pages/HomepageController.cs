@@ -33,6 +33,7 @@ namespace HMPPS.Site.Controllers.Pages
             _hvm.SelfHelpLinkUrl = contextItem["Self Help Link Url Template"].Replace("{prison_id}",
                 userData.PrisonId.ToLower());
             _hvm.ShowQuickLinks = !string.IsNullOrEmpty(_hvm.SelfHelpLinkUrl);
+            _hvm.UserName = userData.Name;
         }
     }
 }

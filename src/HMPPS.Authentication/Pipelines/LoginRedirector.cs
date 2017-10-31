@@ -14,14 +14,16 @@ namespace HMPPS.Authentication.Pipelines
         public override void Process(HttpRequestArgs args)
         {
             if (Context.Database == null || Context.Site == null) return;
+            // Not checking IDAM authentication of content editors
             if ((new[] { "shell", "login", "admin" }).Contains(Context.Site.Name)) return;
+            // force login only for normal website usage, not for preview / debugging / experienceediting / profiling
+            if (!Context.PageMode.IsNormal) return;
             if (Context.User.IsAuthenticated) return;
             if (!SiteManager.CanEnter(Context.Site.Name, Context.User)) return;
             if (Context.Item != null && Context.Item.Access.CanRead()) return;
             if (Context.Item == null && args.PermissionDenied)
             {
                 // generate nonces and set temporary cookie
-                //TODO: consider setting this with claims in a fake owin auth session as per MVC Manual Code Flow Client (IdentityServer3.Samples)
                 var state = Guid.NewGuid().ToString("N");
                 var nonce = Guid.NewGuid().ToString("N");
 
