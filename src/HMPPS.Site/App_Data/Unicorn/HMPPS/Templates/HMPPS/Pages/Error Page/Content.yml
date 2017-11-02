@@ -1,0 +1,18 @@
+﻿---
+ID: "989c8a7e-e487-41fb-b916-4c1fac2cd84f"
+Parent: "5609faff-5fe7-4e41-b78d-1fecc16fca4c"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/HMPPS/Pages/Error Page/Content
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170926T155433Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -3,6 +3,7 @@ using Sitecore.Diagnostics;
 using Sitecore.Resources.Media;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
 using Sitecore.Configuration;
+using Sitecore.SecurityModel;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
@@ -21,7 +22,32 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
             MediaRequest request = MediaManager.ParseMediaRequest(context.Request);
             if (request == null)
                 return false;
+
             Sitecore.Resources.Media.Media media = MediaManager.GetMedia(request.MediaUri);
+
+            // handle 404 of media items
+            if (media == null)
+            {
+                using (new SecurityDisabler())
+                    media = MediaManager.GetMedia(request.MediaUri);
+
+                string str;
+
+                if (media == null)
+                {
+                    str = Settings.ItemNotFoundUrl;
+                }
+                else
+                {
+                    Assert.IsNotNull(Sitecore.Context.Site, "site");
+                    str = Sitecore.Context.Site.LoginPage != string.Empty ? Sitecore.Context.Site.LoginPage : Settings.NoAccessUrl;
+                }
+                if (Settings.RequestErrors.UseServerSideRedirect)
+                    HttpContext.Current.Server.TransferRequest(str);
+                else
+                    HttpContext.Current.Response.Redirect(str);
+                return true;
+            }
 
             if (!IsCdnMedia(media))
                 return base.DoProcessRequest(context);

@@ -111,8 +111,11 @@
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\ExpirationHelper.cs" />
     <Compile Include="Interfaces\IUserDataService.cs" />
+    <Compile Include="Pipelines\HttpRequestBase.cs" />
     <Compile Include="Pipelines\ImageFieldSizeAttributesRemover.cs" />
+    <Compile Include="Pipelines\Redirect404.cs" />
     <Compile Include="Pipelines\RichTextEditorAddParagraphs.cs" />
+    <Compile Include="Pipelines\Set404StatusCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UserDataService.cs" />
     <Compile Include="Settings.cs" />
