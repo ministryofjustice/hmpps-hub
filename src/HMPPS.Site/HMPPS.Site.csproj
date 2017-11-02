@@ -296,6 +296,9 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -468,7 +471,9 @@
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
       <TransformOnBuild>true</TransformOnBuild>
