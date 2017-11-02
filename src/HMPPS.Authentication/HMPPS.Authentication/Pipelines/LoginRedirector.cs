@@ -1,19 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Sites;
 using Sitecore.Web;
 using IdentityModel.Client;
 using HMPPS.Utilities.Helpers;
-using HMPPS.NomisApiService.Models;
-using System.Globalization;
-using HMPPS.Utilities.Models;
-using System.Web;
-using HMPPS.Utilities.Services;
-using Sitecore.Security.Authentication;
 
 namespace HMPPS.Authentication.Pipelines
 {
