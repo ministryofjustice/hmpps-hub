@@ -8,4 +8,5 @@ Please see the instructions in the VSTS wiki for getting started with this solut
 Please see the instructions in the VSTS wiki for building and running this solution. 
 
 # Contribute
+Contributions are made by the project team using VSTS.
 GitHub contributions are not accepted at this time.
