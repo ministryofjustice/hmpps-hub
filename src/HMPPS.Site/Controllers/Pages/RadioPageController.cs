@@ -40,7 +40,7 @@ namespace HMPPS.Site.Controllers.Pages
         {
             var seriesRoot = GetSeriesRoot(contextItem);
             var allRadioEpisodeItems =
-                seriesRoot.Axes.GetDescendants().Where(d => d.TemplateName == "Radio Episode").ToList();//todo: cache this list/ retrieve from search index?
+                seriesRoot.Axes.GetDescendants().Where(d => d.TemplateName == "Radio Episode").ToList();
 
             var allRadioEpisodes = new List<RadioEpisode>();
 
