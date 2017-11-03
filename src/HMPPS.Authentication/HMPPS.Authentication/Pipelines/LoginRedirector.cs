@@ -9,7 +9,7 @@ using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.Authentication.Pipelines
 {
-    public class LoginRedirector : HttpRequestProcessor
+    public class LoginRedirector : AuthenticationProcessorBase
     {
         public override void Process(HttpRequestArgs args)
         {
@@ -18,6 +18,7 @@ namespace HMPPS.Authentication.Pipelines
             if ((new[] { "shell", "login", "admin" }).Contains(Context.Site.Name)) return;
             // force login only for normal website usage, not for preview / debugging / experienceediting / profiling
             if (!Context.PageMode.IsNormal) return;
+
             if (Context.User.IsAuthenticated) return;
             if (!SiteManager.CanEnter(Context.Site.Name, Context.User)) return;
             if (Context.Item != null && Context.Item.Access.CanRead()) return;
