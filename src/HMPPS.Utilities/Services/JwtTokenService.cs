@@ -18,6 +18,13 @@ namespace HMPPS.Utilities.Services
     public class JwtTokenService : IJwtTokenService
     {
 
+        private readonly string _homePageAddress;
+
+        public JwtTokenService()
+        {
+            _homePageAddress = GetHomeAddress();
+        }
+
         public string GenerateJwtToken(IEnumerable<Claim> claims, string jwtTokenSecurityKey)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -30,7 +37,7 @@ namespace HMPPS.Utilities.Services
             {
                 Subject = new ClaimsIdentity(claims),
                 TokenIssuerName = "self",
-                AppliesToAddress = GetHomeAddress(),
+                AppliesToAddress = _homePageAddress,
                 Lifetime = new Lifetime(now, expiration),
                 SigningCredentials = new SigningCredentials(
                         new InMemorySymmetricSecurityKey(symmetricKey),
@@ -53,7 +60,7 @@ namespace HMPPS.Utilities.Services
             var validationParameters = new TokenValidationParameters()
             {
                 IssuerSigningToken = new BinarySecretSecurityToken(symmetricKey),
-                ValidAudience = GetHomeAddress(),
+                ValidAudience = _homePageAddress,
                 ValidIssuer = "self"
             };
             // todo: error handling if token is invalid
@@ -66,7 +73,6 @@ namespace HMPPS.Utilities.Services
 
         private static string GetHomeAddress()
         {
-            // TODO: check why hostname and targethostname of "website" are missing from Sitecore.config
             var website = SiteContext.GetSite("website");
 
             if (!string.IsNullOrEmpty(website.TargetHostName))
