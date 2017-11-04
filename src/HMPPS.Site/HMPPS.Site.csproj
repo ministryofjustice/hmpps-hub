@@ -22,6 +22,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
@@ -119,6 +123,9 @@
     <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.12\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Abstractions.8.2.170728\lib\NET452\Sitecore.Abstractions.dll</HintPath>
     </Reference>
@@ -191,9 +198,6 @@
     <Reference Include="Rainbow.Storage.Yaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rainbow.Storage.Yaml.2.0.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.4.0.8\lib\net45\SimpleInjector.dll</HintPath>
-    </Reference>
     <Reference Include="SimpleInjector.Integration.Web, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.Integration.Web.4.0.8\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
     </Reference>
@@ -226,6 +230,9 @@
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
@@ -249,8 +256,12 @@
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -282,6 +293,8 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
+    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -485,7 +498,9 @@
       <IsTransformFile>True</IsTransformFile>
     </None>
     <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CD-Localhost.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -558,6 +573,11 @@
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\EpisodeListOfMonth.cshtml" />
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\MonthListOfYear.cshtml" />
     <Content Include="Views\Blocks\PageSpecific\RadioFolder\YearList.cshtml" />
+    <Content Include="Views\Partials\_Scripts.cshtml" />
+    <Content Include="Views\Partials\_SkipLink.cshtml" />
+    <Content Include="Views\Partials\_CookieMessage.cshtml" />
+    <Content Include="Views\Partials\_Header.cshtml" />
+    <Content Include="Views\Pages\ErrorPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -591,11 +611,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RegisterBundles.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\ErrorPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
     <Compile Include="Controllers\Global\PreviousNextController.cs" />
+    <Compile Include="Controllers\Shared\MvcLayoutController.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjectionArgs.cs" />
     <Compile Include="DependencyInjection\RegisterServices.cs" />
     <Compile Include="DependencyInjection\InitializeDependencyInjection.cs" />
@@ -624,6 +648,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
@@ -644,7 +669,7 @@
     <Folder Include="layouts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
+    <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication\HMPPS.Authentication.csproj">
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
     </ProjectReference>

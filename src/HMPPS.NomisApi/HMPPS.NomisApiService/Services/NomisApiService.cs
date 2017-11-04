@@ -41,9 +41,9 @@ namespace HMPPS.NomisApiService.Services
         {
         }
 
-        public NomisApiService(bool useSitecoreSettings)
+        public NomisApiService(bool useAppSettings)
         {
-            if (useSitecoreSettings)
+            if (useAppSettings)
             {
                 ApiBaseUrl = Settings.NomisApiBaseUrl;
                 ClientToken = Settings.NomisApiClientToken;

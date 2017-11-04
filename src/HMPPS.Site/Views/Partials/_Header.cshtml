@@ -1,0 +1,8 @@
+@model Sitecore.Data.Items.Item
+<header role="banner" id="global-header">
+    <div class="header-wrapper">
+        <div class="header-global">
+            @Html.Sitecore().Field("Logo Link", Model, new { @id = "logo", @class = "content" })
+        </div>
+    </div>
+</header>

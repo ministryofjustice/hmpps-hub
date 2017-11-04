@@ -6,7 +6,7 @@ using System.Configuration;
 namespace HMPPS.NomisApiService.Tests
 {
     [TestClass]
-    public class NomisApiServiceTests
+    public class NomisApiServiceIntegrationTests
     {
         [TestMethod]
         public void NomisApiService_GetPrisonerLocationDetails()
@@ -65,12 +65,22 @@ namespace HMPPS.NomisApiService.Tests
             Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("BMI", "A1417AEx"));
         }
 
+        public TestContext TestContext { get; set; }
+
+        private static TestContext _testContext;
+
+        [ClassInitialize]
+        public static void SetupTests(TestContext testContext)
+        {
+            _testContext = testContext;
+        }
+
         private Services.NomisApiService CreateNomisApiService()
         {
             var nomisApiService = new Services.NomisApiService(false);
-            nomisApiService.ApiBaseUrl = ConfigurationManager.AppSettings["HMPPS.NomisApiService.BaseUrl"];
-            nomisApiService.ClientToken = ConfigurationManager.AppSettings["HMPPS.NomisApiService.ClientToken"];
-            nomisApiService.SecretPkcs8 = ConfigurationManager.AppSettings["HMPPS.NomisApiService.SecretKey"];
+            nomisApiService.ApiBaseUrl = TestContext.Properties["HMPPS.NomisApiService.BaseUrl"].ToString();
+            nomisApiService.ClientToken = TestContext.Properties["HMPPS.NomisApiService.ClientToken"].ToString();
+            nomisApiService.SecretPkcs8 = TestContext.Properties["HMPPS.NomisApiService.SecretKey"].ToString();
             nomisApiService.InitializeClient();
             return nomisApiService;
         }
