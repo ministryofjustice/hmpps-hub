@@ -11,6 +11,7 @@ namespace HMPPS.Site.DependencyInjection
         {
             // List all services used by MVC controllers
 
+            args.ServiceCollection.AddSingleton<ICacheService, CacheService>();
             args.ServiceCollection.AddTransient<IUserDataService, UserDataService>();
             args.ServiceCollection.AddTransient<IEncryptionService, EncryptionService>();
             args.ServiceCollection.AddTransient<IJwtTokenService, JwtTokenService>();

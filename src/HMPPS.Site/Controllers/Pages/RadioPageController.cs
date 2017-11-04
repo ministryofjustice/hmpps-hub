@@ -6,12 +6,23 @@ using HMPPS.Models.Cms;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
 using Sitecore.Data.Items;
+using HMPPS.Utilities.Interfaces;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.Site.Controllers.Pages
 {
     public class RadioPageController : BaseController
     {
+
+        private readonly ICacheService _cacheService;
+
+        public RadioPageController(ICacheService cacheService)
+        {
+            _cacheService = cacheService;
+        }
+
         private RadioPageViewModel _rpvm;
+
         public ActionResult Index()
         {
             BuildViewModel(Sitecore.Context.Item);
@@ -39,6 +50,12 @@ namespace HMPPS.Site.Controllers.Pages
         private List<RadioEpisode> PopulateEpisodeList(Item contextItem)
         {
             var seriesRoot = GetSeriesRoot(contextItem);
+            var cacheKey = seriesRoot.ID.ToString();
+            if (_cacheService.Contains(cacheKey))
+            {
+                return _cacheService.Get<List<RadioEpisode>>(cacheKey);
+            }
+
             var allRadioEpisodeItems =
                 seriesRoot.Axes.GetDescendants().Where(d => d.TemplateName == "Radio Episode").ToList();
 
@@ -50,6 +67,10 @@ namespace HMPPS.Site.Controllers.Pages
                 allRadioEpisodes.Add(episode);
             }
             allRadioEpisodes = allRadioEpisodes.OrderBy(e => e.Date).ToList();
+
+            var expirationTime = ExpirationHelper.GetExpirationTime(HMPPS.Utilities.Settings.RadioEpisodesCacheTime);
+            _cacheService.Store(cacheKey, allRadioEpisodes, expirationTime);
+
             return allRadioEpisodes;
         }
 
