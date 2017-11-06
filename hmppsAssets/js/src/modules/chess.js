@@ -297,7 +297,7 @@ export default (function () {
         const move = game.move({
           from: source,
           to: target,
-          promotion: radio,
+          promotion: radio
         });
 
 
@@ -324,7 +324,7 @@ export default (function () {
         onDrop,
         onMoveEnd,
         moveSpeed: 'slow',
-        pieceTheme: '/hmppsAssets/img/chesspieces/wikipedia/{piece}.png',
+        pieceTheme: '/hmppsAssets/img/chesspieces/wikipedia/{piece}.png'
       };
 
       board = new ChessBoard('js-board', cfg);
@@ -419,9 +419,9 @@ export default (function () {
                 // displayStatus();
           prepareMove();
           return true;
-        },
+        }
       };
-    },
+    }
 
 
   };

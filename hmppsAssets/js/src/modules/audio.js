@@ -7,10 +7,9 @@ export default (function () {
           controls: true,
           autoplay: false,
           preload: 'auto',
-          BigPlayButton: false,
+          BigPlayButton: false
         });
       }
-    },
-
+    }
   };
 }());

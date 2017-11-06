@@ -33,7 +33,7 @@ const HMPPS = window.HMPPS || {
   neontroids,
   audio,
   videojs,
-  video,
+  video
 };
 
 HMPPS.addCookieMessage = () => {
