@@ -11,5 +11,17 @@ namespace HMPPS.Utilities
 
         public static string UserDataCookieKey => ConfigurationManager.AppSettings["HMPPS.Utilities.UserDataCookieKey"];
 
+        public static int DefaultDotNetCacheTime => GetIntSetting(ConfigurationManager.AppSettings["HMPPS.Utilities.DefaultDotNetCacheTime"], 300);
+
+        public static int RadioEpisodesCacheTime => GetIntSetting(ConfigurationManager.AppSettings["HMPPS.Utilities.RadioEpisodesCacheTime"], 300);
+
+        private static int GetIntSetting(string value, int defaultValue)
+        {
+            int intValue = 0;
+            if (int.TryParse(value, out intValue))
+                return intValue;
+            return defaultValue;
+        }
+
     }
 }

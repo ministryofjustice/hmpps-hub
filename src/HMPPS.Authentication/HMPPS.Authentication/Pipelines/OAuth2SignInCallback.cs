@@ -46,7 +46,6 @@ namespace HMPPS.Authentication.Pipelines
 
             var userData = new UserData(claims);
 
-            // store claims into a secure cookie - TODO: use UserData, not claims
             _userDataService.SaveUserDataToCookie(claims, args.Context);
 
             // Build sitecore user and log in - this will persist until log out or session ends.

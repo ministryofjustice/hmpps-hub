@@ -65,28 +65,28 @@
       <HintPath>..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.AI.PerfCounterCollector.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.Web.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.AI.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.AI.WindowsServer.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.AI.WindowsServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights.TraceListener">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
@@ -154,7 +154,7 @@
       <HintPath>..\packages\Sitecore.Client.NoReferences.8.2.170728\lib\NET452\Sitecore.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Cloud.ApplicationInsights">
-      <HintPath>..\lib\SC_Azure_8.2_u5\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.8.2.170728\lib\NET452\Sitecore.Kernel.dll</HintPath>
@@ -181,7 +181,10 @@
       <HintPath>..\packages\Sitecore.NVelocity.8.2.170728\lib\NET452\Sitecore.NVelocity.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Support.183497">
-      <HintPath>..\lib\sitecore\Sitecore.Support.183497.dll</HintPath>
+      <HintPath>..\lib\Sitecore\Sitecore.Support.183497.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.UploadFilter">
+      <HintPath>..\lib\Sitecore\Sitecore.UploadFilter.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Xdb.Configuration, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Xdb.Configuration.8.2.170728\lib\NET452\Sitecore.Xdb.Configuration.dll</HintPath>
@@ -261,6 +264,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -292,10 +296,9 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
+    <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
       <SubType>Designer</SubType>
-    </Content>
-    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
+    </Content>    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
       <SubType>Designer</SubType>
     </Content>
@@ -583,6 +586,7 @@
     <Content Include="Views\Partials\_SkipLink.cshtml" />
     <Content Include="Views\Partials\_CookieMessage.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
+    <Content Include="Views\Pages\ErrorPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -619,6 +623,7 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\ErrorPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
@@ -652,6 +657,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
