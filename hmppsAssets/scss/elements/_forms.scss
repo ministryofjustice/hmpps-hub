@@ -106,6 +106,7 @@ input[type="number"].form-control:focus {
 .form-label {
   @include core-19;
 }
+
 .form-label.form-label-inline {
   display: inline-block;
 }

@@ -58,7 +58,7 @@ $desktop-breakpoint: 769px !default;
       }
     } @else {
       @media (min-width: $size){
-        @content
+        @content;
       }
     }
   }

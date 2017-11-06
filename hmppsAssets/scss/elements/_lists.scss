@@ -46,6 +46,7 @@ ol {
   padding: 0;
   clear: both;
   list-style-type: none;
+  
   &:after{
     @include cfx;
   }
