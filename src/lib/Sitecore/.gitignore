@@ -1,1 +1,3 @@
-/Sitecore*.dll
+/Sitecore.Cloud.ApplicationInsights.dll
+/Sitecore.Support.183497.dll
+/Sitecore.UploadFilter.dll
