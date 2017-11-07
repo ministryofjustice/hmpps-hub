@@ -56,8 +56,8 @@ namespace HMPPS.Authentication
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            // Dev service does work with TLS 1.2 within .NET
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var client = new TokenClient(
                 TokenEndpoint,
@@ -76,8 +76,8 @@ namespace HMPPS.Authentication
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            // Dev service does work with TLS 1.2 within .NET
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var client = new TokenClient(
                 TokenEndpoint,
@@ -95,8 +95,8 @@ namespace HMPPS.Authentication
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            // Dev service does work with TLS 1.2 within .NET
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var client = new TokenClient(
                 TokenEndpoint,

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 @using Sitecore.Mvc
 @using Sitecore.Mvc.Analytics.Extensions
-@{
-    var contextLanguage = Sitecore.Context.Language;
-}
-<!--[if lt IE 9]><html class="lte-ie8" lang="@contextLanguage"><![endif]-->
+
 <!--[if gt IE 8]><!-->
-<html lang="@contextLanguage">
+<html lang="@Sitecore.Context.Language">
 <!--<![endif]-->
 <head>
     @Html.Sitecore().VisitorIdentification()
