@@ -6,17 +6,14 @@ namespace HMPPS.Site
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //work in progress, bundles not yet used in views as FE need to make some amends first
-            //more bundles to be created for the govuk css files in head
             bundles.Add(new StyleBundle("~/bundles/hmpps.css").Include(
                 "~/hmppsAssets/css/hmpps.css"));
-            bundles.Add(new StyleBundle("~/bundles/hmpps-ie6.css").Include(
-                "~/hmppsAssets/css/hmpps-ie6.css"));
-            bundles.Add(new StyleBundle("~/bundles/hmpps-ie7.css").Include(
-                "~/hmppsAssets/css/hmpps-ie7.css"));
-            bundles.Add(new StyleBundle("~/bundles/hmpps-ie8.css").Include(
-                "~/hmppsAssets/css/hmpps-ie8.css"));
-
+            bundles.Add(new StyleBundle("~/bundles/govuk-template.css").Include(
+                "~/hmppsAssets/css/govuk-template.css"));
+            bundles.Add(new StyleBundle("~/bundles/govuk-template-print.css").Include(
+                "~/hmppsAssets/css/govuk-template-print.css"));
+            bundles.Add(new StyleBundle("~/bundles/fonts.css").Include(
+                "~/hmppsAssets/css/fonts.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/application.js").Include(
                 "~/hmppsAssets/js/application.js"

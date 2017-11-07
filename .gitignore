@@ -394,3 +394,5 @@ proxy.json
 /src/HMPPS.Site/WebAppSettings.CD-Localhost.Source.config
 /www/WebAppSettings.CMS-Localhost.Source.config
 /www/ConnectionStrings.CMS-Localhost.Source.config
+/cd-www/404.html
+/www/404.html

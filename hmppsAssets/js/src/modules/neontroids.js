@@ -2,22 +2,19 @@ export default (function () {
   return {
     init: function init() {
       const neontroidsEl = document.querySelector('.js-neontroids');
-      let trigger = document.querySelector('.js-neontroids-trigger');
+      const trigger = document.querySelector('.js-neontroids-trigger');
 
       if (neontroidsEl) {
         trigger.addEventListener('click', (e) => {
           e.preventDefault();
-          trigger.setAttribute('disabled',true);
+          trigger.setAttribute('disabled', true);
           HMPPS.neontroids.build();
           const scripts = ['/hmppsAssets/js/src/third-party/lib/sound-fx.js', '/hmppsAssets/js/src/third-party/lib/keyboard-io.js', '/hmppsAssets/js/src/third-party/lib/collisions.js', '/hmppsAssets/js/src/third-party/lib/asteroids-sprites.js', '/hmppsAssets/js/src/third-party/lib/asteroids-polygon.js', '/hmppsAssets/js/src/third-party/lib/display-text.js', '/hmppsAssets/js/src/third-party/lib/asteroids.js'];
 
           const loader = new HMPPS.neontroids.ScriptLoader();
-          let scriptPromises = scripts.map((file) => {
-            return loader.add(file);
-          });
+          const scriptPromises = scripts.map(file => loader.add(file));
 
-          Promise.all(scriptPromises).then( function (response){
-
+          Promise.all(scriptPromises).then((response) => {
             neontroidsEl.classList.add('neontroids-active');
             document.body.classList.add('modal-active');
 
@@ -44,21 +41,19 @@ export default (function () {
 
             return response;
           }).then((response) => {
-
             window.dispatchEvent(new Event('resize'));
             HMPPS.neontroids.beginGame();
           });
-
         });
       }
     },
-    beginGame(){
+    beginGame() {
       initHighScore();
       createRocks();
       initKeyboard();
       runGame();
     },
-    build(){
+    build() {
       const modal = document.createElement('div');
       modal.classList.add('modal');
 
@@ -66,9 +61,9 @@ export default (function () {
       <button class='js-neontroids-close neontroids__close' type='button' name='button'>Close</button>`;
 
       modal.innerHTML = canvas;
-      document.body.appendChild(modal)
+      document.body.appendChild(modal);
     },
-    destroy(trigger){
+    destroy(trigger) {
       const root = document.getElementsByTagName('html')[0];
       const modal = document.querySelector('.modal');
       const body = document.body;
@@ -80,12 +75,10 @@ export default (function () {
       stopGame();
     },
     ScriptLoader() {
-
       const promises = [];
 
       this.add = (url) => {
         const promise = new Promise((resolve, reject) => {
-
           const script = document.createElement('script');
           script.src = url;
           script.type = 'text/javascript';
