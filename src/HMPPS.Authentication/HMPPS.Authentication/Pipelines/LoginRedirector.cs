@@ -19,10 +19,6 @@ namespace HMPPS.Authentication.Pipelines
             // force login only for normal website usage, not for preview / debugging / experienceediting / profiling
             if (!Context.PageMode.IsNormal) return;
 
-            // TODO: remove hardcoded user when IDAM is back
-            //LogInHardcodedIdamUser(args.Context);
-
-
             if (Context.User.IsAuthenticated) return;
             if (!SiteManager.CanEnter(Context.Site.Name, Context.User)) return;
             if (Context.Item != null && Context.Item.Access.CanRead()) return;
