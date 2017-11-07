@@ -35,7 +35,6 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 
         private bool IsPublished(Item item)
         {
-            // todo: check web database
             SiteContext targetSiteContext = SiteContext.GetSite("website");
             using (var switcher = new SiteContextSwitcher(targetSiteContext))
             {

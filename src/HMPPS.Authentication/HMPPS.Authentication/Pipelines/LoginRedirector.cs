@@ -16,7 +16,7 @@ using Sitecore.Security.Authentication;
 
 namespace HMPPS.Authentication.Pipelines
 {
-    public class LoginRedirector : AuthenticationProcessorBase
+    public class LoginRedirector : HttpRequestProcessor 
     {
         public override void Process(HttpRequestArgs args)
         {

@@ -8,11 +8,11 @@ export default (function () {
       }
       const mySudokuJS = $('.js-sudoku').sudokuJS({
         difficulty: 'Easy',
-        boardFinishedFn: function (data) {
+        boardFinishedFn(data) {
           alert.classList.add('show');
-          alert.textContent('Congratulations! You solved it.')
+          alert.textContent('Congratulations! You solved it.');
         },
-        boardErrorFn: function(data){
+        boardErrorFn(data) {
           alert.textContent(data.msg);
         },
       });
@@ -23,8 +23,8 @@ export default (function () {
         mySudokuJS.generateBoard('easy');
       });
     },
-    clearErrors(){
-      $('.js-sudoku input').filter(function() {
+    clearErrors() {
+      $('.js-sudoku input').filter(function () {
         $(this).removeAttr('disabled');
         $(this).removeClass('board-cell--error highlight-val');
       });

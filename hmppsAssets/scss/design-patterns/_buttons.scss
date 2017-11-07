@@ -23,7 +23,6 @@
 @mixin button($colour: $button-colour) {
   // Colour
   background-color: $colour;
-
   // Size and shape
   position: relative;
   @include inline-block;
