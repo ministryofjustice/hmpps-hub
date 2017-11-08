@@ -1,4 +1,16 @@
 @model HMPPS.Site.ViewModels.Pages.ErrorPageViewModel
+
+    @{ 
+        if (Model.StatusCode > 0)
+        {
+            Response.StatusCode = Model.StatusCode;
+        }
+        if (Model.SubStatusCode > 0)
+        {
+            Response.SubStatusCode = Model.SubStatusCode;
+        }
+    }
+
 <div id="global-header-bar"></div>
 
 <div class="site-wrapper">
