@@ -299,7 +299,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
-    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>

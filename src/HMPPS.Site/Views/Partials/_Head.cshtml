@@ -1,14 +1,13 @@
 @model HMPPS.Site.ViewModels.Partials.HeadViewModel
-
+@using System.Web.Optimization
 <meta charset="utf-8" />
 <title>
     @Model.PageBrowserTitle
 </title>
 
-<!--[if gt IE 8]><!--><link href="/hmppsAssets/css/govuk-template.css?0.22.3" media="screen" rel="stylesheet" /><!--<![endif]-->
-<link href="/hmppsAssets/css/govuk-template-print.css?0.22.3" media="print" rel="stylesheet" />
-
-<!--[if gte IE 9]><!--><link href="/hmppsAssets/css/fonts.css?0.22.3" media="all" rel="stylesheet" /><!--<![endif]-->
+<!--[if gt IE 8]><!-->@Styles.RenderFormat("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"{0}\" />", "~/bundles/govuk-template.css")<!--<![endif]-->
+@Styles.RenderFormat("<link rel=\"stylesheet\" type=\"text/css\" media=\"print\" href=\"{0}\" />", "~/bundles/govuk-template-print.css")
+<!--[if gte IE 9]><!-->@Styles.RenderFormat("<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{0}\" />", "~/bundles/fonts.css")<!--<![endif]-->
 
 <link rel="shortcut icon" href="/hmppsAssets/img/favicon.ico?0.22.3" type="image/x-icon" />
 
@@ -24,4 +23,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:image" content="/hmppsAssets/img/opengraph-image.png?0.22.3">
 
-<!--[if gt IE 8]><!--><link href="/hmppsAssets/css/hmpps.css?d=27102017" rel="stylesheet" type="text/css"><!--<![endif]-->
+<!--[if gt IE 8]><!-->@Styles.RenderFormat("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"{0}\" />", "~/bundles/hmpps.css")<!--<![endif]-->
