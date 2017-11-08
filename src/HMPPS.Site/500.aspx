@@ -77,6 +77,17 @@
                     </div>
                 </div>
             </div>
+            <div class="pub-c-title">
+                <h1 class="heading-xlarge">Mae'n ddrwg gennym, aeth rhywbeth o'i le</h1>
+            </div>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <div class="content">
+                        <p>Bydd angen i chi ddechrau eto.</p>
+                        <p><a href="/">Yn ôl i'r cartref</a></p>
+                    </div>
+                </div>
+            </div>
 
         </main><!-- / #content -->
     </div>
