@@ -8,16 +8,6 @@
 
 <div id="global-app-error" class="app-error hidden"></div>
 
-<!-- <script src="/hmppsAssets/js/src/govuk-template.js?0.22.3"></script> -->
-
-<!-- govuk_frontend_toolkit js -->
-<!-- <script src="/hmppsAssets/js/third-party/polyfills/bind.js"></script>
-<script src="/hmppsAssets/js/govuk/shim-links-with-button-role.js"></script>
-<script src="/hmppsAssets/js/govuk/show-hide-content.js"></script> -->
-
-<!-- govuk_elements js -->
-<!-- <script src="/hmppsAssets/js/govuk/details.polyfill.js"></script> -->
-
 <!-- scripts needed for Chess -->
 
 <script src="/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js"></script>
