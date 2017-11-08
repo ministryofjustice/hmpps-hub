@@ -265,6 +265,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.html" />
+    <Content Include="500.aspx" />
+    <Content Include="500.html" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
@@ -297,7 +299,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
-    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -540,12 +542,11 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
-    <Content Include="Error403.aspx" />
+    <Content Include="403.aspx" />
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Error500.aspx" />
     <Content Include="robots.txt" />
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />

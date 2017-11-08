@@ -6,7 +6,7 @@
 
 @include media(tablet) {
     .part-navigation-container {
-        margin-bottom:45px;
+        margin-bottom: 45px;
     }
 }
 
@@ -21,14 +21,14 @@
 
 @include media(desktop) {
     .part-navigation {
-        font-size:19px;
+        font-size: 19px;
         line-height: 1.31579;
     }
 }
 
 @include media(desktop) {
     .part-navigation {
-        font-family:"nta", Arial, sans-serif;
+        font-family: "nta", Arial, sans-serif;
         font-weight: 400;
         text-transform: none;
         font-size: 14px;
@@ -38,7 +38,7 @@
 
 @include media(desktop) {
     .part-navigation {
-        font-size:16px;
+        font-size: 16px;
         line-height: 1.25;
     }
 }

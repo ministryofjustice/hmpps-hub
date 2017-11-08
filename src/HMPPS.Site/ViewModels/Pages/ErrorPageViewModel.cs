@@ -9,5 +9,10 @@ namespace HMPPS.Site.ViewModels.Pages
         public ErrorPageViewModel()
         {
         }
+
+        public int StatusCode { get; set; }
+
+        public int SubStatusCode { get; set; }
+
     }
 }
