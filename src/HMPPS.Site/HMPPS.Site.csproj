@@ -548,6 +548,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="robots.txt" />
+    <Content Include="CreateLoginCookie.aspx" />
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
