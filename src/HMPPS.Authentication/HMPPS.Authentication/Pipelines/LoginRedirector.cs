@@ -62,16 +62,16 @@ namespace HMPPS.Authentication.Pipelines
             if (!Context.User.IsAuthenticated)
             {
                 List<Claim> claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, "A1412AE"));
-                claims.Add(new Claim(ClaimTypes.GivenName, "James"));
-                claims.Add(new Claim(ClaimTypes.Surname, "Bond"));
-                claims.Add(new Claim(ClaimTypes.Email, "james.bond@example.com"));
-                claims.Add(new Claim("name", "James Bond"));
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, "A1466AE"));
+                claims.Add(new Claim(ClaimTypes.GivenName, "Steven"));
+                claims.Add(new Claim(ClaimTypes.Surname, "Woolfe"));
+                claims.Add(new Claim(ClaimTypes.Email, "steven.woolfe@example.com"));
+                claims.Add(new Claim("name", "Steven Woolfe"));
                 claims.Add(new Claim("access_token", ""));
                 claims.Add(new Claim("refresh_token", ""));
                 claims.Add(new Claim("expires_at", ExpirationHelper.GetExpirationTimeString(86400)));
-                claims.Add(new Claim("prison_id", "ISI"));
-                claims.Add(new Claim("prison_name", "Sheffield Prison"));
+                claims.Add(new Claim("prison_id", "LEI"));
+                claims.Add(new Claim("prison_name", "Leeds Prison"));
                 claims.Add(new Claim("account_balance", "123.40"));
                 claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
                 var userData = new UserData(claims);

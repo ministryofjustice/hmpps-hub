@@ -397,3 +397,8 @@ proxy.json
 /cd-www/404.html
 /www/404.html
 /www/App_Data/MediaCache/website
+/www/DummyLogout.aspx
+/www/DummyLogin.aspx
+/www/500.html
+/www/500.aspx
+/www/403.aspx
