@@ -296,9 +296,11 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ImageFieldSizeAttributesRemover.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
+    <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
       <SubType>Designer</SubType>
-    </Content>    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
       <SubType>Designer</SubType>
     </Content>
@@ -477,7 +479,7 @@
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
+    <None Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config.disabled" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
