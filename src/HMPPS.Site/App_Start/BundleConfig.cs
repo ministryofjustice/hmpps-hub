@@ -15,10 +15,11 @@ namespace HMPPS.Site
             bundles.Add(new StyleBundle("~/bundles/fonts.css").Include(
                 "~/hmppsAssets/css/fonts.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/application.js").Include(
+            //some JS files are already minified, we just want to bundle them, that is why we are using Bundle instead of ScriptBundle
+            bundles.Add(new Bundle("~/bundles/application.js").Include(
                 "~/hmppsAssets/js/application.js"
             ));
-            bundles.Add(new ScriptBundle("~/bundles/chess-scrips.js").Include(
+            bundles.Add(new Bundle("~/bundles/chess-scripts.js").Include(
                 "~/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/chessboard-0.3.0.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/chess.min.js",

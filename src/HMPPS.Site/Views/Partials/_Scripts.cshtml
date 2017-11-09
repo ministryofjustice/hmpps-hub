@@ -2,26 +2,20 @@
 @if (Model == "Chess Game Page")
 {
 <!-- scripts needed for Chess -->
-<script src="/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/chessboard-0.3.0.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/chess.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/stockfish.js"></script>
+@System.Web.Optimization.Scripts.Render("~/bundles/chess-scripts.js")
 }
 @if (Model == "Sudoku Game Page")
 {
 <!-- scripts needed for Suduko -->
-<script src="/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/sudokuJS.js"></script>
+@System.Web.Optimization.Scripts.Render("~/bundles/sudoku-scripts.js")
 }
 @if (Model == "Book Section Page")
 {
 <!-- scripts needed for books -->
-<script src="/hmppsAssets/js/src/third-party/lib/jszip.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/epub.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/mime-types.js"></script>
+@System.Web.Optimization.Scripts.Render("~/bundles/book-scripts.js")
 }
 @*<!-- scripts needed for books later on in the project (not needed for now) -->
 <!-- <script src="/hmppsAssets/js/src/third-party/lib/hooks.min.js"></script>
 <script src="/hmppsAssets/js/src/third-party/lib/reader.min.js"></script> -->*@
 
-<script src="/hmppsAssets/js/application.js?d=27102017"></script>
+@System.Web.Optimization.Scripts.Render("~/bundles/application.js")

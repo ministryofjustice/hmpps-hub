@@ -9,7 +9,7 @@ using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.Authentication.Pipelines
 {
-    public class LoginRedirector : HttpRequestProcessor 
+    public class LoginRedirector : HttpRequestProcessor
     {
         public override void Process(HttpRequestArgs args)
         {
