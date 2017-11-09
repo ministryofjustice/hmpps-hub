@@ -3,6 +3,7 @@ using Sitecore.Analytics.Model;
 using Sitecore.Security.Accounts;
 using Sitecore.Analytics.Model.Entities;
 using HMPPS.ContactIdentification.Interfaces;
+using System;
 
 namespace HMPPS.ContactIdentification.Services
 {
@@ -21,9 +22,9 @@ namespace HMPPS.ContactIdentification.Services
                     Tracker.Current.Session.Identify(Sitecore.Context.User.LocalName);
                     SetContactFacets(Sitecore.Context.User);
                 }
-                catch
+                catch (Exception e)
                 {
-                    Sitecore.Diagnostics.Log.Error("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", this);
+                    Sitecore.Diagnostics.Log.Error("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", e, this);
                 }
             }
         }
