@@ -402,5 +402,10 @@ proxy.json
 /www/500.html
 /www/500.aspx
 /www/403.aspx
+/cd-www/403.aspx
+/cd-www/500.aspx
+/cd-www/DummyLogin.aspx
+/cd-www/DummyLogout.aspx
+/cd-www/500.html
 /xdb-prc-www
 /xdb-rep-www
