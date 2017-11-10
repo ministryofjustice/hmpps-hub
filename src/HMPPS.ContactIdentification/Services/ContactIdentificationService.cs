@@ -4,12 +4,17 @@ using Sitecore.Security.Accounts;
 using Sitecore.Analytics.Model.Entities;
 using HMPPS.ContactIdentification.Interfaces;
 using System;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.ContactIdentification.Services
 {
     public class ContactIdentificationService : IContactIdentificationService
     {
-
+        private IErrorManager _errorManager;
+        public ContactIdentificationService(IErrorManager errorManager)
+        {
+            _errorManager = errorManager;
+        }
         public void IdentifyTrackerContact()
         {
             var contactId = Tracker.Current?.Contact?.Identifiers?.Identifier;
@@ -24,7 +29,7 @@ namespace HMPPS.ContactIdentification.Services
                 }
                 catch (Exception e)
                 {
-                    Sitecore.Diagnostics.Log.Error("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", e, this);
+                    _errorManager.LogError("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", e, typeof(ContactIdentificationService));
                 }
             }
         }

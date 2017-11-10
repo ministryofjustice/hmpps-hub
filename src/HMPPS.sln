@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Site", "HMPPS.Site\HMPPS.Site.csproj", "{D81E54F2-F4D7-4600-B8B4-8C90C46801A9}"
 EndProject
@@ -28,6 +28,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService.Tests", "HMPPS.NomisApi\HMPPS.NomisApiService.Tests\HMPPS.NomisApiService.Tests.csproj", "{A0F3E4CB-FBA5-49CF-98BE-2EBAEE600FF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.ContactIdentification", "HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj", "{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.Monitoring", "HMPPS.Monitoring", "{AA3253E9-6DC5-485D-944D-0AA0778DB5C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.ErrorReporting", "HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj", "{8F0D13F5-49B0-4134-94F3-C98CF62519A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +163,18 @@ Global
 		{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CD-Localhost|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CD-Localhost|Any CPU.Build.0 = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CD-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CD-Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CMS-Localhost|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CMS-Localhost|Any CPU.Build.0 = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CMS-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.CMS-Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +186,7 @@ Global
 		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27} = {24A4A1FA-5107-4F9E-A7EE-563615C59380}
 		{DE839094-9E70-43AA-8F0B-A226A38647F7} = {22433735-FACA-4F07-86C5-45637A588937}
 		{A0F3E4CB-FBA5-49CF-98BE-2EBAEE600FF0} = {22433735-FACA-4F07-86C5-45637A588937}
+		{8F0D13F5-49B0-4134-94F3-C98CF62519A3} = {AA3253E9-6DC5-485D-944D-0AA0778DB5C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0FFE609-A830-44F9-AB6F-6A1BA46F9ECD}
