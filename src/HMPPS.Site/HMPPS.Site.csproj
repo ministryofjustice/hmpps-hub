@@ -670,6 +670,7 @@
     <Compile Include="ViewModels\Pages\GameListingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
     <Compile Include="ViewModels\Partials\PrevNextViewModel.cs" />
     <Compile Include="ViewModels\Partials\RelatedPagesViewModel.cs" />
