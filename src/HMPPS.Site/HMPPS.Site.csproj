@@ -683,7 +683,7 @@
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
+    <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
       <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
       <Name>HMPPS.ContactIdentification</Name>
     </ProjectReference>
@@ -743,6 +743,26 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'xDB-Processing|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'xDB-Reporting|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
