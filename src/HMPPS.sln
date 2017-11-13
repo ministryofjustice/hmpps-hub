@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.Site", "HMPPS.Site\HMPPS.Site.csproj", "{D81E54F2-F4D7-4600-B8B4-8C90C46801A9}"
 EndProject
@@ -27,7 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService", "HM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.NomisApiService.Tests", "HMPPS.NomisApi\HMPPS.NomisApiService.Tests\HMPPS.NomisApiService.Tests.csproj", "{A0F3E4CB-FBA5-49CF-98BE-2EBAEE600FF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.ContactIdentification", "HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj", "{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMPPS.ContactIdentification", "HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj", "{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HMPPS.SitecoreTracking", "HMPPS.SitecoreTracking", "{3F45FAC9-6EC9-4182-A98E-25266DAEF878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -170,6 +172,7 @@ Global
 		{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27} = {24A4A1FA-5107-4F9E-A7EE-563615C59380}
 		{DE839094-9E70-43AA-8F0B-A226A38647F7} = {22433735-FACA-4F07-86C5-45637A588937}
 		{A0F3E4CB-FBA5-49CF-98BE-2EBAEE600FF0} = {22433735-FACA-4F07-86C5-45637A588937}
+		{5A9D6B5A-EBD9-44A6-AA7F-38B290984D16} = {3F45FAC9-6EC9-4182-A98E-25266DAEF878}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0FFE609-A830-44F9-AB6F-6A1BA46F9ECD}
