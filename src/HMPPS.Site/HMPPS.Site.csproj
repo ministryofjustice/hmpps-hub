@@ -683,7 +683,7 @@
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
+    <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
       <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
       <Name>HMPPS.ContactIdentification</Name>
     </ProjectReference>
