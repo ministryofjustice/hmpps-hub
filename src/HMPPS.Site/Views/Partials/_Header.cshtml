@@ -1,8 +1,8 @@
-@model Sitecore.Data.Items.Item
+@model HMPPS.Site.ViewModels.Partials.HeaderViewModel
 <header role="banner" id="global-header">
     <div class="header-wrapper">
         <div class="header-global">
-            @Html.Sitecore().Field("Logo Link", Model, new { @id = "logo", @class = "content" })
+            <a class="content" title="@Model.LogoLink.Title" href="@Model.LogoLink.Url" id="logo">@Model.LogoLink.Text</a>
         </div>
     </div>
 </header>
