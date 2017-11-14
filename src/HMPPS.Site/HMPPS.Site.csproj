@@ -547,6 +547,7 @@
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
     <Content Include="DummyLogout.aspx" />
+    <Content Include="nolicense.aspx" />
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
