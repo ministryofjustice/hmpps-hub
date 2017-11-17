@@ -44,7 +44,7 @@ namespace HMPPS.Site.Controllers.Pages
 
             _rpvm.NeighbourEpisodes = GetNeighbourEpisodes(currentEpisode, allRadioEpisodes);
 
-            _rpvm.ShowPreviousEpisodesUrl = Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
+            _rpvm.ShowPreviousEpisodesUrl = currentEpisodeItem == null ? null : Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
         }
 
         private List<RadioEpisode> PopulateEpisodeList(Item contextItem)
@@ -95,7 +95,7 @@ namespace HMPPS.Site.Controllers.Pages
             if (currentItem.TemplateName == "Radio Episode")
                 return currentItem;
 
-            return Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(currentEpisode.Id));
+            return currentEpisode == null ? null : Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(currentEpisode.Id));
         }
 
         private RadioEpisode BuildRadioEpisode(Item episodeItem)
@@ -113,6 +113,10 @@ namespace HMPPS.Site.Controllers.Pages
 
         private List<RadioEpisode> GetNeighbourEpisodes(RadioEpisode currentEpisode, List<RadioEpisode> allRadioEpisodes)
         {
+            if (currentEpisode == null || allRadioEpisodes == null || !allRadioEpisodes.Any())
+            {
+                return null;
+            }
             //get 3 most recent previous episodes and 3 next episodes excluding the current episode
             const int episodesToShow = 7; //includes current episode removed later
             var currentEpisodeIndex = allRadioEpisodes.FindIndex(e => currentEpisode != null && e.Id == currentEpisode.Id);

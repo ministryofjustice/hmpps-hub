@@ -84,10 +84,10 @@ namespace HMPPS.Authentication
                 ClientId,
                 ClientSecret);
 
-            var response = client.RequestRefreshTokenAsync(
-                refreshToken).Result;
+            var response = client.RequestRefreshTokenAsync(refreshToken);
+            var result = response.Result;
 
-            return response;
+            return result;
         }
 
         public async Task<TokenResponse> ObtainAccessTokenAsync(string code)
