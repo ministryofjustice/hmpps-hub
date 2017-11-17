@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+    <!-- SQL -->
+    <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
+    </parameter>
+    <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
+    </parameter>
+    <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='web']/@connectionString" />
+    </parameter>
+
+    <!-- SQL END-->
+
+    <!-- MONGO -->
+    <parameter name="mongoAnalytics" description="mongoAnalytics" defaultValue="#{mongoAnalytics}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
+    </parameter>
+    <parameter name="mongoLive" description="mongoLive" defaultValue="#{mongoLive}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
+    </parameter>
+    <parameter name="mongoHistory" description="mongoHistory" defaultValue="#{mongoHistory}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.history']/@connectionString" />
+    </parameter>
+    <!-- MONGO END-->
+
+    <parameter name="reporting" description="reporting" defaultValue="#{reporting}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting']/@connectionString" />
+    </parameter>
+    <parameter name="reportingKey" description="reportingKey" defaultValue="#{reportingKey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apiKey']/@connectionString" />
+    </parameter>
+    <parameter name="search" description="search" defaultValue="#{search}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
+    </parameter>
+    <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
+    </parameter>
+
+</parameters>

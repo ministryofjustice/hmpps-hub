@@ -28,7 +28,8 @@ namespace HMPPS.Site.Controllers.Shared
         // GET: Header
         public ActionResult Header()
         {
-            return View("/Views/Partials/_Header.cshtml", Sitecore.Context.Database.Items[siteSettingsItemPath]);
+            var headerModel = new HeaderViewModel(Sitecore.Context.Database.Items[siteSettingsItemPath]);
+            return View("/Views/Partials/_Header.cshtml", headerModel);
         }
     }
 }

@@ -20,6 +20,11 @@ namespace HMPPS.Authentication.Pipelines
         {
             var tokenManager = new TokenManager();
             var tokenResponse = tokenManager.RequestRefreshToken(userData.RefreshToken);
+            if (tokenResponse.IsError)
+            {
+                Sitecore.Diagnostics.Log.Error("HMPPS.Authentication.Pipelines.AuthenticationProcessorBase - " + tokenResponse.ErrorType + " error in RefreshUserData(): " + tokenResponse.ErrorDescription, tokenResponse.Exception, this);
+                return new List<Claim>();
+            }
             var claimsPrincipal = tokenManager.ValidateIdentityToken(tokenResponse.IdentityToken);
             var claims = tokenManager.ExtractClaims(tokenResponse, claimsPrincipal).ToList();
             AddPrisonerDetailsToClaims(userData.NameIdentifier, ref claims);

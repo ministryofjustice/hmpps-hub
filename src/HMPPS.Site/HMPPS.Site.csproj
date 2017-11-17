@@ -300,6 +300,7 @@
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -472,8 +473,10 @@
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config" />
-    <Content Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Pdf.MediaType.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Config\Include\zzz\HMPPS.MongoAzure.Config.disabled" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
@@ -543,11 +546,14 @@
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
+    <Content Include="DummyLogout.aspx" />
+    <Content Include="nolicense.aspx" />
     <Content Include="Parameters.xml">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
     </Content>
     <Content Include="robots.txt" />
+    <Content Include="DummyLogin.aspx" />
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
@@ -665,6 +671,7 @@
     <Compile Include="ViewModels\Pages\GameListingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\BookSectionPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Partials\HeadViewModel.cs" />
     <Compile Include="ViewModels\Partials\PrevNextViewModel.cs" />
     <Compile Include="ViewModels\Partials\RelatedPagesViewModel.cs" />
@@ -676,6 +683,10 @@
     <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication\HMPPS.Authentication.csproj">
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
+      <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
+      <Name>HMPPS.ContactIdentification</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
       <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>

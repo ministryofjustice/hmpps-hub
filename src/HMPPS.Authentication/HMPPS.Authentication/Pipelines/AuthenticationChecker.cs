@@ -6,15 +6,17 @@ using Sitecore.Security.Authentication;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.NomisApiService.Interfaces;
+using System.Web;
 
 namespace HMPPS.Authentication.Pipelines
 {
     /// <summary>
     /// Verifies authentication tickets:
-    /// If sitecore logged in and IDAM tokan missing: log out from sitecore, it will trigger a redirect to login
+    /// If sitecore logged in and IDAM token missing: log out from sitecore, it will trigger a redirect to login
     /// If sitecore logged out, and IDAM token is valid: login sitecore user
     /// If sitecore logged in and IDAM token expired: refresh token
-    /// If both are available:
+    /// If sitecore logged in and IDAM token refresh fails: log out
+    /// If both the sitecore logged in user and IDAM token are available:
     ///     Check identities: if they are equal: OK
     ///     Else: logout both identities , it will trigger a redirect to login
     /// </summary>
@@ -60,18 +62,28 @@ namespace HMPPS.Authentication.Pipelines
             {
                 if (!Context.User.LocalName.Equals(userData.NameIdentifier))
                 {
-                    AuthenticationManager.Logout();
-                    _userDataService.DeleteUserDataCookie(args.Context);
+                    LogoutAndClearUserDataCookie(args.Context);
                     return;
                 }
                 if (ExpirationHelper.IsExpired(userData.ExpiresAt))
                 {
                     var claims = RefreshUserData(ref userData);
+                    if (!claims.ToList().Any())
+                    {
+                        LogoutAndClearUserDataCookie(args.Context);
+                        return;
+                    }
                     _userDataService.SaveUserDataToCookie(claims, args.Context);
                 }
                 var user = BuildVirtualUser(userData);
                 AuthenticationManager.LoginVirtualUser(user);
             }
+        }
+
+        private void LogoutAndClearUserDataCookie(HttpContext context)
+        {
+            AuthenticationManager.Logout();
+            _userDataService.DeleteUserDataCookie(context);
         }
     }
 }
