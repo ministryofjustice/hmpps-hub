@@ -1,6 +1,5 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Configuration;
 
 
 namespace HMPPS.NomisApiService.Tests
@@ -11,35 +10,35 @@ namespace HMPPS.NomisApiService.Tests
         [TestMethod]
         public void NomisApiService_GetPrisonerLocationDetails()
         {
-            // PrisonerId: A1417AE
-            // JSON respornse expected: {"establishment":{"code":"BMI","desc":"BIRMINGHAM (HMP)"}}
+            // PrisonerId: A3577AE
+            // JSON respornse expected: {"establishment":{"code":"LEI","desc":"LEEDS (HMP)"}}
 
             var nomisApiService = CreateNomisApiService();
-            var establishment = nomisApiService.GetPrisonerLocationDetails("A1417AE");
+            var establishment = nomisApiService.GetPrisonerLocationDetails("A3577AE");
 
-            Assert.AreEqual(establishment.Code, "BMI");
-            Assert.AreEqual(establishment.Desc, "BIRMINGHAM (HMP)");
+            Assert.AreEqual(establishment.Code, "LEI");
+            Assert.AreEqual(establishment.Desc, "LEEDS (HMP)");
 
         }
 
         [TestMethod]
         public void NomisApiService_GetPrisonerLocationDetails_InvalidPrisonerId()
         {
-            // PrisonerId: A1417AEx
+            // PrisonerId: A3577AEx
             // Exception expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A1417AEx"));
+            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A3577AEx"));
         }
 
 
         [TestMethod]
         public void NomisApiService_GetPrisonerAccounts()
         {
-            // PrisonId: BMI,  PrisonerId: A1417AE
+            // PrisonId: BMI,  PrisonerId: A3577AE
             // JSON respornse expected: { "spends": 20637, "cash": 38763,"savings": 5000 }
 
             var nomisApiService = CreateNomisApiService();
-            var accounts = nomisApiService.GetPrisonerAccounts("BMI", "A1417AE");
+            var accounts = nomisApiService.GetPrisonerAccounts("LEI", "A3577AE");
 
             Assert.IsInstanceOfType(accounts.Spends, typeof(decimal));
             Assert.IsInstanceOfType(accounts.Cash, typeof(decimal));
@@ -50,19 +49,19 @@ namespace HMPPS.NomisApiService.Tests
         [TestMethod]
         public void NomisApiService_GetPrisonerAccounts_InvalidPrisonId()
         {
-            // PrisonerId: A1417AEx
+            // PrisonerId: A3577AEx
             // Exception expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("BMIx", "A1417AE"));
+            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("LEIx", "A3577AEx"));
         }
 
         [TestMethod]
         public void NomisApiService_GetPrisonerAccounts_InvalidPrisonerId()
         {
-            // PrisonerId: A1417AEx
+            // PrisonerId: A3577AEx
             // Exception expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("BMI", "A1417AEx"));
+            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("LEI", "A3577AEx"));
         }
 
         public TestContext TestContext { get; set; }
