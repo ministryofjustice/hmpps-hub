@@ -120,5 +120,11 @@
     <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config" />
     <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8F0D13F5-49B0-4134-94F3-C98CF62519A3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

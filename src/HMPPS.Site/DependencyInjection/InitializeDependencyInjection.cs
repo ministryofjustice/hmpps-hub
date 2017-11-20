@@ -19,8 +19,6 @@ namespace HMPPS.Site.DependencyInjection
     {
         public void Process(PipelineArgs args)
         {
-            Log.Info("Start dependency injection initialization", this);
-
             var serviceCollection = new ServiceCollection();
             var container = new Container();
             // container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
