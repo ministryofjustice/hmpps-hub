@@ -4,7 +4,9 @@ using HMPPS.MediaLibrary.CloudStorage.Constants;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.DependencyInjection;
 using Sitecore.SecurityModel;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {

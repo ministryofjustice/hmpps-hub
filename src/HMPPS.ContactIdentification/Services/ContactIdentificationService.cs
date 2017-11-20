@@ -11,6 +11,7 @@ namespace HMPPS.ContactIdentification.Services
     public class ContactIdentificationService : IContactIdentificationService
     {
         private IErrorManager _errorManager;
+
         public ContactIdentificationService(IErrorManager errorManager)
         {
             _errorManager = errorManager;
