@@ -3,7 +3,7 @@ using Sitecore.Diagnostics;
 
 namespace HMPPS.ErrorReporting
 {
-    public class ErrorManager : IErrorManager
+    public class SitecoreErrorManager : IErrorManager
     {
         public void LogInfo(string message, Type sourceType)
         {
