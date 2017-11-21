@@ -129,6 +129,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8F0D13F5-49B0-4134-94F3-C98CF62519A3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
       <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
       <Name>HMPPS.NomisApiService</Name>
