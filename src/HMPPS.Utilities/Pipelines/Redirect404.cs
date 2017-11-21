@@ -43,7 +43,7 @@ namespace HMPPS.Utilities.Pipelines
                 return;
             }
 
-            _logManager.LogInfo(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Redirecting to {0}", notFoundUrl), GetType());
+            _logManager.LogDebug(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Redirecting to {0}", notFoundUrl), GetType());
 
             if (Sitecore.Configuration.Settings.RequestErrors.UseServerSideRedirect)
             {
