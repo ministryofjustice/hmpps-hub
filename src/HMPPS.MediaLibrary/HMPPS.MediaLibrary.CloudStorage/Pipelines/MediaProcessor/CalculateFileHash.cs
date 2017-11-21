@@ -17,9 +17,9 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
     {
         private ILogManager _logManager;
 
-        public CalculateFileHash()
+        public CalculateFileHash(ILogManager logManager)
         {
-            _logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
+            _logManager = logManager;
         }
 
         public void Process(MediaProcessorArgs args)

@@ -19,10 +19,10 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
         private ICloudStorageProvider _cloudStorage;
         private ILogManager _logManager;
 
-        public DeletePreviousMedia()
+        public DeletePreviousMedia(ILogManager logManager)
         {
             _cloudStorage = new CloudStorageProvider();
-            _logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
+            _logManager = logManager;
         }
 
         /// <summary>
