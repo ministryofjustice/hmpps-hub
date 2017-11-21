@@ -9,6 +9,8 @@ using Sitecore.Diagnostics;
 using Sitecore.IO;
 using Sitecore.SecurityModel;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using HMPPS.ErrorReporting;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
@@ -17,17 +19,19 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
     /// </summary>
     public class UploadToCdn
     {
-        ICloudStorageProvider cloudStorage;
+        private ICloudStorageProvider _cloudStorage;
+        private ILogManager _logManager;
 
         public UploadToCdn()
         {
-            cloudStorage = new CloudStorageProvider();
+            _cloudStorage = new CloudStorageProvider();
+            _logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
         }
 
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            Log.Debug("MediaStorageProvider - Processing file upload to CDN", this);
+            _logManager.LogDebug("MediaStorageProvider - Processing file upload to CDN", GetType());
             var sw = new Stopwatch();
             sw.Start();
 
@@ -39,10 +43,10 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 
                 // delete if previously uploaded
                 if (MainUtil.GetBool(file[FieldNameConstants.MediaItem.UploadedToCloud], false))
-                    cloudStorage.Delete(file);
+                    _cloudStorage.Delete(file);
 
                 // upload to CDN
-                string filename = cloudStorage.Put(file, containerName);
+                string filename = _cloudStorage.Put(file, containerName);
 
                 // delete the existing file from disk
                 FileUtil.Delete(StringUtil.EnsurePrefix('/', file[FieldNameConstants.MediaItem.FilePath]));
@@ -56,7 +60,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             }
 
             sw.Stop();
-            Log.Debug("MediaStorageProvider - File Upload process to CDN complete: " + sw.Elapsed, this);
+            _logManager.LogDebug("MediaStorageProvider - File Upload process to CDN complete: " + sw.Elapsed, GetType());
         }
     }
 }

@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\CookieHelper.cs" />
+    <Compile Include="Helpers\DependencyInjectionHelper.cs" />
     <Compile Include="Helpers\ExpirationHelper.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IUserDataService.cs" />

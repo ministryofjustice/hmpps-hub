@@ -10,6 +10,8 @@ using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
+using HMPPS.ErrorReporting;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -20,6 +22,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
     {
         private CloudBlobContainer _blobDefaultContainer;
         private Dictionary<string, CloudBlobContainer> _blobContainers;
+        private ILogManager _logManager;
         private readonly string _storageAccountName;
         private readonly string _storageAccountKey;
         private readonly string _storageDefaultContainer;
@@ -32,6 +35,8 @@ namespace HMPPS.MediaLibrary.AzureStorage
             _storageAccountKey = Settings.AccountKey;
             _storageDefaultContainer = defaultContainer;
             _storageContainers = containers.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList();
+            _logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
+
             Initialize();
         }
 
@@ -85,7 +90,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             // extend file path with container name
             filename = AddContainerNameToFilePath(filename, containerName);
-            Log.Audit("HMPPS.MediaLibrary.AzureStorage.AzureStorageProvider - File successfully uploaded to Azure Blob Storage: " + filename, this);
+            _logManager.LogAudit("HMPPS.MediaLibrary.AzureStorage.AzureStorageProvider - File successfully uploaded to Azure Blob Storage: " + filename, GetType());
 
             return filename;
         }

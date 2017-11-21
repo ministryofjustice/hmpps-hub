@@ -1,7 +1,6 @@
 using System;
 using System.Web;
 using Sitecore.SecurityModel.Cryptography;
-using Sitecore.Diagnostics;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.ErrorReporting;
 
@@ -51,7 +50,7 @@ namespace HMPPS.Utilities.Services
             }
             catch (Exception)
             {
-                Log.Error($"HMPPS.Utilities.Services.EncryptionService - Error trying to decrypt {encryptedValue}", this);
+                _logManager.LogError($"HMPPS.Utilities.Services.EncryptionService - Error trying to decrypt {encryptedValue}", GetType());
                 return null;
             }
         }
