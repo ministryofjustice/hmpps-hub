@@ -113,8 +113,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
-      <Project>{8F0D13F5-49B0-4134-94F3-C98CF62519A3}</Project>
+    <ProjectReference Include="..\..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
   </ItemGroup>

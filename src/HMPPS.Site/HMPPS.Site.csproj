@@ -684,10 +684,6 @@
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
-      <Project>{8F0D13F5-49B0-4134-94F3-C98CF62519A3}</Project>
-      <Name>HMPPS.ErrorReporting</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
       <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
       <Name>HMPPS.MediaLibrary.CloudStorage</Name>
@@ -699,6 +695,10 @@
     <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj">
       <Project>{3e58a0d0-44f5-4039-9e17-ef4766d8f6f6}</Project>
       <Name>HMPPS.MediaLibrary.AzureStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
       <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>

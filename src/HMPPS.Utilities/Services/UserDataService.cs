@@ -53,7 +53,7 @@ namespace HMPPS.Utilities.Services
             {
                 claims = _jwtTokenService.GetClaimsFromJwtToken(jwtToken, Settings.JwtTokenSecurityKey);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Sitecore.Diagnostics.Log.Error("HMPPS.Utilities.Services.UserDataService - GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
                 return null;
@@ -64,8 +64,6 @@ namespace HMPPS.Utilities.Services
         public void DeleteUserDataCookie(HttpContext context)
         {
             var cookie = new CookieHelper(Settings.UserDataCookieName, context);
-            if (cookie == null)
-                return;
             cookie.Delete();
         }
 
