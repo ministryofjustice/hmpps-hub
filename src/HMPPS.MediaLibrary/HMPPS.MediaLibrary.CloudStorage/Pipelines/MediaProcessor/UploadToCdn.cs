@@ -22,10 +22,10 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
         private ICloudStorageProvider _cloudStorage;
         private ILogManager _logManager;
 
-        public UploadToCdn()
+        public UploadToCdn(ILogManager logManager)
         {
             _cloudStorage = new CloudStorageProvider();
-            _logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
+            _logManager = logManager;
         }
 
         public void Process(MediaProcessorArgs args)

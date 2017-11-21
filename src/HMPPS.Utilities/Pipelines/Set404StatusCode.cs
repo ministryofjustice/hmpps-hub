@@ -11,9 +11,9 @@ namespace HMPPS.Utilities.Pipelines
     {
         private ILogManager _logManager;
 
-        public Set404StatusCode()
+        public Set404StatusCode(ILogManager logManager)
         {
-            _logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
+            _logManager = logManager;
         }
 
         protected override void Execute(HttpRequestArgs args)
