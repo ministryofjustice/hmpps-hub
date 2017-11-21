@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using Sitecore.Diagnostics;
 using HMPPS.NomisApiService.Interfaces;
 using HMPPS.NomisApiService.Models;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.NomisApiService.Services
 {
@@ -37,12 +38,17 @@ namespace HMPPS.NomisApiService.Services
 
         static HttpClient Client = new HttpClient();
 
-        public NomisApiService() : this(true)
+        private ILogManager _logManager;
+
+        public NomisApiService(ILogManager logManager)
+            : this(logManager, true)
         {
         }
 
-        public NomisApiService(bool useAppSettings)
+        public NomisApiService(ILogManager logManager, bool useAppSettings)
         {
+            _logManager = logManager;
+
             if (useAppSettings)
             {
                 ApiBaseUrl = Settings.NomisApiBaseUrl;
@@ -136,8 +142,7 @@ namespace HMPPS.NomisApiService.Services
 
         private bool HandleInnerException(Exception e, string detailMessage)
         {
-            Log.Error(
-                $"HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {detailMessage}", this);
+            _logManager.LogError($"HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {detailMessage}", GetType());
             return false; // exception is not handled
         }
 
