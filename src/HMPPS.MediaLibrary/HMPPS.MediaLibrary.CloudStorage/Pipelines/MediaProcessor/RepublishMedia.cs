@@ -4,15 +4,24 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Sites;
 using HMPPS.MediaLibrary.CloudStorage.Constants;
+using HMPPS.ErrorReporting;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
     public class RepublishMedia
     {
+        private ILogManager _logManager;
+
+        public RepublishMedia(ILogManager logManager)
+        {
+            _logManager = logManager;
+        }
+
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            Log.Debug("HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor.RepublishMedia - Republishing Media item", this);
+            _logManager.LogDebug("HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor.RepublishMedia - Republishing Media item", GetType());
 
             RepublishItems(args.UploadedItems);
         }

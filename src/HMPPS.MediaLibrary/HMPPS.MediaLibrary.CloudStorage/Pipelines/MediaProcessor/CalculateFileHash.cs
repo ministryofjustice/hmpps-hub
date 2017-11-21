@@ -5,6 +5,8 @@ using HMPPS.MediaLibrary.CloudStorage.Helpers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.SecurityModel;
+using HMPPS.ErrorReporting;
+using HMPPS.Utilities.Helpers;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
 {
@@ -13,10 +15,17 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
     /// </summary>
     public class CalculateFileHash
     {
+        private ILogManager _logManager;
+
+        public CalculateFileHash(ILogManager logManager)
+        {
+            _logManager = logManager;
+        }
+
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            Log.Debug("MediaStorageProvider - Processing file MD5 calculation", this);
+            _logManager.LogDebug("MediaStorageProvider - Processing file MD5 calculation", GetType());
 
             var sw = new Stopwatch();
             sw.Start();
@@ -31,7 +40,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             }
 
             sw.Stop();
-            Log.Debug("MediaStorageProvider - Finished calculating MD5 hash for files: " + sw.Elapsed, this);
+            _logManager.LogDebug("MediaStorageProvider - Finished calculating MD5 hash for files: " + sw.Elapsed, GetType());
         }
     }
 }

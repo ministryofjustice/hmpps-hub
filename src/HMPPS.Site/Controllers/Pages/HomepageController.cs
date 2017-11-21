@@ -2,6 +2,7 @@ using System.Web.Mvc;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
 using HMPPS.Utilities.Interfaces;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.Site.Controllers.Pages
 {
@@ -9,10 +10,12 @@ namespace HMPPS.Site.Controllers.Pages
     {
         private HomepageViewModel _hvm;
         private readonly IUserDataService _userDataService;
+        private readonly ILogManager _logManager;
 
-        public HomepageController(IUserDataService userDataService)
+        public HomepageController(IUserDataService userDataService, ILogManager logManager)
         {
             _userDataService = userDataService;
+            _logManager = logManager;
         }
         public ActionResult Index()
         {
