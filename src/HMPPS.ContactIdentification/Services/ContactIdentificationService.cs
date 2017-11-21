@@ -10,11 +10,11 @@ namespace HMPPS.ContactIdentification.Services
 {
     public class ContactIdentificationService : IContactIdentificationService
     {
-        private IErrorManager _errorManager;
+        private ILogManager _logManager;
 
-        public ContactIdentificationService(IErrorManager errorManager)
+        public ContactIdentificationService(ILogManager logManager)
         {
-            _errorManager = errorManager;
+            _logManager = logManager;
         }
         public void IdentifyTrackerContact()
         {
@@ -30,7 +30,7 @@ namespace HMPPS.ContactIdentification.Services
                 }
                 catch (Exception e)
                 {
-                    _errorManager.LogError("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", e, typeof(ContactIdentificationService));
+                    _logManager.LogError("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", e, typeof(ContactIdentificationService));
                 }
             }
         }

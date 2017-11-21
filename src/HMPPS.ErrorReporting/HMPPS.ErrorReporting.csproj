@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SitecoreErrorManager.cs" />
-    <Compile Include="IErrorManager.cs" />
+    <Compile Include="SitecoreLogManager.cs" />
+    <Compile Include="ILogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
