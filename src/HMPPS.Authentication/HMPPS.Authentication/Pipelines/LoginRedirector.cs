@@ -78,7 +78,7 @@ namespace HMPPS.Authentication.Pipelines
                 var _logManager = new SitecoreLogManager();
                 var _jwtTokenService = new JwtTokenService();
                 var _encryptionService = new EncryptionService(_logManager);
-                var _userDataService = new UserDataService(_encryptionService, _jwtTokenService);
+                var _userDataService = new UserDataService(_encryptionService, _jwtTokenService, _logManager);
                 _userDataService.SaveUserDataToCookie(claims, context);
                 var sitecoreUser = BuildVirtualUser(userData);
                 AuthenticationManager.LoginVirtualUser(sitecoreUser);

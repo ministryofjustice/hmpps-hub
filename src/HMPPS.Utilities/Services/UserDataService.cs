@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Web;
+using HMPPS.ErrorReporting;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.Utilities.Models;
@@ -15,12 +16,13 @@ namespace HMPPS.Utilities.Services
 
         private readonly IJwtTokenService _jwtTokenService;
 
-        public UserDataService(IEncryptionService encryptionService, IJwtTokenService jwtTokenService)
+        private ILogManager _logManager;
+
+        public UserDataService(IEncryptionService encryptionService, IJwtTokenService jwtTokenService, ILogManager logManager)
         {
             _encryptionService = encryptionService;
-
             _jwtTokenService = jwtTokenService;
-
+            _logManager = logManager;
         }
 
         public void SaveUserDataToCookie(IEnumerable<Claim> claims, HttpContext context)
@@ -38,8 +40,6 @@ namespace HMPPS.Utilities.Services
         public UserData GetUserDataFromCookie(HttpContext context)
         {
             var cookie = new CookieHelper(Settings.UserDataCookieName, context);
-            if (cookie == null)
-                return null;
 
             cookie.GetCookie();
             var encryptedJwtToken = cookie.GetValue(Settings.UserDataCookieKey);
@@ -55,7 +55,7 @@ namespace HMPPS.Utilities.Services
             }
             catch (Exception)
             {
-                // Sitecore.Diagnostics.Log.Error("HMPPS.Utilities.Services.UserDataService - GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
+                //_logManager.LogError("HMPPS.Utilities.Services.UserDataService - GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
                 return null;
             }
             return new UserData(claims);
