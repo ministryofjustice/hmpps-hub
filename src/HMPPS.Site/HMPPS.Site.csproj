@@ -588,6 +588,7 @@
     <Content Include="Views\Partials\_CookieMessage.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Pages\ErrorPage.cshtml" />
+    <Content Include="Views\Pages\LandingPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -625,6 +626,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="Controllers\Pages\ErrorPageController.cs" />
+    <Compile Include="Controllers\Pages\LandingPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
@@ -659,6 +661,7 @@
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\LandingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
