@@ -116,7 +116,22 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='Media.RequestProtection.SharedSecret']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='Media.RequestProtection.SharedSecret']/@value" />
     </parameter>
-
+    <parameter name="mailserver" description="mailserver" defaultValue="#{mailserver}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServer']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServer']/@value" />
+    </parameter>
+    <parameter name="mailusername" description="mailusername" defaultValue="#{mailusername}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerUserName']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerUserName']/@value" />
+    </parameter>
+    <parameter name="mailpassword" description="mailpassword" defaultValue="#{mailpassword}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPassword']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPassword']/@value" />
+    </parameter>
+    <parameter name="mailport" description="mailport" defaultValue="#{mailport}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPort']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPort']/@value" />
+    </parameter>
     <!--HMPPS.Utilities-->
     <parameter name="ssosecuritykey" description="ssosecuritykey" defaultValue="#{ssosecuritykey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
