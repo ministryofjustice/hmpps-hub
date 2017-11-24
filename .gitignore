@@ -410,4 +410,4 @@ proxy.json
 /xdb-prc-www
 /xdb-rep-www
 /cd-www/nolicense.aspx
-/src/HMPPS.Site/App_Config/Include/zzz/HMPPS.Sitecore.Smtp.Local.config
+/src/HMPPS.Site/App_Config/Include/zzz/HMPPS.Sitecore.Local.Smtp.config
