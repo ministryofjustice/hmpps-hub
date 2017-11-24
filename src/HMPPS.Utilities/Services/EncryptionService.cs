@@ -25,7 +25,7 @@ namespace HMPPS.Utilities.Services
             }
             catch
             {
-                _logManager.LogError($"HMPPS.Utilities.Services.EncryptionService - Error trying to encrypt {plainValue}", GetType());
+                _logManager.LogError($"Error trying to encrypt {plainValue}", GetType());
                 return encryptedValue;
             }
 
@@ -50,7 +50,7 @@ namespace HMPPS.Utilities.Services
             }
             catch (Exception)
             {
-                _logManager.LogError($"HMPPS.Utilities.Services.EncryptionService - Error trying to decrypt {encryptedValue}", GetType());
+                _logManager.LogError($"Error trying to decrypt {encryptedValue}", GetType());
                 return null;
             }
         }

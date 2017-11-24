@@ -7,27 +7,37 @@ namespace HMPPS.ErrorReporting
     {
         public void LogInfo(string message, Type sourceType)
         {
-            Log.Info(message, sourceType);
+            Log.Info(FormatMessage(message, sourceType), sourceType);
         }
+
         public void LogAudit(string message, Type sourceType)
         {
-            Log.Audit(message, sourceType);
+            Log.Audit(FormatMessage(message, sourceType), sourceType);
         }
+
         public void LogDebug(string message, Type sourceType)
         {
-            Log.Debug(message, sourceType);
+            Log.Debug(FormatMessage(message, sourceType), sourceType);
         }
+
         public void LogWarning(string message, Type sourceType)
         {
-            Log.Warn(message, sourceType);
+            Log.Warn(FormatMessage(message, sourceType), sourceType);
         }
+
         public void LogError(string message, Exception ex, Type sourceType)
         {
-            Log.Error(message, ex, sourceType);
+            Log.Error(FormatMessage(message, sourceType), ex, sourceType);
         }
+
         public void LogError(string message, Type sourceType)
         {
-            Log.Error(message, sourceType);
+            Log.Error(FormatMessage(message, sourceType), sourceType);
+        }
+
+        private string FormatMessage(string message, Type sourceType)
+        {
+            return $"{sourceType.FullName} - {message}";
         }
     }
 }

@@ -30,7 +30,7 @@ namespace HMPPS.ContactIdentification.Services
                 }
                 catch (Exception e)
                 {
-                    _logManager.LogError("HMPPS.ContactIdentification.Services.ContactIdentificationService - Error in IdentifyTrackerContact()", e, typeof(ContactIdentificationService));
+                    _logManager.LogError("Error in IdentifyTrackerContact()", e, typeof(ContactIdentificationService));
                 }
             }
         }

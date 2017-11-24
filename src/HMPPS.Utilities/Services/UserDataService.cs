@@ -55,7 +55,7 @@ namespace HMPPS.Utilities.Services
             }
             catch (Exception)
             {
-                //_logManager.LogError("HMPPS.Utilities.Services.UserDataService - GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
+                //_logManager.LogError("GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
                 return null;
             }
             return new UserData(claims);

@@ -25,7 +25,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            _logManager.LogDebug("MediaStorageProvider - Processing file MD5 calculation", GetType());
+            _logManager.LogDebug("Processing file MD5 calculation", GetType());
 
             var sw = new Stopwatch();
             sw.Start();
@@ -40,7 +40,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             }
 
             sw.Stop();
-            _logManager.LogDebug("MediaStorageProvider - Finished calculating MD5 hash for files: " + sw.Elapsed, GetType());
+            _logManager.LogDebug("Finished calculating MD5 hash for files: " + sw.Elapsed, GetType());
         }
     }
 }

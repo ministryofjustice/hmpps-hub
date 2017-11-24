@@ -31,7 +31,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            _logManager.LogDebug("MediaStorageProvider - Processing file upload to CDN", GetType());
+            _logManager.LogDebug("Processing file upload to CDN", GetType());
             var sw = new Stopwatch();
             sw.Start();
 
@@ -60,7 +60,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             }
 
             sw.Stop();
-            _logManager.LogDebug("MediaStorageProvider - File Upload process to CDN complete: " + sw.Elapsed, GetType());
+            _logManager.LogDebug("File Upload process to CDN complete: " + sw.Elapsed, GetType());
         }
     }
 }
