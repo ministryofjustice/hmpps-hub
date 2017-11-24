@@ -36,7 +36,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile
             if (!args.MediaItem.FileBased)
                 return;
 
-            _logManager.LogAudit("HMPPS.MediaLibrary.CloudStorage.Pipelines.AttachFile.DeletePreviousMedia - Deleting '{0}' from Cloud storage".FormatWith(args.MediaItem.FilePath), GetType());
+            _logManager.LogAudit("Deleting '{0}' from Cloud storage".FormatWith(args.MediaItem.FilePath), GetType());
 
             PipelineHelper.AddContainerNameToArgs(args,  GetContainerNameFromFilePath(args.MediaItem.FilePath));
             _cloudStorage.Delete(args.MediaItem);

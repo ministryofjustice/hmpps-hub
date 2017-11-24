@@ -22,7 +22,7 @@ namespace HMPPS.Utilities.Pipelines
         {
             if (Context.Site == null || Context.Database == null || Context.Database.Name == "core")
             {
-                _logManager.LogError(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Attempting to redirect url {0}, but no Context Site or DB defined (or core db redirect attempted)", url), GetType());
+                _logManager.LogError(string.Format("Attempting to redirect url {0}, but no Context Site or DB defined (or core db redirect attempted)", url), GetType());
                 return;
             }
 
@@ -31,7 +31,7 @@ namespace HMPPS.Utilities.Pipelines
 
             if (notFoundItem == null)
             {
-                _logManager.LogError(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - No 404 item found on site: {0}", Context.Site.Name), GetType());
+                _logManager.LogError(string.Format("No 404 item found on site: {0}", Context.Site.Name), GetType());
                 return;
             }
 
@@ -39,11 +39,11 @@ namespace HMPPS.Utilities.Pipelines
 
             if (string.IsNullOrWhiteSpace(notFoundUrl))
             {
-                _logManager.LogError(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Found 404 item for site, but no URL returned: {0}", Context.Site.Name), GetType());
+                _logManager.LogError(string.Format("Found 404 item for site, but no URL returned: {0}", Context.Site.Name), GetType());
                 return;
             }
 
-            _logManager.LogDebug(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Redirecting to {0}", notFoundUrl), GetType());
+            _logManager.LogDebug(string.Format("Redirecting to {0}", notFoundUrl), GetType());
 
             if (Sitecore.Configuration.Settings.RequestErrors.UseServerSideRedirect)
             {

@@ -142,7 +142,7 @@ namespace HMPPS.NomisApiService.Services
 
         private bool HandleInnerException(Exception e, string detailMessage)
         {
-            _logManager.LogError($"HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {detailMessage}", GetType());
+            _logManager.LogError($"Error trying to get prisoner's data from Nomis: {detailMessage}", GetType());
             return false; // exception is not handled
         }
 

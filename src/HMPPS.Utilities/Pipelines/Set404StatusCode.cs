@@ -26,7 +26,7 @@ namespace HMPPS.Utilities.Pipelines
             if (!args.Context.Request.Url.LocalPath.EndsWith(Sitecore.Configuration.Settings.ItemNotFoundUrl, StringComparison.InvariantCultureIgnoreCase))
                 return;
 
-            _logManager.LogWarning(string.Format("HMPPS.Utilities.Pipelines.Set404StatusCode - Page Not Found: {0}, current status: {1}", args.Context.Request.RawUrl, HttpContext.Current.Response.StatusCode), GetType());
+            _logManager.LogWarning(string.Format("Page Not Found: {0}, current status: {1}", args.Context.Request.RawUrl, HttpContext.Current.Response.StatusCode), GetType());
             HttpContext.Current.Response.TrySkipIisCustomErrors = true;
             HttpContext.Current.Response.StatusCode = (int)HttpStatusCode.NotFound;
             HttpContext.Current.Response.StatusDescription = "Page not found";

@@ -23,7 +23,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
         public void Process(MediaProcessorArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            _logManager.LogDebug("MediaStorageProvider - Generating Thumbnails for uploaded File Based uploads", GetType());
+            _logManager.LogDebug("Generating Thumbnails for uploaded File Based uploads", GetType());
 
             var sw = new Stopwatch();
             sw.Start();
@@ -35,7 +35,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.MediaProcessor
             }
             
             sw.Stop();
-            _logManager.LogDebug("MediaStorageProvider - Finished generating thumbnails: " + sw.Elapsed, GetType());
+            _logManager.LogDebug("Finished generating thumbnails: " + sw.Elapsed, GetType());
         }
     }
 }

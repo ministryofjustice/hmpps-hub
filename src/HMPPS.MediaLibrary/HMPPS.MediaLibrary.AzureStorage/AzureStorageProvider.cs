@@ -90,7 +90,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             // extend file path with container name
             filename = AddContainerNameToFilePath(filename, containerName);
-            _logManager.LogAudit("HMPPS.MediaLibrary.AzureStorage.AzureStorageProvider - File successfully uploaded to Azure Blob Storage: " + filename, GetType());
+            _logManager.LogAudit("File successfully uploaded to Azure Blob Storage: " + filename, GetType());
 
             return filename;
         }
