@@ -413,3 +413,5 @@ proxy.json
 /src/HMPPS.Site/App_Config/Include/zzz/HMPPS.Sitecore.Local.Smtp.config
 /www/sitecore modules
 /cd-www/sitecore modules
+/cd-www/App_Data/Dianoga Tools
+/www/App_Data/Dianoga Tools
