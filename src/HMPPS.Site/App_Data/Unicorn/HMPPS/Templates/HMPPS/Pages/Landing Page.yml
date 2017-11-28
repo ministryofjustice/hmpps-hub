@@ -1,0 +1,42 @@
+﻿---
+ID: "02e48db2-8e6e-4141-b759-d508212202b7"
+Parent: "d9808c60-b285-43b7-a825-303492cd4bca"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/HMPPS/Pages/Landing Page
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/revert_item.png
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {E269FBB5-3750-427A-9149-7AA950B49301}
+    {74E2B01C-18F1-4FE5-A9BE-3D6B5AFB2FAA}
+    {CAF0E55F-E70D-4755-BFA2-2A4099B59962}
+    {2F030771-F583-4EFD-973B-45ACA3E783FE}
+    {F8777367-B148-4E9C-A80E-FF0CEA906DB9}
+    {01E2E5D9-B3AA-42AA-BBB9-E6FBB3F4CBDE}
+    {F4A43121-2D9F-446A-BAC4-E8A1CA75DEF7}
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {CB819809-8690-4C95-84DD-9BE4C5A319E6}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{D5A7730B-E9FC-4675-996E-AC342DB67A6B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171122T111610Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

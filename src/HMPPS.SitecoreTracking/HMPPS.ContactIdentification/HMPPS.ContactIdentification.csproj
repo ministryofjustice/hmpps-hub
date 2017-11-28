@@ -139,12 +139,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ContactIdentificationService.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

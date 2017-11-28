@@ -588,6 +588,7 @@
     <Content Include="Views\Partials\_CookieMessage.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Pages\ErrorPage.cshtml" />
+    <Content Include="Views\Pages\LandingPage.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -625,6 +626,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="Controllers\Pages\ErrorPageController.cs" />
+    <Compile Include="Controllers\Pages\LandingPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
     <Compile Include="Controllers\Pages\VideoPageController.cs" />
     <Compile Include="Controllers\Pages\VideoSectionPageController.cs" />
@@ -659,6 +661,7 @@
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\LandingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\VideoSectionPageViewModel.cs" />
@@ -684,10 +687,6 @@
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
-      <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
-      <Name>HMPPS.ContactIdentification</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
       <Project>{4ea573a3-c0ad-42aa-9ff9-e6f62fda7d27}</Project>
       <Name>HMPPS.MediaLibrary.CloudStorage</Name>
@@ -699,6 +698,10 @@
     <ProjectReference Include="..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj">
       <Project>{3e58a0d0-44f5-4039-9e17-ef4766d8f6f6}</Project>
       <Name>HMPPS.MediaLibrary.AzureStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
       <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>

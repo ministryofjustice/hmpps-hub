@@ -1,0 +1,26 @@
+@model HMPPS.Site.ViewModels.Pages.LandingPageViewModel
+
+<div id="global-header-bar"></div>
+
+<div class="site-wrapper">
+
+    @Html.Partial("/Views/Partials/_Breadcrumb.cshtml", Model.BreadcrumbItems)
+
+    <main class="elements-index root-index" id="content" role="main" tabindex="-1">
+        <h1 class="heading-xlarge">@Html.Sitecore().Field("Page Title")</h1>
+
+        <div class="image-grid">
+            <div class="grid-row">
+                @Html.Sitecore().Placeholder("feature-blocks-row-1")
+            </div>
+            <div class="grid-row">
+                @Html.Sitecore().Placeholder("feature-blocks-row-2")
+            </div>
+            <div class="grid-row">
+                @Html.Sitecore().Placeholder("feature-blocks-row-3")
+            </div>
+        </div>
+
+    </main><!-- / #content -->
+
+</div>

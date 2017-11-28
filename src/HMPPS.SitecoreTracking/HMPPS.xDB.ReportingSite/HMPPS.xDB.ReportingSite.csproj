@@ -75,12 +75,14 @@
     </None>
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.Cloud.ApplicationInsights.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.ContentSearch.Analytics.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
     <None Include="packages.config" />
     <None Include="Web.xDB-Reporting.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="default.html" />
     <Content Include="Parameters.xml">
       <SubType>Designer</SubType>
     </Content>
