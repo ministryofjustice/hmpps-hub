@@ -26,7 +26,7 @@ namespace HMPPS.Site.Controllers.Pages
                         "Page Title");
                 videoSection.Image = new Image()
                 {
-                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image", 300),
+                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
                     AltText = Utilities.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
                 };
                 videoSection.Link = new Link()

@@ -4,9 +4,9 @@ namespace HMPPS.Site.ViewHelpers
 {
     public static class SitecoreViewHelper
     {
-        public static string GetMediaItemUrl(this Item item, string fieldName, int? width = null)
+        public static string GetMediaItemUrl(this Item item, string fieldName)
         {
-            return Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrl(item, fieldName, width);
+            return Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrl(item, fieldName);
         }
 
         public static string GetPageItemUrl(this Item item)
