@@ -13,7 +13,7 @@ using HMPPS.Utilities.Models;
 using System.Web;
 using HMPPS.Utilities.Services;
 using Sitecore.Security.Authentication;
-
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -75,9 +75,10 @@ namespace HMPPS.Authentication.Pipelines
                 claims.Add(new Claim("account_balance", "123.40"));
                 claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
                 var userData = new UserData(claims);
+                var _logManager = new SitecoreLogManager();
                 var _jwtTokenService = new JwtTokenService();
-                var _encryptionService = new EncryptionService();
-                var _userDataService = new UserDataService(_encryptionService, _jwtTokenService);
+                var _encryptionService = new EncryptionService(_logManager);
+                var _userDataService = new UserDataService(_encryptionService, _jwtTokenService, _logManager);
                 _userDataService.SaveUserDataToCookie(claims, context);
                 var sitecoreUser = BuildVirtualUser(userData);
                 AuthenticationManager.LoginVirtualUser(sitecoreUser);

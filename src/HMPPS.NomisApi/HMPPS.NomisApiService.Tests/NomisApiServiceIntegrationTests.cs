@@ -1,6 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Moq;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.NomisApiService.Tests
 {
@@ -76,7 +77,7 @@ namespace HMPPS.NomisApiService.Tests
 
         private Services.NomisApiService CreateNomisApiService()
         {
-            var nomisApiService = new Services.NomisApiService(false);
+            var nomisApiService = new Services.NomisApiService(new Mock<ILogManager>().Object, false);
             nomisApiService.ApiBaseUrl = TestContext.Properties["HMPPS.NomisApiService.BaseUrl"].ToString();
             nomisApiService.ClientToken = TestContext.Properties["HMPPS.NomisApiService.ClientToken"].ToString();
             nomisApiService.SecretPkcs8 = TestContext.Properties["HMPPS.NomisApiService.SecretKey"].ToString();
