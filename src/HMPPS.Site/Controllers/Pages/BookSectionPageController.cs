@@ -26,7 +26,7 @@ namespace HMPPS.Site.Controllers.Pages
                         "Page Title");
                 bookSection.Image = new Image()
                 {
-                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
+                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image", 300),
                     AltText = Utilities.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
                 };
                 bookSection.Link = new Link()
