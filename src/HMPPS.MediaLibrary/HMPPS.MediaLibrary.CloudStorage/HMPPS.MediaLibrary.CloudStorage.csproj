@@ -92,6 +92,7 @@
     <Compile Include="Constants\ConfigSettings.cs" />
     <Compile Include="Constants\FieldNameConstants.cs" />
     <Compile Include="Events\MediaItemDeleting.cs" />
+    <Compile Include="Events\MediaItemMoved.cs" />
     <Compile Include="Helpers\MediaHelper.cs" />
     <Compile Include="Helpers\PipelineHelper.cs" />
     <Compile Include="Interface\ICloudStorage.cs" />
