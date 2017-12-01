@@ -123,6 +123,28 @@ namespace HMPPS.MediaLibrary.AzureStorage
             return blob.DeleteIfExists();
         }
 
+        /// <summary>
+        /// Performs a psuedo-move of the azure blob by copying the content of said blob to the desired location and removing the original blob.
+        /// </summary>
+        /// <param name="item">The media item to be moved</param>
+        /// <param name="newPath">The path to which the blob should be moved</param>
+        public override void Move(MediaItem item, string newPath)
+        {
+            var containerName = GetContainerNameFromFilePath(item.FilePath);
+
+            var fileToMove = RemoveContainerNameFromfilePath(item.FilePath, containerName);
+
+            var blobContainer = GetCloudBlobContainer(containerName);
+
+            var blob = blobContainer.GetBlockBlobReference(fileToMove);
+
+            // TODO read content of blob as a stream
+
+            // Put(item, containerName);
+
+            // TODO remove original blob
+        }
+
         public override string GetUrlWithSasToken(MediaItem media, int expiryMinutes)
         {
             var filename = media.FilePath;
