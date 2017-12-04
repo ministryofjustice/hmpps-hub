@@ -15,7 +15,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
 
         public abstract bool Delete(string filename);
 
-        public abstract void Move(MediaItem item, string newPath);
+        public abstract void Move(MediaItem media, string fromPath);
 
         public abstract string GetUrlWithSasToken(MediaItem media, int expiryMinutes);
 

@@ -18,6 +18,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Events
         public void OnItemMoved(object sender, EventArgs e)
         {
             var item = Event.ExtractParameter(e, 0) as Item;
+            var fromLocation = Event.ExtractParameter(e, 1);
 
             if (!item.Paths.IsMediaItem)
             {
@@ -31,7 +32,9 @@ namespace HMPPS.MediaLibrary.CloudStorage.Events
                 return;
             }
 
-            _cloudStorageProvider.Move(mediaItem, mediaItem.MediaPath);
+            var fromLocationItem = item.Database.GetItem(new Sitecore.Data.ID(fromLocation.ToString()));
+
+            _cloudStorageProvider.Move(mediaItem, $"{fromLocationItem.Paths.MediaPath}/{item.Name}.{mediaItem.Extension}");
         }
     }
 }
