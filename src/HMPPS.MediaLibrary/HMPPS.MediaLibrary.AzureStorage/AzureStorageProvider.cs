@@ -128,21 +128,17 @@ namespace HMPPS.MediaLibrary.AzureStorage
         /// </summary>
         /// <param name="item">The media item to be moved</param>
         /// <param name="newPath">The path to which the blob should be moved</param>
-        public override void Move(MediaItem item, string newPath)
+        public override void Move(MediaItem media, string fromPath)
         {
-            var containerName = GetContainerNameFromFilePath(item.FilePath);
-
-            var fileToMove = RemoveContainerNameFromfilePath(item.FilePath, containerName);
-
+            var containerName = GetContainerNameFromFilePath(fromPath);
             var blobContainer = GetCloudBlobContainer(containerName);
 
-            var blob = blobContainer.GetBlockBlobReference(fileToMove);
+            var fileToMove = RemoveContainerNameFromfilePath(fromPath, containerName);
 
-            // TODO read content of blob as a stream
+            var currentBlob = blobContainer.GetBlockBlobReference(fileToMove);
+            var newBlob = blobContainer.GetBlockBlobReference(ParseMediaFileName(media));
 
-            // Put(item, containerName);
-
-            // TODO remove original blob
+            newBlob.StartCopy(currentBlob);
         }
 
         public override string GetUrlWithSasToken(MediaItem media, int expiryMinutes)
