@@ -969,6 +969,10 @@
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
+      <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
+      <Name>HMPPS.ContactIdentification</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
       <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>
       <Name>HMPPS.Utilities</Name>
