@@ -16,6 +16,9 @@ using HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload;
 using Sitecore.SecurityModel;
 using HMPPS.MediaLibrary.CloudStorage.Constants;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using Sitecore.Configuration;
+using System.Xml;
+using Sitecore.Xml;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -134,7 +137,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
         /// <param name="newPath">The path to which the blob should be moved</param>
         public override void Move(Item item, string fromPath)
         {
-            var containerName = "audio";
+            var containerName = GetContainerNameForSitecorePath(item.Paths.FullPath);
             var blobContainer = GetCloudBlobContainer(containerName);
 
             var mediaItem = new MediaItem(item);
@@ -142,8 +145,13 @@ namespace HMPPS.MediaLibrary.AzureStorage
             var newFileName = ParseMediaFileName(mediaItem);
             var oldFileName = mediaItem.FilePath;
 
-            var existingBlob = blobContainer.GetBlockBlobReference(RemoveContainerNameFromfilePath(mediaItem.FilePath, containerName));
+            var existingBlob = blobContainer.GetBlockBlobReference(RemoveContainerNameFromfilePath(oldFileName, containerName));
             var newBlob = blobContainer.GetBlockBlobReference(newFileName);
+
+            if (existingBlob.Name.Equals(newBlob.Name))
+            {
+                return;
+            }
 
             newBlob.StartCopy(existingBlob);
 
@@ -238,6 +246,21 @@ namespace HMPPS.MediaLibrary.AzureStorage
                 return filePath.Substring(containerName.Length + 1);
             }
             return filePath;
+        }
+
+        private string GetContainerNameForSitecorePath(string sitecorePath)
+        {
+            foreach (XmlNode node in Factory.GetConfigNodes("containerMediaPathRelationships/relationship"))
+            {
+                if (!sitecorePath.ToLower().StartsWith(XmlUtil.GetAttribute("sitecorePath", node).ToLower()))
+                {
+                    continue;
+                }
+
+                return XmlUtil.GetAttribute("containerName", node);
+            }
+
+            return "blobs";
         }
     }
 }
