@@ -12,6 +12,10 @@ using Sitecore.Diagnostics;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using HMPPS.ErrorReporting;
 using HMPPS.Utilities.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload;
+using Sitecore.SecurityModel;
+using HMPPS.MediaLibrary.CloudStorage.Constants;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -128,17 +132,39 @@ namespace HMPPS.MediaLibrary.AzureStorage
         /// </summary>
         /// <param name="item">The media item to be moved</param>
         /// <param name="newPath">The path to which the blob should be moved</param>
-        public override void Move(MediaItem media, string fromPath)
+        public override void Move(Item item, string fromPath)
         {
-            var containerName = GetContainerNameFromFilePath(fromPath);
+            var containerName = "audio";
             var blobContainer = GetCloudBlobContainer(containerName);
 
-            var fileToMove = RemoveContainerNameFromfilePath(fromPath, containerName);
+            var mediaItem = new MediaItem(item);
 
-            var currentBlob = blobContainer.GetBlockBlobReference(fileToMove);
-            var newBlob = blobContainer.GetBlockBlobReference(ParseMediaFileName(media));
+            var newFileName = ParseMediaFileName(mediaItem);
+            var oldFileName = mediaItem.FilePath;
 
-            newBlob.StartCopy(currentBlob);
+            var existingBlob = blobContainer.GetBlockBlobReference(RemoveContainerNameFromfilePath(mediaItem.FilePath, containerName));
+            var newBlob = blobContainer.GetBlockBlobReference(newFileName);
+
+            newBlob.StartCopy(existingBlob);
+
+            try
+            {
+                var containerQualifiedFileName = AddContainerNameToFilePath(newFileName, containerName);
+
+                using (new EditContext(item, SecurityCheck.Disable))
+                {
+                    item[FieldNameConstants.MediaItem.FilePath] = containerQualifiedFileName;
+                    item[FieldNameConstants.MediaItem.UploadedToCloud] = "1";
+                }
+
+                Delete(oldFileName);
+            }
+            catch (Exception)
+            {
+                Delete(newFileName);
+
+                throw;
+            }
         }
 
         public override string GetUrlWithSasToken(MediaItem media, int expiryMinutes)

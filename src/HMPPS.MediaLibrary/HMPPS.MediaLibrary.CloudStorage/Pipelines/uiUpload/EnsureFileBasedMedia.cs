@@ -37,7 +37,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
         /// </summary>
         /// <param name="folder">Location current item is being uploaded to</param>
         /// <returns>boolean</returns>
-        private Location EnsureUploadIntoCloud(string folder)
+        public Location EnsureUploadIntoCloud(string folder)
         {
             Database db = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
             folder = db.GetItem(folder).Paths.FullPath.ToLower();

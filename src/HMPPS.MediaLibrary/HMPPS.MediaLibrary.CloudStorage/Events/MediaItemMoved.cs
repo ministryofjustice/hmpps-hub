@@ -34,7 +34,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Events
 
             var fromLocationItem = item.Database.GetItem(new Sitecore.Data.ID(fromLocation.ToString()));
 
-            _cloudStorageProvider.Move(mediaItem, $"{fromLocationItem.Paths.MediaPath}/{item.Name}.{mediaItem.Extension}");
+            _cloudStorageProvider.Move(item, fromLocationItem.Paths.FullPath);
         }
     }
 }
