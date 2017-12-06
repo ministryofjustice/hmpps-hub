@@ -28,7 +28,7 @@
     <parameter name="reporting" description="reporting" defaultValue="#{reporting}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting']/@connectionString" />
     </parameter>
-    <parameter name="reportingKey" description="reportingKey" defaultValue="#{reportingKey}#" tags="">
+    <parameter name="Hub-ReportingApiKey" description="Hub-ReportingApiKey" defaultValue="#{Hub-ReportingApiKey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting.apiKey']/@connectionString" />
     </parameter>
     <parameter name="search" description="search" defaultValue="#{search}#" tags="">
