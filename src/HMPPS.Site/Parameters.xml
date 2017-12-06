@@ -8,7 +8,7 @@
     <!--END Sitecore-->
 
     <!-- SQL -->
-    <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
+    <parameter name="Hub-CoreConnectionString" description="Hub-CoreConnectionString" defaultValue="#{Hub-CoreConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
     </parameter>

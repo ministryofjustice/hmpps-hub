@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <parameters>
     <!-- SQL -->
-    <parameter name="sqlCore" description="sqlCore" defaultValue="#{sqlCore}#" tags="">
+    <parameter name="Hub-CoreConnectionString" description="Hub-CoreConnectionString" defaultValue="#{Hub-CoreConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
     </parameter>
     <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
