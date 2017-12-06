@@ -106,7 +106,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.TokenEndpoint']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.TokenEndpoint']/@value" />
     </parameter>
-    <parameter name="ssologoutendpoint" description="ssologoutendpoint" defaultValue="#{ssologoutendpoint}#" tags="">
+    <parameter name="Idam-LogOutUrl" description="Idam-LogOutUrl" defaultValue="#{Idam-LogOutUrl}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutEndpoint']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutEndpoint']/@value" />
     </parameter>
