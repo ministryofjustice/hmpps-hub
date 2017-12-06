@@ -133,7 +133,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPort']/@value" />
     </parameter>
     <!--HMPPS.Utilities-->
-    <parameter name="ssosecuritykey" description="ssosecuritykey" defaultValue="#{ssosecuritykey}#" tags="">
+    <parameter name="Hub-AuthSecurityKey" description="Hub-AuthSecurityKey" defaultValue="#{Hub-AuthSecurityKey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
     </parameter>
