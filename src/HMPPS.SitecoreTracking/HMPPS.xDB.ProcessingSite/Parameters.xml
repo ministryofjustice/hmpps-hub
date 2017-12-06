@@ -28,7 +28,7 @@
     </parameter>
     <!-- MONGO END-->
 
-    <parameter name="reporting" description="reporting" defaultValue="#{reporting}#" tags="">
+    <parameter name="reporting" description="reporting" defaultValue="#{Hub-ReportingConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting']/@connectionString" />
     </parameter>
     <parameter name="Hub-SearchConnectionString" description="Hub-SearchConnectionString" defaultValue="#{Hub-SearchConnectionString}#" tags="">
