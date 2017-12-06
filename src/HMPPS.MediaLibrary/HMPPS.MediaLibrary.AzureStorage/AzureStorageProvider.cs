@@ -133,20 +133,23 @@ namespace HMPPS.MediaLibrary.AzureStorage
         /// <summary>
         /// Performs a psuedo-move of the azure blob by copying the content of said blob to the desired location and removing the original blob.
         /// </summary>
-        /// <param name="item">The media item to be moved</param>
-        /// <param name="newPath">The path to which the blob should be moved</param>
+        /// <param name="item">The media item which has been moved</param>
+        /// <param name="fromPath">The path which the item has been moved from</param>
         public override void Move(Item item, string fromPath)
         {
-            var containerName = GetContainerNameForSitecorePath(item.Paths.FullPath);
-            var blobContainer = GetCloudBlobContainer(containerName);
+            var moveToContainerName = BlobHelper.GetContainerNameForSitecorePath(item.Paths.FullPath);
+            var moveToContainer = GetCloudBlobContainer(moveToContainerName);
+
+            var moveFromContainerName = BlobHelper.GetContainerNameForSitecorePath(fromPath);
+            var moveFromContainer = GetCloudBlobContainer(moveFromContainerName);
 
             var mediaItem = new MediaItem(item);
 
-            var newFileName = ParseMediaFileName(mediaItem);
-            var oldFileName = mediaItem.FilePath;
+            var moveToFileName = ParseMediaFileName(mediaItem);
+            var moveFromFileName = mediaItem.FilePath;
 
-            var existingBlob = blobContainer.GetBlockBlobReference(RemoveContainerNameFromfilePath(oldFileName, containerName));
-            var newBlob = blobContainer.GetBlockBlobReference(newFileName);
+            var existingBlob = moveFromContainer.GetBlockBlobReference(RemoveContainerNameFromfilePath(moveFromFileName, moveFromContainerName));
+            var newBlob = moveToContainer.GetBlockBlobReference(moveToFileName);
 
             if (existingBlob.Name.Equals(newBlob.Name))
             {
@@ -157,22 +160,22 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             try
             {
-                var containerQualifiedFileName = AddContainerNameToFilePath(newFileName, containerName);
+                var containerQualifiedFileName = AddContainerNameToFilePath(moveToFileName, moveToContainerName);
 
                 using (new EditContext(item, SecurityCheck.Disable))
                 {
                     item[FieldNameConstants.MediaItem.FilePath] = containerQualifiedFileName;
                     item[FieldNameConstants.MediaItem.UploadedToCloud] = "1";
                 }
-
-                Delete(oldFileName);
             }
             catch (Exception)
             {
-                Delete(newFileName);
+                Delete(moveToFileName);
 
                 throw;
             }
+
+            Delete(moveFromFileName);
         }
 
         public override string GetUrlWithSasToken(MediaItem media, int expiryMinutes)
@@ -246,21 +249,6 @@ namespace HMPPS.MediaLibrary.AzureStorage
                 return filePath.Substring(containerName.Length + 1);
             }
             return filePath;
-        }
-
-        private string GetContainerNameForSitecorePath(string sitecorePath)
-        {
-            foreach (XmlNode node in Factory.GetConfigNodes("containerMediaPathRelationships/relationship"))
-            {
-                if (!sitecorePath.ToLower().StartsWith(XmlUtil.GetAttribute("sitecorePath", node).ToLower()))
-                {
-                    continue;
-                }
-
-                return XmlUtil.GetAttribute("containerName", node);
-            }
-
-            return "blobs";
         }
     }
 }
