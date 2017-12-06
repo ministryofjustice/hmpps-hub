@@ -304,6 +304,9 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.File.MediaType.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
