@@ -4,7 +4,7 @@
     <parameter name="Hub-CoreConnectionString" description="Hub-CoreConnectionString" defaultValue="#{Hub-CoreConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='core']/@connectionString" />
     </parameter>
-    <parameter name="sqlMaster" description="sqlMaster" defaultValue="#{sqlMaster}#" tags="">
+    <parameter name="Hub-MasterConnectionString" description="Hub-MasterConnectionString" defaultValue="#{Hub-MasterConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Reporting\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='master']/@connectionString" />
     </parameter>
     <parameter name="sqlWeb" description="sqlWeb" defaultValue="#{sqlWeb}#" tags="">
