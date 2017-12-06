@@ -46,7 +46,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
     </parameter>
-    <parameter name="redis" description="redis" defaultValue="#{redis}#" tags="">
+    <parameter name="Hub-RedisConnectionString" description="Hub-RedisConnectionString" defaultValue="#{Hub-RedisConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
     </parameter>
