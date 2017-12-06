@@ -50,7 +50,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='redis.sessions']/@connectionString" />
     </parameter>
-    <parameter name="AppInsightKey" description="AppInsightKey" defaultValue="#{AppInsightKey}#" tags="">
+    <parameter name="Hub-AppInsightKey" description="Hub-AppInsightKey" defaultValue="#{Hub-AppInsightKey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
     </parameter>
