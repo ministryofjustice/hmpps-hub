@@ -153,23 +153,35 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
             if (existingBlob.Name.Equals(newBlob.Name))
             {
+                _logManager.LogDebug($"Source blob is the same as target blob. Blob copy not carried out.", GetType());
+
+                return;
+            }
+
+            if (!existingBlob.Exists())
+            {
+                _logManager.LogWarning($"Unable to copy blob as the source blob at {moveFromFileName} could not be found.", GetType());
+
                 return;
             }
 
             newBlob.StartCopy(existingBlob);
 
+            var containerQualifiedFileName = AddContainerNameToFilePath(moveToFileName, moveToContainerName);
+
             try
             {
-                var containerQualifiedFileName = AddContainerNameToFilePath(moveToFileName, moveToContainerName);
-
                 using (new EditContext(item, SecurityCheck.Disable))
                 {
                     item[FieldNameConstants.MediaItem.FilePath] = containerQualifiedFileName;
                     item[FieldNameConstants.MediaItem.UploadedToCloud] = "1";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _logManager.LogError($"Unable to update Sitecore media item '{item.Name}' with the filepath " +
+                    $"{containerQualifiedFileName} during blob move. New blob will be removed and old blob will be persisted.", ex, GetType());
+
                 Delete(moveToFileName);
 
                 throw;
