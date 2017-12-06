@@ -24,7 +24,7 @@
     <!-- SQL END-->
 
     <!-- MONGO -->
-    <parameter name="mongoAnalytics" description="mongoAnalytics" defaultValue="#{mongoAnalytics}#" tags="">
+    <parameter name="Hub-MongoAnalyticsConnectionString" description="Hub-MongoAnalyticsConnectionString" defaultValue="#{Hub-MongoAnalyticsConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
     </parameter>
