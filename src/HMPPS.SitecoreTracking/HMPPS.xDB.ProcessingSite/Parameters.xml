@@ -17,7 +17,7 @@
     <parameter name="Hub-MongoAnalyticsConnectionString" description="Hub-MongoAnalyticsConnectionString" defaultValue="#{Hub-MongoAnalyticsConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='analytics']/@connectionString" />
     </parameter>
-    <parameter name="mongoLive" description="mongoLive" defaultValue="#{mongoLive}#" tags="">
+    <parameter name="Hub-MongoLiveConnectionString" description="Hub-MongoLiveConnectionString" defaultValue="#{Hub-MongoLiveConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
     </parameter>
     <parameter name="Hub-MongoHistoryConnectionString" description="Hub-MongoHistoryConnectionString" defaultValue="#{Hub-MongoHistoryConnectionString}#" tags="">
