@@ -116,19 +116,19 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='Media.RequestProtection.SharedSecret']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='Media.RequestProtection.SharedSecret']/@value" />
     </parameter>
-    <parameter name="mailserver" description="mailserver" defaultValue="#{mailserver}#" tags="">
+    <parameter name="Hub-SmtpHost" description="Hub-SmtpHost" defaultValue="#{Hub-SmtpHost}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServer']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServer']/@value" />
     </parameter>
-    <parameter name="mailusername" description="mailusername" defaultValue="#{mailusername}#" tags="">
+    <parameter name="Hub-SmtpUserAccount" description="Hub-SmtpUserAccount" defaultValue="#{Hub-SmtpUserAccount}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerUserName']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerUserName']/@value" />
     </parameter>
-    <parameter name="mailpassword" description="mailpassword" defaultValue="#{mailpassword}#" tags="">
+    <parameter name="Hub-SmtpPassword" description="Hub-SmtpPassword" defaultValue="#{Hub-SmtpPassword}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPassword']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPassword']/@value" />
     </parameter>
-    <parameter name="mailport" description="mailport" defaultValue="#{mailport}#" tags="">
+    <parameter name="Hub-SmtpPort" description="Hub-SmtpPort" defaultValue="#{Hub-SmtpPort}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPort']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Sitecore\.config$" match="/configuration/sitecore/settings/setting[@name='MailServerPort']/@value" />
     </parameter>
