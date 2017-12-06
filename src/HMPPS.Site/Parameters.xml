@@ -78,7 +78,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutUrl']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutUrl']/@value" />
     </parameter>
-    <parameter name="ssotempcookiename" description="ssotempcookiename" defaultValue="#{ssotempcookiename}#" tags="">
+    <parameter name="Hub-AuthTempCookieName" description="Hub-AuthTempCookieName" defaultValue="#{Hub-AuthTempCookieName}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.TempCookieName']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.TempCookieName']/@value" />
     </parameter>
