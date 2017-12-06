@@ -56,15 +56,15 @@
     </parameter>
 
     <!-- MEDIA -->
-    <parameter name="bloburl" description="bloburl" defaultValue="#{bloburl}#" tags="">
+    <parameter name="Hub-MediaStorageAccountUrl" description="Hub-MediaStorageAccountUrl" defaultValue="#{Hub-MediaStorageAccountUrl}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.MediaLibrary.CloudStorage.MediaLinkCdnServerUrl']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.MediaLibrary.CloudStorage.MediaLinkCdnServerUrl']/@value" />
     </parameter>
-    <parameter name="storageaccountname" description="storageaccountname" defaultValue="#{storageaccountname}#" tags="">
+    <parameter name="Hub-MediaStorageAccountName" description="Hub-MediaStorageAccountName" defaultValue="#{Hub-MediaStorageAccountName}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountName']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountName']/@value" />
     </parameter>
-    <parameter name="storageaccountkey" description="storageaccountkey" defaultValue="#{storageaccountkey}#" tags="">
+    <parameter name="Hub-MediaStorageAccountKey" description="Hub-MediaStorageAccountKey" defaultValue="#{Hub-MediaStorageAccountKey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountKey']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.MediaLibrary.AzureStorage.AccountKey']/@value" />
     </parameter>
