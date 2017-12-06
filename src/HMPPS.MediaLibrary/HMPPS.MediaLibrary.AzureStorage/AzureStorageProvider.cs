@@ -68,7 +68,11 @@ namespace HMPPS.MediaLibrary.AzureStorage
             _blobContainers = new Dictionary<string, CloudBlobContainer>();
             foreach (var storageContainer in _storageContainers)
             {
-                _blobContainers.Add(storageContainer, blobClient.GetContainerReference(storageContainer));
+                var container = blobClient.GetContainerReference(storageContainer);
+
+                container.CreateIfNotExists();
+
+                _blobContainers.Add(storageContainer, container);
             }
         }
         #endregion
