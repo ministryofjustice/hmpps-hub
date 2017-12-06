@@ -94,7 +94,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.Scope']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.Scope']/@value" />
     </parameter>
-    <parameter name="ssovalidissuer" description="ssovalidissuer" defaultValue="#{ssovalidissuer}#" tags="">
+    <parameter name="Idam-ValidIssuer" description="Idam-ValidIssuer" defaultValue="#{Idam-ValidIssuer}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ValidIssuer']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ValidIssuer']/@value" />
     </parameter>
