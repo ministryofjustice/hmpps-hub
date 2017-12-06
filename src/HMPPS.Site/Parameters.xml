@@ -137,7 +137,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.JwtTokenSecurityKey']/@value" />
     </parameter>
-    <parameter name="Idam-AuthCookieName" description="Idam-AuthCookieName" defaultValue="#{Idam-AuthCookieName}#" tags="">
+    <parameter name="Sitecore-AuthCookieName" description="Sitecore-AuthCookieName" defaultValue="#{Sitecore-AuthCookieName}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.UserDataCookieName']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Utilities.UserDataCookieName']/@value" />
     </parameter>
