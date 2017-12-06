@@ -74,7 +74,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.SignInCallbackUrl']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.SignInCallbackUrl']/@value" />
     </parameter>
-    <parameter name="ssologouturl" description="ssologouturl" defaultValue="#{ssologouturl}#" tags="">
+    <parameter name="Hub-LogoutUrl" description="Hub-LogoutUrl" defaultValue="#{Hub-LogoutUrl}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutUrl']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutUrl']/@value" />
     </parameter>
