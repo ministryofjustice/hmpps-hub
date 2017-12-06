@@ -151,7 +151,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.ClientToken']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.ClientToken']/@value" />
     </parameter>
-    <parameter name="nomisapisecretkey" description="nomisapisecretkey" defaultValue="#{nomisapisecretkey}#" tags="">
+    <parameter name="Nomis-ApiSecretKey" description="Nomis-ApiSecretKey" defaultValue="#{Nomis-ApiSecretKey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.SecretKey']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.SecretKey']/@value" />
     </parameter>
