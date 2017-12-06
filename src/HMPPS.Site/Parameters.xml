@@ -70,7 +70,7 @@
     </parameter>
 
     <!--HMPPS.Authentication-->
-    <parameter name="ssocallbackurl" description="ssocallbackurl" defaultValue="#{ssocallbackurl}#" tags="">
+    <parameter name="Hub-AuthSsoCallBackUrl" description="Hub-AuthSsoCallBackUrl" defaultValue="#{Hub-AuthSsoCallBackUrl}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.SignInCallbackUrl']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.SignInCallbackUrl']/@value" />
     </parameter>
