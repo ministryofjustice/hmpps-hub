@@ -34,7 +34,7 @@
     <parameter name="search" description="search" defaultValue="#{search}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
     </parameter>
-    <parameter name="aiKey" description="aiKey" defaultValue="#{aiKey}#" tags="">
+    <parameter name="AppInsightKey" description="AppInsightKey" defaultValue="#{AppInsightKey}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='appinsights.instrumentationkey']/@connectionString" />
     </parameter>
 
