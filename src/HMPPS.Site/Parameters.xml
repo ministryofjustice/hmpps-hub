@@ -86,7 +86,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ClientId']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ClientId']/@value" />
     </parameter>
-    <parameter name="ssoclientsecret" description="ssoclientsecret" defaultValue="#{ssoclientsecret}#" tags="">
+    <parameter name="Idam-ClientSecret" description="Idam-ClientSecret" defaultValue="#{Idam-ClientSecret}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ClientSecret']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ClientSecret']/@value" />
     </parameter>
