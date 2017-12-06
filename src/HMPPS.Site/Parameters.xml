@@ -98,7 +98,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ValidIssuer']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ValidIssuer']/@value" />
     </parameter>
-    <parameter name="ssoaauthorizeendpoint" description="ssoaauthorizeendpoint" defaultValue="#{ssoaauthorizeendpoint}#" tags="">
+    <parameter name="Idam-AuthorizeUrl" description="Idam-AuthorizeUrl" defaultValue="#{Idam-AuthorizeUrl}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.AuthorizeEndpoint']/@value" />
     </parameter>
