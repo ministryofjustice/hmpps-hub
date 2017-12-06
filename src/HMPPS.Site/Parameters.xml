@@ -147,7 +147,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.BaseUrl']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.BaseUrl']/@value" />
     </parameter>
-    <parameter name="nomisapiclienttoken" description="nomisapiclienttoken" defaultValue="#{nomisapiclienttoken}#" tags="">
+    <parameter name="Nomis-ApiClientToken" description="Nomis-ApiClientToken" defaultValue="#{Nomis-ApiClientToken}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.ClientToken']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.NomisApiService.ClientToken']/@value" />
     </parameter>
