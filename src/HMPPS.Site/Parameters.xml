@@ -82,7 +82,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.TempCookieName']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.TempCookieName']/@value" />
     </parameter>
-    <parameter name="ssoclientid" description="ssoclientid" defaultValue="#{ssoclientid}#" tags="">
+    <parameter name="Idam-ClientId" description="Idam-ClientId" defaultValue="#{Idam-ClientId}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ClientId']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.ClientId']/@value" />
     </parameter>
