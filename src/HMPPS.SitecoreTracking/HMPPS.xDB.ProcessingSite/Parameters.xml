@@ -23,7 +23,7 @@
     <parameter name="mongoHistory" description="mongoHistory" defaultValue="#{mongoHistory}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.history']/@connectionString" />
     </parameter>
-    <parameter name="mongoContact" description="mongoContact" defaultValue="#{mongoContact}#" tags="">
+    <parameter name="Hub-MongoContactConnectionString" description="Hub-MongoContactConnectionString" defaultValue="#{Hub-MongoContactConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
     </parameter>
     <!-- MONGO END-->

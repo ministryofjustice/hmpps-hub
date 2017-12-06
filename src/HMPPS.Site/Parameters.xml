@@ -32,7 +32,7 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.live']/@connectionString" />
     </parameter>
-    <parameter name="mongoContact" description="mongoContact" defaultValue="#{mongoContact}#" tags="">
+    <parameter name="Hub-MongoContactConnectionString" description="Hub-MongoContactConnectionString" defaultValue="#{Hub-MongoContactConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='tracking.contact']/@connectionString" />
     </parameter>
