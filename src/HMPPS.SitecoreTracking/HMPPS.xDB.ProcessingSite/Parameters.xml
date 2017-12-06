@@ -31,7 +31,7 @@
     <parameter name="reporting" description="reporting" defaultValue="#{reporting}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='reporting']/@connectionString" />
     </parameter>
-    <parameter name="search" description="search" defaultValue="#{search}#" tags="">
+    <parameter name="Hub-SearchConnectionString" description="Hub-SearchConnectionString" defaultValue="#{Hub-SearchConnectionString}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\xDB-Processing\\Package\\PackageTmp\\App_Config\\ConnectionStrings\.config$" match="/connectionStrings/add[@name='cloud.search']/@connectionString" />
     </parameter>
     <parameter name="Hub-AppInsightKey" description="Hub-AppInsightKey" defaultValue="#{Hub-AppInsightKey}#" tags="">
