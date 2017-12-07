@@ -157,7 +157,7 @@
     </parameter>
 
     <!--SITECORE UNICORN-->
-    <parameter name="unicornsharedsecret" description="unicornsharedsecret" defaultValue="#{unicornsharedsecret}#" tags="">
+    <parameter name="Hub-UnicornSharedSecret" description="Hub-UnicornSharedSecret" defaultValue="#{Hub-UnicornSharedSecret}#" tags="">
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\App_Config\\Include\\zzz\\HMPPS.Unicorn.zSharedSecret\.config$" match="/configuration/sitecore/unicorn/authenticationProvider/SharedSecret/text()" />
     </parameter>
 
