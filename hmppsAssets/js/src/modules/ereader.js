@@ -24,24 +24,31 @@ export default (function () {
       e.preventDefault();
       var filePath = e.currentTarget.getAttribute('href');
       var fileType = e.currentTarget.getAttribute('data-filetype');
-      const params = [
-        `height=${screen.height - 100}`,
-        `width=${screen.width}`,
-        'fullscreen=yes',
-        'scrollbars=yes',
-      ].join(',');
+      // const params = [
+      //   `height=${screen.height }`,
+      //   `width=${screen.width }`,
+      //   'fullscreen=yes',
+      //   'scrollbars=no',
+      //   'toolbar=no',
+      //   'location=no',
+      //   'status=no',
+      //   'menubar=no',
+      //
+      // ].join(',');
 
       if (fileType === 'pdf') {
-        const win = window.open(`${filePath}?page=0`, '_blank', params);
+        const win = window.open(`${filePath}?page=0`,'_blank');
+        console.log(win);
       } else {
-        const win = window.open(`${filePath}?page=0`, '_blank', params);
+        const win = window.open(`${filePath}?page=0`,'_blank');
+          console.log(win);
         HMPPS.ereader.createEpub(filePath, win);
       }
     },
     createEpub(src, win) {
       HMPPS.ereader.createMarkup(win);
       const body = win.document.body;
-      body.classList.add('epub');
+
 
 
       let next = body.querySelector('.js-ereader-next');
@@ -64,6 +71,8 @@ export default (function () {
       //Book.generatePagination(50, 100);
       const rendered = Book.renderTo(area);
 
+
+
       rendered.then(() => {
         // const currentLocation = Book.getCurrentLocationCfi();
         // const currentPage = Book.pagination.pageFromCfi(currentLocation);
@@ -77,8 +86,8 @@ export default (function () {
       next.addEventListener('click', () => {
         Book.nextPage();
       });
-      const keyListener = function (e) {
-        // Left Key
+
+      win.addEventListener('keyup', (e) => {
         if ((e.keyCode || e.which) === 37) {
           Book.prevPage();
         }
@@ -86,10 +95,12 @@ export default (function () {
         if ((e.keyCode || e.which) === 39) {
           Book.nextPage();
         }
-      };
-      Book.on('keyup', keyListener);
+      })
+
+
+      //Book.on('keyup', keyListener);
     },
-    createMarkup(win) {
+    createMarkup(win, area) {
       let html = document.createElement('div');
       html.innerHTML = `<div class="ereader__area js-ereader-area"></div>
       <div class="ereader__buttons">
@@ -100,6 +111,11 @@ export default (function () {
       win.document.write('<html><head><title>Book</title><link href="/hmppsAssets/css/hmpps.css"  rel="stylesheet" type="text/css"></head><body></body></html>');
 
       win.document.body.appendChild(html);
+
+      console.log(win.document);
+      win.document.body.classList.add('epub');
+      //win.document.body.querySelector('.epub').focus();
+
     }
   };
 }());
