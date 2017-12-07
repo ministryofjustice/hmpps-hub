@@ -38,10 +38,10 @@ export default (function () {
 
       if (fileType === 'pdf') {
         const win = window.open(`${filePath}?page=0`,'_blank');
-        console.log(win);
+
       } else {
         const win = window.open(`${filePath}?page=0`,'_blank');
-          console.log(win);
+
         HMPPS.ereader.createEpub(filePath, win);
       }
     },
@@ -111,10 +111,7 @@ export default (function () {
       win.document.write('<html><head><title>Book</title><link href="/hmppsAssets/css/hmpps.css"  rel="stylesheet" type="text/css"></head><body></body></html>');
 
       win.document.body.appendChild(html);
-
-      console.log(win.document);
       win.document.body.classList.add('epub');
-      //win.document.body.querySelector('.epub').focus();
 
     }
   };
