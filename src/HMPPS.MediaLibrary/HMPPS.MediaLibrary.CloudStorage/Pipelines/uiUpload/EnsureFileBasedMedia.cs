@@ -13,36 +13,27 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
     /// </summary>
     public class EnsureFileBasedMedia : UploadProcessor
     {
-        public LocationConfiguration Config { get; private set; }
-
-        public EnsureFileBasedMedia()
-        {
-            Config = new LocationConfiguration();
-        }
-
         public void Process(UploadArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
-            if (args.Destination != UploadDestination.Database) return;       
-            var mediaLocation = EnsureUploadIntoCloud(args.Folder);
-            if (mediaLocation != null)
+
+            if (args.Destination != UploadDestination.Database)
             {
-                args.Destination = UploadDestination.File;
-                PipelineHelper.AddContainerNameToArgs(args, mediaLocation.ContainerName);
+                return;
             }
+
+            var containerName = GetContainerName(args.Folder);
+
+            args.Destination = UploadDestination.File;
+            PipelineHelper.AddContainerNameToArgs(args, containerName);
         }
 
-        /// <summary>
-        /// Checks if media folder is configured to force upload to cloud storage
-        /// </summary>
-        /// <param name="folder">Location current item is being uploaded to</param>
-        /// <returns>boolean</returns>
-        private Location EnsureUploadIntoCloud(string folder)
+        public string GetContainerName(string folder)
         {
             Database db = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
             folder = db.GetItem(folder).Paths.FullPath.ToLower();
 
-            return Config.Locations.FirstOrDefault(location => folder.StartsWith(location.MediaFolder.ToLower()));
+            return BlobHelper.GetContainerNameForSitecorePath(folder);
         }
     }
 }

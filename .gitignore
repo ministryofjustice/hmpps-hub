@@ -304,6 +304,7 @@ proxy.json
 /www/App_Config/Prefetch
 /www/App_Config/Security
 /www/App_Config
+/www/App_Data/Replicated
 /www/App_Data/indexes
 /www/App_Data/logs
 /www/App_Data/tools/phantomjs
@@ -325,7 +326,7 @@ proxy.json
 /www/default.css
 /www/Default.aspx
 /www/data/logs
-/www/App_Data/license.xml
+/cd-www/App_Data/Replicated
 /cd-www/App_Browsers
 /cd-www/App_Config
 /cd-www/App_Data/indexes

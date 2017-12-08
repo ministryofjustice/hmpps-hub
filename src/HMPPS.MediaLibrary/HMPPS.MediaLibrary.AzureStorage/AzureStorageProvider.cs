@@ -12,6 +12,13 @@ using Sitecore.Diagnostics;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using HMPPS.ErrorReporting;
 using HMPPS.Utilities.Helpers;
+using HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload;
+using Sitecore.SecurityModel;
+using HMPPS.MediaLibrary.CloudStorage.Constants;
+using HMPPS.MediaLibrary.CloudStorage.Helpers;
+using Sitecore.Configuration;
+using System.Xml;
+using Sitecore.Xml;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -61,7 +68,11 @@ namespace HMPPS.MediaLibrary.AzureStorage
             _blobContainers = new Dictionary<string, CloudBlobContainer>();
             foreach (var storageContainer in _storageContainers)
             {
-                _blobContainers.Add(storageContainer, blobClient.GetContainerReference(storageContainer));
+                var container = blobClient.GetContainerReference(storageContainer.ToLower());
+
+                container.CreateIfNotExists();
+
+                _blobContainers.Add(storageContainer, container);
             }
         }
         #endregion
@@ -121,6 +132,66 @@ namespace HMPPS.MediaLibrary.AzureStorage
             CloudBlockBlob blob = blobContainer.GetBlockBlobReference(fileToDelete);
 
             return blob.DeleteIfExists();
+        }
+
+        /// <summary>
+        /// Performs a psuedo-move of the azure blob by copying the content of said blob to the desired location and removing the original blob.
+        /// </summary>
+        /// <param name="item">The media item which has been moved</param>
+        /// <param name="fromPath">The path which the item has been moved from</param>
+        public override void Move(Item item, string fromPath)
+        {
+            var moveToContainerName = BlobHelper.GetContainerNameForSitecorePath(item.Paths.FullPath);
+            var moveToContainer = GetCloudBlobContainer(moveToContainerName);
+
+            var moveFromContainerName = BlobHelper.GetContainerNameForSitecorePath(fromPath);
+            var moveFromContainer = GetCloudBlobContainer(moveFromContainerName);
+
+            var mediaItem = new MediaItem(item);
+
+            var moveToFileName = ParseMediaFileName(mediaItem);
+            var moveFromFileName = mediaItem.FilePath;
+
+            var existingBlob = moveFromContainer.GetBlockBlobReference(RemoveContainerNameFromfilePath(moveFromFileName, moveFromContainerName));
+            var newBlob = moveToContainer.GetBlockBlobReference(moveToFileName);
+
+            if (existingBlob.Name.Equals(newBlob.Name))
+            {
+                _logManager.LogDebug($"Source blob is the same as target blob. Blob copy not carried out.", GetType());
+
+                return;
+            }
+
+            if (!existingBlob.Exists())
+            {
+                _logManager.LogWarning($"Unable to copy blob as the source blob at {moveFromFileName} could not be found.", GetType());
+
+                return;
+            }
+
+            newBlob.StartCopy(existingBlob);
+
+            var containerQualifiedFileName = AddContainerNameToFilePath(moveToFileName, moveToContainerName);
+
+            try
+            {
+                using (new EditContext(item, SecurityCheck.Disable))
+                {
+                    item[FieldNameConstants.MediaItem.FilePath] = containerQualifiedFileName;
+                    item[FieldNameConstants.MediaItem.UploadedToCloud] = "1";
+                }
+            }
+            catch (Exception ex)
+            {
+                _logManager.LogError($"Unable to update Sitecore media item '{item.Name}' with the filepath " +
+                    $"{containerQualifiedFileName} during blob move. New blob will be removed and old blob will be persisted.", ex, GetType());
+
+                Delete(moveToFileName);
+
+                throw;
+            }
+
+            Delete(moveFromFileName);
         }
 
         public override string GetUrlWithSasToken(MediaItem media, int expiryMinutes)
