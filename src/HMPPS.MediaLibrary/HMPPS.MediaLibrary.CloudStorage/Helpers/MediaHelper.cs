@@ -103,6 +103,5 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
         {
             FileUtil.Delete(GetThumbnailFilename());
         }
-
     }
 }
