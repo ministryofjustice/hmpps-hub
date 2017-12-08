@@ -817,6 +817,7 @@
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
+    <Content Include="sitecore modules\HMPPS\BookUpload.aspx" />
     <Content Include="DummyLogout.aspx" />
     <Content Include="nolicense.aspx" />
     <Content Include="Parameters.xml">
@@ -897,6 +898,13 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.cs">
+      <DependentUpon>BookUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.designer.cs">
+      <DependentUpon>BookUpload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Pages\ErrorPageController.cs" />
     <Compile Include="Controllers\Pages\LandingPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
