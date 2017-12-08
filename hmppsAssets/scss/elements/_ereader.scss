@@ -13,6 +13,7 @@
   background-color: white;
   //margin-top: 40px;
   position: relative;
+  height: 100%;
 }
 
 .ereader__area{
@@ -42,26 +43,53 @@
 
 .ereader__prev,
 .ereader__next{
+  background-color: $grey-3;
   border: none;
   cursor: pointer;
   padding: 10px;
   text-indent: -9999px;
   width: 45px;
-  height: 45px;
+  height: 100%;
   -webkit-appearance: button; /* for input */
   -webkit-user-select: none; /* for button */
      -moz-user-select: none;
       -ms-user-select: none;
-  background: url('/hmppsAssets/img/arrow-sprite.png') #fff  0% 50% no-repeat;
-  background-size: cover;
   position: absolute;
-  top: 50%;
-  margin-top: -25px;
+  top: 0;
+  bottom: 0;
   left: 0;
+  right: auto;
+  border-right: $white 3px solid;
+  &:focus{
+    border: none;
+  }
+  &:hover:before{
+    border-right: $light-blue 3px solid;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: url('/hmppsAssets/img/arrow-sprite.png') #fff  0% 50% no-repeat;
+    background-size: cover;
+    display: block;
+    margin-top: -25px;
+  }
 }
 
 .ereader__next{
-  background-position: 100% 50%;
   right: 0;
   left: auto;
+
+  &:before{
+    background-position: 100% 50%;
+    left: -20px;
+    border-left: $white 3px solid;
+  }
+
+  &:hover:before{
+    border-right: none;
+    border-left: $light-blue 3px solid;
+  }
 }
