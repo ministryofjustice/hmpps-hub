@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CsvHelper;
 using HMPPS.Models.Csv;
 using Sitecore;
 using Sitecore.Data;
@@ -33,97 +32,34 @@ namespace HMPPS.Utilities.CsvUpload
         public BookUploadSitecoreService(Database database, TemplateItem bookPageTemplate,
             TemplateItem bookSectionPageTemplate)
         {
-            this._database = database;
-            this._bookPageTemplate = bookPageTemplate;
-            this._bookSectionPageTemplate = bookSectionPageTemplate;
+            _database = database;
+            _bookPageTemplate = bookPageTemplate;
+            _bookSectionPageTemplate = bookSectionPageTemplate;
             _bookContentRootItem = _database.GetItem(_bookContentRootPath);
             _bookImageRootItem = _database.GetItem(_bookImageRootPath);
             _bookFileRootItem = _database.GetItem(_bookFileRootPath);
         }
 
-        #region page functions
 
-        public virtual Dictionary<int, string> GetAvailableYears()
+        public void CreateSitecoreItems(List<BookCsvRow> bookRows)
         {
-            ConcurrentDictionary<int, string> years = new ConcurrentDictionary<int, string>();
-            Parallel.ForEach(_bookContentRootItem.Children, (yearFolder) =>
+            var bookRoot = _database.GetItem(_bookContentRootPath);
+            if (bookRoot == null)
             {
-                if (yearFolder.TemplateID == _folderTemplate.ID)
-                {
-                    years.TryAdd(int.Parse(yearFolder.Name), yearFolder.Name);
-                }
-            });
-            return years.OrderByDescending(i => i.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
-        }
-
-        public virtual Dictionary<int, string> GetAvailableMonths(int year)
-        {
-            var yearFolder = _bookContentRootItem.Children[year.ToString()];
-            if (yearFolder == null)
-            {
-                return null;
-            }
-            ConcurrentDictionary<int, string> months = new ConcurrentDictionary<int, string>();
-
-            Parallel.ForEach(yearFolder.GetChildren(), (month) =>
-            {
-                if (month.TemplateID == _bookPageTemplate.ID)
-                {
-                    months.TryAdd(DateTime.ParseExact(month.Name, "MMMM", CultureInfo.InvariantCulture).Month,
-                        month.Name);
-                }
-            });
-            return months.OrderBy(i => i.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
-        }
-
-        public virtual IEnumerable<Item> GetArticles(int year, int month = 0)
-        {
-            var yearFolder = _bookContentRootItem.Children[year.ToString()];
-            if (yearFolder == null)
-            {
-                return null;
-            }
-
-            if (month == 0)
-            {
-                return yearFolder.GetChildren().OrderByDescending(o => o.Fields["Date Published"].Value);
-            }
-
-            return new[]
-            {
-                yearFolder.Children[month.ToString()]
-            };
-        }
-
-        #endregion page functions
-
-        #region Import
-
-        public void CreateSitecoreItems(List<BookCsvRow> archiveIssues)
-        {
-            Item archiveRoot = _database.GetItem(_bookRootId);
-            if (archiveRoot == null)
-            {
-                //TODO: log that the rot can not be found    
+                return;
             }
             using (new SecurityDisabler())
             {
-                foreach (BookCsvRow issue in archiveIssues)
+                foreach (var bookRow in bookRows)
                 {
                     try
                     {
-                        string year = issue.IssueDate.Year.ToString();
-                        Item yearFolder = GetOrCreateChild(archiveRoot, year, _folderTemplate, 0);
-                        Item issueItem = GetOrCreateChild(yearFolder, issue.IssueDate.ToString("MMMM"),
-                            _bookPageTemplate,
-                            0);
-                        SetImportIssueData(issueItem, issue);
+
                         PublishItem(issueItem);
                     }
                     catch (Exception ex)
                     {
-                        RecordMissingImportData(issue.IssueNumber, $" {issue.IssueDate:yyyy-MM-dd} - {ex.Message}");
-                        RecordMissingImportData(issue.IssueNumber, $" {issue.IssueDate:yyyy-MM-dd} - {ex.StackTrace}");
+                        //RecordMissingImportData(bookRow.IssueNumber, $" {bookRow.IssueDate:yyyy-MM-dd} - {ex.Message}");\a);
                     }
                 }
                 if (_missingStuff.Count > 0)
@@ -141,55 +77,20 @@ namespace HMPPS.Utilities.CsvUpload
 
         public Item GetSitecoreImageItem(BookCsvRow issue)
         {
-            string imageDecadeFolderName = $"{issue.IssueDate.Year.ToString("D").Substring(0, 3)}0s";
-            Item imageDecadeFolder = GetChildByName(_bookFileRootItem, imageDecadeFolderName);
-            Item imageFolder = GetChildByName(imageDecadeFolder, issue.IssueDate.Year.ToString());
-            Item imageItem = GetChildByName(imageFolder,
-                $"Navy News {issue.IssueDate:MMMM} {issue.IssueDate.Year} Issue {issue.IssueNumber} thumbnail");
-            return imageItem;
+            var dot = '.';
+            var startIndex = 0;
+            var endIndex = issue.ImageFilename.LastIndexOf(dot);
+            var length = endIndex - startIndex + 1;
+            return _bookImageRootItem.Axes.GetDescendant(issue.ImageFilename.Substring(startIndex, length));
         }
 
-        public Item GetSitecorePdfItem(BookCsvRow issue)
+        public Item GetSitecoreFileItem(BookCsvRow issue)
         {
-            string pdfDecadeFolderName = $"{issue.IssueDate.Year.ToString("D").Substring(0, 3)}0s";
-            Item pdfDecadeFolder = GetChildByName(_bookImageRootItem, pdfDecadeFolderName);
-            Item pdfFolder = GetChildByName(pdfDecadeFolder, issue.IssueDate.Year.ToString());
-            Item pdfItem = GetChildByName(pdfFolder,
-                $"Navy News {issue.IssueDate:MMMM} {issue.IssueDate.Year} Issue {issue.IssueNumber}");
-            return pdfItem;
-        }
-
-        private void SetImportIssueData(Item issueItem, BookCsvRow issue)
-        {
-            using (new EditContext(issueItem))
-            {
-                Item pdfItem = GetSitecorePdfItem(issue);
-                Item imageItem = GetSitecoreImageItem(issue);
-                if (imageItem == null)
-                {
-                    RecordMissingImportData(issue.IssueNumber,
-                        $"{issue.IssueDate:yyyy-MM-dd} - image missing or bad naming");
-                }
-                else
-                {
-                    ((ImageField) issueItem.Fields["Thumbnail Image"]).MediaID = imageItem.ID;
-                }
-                if (pdfItem == null)
-                {
-                    RecordMissingImportData(issue.IssueNumber,
-                        $"{issue.IssueDate:yyyy-MM-dd} - pdf missing or bad naming");
-                }
-                else
-                {
-                    ((FileField) issueItem.Fields["PDF Document"]).MediaID = pdfItem.ID;
-                    ((FileField) issueItem.Fields["PDF Document"]).Src = pdfItem.Paths.MediaPath;
-                }
-
-                ((DateField) issueItem.Fields["Date Published"]).Value = DateUtil.ToIsoDate(issue.IssueDate);
-                issueItem.Fields["Issue Number"].Value = issue.IssueNumber.ToString();
-                issueItem.Fields["Title"].Value = issue.Title;
-                issueItem.Fields["Summary"].Value = issue.Summary;
-            }
+            var dot = '.';
+            var startIndex = 0;
+            var endIndex = issue.BookFilename.LastIndexOf(dot);
+            var length = endIndex - startIndex + 1;
+            return _bookFileRootItem.Axes.GetDescendant(issue.BookFilename.Substring(startIndex, length));
         }
 
         private void RecordMissingImportData(int issueNumber, string whatsMissing)
@@ -267,7 +168,5 @@ namespace HMPPS.Utilities.CsvUpload
                 publisher.Publish();
             }
         }
-
-        #endregion Import
     }
 }

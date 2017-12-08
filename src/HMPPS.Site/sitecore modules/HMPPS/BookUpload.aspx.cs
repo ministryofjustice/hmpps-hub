@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using System.Web;
 using HMPPS.Utilities.CsvUpload;
 using Sitecore.Data;
 
@@ -29,7 +30,7 @@ namespace HMPPS.Site.sitecore_modules.HMPPS
 
         protected void importBtn_OnClick(object sender, EventArgs e)
         {
-            var uploadPath = $"c:\\temp\\BookUploadCsv{DateTime.Now.ToString("yyyy MMMM dd").Replace(" ", "_")}.txt";
+            var uploadPath = HttpContext.Current.Server.MapPath($"~/temp/BookUploadCsv{DateTime.Now.ToString("yyyy MMMM dd").Replace(" ", "_")}.txt");
 
             if (!csvFileUpload.HasFile) return;
             csvFileUpload.SaveAs(uploadPath);
