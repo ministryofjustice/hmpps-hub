@@ -7,8 +7,6 @@
     <title>Status</title>
 </head>
 <body>
-        <div>
-            Site status OK
-        </div>
+
 </body>
 </html>

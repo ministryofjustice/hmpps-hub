@@ -985,6 +985,10 @@
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
+      <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
+      <Name>HMPPS.NomisApiService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
       <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
       <Name>HMPPS.ContactIdentification</Name>
