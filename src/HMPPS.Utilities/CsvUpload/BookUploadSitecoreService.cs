@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using HMPPS.Models.Csv;
-using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -18,16 +14,20 @@ namespace HMPPS.Utilities.CsvUpload
 {
     public class BookUploadSitecoreService
     {
-        private readonly string _bookContentRootPath = "/sitecore/content/Home/Passing The Time/Books/ImportedDec2017";
-        private readonly string _bookImageRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails/ImportedDec2017";
-        private readonly string _bookFileRootPath = "/sitecore/media library/Files/HMPPS/Books/ImportedDec2017";
+        private readonly string _bookContentImportRootPath = "/sitecore/content/Home/Passing The Time/Books/ImportedDec2017";
+        private readonly string _bookImageImportRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails/ImportedDec2017";
+        private readonly string _bookImageRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails";
+        private readonly string _bookFileImportRootPath = "/sitecore/media library/Files/HMPPS/Books/ImportedDec2017";
         private readonly Database _database;
-        private readonly Item _bookContentRootItem;
+        private readonly Item _bookContentImportRootItem;
+        private readonly Item _bookImageImportRootItem;
         private readonly Item _bookImageRootItem;
-        private readonly Item _bookFileRootItem;
+        private readonly Item _bookFileImportRootItem;
         private readonly TemplateItem _bookPageTemplate;
         private readonly TemplateItem _bookSectionPageTemplate;
-        private readonly Dictionary<int, string> _missingStuff = new Dictionary<int, string>();
+        private readonly Dictionary<string, string> _missingStuff = new Dictionary<string, string>();
+        private const string SafeItemNameRegex = "[^A-Za-z0-9 _]";
+        private const string CategoryGenericImageName = "entertainment";
 
         public BookUploadSitecoreService(Database database, TemplateItem bookPageTemplate,
             TemplateItem bookSectionPageTemplate)
@@ -35,15 +35,25 @@ namespace HMPPS.Utilities.CsvUpload
             _database = database;
             _bookPageTemplate = bookPageTemplate;
             _bookSectionPageTemplate = bookSectionPageTemplate;
-            _bookContentRootItem = _database.GetItem(_bookContentRootPath);
+            _bookContentImportRootItem = _database.GetItem(_bookContentImportRootPath);
+            _bookImageImportRootItem = _database.GetItem(_bookImageImportRootPath);
             _bookImageRootItem = _database.GetItem(_bookImageRootPath);
-            _bookFileRootItem = _database.GetItem(_bookFileRootPath);
+            _bookFileImportRootItem = _database.GetItem(_bookFileImportRootPath);
         }
 
-
+        private string GetSafeItemName(string name)
+        { 
+            return Regex.Replace(name, SafeItemNameRegex, " ");
+        }
+        private string RemoveHtml(string value)
+        {
+            var step1 = Regex.Replace(value, @"<[^>]+>|&nbsp;", "").Trim();
+            var step2 = Regex.Replace(step1, @"\s{2,}", " ");
+            return step2;
+        }
         public void CreateSitecoreItems(List<BookCsvRow> bookRows)
         {
-            var bookRoot = _database.GetItem(_bookContentRootPath);
+            var bookRoot = _database.GetItem(_bookContentImportRootPath);
             if (bookRoot == null)
             {
                 return;
@@ -54,24 +64,42 @@ namespace HMPPS.Utilities.CsvUpload
                 {
                     try
                     {
+                        var categoryGenericImage = GetDescendantByName(_bookImageRootItem, CategoryGenericImageName);
 
-                        PublishItem(issueItem);
+                        var category1Item = GetOrCreateChild(_bookContentImportRootItem, bookRow.Category1,
+                            _bookSectionPageTemplate, out var category1Created);
+                        if (category1Created)
+                            EditBookCategory(category1Item, bookRow.Category1, categoryGenericImage);
+
+                        var category2Item = GetOrCreateChild(category1Item, bookRow.Category2,
+                            _bookSectionPageTemplate, out var category2Created);
+                        if (category2Created)
+                            EditBookCategory(category2Item, bookRow.Category2, categoryGenericImage);
+
+                        var bookImageItem = GetChildByName(_bookImageImportRootItem, bookRow.Id);
+                        var bookFileItem = GetChildByName(_bookFileImportRootItem, bookRow.Id);
+
+                        var bookPageItem = GetOrCreateChild(category2Item, bookRow.Title,
+                            _bookPageTemplate, out var bookPageCreated);
+                        if (bookPageCreated)
+                            EditBookPage(bookPageItem, bookRow, bookImageItem, bookFileItem);
+
+                        //PublishItem(bookPageItem);
                     }
                     catch (Exception ex)
                     {
-                        //RecordMissingImportData(bookRow.IssueNumber, $" {bookRow.IssueDate:yyyy-MM-dd} - {ex.Message}");\a);
+                        RecordMissingImportData(bookRow.Id, $" {bookRow.Title} - {ex.Message}");
                     }
                 }
-                if (_missingStuff.Count > 0)
+                if (!_missingStuff.Any())
+                    return;
+                var sb = new StringBuilder();
+                foreach (var issue in _missingStuff.OrderBy(i => i.Key))
                 {
-                    StringBuilder sb = new StringBuilder();
-                    foreach (var issue in _missingStuff.OrderBy(i => i.Key))
-                    {
-                        sb.AppendLine($"issue: {issue.Key} , {issue.Value}");
-                    }
-                    File.WriteAllText($"c:\\temp\\missingNavyNews_{DateTime.Now:yyyy-MM-dd}_{DateTime.Now:hh-mm}.txt",
-                        sb.ToString());
+                    sb.AppendLine($"issue: {issue.Key} , {issue.Value}");
                 }
+                //File.WriteAllText($"c:\\temp\\missingNavyNews_{DateTime.Now:yyyy-MM-dd}_{DateTime.Now:hh-mm}.txt",
+                //  sb.ToString());
             }
         }
 
@@ -81,7 +109,7 @@ namespace HMPPS.Utilities.CsvUpload
             var startIndex = 0;
             var endIndex = issue.ImageFilename.LastIndexOf(dot);
             var length = endIndex - startIndex + 1;
-            return _bookImageRootItem.Axes.GetDescendant(issue.ImageFilename.Substring(startIndex, length));
+            return _bookImageImportRootItem.Axes.GetDescendant(issue.ImageFilename.Substring(startIndex, length));
         }
 
         public Item GetSitecoreFileItem(BookCsvRow issue)
@@ -90,44 +118,78 @@ namespace HMPPS.Utilities.CsvUpload
             var startIndex = 0;
             var endIndex = issue.BookFilename.LastIndexOf(dot);
             var length = endIndex - startIndex + 1;
-            return _bookFileRootItem.Axes.GetDescendant(issue.BookFilename.Substring(startIndex, length));
+            return _bookFileImportRootItem.Axes.GetDescendant(issue.BookFilename.Substring(startIndex, length));
         }
 
-        private void RecordMissingImportData(int issueNumber, string whatsMissing)
+        private void RecordMissingImportData(string id, string whatsMissing)
         {
-            if (_missingStuff.ContainsKey(issueNumber))
+            if (_missingStuff.ContainsKey(id))
             {
-                _missingStuff[issueNumber] += $"\r\n             - {whatsMissing}";
+                _missingStuff[id] += $"\r\n             - {whatsMissing}";
             }
             else
             {
-                _missingStuff.Add(issueNumber, $"- {whatsMissing}");
+                _missingStuff.Add(id, $"- {whatsMissing}");
             }
         }
 
         private Item GetChildByName(Item item, string itemName)
         {
-            Item child = item?.Children[itemName];
+            var child = item?.Children[itemName];
             return child;
         }
 
-        private Item GetOrCreateChild(Item parent, string childName, TemplateItem template, int sortOrder)
+        private Item GetDescendantByName(Item item, string itemName)
         {
-            Item child = parent.Children[childName];
-
-            if (child == null)
-            {
-                child = parent.Add(childName, template);
-
-                using (new EditContext(child))
-                {
-                    child[FieldIDs.Sortorder] = sortOrder.ToString();
-                }
-
-                PublishItem(child);
-            }
-
+            var safeName = GetSafeItemName(itemName);
+            var child = item?.Axes.GetDescendant(safeName);
             return child;
+        }
+
+        private Item GetOrCreateChild(Item parent, string childName, TemplateItem template, out bool itemCreated)
+        {
+            var childSafeName = GetSafeItemName(childName);
+            var child = parent.Children[childSafeName];
+
+            if (child != null)
+            {
+                itemCreated = false;
+                return child;
+            }
+            child = parent.Add(childSafeName, template);
+
+            PublishItem(child);
+
+            itemCreated = true;
+            return child;
+        }
+
+        private void EditBookCategory(Item categoryItem, string name, Item image)
+        {
+            using (new EditContext(categoryItem))
+            {
+                categoryItem.Fields["Page Title"].Value = name;
+                ((ImageField) categoryItem.Fields["Thumbnail Image"]).MediaID = image.ID;
+            }
+        }
+
+        private void EditBookPage(Item bookItem, BookCsvRow bookRow, Item image, Item file)
+        {
+            using (new EditContext(bookItem))
+            {
+                bookItem.Fields["Page Title"].Value = bookRow.Title;
+                ((ImageField)bookItem.Fields["Thumbnail Image"]).MediaID = image.ID;
+
+                ((FileField)bookItem.Fields["Book File"]).MediaID = file.ID;
+                ((FileField)bookItem.Fields["Book File"]).Src = file.Paths.MediaPath;
+
+                bookItem.Fields["Page Description"].Value = RemoveHtml(bookRow.Description);
+                bookItem.Fields["Source ID"].Value = bookRow.Id;
+                bookItem.Fields["Author"].Value = bookRow.Author;
+                bookItem.Fields["Subtitle"].Value = bookRow.Subtitle;
+                bookItem.Fields["Publisher"].Value = bookRow.Publisher;
+
+            }
         }
 
         private void PublishItem(Item item, bool deep = false, bool publishParentItems = false)
