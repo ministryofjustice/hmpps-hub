@@ -13,13 +13,13 @@ namespace HMPPS.Site.sitecore_modules.HMPPS {
     public partial class BookUpload {
         
         /// <summary>
-        /// form1 control.
+        /// uploadForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm uploadForm;
         
         /// <summary>
         /// statusLit control.
@@ -29,6 +29,15 @@ namespace HMPPS.Site.sitecore_modules.HMPPS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal statusLit;
+        
+        /// <summary>
+        /// sitecoreFolderInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal sitecoreFolderInfo;
         
         /// <summary>
         /// csvFileUpload control.
@@ -47,5 +56,14 @@ namespace HMPPS.Site.sitecore_modules.HMPPS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button importBtn;
+        
+        /// <summary>
+        /// resultLit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal resultLit;
     }
 }

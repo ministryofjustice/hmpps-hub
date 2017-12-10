@@ -8,18 +8,31 @@ namespace HMPPS.Site.sitecore_modules.HMPPS
 {
     public partial class BookUpload : System.Web.UI.Page
     {
-
         private BookUploadCsvService _csvService;
         private BookUploadSitecoreService _scService;
 
+        private readonly string _bookContentImportRootPath = "/sitecore/content/Home/BooksImportedDec2017";
+        private readonly string _bookImageImportRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails/ImportedDec2017";
+        private readonly string _bookImageRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails";
+        private readonly string _bookFileImportRootPath = "/sitecore/media library/Files/HMPPS/Books/ImportedDec2017";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //only sitecore admins have access to this form
+            uploadForm.Visible = Sitecore.Context.User.IsAuthenticated && Sitecore.Context.IsAdministrator;
+
+            sitecoreFolderInfo.Text = "Book content will be added under " + _bookContentImportRootPath + "<br />";
+            sitecoreFolderInfo.Text += "Images are required to exist under " + _bookImageImportRootPath + "<br />";
+            sitecoreFolderInfo.Text += "Book files are required to exist under " + _bookFileImportRootPath + "<br />";
+            sitecoreFolderInfo.Text += "A generic image named 'entertainment' is required to exist under " + _bookImageRootPath + "<br />";
+
             var masterDb = Database.GetDatabase("master");
-            var bookPageTemplate = masterDb.Templates["/sitecore/templates/HMPPS/Pages/Book Page"];
-            var bookSectionPageTemplate = masterDb.Templates["/sitecore/templates/HMPPS/Pages/Book Section Page"];
+            var bookPageTemplate = masterDb.GetTemplate("HMPPS/Pages/Book Page");
+            var bookSectionPageTemplate = masterDb.GetTemplate("HMPPS/Pages/Book Section Page");
             if (masterDb.Name.Equals("master", StringComparison.InvariantCultureIgnoreCase) && bookSectionPageTemplate != null && bookPageTemplate != null)
             {
-                _scService = new BookUploadSitecoreService(masterDb, bookPageTemplate, bookSectionPageTemplate);
+                _scService = new BookUploadSitecoreService(masterDb, bookPageTemplate, bookSectionPageTemplate,
+                    _bookContentImportRootPath, _bookImageImportRootPath, _bookImageRootPath, _bookFileImportRootPath);
                 statusLit.Text = "Initialization status: ok";
             }
             else
@@ -30,7 +43,7 @@ namespace HMPPS.Site.sitecore_modules.HMPPS
 
         protected void importBtn_OnClick(object sender, EventArgs e)
         {
-            var uploadPath = HttpContext.Current.Server.MapPath($"~/temp/BookUploadCsv{DateTime.Now.ToString("yyyy MMMM dd").Replace(" ", "_")}.txt");
+            var uploadPath = HttpContext.Current.Server.MapPath($"~/temp/BookUploadCsv{DateTime.Now.ToString("yyyy MMMM dd HH mm").Replace(" ", "_")}.txt");
 
             if (!csvFileUpload.HasFile) return;
             csvFileUpload.SaveAs(uploadPath);
@@ -38,8 +51,8 @@ namespace HMPPS.Site.sitecore_modules.HMPPS
             {
                 if (!_csvService.IsLoaded) return;
                 var rows = _csvService.GetAllRows();
-                Task.Run(() => { _scService.CreateSitecoreItems(rows); });
-                //_scService.CreateSitecoreItems(rows);
+                //Task.Run(() => { _scService.CreateSitecoreItems(rows); });
+                resultLit.Text = _scService.CreateSitecoreItems(rows);
             }
         }
     }

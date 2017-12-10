@@ -411,4 +411,6 @@ proxy.json
 /xdb-rep-www
 /cd-www/nolicense.aspx
 /src/HMPPS.Site/App_Config/Include/zzz/HMPPS.Sitecore.Local.Smtp.config
+/www/sitecore modules/HMPPS
+/cd-www/sitecore modules/HMPPS/BookUpload.aspx
 /hmppsAssets/js/application.js
