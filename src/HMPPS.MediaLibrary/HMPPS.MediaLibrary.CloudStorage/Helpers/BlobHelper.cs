@@ -22,7 +22,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
                 return XmlUtil.GetAttribute("containerName", node);
             }
 
-            return "blobs";
+            return null;
         }
     }
 }

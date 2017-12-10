@@ -24,13 +24,16 @@ namespace HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload
 
             var containerName = GetContainerName(args.Folder);
 
+            if (string.IsNullOrEmpty(containerName))
+                return;
+            
             args.Destination = UploadDestination.File;
             PipelineHelper.AddContainerNameToArgs(args, containerName);
         }
 
         public string GetContainerName(string folder)
         {
-            Database db = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
+            var db = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
             folder = db.GetItem(folder).Paths.FullPath.ToLower();
 
             return BlobHelper.GetContainerNameForSitecorePath(folder);
