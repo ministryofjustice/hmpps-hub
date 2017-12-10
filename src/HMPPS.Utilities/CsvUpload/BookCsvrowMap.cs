@@ -11,16 +11,16 @@ namespace HMPPS.Utilities.CsvUpload
             int _row = -1;
             try
             {
-                Map(m => m.Id);
-                Map(m => m.Publisher);
-                Map(m => m.BookFilename);
-                Map(m => m.ImageFilename);
-                Map(m => m.Author);
-                Map(m => m.Title);
-                Map(m => m.Description);
-                Map(m => m.Subtitle);
-                Map(m => m.Category1);
-                Map(m => m.Category2);
+                Map(m => m.Id).Name("id");
+                Map(m => m.Publisher).Name("publisher");
+                Map(m => m.BookFilename).Name("sample");
+                Map(m => m.ImageFilename).Name("cover");
+                Map(m => m.Author).Name("author");
+                Map(m => m.Title).Name("title");
+                Map(m => m.Description).Name("description");
+                Map(m => m.Subtitle).Name("subtitle");
+                Map(m => m.Category1).Name("category1");
+                Map(m => m.Category2).Name("category2");
             }
             catch (Exception ex)
             {
