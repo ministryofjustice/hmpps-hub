@@ -36,17 +36,8 @@ namespace HMPPS.Site.Controllers.Pages
                 };
                 bookSection.IsBookPage = isBookPage;
 
-                if (bookSection.IsBookPage)
-                {
-                    bookSection.BookFile = new File()
-                    {
-                        Url = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(c, "Book File"),
-                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFilExtension(c, "Book File")
-                    };
-                }
 
-                if ((!bookSection.IsBookPage && !string.IsNullOrEmpty(bookSection.Link.Url)) ||
-                    (bookSection.IsBookPage && !string.IsNullOrEmpty(bookSection.BookFile.Url)))
+                if (!string.IsNullOrEmpty(bookSection.Link.Url))
                     _bspvm.Children.Add(bookSection);
             }
             _bspvm.BreadcrumbItems = BreadcrumbItems;

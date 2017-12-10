@@ -41,7 +41,7 @@ namespace HMPPS.Site.Controllers.Pages
                     videoSection.VideoFile = new File()
                     {
                         Url = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(c, "Video File"),
-                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFilExtension(c, "Video File")
+                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFileExtension(c, "Video File")
                     };
                 }
 
