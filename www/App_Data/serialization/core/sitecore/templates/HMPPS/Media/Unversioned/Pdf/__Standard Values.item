@@ -1,0 +1,66 @@
+----item----
+version: 1
+id: {E5482A02-F299-45C6-A43D-8BC090B92BD5}
+database: core
+path: /sitecore/templates/HMPPS/Media/Unversioned/Pdf/__Standard Values
+parent: {5ECA3803-476F-4BB9-B15E-53275A5913EA}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {5ECA3803-476F-4BB9-B15E-53275A5913EA}
+templatekey: Pdf
+created: 20171206T163145Z
+
+----field----
+field: {C9283D9E-7C29-4419-9C28-5A5C8FF53E84}
+name: __Bucketable
+key: __bucketable
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: 6836e514-f517-4f95-807f-73422ed07fec
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 20
+
+sitecore\e3_MihaelaR
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20171206T163146Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 20
+
+sitecore\e3_MihaelaR
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6836e514-f517-4f95-807f-73422ed07fec
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20171206T163207Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 20
+
+sitecore\e3_MihaelaR
