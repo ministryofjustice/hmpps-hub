@@ -5,6 +5,7 @@ using HMPPS.Models.Cms;
 using HMPPS.Models.Common;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
+using Sitecore.Globalization;
 
 namespace HMPPS.Site.Controllers.Pages
 {
@@ -15,6 +16,8 @@ namespace HMPPS.Site.Controllers.Pages
         private void BuildViewModel(Sitecore.Data.Items.Item contextItem)
         {
             _bspvm = new BookSectionPageViewModel();
+            _bspvm.NewWindowWarning = Translate.Text("New Window Warning");
+
             foreach (var c in contextItem.Children.ToList())
             {
                 var isBookPage = c.TemplateName == "Book Page";
