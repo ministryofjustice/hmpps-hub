@@ -74,18 +74,18 @@ namespace HMPPS.Utilities.CsvUpload
                 {
                     try
                     {
-                        var category1Item = GetOrCreateChild(_bookContentImportRootItem, bookRow.Category1,
+                        var category1Item = GetOrCreateChild(bookRow.Id, _bookContentImportRootItem, bookRow.Category1,
                             _bookSectionPageTemplate, out var category1Created);
                         if (category1Created)
                             EditBookCategory(category1Item, bookRow.Category1, categoryGenericImage);
 
-                        var category2Item = GetOrCreateChild(category1Item, bookRow.Category2,
+                        var category2Item = GetOrCreateChild(bookRow.Id, category1Item, bookRow.Category2,
                             _bookSectionPageTemplate, out var category2Created);
                         if (category2Created)
                             EditBookCategory(category2Item, bookRow.Category2, categoryGenericImage);
 
-                        var bookImageItem = GetChildByName(_bookImageImportRootItem, bookRow.Id);
-                        var bookFileItem = GetChildByName(_bookFileImportRootItem, bookRow.Id);
+                        var bookImageItem = GetDescendantByName(_bookImageImportRootItem, bookRow.Id);
+                        var bookFileItem = GetDescendantByName(_bookFileImportRootItem, bookRow.Id);
 
                         if (bookFileItem == null)
                         {
@@ -99,7 +99,7 @@ namespace HMPPS.Utilities.CsvUpload
                         }
 
                        
-                            var bookPageItem = GetOrCreateChild(category2Item, bookRow.Title,
+                            var bookPageItem = GetOrCreateChild(bookRow.Id, category2Item, bookRow.Title,
                                 _bookPageTemplate, out var bookPageCreated);
                             if (bookPageCreated)
                                 EditBookPage(bookPageItem, bookRow, bookImageItem, bookFileItem);
@@ -164,9 +164,15 @@ namespace HMPPS.Utilities.CsvUpload
             return child;
         }
 
-        private Item GetOrCreateChild(Item parent, string childName, TemplateItem template, out bool itemCreated)
+        private Item GetOrCreateChild(string id, Item parent, string childName, TemplateItem template, out bool itemCreated)
         {
             var childSafeName = GetSafeItemName(childName);
+            if (string.IsNullOrEmpty(childSafeName))
+            {
+                RecordMissingImportData(id, $" {id} {childName} - Empty item safe name : " + childSafeName);
+                itemCreated = false;
+                return null;
+            }
             var child = parent.Children[childSafeName];
 
             if (child != null)

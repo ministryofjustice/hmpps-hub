@@ -3,10 +3,14 @@ using System.Threading.Tasks;
 using System.Web;
 using HMPPS.Utilities.CsvUpload;
 using Sitecore.Data;
+using Sitecore.sitecore.admin;
 
 namespace HMPPS.Site.sitecore_modules.HMPPS
 {
-    public partial class BookUpload : System.Web.UI.Page
+    /// <summary>
+    /// Book upload tool admin page
+    /// </summary>
+    public partial class BookUpload : AdminPage
     {
         private BookUploadCsvService _csvService;
         private BookUploadSitecoreService _scService;
@@ -18,13 +22,12 @@ namespace HMPPS.Site.sitecore_modules.HMPPS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //only sitecore admins have access to this form
-            uploadForm.Visible = Sitecore.Context.User.IsAuthenticated && Sitecore.Context.IsAdministrator;
+            CheckSecurity();
 
             sitecoreFolderInfo.Text = "Book content will be added under " + _bookContentImportRootPath + "<br />";
             sitecoreFolderInfo.Text += "Images are required to exist under " + _bookImageImportRootPath + "<br />";
             sitecoreFolderInfo.Text += "Book files are required to exist under " + _bookFileImportRootPath + "<br />";
-            sitecoreFolderInfo.Text += "A generic image named 'entertainment' is required to exist under " + _bookImageRootPath + "<br />";
+            sitecoreFolderInfo.Text += "A generic book category image named 'entertainment' is required to exist under " + _bookImageRootPath + "<br />";
 
             var masterDb = Database.GetDatabase("master");
             var bookPageTemplate = masterDb.GetTemplate("HMPPS/Pages/Book Page");
