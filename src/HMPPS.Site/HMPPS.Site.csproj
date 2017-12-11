@@ -828,7 +828,6 @@
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
-    <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
     <Content Include="Views\Pages\BookSectionPage.cshtml" />
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
@@ -860,6 +859,9 @@
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Pages\ErrorPage.cshtml" />
     <Content Include="Views\Pages\LandingPage.cshtml" />
+    <Content Include="Views\Pages\BookPage.cshtml" />
+    <Content Include="Views\Shared\MvcLayout.cshtml" />
+    <Content Include="Views\Shared\BookReaderLayout.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -897,6 +899,7 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\Pages\BookPageController.cs" />
     <Compile Include="Controllers\Pages\ErrorPageController.cs" />
     <Compile Include="Controllers\Pages\LandingPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
@@ -932,6 +935,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\BookPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\LandingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />

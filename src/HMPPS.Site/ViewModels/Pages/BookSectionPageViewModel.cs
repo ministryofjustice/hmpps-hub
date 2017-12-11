@@ -11,5 +11,7 @@ namespace HMPPS.Site.ViewModels.Pages
             Children = new List<BookSectionBlock>();
         }
         public List<BookSectionBlock> Children { get; set; }
+
+        public string NewWindowWarning { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace HMPPS.Site
                 "~/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/sudokuJS.js"
             ));
-            bundles.Add(new ScriptBundle("~/bundles/book-scripts.js").Include(
+            bundles.Add(new Bundle("~/bundles/book-scripts.js").Include(
                 "~/hmppsAssets/js/src/third-party/lib/jszip.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/epub.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/mime-types.js"
