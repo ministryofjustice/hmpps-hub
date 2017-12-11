@@ -18,7 +18,7 @@ namespace HMPPS.Site.sitecore_modules.HMPPS
         private readonly string _bookContentImportRootPath = "/sitecore/content/Home/BooksImportedDec2017";
         private readonly string _bookImageImportRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails/ImportedDec2017";
         private readonly string _bookImageRootPath = "/sitecore/media library/Images/HMPPS/Pages/Books/Thumbnails";
-        private readonly string _bookFileImportRootPath = "/sitecore/media library/Files/HMPPS/Books/ImportedDec2017";
+        private readonly string _bookFileImportRootPath = "/sitecore/media library/Files/HMPPS/Books/English";
 
         protected void Page_Load(object sender, EventArgs e)
         {
