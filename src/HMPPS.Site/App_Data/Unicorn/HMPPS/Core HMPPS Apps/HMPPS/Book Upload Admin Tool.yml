@@ -1,0 +1,59 @@
+﻿---
+ID: "106c9fad-e538-4c11-a017-5be059b9f858"
+Parent: "4658a0b6-b8a5-4bae-a262-0a505e0d7851"
+Template: "eb06cec0-5e2d-4dc4-875b-01adcc577d13"
+Path: /sitecore/content/Applications/HMPPS/Book Upload Admin Tool
+DB: core
+BranchID: "1f0770ea-8b77-4110-91aa-cc00dee102dd"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /sitecore/shell/themes/standard/Software/16x16/application.png
+- ID: "094829c2-d7a7-4c38-b025-b99ff2001b56"
+  Hint: Disable close
+  Type: checkbox
+  Value: 0
+- ID: "2b3ecbbc-432a-4cea-bb75-ce481b644ff8"
+  Hint: Disable resize
+  Type: checkbox
+  Value: 0
+- ID: "b4e951ee-906f-4249-b2c6-68e31c82e118"
+  Hint: Disable maximize
+  Type: checkbox
+  Value: 0
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: 
+- ID: "f54c1557-f8ce-4130-90a7-b89575c4cdbe"
+  Hint: Disable minimize
+  Type: checkbox
+  Value: 0
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{35517498-AD36-493A-B91B-2C3D4D375B37}"
+- ID: "f9814588-762b-4d57-932d-2d6de100a59a"
+  Hint: Application
+  Value: |
+    <link linktype="external" url="/sitecore modules/HMPPS/BookUpload.aspx" anchor="" target="" />
+- ID: "fc2b18b3-1631-4c3f-9e47-51df05030026"
+  Hint: Icon
+  Value: /people/32x32/books.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171211T134112Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
+    - ID: "67b6378b-c9f1-47c7-9cac-bfa79b0727d9"
+      Hint: Display name
+      Value: Book Upload Admin Tool
