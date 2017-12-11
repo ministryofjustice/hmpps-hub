@@ -48,7 +48,7 @@ namespace HMPPS.Utilities.CsvUpload
 
         private string GetSafeItemName(string name)
         { 
-            return Regex.Replace(name, SafeItemNameRegex, " ");
+            return Regex.Replace(name, SafeItemNameRegex, " ").Trim();
         }
         private string RemoveHtml(string value)
         {
@@ -90,20 +90,20 @@ namespace HMPPS.Utilities.CsvUpload
                         if (bookFileItem == null)
                         {
                             RecordMissingImportData(bookRow.Id, $" {bookRow.Id} {bookRow.Title} - Missing book file");
-                            break;
+                            continue;
                         }
                         if (bookImageItem == null)
                         {
                             RecordMissingImportData(bookRow.Id, $" {bookRow.Id} {bookRow.Title} - Missing image file");
-                            break;
+                            continue;
                         }
 
-                       
-                            var bookPageItem = GetOrCreateChild(bookRow.Id, category2Item, bookRow.Title,
-                                _bookPageTemplate, out var bookPageCreated);
-                            if (bookPageCreated)
-                                EditBookPage(bookPageItem, bookRow, bookImageItem, bookFileItem);
-                        
+
+                        var bookPageItem = GetOrCreateChild(bookRow.Id, category2Item, bookRow.Title,
+                            _bookPageTemplate, out var bookPageCreated);
+                        if (bookPageCreated)
+                            EditBookPage(bookPageItem, bookRow, bookImageItem, bookFileItem);
+
                     }
                     catch (Exception ex)
                     {
@@ -111,7 +111,8 @@ namespace HMPPS.Utilities.CsvUpload
                     }
                 }
                 if (!_errors.Any())
-                    return "Upload successful. Please publish the content and media items manually after moving and checking them.";
+                    return
+                        "Upload successful. Please publish the content and media items manually after moving and checking them.";
                 var sb = new StringBuilder();
                 foreach (var error in _errors.OrderBy(i => i.Key))
                 {
