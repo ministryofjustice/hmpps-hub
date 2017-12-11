@@ -1,0 +1,39 @@
+﻿---
+ID: "0257bf23-2383-46dd-86d8-67e95fdd0487"
+Parent: "68f18608-4430-407e-8d34-0b79000dfe51"
+Template: "72450c9c-98c4-4117-88b7-573110c7e0c0"
+Path: /sitecore/content/Documents and settings/All users/Start menu/Programs/HMPPS Book Upload Admin Tool
+DB: core
+BranchID: "5e8cfcf9-cef2-4bdb-9e35-219c50184066"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /sitecore/shell/themes/standard/Software/16x16/application_run.png
+- ID: "238a40da-15f2-4412-b720-8f192ffa7491"
+  Hint: Icon
+  Value: /People/32x32/books.png
+- ID: "8a1ac797-0304-4c50-aaac-4d9dbbff435f"
+  Hint: Application
+  Value: |
+    <link text="" anchor="" linktype="internal" class="" title=""  querystring="" url="/Applications/HMPPS/Book Upload Admin Tool" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{D3D7D24F-1C03-4527-BDF2-8AB9BEE4C36B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171211T135157Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
+    - ID: "c032db76-cc34-4f8f-be2d-d2fb35237aab"
+      Hint: Display name
+      Value: Book Upload Admin Tool
