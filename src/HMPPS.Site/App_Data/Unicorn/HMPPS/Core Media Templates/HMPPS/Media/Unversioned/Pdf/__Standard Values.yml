@@ -1,0 +1,23 @@
+﻿---
+ID: "e5482a02-f299-45c6-a43d-8bc090b92bd5"
+Parent: "5eca3803-476f-4bb9-b15e-53275a5913ea"
+Template: "5eca3803-476f-4bb9-b15e-53275a5913ea"
+Path: /sitecore/templates/HMPPS/Media/Unversioned/Pdf/__Standard Values
+DB: core
+SharedFields:
+- ID: "c9283d9e-7c29-4419-9c28-5a5c8ff53e84"
+  Hint: __Bucketable
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171206T163146Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR
