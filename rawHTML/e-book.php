@@ -70,7 +70,6 @@
             Book.nextPage();
         });
 
-        var keylock = false;
     }
 
      EPUBJS.Hooks.register("beforeChapterDisplay").pageTurns = function (callback, renderer) {
