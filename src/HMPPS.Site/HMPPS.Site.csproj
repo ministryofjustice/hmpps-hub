@@ -256,8 +256,8 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Unicorn, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unicorn.Core.4.0.3\lib\net452\Unicorn.dll</HintPath>
+    <Reference Include="Unicorn, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unicorn.Core.4.0.2\lib\net452\Unicorn.dll</HintPath>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
@@ -270,6 +270,9 @@
     <Content Include="404.html" />
     <Content Include="500.aspx" />
     <Content Include="500.html" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\zzDataFolder.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
@@ -281,6 +284,16 @@
     <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
@@ -291,21 +304,6 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.File.MediaType.config">
       <SubType>Designer</SubType>
     </Content>
@@ -817,6 +815,7 @@
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
+    <Content Include="sitecore modules\HMPPS\BookUpload.aspx" />
     <Content Include="DummyLogout.aspx" />
     <Content Include="nolicense.aspx" />
     <Content Include="Parameters.xml">
@@ -828,7 +827,6 @@
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
-    <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
     <Content Include="Views\Pages\BookSectionPage.cshtml" />
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
@@ -860,6 +858,9 @@
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Pages\ErrorPage.cshtml" />
     <Content Include="Views\Pages\LandingPage.cshtml" />
+    <Content Include="Views\Pages\BookPage.cshtml" />
+    <Content Include="Views\Shared\MvcLayout.cshtml" />
+    <Content Include="Views\Shared\BookReaderLayout.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -897,6 +898,14 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.cs">
+      <DependentUpon>BookUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.designer.cs">
+      <DependentUpon>BookUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Pages\BookPageController.cs" />
     <Compile Include="Controllers\Pages\ErrorPageController.cs" />
     <Compile Include="Controllers\Pages\LandingPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
@@ -932,6 +941,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\BookPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\LandingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />

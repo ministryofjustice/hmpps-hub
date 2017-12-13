@@ -87,6 +87,7 @@
     <Compile Include="Common\File.cs" />
     <Compile Include="Common\Image.cs" />
     <Compile Include="Common\Link.cs" />
+    <Compile Include="Csv\BookCsvRow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

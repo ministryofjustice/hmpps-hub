@@ -362,7 +362,6 @@ proxy.json
 /hmppsAssets/css/hmpps-ie8.css
 /hmppsAssets/css/hmpps-ie7.css
 /hmppsAssets/css/hmpps-ie6.css
-/hmppsAssets/js/application.js
 /www/App_Data/tools
 /www/App_Data/Unicorn
 /www/App_Data/viewstate
@@ -412,3 +411,6 @@ proxy.json
 /xdb-rep-www
 /cd-www/nolicense.aspx
 /src/HMPPS.Site/App_Config/Include/zzz/HMPPS.Sitecore.Local.Smtp.config
+/www/sitecore modules/HMPPS
+/cd-www/sitecore modules/HMPPS/BookUpload.aspx
+/hmppsAssets/js/application.js
