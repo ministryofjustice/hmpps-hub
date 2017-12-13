@@ -37,9 +37,12 @@
 <script src="/hmppsAssets/js/src/third-party/lib/mime-types.js"></script>
 
 <script>
-
+    
+    
+    var Book;
     
     function openBook() {
+
         var htmlElement = document.getElementsByTagName("html")[0];
         htmlElement.style.height = '100%';
         document.body.style.height = '100%';
@@ -51,11 +54,14 @@
         var prev = document.getElementsByClassName('js-ereader-prev')[0];
         var area = document.getElementsByClassName('js-ereader-area')[0];
 
-        var Book = ePub(src);
+        Book = ePub(src);
+        console.log(Book);
+        
         var rendered = Book.renderTo(area);
         rendered.then(function () {
             Book.open(src);
         });
+
     
         prev.addEventListener('click', function () {
             Book.prevPage();
@@ -65,53 +71,39 @@
         });
 
         var keylock = false;
-
-        document.body.onkeydown = function (e) {
-            if(e.keyCode == 37) { 
-                console.log('next')	
-                if(Book.metadata.direction === "rtl") {
-                    Book.nextPage();
-                } else {
-                    Book.prevPage();
-                }
-
-                //prev.addClass("active");
-
-                keylock = true;
-                setTimeout(function(){
-                    keylock = false;
-                    //prev.removeClass("active");
-                }, 100);
-
-                e.preventDefault();
-            }
-            if(e.keyCode == 39) {
-                console.log('prev')	
-                if(Book.metadata.direction === "rtl") {
-                    Book.prevPage();
-                } else {
-                    Book.nextPage();
-                }
-                
-                //next.addClass("active");
-
-                keylock = true;
-                setTimeout(function(){
-                    keylock = false;
-                    //next.removeClass("active");
-                }, 100);
-
-                e.preventDefault();
-            }
-        };
-        // return {
-        //     "arrowKeys" : arrowKeys
-        // };
-    
-        
     }
-    window.onload = openBook();
 
+     EPUBJS.Hooks.register("beforeChapterDisplay").pageTurns = function (callback, renderer) {
+        var lock = false;
+        var arrowKeys = function (e) {
+            e.preventDefault();
+            if (lock) return;
+          
+            if (e.keyCode == 37) {
+                Book.prevPage();
+                lock = true;
+                setTimeout(function () {
+                    lock = false;
+                }, 100);
+                return false;
+            }
+
+            if (e.keyCode == 39) {
+                Book.nextPage();
+                lock = true;
+                setTimeout(function () {
+                    lock = false;
+                }, 100);
+                return false;
+            }
+
+        };
+        renderer.doc.addEventListener('keydown', arrowKeys, false);
+        if (callback) callback();
+    }
+
+    
+    window.onload = openBook();
    
 </script>
 
