@@ -10,6 +10,7 @@
     @Html.Action("Head", "MvcLayout")
 </head>
 <body class="epub">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
     @System.Web.Optimization.Scripts.Render("~/bundles/book-scripts.js")
     @Html.Sitecore().Placeholder("content")
 </body>

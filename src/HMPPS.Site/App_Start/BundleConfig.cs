@@ -32,7 +32,8 @@ namespace HMPPS.Site
             bundles.Add(new Bundle("~/bundles/book-scripts.js").Include(
                 "~/hmppsAssets/js/src/third-party/lib/jszip.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/epub.min.js",
-                "~/hmppsAssets/js/src/third-party/lib/mime-types.js"
+                "~/hmppsAssets/js/src/third-party/lib/mime-types.js",
+                "~/hmppsAssets/js/src/third-party/lib/smartimages.min.js"
             ));
             BundleTable.EnableOptimizations = true;
         }
