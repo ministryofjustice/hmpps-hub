@@ -9,13 +9,5 @@
 <!-- scripts needed for Suduko -->
 @System.Web.Optimization.Scripts.Render("~/bundles/sudoku-scripts.js")
 }
-@if (Model == "Book Section Page")
-{
-<!-- scripts needed for books -->
-@System.Web.Optimization.Scripts.Render("~/bundles/book-scripts.js")
-}
-@*<!-- scripts needed for books later on in the project (not needed for now) -->
-<!-- <script src="/hmppsAssets/js/src/third-party/lib/hooks.min.js"></script>
-<script src="/hmppsAssets/js/src/third-party/lib/reader.min.js"></script> -->*@
 
 @System.Web.Optimization.Scripts.Render("~/bundles/application.js")

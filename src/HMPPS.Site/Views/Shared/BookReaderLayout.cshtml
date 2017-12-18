@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Analytics.Extensions
+
+<!--[if gt IE 8]><!-->
+<html lang="@Sitecore.Context.Language">
+<!--<![endif]-->
+<head>
+    @Html.Sitecore().VisitorIdentification()
+    @Html.Action("Head", "MvcLayout")
+</head>
+<body class="epub">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/book-scripts.js")
+    @Html.Sitecore().Placeholder("content")
+</body>
+</html>
+

@@ -6,7 +6,6 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Jose;
 using Newtonsoft.Json;
-using Sitecore.Diagnostics;
 using HMPPS.NomisApiService.Interfaces;
 using HMPPS.NomisApiService.Models;
 using HMPPS.ErrorReporting;
@@ -122,7 +121,16 @@ namespace HMPPS.NomisApiService.Services
         /// <returns></returns>
         private async Task<string> GetPrisonerLocationDetailsAsync(string prisonerId)
         {
-            return await Client.GetStringAsync(ApiBaseUrl + "/offenders/" + prisonerId + "/location");
+            try
+            {
+                return await Client.GetStringAsync(ApiBaseUrl + "/offenders/" + prisonerId + "/location");
+            }
+            catch (AggregateException ex)
+            {
+                var detailMessage = $"GetPrisonerLocationDetailsAsync({prisonerId})";
+                ex.Handle(e => HandleInnerException(e, detailMessage));
+                return null;
+            }
         }
 
         /// <summary>
@@ -136,8 +144,17 @@ namespace HMPPS.NomisApiService.Services
         /// <returns></returns>
         private async Task<string> GetPrisonerAccountsAsync(string prisonId, string prisonerId)
         {
-            var url = $"{ApiBaseUrl}/prison/{prisonId}/offenders/{prisonerId}/accounts";
-            return await Client.GetStringAsync(url);
+            try
+            {
+                var url = $"{ApiBaseUrl}/prison/{prisonId}/offenders/{prisonerId}/accounts";
+                return await Client.GetStringAsync(url);
+            }
+            catch (AggregateException ex)
+            {
+                var detailMessage = $"GetPrisonerAccountsAsync({prisonId},{prisonerId})";
+                ex.Handle(e => HandleInnerException(e, detailMessage));
+                return null;
+            }
         }
 
         private bool HandleInnerException(Exception e, string detailMessage)

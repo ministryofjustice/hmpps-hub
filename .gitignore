@@ -304,6 +304,7 @@ proxy.json
 /www/App_Config/Prefetch
 /www/App_Config/Security
 /www/App_Config
+/www/App_Data/Replicated
 /www/App_Data/indexes
 /www/App_Data/logs
 /www/App_Data/tools/phantomjs
@@ -325,7 +326,7 @@ proxy.json
 /www/default.css
 /www/Default.aspx
 /www/data/logs
-/www/App_Data/license.xml
+/cd-www/App_Data/Replicated
 /cd-www/App_Browsers
 /cd-www/App_Config
 /cd-www/App_Data/indexes
@@ -361,7 +362,6 @@ proxy.json
 /hmppsAssets/css/hmpps-ie8.css
 /hmppsAssets/css/hmpps-ie7.css
 /hmppsAssets/css/hmpps-ie6.css
-/hmppsAssets/js/application.js
 /www/App_Data/tools
 /www/App_Data/Unicorn
 /www/App_Data/viewstate
@@ -411,3 +411,6 @@ proxy.json
 /xdb-rep-www
 /cd-www/nolicense.aspx
 /src/HMPPS.Site/App_Config/Include/zzz/HMPPS.Sitecore.Local.Smtp.config
+/www/sitecore modules/HMPPS
+/cd-www/sitecore modules/HMPPS/BookUpload.aspx
+/hmppsAssets/js/application.js

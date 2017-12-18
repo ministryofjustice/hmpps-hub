@@ -408,7 +408,7 @@ namespace HMPPS.Utilities.SitecoreHelper
         /// <param name="item"></param>
         /// <param name="fieldName"></param>
         /// <returns></returns>
-        public static string GetFilExtension(Item item, string fieldName)
+        public static string GetFileExtension(Item item, string fieldName)
         {
             var fileField = (FileField)item.Fields[fieldName];
             if (fileField?.MediaItem == null) return string.Empty;

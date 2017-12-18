@@ -39,9 +39,8 @@ namespace HMPPS.MediaLibrary.CloudStorage.Helpers
         public static string GetContainerNameFromArgs(PipelineArgs args)
         {
             // get container name
-            object containerNameObj;
             var containerName = string.Empty;
-            if (args.CustomData.TryGetValue("containerName", out containerNameObj))
+            if (args.CustomData.TryGetValue("containerName", out var containerNameObj))
             {
                 containerName = containerNameObj.ToString();
             }

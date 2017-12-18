@@ -66,6 +66,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=6.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.6.0.0\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="IdentityModel, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IdentityModel.2.5.1\lib\net45\IdentityModel.dll</HintPath>
     </Reference>
@@ -109,6 +112,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsvUpload\BookCsvRowMap.cs" />
+    <Compile Include="CsvUpload\BookUploadCsvService.cs" />
+    <Compile Include="CsvUpload\BookUploadSitecoreService.cs" />
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\DependencyInjectionHelper.cs" />
     <Compile Include="Helpers\ExpirationHelper.cs" />
@@ -144,6 +150,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HMPPS.Models\HMPPS.Models.csproj">
+      <Project>{53E7D82F-2335-4401-B970-777CA378709C}</Project>
+      <Name>HMPPS.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>

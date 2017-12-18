@@ -1,0 +1,66 @@
+----item----
+version: 1
+id: {AC7EF18C-C63B-4FB1-B3E0-7C2834C08929}
+database: core
+path: /sitecore/templates/HMPPS/Media/Unversioned/File/__Standard Values
+parent: {214FC4B3-DCF5-4C8B-AE0F-F69ED8F1D608}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {214FC4B3-DCF5-4C8B-AE0F-F69ED8F1D608}
+templatekey: File
+created: 20171206T163340Z
+
+----field----
+field: {C9283D9E-7C29-4419-9C28-5A5C8FF53E84}
+name: __Bucketable
+key: __bucketable
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: d9fdcf2c-dd8f-4f36-a14d-abe4c2ed9f61
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 20
+
+sitecore\e3_MihaelaR
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20171206T163340Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 20
+
+sitecore\e3_MihaelaR
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d9fdcf2c-dd8f-4f36-a14d-abe4c2ed9f61
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20171206T163356Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 20
+
+sitecore\e3_MihaelaR

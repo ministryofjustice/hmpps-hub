@@ -114,6 +114,9 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nQuant.Core, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nQuant.1.0.3\lib\net40\nQuant.Core.dll</HintPath>
+    </Reference>
     <Reference Include="NWebsec, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3613da5f958908a1, processorArchitecture=MSIL">
       <HintPath>..\packages\NWebsec.4.3.0\lib\45\NWebsec.dll</HintPath>
     </Reference>
@@ -125,6 +128,12 @@
     </Reference>
     <Reference Include="SimpleInjector, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.0.12\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.4.0.12\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.0.12\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Abstractions.8.2.170728\lib\NET452\Sitecore.Abstractions.dll</HintPath>
@@ -201,12 +210,6 @@
     <Reference Include="Rainbow.Storage.Yaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rainbow.Storage.Yaml.2.0.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector.Integration.Web, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.Integration.Web.4.0.8\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.0.8\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http">
       <HintPath>..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
@@ -253,8 +256,8 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Unicorn, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unicorn.Core.4.0.2\lib\net452\Unicorn.dll</HintPath>
+    <Reference Include="Unicorn, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unicorn.Core.4.0.3\lib\net452\Unicorn.dll</HintPath>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
@@ -267,9 +270,6 @@
     <Content Include="404.html" />
     <Content Include="500.aspx" />
     <Content Include="500.html" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\zzDataFolder.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
@@ -281,16 +281,6 @@
     <Content Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.config">
       <TransformOnBuild>true</TransformOnBuild>
     </Content>
-    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.DeviceDetection.config" />
     <Content Include="App_Config\Include\CES\Sitecore.CES.GeoIp.config" />
@@ -301,6 +291,22 @@
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.RegisterBundles.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ContactIdentification.config" />
+    <Content Include="App_Config\Include\zzz\HMPPS.MediaLibrary.File.MediaType.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -538,6 +544,269 @@
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.config">
       <TransformOnBuild>true</TransformOnBuild>
     </None>
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Buttons.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Buttons\HTML View.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\Head1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\Head2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\Head3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoBodytext.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoHead1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoHead2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Class Translation\MsoHead3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Configuration Type.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Images.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Images\Help.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Heading 2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Heading 3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Heading 4.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Paragraphs\Normal.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Bold.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Divider 0.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Divider 1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Divider 2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Divider 3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Find.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Format Block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Ordered List.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Sitecore Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Sitecore Media.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Symbol.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Insert Unordered List.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Italic.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Paste Word No Font Sizes.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Redo.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Undo.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\Toolbar 1\Unlink.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Bold.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Edit html.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Insert Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Insert Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Italic.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Custom RTE Profile\HMPPS Rich Text Custom Profile\WebEdit Buttons\Underline.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Layouts\HMPPS.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Layouts\HMPPS\MvcLayout.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS\feature-blocks.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS\radiofoldercentre.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Placeholder Settings\HMPPS\right-blocks.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global\Feature Block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global\Previous Next Links.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Global\Related Links Block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Page Specific.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Page Specific\Radio Folder.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Page Specific\Radio Folder\Episode List Of Month.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Page Specific\Radio Folder\Month List Of Year.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Blocks\Page Specific\Radio Folder\Year List.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Balance Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Book Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Chess Game Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Error Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Game Listing Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\General Content Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Homepage.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Landing Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Neontroids Game Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Radio Folder Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Radio Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Radio Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Sudoku Game Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Video Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Renderings\HMPPS\Pages\Video Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\feature block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\PreviousNextLinks.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\Radio Folder Page Specific.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\Radio Folder Page Specific\EpisodeListOfMonth.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\Radio Folder Page Specific\MonthListOfYear.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\System Media\HMPPS\Rendering Thumbnails\Blocks\related links block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Browser Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Navigation Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Page Description.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Page Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\Page Information\Show In Navigation.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Core\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Episode Base.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Episode Base\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Episode Base\Content\Enable Javascript Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Episode Base\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Episode Base\Content\More Episodes Block Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Episode Base\Content\Show Previous Episodes Link Te.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Folder Base.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Folder Base\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Base\Radio Folder Base\Content\Folder Name.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content\Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content\Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\Content\Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Feature Block\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 3.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 4.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Link 5.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\Content\Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Global\Related Links Block\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Blocks\Page Specific.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Feature Block Folder.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Feature Block Folder\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Related Links Block Folder.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Block Folders\Related Links Block Folder\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Radio Folders.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Radio Folders\Radio Folder Month.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Radio Folders\Radio Folder Month\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Radio Folders\Radio Folder Year.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Folders\Radio Folders\Radio Folder Year\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Browser Title Format.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Cookie Notice Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Logo Link.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\Site Header\Skip Link Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Show Account Balance.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Show Phone Credit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Last Updated Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Shared Content\Today Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\Content\Book File.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Book Section Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Bishop Name.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Knight Name.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Left Bold Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Play Button Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Queen Name.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Right Bold Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Rook Name.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Label Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Validation Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 1.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 2.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\Content\StatusCode.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\Content\SubStatusCode.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Game Listing Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Game Listing Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Game Listing Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Next Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Previous Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Related Pages Aria Label.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\Content\Related Pages.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\General Content Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Quick Links Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Self Help Link Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\Quick Links\Self Help Link Url Template.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Homepage\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Landing Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Landing Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Game Specific Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Game Specific Content\Game Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Game Specific Content\Game Instruction Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Game Specific Content\Game Instruction Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\Game Specific Content\Play Button Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Neontroids Game Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Episode.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Episode\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Episode\Content\Radio Episode Date.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Episode\Content\Radio Episode MP3 File.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Episode\Content\Radio Episode Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Episode\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Radio Section Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Alert Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Game Instruction Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Game Instruction Title.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\Game Specific Content\Play Button Text.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Sudoku Game Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Enable Javascript Message.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Main Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\Content\Video File.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\Content.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\Content\Thumbnail Image.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Video Section Page\__Standard Values.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Approved.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Approved\Auto Publish.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve with Test.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve with Test\Launch Create Test Dialog.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve with Test\Validation Action.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Approve\Validation Action.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Awaiting Approval\Reject.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\Submit.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave.yml" />
+    <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave\Auto Submit Action.yml" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -546,6 +815,7 @@
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
+    <Content Include="sitecore modules\HMPPS\BookUpload.aspx" />
     <Content Include="DummyLogout.aspx" />
     <Content Include="nolicense.aspx" />
     <Content Include="Parameters.xml">
@@ -557,7 +827,6 @@
     <Content Include="SessionAbandon.aspx" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
-    <Content Include="Views\Shared\MvcLayout.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
     <Content Include="Views\Pages\BookSectionPage.cshtml" />
     <Content Include="Views\Partials\_Breadcrumb.cshtml" />
@@ -589,8 +858,12 @@
     <Content Include="Views\Partials\_Header.cshtml" />
     <Content Include="Views\Pages\ErrorPage.cshtml" />
     <Content Include="Views\Pages\LandingPage.cshtml" />
+    <Content Include="Views\Pages\BookPage.cshtml" />
+    <Content Include="Views\Shared\MvcLayout.cshtml" />
+    <Content Include="Views\Shared\BookReaderLayout.cshtml" />
     <None Include="Web.CD-Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.CD-Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -625,6 +898,14 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.cs">
+      <DependentUpon>BookUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.designer.cs">
+      <DependentUpon>BookUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Pages\BookPageController.cs" />
     <Compile Include="Controllers\Pages\ErrorPageController.cs" />
     <Compile Include="Controllers\Pages\LandingPageController.cs" />
     <Compile Include="Controllers\Pages\RadioFolderPageController.cs" />
@@ -660,6 +941,7 @@
     <Compile Include="ViewHelpers\SitecoreViewHelper.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Pages\BalancePageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\BookPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\ErrorPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\LandingPageViewModel.cs" />
     <Compile Include="ViewModels\Pages\RadioFolderPageViewModel.cs" />
@@ -702,6 +984,10 @@
     <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
+      <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
+      <Name>HMPPS.ContactIdentification</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.Utilities\HMPPS.Utilities.csproj">
       <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>
