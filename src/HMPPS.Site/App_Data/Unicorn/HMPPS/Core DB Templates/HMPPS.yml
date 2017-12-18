@@ -1,0 +1,23 @@
+﻿---
+ID: "3d678f14-75c8-4d09-9f55-448fc013e886"
+Parent: "3c1715fe-6a13-4fcf-845f-de308ba9741d"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/templates/HMPPS
+DB: core
+BranchID: "30235f43-6242-4107-87ab-5267e34edf0c"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{72E4178E-14EA-4A0D-927B-A62052E80C2C}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171207T105601Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_MihaelaR

@@ -18,7 +18,6 @@ import '../../scss/hmpps-ie6.scss';
 
 // modules
 import govUKCookie from './govuk/cookie';
-import ereader from './modules/ereader';
 import chess from './modules/chess';
 import sudoku from './modules/sudoku';
 import neontroids from './modules/neontroids';
@@ -27,7 +26,6 @@ import video from './modules/video';
 
 // set up namespace
 const HMPPS = window.HMPPS || {
-  ereader,
   chess,
   sudoku,
   neontroids,
