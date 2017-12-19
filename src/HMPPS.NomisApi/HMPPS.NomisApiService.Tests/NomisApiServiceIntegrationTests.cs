@@ -9,30 +9,6 @@ namespace HMPPS.NomisApiService.Tests
     public class NomisApiServiceIntegrationTests
     {
         [TestMethod]
-        public void NomisApiService_GetPrisonerLocationDetails()
-        {
-            // PrisonerId: A3577AE
-            // JSON respornse expected: {"establishment":{"code":"LEI","desc":"LEEDS (HMP)"}}
-
-            var nomisApiService = CreateNomisApiService();
-            var establishment = nomisApiService.GetPrisonerLocationDetails("A3577AE");
-
-            Assert.AreEqual(establishment.Code, "LEI");
-            Assert.AreEqual(establishment.Desc, "LEEDS (HMP)");
-
-        }
-
-        [TestMethod]
-        public void NomisApiService_GetPrisonerLocationDetails_InvalidPrisonerId()
-        {
-            // PrisonerId: A3577AEx
-            // Exception expected: 
-            var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A3577AEx"));
-        }
-
-
-        [TestMethod]
         public void NomisApiService_GetPrisonerAccounts()
         {
             // PrisonId: BMI,  PrisonerId: A3577AE
