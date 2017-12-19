@@ -1,4 +1,3 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using HMPPS.ErrorReporting;
@@ -9,30 +8,6 @@ namespace HMPPS.NomisApiService.Tests
     public class NomisApiServiceIntegrationTests
     {
         [TestMethod]
-        public void NomisApiService_GetPrisonerLocationDetails()
-        {
-            // PrisonerId: A3577AE
-            // JSON respornse expected: {"establishment":{"code":"LEI","desc":"LEEDS (HMP)"}}
-
-            var nomisApiService = CreateNomisApiService();
-            var establishment = nomisApiService.GetPrisonerLocationDetails("A3577AE");
-
-            Assert.AreEqual(establishment.Code, "LEI");
-            Assert.AreEqual(establishment.Desc, "LEEDS (HMP)");
-
-        }
-
-        [TestMethod]
-        public void NomisApiService_GetPrisonerLocationDetails_InvalidPrisonerId()
-        {
-            // PrisonerId: A3577AEx
-            // Exception expected: 
-            var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A3577AEx"));
-        }
-
-
-        [TestMethod]
         public void NomisApiService_GetPrisonerAccounts()
         {
             // PrisonId: BMI,  PrisonerId: A3577AE
@@ -41,9 +16,10 @@ namespace HMPPS.NomisApiService.Tests
             var nomisApiService = CreateNomisApiService();
             var accounts = nomisApiService.GetPrisonerAccounts("LEI", "A3577AE");
 
-            Assert.IsInstanceOfType(accounts.Spends, typeof(decimal));
-            Assert.IsInstanceOfType(accounts.Cash, typeof(decimal));
-            Assert.IsInstanceOfType(accounts.Savings, typeof(decimal));
+            Assert.IsNotNull(accounts, "Accounts are null, the Nomis service may be unavailable");
+            Assert.IsInstanceOfType(accounts.Spends, typeof(decimal), "Spends is not a decimal");
+            Assert.IsInstanceOfType(accounts.Cash, typeof(decimal), "Cash is not a decimal");
+            Assert.IsInstanceOfType(accounts.Savings, typeof(decimal), "Savings is not a decimal");
 
         }
 
@@ -51,18 +27,18 @@ namespace HMPPS.NomisApiService.Tests
         public void NomisApiService_GetPrisonerAccounts_InvalidPrisonId()
         {
             // PrisonerId: A3577AEx
-            // Exception expected: 
+            // Null accounts expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("LEIx", "A3577AEx"));
+            Assert.IsNull(nomisApiService.GetPrisonerAccounts("LEIx", "A3577AEx"), "Null accounts expected for an invalid prison");
         }
 
         [TestMethod]
         public void NomisApiService_GetPrisonerAccounts_InvalidPrisonerId()
         {
             // PrisonerId: A3577AEx
-            // Exception expected: 
+            // Null accounts expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("LEI", "A3577AEx"));
+            Assert.IsNull(nomisApiService.GetPrisonerAccounts("LEI", "A3577AEx"), "Null accounts expected for an invalid prisoner");
         }
 
         public TestContext TestContext { get; set; }

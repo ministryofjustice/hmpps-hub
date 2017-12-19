@@ -70,8 +70,7 @@ namespace HMPPS.Authentication.Pipelines
                 claims.Add(new Claim("access_token", ""));
                 claims.Add(new Claim("refresh_token", ""));
                 claims.Add(new Claim("expires_at", ExpirationHelper.GetExpirationTimeString(86400)));
-                claims.Add(new Claim("prison_id", "LEI"));
-                claims.Add(new Claim("prison_name", "Leeds Prison"));
+                claims.Add(new Claim("pnomisLocation", "LEI"));
                 claims.Add(new Claim("account_balance", "123.40"));
                 claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
                 var userData = new UserData(claims);

@@ -168,7 +168,8 @@ namespace HMPPS.Authentication
                                                      || c.Type == ClaimTypes.GivenName
                                                      || c.Type == ClaimTypes.Surname
                                                      || c.Type == ClaimTypes.Email
-                                                     || c.Type == "name"));
+                                                     || c.Type == "name"
+                                                     || c.Type == "pnomisLocation"));
 
             if (!string.IsNullOrWhiteSpace(response.AccessToken))
             {
