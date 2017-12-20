@@ -73,8 +73,12 @@ namespace HMPPS.NomisApiService.Services
                 if (task.Result.IsSuccessStatusCode)
                 {
                     var result = task.Result;
-                    var accountsResponse = JsonConvert.DeserializeObject<AccountsResponse>(result.Content.ToString());
-                    return new Accounts(accountsResponse);
+                    using (var content = result.Content)
+                    {
+                        var jsonResult = content.ReadAsStringAsync();
+                        var accountsResponse = JsonConvert.DeserializeObject<AccountsResponse>(jsonResult.Result);
+                        return new Accounts(accountsResponse);
+                    }
                 }
                 _logManager.LogError($"Error trying to get prisoner's accounts from Nomis, the status returned was {task.Result.StatusCode}, the request made was: {task.Result.RequestMessage}", GetType());
                 return null;
