@@ -52,9 +52,10 @@ namespace HMPPS.Utilities.Models
             return 0;
         }
 
-        private static DateTime ParseToUkDateTime(string value)
+        private static DateTime ParseToUkDateTime(string dateString)
         {
-            if (DateTime.TryParse(value, out var utcDateTime))
+            var culture = CultureInfo.CreateSpecificCulture("en-US");
+            if (DateTime.TryParse(dateString, culture, DateTimeStyles.AssumeUniversal, out var utcDateTime))
             {
                 DateTime.SpecifyKind(utcDateTime, DateTimeKind.Utc);
 
