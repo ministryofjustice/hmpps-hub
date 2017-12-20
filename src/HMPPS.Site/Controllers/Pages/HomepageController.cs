@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Web.Mvc;
 using HMPPS.Site.Controllers.Base;
 using HMPPS.Site.ViewModels.Pages;
@@ -30,8 +31,12 @@ namespace HMPPS.Site.Controllers.Pages
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;
 
+            var unilinkPrisonId = userData.PrisonId.Length > 2
+                ? userData.PrisonId.Substring(0, 2).ToLower()
+                : userData.PrisonId.ToLower();
             _hvm.SelfHelpLinkUrl = contextItem["Self Help Link Url Template"].Replace("{prison_id}",
-                userData.PrisonId.ToLower());
+                unilinkPrisonId);
+
             _hvm.ShowQuickLinks = !string.IsNullOrEmpty(_hvm.SelfHelpLinkUrl);
             _hvm.UserName = userData.Name;
         }
