@@ -12,7 +12,6 @@ using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Models;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.NomisApiService.Interfaces;
-using Sitecore.DependencyInjection;
 
 namespace HMPPS.Authentication.Pipelines
 {
