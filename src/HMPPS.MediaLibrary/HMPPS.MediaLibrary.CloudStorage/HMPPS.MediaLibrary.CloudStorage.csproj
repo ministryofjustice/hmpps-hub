@@ -87,11 +87,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Location.cs" />
     <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Constants\ConfigSettings.cs" />
     <Compile Include="Constants\FieldNameConstants.cs" />
+    <Compile Include="Events\MediaItemCreated.cs" />
     <Compile Include="Events\MediaItemDeleting.cs" />
+    <Compile Include="Events\MediaItemMoved.cs" />
+    <Compile Include="Helpers\BlobHelper.cs" />
     <Compile Include="Helpers\MediaHelper.cs" />
     <Compile Include="Helpers\PipelineHelper.cs" />
     <Compile Include="Interface\ICloudStorage.cs" />
@@ -119,6 +121,16 @@
   <ItemGroup>
     <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.CloudStorage.config" />
     <None Include="App_Config\Include\zzz\HMPPS.MediaLibrary.Prefix.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HMPPS.Utilities\HMPPS.Utilities.csproj">
+      <Project>{AFBD8C13-C752-4AFD-9EEC-6FD04B1E94F9}</Project>
+      <Name>HMPPS.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

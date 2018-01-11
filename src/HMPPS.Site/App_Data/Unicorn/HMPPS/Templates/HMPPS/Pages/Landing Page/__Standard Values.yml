@@ -1,0 +1,55 @@
+﻿---
+ID: "d5a7730b-e9fc-4675-996e-ac342db67a6b"
+Parent: "02e48db2-8e6e-4141-b759-d508212202b7"
+Template: "02e48db2-8e6e-4141-b759-d508212202b7"
+Path: /sitecore/templates/HMPPS/Pages/Landing Page/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {74E2B01C-18F1-4FE5-A9BE-3D6B5AFB2FAA}
+    {CAF0E55F-E70D-4755-BFA2-2A4099B59962}
+    {F8777367-B148-4E9C-A80E-FF0CEA906DB9}
+    {F4A43121-2D9F-446A-BAC4-E8A1CA75DEF7}
+    {2F030771-F583-4EFD-973B-45ACA3E783FE}
+    {01E2E5D9-B3AA-42AA-BBB9-E6FBB3F4CBDE}
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DE7856F7-B9AC-4A84-B01E-BF66F978BBC6}">
+        <p
+          uid="{0D359606-4B5B-4D79-BB24-B1813FDB4A68}"
+          key="feature-blocks-row-1"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/feature-blocks" />
+        <p
+          uid="{724970FD-21B0-4725-AE48-275AA1FA2E7B}"
+          key="feature-blocks-row-2"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/feature-blocks" />
+        <p
+          uid="{18E7D201-DEC5-4C7B-AAD4-1B9BBF48AFE2}"
+          key="feature-blocks-row-3"
+          md="/sitecore/layout/Placeholder Settings/HMPPS/feature-blocks" />
+        <r
+          id="{7E65153C-F204-4214-90F2-1E8E234B5102}"
+          ph="content"
+          uid="{99872FD0-6774-493E-9231-BF1D84904BBF}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171122T114128Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\e3_JackD

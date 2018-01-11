@@ -26,7 +26,7 @@ namespace HMPPS.Site.Controllers.Pages
                         "Page Title");
                 videoSection.Image = new Image()
                 {
-                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
+                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image", 300),
                     AltText = Utilities.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
                 };
                 videoSection.Link = new Link()
@@ -41,7 +41,7 @@ namespace HMPPS.Site.Controllers.Pages
                     videoSection.VideoFile = new File()
                     {
                         Url = Utilities.SitecoreHelper.FieldMethods.GetFileUrl(c, "Video File"),
-                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFilExtension(c, "Video File")
+                        Extension = Utilities.SitecoreHelper.FieldMethods.GetFileExtension(c, "Video File")
                     };
                 }
 

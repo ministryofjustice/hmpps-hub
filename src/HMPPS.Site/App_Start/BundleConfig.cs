@@ -6,22 +6,20 @@ namespace HMPPS.Site
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //work in progress, bundles not yet used in views as FE need to make some amends first
-            //more bundles to be created for the govuk css files in head
             bundles.Add(new StyleBundle("~/bundles/hmpps.css").Include(
                 "~/hmppsAssets/css/hmpps.css"));
-            bundles.Add(new StyleBundle("~/bundles/hmpps-ie6.css").Include(
-                "~/hmppsAssets/css/hmpps-ie6.css"));
-            bundles.Add(new StyleBundle("~/bundles/hmpps-ie7.css").Include(
-                "~/hmppsAssets/css/hmpps-ie7.css"));
-            bundles.Add(new StyleBundle("~/bundles/hmpps-ie8.css").Include(
-                "~/hmppsAssets/css/hmpps-ie8.css"));
+            bundles.Add(new StyleBundle("~/bundles/govuk-template.css").Include(
+                "~/hmppsAssets/css/govuk-template.css"));
+            bundles.Add(new StyleBundle("~/bundles/govuk-template-print.css").Include(
+                "~/hmppsAssets/css/govuk-template-print.css"));
+            bundles.Add(new StyleBundle("~/bundles/fonts.css").Include(
+                "~/hmppsAssets/css/fonts.css"));
 
-
-            bundles.Add(new ScriptBundle("~/bundles/application.js").Include(
+            //some JS files are already minified, we just want to bundle them, that is why we are using Bundle instead of ScriptBundle
+            bundles.Add(new Bundle("~/bundles/application.js").Include(
                 "~/hmppsAssets/js/application.js"
             ));
-            bundles.Add(new ScriptBundle("~/bundles/chess-scrips.js").Include(
+            bundles.Add(new Bundle("~/bundles/chess-scripts.js").Include(
                 "~/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/chessboard-0.3.0.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/chess.min.js",
@@ -31,10 +29,11 @@ namespace HMPPS.Site
                 "~/hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/sudokuJS.js"
             ));
-            bundles.Add(new ScriptBundle("~/bundles/book-scripts.js").Include(
+            bundles.Add(new Bundle("~/bundles/book-scripts.js").Include(
                 "~/hmppsAssets/js/src/third-party/lib/jszip.min.js",
                 "~/hmppsAssets/js/src/third-party/lib/epub.min.js",
-                "~/hmppsAssets/js/src/third-party/lib/mime-types.js"
+                "~/hmppsAssets/js/src/third-party/lib/mime-types.js",
+                "~/hmppsAssets/js/src/third-party/lib/smartimages.min.js"
             ));
             BundleTable.EnableOptimizations = true;
         }

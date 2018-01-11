@@ -37,5 +37,10 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
         {
             return _provider.GetUrlWithSasToken(media, expiryMinutes);
         }
+
+        public void Move(Item item, string fromPath)
+        {
+            _provider.Move(item, fromPath);
+        }
     }
 }

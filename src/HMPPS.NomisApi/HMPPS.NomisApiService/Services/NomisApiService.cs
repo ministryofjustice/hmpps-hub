@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Jose;
 using Newtonsoft.Json;
-using Sitecore.Diagnostics;
 using HMPPS.NomisApiService.Interfaces;
 using HMPPS.NomisApiService.Models;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.NomisApiService.Services
 {
@@ -37,12 +38,17 @@ namespace HMPPS.NomisApiService.Services
 
         static HttpClient Client = new HttpClient();
 
-        public NomisApiService() : this(true)
+        private ILogManager _logManager;
+
+        public NomisApiService(ILogManager logManager)
+            : this(logManager, true)
         {
         }
 
-        public NomisApiService(bool useAppSettings)
+        public NomisApiService(ILogManager logManager, bool useAppSettings)
         {
+            _logManager = logManager;
+
             if (useAppSettings)
             {
                 ApiBaseUrl = Settings.NomisApiBaseUrl;
@@ -58,33 +64,24 @@ namespace HMPPS.NomisApiService.Services
             Client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
         }
 
-        public Establishment GetPrisonerLocationDetails(string prisonerId)
-        {
-            InitializeClient();
-            Task<string> task = Task.Run<string>(async () => await GetPrisonerLocationDetailsAsync(prisonerId));
-            try
-            {
-                var result = task.Result;
-                var establishment = JsonConvert.DeserializeObject<EstablishmentResponse>(result).Establishment;
-                return establishment;
-            }
-            catch (AggregateException aex)
-            {
-                var detailMessage = $"GetPrisonerLocationDetails({prisonerId})";
-                aex.Handle(e => HandleInnerException(e, detailMessage));
-                return null;
-            }
-        }
-
         public Accounts GetPrisonerAccounts(string prisonId, string prisonerId)
         {
             InitializeClient();
-            Task<string> task = Task.Run<string>(async () => await GetPrisonerAccountsAsync(prisonId, prisonerId));
+            Task<HttpResponseMessage> task = Task.Run<HttpResponseMessage>(async () => await GetPrisonerAccountsAsync(prisonId, prisonerId));
             try
             {
-                var result = task.Result;
-                var accountsResponse = JsonConvert.DeserializeObject<AccountsResponse>(result);
-                return new Accounts(accountsResponse);
+                if (task.Result.IsSuccessStatusCode)
+                {
+                    var result = task.Result;
+                    using (var content = result.Content)
+                    {
+                        var jsonResult = content.ReadAsStringAsync();
+                        var accountsResponse = JsonConvert.DeserializeObject<AccountsResponse>(jsonResult.Result);
+                        return new Accounts(accountsResponse);
+                    }
+                }
+                _logManager.LogError($"Error trying to get prisoner's accounts from Nomis, the status returned was {task.Result.StatusCode}, the request made was: {task.Result.RequestMessage}", GetType());
+                return null;
             }
             catch (AggregateException aex)
             {
@@ -106,18 +103,7 @@ namespace HMPPS.NomisApiService.Services
             var secretKeyFile = Convert.FromBase64String(SecretPkcs8);
             var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
             return JWT.Encode(payload, secretKey, JwsAlgorithm.ES256);
-        }
-
-        /// <summary>
-        /// Since the offender’s location can change often and is fairly sensitive (and therefore should not automatically be exposed to all services), this information is not included in the general offender information call.
-        /// /offenders/{noms_id}/location
-        /// </summary>
-        /// <param name="prisonerId"></param>
-        /// <returns></returns>
-        private async Task<string> GetPrisonerLocationDetailsAsync(string prisonerId)
-        {
-            return await Client.GetStringAsync(ApiBaseUrl + "/offenders/" + prisonerId + "/location");
-        }
+        }        
 
         /// <summary>
         /// Retrieve an offender’s financial account balances.
@@ -128,16 +114,27 @@ namespace HMPPS.NomisApiService.Services
         /// <param name="prisonId"></param>
         /// <param name="prisonerId"></param>
         /// <returns></returns>
-        private async Task<string> GetPrisonerAccountsAsync(string prisonId, string prisonerId)
+        private async Task<HttpResponseMessage> GetPrisonerAccountsAsync(string prisonId, string prisonerId)
         {
-            var url = $"{ApiBaseUrl}/prison/{prisonId}/offenders/{prisonerId}/accounts";
-            return await Client.GetStringAsync(url);
+            try
+            {
+                var url = $"{ApiBaseUrl}/prison/{prisonId}/offenders/{prisonerId}/accounts";
+                return await Client.GetAsync(url);
+            }
+            catch (AggregateException ex)
+            {
+                var detailMessage = $"GetPrisonerAccountsAsync({prisonId},{prisonerId})";
+                ex.Handle(e => HandleInnerException(e, detailMessage));
+                return new HttpResponseMessage()
+                {
+                    StatusCode = HttpStatusCode.InternalServerError
+                };
+            }
         }
 
         private bool HandleInnerException(Exception e, string detailMessage)
         {
-            Log.Error(
-                $"HMPPS.Authentication.Services.NomisApiService - Error trying to get prisoner's data from Nomis: {detailMessage}", this);
+            _logManager.LogError($"Error trying to get prisoner's data from Nomis: {detailMessage}", GetType());
             return false; // exception is not handled
         }
 

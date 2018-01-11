@@ -6,20 +6,20 @@
       font-size: 16px;
       line-height: 1.25;
       margin-top: 15px;
-      margin-bottom: 15px
+      margin-bottom: 15px;
   }
 
   @media (min-width: 641px) {
       ol,ul,p {
-          font-size:19px;
-          line-height: 1.31579
+          font-size: 19px;
+          line-height: 1.31579;
       }
   }
 
   @media (min-width: 641px) {
       ol,ul,p {
-          margin-top:20px;
-          margin-bottom: 20px
+          margin-top: 20px;
+          margin-bottom: 20px;
       }
   }
 
@@ -151,41 +151,41 @@
   // }
 
   h4+p,h5+p,h6+p {
-      margin-top: 5px
+      margin-top: 5px;
   }
 
   h2:first-child,h3:first-child,h4:first-child,p:first-child {
-      margin-top: 0
+      margin-top: 0;
   }
 
   a {
-      text-decoration: underline
+      text-decoration: underline;
   }
 
   ol,ul {
       list-style: decimal;
       list-style-position: outside;
-      margin-left: 20px
+      margin-left: 20px;
   }
 
   ol ul,ol ol,ul ul,ul ol {
       margin-top: 0;
       margin-bottom: 0;
-      padding: 0
+      padding: 0;
   }
 
   ul {
       list-style: disc;
-      list-style-position: outside
+      list-style-position: outside;
   }
 
   li {
-      margin-bottom: 5px
+      margin-bottom: 5px;
   }
 
   li p {
       margin: 0;
-      padding: 0
+      padding: 0;
   }
 
   strong{
@@ -195,7 +195,5 @@
   i,em{
     font-style: italic;
   }
-
-
 
 }

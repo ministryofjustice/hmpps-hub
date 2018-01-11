@@ -18,7 +18,7 @@ namespace HMPPS.Utilities.Models
         public string RefreshToken { get; private set; }
         public string ExpiresAt { get; private set; }
         public string PrisonId { get; private set; }
-        public string PrisonName { get; private set; }
+        public bool IsAccountBalanceAvailable { get; private set; }
         public decimal AccountBalance { get; private set; }
         public DateTime AccountBalanceLastUpdated { get; private set; }
 
@@ -33,10 +33,16 @@ namespace HMPPS.Utilities.Models
             AccessToken = (claims.FirstOrDefault(c => c.Type == "access_token"))?.Value;
             RefreshToken = (claims.FirstOrDefault(c => c.Type == "refresh_token"))?.Value;
             ExpiresAt = (claims.FirstOrDefault(c => c.Type == "expires_at"))?.Value;
-            PrisonId = (claims.FirstOrDefault(c => c.Type == "prison_id"))?.Value;
-            PrisonName = (claims.FirstOrDefault(c => c.Type == "prison_name"))?.Value;
-            AccountBalance = ParseToDecimal((claims.FirstOrDefault(c => c.Type == "account_balance"))?.Value);
-            AccountBalanceLastUpdated = ParseToUkDateTime((claims.FirstOrDefault(c => c.Type == "account_balance_lastupdated"))?.Value);
+            PrisonId = (claims.FirstOrDefault(c => c.Type == "pnomisLocation"))?.Value;
+
+            var accountBalanceValue = claims.FirstOrDefault(c => c.Type == "account_balance")?.Value;
+            IsAccountBalanceAvailable = accountBalanceValue != null;
+            if (IsAccountBalanceAvailable)
+            {
+                AccountBalance = ParseToDecimal(accountBalanceValue);
+                AccountBalanceLastUpdated =
+                    ParseToUkDateTime((claims.FirstOrDefault(c => c.Type == "account_balance_lastupdated"))?.Value);
+            }
         }
 
         private static decimal ParseToDecimal(string value)
@@ -46,9 +52,10 @@ namespace HMPPS.Utilities.Models
             return 0;
         }
 
-        private static DateTime ParseToUkDateTime(string value)
+        private static DateTime ParseToUkDateTime(string dateString)
         {
-            if (DateTime.TryParse(value, out var utcDateTime))
+            var culture = CultureInfo.CreateSpecificCulture("en-US");
+            if (DateTime.TryParse(dateString, culture, DateTimeStyles.AssumeUniversal, out var utcDateTime))
             {
                 DateTime.SpecifyKind(utcDateTime, DateTimeKind.Utc);
 

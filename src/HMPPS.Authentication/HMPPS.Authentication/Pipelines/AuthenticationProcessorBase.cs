@@ -20,6 +20,11 @@ namespace HMPPS.Authentication.Pipelines
         {
             var tokenManager = new TokenManager();
             var tokenResponse = tokenManager.RequestRefreshToken(userData.RefreshToken);
+            if (tokenResponse.IsError)
+            {
+                Sitecore.Diagnostics.Log.Error("HMPPS.Authentication.Pipelines.AuthenticationProcessorBase - " + tokenResponse.ErrorType + " error in RefreshUserData(): " + tokenResponse.ErrorDescription, tokenResponse.Exception, this);
+                return new List<Claim>();
+            }
             var claimsPrincipal = tokenManager.ValidateIdentityToken(tokenResponse.IdentityToken);
             var claims = tokenManager.ExtractClaims(tokenResponse, claimsPrincipal).ToList();
             AddPrisonerDetailsToClaims(userData.NameIdentifier, ref claims);
@@ -29,14 +34,13 @@ namespace HMPPS.Authentication.Pipelines
 
         protected void AddPrisonerDetailsToClaims(string prisonerId, ref List<Claim> claims)
         {
-            var establishment = NomisApiService.GetPrisonerLocationDetails(prisonerId);
-            var prisonId = establishment.Code;
-            claims.Add(new Claim("prison_id", prisonId));
-            claims.Add(new Claim("prison_name", establishment.Desc));
-
+            var prisonId = (claims.FirstOrDefault(c => c.Type == "pnomisLocation"))?.Value;
             var accounts = NomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
-            claims.Add(new Claim("account_balance", ((decimal)(accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
-            claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
+            if (accounts == null) return;
+            claims.Add(new Claim("account_balance",
+                ((decimal) (accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
+            claims.Add(new Claim("account_balance_lastupdated",
+                DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
         }
 
         protected User BuildVirtualUser(UserData idamData)

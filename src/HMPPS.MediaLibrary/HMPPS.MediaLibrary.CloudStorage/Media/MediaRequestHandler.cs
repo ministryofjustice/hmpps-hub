@@ -4,6 +4,7 @@ using Sitecore.Resources.Media;
 using HMPPS.MediaLibrary.CloudStorage.Interface;
 using Sitecore.Configuration;
 using Sitecore.SecurityModel;
+using Sitecore.Web;
 
 namespace HMPPS.MediaLibrary.CloudStorage.Media
 {
@@ -19,6 +20,12 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
         protected override bool DoProcessRequest(HttpContext context)
         {
             Assert.ArgumentNotNull((object) context, "context");
+
+            //Sitecore produces media search result icons with wrong querystring (2 question marks):
+            // "?h=48&thn=1&w=48&db=master?w=80&h=60&db=master"
+            // using the 1st part only "?h=48&thn=1&w=48&db=master" and redirect to the fixed url:
+            FixSearchResultIconUrl(context.Request);
+
             MediaRequest request = MediaManager.ParseMediaRequest(context.Request);
             if (request == null)
                 return false;
@@ -75,6 +82,17 @@ namespace HMPPS.MediaLibrary.CloudStorage.Media
         private bool IsCdnMedia(Sitecore.Resources.Media.Media media)
         {
             return (media != null && media.MediaData.MediaItem.FileBased);
+        }
+
+        private void FixSearchResultIconUrl(HttpRequest request)
+        {
+            var firstQueryStarts = request.RawUrl.IndexOf("?");
+            var secondQueryStarts = request.RawUrl.LastIndexOf("?");
+            if (firstQueryStarts < secondQueryStarts)
+            {
+                var fixedUrl = request.RawUrl.Substring(0, secondQueryStarts);
+                WebUtil.Redirect(fixedUrl);
+            }
         }
     }
 }
