@@ -1,7 +1,6 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Configuration;
-
+using Moq;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.NomisApiService.Tests
 {
@@ -9,60 +8,37 @@ namespace HMPPS.NomisApiService.Tests
     public class NomisApiServiceIntegrationTests
     {
         [TestMethod]
-        public void NomisApiService_GetPrisonerLocationDetails()
-        {
-            // PrisonerId: A1417AE
-            // JSON respornse expected: {"establishment":{"code":"BMI","desc":"BIRMINGHAM (HMP)"}}
-
-            var nomisApiService = CreateNomisApiService();
-            var establishment = nomisApiService.GetPrisonerLocationDetails("A1417AE");
-
-            Assert.AreEqual(establishment.Code, "BMI");
-            Assert.AreEqual(establishment.Desc, "BIRMINGHAM (HMP)");
-
-        }
-
-        [TestMethod]
-        public void NomisApiService_GetPrisonerLocationDetails_InvalidPrisonerId()
-        {
-            // PrisonerId: A1417AEx
-            // Exception expected: 
-            var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerLocationDetails("A1417AEx"));
-        }
-
-
-        [TestMethod]
         public void NomisApiService_GetPrisonerAccounts()
         {
-            // PrisonId: BMI,  PrisonerId: A1417AE
+            // PrisonId: BMI,  PrisonerId: A3577AE
             // JSON respornse expected: { "spends": 20637, "cash": 38763,"savings": 5000 }
 
             var nomisApiService = CreateNomisApiService();
-            var accounts = nomisApiService.GetPrisonerAccounts("BMI", "A1417AE");
+            var accounts = nomisApiService.GetPrisonerAccounts("LEI", "A3577AE");
 
-            Assert.IsInstanceOfType(accounts.Spends, typeof(decimal));
-            Assert.IsInstanceOfType(accounts.Cash, typeof(decimal));
-            Assert.IsInstanceOfType(accounts.Savings, typeof(decimal));
+            Assert.IsNotNull(accounts, "Accounts are null, the Nomis service may be unavailable");
+            Assert.IsInstanceOfType(accounts.Spends, typeof(decimal), "Spends is not a decimal");
+            Assert.IsInstanceOfType(accounts.Cash, typeof(decimal), "Cash is not a decimal");
+            Assert.IsInstanceOfType(accounts.Savings, typeof(decimal), "Savings is not a decimal");
 
         }
 
         [TestMethod]
         public void NomisApiService_GetPrisonerAccounts_InvalidPrisonId()
         {
-            // PrisonerId: A1417AEx
-            // Exception expected: 
+            // PrisonerId: A3577AEx
+            // Null accounts expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("BMIx", "A1417AE"));
+            Assert.IsNull(nomisApiService.GetPrisonerAccounts("LEIx", "A3577AEx"), "Null accounts expected for an invalid prison");
         }
 
         [TestMethod]
         public void NomisApiService_GetPrisonerAccounts_InvalidPrisonerId()
         {
-            // PrisonerId: A1417AEx
-            // Exception expected: 
+            // PrisonerId: A3577AEx
+            // Null accounts expected: 
             var nomisApiService = CreateNomisApiService();
-            Assert.ThrowsException<AggregateException>(() => nomisApiService.GetPrisonerAccounts("BMI", "A1417AEx"));
+            Assert.IsNull(nomisApiService.GetPrisonerAccounts("LEI", "A3577AEx"), "Null accounts expected for an invalid prisoner");
         }
 
         public TestContext TestContext { get; set; }
@@ -77,7 +53,7 @@ namespace HMPPS.NomisApiService.Tests
 
         private Services.NomisApiService CreateNomisApiService()
         {
-            var nomisApiService = new Services.NomisApiService(false);
+            var nomisApiService = new Services.NomisApiService(new Mock<ILogManager>().Object, false);
             nomisApiService.ApiBaseUrl = TestContext.Properties["HMPPS.NomisApiService.BaseUrl"].ToString();
             nomisApiService.ClientToken = TestContext.Properties["HMPPS.NomisApiService.ClientToken"].ToString();
             nomisApiService.SecretPkcs8 = TestContext.Properties["HMPPS.NomisApiService.SecretKey"].ToString();

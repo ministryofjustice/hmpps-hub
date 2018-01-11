@@ -1,26 +1,28 @@
 using System.Web;
 using Sitecore;
 using Sitecore.Abstractions;
-using Sitecore.Diagnostics;
 using Sitecore.Web;
-
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.Utilities.Pipelines
 {
     public class Redirect404 : global::Sitecore.Pipelines.HttpRequest.ExecuteRequest
     {
         private readonly BaseLinkManager _baseLinkManager;
+        private readonly ILogManager _logManager;
 
-        public Redirect404(BaseSiteManager baseSiteManager, BaseItemManager baseItemManager, BaseLinkManager baseLinkManager) : base(baseSiteManager, baseItemManager)
+        public Redirect404(BaseSiteManager baseSiteManager, BaseItemManager baseItemManager, BaseLinkManager baseLinkManager, ILogManager logManager)
+            : base(baseSiteManager, baseItemManager)
         {
             _baseLinkManager = baseLinkManager;
+            _logManager = logManager;
         }
 
         protected override void PerformRedirect(string url)
         {
             if (Context.Site == null || Context.Database == null || Context.Database.Name == "core")
             {
-                Log.Error(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Attempting to redirect url {0}, but no Context Site or DB defined (or core db redirect attempted)", url), this);
+                _logManager.LogError(string.Format("Attempting to redirect url {0}, but no Context Site or DB defined (or core db redirect attempted)", url), GetType());
                 return;
             }
 
@@ -29,7 +31,7 @@ namespace HMPPS.Utilities.Pipelines
 
             if (notFoundItem == null)
             {
-                Log.Error(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - No 404 item found on site: {0}", Context.Site.Name), this);
+                _logManager.LogError(string.Format("No 404 item found on site: {0}", Context.Site.Name), GetType());
                 return;
             }
 
@@ -37,17 +39,19 @@ namespace HMPPS.Utilities.Pipelines
 
             if (string.IsNullOrWhiteSpace(notFoundUrl))
             {
-                Log.Error(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Found 404 item for site, but no URL returned: {0}", Context.Site.Name), this);
+                _logManager.LogError(string.Format("Found 404 item for site, but no URL returned: {0}", Context.Site.Name), GetType());
                 return;
             }
 
-            Log.Debug(string.Format("HMPPS.Utilities.Pipelines.Redirect404 - Redirecting to {0}", notFoundUrl), this);
+            _logManager.LogDebug(string.Format("Redirecting to {0}", notFoundUrl), GetType());
+
             if (Sitecore.Configuration.Settings.RequestErrors.UseServerSideRedirect)
             {
                 HttpContext.Current.Server.TransferRequest(notFoundUrl);
+                return;
             }
-            else
-                WebUtil.Redirect(notFoundUrl, false);
+
+            WebUtil.Redirect(notFoundUrl, false);
         }
     }
 }

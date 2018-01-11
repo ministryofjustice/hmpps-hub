@@ -24,7 +24,7 @@ namespace HMPPS.Site.Controllers.Pages
                         "Page Title");
                 gameSectionBlock.Image = new Image()
                 {
-                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image"),
+                    Url = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrlWithHash(c, "Thumbnail Image", 300),
                     AltText = Utilities.SitecoreHelper.FieldMethods.GetImageDescription(c, "Thumbnail Image")
                 };
                 gameSectionBlock.Link = new Link()

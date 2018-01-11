@@ -9,7 +9,7 @@
     text-transform: none;
     font-size-adjust: 0.5;
     font-weight: bold;
-    padding: 25px 0 15px
+    padding: 25px 0 15px;
 }
 
 .welcome-block p {
@@ -73,11 +73,9 @@
     margin: 0 5px;
 }
 
-
-
 @include media (tablet) {
   .welcome-block .welcome-text {
-      width:66.66%;
+      width: 66.66%;
       float: left;
   }
 
@@ -95,7 +93,7 @@
   }
 
   .welcome-block .content-links-inner {
-    background:$black;
+    background: $black;
     padding: 15px 20px 15px;
     margin-top: 30px;
   }
@@ -116,10 +114,11 @@
 
 @include media (desktop) {
   .welcome-block .content-links-inner ul {
-    margin:10px 0 0;
+    margin: 10px 0 0;
   }
+
   .welcome-block .content-links-inner h2 {
-    margin:5px 0 0;
+    margin: 5px 0 0;
   }
 
 }

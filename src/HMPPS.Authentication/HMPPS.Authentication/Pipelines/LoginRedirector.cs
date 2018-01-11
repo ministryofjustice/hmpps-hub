@@ -1,11 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Sites;
 using Sitecore.Web;
 using IdentityModel.Client;
 using HMPPS.Utilities.Helpers;
+using System.Globalization;
+using HMPPS.Utilities.Models;
+using System.Web;
+using HMPPS.Utilities.Services;
+using Sitecore.Security.Authentication;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -46,6 +54,34 @@ namespace HMPPS.Authentication.Pipelines
 
                 // Redirect the user to the login page of the identity provider
                 WebUtil.Redirect(url);
+            }
+        }
+
+        public void LogInHardcodedIdamUser(HttpContext context)
+        {
+            if (!Context.User.IsAuthenticated)
+            {
+                List<Claim> claims = new List<Claim>();
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, "A1466AE"));
+                claims.Add(new Claim(ClaimTypes.GivenName, "Steven"));
+                claims.Add(new Claim(ClaimTypes.Surname, "Woolfe"));
+                claims.Add(new Claim(ClaimTypes.Email, "steven.woolfe@example.com"));
+                claims.Add(new Claim("name", "Steven Woolfe"));
+                claims.Add(new Claim("access_token", ""));
+                claims.Add(new Claim("refresh_token", ""));
+                claims.Add(new Claim("expires_at", ExpirationHelper.GetExpirationTimeString(86400)));
+                claims.Add(new Claim("pnomisLocation", "LEI"));
+                claims.Add(new Claim("account_balance", "123.40"));
+                claims.Add(new Claim("account_balance_lastupdated", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
+                var userData = new UserData(claims);
+                var _logManager = new SitecoreLogManager();
+                var _jwtTokenService = new JwtTokenService();
+                var _encryptionService = new EncryptionService(_logManager);
+                var _userDataService = new UserDataService(_encryptionService, _jwtTokenService, _logManager);
+                _userDataService.SaveUserDataToCookie(claims, context);
+                var sitecoreUser = BuildVirtualUser(userData);
+                AuthenticationManager.LoginVirtualUser(sitecoreUser);
+                //WebUtil.Redirect(context.Request.Url.AbsoluteUri);
             }
         }
     }

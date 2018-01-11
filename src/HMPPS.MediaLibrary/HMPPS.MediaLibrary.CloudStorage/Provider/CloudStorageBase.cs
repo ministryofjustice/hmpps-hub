@@ -15,6 +15,8 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
 
         public abstract bool Delete(string filename);
 
+        public abstract void Move(Item item, string fromPath);
+
         public abstract string GetUrlWithSasToken(MediaItem media, int expiryMinutes);
 
         #region Helper
@@ -34,6 +36,7 @@ namespace HMPPS.MediaLibrary.CloudStorage.Provider
 
             return filename;
         }
+
         #endregion
     }
 }

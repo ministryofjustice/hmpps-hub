@@ -33,7 +33,7 @@
 
 @include media(desktop) {
   .pub-c-pagination__item {
-    font-size:16px;
+    font-size: 16px;
     line-height: 1.25;
   }
 }
@@ -64,7 +64,7 @@
 
 @include media(desktop) {
     .pub-c-pagination__link-title {
-        font-size:27px;
+        font-size: 27px;
         line-height: 1.25;
     }
 }
@@ -76,7 +76,7 @@
 
 @include media(mobile) {
     .pub-c-pagination__item--previous {
-        float:none;
+        float: none;
         width: 100%;
     }
 }
@@ -88,8 +88,8 @@
 
 @include media(mobile) {
     .pub-c-pagination__item--next {
-        float:none;
-        width: 100%
+        float: none;
+        width: 100%;
     }
 }
 

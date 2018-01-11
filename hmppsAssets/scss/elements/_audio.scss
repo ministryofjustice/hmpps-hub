@@ -80,7 +80,6 @@
 }
 
 @include media(mobile) {
-
 	.video-js.audio-player .vjs-progress-control.vjs-control{
 		width: 100%;
 		position: absolute;
@@ -95,10 +94,12 @@
 	.video-js.audio-player .vjs-volume-control.vjs-control.vjs-volume-horizontal{
 		width: 2em;
 	}
+
 	.video-js.audio-player .vjs-volume-bar{
 		margin: 1.35em 0.20em;
 		width: 2em;
 	}
+
 	.video-js .vjs-volume-control.vjs-control.vjs-volume-horizontal{
 		margin-right: 5px;
 	}
@@ -110,12 +111,12 @@
 	.video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal:hover, .video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal:focus, .video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal:active, .video-js.audio-player .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-slider-active{
 		width: 6em;
 	}
+
 	.video-js.audio-player .vjs-control-bar {
 		height: 40px;
 	}
+
 	.video-js.audio-player {
-
 	  font-size: 14px;
-
 	}
 }

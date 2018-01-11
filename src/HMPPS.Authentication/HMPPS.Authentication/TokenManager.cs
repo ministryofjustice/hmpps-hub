@@ -56,8 +56,8 @@ namespace HMPPS.Authentication
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            // Dev service does work with TLS 1.2 within .NET
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var client = new TokenClient(
                 TokenEndpoint,
@@ -76,18 +76,18 @@ namespace HMPPS.Authentication
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            // Dev service does work with TLS 1.2 within .NET
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var client = new TokenClient(
                 TokenEndpoint,
                 ClientId,
                 ClientSecret);
 
-            var response = client.RequestRefreshTokenAsync(
-                refreshToken).Result;
+            var response = client.RequestRefreshTokenAsync(refreshToken);
+            var result = response.Result;
 
-            return response;
+            return result;
         }
 
         public async Task<TokenResponse> ObtainAccessTokenAsync(string code)
@@ -95,8 +95,8 @@ namespace HMPPS.Authentication
             // Dev service uses fake cert
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-            // Dev service doesn't work with TLS 1.2 within .NET
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls11;
+            // Dev service does work with TLS 1.2 within .NET
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             var client = new TokenClient(
                 TokenEndpoint,
@@ -168,7 +168,8 @@ namespace HMPPS.Authentication
                                                      || c.Type == ClaimTypes.GivenName
                                                      || c.Type == ClaimTypes.Surname
                                                      || c.Type == ClaimTypes.Email
-                                                     || c.Type == "name"));
+                                                     || c.Type == "name"
+                                                     || c.Type == "pnomisLocation"));
 
             if (!string.IsNullOrWhiteSpace(response.AccessToken))
             {
