@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
 using HMPPS.Site.Controllers.Base;
@@ -28,6 +29,8 @@ namespace HMPPS.Site.Controllers.Pages
         {
             _hvm = new HomepageViewModel();
 
+            _hvm.IsUserLoggedIn = Sitecore.Context.User.IsAuthenticated;
+
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;
 
@@ -38,7 +41,9 @@ namespace HMPPS.Site.Controllers.Pages
                 unilinkPrisonId);
 
             _hvm.ShowQuickLinks = !string.IsNullOrEmpty(_hvm.SelfHelpLinkUrl);
-            _hvm.UserName = userData.Name;
+
+            var textInfo = CultureInfo.CurrentCulture.TextInfo;
+            _hvm.UserFirstName = textInfo.ToTitleCase(userData.GivenName.ToLower());
         }
     }
 }

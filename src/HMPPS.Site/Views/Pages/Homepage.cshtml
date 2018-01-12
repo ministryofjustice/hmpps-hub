@@ -8,10 +8,10 @@
                     <div class="welcome-text">
                         <div class="floated-inner-block">
                             <h1>@Html.Sitecore().Field("Page Title")</h1>
-                            @if (Sitecore.Context.User.IsAuthenticated)
+                            @if (Model.IsUserLoggedIn)
                             {
                                 <h2 class="font-large">
-                                    @Model.UserName @*<a href="/logout" style="color:#ff6a00">Logout</a>*@
+                                    @Model.UserFirstName @*<a href="/logout" style="color:#ff6a00">Logout</a>*@
                                 </h2>
 
                             }

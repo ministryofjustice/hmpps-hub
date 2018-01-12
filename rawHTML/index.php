@@ -9,7 +9,7 @@
           <div class="welcome-text">
             <div class="floated-inner-block">
               <h1>Welcome</h1>
-              <h2 class="font-large">Andrew Banfield</h2>
+              <h2 class="font-large">Andrew</h2>
             </div>
           </div>
           <div class="content-links">
