@@ -8,9 +8,10 @@
 // }
 
 .video-js.audio-player {
-  height: 50px;
+  height: 0;
+  padding-bottom: 67%;
   width: 100%;
-  background: none;
+  background-image: cover;
   margin: 50px 0;
   font-size: 17px;
 }
@@ -77,6 +78,11 @@
 .video-js.audio-player .vjs-control:hover:before,
 .video-js.audio-player .vjs-control:focus{
 	text-shadow: none;
+}
+
+.video-js.audio-player.vjs-audio.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar{
+	opacity: 0;
+	visibility: hidden;
 }
 
 @include media(mobile) {

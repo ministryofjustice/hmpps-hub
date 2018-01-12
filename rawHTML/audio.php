@@ -19,10 +19,11 @@ include('_includes/head.php'); ?>
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="pub-c-title">
-        <h1 class="heading-xlarge">Bob and Beyond</h1>
+        <h1 class="heading-xlarge">Bob and Beyond - Episode 1</h1>
+        <h2 class="heading-large">Latest episode - 6 December 2017</h2>
       </div>
       <div class="audio-player-wrap">
-        <audio controls id="audio-player" class="video-js audio-player vjs-default-skin" controls preload="auto">
+        <audio controls id="audio-player" class="video-js audio-player vjs-default-skin" controls preload="auto" poster="_dummy/audio/Bob-And-Beyond.jpg" >
           <source src="http://digital-hub-dev.northeurope.cloudapp.azure.com:11002/sites/default/files/audio/2017-02/170122%20Bob%20and%20Beyond.mp3" type="audio/mp3">
             <div class="vjs-no-js">
               <p>To listen to this audio please enable JavaScript, and consider upgrading to a web browser that
@@ -55,6 +56,9 @@ include('_includes/head.php'); ?>
               </li>
               <li>
               <a href="#test">more episodes</a>
+              </li>
+              <li>
+              <a href="#test">latest episodes</a>
               </li>
           </ul>
         </nav>
