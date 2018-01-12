@@ -56,7 +56,7 @@ namespace HMPPS.NomisApiService.Tests
             var nomisApiService = new Services.NomisApiService(new Mock<ILogManager>().Object, false);
             nomisApiService.ApiBaseUrl = TestContext.Properties["HMPPS.NomisApiService.BaseUrl"].ToString();
             nomisApiService.ClientToken = TestContext.Properties["HMPPS.NomisApiService.ClientToken"].ToString();
-            nomisApiService.SecretPkcs8 = TestContext.Properties["HMPPS.NomisApiService.SecretKey"].ToString();
+            nomisApiService.PrivateKey = TestContext.Properties["HMPPS.NomisApiService.SecretKey"].ToString();
             nomisApiService.InitializeClient();
             return nomisApiService;
         }
