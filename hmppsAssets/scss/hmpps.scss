@@ -140,6 +140,12 @@ $grid-stripe-dark: #B7CFE1;
     width: 100%;
     height: auto;
   }
+  img.img-bookcover{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 195px;
+  }
 }
 
 .image-grid-item {
