@@ -37,9 +37,13 @@ namespace HMPPS.Authentication.Pipelines
             var prisonId = (claims.FirstOrDefault(c => c.Type == "pnomisLocation"))?.Value;
             var accounts = NomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
             if (accounts == null) return;
-            claims.Add(new Claim("account_balance",
-                ((decimal) (accounts.Spends + accounts.Cash)).ToString(CultureInfo.InvariantCulture.NumberFormat)));
-            claims.Add(new Claim("account_balance_lastupdated",
+            claims.Add(new Claim("account_spends",
+                accounts.Spends.ToString(CultureInfo.InvariantCulture.NumberFormat)));
+            claims.Add(new Claim("account_cash",
+                accounts.Cash.ToString(CultureInfo.InvariantCulture.NumberFormat)));
+            claims.Add(new Claim("account_savings",
+                accounts.Savings.ToString(CultureInfo.InvariantCulture.NumberFormat)));
+            claims.Add(new Claim("accounts_lastupdated",
                 DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
         }
 
