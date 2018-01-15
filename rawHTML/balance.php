@@ -13,6 +13,7 @@ include('_includes/head.php'); ?>
   </div>
   <div class="pub-c-title">
     <h1 class="heading-xlarge">Check Balances</h1>
+    <h2 class="heading-large">Error msg here</h2>
   </div>
   <div class="at-a-glance">
     <div class="grid-row">
