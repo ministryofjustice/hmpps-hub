@@ -8,6 +8,7 @@ using HMPPS.Site.ViewModels.Pages;
 using Sitecore.Data.Items;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.Utilities.Helpers;
+using Sitecore.Globalization;
 
 namespace HMPPS.Site.Controllers.Pages
 {
@@ -44,7 +45,15 @@ namespace HMPPS.Site.Controllers.Pages
 
             _rpvm.NeighbourEpisodes = GetNeighbourEpisodes(currentEpisode, allRadioEpisodes);
 
-            _rpvm.ShowPreviousEpisodesUrl = currentEpisodeItem == null ? null : Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
+            _rpvm.RadioShowPreviousEpisodesUrl = currentEpisodeItem == null
+                ? null
+                : Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
+            _rpvm.RadioShowPosterImage = currentEpisodeItem == null
+                ? null
+                : Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrl(currentEpisodeItem.Parent, "Poster Image");
+            _rpvm.IsLatestEpisode = currentEpisodeItem != null &&
+                                    allRadioEpisodes.LastOrDefault()?.Id == currentEpisode.Id;
+            _rpvm.LatestEpisodePrefixText = Translate.Text("Latest Episode Prefix");
         }
 
         private List<RadioEpisode> PopulateEpisodeList(Item contextItem)

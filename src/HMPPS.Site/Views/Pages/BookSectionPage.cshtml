@@ -7,44 +7,46 @@
     @Html.Partial("/Views/Partials/_Breadcrumb.cshtml", Model.BreadcrumbItems)
 
     <main class="elements-index root-index" id="content" role="main" tabindex="-1">
-        <h1 class="heading-xlarge">@Html.Sitecore().Field("Page Title")</h1>
-    <div class="image-grid">
-        @if (Model.Children.Any())
-        {
-            var rows = Model.Children.Count / 3 + 1;
-            var itemIndex = 0;
-
-            for (var rowIndex = 0; rowIndex < rows; rowIndex++)
+        <div class="pub-c-title">
+            <h1 class="heading-xlarge">@Html.Sitecore().Field("Page Title")</h1>
+        </div>
+        <div class="image-grid">
+            @if (Model.Children.Any())
             {
-                var itemsInRow = Model.Children.Skip(itemIndex).Take(3);
-                <div class="grid-row">
-                    @foreach (var item in itemsInRow)
-                    {
-                        <div class="column-one-third">
-                            <div class="image-grid-item">
-                                @if (!item.IsBookPage)
-                                {
-                                    <a href="@item.Link.Url">
-                                        <img src="@item.Image.Url" alt="">
-                                        <h2 class="heading-medium">@item.Title</h2>
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a target="_blank" href="@item.Link.Url">
-                                        <img src="@item.Image.Url" alt="">
-                                        <h2 class="heading-medium">@item.Title @Model.NewWindowWarning</h2>
-                                    </a>
-                                }
-                            </div>
-                        </div>
-                    }
-                </div>
-                itemIndex += itemsInRow.Count();
-            }
-        }
-    </div>
+                var rows = Model.Children.Count / 3 + 1;
+                var itemIndex = 0;
 
-</main><!-- / #content -->
+                for (var rowIndex = 0; rowIndex < rows; rowIndex++)
+                {
+                    var itemsInRow = Model.Children.Skip(itemIndex).Take(3);
+                    <div class="grid-row">
+                        @foreach (var item in itemsInRow)
+                        {
+                            <div class="column-one-third">
+                                <div class="image-grid-item">
+                                    @if (!item.IsBookPage)
+                                    {
+                                        <a href="@item.Link.Url">
+                                            <img src="@item.Image.Url" alt="">
+                                            <h2 class="heading-medium">@item.Title</h2>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a target="_blank" href="@item.Link.Url">
+                                            <img src="@item.Image.Url" alt="">
+                                            <h2 class="heading-medium">@item.Title @Model.NewWindowWarning</h2>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    itemIndex += itemsInRow.Count();
+                }
+            }
+        </div>
+
+    </main><!-- / #content -->
 
 </div>

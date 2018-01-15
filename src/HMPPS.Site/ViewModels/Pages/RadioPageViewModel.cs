@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using HMPPS.Models.Cms;
 using HMPPS.Site.ViewModels.Base;
@@ -17,6 +16,15 @@ namespace HMPPS.Site.ViewModels.Pages
 
         public RadioEpisode CurrentEpisode { get; set; }
 
-        public string ShowPreviousEpisodesUrl { get; set; }
+        public string CurrentEpisodeFormattedDate =>
+            CurrentEpisode.Date.ToString("d MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+        public string RadioShowPreviousEpisodesUrl { get; set; }
+
+        public string RadioShowPosterImage { get; set; }
+
+        public bool IsLatestEpisode { get; set; }
+
+        public string LatestEpisodePrefixText { get; set; }
     }
 }
