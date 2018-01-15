@@ -23,21 +23,21 @@ include('_includes/head.php'); ?>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php"><img src="_dummy/img/entertainment.png" alt="">
+            <a target="blank" href="e-book.php"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
             <h2 class="heading-medium">Law &#x26; Politics</h2>
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img src="_dummy/img/education.png" alt="">
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img class="img-bookcover" src="_dummy/img/education.png" alt="">
             <h2 class="heading-medium">Maths</h2>
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php"><img src="_dummy/img/education.png" alt="">
+            <a target="blank" href="e-book.php"><img class="img-bookcover" src="_dummy/img/education.png" alt="">
               <h2 class="heading-medium">Sociology</h2>
             </a>
           </div>
@@ -46,21 +46,21 @@ include('_includes/head.php'); ?>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img src="_dummy/img/entertainment.png" alt="">
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img class="img-bookcover" src="_dummy/img/entertainment.png" alt="">
             <h2 class="heading-medium">Art &#x26; Literature</h2>
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php"><img src="_dummy/img/education.png" alt="">
+            <a target="blank" href="e-book.php"><img class="img-bookcover" src="_dummy/img/education.png" alt="">
             <h2 class="heading-medium">Business &#x26; Economics</h2>
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img src="_dummy/img/education.png" alt="">
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img class="img-bookcover" src="_dummy/img/education.png" alt="">
               <h2 class="heading-medium">Science</h2>
             </a>
           </div>
@@ -69,7 +69,7 @@ include('_includes/head.php'); ?>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php" _blank><img src="_dummy/img/entertainment.png" alt="">
+            <a target="blank" href="e-book.php" _blank><img class="img-bookcover" src="_dummy/img/entertainment.png" alt="">
             <h2 class="heading-medium">Philosophy</h2>
             </a>
           </div>
