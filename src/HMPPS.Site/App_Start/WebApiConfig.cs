@@ -6,11 +6,9 @@ namespace HMPPS.Site.App_Start
     {
         public static void Register(HttpConfiguration config)
         {
-            config.MapHttpAttributeRoutes();
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "web-api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

@@ -98,13 +98,7 @@ namespace HMPPS.Site
 
         private void Nomis()
         {
-            var prisonerLocationDetails = _nomisApiService.GetPrisonerLocationDetails("A1466");
-            var prisonerAccounts = _nomisApiService.GetPrisonerAccounts(prisonerLocationDetails.Code, "A1466AE");
 
-            if (prisonerLocationDetails == null || prisonerAccounts == null)
-            {
-                _failedChecks.Add(new KeyValuePair<string, Exception>("NomisCheck", null));
-            }
         }
 
         private void Redis()
