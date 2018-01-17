@@ -28,9 +28,11 @@ namespace HMPPS.Site.Controllers.Pages
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;            
                         
-            //account balance
+            //account balances
             _bpvm.AccountBalancesAvailable = userData.AreAccountBalancesAvailable;
             _bpvm.AccountSpends = userData.AccountSpends;
+            _bpvm.AccountPrivateCash = userData.AccountPrivateCash;
+            _bpvm.AccountSavings = userData.AccountSavings;
             _bpvm.ShowAccountBalances = contextItem["Show Account Balances"] == "1" && _bpvm.AccountBalancesAvailable;
             _bpvm.AccountBalancesLastUpdated = userData.AccountBalancesLastUpdated;
             //phone credit
