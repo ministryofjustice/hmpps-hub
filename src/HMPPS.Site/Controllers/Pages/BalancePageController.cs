@@ -28,10 +28,13 @@ namespace HMPPS.Site.Controllers.Pages
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;            
                         
-            //account balance
-            _bpvm.AccountBalance = userData.AccountBalance;
-            _bpvm.ShowAccountBalance = contextItem["Show Account Balance"] == "1" && userData.IsAccountBalanceAvailable;
-            _bpvm.AccountBalanceLastUpdate = userData.AccountBalanceLastUpdated;
+            //account balances
+            _bpvm.AccountBalancesAvailable = userData.AreAccountBalancesAvailable;
+            _bpvm.AccountSpends = userData.AccountSpends;
+            _bpvm.AccountPrivateCash = userData.AccountPrivateCash;
+            _bpvm.AccountSavings = userData.AccountSavings;
+            _bpvm.ShowAccountBalances = contextItem["Show Account Balances"] == "1" && _bpvm.AccountBalancesAvailable;
+            _bpvm.AccountBalancesLastUpdated = userData.AccountBalancesLastUpdated;
             //phone credit
             _bpvm.PhoneCredit = 0; //TODO when BT API available
             _bpvm.ShowPhoneCredit = contextItem["Show Phone Credit"] == "1";
