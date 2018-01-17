@@ -24,7 +24,7 @@
                         @Html.Sitecore().Field("Account Spends Image", new { @class = "data-img remove-size-attributes" })
                         <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountSpends.ToString("0.00")</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Account Spends Text")</span>
-                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdate.ToShortTimeString()</span>
+                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdated.ToShortTimeString()</span>
                     </div>
                 </div>
                 <div class="column-one-third">
@@ -32,7 +32,7 @@
                         @Html.Sitecore().Field("Account Private Cash Image", new { @class = "data-img remove-size-attributes" })
                         <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountPrivateCash.ToString("0.00")</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Account Private Cash Text")</span>
-                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdate.ToShortTimeString()</span>
+                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdated.ToShortTimeString()</span>
                     </div>
                 </div>
                 <div class="column-one-third">
@@ -40,7 +40,7 @@
                         @Html.Sitecore().Field("Account Savings Image", new { @class = "data-img remove-size-attributes" })
                         <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountSavings.ToString("0.00")</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Account Savings Text")</span>
-                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdate.ToShortTimeString()</span>
+                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdated.ToShortTimeString()</span>
                     </div>
                 </div>
             }

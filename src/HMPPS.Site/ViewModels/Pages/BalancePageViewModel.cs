@@ -15,7 +15,7 @@ namespace HMPPS.Site.ViewModels.Pages
 
         public decimal AccountSavings { get; set; }
 
-        public DateTime AccountBalancesLastUpdate { get; set; }
+        public DateTime AccountBalancesLastUpdated { get; set; }
 
         public bool ShowPhoneCredit { get; set; }
 

@@ -22,7 +22,7 @@ namespace HMPPS.Utilities.Models
         public decimal AccountSpends { get;  }
         public decimal AccountPrivateCash { get; }
         public decimal AccountSavings { get; }
-        public DateTime AccountsLastUpdated { get; }
+        public DateTime AccountBalancesLastUpdated { get; }
 
         public UserData(IEnumerable<Claim> claims)
         {
@@ -46,7 +46,7 @@ namespace HMPPS.Utilities.Models
                 AccountSpends = ParseToDecimal(accountSpendsValue);
                 AccountPrivateCash = ParseToDecimal(accountCashValue);
                 AccountSavings = ParseToDecimal(accountSavingsValue);
-                AccountsLastUpdated =
+                AccountBalancesLastUpdated =
                     ParseToUkDateTime((claims.FirstOrDefault(c => c.Type == "accounts_lastupdated"))?.Value);
             }
         }

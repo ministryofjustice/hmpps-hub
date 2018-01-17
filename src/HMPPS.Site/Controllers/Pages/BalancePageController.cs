@@ -32,7 +32,7 @@ namespace HMPPS.Site.Controllers.Pages
             _bpvm.AccountBalancesAvailable = userData.AreAccountBalancesAvailable;
             _bpvm.AccountSpends = userData.AccountSpends;
             _bpvm.ShowAccountBalances = contextItem["Show Account Balances"] == "1" && _bpvm.AccountBalancesAvailable;
-            _bpvm.AccountBalancesLastUpdate = userData.AccountsLastUpdated;
+            _bpvm.AccountBalancesLastUpdated = userData.AccountBalancesLastUpdated;
             //phone credit
             _bpvm.PhoneCredit = 0; //TODO when BT API available
             _bpvm.ShowPhoneCredit = contextItem["Show Phone Credit"] == "1";
