@@ -689,10 +689,6 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Show Account Balance.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Image.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Text.yml" />

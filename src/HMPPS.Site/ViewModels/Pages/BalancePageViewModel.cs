@@ -5,11 +5,17 @@ namespace HMPPS.Site.ViewModels.Pages
 {
     public class BalancePageViewModel : BaseViewModel
     {
-        public bool ShowAccountBalance { get; set; }
+        public bool ShowAccountBalances { get; set; }
 
-        public decimal AccountBalance { get; set; }
+        public bool AccountBalancesAvailable { get; set; }
 
-        public DateTime AccountBalanceLastUpdate { get; set; }
+        public decimal AccountSpends { get; set; }
+
+        public decimal AccountPrivateCash { get; set; }
+
+        public decimal AccountSavings { get; set; }
+
+        public DateTime AccountBalancesLastUpdated { get; set; }
 
         public bool ShowPhoneCredit { get; set; }
 

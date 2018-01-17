@@ -10,18 +10,23 @@
         <div class="grid-row">
             <div class="column-two-thirds">
                 <div class="pub-c-title">
-                    <h1 class="heading-xlarge">
-@if (Model.CurrentEpisode != null)
-{
-                        @Model.CurrentEpisode.Title <br/>
-                        @Html.Raw("(")@Model.CurrentEpisode.Date.ToString("d MMMM yyyy", System.Globalization.CultureInfo.InvariantCulture)@Html.Raw(")")
-}
-                    </h1>
+                    @if (Model.CurrentEpisode != null)
+                    {
+                        <h1 class="heading-xlarge">@Html.Sitecore().Field("Page Title") - @Model.CurrentEpisode.Title</h1>
+                        if (Model.IsLatestEpisode)
+                        {
+                            <h2 class="heading-large">@Html.Sitecore().Field("Latest Episode Prefix Text") - @Model.CurrentEpisodeFormattedDate</h2>
+                        }
+                        else
+                        {
+                            <h2 class="heading-large">@Model.CurrentEpisodeFormattedDate</h2>
+                        }
+                    }
                 </div>
                 @if (Model.CurrentEpisode != null && !string.IsNullOrEmpty(Model.CurrentEpisode.FileUrl))
                 {
                     <div class="audio-player-wrap">
-                        <audio controls id="audio-player" class="video-js audio-player vjs-default-skin" controls preload="auto">
+                        <audio controls id="audio-player" class="video-js audio-player vjs-default-skin" preload="auto" poster="@Model.RadioShowPosterImage" >
                             <source src="@Model.CurrentEpisode.FileUrl" type="audio/mp3">
                             <div class="vjs-no-js">
                                 @Html.Sitecore().Field("Enable Javascript Message")
@@ -33,9 +38,9 @@
                     @Html.Sitecore().Field("Main Content")
                 </div>
                 <div class="more-link">
-                    @if (!string.IsNullOrEmpty(Model.ShowPreviousEpisodesUrl))
+                    @if (!string.IsNullOrEmpty(Model.RadioShowPreviousEpisodesUrl))
                     {
-                        <h2 class="heading-large"><a href="@Model.ShowPreviousEpisodesUrl">@Html.Sitecore().Field("Show Previous Episodes Link Text")&nbsp;&nbsp;></a></h2>
+                        <h2 class="heading-large"><a href="@Model.RadioShowPreviousEpisodesUrl">@Html.Sitecore().Field("Show Previous Episodes Link Text")</a></h2>
                     }
                 </div>
             </div>
@@ -53,6 +58,10 @@
                                     <li>
                                         <a href="@link.RadioEpisodeUrl">@link.Title</a>
                                     </li>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.RadioShowPreviousEpisodesUrl))
+                                {
+                                    <li><a href="@Model.RadioShowPreviousEpisodesUrl">@Html.Sitecore().Field("Show Previous Episodes Link Text")</a></li>
                                 }
                             </ul>
                         </nav>

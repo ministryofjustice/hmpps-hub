@@ -1,8 +1,8 @@
 ﻿---
-ID: "9254aff2-c78b-44ac-a86d-c977e49f59ed"
-Parent: "3b38e88a-8d0a-4db2-b49a-4404d6bba532"
+ID: "ceb9386e-6d99-48ff-a700-863335e382ea"
+Parent: "98855fc8-d56d-47c1-8c4a-04c115e58920"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Pages/Balance Page/Phone Credit/Phone Credit Image
+Path: /sitecore/templates/HMPPS/Pages/Balance Page/Account Balances/Account Savings Image
 DB: master
 SharedFields:
 - ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
@@ -13,7 +13,7 @@ SharedFields:
   Value: Image
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 200
+  Value: 450
 Languages:
 - Language: en
   Versions:
@@ -21,7 +21,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20171002T113337Z
+      Value: 20180112T161246Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
