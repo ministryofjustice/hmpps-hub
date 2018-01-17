@@ -1,3 +1,31 @@
+.chessboard{
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  max-width: 375px;
+  overflow: visible;
+
+}
+
+.chess .moves{
+  padding: 5px;
+  border: 2px solid $black;
+  margin: 4px 0;
+  min-height: 35px;
+}
+
+.chess .moves__area{
+  margin-bottom: 0;
+}
+
+.chess #evaluation {
+  display: none;
+}
+
+.chess h2{
+  @include heading-36;
+}
+
 /*!
  * chessboard.js v0.3.0
  *
@@ -57,44 +85,17 @@
 /* notation */
 .notation-322f9 {
   cursor: default;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: nta,Arial,sans-serif;
+  font-size: 13.5px;
   position: absolute;
 }
 
 .alpha-d2270 {
-  bottom: 1px;
-  right: 3px;
+  bottom: -2px;
+  right: 1px;
 }
 
 .numeric-fc462 {
   top: 2px;
   left: 2px;
-}
-
-.chessboard{
-  display: block;
-  width: 100%;
-  margin-bottom: 25px;
-  max-width: 550px;
-  overflow: hidden;
-
-}
-
-.chess .moves{
-  padding: 25px;
-  border: 2px solid $black;
-  margin: 4px 0;
-}
-
-.chess .moves__area{
-  margin-bottom: 0;
-}
-
-.chess #evaluation {
-  display: none;
-}
-
-.chess h2{
-  @include heading-36;
 }
