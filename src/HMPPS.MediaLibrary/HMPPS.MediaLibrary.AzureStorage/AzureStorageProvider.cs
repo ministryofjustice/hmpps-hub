@@ -207,6 +207,22 @@ namespace HMPPS.MediaLibrary.AzureStorage
             return GetBlobSasUri(blobContainer, fileToAccess, expiryMinutes);
 
         }
+
+        public bool CanConnect()
+        {
+            try
+            {
+                _blobDefaultContainer.ListBlobs(null, true, BlobListingDetails.All)
+                                     .ToList();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         private static string GetBlobSasUri(CloudBlobContainer container, string blobName, int expiryMinutes)

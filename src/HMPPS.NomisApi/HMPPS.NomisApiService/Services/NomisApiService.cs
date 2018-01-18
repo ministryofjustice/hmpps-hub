@@ -91,6 +91,15 @@ namespace HMPPS.NomisApiService.Services
             }
         }
 
+        public string GetVersion()
+        {
+            InitializeClient();
+
+            var url = $"{ApiBaseUrl}/version";
+
+            return Client.GetStringAsync(url).Result;
+        }
+
         private string GenerateToken(int expireMinutes = 20)
         {
             //https://github.com/dvsekhvalnov/jose-jwt
