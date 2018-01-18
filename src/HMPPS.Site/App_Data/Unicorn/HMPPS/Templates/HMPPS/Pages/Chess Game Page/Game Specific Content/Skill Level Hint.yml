@@ -1,8 +1,8 @@
 ﻿---
-ID: "f3872646-2018-471f-b1f8-e3e00ad91d30"
+ID: "32d6813e-7daa-4bd8-90fa-61573994e364"
 Parent: "c64559fc-9f76-4d7d-b9bd-39a647bff100"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/HMPPS/Pages/Chess Game Page/Game Specific Content/Subtitle 2
+Path: /sitecore/templates/HMPPS/Pages/Chess Game Page/Game Specific Content/Skill Level Hint
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
@@ -10,7 +10,7 @@ SharedFields:
   Value: "Single-Line Text"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 200
+  Value: 1200
 Languages:
 - Language: en
   Versions:
@@ -18,7 +18,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170915T125203Z
+      Value: 20180118T143723Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
