@@ -54,6 +54,7 @@ namespace HMPPS.Site.Controllers.Pages
             _rpvm.IsLatestEpisode = currentEpisodeItem != null &&
                                     allRadioEpisodes.LastOrDefault()?.Id == currentEpisode.Id;
             _rpvm.LatestEpisodePrefixText = Translate.Text("Latest Episode Prefix");
+            _rpvm.RadioShowName = GetSeriesRoot(contextItem)["Page Title"];
         }
 
         private List<RadioEpisode> PopulateEpisodeList(Item contextItem)
@@ -137,6 +138,8 @@ namespace HMPPS.Site.Controllers.Pages
             currentEpisodeIndex = neighbourEpisodes.FindIndex(e => currentEpisode != null && e.Id == currentEpisode.Id);
             if (currentEpisodeIndex >= 0)
                 neighbourEpisodes.RemoveAt(currentEpisodeIndex);
+
+            neighbourEpisodes.Reverse();
 
             return neighbourEpisodes;
         }

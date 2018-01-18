@@ -12,10 +12,10 @@
                 <div class="pub-c-title">
                     @if (Model.CurrentEpisode != null)
                     {
-                        <h1 class="heading-xlarge">@Html.Sitecore().Field("Page Title") - @Model.CurrentEpisode.Title</h1>
+                        <h1 class="heading-xlarge">@Model.RadioShowName - @Model.CurrentEpisode.Title</h1>
                         if (Model.IsLatestEpisode)
                         {
-                            <h2 class="heading-large">@Html.Sitecore().Field("Latest Episode Prefix Text") - @Model.CurrentEpisodeFormattedDate</h2>
+                            <h2 class="heading-large">@Model.LatestEpisodePrefixText - @Model.CurrentEpisodeFormattedDate</h2>
                         }
                         else
                         {
