@@ -13,8 +13,10 @@ include('_includes/head.php'); ?>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
-    <h1 class="heading-xlarge">Books</h1>
-
+    <div class="pub-c-title">
+       <h1 class="heading-xlarge">Books</h1>
+	   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde autem error magnam rem, sed ex nobis cum ipsum consequuntur sit quo natus repellat aliquam distinctio iure. Laudantium, est pariatur.</p>
+    </div>
     <div class="image-grid">
       <div class="grid-row">
         <div class="column-one-third">

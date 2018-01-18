@@ -50,6 +50,9 @@ namespace HMPPS.Site.Controllers.Pages
                     //pdf books should open in a new tab, not use the book page meant for epubs
                     if (bookSection.BookFile.Extension.ToLower() == "pdf")
                         bookSection.Link.Url = bookSection.BookFile.Url;
+                    //show the author name too if available
+                    if (Utilities.SitecoreHelper.FieldMethods.FieldHasValue(c, "Book Author"))
+                        bookSection.Title += " - " + c["Book Author"];
                 }
 
                 if (!string.IsNullOrEmpty(bookSection.Link.Url))
