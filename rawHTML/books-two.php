@@ -17,27 +17,28 @@ include('_includes/head.php'); ?>
    
      <div class="pub-c-title">
         <h1 class="heading-xlarge">Educational books</h1>
+	    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde autem error magnam rem, sed ex nobis cum ipsum consequuntur sit quo natus repellat aliquam distinctio iure. Laudantium, est pariatur.</p>
     </div>
 
     <div class="image-grid">
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="e-book.php" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
             <h2 class="heading-medium">Life of Pi - Yann Martel</h2>
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
              <h2 class="heading-medium">Life of Pi - Yann Martel</h2>
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="e-book.php" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
                <h2 class="heading-medium">Life of Pi - Yann Martel</h2>
             </a>
           </div>
@@ -46,21 +47,21 @@ include('_includes/head.php'); ?>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
              <h2 class="heading-medium">Life of Pi - Yann Martel</h2> 
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="e-book.php" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
              <h2 class="heading-medium">Life of Pi - Yann Martel</h2> 
             </a>
           </div>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
                <h2 class="heading-medium">Life of Pi - Yann Martel</h2>
             </a>
           </div>
@@ -69,7 +70,7 @@ include('_includes/head.php'); ?>
       <div class="grid-row">
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="e-book.php" _blank><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
+            <a target="blank" href="e-book.php" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
              <h2 class="heading-medium">Life of Pi - Yann Martel</h2>
             </a>
           </div>
