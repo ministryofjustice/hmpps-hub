@@ -31,8 +31,8 @@ include('_includes/head.php'); ?>
         </div>
         <div class="column-one-third">
           <div class="image-grid-item">
-            <a target="blank" href="_dummy/books/pdf/dummy.pdf" title="Opens in new window"><img class="img-bookcover" src="_dummy/img/lifeofpi.jpg" alt="">
-             <h2 class="heading-medium">Life of Pi - Yann Martel</h2>
+            <a target="blank" href="_dummy/books/pdf/dummy.pdf" title="Opens in new window"><img class="img-bookcover" src="_dummy\img\APianoInThePyrenees.jpg" alt="">
+             <h2 class="heading-medium">A Piano In The Pyrenees - Tony Hawks</h2>
             </a>
           </div>
         </div>
