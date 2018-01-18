@@ -165,6 +165,15 @@
     <Reference Include="Sitecore.Cloud.ApplicationInsights">
       <HintPath>..\lib\Sitecore\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Azure">
+      <HintPath>..\lib\Sitecore\Sitecore.ContentSearch.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq">
+      <HintPath>..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.8.2.170728\lib\NET452\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -810,6 +819,8 @@
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
+    <Content Include="health-check.aspx" />
+    <Content Include="hmppsAssets\js\src\third-party\lib\handlebars-4.0.11.min.js" />
     <Content Include="sitecore modules\HMPPS\BookUpload.aspx" />
     <Content Include="DummyLogout.aspx" />
     <Content Include="nolicense.aspx" />
@@ -895,6 +906,13 @@
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\HealthController.cs" />
+    <Compile Include="health-check.aspx.cs">
+      <DependentUpon>health-check.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="health-check.aspx.designer.cs">
+      <DependentUpon>health-check.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.cs">
       <DependentUpon>BookUpload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
