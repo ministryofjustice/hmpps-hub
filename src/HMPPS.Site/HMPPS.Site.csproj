@@ -720,7 +720,6 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Label Text.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Validation Message.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 1.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 2.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\Content.yml" />

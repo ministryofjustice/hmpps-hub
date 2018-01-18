@@ -13,19 +13,19 @@
                 </div>
                 <div class="game chess js-chess">
                     <div id="js-board" class="chessboard"></div>
-                    <h2>@Html.Sitecore().Field("Subtitle 1")</h2>
+                    <h3 class="heading-medium">@Html.Sitecore().Field("Subtitle 1")</h3>
                     <div class="moves">
                         <p class="js-chessmoves moves__area"></p>
                         <pre id=evaluation></pre>
                     </div>
                     <div class="chess-controls">
-                        <h2 class="heading-large">@Html.Sitecore().Field("Subtitle 2")</h2>
+                       
                         <div class="grid-row">
                             <div class="column-half">
                                 <div class="form-group">
                                     <fieldset>
                                         <legend>
-                                            <h1 class="heading-medium">@Html.Sitecore().Field("Left Bold Text")</h1>
+                                            <h3 class="heading-medium">@Html.Sitecore().Field("Left Bold Text")</h3>
                                         </legend>
                                         <div class="multiple-choice">
                                             <input type="radio" class="js-promote" id="gamechoice1" name="gameChoices" checked value="q">
@@ -54,6 +54,7 @@
                                         </legend>
                                         <div class="form-group js-form-validation">
                                             <label for="skillLevel" class="form-label" id="error-skill-level">@Html.Sitecore().Field("Skill Level Label Text")</label>
+                                            <span class="form-hint">@Html.Sitecore().Field("Skill Level Hint")</span>
                                             <span class="error-message visuallyhidden">
                                                 @Html.Sitecore().Field("Skill Level Validation Message")
                                             </span>
