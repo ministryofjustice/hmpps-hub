@@ -1001,6 +1001,10 @@
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.HealthCheck\HMPPS.HealthCheck.csproj">
+      <Project>{3bba0d18-cadd-4b3f-a5a0-6c5284106c1e}</Project>
+      <Name>HMPPS.HealthCheck</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
       <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
       <Name>HMPPS.NomisApiService</Name>
