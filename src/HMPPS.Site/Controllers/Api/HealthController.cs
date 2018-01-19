@@ -121,10 +121,17 @@ namespace HMPPS.Site.Controllers.Api
 
         public HealthCheckFacet Idam()
         {
-            return new HealthCheckFacet
+            using (var client = new HttpClient())
             {
-                Name = "IDAM"
-            };
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                var response = client.GetAsync("https://idam.devtest.dp.hmpps.dsd.io/openam/isAlive.jsp").Result;
+
+                return new HealthCheckFacet
+                {
+                    Name = "IDAM",
+                    Healthy = response.StatusCode == HttpStatusCode.OK
+                };
+            }
         }
 
         public HealthCheckFacet Nomis()
