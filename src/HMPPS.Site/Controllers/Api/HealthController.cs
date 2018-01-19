@@ -35,7 +35,7 @@ namespace HMPPS.Site.Controllers.Api
 
             var checkResults = _healthCheckService.GetHealthCheckResults(checksToRun);
 
-            return Request.CreateResponse(checkResults.Any(c => !c.Healthy) ? HttpStatusCode.OK : HttpStatusCode.InternalServerError, checkResults);
+            return Request.CreateResponse(checkResults.Any(c => !c.Healthy) ? HttpStatusCode.InternalServerError : HttpStatusCode.OK, checkResults);
         }
     }
 }
