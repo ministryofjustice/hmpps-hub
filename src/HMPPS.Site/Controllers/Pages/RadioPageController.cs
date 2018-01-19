@@ -36,7 +36,9 @@ namespace HMPPS.Site.Controllers.Pages
 
             _rpvm.BreadcrumbItems = BreadcrumbItems;
 
-            var allRadioEpisodes = PopulateEpisodeList(contextItem);
+            var radioSeriesRoot = GetSeriesRoot(contextItem);
+
+            var allRadioEpisodes = PopulateEpisodeList(radioSeriesRoot);
 
             var currentEpisode = GetCurrentEpisode(contextItem, allRadioEpisodes);
             var currentEpisodeItem = GetCurrentEpisodeItem(contextItem, currentEpisode);
@@ -48,18 +50,15 @@ namespace HMPPS.Site.Controllers.Pages
             _rpvm.RadioShowPreviousEpisodesUrl = currentEpisodeItem == null
                 ? null
                 : Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
-            _rpvm.RadioShowPosterImage = currentEpisodeItem == null
-                ? null
-                : Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrl(currentEpisodeItem.Parent, "Poster Image");
+            _rpvm.RadioShowPosterImage = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrl(radioSeriesRoot, "Poster Image", 630);
             _rpvm.IsLatestEpisode = currentEpisodeItem != null &&
                                     allRadioEpisodes.LastOrDefault()?.Id == currentEpisode.Id;
             _rpvm.LatestEpisodePrefixText = Translate.Text("Latest Episode Prefix");
-            _rpvm.RadioShowName = GetSeriesRoot(contextItem)["Page Title"];
+            _rpvm.RadioShowName = radioSeriesRoot["Page Title"];
         }
 
-        private List<RadioEpisode> PopulateEpisodeList(Item contextItem)
+        private List<RadioEpisode> PopulateEpisodeList(Item seriesRoot)
         {
-            var seriesRoot = GetSeriesRoot(contextItem);
             var cacheKey = seriesRoot.ID.ToString();
             if (_cacheService.Contains(cacheKey))
             {
