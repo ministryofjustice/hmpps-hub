@@ -68,7 +68,7 @@ namespace HMPPS.HealthCheck
             {
                 _logManager.LogError($"Health check operation {check.Name} threw an exception.", ex, GetType());
 
-                return new HealthCheckFacet { Name = check.Name, Healthy = false, Details = ex.ToString() };
+                return new HealthCheckFacet { Name = check.Name, Healthy = false };
             }
         }
 
@@ -106,7 +106,6 @@ namespace HMPPS.HealthCheck
             catch (Exception ex)
             {
                 checkResult.Healthy = false;
-                checkResult.Details = ex.ToString();
             }
 
             return checkResult;
