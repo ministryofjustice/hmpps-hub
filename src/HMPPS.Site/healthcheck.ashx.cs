@@ -6,6 +6,7 @@ using HMPPS.HealthCheck;
 using HMPPS.NomisApiService.Interfaces;
 using HMPPS.Utilities.Helpers;
 using Newtonsoft.Json;
+using Sitecore.Mvc.Extensions;
 
 namespace HMPPS.Site
 {
@@ -20,7 +21,9 @@ namespace HMPPS.Site
 
             var config = new HealthCheckConfig
             {
-                MongoDbConnectionString = ConfigurationManager.ConnectionStrings["analytics"].ConnectionString
+                MongoDbConnectionString = ConfigurationManager.ConnectionStrings["analytics"].ConnectionString,
+                RedisDbConnectionString = ConfigurationManager.ConnectionStrings["redis.sessions"]?.ConnectionString,
+                IdamHealthCheckUrl = ConfigurationManager.AppSettings["HMPPS.Authentication.HealthCheckEndpoint"].ValueOrEmpty()
             };
 
             _healthCheckService = new HealthCheckService(logManager, nomisApiService, config);

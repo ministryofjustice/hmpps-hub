@@ -6,7 +6,6 @@ using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -17,10 +16,10 @@ namespace HMPPS.HealthCheck
 {
     public class HealthCheckService
     {
-        private ILogManager _logManager;
-        private INomisApiService _nomisApiService;
+        private readonly ILogManager _logManager;
+        private readonly INomisApiService _nomisApiService;
 
-        private HealthCheckConfig _config;
+        private readonly HealthCheckConfig _config;
 
         public HealthCheckService(ILogManager logManager, INomisApiService nomisApiService, HealthCheckConfig config)
         {
@@ -99,8 +98,6 @@ namespace HMPPS.HealthCheck
 
             var server = new MongoServer(MongoServerSettings.FromClientSettings(client.Settings));
 
-            checkResult.Details = "Successfully pinged analytics database.";
-
             server.Ping();
 
             return checkResult;
@@ -127,9 +124,8 @@ namespace HMPPS.HealthCheck
 
             return new HealthCheckFacet
             {
-                Name = "NOMIS",
-                Healthy = !string.IsNullOrEmpty(versionDetails),
-                Details = versionDetails
+                Name = "Nomis API",
+                Healthy = !string.IsNullOrEmpty(versionDetails)
             };
         }
 
@@ -144,7 +140,7 @@ namespace HMPPS.HealthCheck
             var redisConnection = new Lazy<ConnectionMultiplexer>(() =>
                 ConnectionMultiplexer.Connect(_config.RedisDbConnectionString));
             var redisDb = redisConnection.Value.GetDatabase();
-
+            
             return checkResult;
 
         }
@@ -156,13 +152,13 @@ namespace HMPPS.HealthCheck
             return new HealthCheckFacet
             {
                 Name = "BlobStorage",
-                Healthy = azureBlobProvider.CanConnect()
+                Healthy = azureBlobProvider.CanConnect(),
             };
         }
 
         public HealthCheckFacet AzureSearch()
         {
-            var masterIndex = ContentSearchManager.GetIndex("sitecore_master_index");
+            var masterIndex = ContentSearchManager.GetIndex("sitecore_web_index");
 
             using (var context = masterIndex.CreateSearchContext())
             {
