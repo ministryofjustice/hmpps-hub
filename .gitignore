@@ -416,3 +416,5 @@ proxy.json
 /hmppsAssets/js/application.js
 /cd-www/handlers/health.ashx
 /cd-www/health-check-dashboard.aspx
+/cd-www/healthcheck.ashx
+/www/healthcheck.ashx

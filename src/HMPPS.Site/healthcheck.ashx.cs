@@ -1,17 +1,17 @@
+using System.Configuration;
+using System.Linq;
+using System.Web;
 using HMPPS.ErrorReporting;
 using HMPPS.HealthCheck;
 using HMPPS.NomisApiService.Interfaces;
 using HMPPS.Utilities.Helpers;
 using Newtonsoft.Json;
-using System.Configuration;
-using System.Linq;
-using System.Web;
 
-namespace HMPPS.Site.handlers
+namespace HMPPS.Site
 {
     public class Health : IHttpHandler
     {
-        private HealthCheckService _healthCheckService;
+        private readonly HealthCheckService _healthCheckService;
 
         public Health()
         {
@@ -40,12 +40,6 @@ namespace HMPPS.Site.handlers
             context.Response.Write(JsonConvert.SerializeObject(checkResults));
         }
 
-        public bool IsReusable
-        {
-            get
-            {
-                return false;
-            }
-        }
+        public bool IsReusable => false;
     }
 }
