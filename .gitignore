@@ -418,3 +418,6 @@ proxy.json
 /cd-www/health-check-dashboard.aspx
 /cd-www/healthcheck.ashx
 /www/healthcheck.ashx
+/www/handlers
+/www/health-check.aspx
+/www/health-check-dashboard.aspx
