@@ -1,7 +1,5 @@
 using System.Web.Optimization;
 using Sitecore.Pipelines;
-using HMPPS.Site.App_Start;
-using System.Web.Http;
 
 namespace HMPPS.Site
 {
@@ -14,8 +12,6 @@ namespace HMPPS.Site
         {
             // app start here
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }

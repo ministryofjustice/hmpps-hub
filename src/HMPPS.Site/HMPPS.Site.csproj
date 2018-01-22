@@ -906,8 +906,6 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Api\HealthController.cs" />
     <Compile Include="healthcheck.ashx.cs">
       <DependentUpon>healthcheck.ashx</DependentUpon>
     </Compile>
