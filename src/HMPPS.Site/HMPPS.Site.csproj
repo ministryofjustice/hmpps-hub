@@ -812,7 +812,7 @@
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\Submit.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave\Auto Submit Action.yml" />
-    <Content Include="handlers\health.ashx" />
+    <Content Include="healthcheck.ashx" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -908,8 +908,8 @@
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\HealthController.cs" />
-    <Compile Include="handlers\health.ashx.cs">
-      <DependentUpon>health.ashx</DependentUpon>
+    <Compile Include="healthcheck.ashx.cs">
+      <DependentUpon>healthcheck.ashx</DependentUpon>
     </Compile>
     <Compile Include="health-check-dashboard.aspx.cs">
       <DependentUpon>health-check-dashboard.aspx</DependentUpon>
