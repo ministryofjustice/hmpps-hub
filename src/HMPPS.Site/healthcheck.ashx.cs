@@ -33,7 +33,10 @@ namespace HMPPS.Site.handlers
             var checkResults = _healthCheckService.GetHealthCheckResults(checksToRun);
 
             context.Response.ContentType = "application/json";
+
             context.Response.StatusCode = checkResults.Any(r => !r.Healthy) ? 500 : 200;
+            context.Response.TrySkipIisCustomErrors = true;
+
             context.Response.Write(JsonConvert.SerializeObject(checkResults));
         }
 
