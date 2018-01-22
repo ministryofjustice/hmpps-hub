@@ -414,3 +414,5 @@ proxy.json
 /www/sitecore modules/HMPPS
 /cd-www/sitecore modules/HMPPS/BookUpload.aspx
 /hmppsAssets/js/application.js
+/cd-www/handlers/health.ashx
+/cd-www/health-check-dashboard.aspx
