@@ -1,6 +1,6 @@
 using HMPPS.ErrorReporting;
 using HMPPS.HealthCheck;
-using HMPPS.NomisApiService.Interfaces;
+using HMPPS.HealthCheck.Services;
 using HMPPS.Utilities.Helpers;
 using Newtonsoft.Json;
 using System.Configuration;
@@ -11,19 +11,18 @@ namespace HMPPS.xDB.ReportingSite
 {
     public class healthcheck : IHttpHandler
     {
-        private readonly HealthCheckService _healthCheckService;
+        private readonly BasicHealthCheckService _healthCheckService;
 
         public healthcheck()
         {
             var logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
-            var nomisApiService = DependencyInjectionHelper.ResolveService<INomisApiService>();
 
             var config = new HealthCheckConfig
             {
                 MongoDbConnectionString = ConfigurationManager.ConnectionStrings["analytics"].ConnectionString,
             };
 
-            _healthCheckService = new HealthCheckService(logManager, nomisApiService, config);
+            _healthCheckService = new BasicHealthCheckService(logManager, config);
         }
 
         public void ProcessRequest(HttpContext context)

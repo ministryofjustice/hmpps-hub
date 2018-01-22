@@ -137,23 +137,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\BasicHealthCheckService.cs" />
     <Compile Include="HealthCheckConfig.cs" />
     <Compile Include="HealthCheckFacet.cs" />
-    <Compile Include="HealthCheckService.cs" />
+    <Compile Include="Services\BaseHealthCheckService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.AzureStorage\HMPPS.MediaLibrary.AzureStorage.csproj">
-      <Project>{3E58A0D0-44F5-4039-9E17-EF4766D8F6F6}</Project>
-      <Name>HMPPS.MediaLibrary.AzureStorage</Name>
+    <ProjectReference Include="..\..\HMPPS.Models\HMPPS.Models.csproj">
+      <Project>{53e7d82f-2335-4401-b970-777ca378709c}</Project>
+      <Name>HMPPS.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\HMPPS.MediaLibrary\HMPPS.MediaLibrary.CloudStorage\HMPPS.MediaLibrary.CloudStorage.csproj">
-      <Project>{4EA573A3-C0AD-42AA-9FF9-E6F62FDA7D27}</Project>
-      <Name>HMPPS.MediaLibrary.CloudStorage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
-      <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
-      <Name>HMPPS.NomisApiService</Name>
+    <ProjectReference Include="..\..\HMPPS.Utilities\HMPPS.Utilities.csproj">
+      <Project>{afbd8c13-c752-4afd-9eec-6fd04b1e94f9}</Project>
+      <Name>HMPPS.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
       <Project>{8F0D13F5-49B0-4134-94F3-C98CF62519A3}</Project>

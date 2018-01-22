@@ -982,6 +982,10 @@
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.HealthCheck.Extended\HMPPS.HealthCheck.Extended.csproj">
+      <Project>{8197064F-8A11-48C9-BADF-F19DF6B373D0}</Project>
+      <Name>HMPPS.HealthCheck.Extended</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.HealthCheck\HMPPS.HealthCheck.csproj">
       <Project>{3bba0d18-cadd-4b3f-a5a0-6c5284106c1e}</Project>
       <Name>HMPPS.HealthCheck</Name>

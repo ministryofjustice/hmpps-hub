@@ -7,12 +7,15 @@ using HMPPS.NomisApiService.Interfaces;
 using HMPPS.Utilities.Helpers;
 using Newtonsoft.Json;
 using Sitecore.Mvc.Extensions;
+using HMPPS.HealthCheck.Extended;
+using HMPPS.HealthCheck.Services;
 
 namespace HMPPS.Site
 {
     public class healthcheck : IHttpHandler
     {
-        private readonly HealthCheckService _healthCheckService;
+        private readonly ExtendedHealthCheckService _extendedHealthCheckService;
+        private readonly BasicHealthCheckService _basicHealthCheckService;
 
         public healthcheck()
         {
@@ -26,14 +29,16 @@ namespace HMPPS.Site
                 IdamHealthCheckUrl = ConfigurationManager.AppSettings["HMPPS.Authentication.HealthCheckEndpoint"].ValueOrEmpty()
             };
 
-            _healthCheckService = new HealthCheckService(logManager, nomisApiService, config);
+            _extendedHealthCheckService = new ExtendedHealthCheckService(logManager, config, nomisApiService);
+            _basicHealthCheckService = new BasicHealthCheckService(logManager, config);
         }
 
         public void ProcessRequest(HttpContext context)
         {
             var checksToRun = ConfigurationManager.AppSettings["HMPPS.Site.HealthCheckOperations"]?.Split(',');
 
-            var checkResults = _healthCheckService.GetHealthCheckResults(checksToRun);
+            var checkResults = _basicHealthCheckService.GetHealthCheckResults(checksToRun).ToList();
+            checkResults.AddRange(_extendedHealthCheckService.GetHealthCheckResults(checksToRun));
 
             context.Response.ContentType = "application/json";
 
