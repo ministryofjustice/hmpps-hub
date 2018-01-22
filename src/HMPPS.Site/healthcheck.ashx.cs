@@ -4,6 +4,7 @@ using HMPPS.NomisApiService.Interfaces;
 using HMPPS.Utilities.Helpers;
 using Newtonsoft.Json;
 using System.Configuration;
+using System.Linq;
 using System.Web;
 
 namespace HMPPS.Site.handlers
@@ -32,6 +33,7 @@ namespace HMPPS.Site.handlers
             var checkResults = _healthCheckService.GetHealthCheckResults(checksToRun);
 
             context.Response.ContentType = "application/json";
+            context.Response.StatusCode = checkResults.Any(r => !r.Healthy) ? 500 : 200;
             context.Response.Write(JsonConvert.SerializeObject(checkResults));
         }
 
