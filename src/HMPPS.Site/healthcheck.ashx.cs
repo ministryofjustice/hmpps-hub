@@ -10,11 +10,11 @@ using Sitecore.Mvc.Extensions;
 
 namespace HMPPS.Site
 {
-    public class Health : IHttpHandler
+    public class healthcheck : IHttpHandler
     {
         private readonly HealthCheckService _healthCheckService;
 
-        public Health()
+        public healthcheck()
         {
             var logManager = DependencyInjectionHelper.ResolveService<ILogManager>();
             var nomisApiService = DependencyInjectionHelper.ResolveService<INomisApiService>();
