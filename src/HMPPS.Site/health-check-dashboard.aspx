@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Health Check</title>
+        <title>Health Check Dashboard - WORK IN PROGRESS</title>
 
     <%--<script type="test/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.min.js"></script>
         <script type="test/javascript" src="hmppsAssets/js/src/third-party/lib/jquery-3.2.1.min.js"></script>--%>
@@ -64,22 +64,23 @@
         </div>
 
         <script>
+            //TODO get URLs from configuration
             var healthChecks = [
                 {
                     name: "CMS",
-                    url: "https://hmpps-cms.localhost/web-api/health"
+                    url: "https://hmpps-cms.localhost/healthcheck.ashx"
                 },
                 {
                     name: "Content Delivery",
-                    url: "https://hmpps-cd.localhost/web-api/health"
+                    url: "https://hmpps-cd.localhost/healthcheck.ashx"
                 },
                 {
                     name: "Analytics Processing",
-                    url: "https://hmpps-cms.localhost/web-api/health"
+                    url: "https://hmpps-xdb-prc.localhost/healthcheck.ashx"
                 },
                 {
                     name: "Analytics Reporting",
-                    url: "https://hmpps-cms.localhost/web-api/health"
+                    url: "https://hmpps-xdb-rep.localhost/healthcheck.ashx"
                 }
             ];
 
