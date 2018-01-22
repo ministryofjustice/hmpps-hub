@@ -251,6 +251,7 @@
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
@@ -811,6 +812,7 @@
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\Submit.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave\Auto Submit Action.yml" />
+    <Content Include="handlers\health.ashx" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -819,7 +821,7 @@
     </None>
     <Content Include="bin\Auth\Newtonsoft.Json.dll" />
     <Content Include="403.aspx" />
-    <Content Include="health-check.aspx" />
+    <Content Include="health-check-dashboard.aspx" />
     <Content Include="hmppsAssets\js\src\third-party\lib\handlebars-4.0.11.min.js" />
     <Content Include="sitecore modules\HMPPS\BookUpload.aspx" />
     <Content Include="DummyLogout.aspx" />
@@ -906,12 +908,15 @@
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\HealthController.cs" />
-    <Compile Include="health-check.aspx.cs">
-      <DependentUpon>health-check.aspx</DependentUpon>
+    <Compile Include="handlers\health.ashx.cs">
+      <DependentUpon>health.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="health-check-dashboard.aspx.cs">
+      <DependentUpon>health-check-dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="health-check.aspx.designer.cs">
-      <DependentUpon>health-check.aspx</DependentUpon>
+    <Compile Include="health-check-dashboard.aspx.designer.cs">
+      <DependentUpon>health-check-dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.cs">
       <DependentUpon>BookUpload.aspx</DependentUpon>
