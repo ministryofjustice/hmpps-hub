@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Reflection;
+using StackExchange.Redis;
 
 namespace HMPPS.HealthCheck
 {
@@ -93,20 +94,14 @@ namespace HMPPS.HealthCheck
                 Healthy = true,
             };
 
-            try
-            {
-                var client = new MongoClient(_config.MongoDbConnectionString);
 
-                var server = new MongoServer(MongoServerSettings.FromClientSettings(client.Settings));
+            var client = new MongoClient(_config.MongoDbConnectionString);
 
-                checkResult.Details = "Successfully pinged analytics database.";
+            var server = new MongoServer(MongoServerSettings.FromClientSettings(client.Settings));
 
-                server.Ping();
-            }
-            catch (Exception ex)
-            {
-                checkResult.Healthy = false;
-            }
+            checkResult.Details = "Successfully pinged analytics database.";
+
+            server.Ping();
 
             return checkResult;
         }
@@ -116,7 +111,7 @@ namespace HMPPS.HealthCheck
             using (var client = new HttpClient())
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
-                var response = client.GetAsync("https://idam.devtest.dp.hmpps.dsd.io/openam/isAlive.jsp").Result;
+                var response = client.GetAsync(_config.IdamHealthCheckUrl).Result;
 
                 return new HealthCheckFacet
                 {
@@ -140,10 +135,18 @@ namespace HMPPS.HealthCheck
 
         public HealthCheckFacet Redis()
         {
-            return new HealthCheckFacet
+            var checkResult = new HealthCheckFacet
             {
-                Name = "Redis"
+                Name = "Redis",
+                Healthy = true
             };
+
+            var redisConnection = new Lazy<ConnectionMultiplexer>(() =>
+                ConnectionMultiplexer.Connect(_config.RedisDbConnectionString));
+            var redisDb = redisConnection.Value.GetDatabase();
+
+            return checkResult;
+
         }
 
         public HealthCheckFacet BlobStorage()

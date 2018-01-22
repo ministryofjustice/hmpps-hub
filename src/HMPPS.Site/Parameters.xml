@@ -110,6 +110,10 @@
         <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutEndpoint']/@value" />
         <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.LogoutEndpoint']/@value" />
     </parameter>
+    <parameter name="Idam-HealthCheckEndPoint" description="Idam-HealthCheckEndPoint" defaultValue="#{Idam-HealthCheckEndPoint}#" tags="">
+        <parameterEntry kind="XmlFile" scope="obj\\CMS-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.HealthCheckEndpoint']/@value" />
+        <parameterEntry kind="XmlFile" scope="obj\\CD-Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='HMPPS.Authentication.HealthCheckEndpoint']/@value" />
+    </parameter>
 
     <!--HMPPS.Sitecore-->
     <parameter name="Hub-MediaRequestSharedSecret" description="Hub-MediaRequestSharedSecret" defaultValue="#{Hub-MediaRequestSharedSecret}#" tags="">
