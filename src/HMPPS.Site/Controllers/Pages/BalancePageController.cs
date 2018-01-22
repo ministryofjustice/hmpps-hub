@@ -24,6 +24,7 @@ namespace HMPPS.Site.Controllers.Pages
             _bpvm = new BalancePageViewModel();
 
             _bpvm.BreadcrumbItems = BreadcrumbItems;
+            _bpvm.ShowAccountBalances = Sitecore.Context.PageMode.IsExperienceEditorEditing || Sitecore.Context.PageMode.IsPreview;
 
             var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;            
@@ -33,7 +34,7 @@ namespace HMPPS.Site.Controllers.Pages
             _bpvm.AccountSpends = userData.AccountSpends;
             _bpvm.AccountPrivateCash = userData.AccountPrivateCash;
             _bpvm.AccountSavings = userData.AccountSavings;
-            _bpvm.ShowAccountBalances = (contextItem["Show Account Balances"] == "1" && _bpvm.AccountBalancesAvailable) || Sitecore.Context.PageMode.IsExperienceEditorEditing;
+            _bpvm.ShowAccountBalances = (contextItem["Show Account Balances"] == "1" && _bpvm.AccountBalancesAvailable) || Sitecore.Context.PageMode.IsExperienceEditorEditing || Sitecore.Context.PageMode.IsPreview;
             _bpvm.AccountBalancesLastUpdated = userData.AccountBalancesLastUpdated;
             //phone credit
             _bpvm.PhoneCredit = 0; //TODO when BT API available
