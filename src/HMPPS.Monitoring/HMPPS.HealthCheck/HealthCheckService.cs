@@ -158,9 +158,9 @@ namespace HMPPS.HealthCheck
 
         public HealthCheckFacet AzureSearch()
         {
-            var masterIndex = ContentSearchManager.GetIndex("sitecore_web_index");
+            var coreIndex = ContentSearchManager.GetIndex("sitecore_core_index");
 
-            using (var context = masterIndex.CreateSearchContext())
+            using (var context = coreIndex.CreateSearchContext())
             {
                 var healthCheckResults = context.GetQueryable<SearchResultItem>()
                                                 .Where(c => c.Content.Equals("fake health check query"))
