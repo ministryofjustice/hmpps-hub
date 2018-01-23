@@ -4,6 +4,7 @@ using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.SearchTypes;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 
 namespace HMPPS.HealthCheck.Services
 {
@@ -42,7 +43,7 @@ namespace HMPPS.HealthCheck.Services
             var client = new MongoClient(_config.MongoDbConnectionString);
 
             var server = new MongoServer(MongoServerSettings.FromClientSettings(client.Settings));
-
+            client.ListDatabases(CancellationToken.None);//get mongo to do something first, otherwise the server ping will fail the first time after the app starts
             server.Ping();
 
             return checkResult;
