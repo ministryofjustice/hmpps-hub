@@ -8,17 +8,12 @@ using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Sitecore;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using HMPPS.ErrorReporting;
 using HMPPS.Utilities.Helpers;
-using HMPPS.MediaLibrary.CloudStorage.Pipelines.uiUpload;
 using Sitecore.SecurityModel;
 using HMPPS.MediaLibrary.CloudStorage.Constants;
 using HMPPS.MediaLibrary.CloudStorage.Helpers;
-using Sitecore.Configuration;
-using System.Xml;
-using Sitecore.Xml;
 
 namespace HMPPS.MediaLibrary.AzureStorage
 {
@@ -29,7 +24,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
     {
         private CloudBlobContainer _blobDefaultContainer;
         private Dictionary<string, CloudBlobContainer> _blobContainers;
-        private ILogManager _logManager;
+        private readonly ILogManager _logManager;
         private readonly string _storageAccountName;
         private readonly string _storageAccountKey;
         private readonly string _storageDefaultContainer;
@@ -207,20 +202,34 @@ namespace HMPPS.MediaLibrary.AzureStorage
             return GetBlobSasUri(blobContainer, fileToAccess, expiryMinutes);
 
         }
+
+        public bool CanConnect()
+        {
+            try
+            {
+                _blobDefaultContainer.ListBlobs(null, true, BlobListingDetails.All)
+                                     .ToList();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         private static string GetBlobSasUri(CloudBlobContainer container, string blobName, int expiryMinutes)
         {
-            string sasBlobToken;
-
             // Get a reference to a blob within the container.
             // Note that the blob may not exist yet, but a SAS can still be created for it.
-            CloudBlockBlob blob = container.GetBlockBlobReference(blobName);
+            var blob = container.GetBlockBlobReference(blobName);
 
             // Create a new access policy and define its constraints.
             // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad-hoc SAS, and
             // to construct a shared access policy that is saved to the container's shared access policies.
-            SharedAccessBlobPolicy adHocSAS = new SharedAccessBlobPolicy()
+            var adHocSas = new SharedAccessBlobPolicy()
             {
                 // When the start time for the SAS is omitted, the start time is assumed to be the time when the storage service receives the request.
                 // Omitting the start time for a SAS that is effective immediately helps to avoid clock skew.
@@ -229,7 +238,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
             };
 
             // Generate the shared access signature on the blob, setting the constraints directly on the signature.
-            sasBlobToken = blob.GetSharedAccessSignature(adHocSAS);
+            var sasBlobToken = blob.GetSharedAccessSignature(adHocSas);
 
             // Return the URI string for the container, including the SAS token.
             return blob.Uri + sasBlobToken;
@@ -250,7 +259,7 @@ namespace HMPPS.MediaLibrary.AzureStorage
 
         private string AddContainerNameToFilePath(string filePath, string containerName)
         {
-            return string.Format("{0}/{1}", containerName, StringUtil.RemovePrefix("/", filePath));
+            return $"{containerName}/{StringUtil.RemovePrefix("/", filePath)}";
         }
 
         private string GetContainerNameFromFilePath(string filePath)

@@ -8,34 +8,58 @@
 
     <div class="pub-c-title">
         <h1 class="heading-xlarge">
-            @Html.Sitecore().Field("Page Title")
+            @Html.Sitecore().Field("Page Title")         
         </h1>
+        @if (!Model.AccountBalancesAvailable)
+        {
+            @Html.Sitecore().Field("Account Balances Not Available Message")
+        }
     </div>
-    <div class="at-a-glance">
+    <div>
         <div class="grid-row">
-            @if (Model.ShowAccountBalance)
+            @if (Model.ShowAccountBalances)
             {
                 <div class="column-one-third">
                     <div class="data">
-                        @Html.Sitecore().Field("Account Balance Image", new { @class = "data-img remove-size-attributes" })
-                        <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountBalance.ToString("0.00")</span>
-                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Balance Text")</span>
-                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalanceLastUpdate.ToShortTimeString()</span>
+                        @Html.Sitecore().Field("Account Spends Image", new { @class = "data-img remove-size-attributes" })
+                        <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountSpends.ToString("0.00")</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Spends Text")</span>
+                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdated.ToShortTimeString()</span>
+                    </div>
+                </div>
+                <div class="column-one-third">
+                    <div class="data">
+                        @Html.Sitecore().Field("Account Private Cash Image", new { @class = "data-img remove-size-attributes" })
+                        <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountPrivateCash.ToString("0.00")</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Private Cash Text")</span>
+                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdated.ToShortTimeString()</span>
+                    </div>
+                </div>
+                <div class="column-one-third">
+                    <div class="data">
+                        @Html.Sitecore().Field("Account Savings Image", new { @class = "data-img remove-size-attributes" })
+                        <span class="data-item data-heading heading-xlarge">&pound;@Model.AccountSavings.ToString("0.00")</span>
+                        <span class="data-item bold-large">@Html.Sitecore().Field("Account Savings Text")</span>
+                        <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.AccountBalancesLastUpdated.ToShortTimeString()</span>
                     </div>
                 </div>
             }
-            @if (Model.ShowPhoneCredit)
-            {
+        </div>
+        @if (Model.ShowPhoneCredit)
+        {
+            <div class="grid-row">
+
                 <div class="column-one-third">
                     <div class="data">
-                        @Html.Sitecore().Field("Phone Credit Image", new { @class = "data-img remove-size-attributes" })
+                        @Html.Sitecore().Field("Phone Credit Image", new {@class = "data-img remove-size-attributes"})
                         <span class="data-item data-heading heading-xlarge">&pound;@Model.PhoneCredit.ToString("0.00")</span>
                         <span class="data-item bold-large">@Html.Sitecore().Field("Phone Credit Text")</span>
                         <span class="data-item body-text">@Html.Sitecore().Field("Last Updated Text") @Html.Sitecore().Field("Today Text") @@ @Model.PhoneCreditLastUpdate.ToShortTimeString()</span>
                     </div>
                 </div>
-            }
-        </div>
+
+            </div>
+        }
     </div>
 
 </div>

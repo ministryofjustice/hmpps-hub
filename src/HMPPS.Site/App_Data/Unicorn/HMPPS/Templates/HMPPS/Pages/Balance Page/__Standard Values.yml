@@ -38,6 +38,9 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170908T103129Z
+    - ID: "454ea984-1762-4b20-8f65-102a306fb955"
+      Hint: Account Private Cash Text
+      Value: Private cash
     - ID: "5cfb072d-8d9d-4cdd-b825-96c9aad626f4"
       Hint: Today Text
       Value: today
@@ -48,6 +51,12 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\e3_MihaelaR
+    - ID: "79abd16a-2fa1-4fba-8282-3da4caefa723"
+      Hint: Account Balances Not Available Message
+      Value: <p>Sorry, the account balances are not available at this time, please try again later.</p>
+    - ID: "913e1541-7aab-4b08-a251-58b20aed00d5"
+      Hint: Account Savings Text
+      Value: Savings
     - ID: "93b3dc4c-0560-4a9a-8104-02deadce160b"
-      Hint: Account Balance Text
-      Value: Account balance
+      Hint: Account Spends Text
+      Value: Spends

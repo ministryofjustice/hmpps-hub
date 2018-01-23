@@ -8,6 +8,7 @@ using HMPPS.Site.ViewModels.Pages;
 using Sitecore.Data.Items;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.Utilities.Helpers;
+using Sitecore.Globalization;
 
 namespace HMPPS.Site.Controllers.Pages
 {
@@ -35,7 +36,9 @@ namespace HMPPS.Site.Controllers.Pages
 
             _rpvm.BreadcrumbItems = BreadcrumbItems;
 
-            var allRadioEpisodes = PopulateEpisodeList(contextItem);
+            var radioSeriesRoot = GetSeriesRoot(contextItem);
+
+            var allRadioEpisodes = PopulateEpisodeList(radioSeriesRoot);
 
             var currentEpisode = GetCurrentEpisode(contextItem, allRadioEpisodes);
             var currentEpisodeItem = GetCurrentEpisodeItem(contextItem, currentEpisode);
@@ -44,12 +47,18 @@ namespace HMPPS.Site.Controllers.Pages
 
             _rpvm.NeighbourEpisodes = GetNeighbourEpisodes(currentEpisode, allRadioEpisodes);
 
-            _rpvm.ShowPreviousEpisodesUrl = currentEpisodeItem == null ? null : Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
+            _rpvm.RadioShowPreviousEpisodesUrl = currentEpisodeItem == null
+                ? null
+                : Sitecore.Links.LinkManager.GetItemUrl(currentEpisodeItem.Parent);
+            _rpvm.RadioShowPosterImage = Utilities.SitecoreHelper.FieldMethods.GetMediaItemUrl(radioSeriesRoot, "Poster Image", 630);
+            _rpvm.IsLatestEpisode = currentEpisodeItem != null &&
+                                    allRadioEpisodes.LastOrDefault()?.Id == currentEpisode.Id;
+            _rpvm.LatestEpisodePrefixText = Translate.Text("Latest Episode Prefix");
+            _rpvm.RadioShowName = radioSeriesRoot["Page Title"];
         }
 
-        private List<RadioEpisode> PopulateEpisodeList(Item contextItem)
+        private List<RadioEpisode> PopulateEpisodeList(Item seriesRoot)
         {
-            var seriesRoot = GetSeriesRoot(contextItem);
             var cacheKey = seriesRoot.ID.ToString();
             if (_cacheService.Contains(cacheKey))
             {
@@ -128,6 +137,8 @@ namespace HMPPS.Site.Controllers.Pages
             currentEpisodeIndex = neighbourEpisodes.FindIndex(e => currentEpisode != null && e.Id == currentEpisode.Id);
             if (currentEpisodeIndex >= 0)
                 neighbourEpisodes.RemoveAt(currentEpisodeIndex);
+
+            neighbourEpisodes.Reverse();
 
             return neighbourEpisodes;
         }

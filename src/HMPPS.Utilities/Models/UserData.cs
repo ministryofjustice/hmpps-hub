@@ -8,19 +8,21 @@ namespace HMPPS.Utilities.Models
 {
     public class UserData
     {
-        public string NameIdentifier { get; private set; }
-        public IList<string> Roles { get; private set; }
-        public string GivenName { get; private set; }
-        public string Surname { get; private set; }
-        public string Email { get; private set; }
-        public string Name { get; private set; }
-        public string AccessToken { get; private set; }
-        public string RefreshToken { get; private set; }
-        public string ExpiresAt { get; private set; }
-        public string PrisonId { get; private set; }
-        public bool IsAccountBalanceAvailable { get; private set; }
-        public decimal AccountBalance { get; private set; }
-        public DateTime AccountBalanceLastUpdated { get; private set; }
+        public string NameIdentifier { get; }
+        public IList<string> Roles { get; }
+        public string GivenName { get; }
+        public string Surname { get;  }
+        public string Email { get;  }
+        public string Name { get;  }
+        public string AccessToken { get;  }
+        public string RefreshToken { get;  }
+        public string ExpiresAt { get; }
+        public string PrisonId { get;  }
+        public bool AreAccountBalancesAvailable { get; }
+        public decimal AccountSpends { get;  }
+        public decimal AccountPrivateCash { get; }
+        public decimal AccountSavings { get; }
+        public DateTime AccountBalancesLastUpdated { get; }
 
         public UserData(IEnumerable<Claim> claims)
         {
@@ -35,13 +37,17 @@ namespace HMPPS.Utilities.Models
             ExpiresAt = (claims.FirstOrDefault(c => c.Type == "expires_at"))?.Value;
             PrisonId = (claims.FirstOrDefault(c => c.Type == "pnomisLocation"))?.Value;
 
-            var accountBalanceValue = claims.FirstOrDefault(c => c.Type == "account_balance")?.Value;
-            IsAccountBalanceAvailable = accountBalanceValue != null;
-            if (IsAccountBalanceAvailable)
+            var accountSpendsValue = claims.FirstOrDefault(c => c.Type == "account_spends")?.Value;
+            var accountCashValue = claims.FirstOrDefault(c => c.Type == "account_cash")?.Value;
+            var accountSavingsValue = claims.FirstOrDefault(c => c.Type == "account_savings")?.Value;
+            AreAccountBalancesAvailable = accountSpendsValue != null && accountCashValue != null && accountSavingsValue != null;
+            if (AreAccountBalancesAvailable)
             {
-                AccountBalance = ParseToDecimal(accountBalanceValue);
-                AccountBalanceLastUpdated =
-                    ParseToUkDateTime((claims.FirstOrDefault(c => c.Type == "account_balance_lastupdated"))?.Value);
+                AccountSpends = ParseToDecimal(accountSpendsValue);
+                AccountPrivateCash = ParseToDecimal(accountCashValue);
+                AccountSavings = ParseToDecimal(accountSavingsValue);
+                AccountBalancesLastUpdated =
+                    ParseToUkDateTime((claims.FirstOrDefault(c => c.Type == "accounts_lastupdated"))?.Value);
             }
         }
 

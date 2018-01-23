@@ -13,8 +13,9 @@ include('_includes/head.php'); ?>
     </ol>
   </div>
   <main class="elements-index root-index" id="content" role="main" tabindex="-1">
-    <h1 class="heading-large">Videos by genre</h1>
-
+    <div class="pub-c-title">
+      <h1 class="heading-large">Videos by genre</h1>
+    </div>
     <div class="image-grid">
       <div class="grid-row">
         <div class="column-one-third">

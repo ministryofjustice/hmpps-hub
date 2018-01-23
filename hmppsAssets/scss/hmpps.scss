@@ -127,8 +127,6 @@ $grid-stripe-dark: #B7CFE1;
 
 .at-a-glance {
   padding-bottom: 15px;
-  padding-top: 40px;
-  border-top: 2px solid #0b0c0c;
   margin-bottom: 60px;
 }
 
@@ -141,6 +139,12 @@ $grid-stripe-dark: #B7CFE1;
     max-width: 100%;
     width: 100%;
     height: auto;
+  }
+  img.img-bookcover{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 200px;
   }
 }
 

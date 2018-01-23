@@ -38,9 +38,9 @@ export default (function () {
           // This function could be called at any time to update the text
           // contents of the component.
           updateTextContent(text) {
-            // If no text was provided, default to "Title Unknown"
+            // If no text was provided, default to empty
             if (typeof text !== 'string') {
-              text = 'Title Unknown';
+              text = '';
             }
 
             // Use Video.js utility DOM methods to manipulate the content
