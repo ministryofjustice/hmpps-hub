@@ -7,7 +7,8 @@
 .sudoku-board {
 	min-height: 22.75rem;
 	margin-bottom: 1em;
-  width: 100%;
+	width: 100%;
+	max-width: 375px;
   display: block;
   clear: fix;
 

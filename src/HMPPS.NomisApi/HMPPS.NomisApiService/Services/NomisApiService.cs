@@ -22,7 +22,7 @@ namespace HMPPS.NomisApiService.Services
         /// EC PRIVATE KEY converted to PKCS8 format using $ openssl pkcs8 -topk8 -nocrypt -in e3-nomis-api.key -out ec2.pem
         /// This is the key needed below
         /// </summary>
-        public string SecretPkcs8 { get; set; }
+        public string PrivateKey { get; set; }
 
         /// <summary>
         /// API token HMPPS provided I suppose
@@ -38,7 +38,7 @@ namespace HMPPS.NomisApiService.Services
 
         static HttpClient Client = new HttpClient();
 
-        private ILogManager _logManager;
+        private readonly ILogManager _logManager;
 
         public NomisApiService(ILogManager logManager)
             : this(logManager, true)
@@ -53,7 +53,7 @@ namespace HMPPS.NomisApiService.Services
             {
                 ApiBaseUrl = Settings.NomisApiBaseUrl;
                 ClientToken = Settings.NomisApiClientToken;
-                SecretPkcs8 = Settings.NomisApiSecretKey;
+                PrivateKey = Settings.NomisApiSecretKey;
             }
         }
 
@@ -91,6 +91,15 @@ namespace HMPPS.NomisApiService.Services
             }
         }
 
+        public string GetVersion()
+        {
+            InitializeClient();
+
+            var url = $"{ApiBaseUrl}/version";
+
+            return Client.GetStringAsync(url).Result;
+        }
+
         private string GenerateToken(int expireMinutes = 20)
         {
             //https://github.com/dvsekhvalnov/jose-jwt
@@ -100,7 +109,7 @@ namespace HMPPS.NomisApiService.Services
                 {"iat", unixTimestamp},
                 {"token", ClientToken}
             };
-            var secretKeyFile = Convert.FromBase64String(SecretPkcs8);
+            var secretKeyFile = Convert.FromBase64String(PrivateKey);
             var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
             return JWT.Encode(payload, secretKey, JwsAlgorithm.ES256);
         }        

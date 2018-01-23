@@ -41,6 +41,12 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20170908T103129Z
+    - ID: "311ef11c-2d87-4160-93a0-899a8b8cce28"
+      Hint: Skill Level Validation Message
+      Value: This value has to be between 0 and 20              
+    - ID: "32d6813e-7daa-4bd8-90fa-61573994e364"
+      Hint: Skill Level Hint
+      Value: Updating this will start a new game
     - ID: "3a4222da-2a4a-404f-a0de-0770dc74f73c"
       Hint: Right Bold Text
       Value: Choose your Skill level

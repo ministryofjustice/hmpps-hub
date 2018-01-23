@@ -211,9 +211,6 @@
       <HintPath>..\packages\Rainbow.Storage.Yaml.2.0.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http">
-      <HintPath>..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -242,6 +239,7 @@
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
@@ -689,10 +687,6 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Global\Site Settings\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Image.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Account Balance Text.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Account Balance\Show Account Balance.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Image.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Balance Page\Phone Credit\Phone Credit Text.yml" />
@@ -724,7 +718,6 @@
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Label Text.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Skill Level Validation Message.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 1.yml" />
-    <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\Game Specific Content\Subtitle 2.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Chess Game Page\__Standard Values.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Templates\HMPPS\Pages\Error Page\Content.yml" />
@@ -807,6 +800,7 @@
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\Submit.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave.yml" />
     <Content Include="App_Data\Unicorn\HMPPS\Workflow\HMPPS Workflow\Draft\__OnSave\Auto Submit Action.yml" />
+    <Content Include="healthcheck.ashx" />
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -898,6 +892,9 @@
     <Compile Include="App_Start\RegisterBundles.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="healthcheck.ashx.cs">
+      <DependentUpon>healthcheck.ashx</DependentUpon>
+    </Compile>
     <Compile Include="sitecore modules\HMPPS\BookUpload.aspx.cs">
       <DependentUpon>BookUpload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -984,6 +981,18 @@
     <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
       <Project>{8f0d13f5-49b0-4134-94f3-c98cf62519a3}</Project>
       <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.HealthCheck.Extended\HMPPS.HealthCheck.Extended.csproj">
+      <Project>{8197064F-8A11-48C9-BADF-F19DF6B373D0}</Project>
+      <Name>HMPPS.HealthCheck.Extended</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.Monitoring\HMPPS.HealthCheck\HMPPS.HealthCheck.csproj">
+      <Project>{3bba0d18-cadd-4b3f-a5a0-6c5284106c1e}</Project>
+      <Name>HMPPS.HealthCheck</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMPPS.NomisApi\HMPPS.NomisApiService\HMPPS.NomisApiService.csproj">
+      <Project>{DE839094-9E70-43AA-8F0B-A226A38647F7}</Project>
+      <Name>HMPPS.NomisApiService</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMPPS.SitecoreTracking\HMPPS.ContactIdentification\HMPPS.ContactIdentification.csproj">
       <Project>{5a9d6b5a-ebd9-44a6-aa7f-38b290984d16}</Project>
