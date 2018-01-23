@@ -11,7 +11,7 @@ namespace HMPPS.Utilities.Helpers
 
             if (service == null)
             {
-                throw new InvalidOperationException($"No service registered for type {typeof(T).ToString()}");
+                throw new InvalidOperationException($"No service registered for type {typeof(T)}");
             }
 
             return service;
