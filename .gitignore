@@ -423,3 +423,4 @@ proxy.json
 /www/health-check-dashboard.aspx
 /src/HMPPS.Site/hmppsAssets
 /src/HMPPS.SitecoreTracking/HMPPS.xDB.ProcessingSite/App_Config/ConnectionStrings.xDB-Processing-Localhost.Source.config
+/src/HMPPS.SitecoreTracking/HMPPS.xDB.ReportingSite/App_Config/ConnectionStrings.xDB-Reporting-Localhost.Source.config

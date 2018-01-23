@@ -88,6 +88,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\XDB-REP-Localhost.pubxml" />
+    <None Include="Web.xDB-Reporting-Localhost.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.xDB-Reporting.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
