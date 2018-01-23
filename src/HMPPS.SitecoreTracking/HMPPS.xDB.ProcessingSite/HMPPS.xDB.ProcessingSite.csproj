@@ -82,6 +82,9 @@
     <Content Include="App_Config\Include\zzz\HMPPS.Sitecore.ContentSearch.Analytics.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.ErrorPages.config" />
     <Content Include="healthcheck.ashx" />
+    <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
