@@ -88,6 +88,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\XDB-REP-Localhost.pubxml" />
+    <None Include="Web.xDB-Reporting-Localhost.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.xDB-Reporting.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,6 +133,16 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'xDB-Reporting-Localhost|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
