@@ -28,7 +28,7 @@ namespace HMPPS.HealthCheck.Extended
 
             return new HealthCheckFacet
             {
-                Name = "Nomis API",
+                Name = "Nomis",
                 Healthy = !string.IsNullOrEmpty(versionDetails)
             };
         }
