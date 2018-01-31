@@ -323,6 +323,7 @@
       <DependentUpon>ConnectionStrings.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <Content Include="App_Config\Include\ContentTesting\Sitecore.ContentTesting.PreemptiveScreenshot.disabled" />
     <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
