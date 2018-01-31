@@ -1,3 +1,4 @@
+SETLOCAL
 SET wwwRoot=D:\home\site\wwwroot
 SET wwwAppConfigContentTesting=%wwwRoot%\App_Config\Include\ContentTesting
 

@@ -1,3 +1,4 @@
+SETLOCAL 
 SET wwwRoot=D:\home\site\wwwroot
 SET wwwAppConfigInclud=%wwwRoot%\App_Config\Include
 SET wwwAdminLocation=%wwwRoot%\sitecore\admin
