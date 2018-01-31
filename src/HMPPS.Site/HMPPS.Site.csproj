@@ -319,6 +319,10 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <None Include="App_Config\ConnectionStrings.CMS-Release.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CD-Localhost.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -333,14 +337,6 @@
       <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.CMS-Release.config">
-      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.Debug.config">
-      <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\Unicorn.Configs.HMPPS.Release.config">
       <DependentUpon>Unicorn.Configs.HMPPS.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -366,18 +362,6 @@
       <IsTransformFile>True</IsTransformFile>
       <SubType>Designer</SubType>
     </None>
-    <None Include="App_Config\ConnectionStrings.CMS-Release.config">
-      <DependentUpon>ConnectionStrings.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\ConnectionStrings.Debug.config">
-      <DependentUpon>ConnectionStrings.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\ConnectionStrings.Release.config">
-      <DependentUpon>ConnectionStrings.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\Sitecore.Xdb.Remote.Client.config">
       <TransformOnBuild>true</TransformOnBuild>
       <SubType>Designer</SubType>
@@ -391,18 +375,6 @@
       <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Localhost.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.CMS-Release.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Debug.config">
-      <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\Sitecore.Xdb.Remote.Client.Release.config">
       <DependentUpon>Sitecore.Xdb.Remote.Client.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -435,27 +407,6 @@
       <DependentUpon>zzDataFolder.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\zzDataFolder.CMS-Release.config">
-      <DependentUpon>zzDataFolder.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzDataFolder.Debug.config">
-      <DependentUpon>zzDataFolder.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzDataFolder.Release.config">
-      <DependentUpon>zzDataFolder.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Debug.config">
-      <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.Release.config">
-      <DependentUpon>HMPPS.Unicorn.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.CD-Localhost.config">
       <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
@@ -469,14 +420,6 @@
       <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.CMS-Release.config">
-      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.Debug.config">
-      <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Unicorn.zSharedSecret.Release.config">
       <DependentUpon>HMPPS.Unicorn.zSharedSecret.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -515,14 +458,6 @@
       <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.Debug.config">
-      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\HMPPS.Sitecore.Release.config">
-      <DependentUpon>HMPPS.Sitecore.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
     <Content Include="App_Config\Include\zzz\HMPPS.RichTextContent.config" />
     <Content Include="App_Config\Include\zzz\HMPPS.DependencyInjection.config">
       <SubType>Designer</SubType>
@@ -536,19 +471,6 @@
       <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CMS-Localhost.config">
-      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.CMS-Release.config">
-      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.Debug.config">
-      <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
-    </None>
-    <None Include="App_Config\Include\zzz\Sitecore.Cloud.ApplicationInsights.Release.config">
       <DependentUpon>Sitecore.Cloud.ApplicationInsights.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
@@ -882,14 +804,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.CMS-Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </None>
