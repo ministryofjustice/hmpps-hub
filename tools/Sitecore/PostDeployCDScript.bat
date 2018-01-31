@@ -3,6 +3,8 @@ SET wwwRoot=D:\home\site\wwwroot
 SET wwwAppConfigInclud=%wwwRoot%\App_Config\Include
 SET wwwAdminLocation=%wwwRoot%\sitecore\admin
 
+REM Sitecore security hardening for the CD site:
+
 if exist $wwwAppConfigInclude\Sitecore.WebDAV.config (ren $wwwAppConfigInclude\Sitecore.WebDAV.config Sitecore.WebDAV.config.disabled)
 
 if exist %wwwAdminLocation%\Cache.aspx (ren %wwwAdminLocation%\Cache.aspx Cache.aspx.disabled)
