@@ -160,7 +160,8 @@
       <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.170728\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Client.NoReferences.8.2.170728\lib\NET452\Sitecore.Client.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Sitecore\Sitecore.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Cloud.ApplicationInsights">
       <HintPath>..\lib\Sitecore\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
@@ -767,6 +768,7 @@
     <Content Include="robots.txt" />
     <Content Include="DummyLogin.aspx" />
     <Content Include="SessionAbandon.aspx" />
+    <Content Include="sitecore\shell\hotfixes\SC Hotfix 204031-1 CMS.Core 10.0.2.txt" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
