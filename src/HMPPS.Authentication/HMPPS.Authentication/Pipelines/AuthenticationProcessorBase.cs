@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
+using HMPPS.ErrorReporting;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
@@ -15,10 +16,11 @@ namespace HMPPS.Authentication.Pipelines
     {
 
         protected INomisApiService NomisApiService;
+        protected ILogManager LogManager;
 
         public IEnumerable<Claim> RefreshUserData(ref UserData userData)
         {
-            var tokenManager = new TokenManager();
+            var tokenManager = new TokenManager(LogManager);
             var tokenResponse = tokenManager.RequestRefreshToken(userData.RefreshToken);
             if (tokenResponse.IsError)
             {

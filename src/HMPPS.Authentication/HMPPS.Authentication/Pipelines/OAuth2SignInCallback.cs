@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
+using HMPPS.ErrorReporting;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security;
@@ -19,9 +20,10 @@ namespace HMPPS.Authentication.Pipelines
     {
         private readonly IUserDataService _userDataService;
 
-        public OAuth2SignInCallback(IUserDataService userDataService, INomisApiService nomisApiService)
+        public OAuth2SignInCallback(IUserDataService userDataService, INomisApiService nomisApiService, ILogManager logManager)
         {
             _userDataService = userDataService;
+            LogManager = logManager;
             NomisApiService = nomisApiService;
         }
 
@@ -71,7 +73,7 @@ namespace HMPPS.Authentication.Pipelines
                 throw new InvalidOperationException("Could not validate identity token. Invalid nonce.");
             var nonce = tempCookie.Values["nonce"];
 
-            var tokenManager = new TokenManager();
+            var tokenManager = new TokenManager(LogManager);
 
             //TODO: Call the async version - but you can't from within a pipeline! Move this into a controller and redirect to it?
             var tokenResponse = tokenManager.RequestAccessToken(code);
