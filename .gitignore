@@ -326,6 +326,8 @@ proxy.json
 /www/default.css
 /www/Default.aspx
 /www/data/logs
+/www/sitecore modules
+/cd-www/sitecore modules
 /cd-www/App_Data/Replicated
 /cd-www/App_Browsers
 /cd-www/App_Config
