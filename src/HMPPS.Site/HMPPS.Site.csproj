@@ -768,7 +768,7 @@
     <Content Include="robots.txt" />
     <Content Include="DummyLogin.aspx" />
     <Content Include="SessionAbandon.aspx" />
-    <Content Include="sitecore\shell\hotfixes\SC Hotfix 204031-1 CMS.Core 10.0.2.txt" />
+    <Content Include="sitecore\shell\hotfixes\SC Hotfix 204031-1 CMS.Core 10.0.7.txt" />
     <Content Include="status.aspx" />
     <Content Include="Views\Pages\Homepage.cshtml" />
     <Content Include="Views\Blocks\Global\FeatureBlock.cshtml" />
