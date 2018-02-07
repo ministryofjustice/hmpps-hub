@@ -5,9 +5,7 @@ using System.Web.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
-using Sitecore.Diagnostics;
 using Sitecore.Pipelines;
-using SimpleInjector.Integration.Web;
 
 namespace HMPPS.Site.DependencyInjection
 {

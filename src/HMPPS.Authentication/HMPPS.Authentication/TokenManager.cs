@@ -187,12 +187,7 @@ namespace HMPPS.Authentication
                 claims.Add(new Claim(ClaimTypes.NameIdentifier, prisonerIdClaim.Value.ToUpperInvariant()));
             }
 
-            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.Role
-                                                     || c.Type == ClaimTypes.GivenName
-                                                     || c.Type == ClaimTypes.Surname
-                                                     || c.Type == ClaimTypes.Email
-                                                     || c.Type == "name"
-                                                     || c.Type == "pnomisLocation"));
+            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.GivenName || c.Type == "pnomisLocation"));
 
             if (!string.IsNullOrWhiteSpace(response.AccessToken))
             {
