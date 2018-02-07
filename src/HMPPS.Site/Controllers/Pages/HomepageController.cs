@@ -30,7 +30,7 @@ namespace HMPPS.Site.Controllers.Pages
 
             _hvm.IsUserLoggedIn = Sitecore.Context.User.IsAuthenticated;
 
-            var userData = _userDataService.GetUserDataFromCookie(System.Web.HttpContext.Current);
+            var userData = _userDataService.GetUserIdamDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;
 
             var unilinkPrisonId = userData.PrisonId.Length > 2

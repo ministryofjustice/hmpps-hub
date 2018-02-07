@@ -18,6 +18,8 @@ namespace HMPPS.Utilities.Services
 
         private ILogManager _logManager;
 
+        private const string AccountBalancesSessionKey = "AccountBalances";
+
         public UserDataService(IEncryptionService encryptionService, IJwtTokenService jwtTokenService, ILogManager logManager)
         {
             _encryptionService = encryptionService;
@@ -25,28 +27,28 @@ namespace HMPPS.Utilities.Services
             _logManager = logManager;
         }
 
-        public void SaveUserDataToCookie(IEnumerable<Claim> claims, HttpContext context)
+        public void SaveUserIdamDataToCookie(IEnumerable<Claim> claims, HttpContext context)
         {
             // store claims into a secure cookie
             var jwtToken = _jwtTokenService.GenerateJwtToken(claims, Settings.JwtTokenSecurityKey);
 
-            var encryptedJwtToken = _encryptionService.Encrypt(jwtToken);
+            var encodedJwtToken = _encryptionService.Encode(jwtToken);
 
             var userDataCookie = new CookieHelper(Settings.UserDataCookieName, context);
-            userDataCookie.SetValue(Settings.UserDataCookieKey, encryptedJwtToken);
+            userDataCookie.SetValue(Settings.UserDataCookieKey, encodedJwtToken);
             userDataCookie.Save();
         }
 
-        public UserData GetUserDataFromCookie(HttpContext context)
+        public UserIdamData GetUserIdamDataFromCookie(HttpContext context)
         {
             var cookie = new CookieHelper(Settings.UserDataCookieName, context);
 
             cookie.GetCookie();
-            var encryptedJwtToken = cookie.GetValue(Settings.UserDataCookieKey);
-            if (string.IsNullOrEmpty(encryptedJwtToken))
+            var encodedJwtToken = cookie.GetValue(Settings.UserDataCookieKey);
+            if (string.IsNullOrEmpty(encodedJwtToken))
                 return null;
 
-            var jwtToken = _encryptionService.Decrypt(encryptedJwtToken);
+            var jwtToken = _encryptionService.Decode(encodedJwtToken);
 
             IEnumerable<Claim> claims;
             try
@@ -58,14 +60,28 @@ namespace HMPPS.Utilities.Services
                 //_logManager.LogError("GetUserDataFromCookie failed", ex, this); // Uncomment for debug purposes
                 return null;
             }
-            return new UserData(claims);
+            return new UserIdamData(claims);
         }
 
-        public void DeleteUserDataCookie(HttpContext context)
+        public void DeleteUserIdamDataCookie(HttpContext context)
         {
             var cookie = new CookieHelper(Settings.UserDataCookieName, context);
             cookie.Delete();
         }
 
+        public UserAccountBalances GetAccountBalancesFromSession(HttpContext context)
+        {
+            return SessionHelper.Get<UserAccountBalances>(context, AccountBalancesSessionKey);
+        }
+
+        public void SaveAccountBalancesToSession(HttpContext context, UserAccountBalances balances)
+        {
+            SessionHelper.Set(context, AccountBalancesSessionKey, balances);
+        }
+
+        public void DeleteAccountBalancesFromSession(HttpContext context)
+        {
+            SessionHelper.Remove(context, AccountBalancesSessionKey);
+        }
     }
 }
