@@ -50,8 +50,6 @@ namespace HMPPS.Authentication.Tests
             var principal = tm.ValidateIdentityToken(testIdentityToken, testNonce);
 
             Assert.AreEqual("Johnny", principal.FindFirst(ClaimTypes.GivenName).Value);
-            Assert.AreEqual("Rocket", principal.FindFirst(ClaimTypes.Surname).Value);
-            Assert.AreEqual("jrocket@example.com", principal.FindFirst(ClaimTypes.Email).Value);
             Assert.AreEqual("jrocket@example.com", principal.FindFirst(ClaimTypes.NameIdentifier).Value);
         }
 
@@ -123,9 +121,7 @@ namespace HMPPS.Authentication.Tests
             var claims = tm.ExtractClaims(tokenResponse, claimsPrincipal);
 
             Assert.IsNotNull(claims);
-            Assert.AreEqual(4, claims.Count());
-            Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.Email).Value);
-            Assert.AreEqual("Rocket", claims.Single(c => c.Type == ClaimTypes.Surname).Value);
+            Assert.AreEqual(2, claims.Count());
             Assert.AreEqual("Johnny", claims.Single(c => c.Type == ClaimTypes.GivenName).Value);
             Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value, true);
         }

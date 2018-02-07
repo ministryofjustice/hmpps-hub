@@ -23,7 +23,8 @@ namespace HMPPS.Authentication.Pipelines
             // unless we need to add a log out button.
             Sitecore.Security.Authentication.AuthenticationManager.Logout();
 
-            _userDataService.DeleteUserDataCookie(args.Context);
+            _userDataService.DeleteUserIdamDataCookie(args.Context);
+            _userDataService.DeleteAccountBalancesFromSession(args.Context);
 
             // Redirect the user to the SSO logout URL.
             WebUtil.Redirect(Settings.LogoutEndpoint);
