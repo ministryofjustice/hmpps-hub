@@ -5,8 +5,8 @@ using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security.Authentication;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Interfaces;
-using HMPPS.NomisApiService.Interfaces;
 using System.Web;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -27,10 +27,10 @@ namespace HMPPS.Authentication.Pipelines
 
         private readonly IUserDataService _userDataService;
 
-        public AuthenticationChecker(IUserDataService userDataService, INomisApiService nomisApiService)
+        public AuthenticationChecker(IUserDataService userDataService, ILogManager logManager)
         {
             _userDataService = userDataService;
-            NomisApiService = nomisApiService;
+            LogManager = logManager;
         }
 
         public override void Process(HttpRequestArgs args)
@@ -46,7 +46,7 @@ namespace HMPPS.Authentication.Pipelines
             Assert.ArgumentNotNull(args, "args");
             var sitecoreUserLoggedIn = Context.IsLoggedIn;
 
-            var userData = _userDataService.GetUserDataFromCookie(args.Context);
+            var userData = _userDataService.GetUserIdamDataFromCookie(args.Context);
 
             if (sitecoreUserLoggedIn && userData == null)
             {
@@ -62,28 +62,29 @@ namespace HMPPS.Authentication.Pipelines
             {
                 if (!Context.User.LocalName.Equals(userData.NameIdentifier))
                 {
-                    LogoutAndClearUserDataCookie(args.Context);
+                    LogoutAndClearUserData(args.Context);
                     return;
                 }
                 if (ExpirationHelper.IsExpired(userData.ExpiresAt))
                 {
-                    var claims = RefreshUserData(ref userData);
+                    var claims = RefreshUserIdamData(ref userData);
                     if (!claims.ToList().Any())
                     {
-                        LogoutAndClearUserDataCookie(args.Context);
+                        LogoutAndClearUserData(args.Context);
                         return;
                     }
-                    _userDataService.SaveUserDataToCookie(claims, args.Context);
+                    _userDataService.SaveUserIdamDataToCookie(claims, args.Context);
                 }
                 var user = BuildVirtualUser(userData);
                 AuthenticationManager.LoginVirtualUser(user);
             }
         }
 
-        private void LogoutAndClearUserDataCookie(HttpContext context)
+        private void LogoutAndClearUserData(HttpContext context)
         {
             AuthenticationManager.Logout();
-            _userDataService.DeleteUserDataCookie(context);
+            _userDataService.DeleteUserIdamDataCookie(context);
+            _userDataService.DeleteAccountBalancesFromSession(context);
         }
     }
 }

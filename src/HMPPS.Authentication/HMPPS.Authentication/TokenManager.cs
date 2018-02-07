@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens;
+using System.Net;
 using System.Security.Claims;
 using System.ServiceModel.Security.Tokens;
 using System.Text;
 using System.Threading.Tasks;
+using HMPPS.ErrorReporting;
 using IdentityModel.Client;
 using HMPPS.Utilities.Helpers;
 
@@ -12,12 +14,14 @@ namespace HMPPS.Authentication
 {
     public class TokenManager
     {
-        public TokenManager() : this(true)
+        private readonly ILogManager _logManager;
+        public TokenManager(ILogManager logManager) : this(logManager, true)
         {
         }
 
-        public TokenManager(bool useSitecoreSettings)
+        public TokenManager(ILogManager logManager, bool useSitecoreSettings)
         {
+            _logManager = logManager;
             if (!useSitecoreSettings) return;
             AuthorizeEndpoint = Settings.AuthorizeEndpoint;
             SignInCallbackUrl = Settings.SignInCallbackUrl;
@@ -68,6 +72,13 @@ namespace HMPPS.Authentication
                 code,
                 SignInCallbackUrl).Result;
 
+            if (response.IsError || response.HttpStatusCode != HttpStatusCode.OK)
+            {
+                _logManager.LogWarning(
+                    "RequestAccessToken error description: " + response.ErrorDescription + ". Status code: " +
+                    (int) response.HttpStatusCode + ". HTTP error reason: " + response.HttpErrorReason +
+                    ". Exception: " + response.Exception?.Message, typeof(TokenManager));
+            }
             return response;
         }
 
@@ -86,7 +97,13 @@ namespace HMPPS.Authentication
 
             var response = client.RequestRefreshTokenAsync(refreshToken);
             var result = response.Result;
-
+            if (result.IsError || result.HttpStatusCode != HttpStatusCode.OK)
+            {
+                _logManager.LogWarning(
+                    "RequestRefreshToken error description: " + result.ErrorDescription + ". Status code: " +
+                    (int)result.HttpStatusCode + ". HTTP error reason: " + result.HttpErrorReason +
+                    ". Exception: " + response.Exception?.Message, typeof(TokenManager));
+            }
             return result;
         }
 
@@ -106,7 +123,13 @@ namespace HMPPS.Authentication
             var response = await client.RequestAuthorizationCodeAsync(
                 code,
                 SignInCallbackUrl);
-
+            if (response.IsError || response.HttpStatusCode != HttpStatusCode.OK)
+            {
+                _logManager.LogWarning(
+                    "ObtainAccessTokenAsync error description: " + response.ErrorDescription + ". Status code: " +
+                    (int)response.HttpStatusCode + ". HTTP error reason: " + response.HttpErrorReason +
+                    ". Exception: " + response.Exception?.Message, typeof(TokenManager));
+            }
             return response;
         }
         
@@ -164,12 +187,7 @@ namespace HMPPS.Authentication
                 claims.Add(new Claim(ClaimTypes.NameIdentifier, prisonerIdClaim.Value.ToUpperInvariant()));
             }
 
-            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.Role
-                                                     || c.Type == ClaimTypes.GivenName
-                                                     || c.Type == ClaimTypes.Surname
-                                                     || c.Type == ClaimTypes.Email
-                                                     || c.Type == "name"
-                                                     || c.Type == "pnomisLocation"));
+            claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.GivenName || c.Type == "pnomisLocation"));
 
             if (!string.IsNullOrWhiteSpace(response.AccessToken))
             {

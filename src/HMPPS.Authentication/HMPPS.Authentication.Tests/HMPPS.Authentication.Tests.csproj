@@ -126,6 +126,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HMPPS.Monitoring\HMPPS.ErrorReporting\HMPPS.ErrorReporting.csproj">
+      <Project>{8F0D13F5-49B0-4134-94F3-C98CF62519A3}</Project>
+      <Name>HMPPS.ErrorReporting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HMPPS.Authentication\HMPPS.Authentication.csproj">
       <Project>{b80a6038-a9f3-495a-aaac-10defbafb18a}</Project>
       <Name>HMPPS.Authentication</Name>

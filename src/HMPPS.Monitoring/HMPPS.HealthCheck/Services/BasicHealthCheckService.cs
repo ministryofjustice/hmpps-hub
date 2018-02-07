@@ -1,3 +1,4 @@
+using System;
 using HMPPS.ErrorReporting;
 using MongoDB.Driver;
 using Sitecore.ContentSearch;
@@ -5,6 +6,7 @@ using Sitecore.ContentSearch.SearchTypes;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace HMPPS.HealthCheck.Services
 {
@@ -53,11 +55,19 @@ namespace HMPPS.HealthCheck.Services
         {
             var coreIndex = ContentSearchManager.GetIndex("sitecore_core_index");
 
-            using (var context = coreIndex.CreateSearchContext())
+            var healthCheckResults = Task.Run(() =>
             {
-                var healthCheckResults = context.GetQueryable<SearchResultItem>()
-                                                .Where(c => c.Content.Equals("fake health check query"))
-                                                .ToList();
+                using (var context = coreIndex.CreateSearchContext())
+                {
+                    return context.GetQueryable<SearchResultItem>()
+                        .Where(c => c.Content.Equals("fake health check query"))
+                        .ToList();
+                }
+            });
+
+            if (!healthCheckResults.Wait(TimeSpan.FromSeconds(5)))
+            {
+                throw new TimeoutException("Azure search health check operation timed out");
             }
 
             return new HealthCheckFacet

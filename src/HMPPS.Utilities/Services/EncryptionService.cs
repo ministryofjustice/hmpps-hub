@@ -8,49 +8,49 @@ namespace HMPPS.Utilities.Services
 {
     public class EncryptionService : IEncryptionService
     {
-        private ILogManager _logManager;
+        private readonly ILogManager _logManager;
 
         public EncryptionService(ILogManager logManager)
         {
             _logManager = logManager;
         }
 
-        public string Encrypt(string plainValue, bool urlEncode = false)
+        public string Encode(string plainValue, bool urlEncode = false)
         {
-            var encryptedValue = string.Empty;
+            var encodedValue = string.Empty;
 
             try
             {
-                encryptedValue = MachineKeyEncryption.Encode(plainValue);
+                encodedValue = MachineKeyEncryption.Encode(plainValue);
             }
             catch
             {
-                _logManager.LogError($"Error trying to encrypt {plainValue}", GetType());
-                return encryptedValue;
+                _logManager.LogError($"Error trying to encode {plainValue}", GetType());
+                return encodedValue;
             }
 
             if (urlEncode)
             {
-                return HttpUtility.UrlEncode(encryptedValue);
+                return HttpUtility.UrlEncode(encodedValue);
             }
 
-            return encryptedValue;
+            return encodedValue;
         }
 
-        public string Decrypt(string encryptedValue, bool urlDecode = false)
+        public string Decode(string encodedValue, bool urlDecode = false)
         {
             if (urlDecode)
             {
-                encryptedValue = HttpUtility.UrlDecode(encryptedValue);
+                encodedValue = HttpUtility.UrlDecode(encodedValue);
             }
 
             try
             {
-                return MachineKeyEncryption.Decode(encryptedValue);
+                return MachineKeyEncryption.Decode(encodedValue);
             }
             catch (Exception)
             {
-                _logManager.LogError($"Error trying to decrypt {encryptedValue}", GetType());
+                _logManager.LogError($"Error trying to decode {encodedValue}", GetType());
                 return null;
             }
         }

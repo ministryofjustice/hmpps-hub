@@ -1,25 +1,22 @@
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
+using HMPPS.ErrorReporting;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
 using HMPPS.Utilities.Models;
-using HMPPS.NomisApiService.Interfaces;
 
 namespace HMPPS.Authentication.Pipelines
 {
     public abstract class AuthenticationProcessorBase : HttpRequestProcessor
     {
+        protected ILogManager LogManager;
 
-        protected INomisApiService NomisApiService;
-
-        public IEnumerable<Claim> RefreshUserData(ref UserData userData)
+        public IEnumerable<Claim> RefreshUserIdamData(ref UserIdamData userIdamData)
         {
-            var tokenManager = new TokenManager();
-            var tokenResponse = tokenManager.RequestRefreshToken(userData.RefreshToken);
+            var tokenManager = new TokenManager(LogManager);
+            var tokenResponse = tokenManager.RequestRefreshToken(userIdamData.RefreshToken);
             if (tokenResponse.IsError)
             {
                 Sitecore.Diagnostics.Log.Error("HMPPS.Authentication.Pipelines.AuthenticationProcessorBase - " + tokenResponse.ErrorType + " error in RefreshUserData(): " + tokenResponse.ErrorDescription, tokenResponse.Exception, this);
@@ -27,39 +24,18 @@ namespace HMPPS.Authentication.Pipelines
             }
             var claimsPrincipal = tokenManager.ValidateIdentityToken(tokenResponse.IdentityToken);
             var claims = tokenManager.ExtractClaims(tokenResponse, claimsPrincipal).ToList();
-            AddPrisonerDetailsToClaims(userData.NameIdentifier, ref claims);
-            userData = new UserData(claims);
+            userIdamData = new UserIdamData(claims);
             return claims;
         }
 
-        protected void AddPrisonerDetailsToClaims(string prisonerId, ref List<Claim> claims)
-        {
-            var prisonId = (claims.FirstOrDefault(c => c.Type == "pnomisLocation"))?.Value;
-            var accounts = NomisApiService.GetPrisonerAccounts(prisonId, prisonerId);
-            if (accounts == null) return;
-            claims.Add(new Claim("account_spends",
-                accounts.Spends.ToString(CultureInfo.InvariantCulture.NumberFormat)));
-            claims.Add(new Claim("account_cash",
-                accounts.Cash.ToString(CultureInfo.InvariantCulture.NumberFormat)));
-            claims.Add(new Claim("account_savings",
-                accounts.Savings.ToString(CultureInfo.InvariantCulture.NumberFormat)));
-            claims.Add(new Claim("accounts_lastupdated",
-                DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)));
-        }
-
-        protected User BuildVirtualUser(UserData idamData)
+        protected User BuildVirtualUser(UserIdamData idamData)
         {
             var domain = "extranet";
             var userId = idamData.NameIdentifier;
-            var email = idamData.Email;
-            var roles = idamData.Roles;
 
             var username = $"{domain}\\{userId}";
             var user = AuthenticationManager.BuildVirtualUser(username, true);
-            user.Profile.Email = email;
-            user.Profile.FullName = idamData.Name;
             user.Profile.Save();
-            AssignUserRoles(user, roles);
             return user;
         }
 
