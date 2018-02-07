@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
+using HMPPS.ErrorReporting;
 using Sitecore;
 using Sitecore.Pipelines.HttpRequest;
 using Sitecore.Security;
@@ -11,7 +12,6 @@ using Sitecore.Web;
 using HMPPS.Utilities.Helpers;
 using HMPPS.Utilities.Models;
 using HMPPS.Utilities.Interfaces;
-using HMPPS.NomisApiService.Interfaces;
 
 namespace HMPPS.Authentication.Pipelines
 {
@@ -19,10 +19,10 @@ namespace HMPPS.Authentication.Pipelines
     {
         private readonly IUserDataService _userDataService;
 
-        public OAuth2SignInCallback(IUserDataService userDataService, INomisApiService nomisApiService)
+        public OAuth2SignInCallback(IUserDataService userDataService, ILogManager logManager)
         {
             _userDataService = userDataService;
-            NomisApiService = nomisApiService;
+            LogManager = logManager;
         }
 
 
@@ -40,12 +40,10 @@ namespace HMPPS.Authentication.Pipelines
             var tempCookie = new CookieHelper(Settings.TempCookieName, args.Context);
             var tempHttpCookie = tempCookie.GetCookie();
             var claims = ValidateCodeAndGetClaims(args.Context.Request.QueryString["code"], args.Context.Request.QueryString["state"], tempHttpCookie).ToList();
-            var prisonerId = (claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier))?.Value;
-            AddPrisonerDetailsToClaims(prisonerId, ref claims);
 
-            var userData = new UserData(claims);
+            var userData = new UserIdamData(claims);
 
-            _userDataService.SaveUserDataToCookie(claims, args.Context);
+            _userDataService.SaveUserIdamDataToCookie(claims, args.Context);
 
             // Build sitecore user and log in - this will persist until log out or session ends.
 
@@ -71,7 +69,7 @@ namespace HMPPS.Authentication.Pipelines
                 throw new InvalidOperationException("Could not validate identity token. Invalid nonce.");
             var nonce = tempCookie.Values["nonce"];
 
-            var tokenManager = new TokenManager();
+            var tokenManager = new TokenManager(LogManager);
 
             //TODO: Call the async version - but you can't from within a pipeline! Move this into a controller and redirect to it?
             var tokenResponse = tokenManager.RequestAccessToken(code);

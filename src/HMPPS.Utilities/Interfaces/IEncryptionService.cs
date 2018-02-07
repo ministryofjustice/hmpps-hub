@@ -2,8 +2,8 @@ namespace HMPPS.Utilities.Interfaces
 {
     public interface IEncryptionService
     {
-        string Encrypt(string plainValue, bool urlEncode = false);
+        string Encode(string plainValue, bool urlEncode = false);
 
-        string Decrypt(string encryptedValue, bool urlDecode = false);
+        string Decode(string encryptedValue, bool urlDecode = false);
     }
 }

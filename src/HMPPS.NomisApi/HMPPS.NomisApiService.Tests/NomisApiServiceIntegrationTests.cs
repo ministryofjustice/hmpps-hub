@@ -11,7 +11,7 @@ namespace HMPPS.NomisApiService.Tests
         public void NomisApiService_GetPrisonerAccounts()
         {
             // PrisonId: BMI,  PrisonerId: A3577AE
-            // JSON respornse expected: { "spends": 20637, "cash": 38763,"savings": 5000 }
+            // JSON response expected: { "spends": 20637, "cash": 38763,"savings": 5000 }
 
             var nomisApiService = CreateNomisApiService();
             var accounts = nomisApiService.GetPrisonerAccounts("LEI", "A3577AE");
@@ -53,7 +53,7 @@ namespace HMPPS.NomisApiService.Tests
 
         private Services.NomisApiService CreateNomisApiService()
         {
-            var nomisApiService = new Services.NomisApiService(new Mock<ILogManager>().Object, false);
+            var nomisApiService = new Services.NomisApiService(new Mock<ILogManager>().Object);
             nomisApiService.ApiBaseUrl = TestContext.Properties["HMPPS.NomisApiService.BaseUrl"].ToString();
             nomisApiService.ClientToken = TestContext.Properties["HMPPS.NomisApiService.ClientToken"].ToString();
             nomisApiService.PrivateKey = TestContext.Properties["HMPPS.NomisApiService.SecretKey"].ToString();

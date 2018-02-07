@@ -7,10 +7,12 @@ namespace HMPPS.Utilities.Interfaces
 {
     public interface IUserDataService
     {
-        void SaveUserDataToCookie(IEnumerable<Claim> claims, HttpContext context);
+        void SaveUserIdamDataToCookie(IEnumerable<Claim> claims, HttpContext context);
+        UserIdamData GetUserIdamDataFromCookie(HttpContext context);
+        void DeleteUserIdamDataCookie(HttpContext context);
 
-        UserData GetUserDataFromCookie(HttpContext context);
-
-        void DeleteUserDataCookie(HttpContext context);
+        UserAccountBalances GetAccountBalancesFromSession(HttpContext context);
+        void SaveAccountBalancesToSession(HttpContext context, UserAccountBalances balances);
+        void DeleteAccountBalancesFromSession(HttpContext context);
     }
 }

@@ -1,8 +1,8 @@
 using HMPPS.ErrorReporting;
+using HMPPS.NomisApiService.Interfaces;
 using HMPPS.Utilities.Interfaces;
 using HMPPS.Utilities.Services;
 using Microsoft.Extensions.DependencyInjection;
-using SimpleInjector;
 
 namespace HMPPS.Site.DependencyInjection
 {
@@ -14,6 +14,8 @@ namespace HMPPS.Site.DependencyInjection
 
             args.ServiceCollection.AddSingleton<ICacheService, CacheService>();
             args.ServiceCollection.AddSingleton<ILogManager, SitecoreLogManager>();
+
+            args.ServiceCollection.AddTransient<INomisApiService, NomisApiService.Services.NomisApiService>();
 
             args.ServiceCollection.AddTransient<IUserDataService, UserDataService>();
             args.ServiceCollection.AddTransient<IEncryptionService, EncryptionService>();

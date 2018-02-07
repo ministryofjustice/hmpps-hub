@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Claims;
 using IdentityModel.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using HMPPS.ErrorReporting;
 
 namespace HMPPS.Authentication.Tests
 {
@@ -20,7 +22,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_GetAuthenticationRedirectUrl()
         {
-            var tm = new HMPPS.Authentication.TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ClientId = "clientid",
                 AuthorizeEndpoint = "http://auth/endpoint",
@@ -38,7 +40,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_ValidateIdentityToken_CanVerifyValidToken()
         {
-            var tm = new TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ValidIssuer = testIssuer,
                 ClientId = testClientId,
@@ -48,15 +50,13 @@ namespace HMPPS.Authentication.Tests
             var principal = tm.ValidateIdentityToken(testIdentityToken, testNonce);
 
             Assert.AreEqual("Johnny", principal.FindFirst(ClaimTypes.GivenName).Value);
-            Assert.AreEqual("Rocket", principal.FindFirst(ClaimTypes.Surname).Value);
-            Assert.AreEqual("jrocket@example.com", principal.FindFirst(ClaimTypes.Email).Value);
             Assert.AreEqual("jrocket@example.com", principal.FindFirst(ClaimTypes.NameIdentifier).Value);
         }
 
         [TestMethod]
         public void TokenManager_ValidateIdentityToken_RejectsBadIssuer()
         {
-            var tm = new TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ValidIssuer = "https://wrong_issuer/openam/oauth2",
                 ClientId = testClientId,
@@ -69,7 +69,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_ValidateIdentityToken_RejectsBadClientId()
         {
-            var tm = new TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ValidIssuer = testIssuer,
                 ClientId = "bad_client_id",
@@ -82,7 +82,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_ValidateIdentityToken_RejectsBadClientSecret()
         {
-            var tm = new TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ValidIssuer = testIssuer,
                 ClientId = testClientId,
@@ -95,7 +95,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_ValidateIdentityToken_RejectsBadNonce()
         {
-            var tm = new TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ValidIssuer = testIssuer,
                 ClientId = testClientId,
@@ -109,7 +109,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_ExtractClaims_ExtractsClaimsFromPrincipal()
         {
-            var tm = new TokenManager(false)
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false)
             {
                 ValidIssuer = testIssuer,
                 ClientId = testClientId,
@@ -121,9 +121,7 @@ namespace HMPPS.Authentication.Tests
             var claims = tm.ExtractClaims(tokenResponse, claimsPrincipal);
 
             Assert.IsNotNull(claims);
-            Assert.AreEqual(4, claims.Count());
-            Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.Email).Value);
-            Assert.AreEqual("Rocket", claims.Single(c => c.Type == ClaimTypes.Surname).Value);
+            Assert.AreEqual(2, claims.Count());
             Assert.AreEqual("Johnny", claims.Single(c => c.Type == ClaimTypes.GivenName).Value);
             Assert.AreEqual("jrocket@example.com", claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value, true);
         }
@@ -131,7 +129,7 @@ namespace HMPPS.Authentication.Tests
         [TestMethod]
         public void TokenManager_ExtractClaims_ExtractsClaimsFromToken()
         {
-            var tm = new TokenManager(false);
+            var tm = new TokenManager(new Mock<ILogManager>().Object, false);
             var claimsPrincipal = new ClaimsPrincipal();
             var tokenResponse = new TokenResponse("{\"access_token\":\"a08cee40-3113-4092-b7a9-a38902f6e4f2\",\"refresh_token\":\"a051ec5f-be15-40b0-9540-210511d892b2\",\"scope\":\"openid profile email\",\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiVy04VEE0VHg4TW56emxQRC1ZZnpFUSIsInN1YiI6InVzZXIuMCIsImF1ZGl0VHJhY2tpbmdJZCI6ImM1MTZmYzcxLWMxMGMtNGQ1Ny1iN2Q4LWFkMGNiNWM2ODM1NC0zOTkxNyIsImlzcyI6Imh0dHBzOi8vNTEuMTQxLjU1LjE1OTo4MDgwL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImdpdmVuX25hbWUiOiJBYWNjZiIsIm5vbmNlIjoiMTc4YzJiMjEwYjU5NDZkZjg0OGUyYTM5ZjM4ZWFjMWYiLCJhdWQiOiJDTVNfRTNfQ0xJRU5USUQiLCJjX2hhc2giOiJtdm8zRkYwWTlXOUlnMTQyMXVIcmVnIiwib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6ImZhODFkYTQ4LTRkMWYtNDM3ZS1iZWEwLWNjYTEzMDdhZGUxZiIsImF6cCI6IkNNU19FM19DTElFTlRJRCIsImF1dGhfdGltZSI6MTUwNDgyODQ3OSwibmFtZSI6IkFhY2NmIEFtYXIiLCJyZWFsbSI6Ii8iLCJleHAiOjE1MDQ4MzIwOTUsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiaWF0IjoxNTA0ODI4NDk1LCJmYW1pbHlfbmFtZSI6IkFtYXIiLCJlbWFpbCI6InVzZXIuMEBtYWlsZG9tYWluLm5ldCIsImZvcmdlcm9jayI6eyJzaWciOiJ9RnkwLjh5SGU8dnpUUTRoZC9zeE5hPEMqVyQqeUhMW2FCPmdqc1QvIn19.Rdv3OEb48Kvjmgib8RA-gQqm8YhG5ytBQnB2aj6Qq7Y\",\"token_type\":\"Bearer\",\"expires_in\":599,\"nonce\":\"178c2b210b5946df848e2a39f38eac1f\"}");
 

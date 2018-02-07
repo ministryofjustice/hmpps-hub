@@ -36,25 +36,17 @@ namespace HMPPS.NomisApiService.Services
 
         private string AuthenticationToken { get; set; }
 
-        static HttpClient Client = new HttpClient();
+        private static readonly HttpClient Client = new HttpClient();
 
         private readonly ILogManager _logManager;
 
         public NomisApiService(ILogManager logManager)
-            : this(logManager, true)
-        {
-        }
-
-        public NomisApiService(ILogManager logManager, bool useAppSettings)
         {
             _logManager = logManager;
+            ApiBaseUrl = Settings.NomisApiBaseUrl;
+            ClientToken = Settings.NomisApiClientToken;
+            PrivateKey = Settings.NomisApiSecretKey;
 
-            if (useAppSettings)
-            {
-                ApiBaseUrl = Settings.NomisApiBaseUrl;
-                ClientToken = Settings.NomisApiClientToken;
-                PrivateKey = Settings.NomisApiSecretKey;
-            }
         }
 
         public void InitializeClient()

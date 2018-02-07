@@ -118,8 +118,10 @@
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\DependencyInjectionHelper.cs" />
     <Compile Include="Helpers\ExpirationHelper.cs" />
+    <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IUserDataService.cs" />
+    <Compile Include="Models\UserAccountBalances.cs" />
     <Compile Include="Pipelines\HttpRequestBase.cs" />
     <Compile Include="Pipelines\ImageFieldSizeAttributesRemover.cs" />
     <Compile Include="Pipelines\Redirect404.cs" />
@@ -133,7 +135,7 @@
     <Compile Include="SitecoreHelper\FieldMethods.cs" />
     <Compile Include="Interfaces\IEncryptionService.cs" />
     <Compile Include="Interfaces\IJwtTokenService.cs" />
-    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\UserIdamData.cs" />
     <Compile Include="Services\EncryptionService.cs" />
     <Compile Include="Services\JwtTokenService.cs" />
   </ItemGroup>
