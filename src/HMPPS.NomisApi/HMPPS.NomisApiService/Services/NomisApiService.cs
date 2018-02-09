@@ -111,7 +111,7 @@ namespace HMPPS.NomisApiService.Services
             }
             catch (Exception ex)
             {
-                _logManager.LogError($"GenerateToken method error: {ex.Message}; {ex.StackTrace}", GetType());
+                HandleInnerException(ex, "GenerateToken()");
                 return null;
             }
         }        
@@ -145,7 +145,7 @@ namespace HMPPS.NomisApiService.Services
 
         private bool HandleInnerException(Exception e, string detailMessage)
         {
-            _logManager.LogError($"Error trying to get prisoner's data from Nomis: {detailMessage}", GetType());
+            _logManager.LogError($"{detailMessage}; Exception message: {e.Message}; Stack trace: {e.StackTrace}", GetType());
             return false; // exception is not handled
         }
 
