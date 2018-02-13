@@ -92,18 +92,28 @@ namespace HMPPS.NomisApiService.Services
             return Client.GetStringAsync(url).Result;
         }
 
-        private string GenerateToken(int expireMinutes = 20)
+        private string GenerateToken()
         {
-            //https://github.com/dvsekhvalnov/jose-jwt
-            var unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            var payload = new Dictionary<string, object>()
+            try
             {
-                {"iat", unixTimestamp},
-                {"token", ClientToken}
-            };
-            var secretKeyFile = Convert.FromBase64String(PrivateKey);
-            var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
-            return JWT.Encode(payload, secretKey, JwsAlgorithm.ES256);
+                //https://github.com/dvsekhvalnov/jose-jwt
+                var unixTimestamp = (Int32) (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                var payload = new Dictionary<string, object>()
+                {
+                    {"iat", unixTimestamp},
+                    {"token", ClientToken}
+                };
+                var secretKeyFile = Convert.FromBase64String(PrivateKey);
+                //Note: the next line of code fails with "CryptographicException: The system cannot find the file specified."
+                //if the IIS APP POOL Load user profile is NOT true
+                var secretKey = CngKey.Import(secretKeyFile, CngKeyBlobFormat.Pkcs8PrivateBlob);
+                return JWT.Encode(payload, secretKey, JwsAlgorithm.ES256);
+            }
+            catch (Exception ex)
+            {
+                HandleInnerException(ex, "GenerateToken()");
+                return null;
+            }
         }        
 
         /// <summary>
@@ -135,7 +145,7 @@ namespace HMPPS.NomisApiService.Services
 
         private bool HandleInnerException(Exception e, string detailMessage)
         {
-            _logManager.LogError($"Error trying to get prisoner's data from Nomis: {detailMessage}", GetType());
+            _logManager.LogError($"{detailMessage}; Exception message: {e.Message}; Stack trace: {e.StackTrace}", GetType());
             return false; // exception is not handled
         }
 
