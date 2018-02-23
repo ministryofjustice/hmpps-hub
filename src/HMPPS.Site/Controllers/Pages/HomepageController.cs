@@ -33,13 +33,13 @@ namespace HMPPS.Site.Controllers.Pages
             var userData = _userDataService.GetUserIdamDataFromCookie(System.Web.HttpContext.Current);
             if (userData == null) return;
 
-            var unilinkPrisonId = userData.PrisonId.Length > 2
+            var unilinkPrisonId = userData.PrisonId?.Length > 2
                 ? userData.PrisonId.Substring(0, 2).ToLower()
-                : userData.PrisonId.ToLower();
+                : userData.PrisonId?.ToLower();
             _hvm.SelfHelpLinkUrl = contextItem["Self Help Link Url Template"].Replace("{prison_id}",
                 unilinkPrisonId);
 
-            _hvm.ShowQuickLinks = !string.IsNullOrEmpty(_hvm.SelfHelpLinkUrl);
+            _hvm.ShowQuickLinks = !string.IsNullOrEmpty(_hvm.SelfHelpLinkUrl) && !string.IsNullOrEmpty(userData.PrisonId);
 
             var textInfo = CultureInfo.CurrentCulture.TextInfo;
             _hvm.UserFirstName = textInfo.ToTitleCase(userData.GivenName.ToLower());

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens;
+using System.Linq;
 using System.Net;
 using System.Security.Claims;
 using System.ServiceModel.Security.Tokens;
@@ -188,6 +189,10 @@ namespace HMPPS.Authentication
             }
 
             claims.AddRange(tokenClaims.FindAll(c => c.Type == ClaimTypes.GivenName || c.Type == "pnomisLocation"));
+            if (string.IsNullOrEmpty(claims.FirstOrDefault(c => c.Type == "pnomisLocation")?.Value))
+            {
+                _logManager.LogWarning($"ExtractClaims error: pnomisLocation is null or empty for {prisonerIdClaim?.Value}", typeof(TokenManager));
+            }
 
             if (!string.IsNullOrWhiteSpace(response.AccessToken))
             {
